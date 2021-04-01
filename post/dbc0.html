@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">留言板 | 慢一点，才更快 | 雨落</title>
+  <title itemprop="name">HCIA学习笔记3 | 慢一点，才更快 | 雨落</title>
   
     <link rel="shortcut icon" href="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tubiao.ico">
   
@@ -280,31 +280,616 @@
 
       
       <!-- body -->
-        <div class="pattern-center-blank"></div>
-  
-  <div class="pattern-center ">
-    <div class="pattern-attachment-img">
-      <img src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing12.jpg" class="lazyload" onerror="imgError(this,3)"
-        style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
-    </div>
-    <header class="pattern-header ">
-      <h1 class="entry-title">
-        </h1>
-      <span class="post-meta-item-icon">
-        <i class="iconfont icon-attention"></i>
-      </span>
-      <span class="post-meta-item-text">本页共<span id="busuanzi_value_page_pv"> </span>次阅读
-      </span>
-    </header>
-  </div>
-  
-  <div id="content" class="site-content">
-    <article class="post-item post-301 page type-page status-publish has-post-thumbnail hentry">
-      <h2 align="center">有什么想说的?</h2>
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/cungudafa/cdn/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
 
-<h2 align="center">有什么想问的?</h2>
-      <!-- .entry-content -->
+<div class="pattern-center single-center">
+  <!-- 有配图默认渲染第一张 -->
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing15.jpg);"
+    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing15.jpg">
+  </div>
+  <header class="pattern-header single-header">
+    <h1 class="entry-title">HCIA学习笔记3</h1>
+    <p class="entry-census">
       
+      <span class="post-meta-item">
+        <a href="">
+          <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tx.jpg">
+        </a>
+      </span>
+      
+      
+      <span class="post-meta-item">
+        <a href=""> SakuraMuxia </a>
+      </span>
+      <span class="bull">
+        ·</span>
+      
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-calendar"></i>
+        </span>
+        <span class="post-meta-item-text"> 2021-4-1 </span>
+      </span>
+      <span class="bull">
+        ·</span>
+      <!-- 浏览数显示 -->
+      <span class="post-meta-item" >
+        <span class="post-meta-item-icon">
+          <i class="iconfont icon-attention"></i>
+        </span>
+        <span class="post-meta-item-text">本文共<span id="busuanzi_value_page_pv"> </span>次阅读
+        </span>
+      </span>
+      <span class="bull">
+        ·</span>
+      <!-- 字数统计-->
+      <span class="post-meta-item" >
+
+        
+      </span>
+      <span class="bull">
+        ·</span>
+      <!-- 评论数显示 -->
+      <!-- <span class="post-meta-item" >
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              </span class="post-meta-item-text">
+                <span class="valine-comment-count" data-xid="/dbc0"> </span>
+              </span>
+          </span> -->
+    </p>
+  </header>
+</div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1"
+        class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content">  -->
+        <!--套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 强者把脆弱给自己看，弱者把脆弱给别人看</span>
+<span class="token comment" spellcheck="true">// 人心惟危，道心惟微</span>
+<span class="token comment" spellcheck="true">// 思往日身者，见未来远</span>
+<span class="token comment" spellcheck="true">// 三省 </span>
+</code></pre>
+<h2 id="VRP远程管理"><a href="#VRP远程管理" class="headerlink" title="VRP远程管理"></a>VRP远程管理</h2><h3 id="Telnet应用场景"><a href="#Telnet应用场景" class="headerlink" title="Telnet应用场景"></a>Telnet应用场景</h3><p><strong>Telnet可以通过终端对本地和远程的网络设备进行集中管理</strong></p>
+<ul>
+<li>允许终端远程登录到任何可以充当Telnet服务器的设备。</li>
+<li>Telnet服务器和终端之间无需直连，只需保证两者之间可以互相通信即可。</li>
+</ul>
+<h3 id="Telnet直连服务"><a href="#Telnet直连服务" class="headerlink" title="Telnet直连服务"></a>Telnet直连服务</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210331081438283.png"></p>
+<ul>
+<li>Telnet客户端和服务器基于TCP（端口号=23）连接来传输命令</li>
+</ul>
+<h3 id="认证模式"><a href="#认证模式" class="headerlink" title="认证模式"></a>认证模式</h3><table>
+<thead>
+<tr>
+<th>认证模式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AAA</td>
+<td>登录时需要用户名和密码</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>登录时只需要密码</td>
+</tr>
+</tbody></table>
+<p>配置命令</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Telnet server enable</td>
+<td>开启Telnet服务</td>
+</tr>
+<tr>
+<td>display telnet server status</td>
+<td>验证Telnet服务</td>
+</tr>
+<tr>
+<td>user-interface vty 0 4</td>
+<td>进入VTy配置模式</td>
+</tr>
+<tr>
+<td>authentication-mode password/aaa</td>
+<td>配置认证模式</td>
+</tr>
+<tr>
+<td>set authentication password cipher huawei</td>
+<td>配置认证密码</td>
+</tr>
+<tr>
+<td>user privilege level 15</td>
+<td>配置用户级别</td>
+</tr>
+<tr>
+<td>user-interface maximum-vty 15</td>
+<td>配置最大VTY会话数量</td>
+</tr>
+<tr>
+<td>aaa</td>
+<td>进入AAA配置模式</td>
+</tr>
+<tr>
+<td>local-user xxx password cipher xxx</td>
+<td>创建用户和密码</td>
+</tr>
+<tr>
+<td>local-user xxx privilege level 15</td>
+<td>配置用户级别</td>
+</tr>
+<tr>
+<td>local-user xxx service-type telnet</td>
+<td>配置用户可用服务</td>
+</tr>
+</tbody></table>
+<pre class=" language-java"><code class="language-java">dis tel ser st<span class="token comment" spellcheck="true">//简写</span>
+    
+user<span class="token operator">-</span><span class="token keyword">interface</span> <span class="token class-name">console</span> <span class="token number">0</span><span class="token comment" spellcheck="true">//默认console口有一个admin账号aaa权限</span>
+ 
+dis current<span class="token operator">-</span>configuration<span class="token comment" spellcheck="true">//查看当前配置</span>
+    
+dis ip route <span class="token comment" spellcheck="true">//查看当前路由表</span>
+    
+dis ip <span class="token keyword">int</span> b <span class="token comment" spellcheck="true">//?</span>
+</code></pre>
+<p>==动手实践项目：实验拓扑==</p>
+<h2 id="VRP文件系统"><a href="#VRP文件系统" class="headerlink" title="VRP文件系统"></a>VRP文件系统</h2><p>华为网络设备的==配置文件==和==系统文件==</p>
+<table>
+<thead>
+<tr>
+<th>管理设备存储</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>管理项目</td>
+<td>命令</td>
+<td>管理项目</td>
+<td>命令</td>
+<td>管理项目</td>
+<td>命令</td>
+</tr>
+<tr>
+<td>修复文件系统异常的存储设备</td>
+<td>fixdisk</td>
+<td>创建目录</td>
+<td>mkdir</td>
+<td>显示文件的内容</td>
+<td>more</td>
+</tr>
+<tr>
+<td>格式化存储设备</td>
+<td>format</td>
+<td>重命名</td>
+<td>rename</td>
+<td>拷贝文件</td>
+<td>copy</td>
+</tr>
+<tr>
+<td><strong>管理目录/文件</strong></td>
+<td></td>
+<td>查看当前的工作目录</td>
+<td>pwd</td>
+<td>移动文件</td>
+<td>move</td>
+</tr>
+<tr>
+<td>管理项目</td>
+<td>命令</td>
+<td>改变当前目录</td>
+<td>cd</td>
+<td>重新命名文件</td>
+<td>rename</td>
+</tr>
+<tr>
+<td>恢复删除文件</td>
+<td>undelete</td>
+<td>显示文件或目录信息</td>
+<td>dir</td>
+<td>压缩文件</td>
+<td>zip</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>删除目录</td>
+<td>rmdir</td>
+<td>删除文件</td>
+<td>delete</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>执行批处理文件</td>
+<td>execute</td>
+<td>彻底删除回收站中的文件</td>
+<td>reset</td>
+</tr>
+</tbody></table>
+<pre class=" language-java"><code class="language-java">d <span class="token comment" spellcheck="true">// 文件夹</span>
+    
+r w x<span class="token comment" spellcheck="true">// x 可执行文件</span>
+    
+reset recycle<span class="token operator">-</span>bin <span class="token comment" spellcheck="true">// 清空回收站</span>
+    
+delete unreserved xxx<span class="token punctuation">.</span>xxx<span class="token comment" spellcheck="true">// 彻底删除文件</span>
+    
+rename xxx<span class="token punctuation">.</span>xxx yyy<span class="token punctuation">.</span>yyy <span class="token comment" spellcheck="true">//重命名文件</span>
+
+copy xxx<span class="token punctuation">.</span>xxx <span class="token operator">/</span>yyy<span class="token operator">/</span>zzz<span class="token operator">/</span>aaa<span class="token punctuation">.</span>aaa <span class="token comment" spellcheck="true">//把xxx 复制到yyy/zzz/目录并且把文件名改成aaa.aaa</span>
+    
+save <span class="token comment" spellcheck="true">// 保存配置    </span>
+    
+dis save<span class="token operator">-</span>configuration file <span class="token comment" spellcheck="true">//查看当前保存的配置文件</span>
+    
+compare configuration <span class="token comment" spellcheck="true">//对比当前配置文件和下次启动配置对比</span>
+    
+reset save<span class="token operator">-</span>configuration <span class="token comment" spellcheck="true">//重置配置文件</span>
+    
+reboot <span class="token comment" spellcheck="true">//重启设备</span>
+    
+</code></pre>
+<p><strong>华为的配置文件都保存在vrpcfg.zip中</strong></p>
+<h3 id="系统启动文件查询"><a href="#系统启动文件查询" class="headerlink" title="系统启动文件查询"></a>系统启动文件查询</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>display startup</td>
+<td>查看系统启动配置参数//升级降级系统</td>
+</tr>
+</tbody></table>
+<h3 id="系统启动配置文件修改"><a href="#系统启动配置文件修改" class="headerlink" title="系统启动配置文件修改"></a>系统启动配置文件修改</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>startup saved-configuration</td>
+<td>配置系统下次启动时使用的配置文件</td>
+</tr>
+</tbody></table>
+<pre class=" language-java"><code class="language-java">startup saved<span class="token operator">-</span>configuration <span class="token operator">/</span>xxx<span class="token operator">/</span>yyy<span class="token operator">/</span>aaa<span class="token punctuation">.</span>aaa <span class="token comment" spellcheck="true">//更改下次启动配置文件</span>
+  
+startup system<span class="token operator">-</span>software <span class="token operator">/</span>xxx<span class="token operator">/</span>yyy<span class="token operator">/</span>bbb<span class="token punctuation">.</span>bbb <span class="token comment" spellcheck="true">//更改下次启动系统文件</span>
+  
+dis startup
+  
+</code></pre>
+<h2 id="VRP系统管理"><a href="#VRP系统管理" class="headerlink" title="VRP系统管理"></a>VRP系统管理</h2><h3 id="文件传输"><a href="#文件传输" class="headerlink" title="文件传输"></a>文件传输</h3><p>网络设备可以从服务器获取VRP系统文件，也可以将日志文件、配置文件、保存到服务器作为备份。</p>
+<h3 id="文件传输协议"><a href="#文件传输协议" class="headerlink" title="文件传输协议"></a>文件传输协议</h3><p><strong>FTP（TCP）、TFTP（UDP）</strong></p>
+<p>常见的有FTP和TFTP两种；</p>
+<p><strong>Xlight</strong> 软件 创建FTP服务器 windows端</p>
+<h3 id="从FTP服务器获取VRP文件更新"><a href="#从FTP服务器获取VRP文件更新" class="headerlink" title="从FTP服务器获取VRP文件更新"></a>从FTP服务器获取VRP文件更新</h3><pre class=" language-java"><code class="language-java">ftp xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx <span class="token comment" spellcheck="true">//远程到ftp服务器</span>
+
+dis ip <span class="token keyword">int</span> b <span class="token comment" spellcheck="true">//查看接口IP地址</span>
+    
+<span class="token comment" spellcheck="true">//配置IP地址</span>
+    
+sys
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+ip add xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx
+
+<span class="token comment" spellcheck="true">//下载FTP服务器的文件</span>
+  
+get xxx<span class="token punctuation">.</span>xxx
+  
+put xxx<span class="token punctuation">.</span>aaa <span class="token comment" spellcheck="true">// 报错时，配置服务用户权限没有给</span>
+  
+<span class="token comment" spellcheck="true">//cisco TFTP server //TFTP协议传输软件</span>
+  
+</code></pre>
+<h3 id="从TFTP服务器获取VRP文件更新"><a href="#从TFTP服务器获取VRP文件更新" class="headerlink" title="从TFTP服务器获取VRP文件更新"></a>从TFTP服务器获取VRP文件更新</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//打开 Cisco TFTP server ，开启TFTP服务</span>
+tftp xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx get aaa<span class="token punctuation">.</span>bbb <span class="token comment" spellcheck="true">//下载文件</span>
+
+tftp xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx put aaa<span class="token punctuation">.</span>bb <span class="token comment" spellcheck="true">//上传文件</span>
+  
+</code></pre>
+<h2 id="路由技术"><a href="#路由技术" class="headerlink" title="路由技术"></a>路由技术</h2><table>
+<thead>
+<tr>
+<th>术语</th>
+<th>备注</th>
+<th>类比</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>路由</td>
+<td>从源头到目标的路径不同网络间的转发过程</td>
+<td>火车</td>
+</tr>
+<tr>
+<td>路由表</td>
+<td>路由信息的集合路由的依据</td>
+<td>时刻表</td>
+</tr>
+<tr>
+<td>路由器</td>
+<td>具有路由功能的设备</td>
+<td>火车站</td>
+</tr>
+<tr>
+<td>默认网关</td>
+<td>通常是路由设备的接口IP地址</td>
+<td>火车站的地址</td>
+</tr>
+</tbody></table>
+<p> 经过一次路由，TTL减1。</p>
+<h3 id="路由过程："><a href="#路由过程：" class="headerlink" title="路由过程："></a>路由过程：</h3><p><strong>IP路由过程</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210401122125687.png" alt="image-20210401122125687"></p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">/</span><span class="token number">32</span> <span class="token comment" spellcheck="true">// 代表一个回环口</span>
+  
+ip route<span class="token operator">-</span><span class="token keyword">static</span> xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx aa yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy <span class="token comment" spellcheck="true">//增加路由</span>
+  
+<span class="token comment" spellcheck="true">// 最长匹配原则</span>
+  
+</code></pre>
+<p>当路由器（或其他三层设备）收到一个IP数据包时，会查看数据包的IP头部中的==目的IP地址==，并在路由表中进行查找，在匹配到最优路由后，将数据包扔给该路由所指的出接口或下一跳。</p>
+<h3 id="路由器转发数据包"><a href="#路由器转发数据包" class="headerlink" title="路由器转发数据包"></a>路由器转发数据包</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210401124441545.png" alt="image-20210401124441545"></p>
+<ul>
+<li>路由器需要知道下一跳和出接口才能将数据转发出去。</li>
+</ul>
+<pre class=" language-java"><code class="language-java">dis ip routing<span class="token operator">-</span>table protocol <span class="token keyword">static</span> <span class="token comment" spellcheck="true">//详细路由情况查询</span>
+  
+</code></pre>
+<h3 id="路由选路"><a href="#路由选路" class="headerlink" title="==路由选路=="></a>==路由选路==</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210401125733911.png" alt="image-20210401125733911"></p>
+<ul>
+<li>路由器负责为数据包选择一条最优路径，并进行转发；</li>
+</ul>
+<h3 id="路由器的工作内容："><a href="#路由器的工作内容：" class="headerlink" title="路由器的工作内容："></a><strong>路由器的工作内容：</strong></h3><ul>
+<li>收到数据包查看目标IP地址</li>
+<li>在路由表中选择最佳路径</li>
+<li>维护路由表</li>
+</ul>
+<h3 id="路由表解析："><a href="#路由表解析：" class="headerlink" title="路由表解析："></a><strong>路由表解析</strong>：</h3><pre class=" language-java"><code class="language-java">dis ip routing<span class="token operator">-</span>table <span class="token comment" spellcheck="true">//查看路由表</span>
+<span class="token comment" spellcheck="true">// 配路由一定要有图</span>
+<span class="token comment" spellcheck="true">// 路由表中存放的都是最优的</span>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>路由表字段</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Destination</td>
+<td>目标，用来标识IP包的目标地址或目标网络</td>
+</tr>
+<tr>
+<td>Mask</td>
+<td>掩码，选择最佳路由的重要判断依据（最长匹配原则）</td>
+</tr>
+<tr>
+<td>NextHop</td>
+<td>下一跳，指明IP包所经路由的下一个路由器的接口地址</td>
+</tr>
+<tr>
+<td>Interface</td>
+<td>出接口，指明IP包将从该路由器的哪个接口转发出去</td>
+</tr>
+<tr>
+<td>Protocol</td>
+<td>协议，路由的来源、学习方式</td>
+</tr>
+<tr>
+<td>Preference</td>
+<td>优先级，比较不同路由来源到达==相同目标网络==的优先级越低越优先</td>
+</tr>
+<tr>
+<td>Cost</td>
+<td>度量值，比较相同路由来源到达==相同目标网络==的不同路径的优先级越低越优先</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="路由的优先级"><a href="#路由的优先级" class="headerlink" title="路由的优先级"></a>路由的优先级</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210401131629409.png" alt="image-20210401131629409"></p>
+<h3 id="路由度量"><a href="#路由度量" class="headerlink" title="路由度量"></a>路由度量</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210401131909602.png" alt="image-20210401131909602"></p>
+<h3 id="等价路由"><a href="#等价路由" class="headerlink" title="等价路由"></a>等价路由</h3><p>对于同一个路由来源，当达到同一个目标网络有几条相同度量值的路由时，这些路由都会被加入到路由表中，数据包会在这几个链路上进行负载分担。（ECMP）</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210401143728944.png" alt="image-20210401143728944"></p>
+<p><strong>负载分担：根据路由器的算法选路，源IP和目的IP</strong></p>
+<p><strong>最长匹配原则：最终数据包匹配最佳路由的算法</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210401144143113.png" alt="image-20210401144143113"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210401144846419.png" alt="image-20210401144846419"></p>
+<h3 id="路由表的形成、路由的来源："><a href="#路由表的形成、路由的来源：" class="headerlink" title="路由表的形成、路由的来源："></a>路由表的形成、路由的来源：</h3><table>
+<thead>
+<tr>
+<th>路由来源</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>直连路由</td>
+<td>路由器接口上的网络（接口配置了IP地址并且开启）</td>
+</tr>
+<tr>
+<td>静态路由</td>
+<td>管理员手工添加的网络</td>
+</tr>
+<tr>
+<td>动态路由</td>
+<td>路由器之间学习到的网络</td>
+</tr>
+</tbody></table>
+<h3 id="静态路由配置命令"><a href="#静态路由配置命令" class="headerlink" title="静态路由配置命令"></a>静态路由配置命令</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ip route-static ==目标网络== ==子网掩码==/前缀 ==下一跳/出接口==</td>
+<td>配置静态路由</td>
+</tr>
+<tr>
+<td>如果出接口为以太网接口，则必须要指定下一跳地址</td>
+<td></td>
+</tr>
+<tr>
+<td>如果出接口为串口，可以使用下一跳或出接口来配置</td>
+<td></td>
+</tr>
+<tr>
+<td>切记：通讯是双向的，不要忘记配置返回流量的路由</td>
+<td></td>
+</tr>
+</tbody></table>
+<p><strong>注意：任何时候能写下一跳就写下一跳</strong></p>
+<h3 id="静态路由配置"><a href="#静态路由配置" class="headerlink" title="静态路由配置"></a>静态路由配置</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210401161114316.png" alt="image-20210401161114316"></p>
+<pre class=" language-java"><code class="language-java">ip route<span class="token operator">-</span>s xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx aa bbb<span class="token punctuation">.</span>bbb<span class="token punctuation">.</span>bbb<span class="token punctuation">.</span>bbb<span class="token comment" spellcheck="true">//配置静态路由</span>
+</code></pre>
+<h3 id="负载分担"><a href="#负载分担" class="headerlink" title="负载分担"></a>负载分担</h3><p> <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210401163550776.png" alt="image-20210401163550776"></p>
+<p><strong>静态路由支持到达同一目标网络的等价负载分担</strong></p>
+<p><strong>数据包会在去的时候走一条路，回来的时候走另一条路；</strong></p>
+<h3 id="路由备份-浮动静态路由"><a href="#路由备份-浮动静态路由" class="headerlink" title="路由备份-浮动静态路由"></a>路由备份-浮动静态路由</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210401171911488.png" alt="image-20210401171911488"></p>
+<p><strong>说明：和负载分担不同的是这两条路的速度可能不一样，一个是千兆，一个是百兆。正常情况走千兆，异常情况走百兆。</strong></p>
+<ul>
+<li><strong>利用优先级的特征，配置浮动路由；</strong></li>
+<li><strong>在主路失效的情况下，浮动路由会加入到路由表并承担数据转发业务；</strong></li>
+</ul>
+<pre class=" language-java"><code class="language-java">ip route<span class="token operator">-</span><span class="token keyword">static</span> xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx aa bbb<span class="token punctuation">.</span>bbb<span class="token punctuation">.</span>bbb<span class="token punctuation">.</span>bbb preference yyy <span class="token comment" spellcheck="true">// 更改优先级 默认是60</span>
+</code></pre>
+
+        </div>
+
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="null"></li>
+                <li class="wechat-code"><img src="null"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent">
+        </div>
+        <!-- 评分 -->
+        <div class="single-reward">
+          
+        </div>
+        <!-- 自定义署名方式 -->
+        <footer class="post-footer">
+          <div class="post-lincenses" style="color: #ff9966;">
+            欢迎转载，转载时请注明来源哦！
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" style="color: #ff9966;" target="_blank"
+              rel="nofollow">
+              <i class="fa fa-creative-commons" aria-hidden="true"></i>ncsa4.0</a>
+          </div>
+          
+          <div class="post-tags" style="color: #a39391">
+            <span><i class="fa fa-tags"></i>
+              
+              <a href="/tags/HCIA/" style="color: #716e77;">HCIA<em>·</em></a>
+              
+              <a href="/tags/%E7%AC%94%E8%AE%B0/" style="color: #716e77;">笔记<em>·</em></a>
+              
+              <a href="/tags/ARP/" style="color: #716e77;">ARP<em>·</em></a>
+              
+            </span>
+            <span>
+              <i class="iconfont icon-file"></i>
+              
+              <a href="/categories/%E6%8A%80%E6%9C%AF/" style="color: #716e77;">技术</a>
+              
+            </span>
+          </div>
+          
+          <div class="post-share" >
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+        <!-- <div class="tag-cloud">
+          <div class="tag-cloud-title">
+          </div>
+          <div class="tag-cloud-tags">
+            <a href="/tags/ARP/" style="font-size: 10px; color: #f06966">ARP</a> <a href="/tags/HCIA/" style="font-size: 15px; color: #9592a7">HCIA</a> <a href="/tags/java/" style="font-size: 10px; color: #f06966">java</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 20px; color: #39bae8">笔记</a>
+          </div>
+        </div> -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+          
+            <div class="post-nepre full next">
+              
+              <a href="/post/1b01.html" rel="next">
+                <div class="background">
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing14.jpg"
+                    style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
+                    onerror="imgError(this,3)" src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing14.jpg">
+                </div>
+                <span class="label">Next Post</span>
+                <div class="info">
+                  <h3>HCIA学习笔记2</h3>
+                  <hr>
+                </div>
+              </a>
+            </div>
+            
+      </section>
+      <!-- 加密文章隐藏评论 -->
+      <section class="comment" >
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<div id="gitalk-container" class="comment"></div> 
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="/js/md5.min.js"></script>
+<script type="text/javascript">
+	var gitalk = new Gitalk({
+  	clientID: '9ae3a88cd97b7b9bd1fa',
+  	clientSecret: 'c12b84cd9d9609551630939716dc990cc7d5af00',
+  	repo: 'SakuraMuxia.github.io',
+  	owner: 'SakuraMuxia',
+	admin: ['SakuraMuxia'],
+	distractionFreeMode: 'true',
+    id: md5(location.pathname)
+})
+gitalk.render('gitalk-container') 
+</script>
+
+
+      </section>
+      <!-- 加密文章隐藏作者信息 -->
+      
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div>
+
+
+<!--评论配置-->
+
+
     <div id="vcomments"></div>
     <script src="https://unpkg.com/valine/dist/Valine.min.js"></script><!-- 最新版 -->
     <style>
@@ -399,7 +984,10 @@
 
 
 
-      <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <div id="gitalk-container" class="comment"></div> 
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 <script src="/js/md5.min.js"></script>
@@ -417,37 +1005,6 @@ gitalk.render('gitalk-container')
 </script>
 
 
-      <div class="single-reward">
-        <div class="reward-open">赏
-          <div class="reward-main">
-            <ul class="reward-row">
-              <li class="alipay-code"><img src="null"></li>
-              <li class="wechat-code"><img src="null"></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent">
-      </div>
-      <footer class="post-footer">
-        <div class="post-lincenses" style="color: #ff9966;">
-          欢迎转载，转载时请注明来源哦！
-          <br>
-          <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow">
-            <i class="fa fa-creative-commons" aria-hidden="true"></i>知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
-        </div>
-        <div class="post-tags">
-        </div>
-        <div class="post-share">
-          <div class="social-share sharehidden share-component"></div>
-          <i class="iconfont show-share icon-forward"></i>
-        </div>
-      </footer><!-- .entry-footer -->
-    </article>
-    <!-- #post-## -->
-    
-  </div><!-- #primary -->
-  </div>
 
       <!-- body.end -->
     </div>
