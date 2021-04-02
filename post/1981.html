@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">HCIA学习笔记2 | 慢一点，才更快 | 雨落</title>
+  <title itemprop="name">HCIA学习笔记4 | 慢一点，才更快 | 雨落</title>
   
     <link rel="shortcut icon" href="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tubiao.ico">
   
@@ -286,11 +286,11 @@
 
 <div class="pattern-center single-center">
   <!-- 有配图默认渲染第一张 -->
-  <div class="pattern-attachment-img lazyload" style="background-image: url(https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing14.jpg);"
-    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing14.jpg">
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://gitee.com/sakuramiko35/image/raw/master/blog-home/biaoti1.jpg);"
+    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/biaoti1.jpg">
   </div>
   <header class="pattern-header single-header">
-    <h1 class="entry-title">HCIA学习笔记2</h1>
+    <h1 class="entry-title">HCIA学习笔记4</h1>
     <p class="entry-census">
       
       <span class="post-meta-item">
@@ -310,7 +310,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-calendar"></i>
         </span>
-        <span class="post-meta-item-text"> 2021-3-30 </span>
+        <span class="post-meta-item-text"> 2021-4-2 </span>
       </span>
       <span class="bull">
         ·</span>
@@ -337,7 +337,7 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               </span class="post-meta-item-text">
-                <span class="valine-comment-count" data-xid="/1b01"> </span>
+                <span class="valine-comment-count" data-xid="/1981"> </span>
               </span>
           </span> -->
     </p>
@@ -354,524 +354,276 @@
         <!--套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h2 id="IP地址基础"><a href="#IP地址基础" class="headerlink" title="IP地址基础"></a>IP地址基础</h2><ul>
-<li><p>在IP网络中，通信节点需要一个IP地址</p>
-</li>
-<li><p>以点分十进制表示，由32位二进制组成；</p>
-</li>
-<li><p>分为网络位和主机位两部分：</p>
-<p>​    网络位，代表IP地址所属的网段，表示同一个房间；</p>
-<p>​    主机位，代表网段上的某个节点，表示某一个座位；</p>
-<p>​    由子网掩码决定分界点 ；</p>
-</li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210329085859107.png" alt="image-20210329085859107"></p>
-<h2 id="IP地址的分类"><a href="#IP地址的分类" class="headerlink" title="IP地址的分类"></a>IP地址的分类</h2><p>根据第一组八位二进制</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210329090316955.png" alt="image-20210329090316955"></p>
+          <h2 id="路由备份-浮动静态路由"><a href="#路由备份-浮动静态路由" class="headerlink" title="路由备份-浮动静态路由"></a>路由备份-浮动静态路由</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210402091048297.png" alt="image-20210402091048297"></p>
 <ul>
-<li><p>能被主机使用的是ABC三类；</p>
-</li>
-<li><p>D类地址用于组播技术；</p>
-</li>
-<li><p>0开头的地址代表所有地址或无地址；</p>
-</li>
-<li><p>127开头的地址代表自己；</p>
-</li>
+<li>利用优先级的特性，配置浮动路由；</li>
+<li>在主路由失效的情况下，浮动路由会加入到路由表并承担数据转发业务；</li>
+<li>在主链路正常情况下，只有主路由会出现在路由表中；</li>
 </ul>
-<table>
-<thead>
-<tr>
-<th>私有IP地址空间</th>
-<th>地址范围</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>10.0.0.0/8</td>
-<td>10.0.0.0到10.255.255.255</td>
-</tr>
-<tr>
-<td>172.16.0.0/16</td>
-<td>172.16.0.0到172.31.255.255</td>
-</tr>
-<tr>
-<td>192.168.0.0/24</td>
-<td>192.168.0.0到192.168.255.255</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>公网地址</td>
-<td>用于Internet，向ISP付费申请，全球唯一</td>
-</tr>
-<tr>
-<td>私网地址</td>
-<td>用于企业内部网络，不能用于Internet，免费使用，可以重复</td>
-</tr>
-<tr>
-<td>地址转换</td>
-<td>使用私网地址如果要访问Internet，必须转换为公网地址，该技术称为NAT</td>
-</tr>
-</tbody></table>
-<h2 id="子网掩码"><a href="#子网掩码" class="headerlink" title="子网掩码"></a>子网掩码</h2><ul>
-<li>区分网络部分和主机部分；</li>
-<li>1表示网络位，0表示主机位（ 连续的1和0）</li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210329094346359.png" alt="image-20210329094346359"></p>
-<h2 id="网络地址，主机地址，广播地址："><a href="#网络地址，主机地址，广播地址：" class="headerlink" title="网络地址，主机地址，广播地址："></a>网络地址，主机地址，广播地址：</h2><p>每个网段上都有两个特殊地址（最小和）</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210329095315351.png" alt="image-20210329095315351"></p>
-<table>
-<thead>
-<tr>
-<th>网络地址</th>
-<th>==主机位==全为0，代表一个网段（头）比作房间</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>主机地址</td>
-<td>主机位不全为0也不全为1，代表一个网段内的一个节点，比作座位</td>
-</tr>
-<tr>
-<td>广播地址</td>
-<td>==主机位==全为1，代表一个网段内的所有节点（尾）</td>
-</tr>
-</tbody></table>
-<p>注意：</p>
-<ul>
-<li>子网掩码 /32既是主机地址又是网络地址，又是广播地址；</li>
-<li>子网掩码把网络地址和主机地址变小或变大；</li>
-<li>子网掩码连续的1和连续的0</li>
-</ul>
-<h2 id="子网掩码-1"><a href="#子网掩码-1" class="headerlink" title="子网掩码"></a>子网掩码</h2><ul>
-<li><p>用于区分网络部分和主机部分；</p>
-</li>
-<li><p>1表示网络位，0表示主机位（连续的1和0）</p>
-</li>
-<li><p>在设计网络时使用有类IP地址会造成地址的浪费</p>
-</li>
-<li><p>不同的网段用路由器</p>
-</li>
-</ul>
-<h2 id="子网划分"><a href="#子网划分" class="headerlink" title="子网划分"></a>子网划分</h2><ul>
-<li>满足不同网络对IP地址的需求；</li>
-<li>实现网络的层次性；</li>
-<li>节省IP地址；</li>
-<li>默认子网掩码可以进一步划分，成为变长子网掩码；</li>
-<li>即网络位向主机位“借位”；</li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210329143413290.png" alt="image-20210329143413290"></p>
-<p> 公式：</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210329143442187.png" alt="image-20210329143442187"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210329144707105.png" alt="image-20210329144707105"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210329144835089.png" alt="image-20210329144835089"></p>
-<p>数学问题：</p>
-<ul>
-<li>​    块=2^主机位数=256-掩码；</li>
-<li>​    找块最接近主机的倍数（一个小于，一个大于）；</li>
-</ul>
-<h2 id="数据转发过程"><a href="#数据转发过程" class="headerlink" title="数据转发过程"></a>数据转发过程</h2><p>TCP/IP协议簇和底层协议配合，保证了数据能够实现端到端的传输。数据传输过程是一个非常复杂的过程，例如数据在转发的过程中会进行一系列的封装和解封装。</p>
-<h3 id="网关：Gateway"><a href="#网关：Gateway" class="headerlink" title="网关：Gateway"></a>网关：Gateway</h3><ul>
-<li>位于不同网络间的主机要实现通讯，必须把数据包发送给网关；</li>
-<li>网关通常就是一台三层网络设备（路由器、三层交换机、防火墙、服务器）；</li>
-<li>网关地址就是设备的接口地址；</li>
-</ul>
-<pre class=" language-java"><code class="language-java">route print
-打印路由表
+<h2 id="配置验证"><a href="#配置验证" class="headerlink" title="配置验证"></a>配置验证</h2><pre class=" language-java"><code class="language-java">dis ip routing<span class="token operator">-</span>table <span class="token comment" spellcheck="true">//查看路由表</span>
+  
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//进入对应接口模式</span>
+  
+shutdown <span class="token comment" spellcheck="true">//关闭接口</span>
+  
+d th <span class="token comment" spellcheck="true">// 查看当前配置</span>
+
+dis ip routing<span class="token operator">-</span>table pro <span class="token keyword">static</span> <span class="token comment" spellcheck="true">//查看路由表详细信息</span>
+  
+
+tracert <span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">0.10</span> <span class="token comment" spellcheck="true">// 跟踪路由</span>
+  
+<span class="token comment" spellcheck="true">// 写错的路由一定要删除</span>
+
 </code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210329163359821.png" alt="image-20210329163359821"></p>
-<h3 id="数据转发过程："><a href="#数据转发过程：" class="headerlink" title="数据转发过程："></a>数据转发过程：</h3><p>数据包在相同网段内或不同网段之间转发所依据的原理基本一致。</p>
-<h3 id="TCP封装"><a href="#TCP封装" class="headerlink" title="TCP封装"></a>TCP封装</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210329165042267.png" alt="image-20210329165042267"></p>
-<p>当主机建立了到达目的地的TCP连接后，便开始对应用层数据进行封装。</p>
-<h3 id="IP封装"><a href="#IP封装" class="headerlink" title="IP封装"></a>IP封装</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210329165222573.png" alt="image-20210329165222573"></p>
-<h3 id="查找路由"><a href="#查找路由" class="headerlink" title="查找路由"></a>查找路由</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210329165329470.png" alt="image-20210329165329470"></p>
-<h3 id="ARP"><a href="#ARP" class="headerlink" title="ARP"></a>ARP</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210329165438597.png" alt="image-20210329165438597"></p>
+<h2 id="缺省路由"><a href="#缺省路由" class="headerlink" title="缺省路由"></a>缺省路由</h2><p><strong>一种特殊的路由，能匹配所有目标网络。</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210402100442073.png" alt="image-20210402100442073"></p>
 <ul>
-<li>通过ARP缓存表找到吓一跳的MAC地址；</li>
-<li>如果表项里没有吓一跳的MAC地址，主机A会发送ARP请求；</li>
+<li>可以通过静态路由配置，也可以通过动态路由协议发布。</li>
+<li>在路由表中，以到网络0.0.0.0（掩码为0.0.0.0）的形式出现、</li>
+<li>通常用于末梢网络（如：家庭上网、企业出口）</li>
 </ul>
-<h3 id="以太网封装"><a href="#以太网封装" class="headerlink" title="以太网封装"></a>以太网封装</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210329165646493.png" alt="image-20210329165646493"></p>
-<h3 id="数据帧转发"><a href="#数据帧转发" class="headerlink" title="数据帧转发"></a>数据帧转发</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210329165742230.png" alt="image-20210329165742230"></p>
-<ul>
-<li><p>网关（RTA）收到帧后，检查==FCS==和目的MAC地址，通过后即系解封帧；</p>
-</li>
-<li><p>FCS：校验</p>
-</li>
-</ul>
-<h3 id="数据包转发过程"><a href="#数据包转发过程" class="headerlink" title="数据包转发过程"></a>数据包转发过程</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210329165958771.png" alt="image-20210329165958771"></p>
-<ul>
-<li>网关检查是否具有到达目的网络的路由条目。</li>
-<li>如果存在转发路径，则为数据包添加一个新的二层帧头和帧尾，并继续转发。</li>
-</ul>
-<h3 id="数据帧解封装"><a href="#数据帧解封装" class="headerlink" title="数据帧解封装"></a>数据帧解封装</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210329170345375.png" alt="image-20210329170345375"></p>
-<ul>
-<li>RTB以服务器A的MAC地址作为目的MAC继续转发；</li>
-<li>服务器A收到该数据帧后，发现目的MAC为自己的MAC，于是会继续处理该数据帧；</li>
-</ul>
-<h3 id="数据包解封装"><a href="#数据包解封装" class="headerlink" title="数据包解封装"></a>数据包解封装</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210329170603470.png" alt="image-20210329170603470"></p>
-<ul>
-<li>服务器A检查数据包的目的IP地址，发现目的IP与自己的IP地址相同；</li>
-<li>服务器A剥掉数据包的IP头部后会送往上层协议TCP继续进行处理；</li>
-</ul>
-<h3 id="数据段解封装"><a href="#数据段解封装" class="headerlink" title="数据段解封装"></a>数据段解封装</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210329170758663.png" alt="image-20210329170758663"></p>
-<ul>
-<li>服务器A检查TCP头部的目的端口，然后将数据段发送给应用层的HTTP协议进行处理。</li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210329171614638.png" alt="image-20210329171614638"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210329171656000.png" alt="image-20210329171656000"></p>
-<h2 id="单播、广播、组播"><a href="#单播、广播、组播" class="headerlink" title="单播、广播、组播"></a>单播、广播、组播</h2><p><strong>根据目标地址判断</strong></p>
-<ul>
-<li>单播：一对一；</li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210329172559146.png" alt="image-20210329172559146"></p>
-<ul>
-<li>广播：发送给所属广播域内的所有目标；MAC地址=FFFFFFFFFFFF；IP地址=该网段的广播地址；</li>
-</ul>
-<p> <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210330084351131.png" alt="image-20210330084351131"></p>
-<ul>
-<li>组播：发送给一组目标,MAC地址=01-00-5E开头，IP地址=D类组播地址；</li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210330084833092.png" alt="image-20210330084833092"></p>
-<h4 id="接收规则："><a href="#接收规则：" class="headerlink" title="接收规则："></a>接收规则：</h4><ul>
-<li><p>接受地址包括本卡MAC地址、广播地址和本机所属组播组地址；</p>
-</li>
-<li><p>网卡丢弃与本卡接收地址不匹配的帧；</p>
-</li>
-<li><p>网卡解开与本卡接收地址匹配的帧，将数据递交给上层处理；</p>
-</li>
-<li><p>交换机有MAC地址表；</p>
-</li>
-<li><p>路由器有IP路由表；</p>
-</li>
-<li><p>集线器：信号复制器，物理层；</p>
-</li>
-<li><p>集线器：不分冲，不分广；（冲突域，广播域）；</p>
-</li>
-<li><p>交换机：分冲，不分广；</p>
-</li>
-<li><p>路由器：分冲，分广；</p>
-</li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210330090948122.png" alt="image-20210330090948122"></p>
-<p>冲突域（上），广播域（下）个数。</p>
-<h2 id="VRP基础"><a href="#VRP基础" class="headerlink" title="VRP基础"></a>VRP基础</h2><pre class=" language-java"><code class="language-java">dis version <span class="token comment" spellcheck="true">//查看设备硬件信息</span>
-    
-d th <span class="token comment" spellcheck="true">// </span>
-    
-dis http services state <span class="token comment" spellcheck="true">//查看HTTP服务是否打开</span>
-    
-dis vlan <span class="token comment" spellcheck="true">//查看VLAN</span>
-    
-sysname xxx <span class="token comment" spellcheck="true">//配置名字</span>
-    
-dis users <span class="token comment" spellcheck="true">// 查看使用用户名</span>
-</code></pre>
-<p> 交换机可以隔离冲突域，路由器可以隔离广播域，这两种设备在企业网络中应用十分广泛，VRP（Versatile Routing Platfrom）通用路由平台是华为公司数据通信产品的通用操作系统平台。</p>
 <table>
 <thead>
 <tr>
-<th>管理形式</th>
+<th>命令</th>
 <th>备注</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>本地管理Local</td>
-<td>通过Console线连接Console或MINI USB口，终端使用==Serial协议==适合初始化，故障处理，系统升级，同时只能支持==一个会话。==</td>
-</tr>
-<tr>
-<td>远程管理Remote</td>
-<td>通过IP地址或域名联机虚拟==VTY口==，使用T==elnet或SSH协议==适合后期维护、异地管理、同时可以支持多个会话、</td>
+<td>ip route-static 0.0.0.0 0.0.0.0/0 下一跳地址/出接口</td>
+<td>配置缺省路由</td>
 </tr>
 </tbody></table>
-<h2 id="VRP基础配置"><a href="#VRP基础配置" class="headerlink" title="VRP基础配置"></a>VRP基础配置</h2><p> 设备初始化启动：</p>
-<pre class=" language-java"><code class="language-java">dis ip <span class="token keyword">int</span> b <span class="token comment" spellcheck="true">//</span>
+<h3 id="缺省路由配置"><a href="#缺省路由配置" class="headerlink" title="缺省路由配置"></a><strong>缺省路由配置</strong></h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210402102900197.png" alt="image-20210402102900197"></p>
+<ul>
+<li>缺省路由是目标网络和掩码都为0的特殊路由；</li>
+<li>如果报文的目标地址无法匹配路由表中的任何一项，路由器将选择依照缺省路由来转发报文</li>
+</ul>
+<h2 id="Loopback接口"><a href="#Loopback接口" class="headerlink" title="Loopback接口"></a>Loopback接口</h2><p><strong>回环口，逻辑的、虚拟的接口；</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210402103422820.png" alt="image-20210402103422820"></p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>interface loopback 编号</td>
+<td>创建或配置一个回环口，创建后，默认up</td>
+</tr>
+<tr>
+<td>作用</td>
+<td>==模拟直连网段==，可用于测试；设备管理（稳定）；供其他协议使用（ospf、bgp、mpls等）SNMP Traps消息的源地址；其他用途（用途十分广泛）</td>
+</tr>
+</tbody></table>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> lo <span class="token number">2</span> <span class="token comment" spellcheck="true">// 进入回环口2</span>
+
+ip add xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx aa <span class="token comment" spellcheck="true">// 配置IP地址</span>
+  
+dis ip routing<span class="token operator">-</span>table  <span class="token comment" spellcheck="true">// 查看路由表</span>
+  
+dis ip <span class="token keyword">int</span> b <span class="token comment" spellcheck="true">// 查看接口 ip地址</span>
+  
+<span class="token comment" spellcheck="true">//网关就是一条缺省路由</span>
+<span class="token comment" spellcheck="true">//本地网络不需要网关</span>
+  
+<span class="token comment" spellcheck="true">//windows添加静态路由</span>
+rpute print  
+route add xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx aa yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy 
+  
+ipconfig <span class="token operator">/</span>release <span class="token comment" spellcheck="true">// 去除网卡(适配器1)的动态IP地址</span>
+  
+ipconfig <span class="token operator">/</span>renew <span class="token comment" spellcheck="true">//为网卡重新动态分配IP地址</span>
+  
+ipconfig <span class="token operator">/</span>all <span class="token comment" spellcheck="true">//显示所有网络适配器（网卡）TCP/IP配置</span>
+  
+netsh winsock set <span class="token comment" spellcheck="true">//重置 Winsock 目录,重置网络编程接口</span>
+  
+netsh winhttp  reset  proxy <span class="token comment" spellcheck="true">// 解除代理设置</span>
+  
+netsh <span class="token keyword">int</span> ip  reset  c<span class="token operator">:</span><span class="token operator">/</span>catalog<span class="token punctuation">.</span>txt <span class="token comment" spellcheck="true">// 重置IP 设置，恢复到默认自动获取IP 和DNS 服务器地址。</span>
+  
+nslookup 域名 <span class="token comment" spellcheck="true">//查询一台机器的IP地址和其对应的域名,通常它能监测网络中DNS服务器是否能正确实现域名解析它。</span>
+  
+ping <span class="token operator">-</span>a yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx  <span class="token comment" spellcheck="true">//y为源IP，x为目的IP</span>
+
+
 </code></pre>
-<h3 id="命令行视图"><a href="#命令行视图" class="headerlink" title="命令行视图"></a>命令行视图</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210330103550790.png" alt="image-20210330103550790"></p>
-<h3 id="命令行帮助"><a href="#命令行帮助" class="headerlink" title="命令行帮助"></a>命令行帮助</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210330103854224.png" alt="image-20210330103854224"></p>
-<h3 id="命令快捷键"><a href="#命令快捷键" class="headerlink" title="命令快捷键"></a>命令快捷键</h3><pre class=" language-java"><code class="language-java">ctrl <span class="token operator">+</span> a <span class="token comment" spellcheck="true">//把光标移动到当前命令行的最前端</span>
+<p>小工具：IPOP配置路由的工具；</p>
+<h2 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h2><p><strong>路由协议概述：</strong></p>
+<ul>
+<li>路由器之间交互信息的一种语言；</li>
+<li>共享路由信息；</li>
+<li>维护路由表、提供最佳转发路径；</li>
+</ul>
+<p><strong>路由协议总览</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210402121748882.png" alt="image-20210402121748882"></p>
+<h3 id="动态路由的分类："><a href="#动态路由的分类：" class="headerlink" title="动态路由的分类："></a>动态路由的分类：</h3><p> <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210402141714721.png" alt="image-20210402141714721"></p>
+<pre class=" language-java"><code class="language-java">show ip bgp sum <span class="token comment" spellcheck="true">//查看bgp的总和 </span>
+  
+CNNIC <span class="token comment" spellcheck="true">// 中国互联网信息中心</span>
+  
  
-ctrl <span class="token operator">+</span> e <span class="token comment" spellcheck="true">//把光标移动到当前命令的最后端    </span>
-ctrl <span class="token operator">+</span> c <span class="token comment" spellcheck="true">//停止当前命令的运行</span>
-    
-ctrl <span class="token operator">+</span> z <span class="token comment" spellcheck="true">//回到用户视图</span>
-    
-ctrl <span class="token operator">+</span> <span class="token punctuation">]</span> <span class="token comment" spellcheck="true">//终止当前连接或切换连接    </span>
 </code></pre>
-<h3 id="视图的切换"><a href="#视图的切换" class="headerlink" title="视图的切换"></a>视图的切换</h3><table>
+<table>
 <thead>
 <tr>
-<th>命令</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>system-view</td>
-<td>从用户视图进入系统视图</td>
-</tr>
-<tr>
-<td>quit</td>
-<td>从系统视图返回到用户视图</td>
-</tr>
-<tr>
-<td>return</td>
-<td>从任意的非用户视图返回到用户视图</td>
-</tr>
-</tbody></table>
-<pre class=" language-java"><code class="language-java">sys <span class="token comment" spellcheck="true">// 系统视图</span>
-    
-<span class="token keyword">int</span>    lo <span class="token number">1</span> <span class="token comment" spellcheck="true">//配置接口</span>
-    
-ospf <span class="token number">1</span> <span class="token comment" spellcheck="true">//配置路由</span>
-    
-sys xxx <span class="token comment" spellcheck="true">//自定义名字</span>
-    
-<span class="token comment" spellcheck="true">//配置IP地址，首先需要进接口模式</span>
-<span class="token keyword">int</span> lo <span class="token number">1</span>
-    ip add xxx<span class="token punctuation">.</span>xx<span class="token punctuation">.</span>xx<span class="token punctuation">.</span>xx xx
-<span class="token comment" spellcheck="true">//配置其他模式的，先退出模式,再配置，也可以直接配置。</span>
-q
-
-<span class="token comment" spellcheck="true">//简写 = interface = int</span>
-<span class="token comment" spellcheck="true">//敲白板 </span>
-    
-
-    
-
-</code></pre>
-<h3 id="历史命令的调用"><a href="#历史命令的调用" class="headerlink" title="历史命令的调用"></a>历史命令的调用</h3><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>display history-command</td>
-<td>显示历史命令</td>
-</tr>
-<tr>
-<td>上光标</td>
-<td>调用上一条历史命令</td>
-</tr>
-<tr>
-<td>下光标</td>
-<td>调用吓一跳历史命令</td>
-</tr>
-</tbody></table>
-<p><strong>上下键 白板复制修改即可</strong></p>
-<pre class=" language-java"><code class="language-java">dis hi <span class="token operator">+</span> <span class="token string">"TAB"</span><span class="token operator">=</span> dis history command
-</code></pre>
-<h2 id="基本配置步骤"><a href="#基本配置步骤" class="headerlink" title="基本配置步骤"></a>基本配置步骤</h2><h3 id="配置设备名称"><a href="#配置设备名称" class="headerlink" title="配置设备名称"></a>配置设备名称</h3><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>sysname</td>
-<td>配置设备名称</td>
-</tr>
-</tbody></table>
-<h3 id="配置系统时钟"><a href="#配置系统时钟" class="headerlink" title="配置系统时钟"></a>配置系统时钟</h3><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>clock timezone</td>
-<td>设置所在时区</td>
-</tr>
-<tr>
-<td>clock datetime</td>
-<td>设置当前时间和日期</td>
-</tr>
-<tr>
-<td>clock daylight-saving-time</td>
-<td>设置采用夏时刻</td>
-</tr>
-</tbody></table>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//用户模式的状态下</span>
-clock timezone BJ add <span class="token number">08</span><span class="token operator">:</span><span class="token number">00</span><span class="token operator">:</span><span class="token number">00</span>
-    
-clock datetime <span class="token number">10</span><span class="token operator">:</span><span class="token number">20</span><span class="token operator">:</span><span class="token number">30</span> <span class="token number">2021</span><span class="token operator">-</span><span class="token number">03</span><span class="token operator">-</span><span class="token number">30</span>
-    
-display clock <span class="token comment" spellcheck="true">// 查看时间</span>
-    
-</code></pre>
-<h3 id="配置标题消息"><a href="#配置标题消息" class="headerlink" title="配置标题消息"></a>配置标题消息</h3><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>header login</td>
-<td>配置在用户登陆前显示的标题消息</td>
-</tr>
-<tr>
-<td>header shell</td>
-<td>配置在用户登录后显示的标题消息</td>
-</tr>
-</tbody></table>
-<pre class=" language-java"><code class="language-java">header login information <span class="token string">"xxxxx"</span><span class="token punctuation">;</span>
-
-header shell information <span class="token string">"xxxxx"</span><span class="token punctuation">;</span>
-
-header login information "<span class="token operator">/</span>回车
-    xxxxx
-    <span class="token operator">/</span>回车"
-</code></pre>
-<h2 id="用户界面"><a href="#用户界面" class="headerlink" title="用户界面"></a>用户界面</h2><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>display version</td>
-<td>显示系统版本</td>
-</tr>
-<tr>
-<td>display users</td>
-<td>显示已连接的终端用户</td>
-</tr>
-<tr>
-<td>display this</td>
-<td>显示当前视图的运行配置</td>
-</tr>
-<tr>
-<td>display diagnostic-information</td>
-<td>显示设备所有状态信息</td>
-</tr>
-</tbody></table>
-<pre class=" language-java"><code class="language-java">system<span class="token operator">-</span>view
-    
-user<span class="token operator">-</span><span class="token keyword">interface</span> <span class="token class-name">vty</span> <span class="token number">0</span> <span class="token number">4</span>
-    
-    
-</code></pre>
-<h3 id="配置用户界面命令"><a href="#配置用户界面命令" class="headerlink" title="配置用户界面命令"></a>配置用户界面命令</h3><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>idle-timeout</td>
-<td>设置超时时间</td>
-</tr>
-<tr>
-<td>screen-length</td>
-<td>设置指定终端屏幕的临时显示行数</td>
-</tr>
-<tr>
-<td>history-command max-size</td>
-<td>设置历史命令缓存区的大小</td>
-</tr>
-</tbody></table>
-<h3 id="配置登陆权限"><a href="#配置登陆权限" class="headerlink" title="配置登陆权限"></a>配置登陆权限</h3><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>user privilege</td>
-<td>配置指定用户界面下的用户级别</td>
-</tr>
-<tr>
-<td>set authentication password</td>
-<td>配置本地认证密码</td>
-</tr>
-</tbody></table>
-<h3 id="命令等级"><a href="#命令等级" class="headerlink" title="命令等级"></a>命令等级</h3><table>
-<thead>
-<tr>
-<th>用户等级</th>
-<th>命令等级</th>
-<th>名称</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0</td>
-<td>0</td>
-<td>访问级</td>
-</tr>
-<tr>
-<td>1</td>
-<td>0 1</td>
-<td>监控级</td>
-</tr>
-<tr>
-<td>2</td>
-<td>0 1 2</td>
-<td>配置级</td>
-</tr>
-<tr>
-<td>3-15</td>
-<td>0 1 2 3</td>
-<td>管理级</td>
-</tr>
-</tbody></table>
-<h3 id="配置接口IP地址"><a href="#配置接口IP地址" class="headerlink" title="配置接口IP地址"></a>配置接口IP地址</h3><table>
-<thead>
-<tr>
-<th>命令</th>
+<th>类型</th>
 <th>备注</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>display [IP] interface brief</td>
-<td>查看接口摘要信息</td>
+<td>IGP（Interior Gateway Protocol）内部网关协议</td>
+<td>用于一个AS内部交换路由信息RIP、OSPF、IS-IS</td>
+</tr>
+<tr>
+<td>EGP（Exterior Gateway Protocol）外部网关协议</td>
+<td>用于多个AS之间交换路由信息BGP</td>
+</tr>
+<tr>
+<td>AS（Autonomous System）自制系统</td>
+<td>处于单个管理机制下的网络（如：企业、电信、移动、联通）</td>
 </tr>
 </tbody></table>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 简称 dis int b </span>
-<span class="token comment" spellcheck="true">// *down=人为手动关闭</span>
-<span class="token comment" spellcheck="true">// undo 关闭命令</span>
-dis ip <span class="token keyword">int</span> b <span class="token comment" spellcheck="true">// 三层口，显示有IP</span>
-dis mac<span class="token operator">-</span>address
+<pre class=" language-java"><code class="language-java">rip <span class="token operator">?</span> <span class="token comment" spellcheck="true">// 进程号</span>
+ospf <span class="token operator">?</span> <span class="token comment" spellcheck="true">// 进程号</span>
+isis <span class="token operator">?</span> <span class="token comment" spellcheck="true">// 进程号</span>
+<span class="token comment" spellcheck="true">//中国电信骨干网 AS 4134</span>
+bgp <span class="token operator">?</span> <span class="token comment" spellcheck="true">// AS号</span>
 </code></pre>
-<h3 id="状态信息查询"><a href="#状态信息查询" class="headerlink" title="状态信息查询"></a>状态信息查询</h3><table>
+<h3 id="路由协议分类：根据协议分类"><a href="#路由协议分类：根据协议分类" class="headerlink" title="路由协议分类：根据协议分类"></a>路由协议分类：根据协议分类</h3><table>
 <thead>
 <tr>
-<th>命令</th>
-<th>功能</th>
+<th>类型</th>
+<th>备注</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>display version</td>
-<td>显示系统版本</td>
+<td>DV（Distance-Vector）距离矢量</td>
+<td>基于距离矢量算法，路由器并不了解网络拓扑结构类似路牌，道听途说如：RIP、EIGRP</td>
 </tr>
 <tr>
-<td>display users</td>
-<td>显示已连接的终端用户</td>
-</tr>
-<tr>
-<td>display this</td>
-<td>显示当前视图的运行配置</td>
-</tr>
-<tr>
-<td>==display diagnostic-information==</td>
-<td>显示设备所有状态信息</td>
+<td>LS（Link-State）链路状态</td>
+<td>基于SPF（Shortest Path First，最短路径优先）算法，路由器了解完整的网络拓扑结构，类似地图如OSPF、IS-IS</td>
 </tr>
 </tbody></table>
-<pre class=" language-java"><code class="language-java">d th <span class="token comment" spellcheck="true">//这个模块配置的东西</span>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210402150035241.png" alt="image-20210402150035241"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210402150119547.png" alt="image-20210402150119547"></p>
+<hr>
+<ul>
+<li>RIP：只看眼前</li>
+<li>LSA：链路状态宣告</li>
+<li>OSPF：看带宽</li>
+<li>有类：不携带掩码；</li>
+<li>无类：携带掩码；</li>
+</ul>
+<h3 id="根据业务应用："><a href="#根据业务应用：" class="headerlink" title="根据业务应用："></a>根据业务应用：</h3><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Unicast Routing Protocol 单播路由协议</td>
+<td>如：RIP、EIGRP、OSPF、BGP、IS-IS</td>
+</tr>
+<tr>
+<td>Multicast Routing Protocol 组播路由协议</td>
+<td>如：DVMRP、PIM-SM、PIM-DM</td>
+</tr>
+</tbody></table>
+<h2 id="路由协议的操作规则"><a href="#路由协议的操作规则" class="headerlink" title="路由协议的操作规则"></a>路由协议的操作规则</h2><ul>
+<li>协议是在接口上运行的；</li>
+<li>只能学习和发布相同协议已知的路由信息；</li>
+<li>如果不同的路由协议间需要交换路由信息，就需要进行==注入（import）；==</li>
+</ul>
+<pre class=" language-java"><code class="language-java">rip <span class="token number">1</span> <span class="token comment" spellcheck="true">//创建进程</span>
+<span class="token comment" spellcheck="true">// 宣告方式一  </span>
+network xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx <span class="token comment" spellcheck="true">//宣告网络</span>
+<span class="token comment" spellcheck="true">// 注入方式二  </span>
+<span class="token comment" spellcheck="true">//在RIP 1接口环境下注入</span>
+  <span class="token keyword">import</span> route OSPF <span class="token number">1</span> 
+<span class="token comment" spellcheck="true">// ver 1 RIP v1 版本</span>
+<span class="token comment" spellcheck="true">// ver 2 RIP v2 版本</span>
+ 
 </code></pre>
-<p>说明：思科 show = display</p>
-<pre class=" language-java"><code class="language-java">display diagnostic<span class="token operator">-</span>information xxx<span class="token punctuation">.</span>txt <span class="token comment" spellcheck="true">//把显示信息保存在文件中</span>
+<h2 id="路由器收敛"><a href="#路由器收敛" class="headerlink" title="路由器收敛"></a>路由器收敛</h2><ul>
+<li>当所有路由表包含相同网络可达性信息</li>
+<li>网络（路由）进入一个稳定状态</li>
+<li>网络在达到收敛前无法完全正常工作</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>正确性</td>
+<td>能够正确找到最优的路由，且无闭环</td>
+</tr>
+<tr>
+<td>快收敛</td>
+<td>当拓扑结构发生变化之后，能够迅速作出相应的路由改变</td>
+</tr>
+<tr>
+<td>低开销</td>
+<td>协议自身的开销（内存、CPU、网络带宽）最小</td>
+</tr>
+<tr>
+<td>安全性</td>
+<td>协议自身不易受攻击，有安全机制</td>
+</tr>
+<tr>
+<td>普适性</td>
+<td>适应各种拓扑结构和各种规模的网络</td>
+</tr>
+</tbody></table>
+<h2 id="RIP"><a href="#RIP" class="headerlink" title="RIP"></a>RIP</h2><p>路由信息协议（Routing Information Protocol）的简称，它是一种基于距离矢量（Distance Vector）算法的协议，使用跳数作为度量来衡量到达目的网络的距离。RIP主要应用于规模较小的网络中。</p>
+<h3 id="特点："><a href="#特点：" class="headerlink" title="特点："></a><strong>特点：</strong></h3><ul>
+<li>距离矢量路由协议，属于IGP协议；</li>
+<li>适用于中小型网络，有RIPV1和RIPv2两个版本；</li>
+<li>基于UDP，目标端口号520；</li>
+<li>周期性更新约30s一次；</li>
+<li>支持水平分割。毒性逆转和触发更新等防环特性；</li>
+</ul>
+<h3 id="工作原理："><a href="#工作原理：" class="headerlink" title="工作原理："></a><strong>工作原理：</strong></h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210402155816266.png" alt="image-20210402155816266"></p>
+<ul>
+<li>路由器运行RIP后，会首先发送路由器更新请求，受到请求的路由器会发送自己的RIP路由进行响应。</li>
+<li>网络稳定后，路由器会周期性发送路由更新信息。</li>
+</ul>
+<h3 id="RIP-度量"><a href="#RIP-度量" class="headerlink" title="RIP-度量"></a><strong>RIP-度量</strong></h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210402160205421.png" alt="image-20210402160205421"></p>
+<ul>
+<li><p>RIP使用跳数作为度量值来衡量到达目的网络的距离；</p>
+</li>
+<li><p>缺省情况下，直连网络的路由跳数为0，当路由器发送路由更新时，会把度量值加1；</p>
+</li>
+<li><p>RIP规定超过15跳为网络不可达；</p>
+</li>
+<li><p>组播地址：224~239</p>
+</li>
+<li><p>RIP V1广播，V2组播</p>
+</li>
+</ul>
+<h3 id="RIPv1和RIP-v2的区别"><a href="#RIPv1和RIP-v2的区别" class="headerlink" title="RIPv1和RIP v2的区别"></a><strong>RIPv1和RIP v2的区别</strong></h3><hr>
+<p>RIPv1是有类路由协议，不支持VLSM和CIDR；</p>
+<p>以广播的形式发送报文；</p>
+<p>不支持认证；</p>
+<hr>
+<p>RIPv2是无类路由协议，支持VLSM支持路由聚合与CIDR；</p>
+<p>支持以广播或者组播（224.0.0.9）方式发送报文；</p>
+<p>支持明文认证和MD5密文认证；</p>
+<hr>
+<h3 id="RIP环路"><a href="#RIP环路" class="headerlink" title="RIP环路"></a>RIP环路</h3><p>当网络发生故障时，RIP网络有可能产生路由环路；</p>
+<h3 id="配置RIP"><a href="#配置RIP" class="headerlink" title="配置RIP"></a>配置RIP</h3><pre class=" language-java"><code class="language-java">rip <span class="token number">1</span>
+ver <span class="token number">2</span>
+net xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx <span class="token comment" spellcheck="true">// 宣告这个路由器的路由信息</span>
+net yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy <span class="token comment" spellcheck="true">// 等等</span>
 </code></pre>
-<h2 id="VRP远程管理"><a href="#VRP远程管理" class="headerlink" title="VRP远程管理"></a>VRP远程管理</h2><h3 id="telnet应用场景"><a href="#telnet应用场景" class="headerlink" title="telnet应用场景"></a>telnet应用场景</h3><p><strong>Telnet可以通过终端对本地和远程的网络设备进行集中管理</strong></p>
 
         </div>
 
@@ -908,6 +660,8 @@ dis mac<span class="token operator">-</span>address
               
               <a href="/tags/%E7%AC%94%E8%AE%B0/" style="color: #716e77;">笔记<em>·</em></a>
               
+              <a href="/tags/RIP/" style="color: #716e77;">RIP<em>·</em></a>
+              
             </span>
             <span>
               <i class="iconfont icon-file"></i>
@@ -934,36 +688,19 @@ dis mac<span class="token operator">-</span>address
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-        
-        <div class="post-nepre half previous">
-          
-            <a href="/post/dbc0.html" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing15.jpg"
-                  style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
-                  src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing15.jpg">
-              </div>
-              <span class="label">Previous Post</span>
-              <div class="info">
-                <h3>HCIA学习笔记3</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
           
           
-          
-          <div class="post-nepre half next">
-            
-              <a href="/post/1a41.html" rel="next">
+            <div class="post-nepre full next">
+              
+              <a href="/post/dbc0.html" rel="next">
                 <div class="background">
-                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing10.jpg"
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing15.jpg"
                     style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
-                    onerror="imgError(this,3)" src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing10.jpg">
+                    onerror="imgError(this,3)" src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing15.jpg">
                 </div>
                 <span class="label">Next Post</span>
                 <div class="info">
-                  <h3>HCIA学习笔记1</h3>
+                  <h3>HCIA学习笔记3</h3>
                   <hr>
                 </div>
               </a>
