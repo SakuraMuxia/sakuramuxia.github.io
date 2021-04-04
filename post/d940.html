@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Tag: RIP | 慢一点，才更快 | 雨落</title>
+  <title itemprop="name">HCIA学习笔记5 | 慢一点，才更快 | 雨落</title>
   
     <link rel="shortcut icon" href="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tubiao.ico">
   
@@ -280,118 +280,516 @@
 
       
       <!-- body -->
-      
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/cungudafa/cdn/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="RIP.img" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+
+<div class="pattern-center single-center">
+  <!-- 有配图默认渲染第一张 -->
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://gitee.com/sakuramiko35/image/raw/master/blog-home/biaoti2.jpg);"
+    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/biaoti2.jpg">
   </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">RIP</h1>
-    <br>
-    <span class="post-meta-item-icon">
-      <i class="iconfont icon-attention"></i>
-    </span>
-    <span class="post-meta-item-text"><span id="busuanzi_value_page_pv"> </span>
-    </span>
+  <header class="pattern-header single-header">
+    <h1 class="entry-title">HCIA学习笔记5</h1>
+    <p class="entry-census">
+      
+      <span class="post-meta-item">
+        <a href="">
+          <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tx.jpg">
+        </a>
+      </span>
+      
+      
+      <span class="post-meta-item">
+        <a href=""> SakuraMuxia </a>
+      </span>
+      <span class="bull">
+        ·</span>
+      
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-calendar"></i>
+        </span>
+        <span class="post-meta-item-text"> 2021-4-3 </span>
+      </span>
+      <span class="bull">
+        ·</span>
+      <!-- 浏览数显示 -->
+      <span class="post-meta-item" >
+        <span class="post-meta-item-icon">
+          <i class="iconfont icon-attention"></i>
+        </span>
+        <span class="post-meta-item-text">本文共<span id="busuanzi_value_page_pv"> </span>次阅读
+        </span>
+      </span>
+      <span class="bull">
+        ·</span>
+      <!-- 字数统计-->
+      <span class="post-meta-item" >
+
+        
+      </span>
+      <span class="bull">
+        ·</span>
+      <!-- 评论数显示 -->
+      <!-- <span class="post-meta-item" >
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              </span class="post-meta-item-text">
+                <span class="valine-comment-count" data-xid="/d940"> </span>
+              </span>
+          </span> -->
+    </p>
   </header>
 </div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      
-    <!-- 置顶文章 -->
-    
-      
-    
-      
-    
-    <!-- 首页默认取最最新文章集 -->
-    
-      <!-- 其余文章 -->
-      
-        <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/post/d940.html">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
+      <article id="post-1"
+        class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content">  -->
+        <!--套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="//music.163.com/outchain/player?type=3&amp;id=2059751642&amp;auto=1&amp;height=32"></iframe>
+
+<h2 id="RIP环路"><a href="#RIP环路" class="headerlink" title="RIP环路"></a>RIP环路</h2><p>当网络发生故障时，RIP网络有可能产生路由环路；</p>
+<h2 id="配置RIP"><a href="#配置RIP" class="headerlink" title="配置RIP"></a>配置RIP</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210403233742851.png" alt="image-20210403233742851"></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> lo x
+
+
+rip <span class="token number">1</span> <span class="token comment" spellcheck="true">//进程号 ，进程号之间互相独立</span>
+ver <span class="token number">2</span> <span class="token comment" spellcheck="true">//版本</span>
+net xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx <span class="token comment" spellcheck="true">// 宣告这个路由器的路由信息</span>
+net yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy <span class="token comment" spellcheck="true">// 等等</span>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>RIP 1</td>
+<td>开启rip进程，进程缺省为1</td>
+</tr>
+<tr>
+<td>version 2</td>
+<td>开启RIPv2</td>
+</tr>
+<tr>
+<td>network xxx.xxx.xxx.xxx</td>
+<td>宣告网络，即指定运行RIP的接口，只需要输入接口的==主类网络地址==即可；只有处于此网络中的接口，才能进行RIP报文的接收和发送；</td>
+</tr>
+<tr>
+<td>rip metricin 5</td>
+<td>在接收路由时增加度量值</td>
+</tr>
+<tr>
+<td>rip metricout 5</td>
+<td>在发送路由时修改度量值</td>
+</tr>
+<tr>
+<td>rip split-horizon</td>
+<td>开启水平分割，默认开启</td>
+</tr>
+<tr>
+<td>rip poison-reverse</td>
+<td>开启毒性反转，默认关闭</td>
+</tr>
+<tr>
+<td>==undo rip input==</td>
+<td>==禁止接收RIP数据包==</td>
+</tr>
+<tr>
+<td>==undo rip output==</td>
+<td>==禁止发送rip数据包==//触发更新</td>
+</tr>
+<tr>
+<td>==silent-interface g0/0/0==</td>
+<td>==配置被动接口，只收不发==</td>
+</tr>
+<tr>
+<td>display rip</td>
+<td>验证rip信息</td>
+</tr>
+<tr>
+<td>display rip int g0/0/0 verbose</td>
+<td>验证rip接口相信信息</td>
+</tr>
+</tbody></table>
+<h3 id="RIP配置-output"><a href="#RIP配置-output" class="headerlink" title="RIP配置-output"></a>RIP配置-output</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210403235553929.png" alt="image-20210403235553929"></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//进入对应的接口</span>
+undo rip output <span class="token comment" spellcheck="true">//设置禁止发送rip报文</span>
+</code></pre>
+<p><strong>配置路由器的g0/0/0 接口禁止发送RIP报文</strong></p>
+<h3 id="RIP配置-抑制接口"><a href="#RIP配置-抑制接口" class="headerlink" title="RIP配置-抑制接口"></a>RIP配置-抑制接口</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210404000425786.png" alt="image-20210404000425786"></p>
+<ul>
+<li><strong>配置g0/0/0接口为抑制状态，只接受RIP报文，不发，被动接口；</strong></li>
+<li><strong>此命令的优先级大于rip input 和rip output；</strong></li>
+</ul>
+<h2 id="环路避免"><a href="#环路避免" class="headerlink" title="环路避免"></a>环路避免</h2><h3 id="环路避免-水平分割"><a href="#环路避免-水平分割" class="headerlink" title="环路避免-水平分割"></a>环路避免-水平分割</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210403221427526.png" alt="image-20210403221427526"></p>
+<ul>
+<li>路由器从某个接口学到的路由，不会从该路由再发回给邻居路由器。</li>
+</ul>
+<pre class=" language-java"><code class="language-java">rip split<span class="token operator">-</span>horizon <span class="token comment" spellcheck="true">// RIP水平分割 </span>
+</code></pre>
+<h3 id="环路避免-触发更新"><a href="#环路避免-触发更新" class="headerlink" title="环路避免-触发更新"></a>环路避免-触发更新</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210403231307000.png" alt="image-20210403231307000"></p>
+<ul>
+<li>触发更新是指当路由信息发生变化时，立即向邻居设备发送触发更新报文；</li>
+</ul>
+<h3 id="环路避免-毒性反转"><a href="#环路避免-毒性反转" class="headerlink" title="环路避免-毒性反转"></a>环路避免-毒性反转</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210403232738125.png" alt="image-20210403232738125"></p>
+<ul>
+<li>毒性反转是指路由器从某个接口学到路由后，将该接口的跳数设置为16，并从原接收口发回给邻居路由器；</li>
+</ul>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> 
+rip posion<span class="token operator">-</span>reverse <span class="token comment" spellcheck="true">//开启毒性反转 默认关闭，打开后水平分割失效，毒性反转生效；</span>
+</code></pre>
+<h3 id="查看RIP详细信息"><a href="#查看RIP详细信息" class="headerlink" title="查看RIP详细信息"></a>查看RIP详细信息</h3><pre class=" language-java"><code class="language-java">dis rip <span class="token number">1</span> <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//查看rip对应接口信息</span>
+dis rip <span class="token number">1</span> <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> verbose <span class="token comment" spellcheck="true">//查看rip对应接口详细信息 </span>
+dis rip <span class="token number">1</span> <span class="token comment" spellcheck="true">// 查看rip1信息</span>
+</code></pre>
+<h3 id="RIP-调整度量值"><a href="#RIP-调整度量值" class="headerlink" title="RIP-调整度量值"></a>RIP-调整度量值</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210404002150674.png" alt="image-20210404002150674"></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">// 进入相关的接口</span>
+rip metricout <span class="token number">2</span> <span class="token comment" spellcheck="true">// 在发送路由时修改度量值为2 </span>
+</code></pre>
+<p><strong>说明：所有的改变都是为了选路</strong></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//进入相关的接口</span>
+rip metricin <span class="token number">2</span> <span class="token comment" spellcheck="true">// 在接收路由的时候增加度量值为2 1+2 到接收路由器时已经变为3</span>
+  
+acl <span class="token number">2000</span> <span class="token comment" spellcheck="true">// acl的作用是 匹配路由</span>
+rule <span class="token number">1</span> permit so xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx <span class="token number">0</span> <span class="token comment" spellcheck="true">// 创建规则，允许x通过路由</span>
+
+filter<span class="token operator">-</span>policy <span class="token number">2000</span> <span class="token keyword">import</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">// 增加一个策略 2000 入方向 接口  </span>
+</code></pre>
+<h2 id="OSPF动态路由"><a href="#OSPF动态路由" class="headerlink" title="OSPF动态路由"></a>OSPF动态路由</h2><p>开放式最短路径优先OSPF（Open Shortest Path First）协议是IETF定义的一种基于链路状态的内部网络路由协议。</p>
+<p>RIP是一种基于距离矢量算法的路由协议，存在着收敛慢，易产生路由环路、可拓展性差等问题，目前已逐渐被OSPF取代。</p>
+<p>OSPF概述：Open Shortest Path First 开放最短路径优先</p>
+<ul>
+<li>大中型网络上使用最为广泛的IGP协议；</li>
+<li>链路状态路由协议</li>
+<li>无类</li>
+<li>使用组播（224.0.0.5 和224.0.0.6）</li>
+<li>收敛较快</li>
+<li>以开销（cost）作为度量值；</li>
+<li>采用的SPF算法可以有效的避免环路；</li>
+<li>触发式更新（以较低的频率（每30分钟）发送定期更新，被称为链路状态泛洪）</li>
+<li>区域的设计使得OSPF能够支持更大规模的网络</li>
+<li>通过LSA的形式发布路由</li>
+<li>不支持自动汇总，支持手动汇总</li>
+</ul>
+<p><strong>LSA代表路况</strong></p>
+<h3 id="汇总"><a href="#汇总" class="headerlink" title="汇总"></a>汇总</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210404210215450.png" alt="image-20210404210215450"></p>
+<ul>
+<li>把 4个同网段的IP汇总到一个</li>
+</ul>
+<h3 id="OSPF区域概述"><a href="#OSPF区域概述" class="headerlink" title="OSPF区域概述"></a>OSPF区域概述</h3><table>
+<thead>
+<tr>
+<th>术语</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>区域（Area）</td>
+<td>为了适应大型的网络，OSPF在AS内划分多个区域，区域是以==接口为单位==来划分的，==每个OSPF路由器只维护所在区域的完整链路状态信息==</td>
+</tr>
+<tr>
+<td>区域ID（Area ID）</td>
+<td>可以表示成一个十进制的数字，如1，也可以表示成一个IP，如0.0.0.1</td>
+</tr>
+<tr>
+<td>区域优点</td>
+<td>==尽量减少路由表条目，使拓扑变化仅影响本区域内部==</td>
+</tr>
+</tbody></table>
+<pre class=" language-java"><code class="language-java">ospf <span class="token number">1</span> <span class="token comment" spellcheck="true">// 创建进程</span>
+area x<span class="token comment" spellcheck="true">// 2的32次方</span>
+</code></pre>
+<h3 id="区域的类型"><a href="#区域的类型" class="headerlink" title="区域的类型"></a>区域的类型</h3><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>骨干区域</td>
+<td>Area0，核心区域也叫==传输区域==（负责在不同的非骨干区域之间分发路由信息）</td>
+</tr>
+<tr>
+<td>非骨干区域</td>
+<td>非Area 0 也称为常规区域</td>
+</tr>
+<tr>
+<td>PS</td>
+<td>==所有其他非骨干区域必须和骨干区域直接相连==</td>
+</tr>
+</tbody></table>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210404212657777.png" alt="image-20210404212657777"> </p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210404212708474.png" alt="image-20210404212708474"></p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IR</td>
+<td>Internal Route，内部路由器，==所有的接口都属于同一区域==</td>
+</tr>
+<tr>
+<td>BR</td>
+<td>Backbone Router，骨干路由器，至少有一个接口属于骨干区域</td>
+</tr>
+<tr>
+<td>ABR</td>
+<td>Area Border Router，区域边界路由器，连接一个或者多个区域到骨干区域，至少有一个接口属于骨干区域</td>
+</tr>
+<tr>
+<td>ASBR</td>
+<td>Autonomous System Border Router 自治系统边界路由器 把从其他路由器协议学习到的路由以引入的方式到OSPF进程中</td>
+</tr>
+<tr>
+<td>PS</td>
+<td>一台路由器可以同时属于多种类型</td>
+</tr>
+</tbody></table>
+
         </div>
-        <img width="150" height="150" src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/biaoti2.jpg"
-          class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="">
-      </a>
-    </div>
-    <h1 class="entry-title">
-      <a href="/post/d940.html">
-        HCIA学习笔记5</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-      2021-4-3</div>
-    <p>
-      </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/post/d940.html">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-       
-    
-      <!-- 其余文章 -->
-      
-        <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/post/1981.html">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
+
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="null"></li>
+                <li class="wechat-code"><img src="null"></li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <img width="150" height="150" src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/biaoti1.jpg"
-          class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="">
-      </a>
-    </div>
-    <h1 class="entry-title">
-      <a href="/post/1981.html">
-        HCIA学习笔记4</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-      2021-4-2</div>
-    <p>
-      </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/post/1981.html">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-       
-    
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent">
+        </div>
+        <!-- 评分 -->
+        <div class="single-reward">
+          
+        </div>
+        <!-- 自定义署名方式 -->
+        <footer class="post-footer">
+          <div class="post-lincenses" style="color: #ff9966;">
+            欢迎转载，转载时请注明来源哦！
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" style="color: #ff9966;" target="_blank"
+              rel="nofollow">
+              <i class="fa fa-creative-commons" aria-hidden="true"></i>ncsa4.0</a>
+          </div>
+          
+          <div class="post-tags" style="color: #a39391">
+            <span><i class="fa fa-tags"></i>
+              
+              <a href="/tags/HCIA/" style="color: #716e77;">HCIA<em>·</em></a>
+              
+              <a href="/tags/%E7%AC%94%E8%AE%B0/" style="color: #716e77;">笔记<em>·</em></a>
+              
+              <a href="/tags/RIP/" style="color: #716e77;">RIP<em>·</em></a>
+              
+            </span>
+            <span>
+              <i class="iconfont icon-file"></i>
+              
+              <a href="/categories/%E6%8A%80%E6%9C%AF/" style="color: #716e77;">技术</a>
+              
+            </span>
+          </div>
+          
+          <div class="post-share" >
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+        <!-- <div class="tag-cloud">
+          <div class="tag-cloud-title">
+          </div>
+          <div class="tag-cloud-tags">
+            <a href="/tags/ARP/" style="font-size: 10px; color: #f06966">ARP</a> <a href="/tags/HCIA/" style="font-size: 16.67px; color: #769fbd">HCIA</a> <a href="/tags/RIP/" style="font-size: 13.33px; color: #b38491">RIP</a> <a href="/tags/java/" style="font-size: 10px; color: #f06966">java</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 20px; color: #39bae8">笔记</a>
+          </div>
+        </div> -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+          
+            <div class="post-nepre full next">
+              
+              <a href="/post/1981.html" rel="next">
+                <div class="background">
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/biaoti1.jpg"
+                    style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
+                    onerror="imgError(this,3)" src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/biaoti1.jpg">
+                </div>
+                <span class="label">Next Post</span>
+                <div class="info">
+                  <h3>HCIA学习笔记4</h3>
+                  <hr>
+                </div>
+              </a>
+            </div>
+            
+      </section>
+      <!-- 加密文章隐藏评论 -->
+      <section class="comment" >
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<div id="gitalk-container" class="comment"></div> 
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="/js/md5.min.js"></script>
+<script type="text/javascript">
+	var gitalk = new Gitalk({
+  	clientID: '9ae3a88cd97b7b9bd1fa',
+  	clientSecret: 'c12b84cd9d9609551630939716dc990cc7d5af00',
+  	repo: 'SakuraMuxia.github.io',
+  	owner: 'SakuraMuxia',
+	admin: ['SakuraMuxia'],
+	distractionFreeMode: 'true',
+    id: md5(location.pathname)
+})
+gitalk.render('gitalk-container') 
+</script>
 
 
-
-      <div class="clearer">
-      </div>
-    </main>
-    <!--  -->
-    
-  </div>
+      </section>
+      <!-- 加密文章隐藏作者信息 -->
+      
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
+<!--评论配置-->
+
+
+    <div id="vcomments"></div>
+    <script src="https://unpkg.com/valine/dist/Valine.min.js"></script><!-- 最新版 -->
+    <style>
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("https://gitee.com/cungudafa/source/raw/master/img/gif/Sitich/Sitich2.gif") 100% 100% no-repeat;
+    }
+    </style>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            enableQQ: true,
+            boolean: true,
+            appId: 'pJf0nLlIFPsrFbqcB2InonHd-gzGzoHsz',
+            appKey: 'RoAvgTeWI8wX4B5wXo6jB2YV',
+            //notify: 'false' === 'true',
+            //verify: 'true' === 'true',
+            visitor: 'false' === 'true',
+            avatar: 'monsterid',
+            pageSize: '10',
+            lang: 'zh-cn',
+            placeholder: '大家文明留言哈~',
+            requiredFields: ['nick','mail'], //设置必填项
+            // 设置Bilibili表情包地址
+            emojiCDN: '//i0.hdslb.com/bfs/emote/', 
+            // 表情title和图片映射
+            emojiMaps: {
+            "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+            "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+            "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+            "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+            "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+            "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+            "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+            "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+            "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+            "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+            "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+            "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+            "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+            "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+            "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+            "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+            "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+            "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+            "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+            "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+            "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+            "tv_打脸": "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+            "tv_抓狂": "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+            "tv_抠鼻": "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+            "tv_斜眼笑": "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+            "tv_无奈": "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+            "tv_晕": "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+            "tv_流汗": "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+            "tv_流泪": "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+            "tv_流鼻血": "c32d39db2737f89b904ca32700d140a9241b0767.png",
+            "tv_点赞": "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+            "tv_生气": "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+            "tv_生病": "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+            "tv_疑问": "0793d949b18d7be716078349c202c15ff166f314.png",
+            "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+            "tv_皱眉": "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+            "tv_目瞪口呆": "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+            "tv_睡着": "8b196675b53af58264f383c50ad0945048290b33.png",
+            "tv_笑哭": "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+            "tv_腼腆": "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+            "tv_色": "61822c7e9aae5da76475e7892534545336b23a6f.png",
+            "tv_调侃": "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+            "tv_调皮": "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+            "tv_鄙视": "6e72339f346a692a495b123174b49e4e8e781303.png",
+            "tv_闭嘴": "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+            "tv_难过": "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+            "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+            "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+            "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+            "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+                // ... 更多表情
+            }
+        });
+    </script>
+
+    <!-- 
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        jinrishici.load(function(result) {
+            var jrsc_plac =  result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin.dynasty + " · " + result.data.origin.author;
+            document.getElementById("veditor").setAttribute("placeholder",jrsc_plac);
+        })
+    </script>
+     -->
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<div id="gitalk-container" class="comment"></div> 
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="/js/md5.min.js"></script>
+<script type="text/javascript">
+	var gitalk = new Gitalk({
+  	clientID: '9ae3a88cd97b7b9bd1fa',
+  	clientSecret: 'c12b84cd9d9609551630939716dc990cc7d5af00',
+  	repo: 'SakuraMuxia.github.io',
+  	owner: 'SakuraMuxia',
+	admin: ['SakuraMuxia'],
+	distractionFreeMode: 'true',
+    id: md5(location.pathname)
+})
+gitalk.render('gitalk-container') 
+</script>
+
+
+
       <!-- body.end -->
     </div>
     <!-- search -->    
