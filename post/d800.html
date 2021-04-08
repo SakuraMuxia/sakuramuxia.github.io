@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">HCIA学习笔记5 | 慢一点，才更快 | 雨落</title>
+  <title itemprop="name">HCIA学习笔记6 | 慢一点，才更快 | 雨落</title>
   
     <link rel="shortcut icon" href="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tubiao.ico">
   
@@ -286,22 +286,22 @@
 
 <div class="pattern-center single-center">
   <!-- 有配图默认渲染第一张 -->
-  <div class="pattern-attachment-img lazyload" style="background-image: url(https://gitee.com/sakuramiko35/image/raw/master/blog-home/biaoti2.jpg);"
-    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/biaoti2.jpg">
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/beijing16.jpg);"
+    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/beijing16.jpg">
   </div>
   <header class="pattern-header single-header">
-    <h1 class="entry-title">HCIA学习笔记5</h1>
+    <h1 class="entry-title">HCIA学习笔记6</h1>
     <p class="entry-census">
       
       <span class="post-meta-item">
         <a href="">
-          <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/touxiang1.jpg">
+          <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tx.jpg">
         </a>
       </span>
       
       
       <span class="post-meta-item">
-        <a href=""> 湊あくあ </a>
+        <a href=""> SakuraMuxia </a>
       </span>
       <span class="bull">
         ·</span>
@@ -310,7 +310,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-calendar"></i>
         </span>
-        <span class="post-meta-item-text"> 2021-4-3 </span>
+        <span class="post-meta-item-text"> 2021-4-8 </span>
       </span>
       <span class="bull">
         ·</span>
@@ -337,7 +337,7 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               </span class="post-meta-item-text">
-                <span class="valine-comment-count" data-xid="/d940"> </span>
+                <span class="valine-comment-count" data-xid="/d800"> </span>
               </span>
           </span> -->
     </p>
@@ -354,139 +354,8 @@
         <!--套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=3&amp;id=2059751642&amp;auto=0&amp;height=66"></iframe>
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=413961906&amp;auto=0&amp;height=66"></iframe>
 
-<h2 id="RIP环路"><a href="#RIP环路" class="headerlink" title="RIP环路"></a>RIP环路</h2><p>当网络发生故障时，RIP网络有可能产生路由环路；</p>
-<h2 id="配置RIP"><a href="#配置RIP" class="headerlink" title="配置RIP"></a>配置RIP</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210403233742851.png" alt="image-20210403233742851"></p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> lo x
-
-
-rip <span class="token number">1</span> <span class="token comment" spellcheck="true">//进程号 ，进程号之间互相独立</span>
-ver <span class="token number">2</span> <span class="token comment" spellcheck="true">//版本</span>
-net xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx <span class="token comment" spellcheck="true">// 宣告这个路由器的路由信息</span>
-net yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy <span class="token comment" spellcheck="true">// 等等</span>
-</code></pre>
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>RIP 1</td>
-<td>开启rip进程，进程缺省为1</td>
-</tr>
-<tr>
-<td>version 2</td>
-<td>开启RIPv2</td>
-</tr>
-<tr>
-<td>network xxx.xxx.xxx.xxx</td>
-<td>宣告网络，即指定运行RIP的接口，只需要输入接口的==主类网络地址==即可；只有处于此网络中的接口，才能进行RIP报文的接收和发送；</td>
-</tr>
-<tr>
-<td>rip metricin 5</td>
-<td>在接收路由时增加度量值</td>
-</tr>
-<tr>
-<td>rip metricout 5</td>
-<td>在发送路由时修改度量值</td>
-</tr>
-<tr>
-<td>rip split-horizon</td>
-<td>开启水平分割，默认开启</td>
-</tr>
-<tr>
-<td>rip poison-reverse</td>
-<td>开启毒性反转，默认关闭</td>
-</tr>
-<tr>
-<td>==undo rip input==</td>
-<td>==禁止接收RIP数据包==</td>
-</tr>
-<tr>
-<td>==undo rip output==</td>
-<td>==禁止发送rip数据包==//触发更新</td>
-</tr>
-<tr>
-<td>==silent-interface g0/0/0==</td>
-<td>==配置被动接口，只收不发==</td>
-</tr>
-<tr>
-<td>display rip</td>
-<td>验证rip信息</td>
-</tr>
-<tr>
-<td>display rip int g0/0/0 verbose</td>
-<td>验证rip接口相信信息</td>
-</tr>
-</tbody></table>
-<h3 id="RIP配置-output"><a href="#RIP配置-output" class="headerlink" title="RIP配置-output"></a>RIP配置-output</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210403235553929.png" alt="image-20210403235553929"></p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//进入对应的接口</span>
-undo rip output <span class="token comment" spellcheck="true">//设置禁止发送rip报文</span>
-</code></pre>
-<p><strong>配置路由器的g0/0/0 接口禁止发送RIP报文</strong></p>
-<h3 id="RIP配置-抑制接口"><a href="#RIP配置-抑制接口" class="headerlink" title="RIP配置-抑制接口"></a>RIP配置-抑制接口</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210404000425786.png" alt="image-20210404000425786"></p>
-<ul>
-<li><strong>配置g0/0/0接口为抑制状态，只接受RIP报文，不发，被动接口；</strong></li>
-<li><strong>此命令的优先级大于rip input 和rip output；</strong></li>
-</ul>
-<h2 id="环路避免"><a href="#环路避免" class="headerlink" title="环路避免"></a>环路避免</h2><h3 id="环路避免-水平分割"><a href="#环路避免-水平分割" class="headerlink" title="环路避免-水平分割"></a>环路避免-水平分割</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210403221427526.png" alt="image-20210403221427526"></p>
-<ul>
-<li>路由器从某个接口学到的路由，不会从该路由再发回给邻居路由器。</li>
-</ul>
-<pre class=" language-java"><code class="language-java">rip split<span class="token operator">-</span>horizon <span class="token comment" spellcheck="true">// RIP水平分割 </span>
-</code></pre>
-<h3 id="环路避免-触发更新"><a href="#环路避免-触发更新" class="headerlink" title="环路避免-触发更新"></a>环路避免-触发更新</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210403231307000.png" alt="image-20210403231307000"></p>
-<ul>
-<li>触发更新是指当路由信息发生变化时，立即向邻居设备发送触发更新报文；</li>
-</ul>
-<h3 id="环路避免-毒性反转"><a href="#环路避免-毒性反转" class="headerlink" title="环路避免-毒性反转"></a>环路避免-毒性反转</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210403232738125.png" alt="image-20210403232738125"></p>
-<ul>
-<li>毒性反转是指路由器从某个接口学到路由后，将该接口的跳数设置为16，并从原接收口发回给邻居路由器；</li>
-</ul>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> 
-rip posion<span class="token operator">-</span>reverse <span class="token comment" spellcheck="true">//开启毒性反转 默认关闭，打开后水平分割失效，毒性反转生效；</span>
-</code></pre>
-<h3 id="查看RIP详细信息"><a href="#查看RIP详细信息" class="headerlink" title="查看RIP详细信息"></a>查看RIP详细信息</h3><pre class=" language-java"><code class="language-java">dis rip <span class="token number">1</span> <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//查看rip对应接口信息</span>
-dis rip <span class="token number">1</span> <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> verbose <span class="token comment" spellcheck="true">//查看rip对应接口详细信息 </span>
-dis rip <span class="token number">1</span> <span class="token comment" spellcheck="true">// 查看rip1信息</span>
-</code></pre>
-<h3 id="RIP-调整度量值"><a href="#RIP-调整度量值" class="headerlink" title="RIP-调整度量值"></a>RIP-调整度量值</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210404002150674.png" alt="image-20210404002150674"></p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">// 进入相关的接口</span>
-rip metricout <span class="token number">2</span> <span class="token comment" spellcheck="true">// 在发送路由时修改度量值为2 </span>
-</code></pre>
-<p><strong>说明：所有的改变都是为了选路</strong></p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//进入相关的接口</span>
-rip metricin <span class="token number">2</span> <span class="token comment" spellcheck="true">// 在接收路由的时候增加度量值为2 1+2 到接收路由器时已经变为3</span>
-  
-acl <span class="token number">2000</span> <span class="token comment" spellcheck="true">// acl的作用是 匹配路由</span>
-rule <span class="token number">1</span> permit so xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx <span class="token number">0</span> <span class="token comment" spellcheck="true">// 创建规则，允许x通过路由</span>
-
-filter<span class="token operator">-</span>policy <span class="token number">2000</span> <span class="token keyword">import</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">// 增加一个策略 2000 入方向 接口  </span>
-</code></pre>
-<h2 id="OSPF动态路由"><a href="#OSPF动态路由" class="headerlink" title="OSPF动态路由"></a>OSPF动态路由</h2><p>开放式最短路径优先OSPF（Open Shortest Path First）协议是IETF定义的一种基于链路状态的内部网络路由协议。</p>
-<p>RIP是一种基于距离矢量算法的路由协议，存在着收敛慢，易产生路由环路、可拓展性差等问题，目前已逐渐被OSPF取代。</p>
-<p>OSPF概述：Open Shortest Path First 开放最短路径优先</p>
-<ul>
-<li>大中型网络上使用最为广泛的IGP协议；</li>
-<li>链路状态路由协议</li>
-<li>无类</li>
-<li>使用组播（224.0.0.5 和224.0.0.6）</li>
-<li>收敛较快</li>
-<li>以开销（cost）作为度量值；</li>
-<li>采用的SPF算法可以有效的避免环路；</li>
-<li>触发式更新（以较低的频率（每30分钟）发送定期更新，被称为链路状态泛洪）</li>
-<li>区域的设计使得OSPF能够支持更大规模的网络</li>
-<li>通过LSA的形式发布路由</li>
-<li>不支持自动汇总，支持手动汇总</li>
-</ul>
-<p><strong>LSA代表路况</strong></p>
-<h3 id="汇总"><a href="#汇总" class="headerlink" title="汇总"></a>汇总</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210404210215450.png" alt="image-20210404210215450"></p>
-<ul>
-<li>把 4个同网段的IP汇总到一个</li>
-</ul>
 <h3 id="OSPF区域概述"><a href="#OSPF区域概述" class="headerlink" title="OSPF区域概述"></a>OSPF区域概述</h3><table>
 <thead>
 <tr>
@@ -504,7 +373,7 @@ filter<span class="token operator">-</span>policy <span class="token number">200
 </tr>
 <tr>
 <td>区域优点</td>
-<td>==尽量减少路由表条目，使拓扑变化仅影响本区域内部==</td>
+<td><strong>尽量减少路由表条目，使拓扑变化仅影响本区域内部</strong></td>
 </tr>
 </tbody></table>
 <pre class=" language-java"><code class="language-java">ospf <span class="token number">1</span> <span class="token comment" spellcheck="true">// 创建进程</span>
@@ -541,7 +410,7 @@ area x<span class="token comment" spellcheck="true">// 2的32次方</span>
 </thead>
 <tbody><tr>
 <td>IR</td>
-<td>Internal Route，内部路由器，==所有的接口都属于同一区域==</td>
+<td>Internal Route，内部路由器，<strong>所有的接口都属于同一区域</strong></td>
 </tr>
 <tr>
 <td>BR</td>
@@ -560,6 +429,244 @@ area x<span class="token comment" spellcheck="true">// 2的32次方</span>
 <td>一台路由器可以同时属于多种类型</td>
 </tr>
 </tbody></table>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406142244392.png" alt="image-20210406142244392"></p>
+<h3 id="OSPF核心工作流程："><a href="#OSPF核心工作流程：" class="headerlink" title="OSPF核心工作流程："></a>OSPF核心工作流程：</h3><ol>
+<li><p>发现并建立邻居；</p>
+</li>
+<li><p>传播LSA（区别于距离矢量的路由表更新）</p>
+<p>​        Link State Advertisement,链路状态宣告（路况信息）</p>
+<p>​        链路：路由器接口</p>
+<p>​        状态：描述接口信息（地址、掩码、开销、网络类型、邻居关系等）</p>
+</li>
+<li><p>将LSA泛洪到区域的所有OSPF路由器，而不是直连的路由器</p>
+</li>
+<li><p>收集LSA创建LSDB（链路状态数据库、地图）</p>
+</li>
+<li><p>使用SPF算法计算到每个目标网络的最短距离，并将其置于路由表中</p>
+</li>
+</ol>
+<pre class=" language-java"><code class="language-java">dis ospf peer <span class="token comment" spellcheck="true">// 查看ospf邻居</span>
+dis ospf lsdb <span class="token comment" spellcheck="true">// 查看数据库</span>
+dis ospf bri <span class="token comment" spellcheck="true">//查看OSPF信息</span>
+dis ip routing<span class="token operator">-</span>table<span class="token comment" spellcheck="true">//查看路由表</span>
+dis ip routing<span class="token operator">-</span>table protocol ospf <span class="token comment" spellcheck="true">//过滤ospf路由协议</span>
+<span class="token comment" spellcheck="true">//配置ospf</span>
+ospf x<span class="token comment" spellcheck="true">//创建进程</span>
+area x<span class="token comment" spellcheck="true">//创建区域</span>
+network xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy <span class="token comment" spellcheck="true">//宣告路由</span>
+</code></pre>
+<h4 id="发现邻居"><a href="#发现邻居" class="headerlink" title="发现邻居"></a>发现邻居</h4><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406160029411.png" alt="image-20210406160029411"></p>
+<h4 id="泛洪LSAs"><a href="#泛洪LSAs" class="headerlink" title="泛洪LSAs"></a>泛洪LSAs</h4><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406160323914.png" alt="image-20210406160323914"></p>
+<p>建立数据库 </p>
+<p>说明：LSDB是一种数据库</p>
+<h4 id="SPF算法"><a href="#SPF算法" class="headerlink" title="SPF算法"></a>SPF算法</h4><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406160514844.png" alt="image-20210406160514844"></p>
+<h4 id="生成路由"><a href="#生成路由" class="headerlink" title="生成路由"></a>生成路由</h4><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406160656594.png" alt="image-20210406160656594"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406160728394.png" alt="image-20210406160728394"></p>
+<h4 id="OSPF三张表"><a href="#OSPF三张表" class="headerlink" title="OSPF三张表"></a>OSPF三张表</h4><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406160816139.png" alt="image-20210406160816139"></p>
+<h3 id="Route-ID"><a href="#Route-ID" class="headerlink" title="Route ID"></a>Route ID</h3><ul>
+<li>运行OSPF协议前，必须选取一个RID；</li>
+<li>用来唯一标识一台OSPF路由器；</li>
+<li>RID可以手动配置，也可以自动生成；</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>规则</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>RID选取顺序规则</td>
+<td>1 手动配置（推荐） 2 活动回环接口IP地址最高的 3 活动物理接口上选取IP地址最高的</td>
+</tr>
+<tr>
+<td>PS</td>
+<td>RID选举具有非抢占性，，除非重启OSPF进程</td>
+</tr>
+</tbody></table>
+<p><strong>自动配置route id时，ID的选取先看回环口，再看物理口；</strong></p>
+<h4 id="配置Route-ID"><a href="#配置Route-ID" class="headerlink" title="配置Route ID"></a>配置Route ID</h4><pre class=" language-java"><code class="language-java">ospf x route<span class="token operator">-</span>id xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx <span class="token comment" spellcheck="true">//配置RouteID</span>
+reset ospf process <span class="token comment" spellcheck="true">//重启OSPF进程</span>
+</code></pre>
+<h3 id="OSPF数据包结构和类型"><a href="#OSPF数据包结构和类型" class="headerlink" title="OSPF数据包结构和类型"></a>OSPF数据包结构和类型</h3><p>封装于IP协议之上，IP协议号89</p>
+<p>协议号：1代表ICMP；6代表TCP；17代表UDP；</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406192444053.png" alt="image-20210406192444053"></p>
+<h3 id="OSPF数据包类型（5种）"><a href="#OSPF数据包类型（5种）" class="headerlink" title="OSPF数据包类型（5种）"></a>OSPF数据包类型（5种）</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406192758149.png" alt="image-20210406192758149"></p>
+<table>
+<thead>
+<tr>
+<th>OSPF数据包类型</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Hello</td>
+<td>建立并维护邻居关系</td>
+</tr>
+<tr>
+<td>Datebase Description</td>
+<td>LSDB的摘要（仅包含LSA包头）</td>
+</tr>
+<tr>
+<td>Link State Request（LSR）</td>
+<td>请求LSA</td>
+</tr>
+<tr>
+<td>Link State Update（LSU）</td>
+<td>发送LSA</td>
+</tr>
+<tr>
+<td>Link State Acknowledge（LSAck）</td>
+<td>对LSU的确认</td>
+</tr>
+</tbody></table>
+<p><strong>DB包用于对比路由器间的数据库</strong></p>
+<h3 id="OSPF状态机制（7种状态）"><a href="#OSPF状态机制（7种状态）" class="headerlink" title="OSPF状态机制（7种状态）"></a>OSPF状态机制（7种状态）</h3><table>
+<thead>
+<tr>
+<th>状态</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>失效状态（Down）</td>
+<td>没有收到Hello包</td>
+</tr>
+<tr>
+<td>初始状态（init）</td>
+<td>收到Hello包，<strong>但没有看到自己</strong></td>
+</tr>
+<tr>
+<td>双向通讯状态（two-way）</td>
+<td>收到Hello包，<strong>且看到了自己，形成邻居关系</strong></td>
+</tr>
+<tr>
+<td>交换初始状态（Exstart）</td>
+<td>决定信息交换时路由器的主从关系</td>
+</tr>
+<tr>
+<td>交换状态（Exchange）</td>
+<td>向邻居发送DD数据包</td>
+</tr>
+<tr>
+<td>加载状态（Loading）</td>
+<td>LSR和LSU交换</td>
+</tr>
+<tr>
+<td>完全邻接状态（Full）</td>
+<td>LSDB同步，形成邻接关系</td>
+</tr>
+<tr>
+<td>PS</td>
+<td>只有Two-Way和Full是稳定状态</td>
+</tr>
+</tbody></table>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406200828033.png" alt="image-20210406200828033"></p>
+<h3 id="OSPF工作流程（数据包和状态切换过程）"><a href="#OSPF工作流程（数据包和状态切换过程）" class="headerlink" title="OSPF工作流程（数据包和状态切换过程）"></a>OSPF工作流程（数据包和状态切换过程）</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406202411075.png" alt="image-20210406202411075"></p>
+<p><strong>OSPF第一阶段是使用Hello包建立双向通信的过程，成为邻居关系。</strong> </p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210407113133475.png" alt="image-20210407113133475"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210407113258252.png" alt="image-20210407113258252"></p>
+<p>OSPF第二阶段是通过交换LSDB同步，建立<strong>邻接关系</strong></p>
+<p><strong>在同一个区域中，路由表可能不一样，邻居表可能不一样，但是数据库是一样的。</strong></p>
+<h3 id="OSPF邻居建立条件"><a href="#OSPF邻居建立条件" class="headerlink" title="OSPF邻居建立条件"></a>OSPF邻居建立条件</h3><p><strong>必须三层直连</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210407162122044.png" alt="image-20210407162122044"></p>
+<p><strong>Hello报文用来发现和维护OSPF邻居关系</strong></p>
+<ul>
+<li>RID唯一</li>
+<li>Hello/Dead时间间隔一致</li>
+<li>区域ID一致</li>
+<li>认证（如果启用了认证）一致</li>
+<li>链路MTU大小一致（默认不开启检查，思科默认开启）</li>
+<li>子网掩码一致（以太网环境）</li>
+<li>网络地址一致</li>
+<li>末梢区域设置一致</li>
+</ul>
+<p><strong>当出现邻居建立问题时需要从这几方面入手排查</strong></p>
+<h4 id="配置OSPFHello时间"><a href="#配置OSPFHello时间" class="headerlink" title="配置OSPFHello时间"></a>配置OSPFHello时间</h4><pre class=" language-java"><code class="language-java">ospf timer hello x <span class="token comment" spellcheck="true">//配置ospf hello时间</span>
+<span class="token comment" spellcheck="true">//默认Dead时间为hello时间的4倍</span>
+</code></pre>
+<h3 id="OSPF网络类型：基于接口"><a href="#OSPF网络类型：基于接口" class="headerlink" title="OSPF网络类型：基于接口"></a>OSPF网络类型：基于接口</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210407170317870.png" alt="image-20210407170317870"></p>
+<ul>
+<li>缺省情况下，OSPF认为以太网的网络类型是广播类型，PPP、HDLC的网络类型是点到点类型</li>
+</ul>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210407170601839.png" alt="image-20210407170601839"></p>
+<ul>
+<li>缺省情况下，OSPF认为帧中继（FR），ATM（异步传输）的网络类型是NBMA，BMA广播多路，NBMA非广播多路。</li>
+</ul>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210408103026810.png" alt="image-20210408103026810"></p>
+<p>这些接口也是多路访问，因为他是以太网接口，不是因为他有邻居才是多路访问。</p>
+<h4 id="改封装（串口）"><a href="#改封装（串口）" class="headerlink" title="改封装（串口）"></a>改封装（串口）</h4><pre class=" language-java"><code class="language-java">link<span class="token operator">-</span>protocol <span class="token operator">?</span> <span class="token comment" spellcheck="true">// 封装类型为 fr hdlc lapb ppp sdlc x25</span>
+dis ospf <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">// 网络类型验证 p2p 是点到点的类型 broadcast是广播类型</span>
+<span class="token comment" spellcheck="true">//点到点的是没有MAC地址的</span>
+</code></pre>
+<h3 id="DR和BDR"><a href="#DR和BDR" class="headerlink" title="DR和BDR"></a>DR和BDR</h3><p>只要是<strong>多路访问BMA和NBMA网络中</strong>，为了<strong>减少邻接关系</strong>的数量，从而<strong>减少数据包</strong>交换次数，最终<strong>节省带宽</strong>，<strong>降低</strong>对路由器处理能力的压力，选举<strong>DR和BDR</strong>。</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210408091323260.png" alt="image-20210408091323260"></p>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DR</td>
+<td>Designed Route，指定路由器，类似班长，总经理</td>
+</tr>
+<tr>
+<td>BDR</td>
+<td>Backup DR，备用DR，类似副班长，副总经理</td>
+</tr>
+<tr>
+<td>DRothers</td>
+<td>类似普通学生，普通员工</td>
+</tr>
+<tr>
+<td>关系</td>
+<td>DR、BDR、DRothers之间都保持邻接关系（Full）DRother之间保持邻居关系（Two-Way）</td>
+</tr>
+<tr>
+<td>地址</td>
+<td>224.0.0.6向DR和BDR发送链路状态更新，224.0.0.5向所有OSPF路由器发送</td>
+</tr>
+<tr>
+<td>选举规则</td>
+<td>首先比较<strong>Hello报文中</strong>携带的<strong>优先级</strong>，优先级范围0~225，默认=1，<strong>优先级最高的被选举为DR</strong>，<strong>优先级次高的被选举为BDR</strong>，<strong>优先级为0的不参与选举</strong>，<strong>优先级一致</strong>的情况下，比较<strong>RID</strong>，<strong>越发越优先</strong>，选举具有<strong>非抢占性</strong>，除非当DR和BDR都失效或重启OSPF进程</td>
+</tr>
+</tbody></table>
+<pre class=" language-java"><code class="language-java">dis ospf <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//查看ospf协议对应接口的信息</span>
+  
+dis ospf <span class="token keyword">int</span> lo <span class="token number">1</span> <span class="token comment" spellcheck="true">//查看ospf 回环口的接口信息</span>
+  
+<span class="token comment" spellcheck="true">//更改回环口ospf的度量值</span>
+<span class="token keyword">int</span> lo <span class="token number">1</span>
+ospf cost x <span class="token comment" spellcheck="true">//输入更改的值即可</span>
+  
+dis ospf peer b <span class="token comment" spellcheck="true">//查看邻居  </span>
+  
+<span class="token comment" spellcheck="true">//配置ospf  </span>
+sys
+sys R2
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+ip add xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx yy
+ospf <span class="token number">1</span> router<span class="token operator">-</span>id zzz<span class="token punctuation">.</span>zzz<span class="token punctuation">.</span>zzz<span class="token punctuation">.</span>zzz
+a j
+net xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx kkk<span class="token punctuation">.</span>kkk<span class="token punctuation">.</span>kkk<span class="token punctuation">.</span>kkk
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210408110646995.png" alt="image-20210408110646995"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210408110712272.png" alt="image-20210408110712272"></p>
+<p>DR，BDR是<strong>基于接口</strong>，一个路由器有好多接口，</p>
+<h3 id="ospf度量值（开销）"><a href="#ospf度量值（开销）" class="headerlink" title="ospf度量值（开销）"></a>ospf度量值（开销）</h3><ul>
+<li><p>在每一个运行OSPF的接口上，都维护着一个接口Cost</p>
+</li>
+<li><p>Cost = 10^8/BW(bps) = 100Mbps/BW = 接口带宽参考值/接口带宽</p>
+</li>
+<li><p>到一个目标网络的度量值 = </p>
+<p>​    从源到目标所有<strong>出站接口</strong>的Cost值累加（数据方向）</p>
+<p>​    从源到本路由器沿途所有<strong>入站接口</strong>的Cost值累加（路有方向）</p>
+</li>
+</ul>
+<p><strong>路由方向看入接口，数据方向看出接口</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210408135018436.png" alt="image-20210408135018436"></p>
 
         </div>
 
@@ -596,7 +703,7 @@ area x<span class="token comment" spellcheck="true">// 2的32次方</span>
               
               <a href="/tags/%E7%AC%94%E8%AE%B0/" style="color: #716e77;">笔记<em>·</em></a>
               
-              <a href="/tags/RIP/" style="color: #716e77;">RIP<em>·</em></a>
+              <a href="/tags/OSPF/" style="color: #716e77;">OSPF<em>·</em></a>
               
             </span>
             <span>
@@ -624,36 +731,19 @@ area x<span class="token comment" spellcheck="true">// 2的32次方</span>
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-        
-        <div class="post-nepre half previous">
-          
-            <a href="/post/d800.html" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/beijing16.jpg"
-                  style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
-                  src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/beijing16.jpg">
-              </div>
-              <span class="label">Previous Post</span>
-              <div class="info">
-                <h3>HCIA学习笔记6</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
           
           
-          
-          <div class="post-nepre half next">
-            
-              <a href="/post/1981.html" rel="next">
+            <div class="post-nepre full next">
+              
+              <a href="/post/d940.html" rel="next">
                 <div class="background">
-                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/biaoti1.jpg"
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/biaoti2.jpg"
                     style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
-                    onerror="imgError(this,3)" src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/biaoti1.jpg">
+                    onerror="imgError(this,3)" src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/biaoti2.jpg">
                 </div>
                 <span class="label">Next Post</span>
                 <div class="info">
-                  <h3>HCIA学习笔记4</h3>
+                  <h3>HCIA学习笔记5</h3>
                   <hr>
                 </div>
               </a>
