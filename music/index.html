@@ -79,6 +79,7 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
   <script src="/live2d-widget/autoload.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
+  
 
 <body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
   <!-- Dynamic sliders -->
@@ -307,30 +308,7 @@
   
   <div id="content" class="site-content">
     <article class="post-item post-301 page type-page status-publish has-post-thumbnail hentry">
-      <div class="poem-wrap">
-  <div class="poem-border poem-left"></div>
-  <div class="poem-border poem-right"></div>
-    <h1>念两句诗</h1>
-    <p id="poem">挑选中...</p>
-    <p id="info">
-
-
-  <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-  <script type="text/javascript">
-    jinrishici.load(function(result) {
-      poem.innerHTML = result.data.content
-      info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
-      document.getElementById("poem").value(poem);
-      document.getElementById("info").value(info);  
-  });
-  </script>
-</p></div>
-
-
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="520" height="520" src="//music.163.com/outchain/player?type=0&amp;id=376685368&amp;auto=1&amp;height=430"></iframe>
-
-
-
+      <div class="aplayer" data-id="376685368" data-server="netease" data-type="playlist" data-autoplay="false" "data-mode:circulation"=""></div>
       <!-- .entry-content -->
       
 
@@ -392,7 +370,7 @@ gitalk.render('gitalk-container')
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -404,10 +382,10 @@ gitalk.render('gitalk-container')
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Posts',
-            // PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
@@ -567,6 +545,13 @@ gitalk.render('gitalk-container')
   });
   </script>
   <script src="https://cdn.jsdelivr.net/gh/wallleap/cdn@latest/js/sakura.js"></script>
+  
+<link href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+<link href="https://cdn.bootcss.com/dplayer/1.22.2/DPlayer.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/dplayer/1.22.2/DPlayer.min.js"></script>
+
     <!-- Side menu -->
     <div class="openNav no-select" style="height: 50px;">
       <div class="iconflat no-select" style="width: 50px; height: 50px;">
@@ -736,6 +721,10 @@ gitalk.render('gitalk-container')
     volume="0.7"
 
     mutex="true"
+
+    meting="true"
+
+    asset_inject="false"
 
 >
 </meting-js>
