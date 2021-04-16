@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">music | 慢一点，才更快 | 雨落</title>
+  <title itemprop="name">HCIA学习笔记11 | 慢一点，才更快 | 雨落</title>
   
     <link rel="shortcut icon" href="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tubiao.ico">
   
@@ -288,39 +288,248 @@
 
       
       <!-- body -->
-        <div class="pattern-center-blank"></div>
-  
-  <div class="pattern-center ">
-    <div class="pattern-attachment-img">
-      <img src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing18.jpg" class="lazyload" onerror="imgError(this,3)"
-        style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
-    </div>
-    <header class="pattern-header ">
-      <h1 class="entry-title">
-        </h1>
-      <span class="post-meta-item-icon">
-        <i class="iconfont icon-attention"></i>
-      </span>
-      <span class="post-meta-item-text">本页共<span id="busuanzi_value_page_pv"> </span>次阅读
-      </span>
-    </header>
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/cungudafa/cdn/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+<div class="pattern-center single-center">
+  <!-- 有配图默认渲染第一张 -->
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/beijing23.jpg);"
+    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/beijing23.jpg">
   </div>
-  
-  <div id="content" class="site-content">
-    <article class="post-item post-301 page type-page status-publish has-post-thumbnail hentry">
-      <hr>
-<h2 align="center">每日一言</h2>
-
-<p id="hitokoto">获取中...</p>
-<script src="https://v1.hitokoto.cn/?encode=js&amp;select=%23hitokoto" defer=""></script>
-
-<hr>
-<div class="aplayer" data-id="376685368" data-server="netease" data-type="playlist" data-autoplay="false" "data-mode:circulation"=""></div>
-      <!-- .entry-content -->
+  <header class="pattern-header single-header">
+    <h1 class="entry-title">HCIA学习笔记11</h1>
+    <p class="entry-census">
       
+      <span class="post-meta-item">
+        <a href="">
+          <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tx.jpg">
+        </a>
+      </span>
+      
+      
+      <span class="post-meta-item">
+        <a href=""> SakuraMuxia </a>
+      </span>
+      <span class="bull">
+        ·</span>
+      
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-calendar"></i>
+        </span>
+        <span class="post-meta-item-text"> 2021-4-16 </span>
+      </span>
+      <span class="bull">
+        ·</span>
+      <!-- 浏览数显示 -->
+      <span class="post-meta-item" >
+        <span class="post-meta-item-icon">
+          <i class="iconfont icon-attention"></i>
+        </span>
+        <span class="post-meta-item-text">本文共<span id="busuanzi_value_page_pv"> </span>次阅读
+        </span>
+      </span>
+      <span class="bull">
+        ·</span>
+      <!-- 字数统计-->
+      <span class="post-meta-item" >
 
+        
+      </span>
+      <span class="bull">
+        ·</span>
+      <!-- 评论数显示 -->
+      <!-- <span class="post-meta-item" >
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              </span class="post-meta-item-text">
+                <span class="valine-comment-count" data-xid="/e41b"> </span>
+              </span>
+          </span> -->
+    </p>
+  </header>
+</div>
 
-      <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1"
+        class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content">  -->
+        <!--套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h1 id="GARP-GVRP"><a href="#GARP-GVRP" class="headerlink" title="GARP-GVRP"></a>GARP-GVRP</h1><p>GARP （Generic Attribute Registration Protocol），全称是通用属性注册协议，它为处于同一个交换网内的交换机之间提供了一种分发、传播、注册某种信息（VLAN属性、组播地址）的手段。</p>
+<p>GVRP是GARP的一种具体应用或实现，主要用于维护设备动态VLAN属性。</p>
+<ul>
+<li>通过GVRP协议，一台交换机上的VLAN信息会迅速传播到整个交换网络</li>
+<li>GVRP实现了LAN属性的动态分发、注册和传播，从而减少了网络管理员的工作量，也能保证VLAN配置的正确性。</li>
+</ul>
+<h2 id="GARP"><a href="#GARP" class="headerlink" title="GARP"></a>GARP</h2><p>Generic Attribute Registration Protocol <strong>通用属性注册协议</strong></p>
+<ul>
+<li>在交换机间分发、传播、注册某种信息（VLAN属性、组播地址等）。</li>
+<li>主要用于大中型网络中，用来提升交换机的管理效率。</li>
+<li>一种协议规范。</li>
+</ul>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210415232838379.png" alt="image-20210415232838379"></p>
+<h2 id="GARP消息类型"><a href="#GARP消息类型" class="headerlink" title="GARP消息类型"></a>GARP消息类型</h2><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>join</td>
+<td>加入，端口加入VLAN</td>
+</tr>
+<tr>
+<td>Leave</td>
+<td>注销，端口退出VLAN</td>
+</tr>
+<tr>
+<td>Leave All</td>
+<td>注销所有</td>
+</tr>
+</tbody></table>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210415233215878.png" alt="image-20210415233215878"></p>
+<hr>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210415233445132.png" alt="image-20210415233445132"></p>
+<hr>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210415233534232.png" alt="image-20210415233534232"></p>
+<hr>
+<h2 id="GVRP"><a href="#GVRP" class="headerlink" title="GVRP"></a>GVRP</h2><p>GARP VLAN Registration Protocol，VLAN注册协议</p>
+<p>GVRP基于GARP的工作机制，是GARP的一种应用，传递VLAN信息</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210415233823723.png" alt="image-20210415233823723"></p>
+<pre class=" language-java"><code class="language-java">sys
+gvrp <span class="token comment" spellcheck="true">//全局开启GVRP</span>
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//进入相关接口</span>
+gvrp <span class="token comment" spellcheck="true">//开启GVRP</span>
+dis vlan <span class="token comment" spellcheck="true">//查看VLAN</span>
+  
+</code></pre>
+<h2 id="GVRP的应用"><a href="#GVRP的应用" class="headerlink" title="GVRP的应用"></a>GVRP的应用</h2><ul>
+<li><strong>接收来自其他交换机的VLAN注册信息</strong>，并动态更新本地的VLAN注册信息，包括当前VLAN、VLAN成员等。</li>
+<li><strong>将本地的VLAN注册信息向其他交换机传播</strong>，，以便使同一交换网内所有支持GVRP特性的设备的VLAN信息达成一致。</li>
+<li>手动配置的VLAN是静态VLAN，通过GVRP创建的VLAN是动态VLAN。</li>
+<li>GVRP传播的VLAN注册信息包含本地手工配置的静态注册信息和来自其他交换机的动态注册信息。 </li>
+</ul>
+<h2 id="GVRP单向注册"><a href="#GVRP单向注册" class="headerlink" title="GVRP单向注册"></a>GVRP单向注册</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210416000656454.png" alt="image-20210416000656454"></p>
+<hr>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210416000848152.png" alt="image-20210416000848152"></p>
+<hr>
+<h2 id="GVRP注册模式"><a href="#GVRP注册模式" class="headerlink" title="GVRP注册模式"></a>GVRP注册模式</h2><h3 id="Normal"><a href="#Normal" class="headerlink" title="Normal"></a>Normal</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210416001251553.png" alt="image-20210416001251553"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//配置GVRP注册模式</span>
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> <span class="token comment" spellcheck="true">//进入相关接口</span>
+  
+gvrp registration <span class="token comment" spellcheck="true">//配置GVRP注册模式</span>
+  
+dis gvrp status <span class="token comment" spellcheck="true">//验证gvrp状态信息</span>
+  
+dis gvrp statistics <span class="token comment" spellcheck="true">//查看gvrp统计信息</span>
+  
+</code></pre>
+<h3 id="Forbidden"><a href="#Forbidden" class="headerlink" title="Forbidden"></a>Forbidden</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210416001816286.png" alt="image-20210416001816286"></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//进入接口</span>
+
+gvrp registration forbidden <span class="token comment" spellcheck="true">// 配置GVRP为禁止模式</span>
+  
+<span class="token comment" spellcheck="true">//配置完成之后 g0/0/0 只和 VLAN1 有关</span>
+  
+</code></pre>
+<h3 id="Fixed"><a href="#Fixed" class="headerlink" title="Fixed"></a>Fixed</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210416125340129.png" alt="image-20210416125340129"></p>
+<ul>
+<li>SWA的g0/0/1端口为Fixed模式，不允许动态VLAN在端口注册或者注销且只发送静态VLAN的声明消息。</li>
+</ul>
+
+        </div>
+
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="null"></li>
+                <li class="wechat-code"><img src="null"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent">
+        </div>
+        <!-- 评分 -->
+        <div class="single-reward">
+          
+        </div>
+        <!-- 自定义署名方式 -->
+        <footer class="post-footer">
+          <div class="post-lincenses" style="color: #ff9966;">
+            欢迎转载，转载时请注明来源哦！
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" style="color: #ff9966;" target="_blank"
+              rel="nofollow">
+              <i class="fa fa-creative-commons" aria-hidden="true"></i>ncsa4.0</a>
+          </div>
+          
+          <div class="post-tags" style="color: #a39391">
+            <span><i class="fa fa-tags"></i>
+              
+              <a href="/tags/HCIA/" style="color: #716e77;">HCIA<em>·</em></a>
+              
+              <a href="/tags/VLAN/" style="color: #716e77;">VLAN<em>·</em></a>
+              
+              <a href="/tags/GVRP/" style="color: #716e77;">GVRP<em>·</em></a>
+              
+            </span>
+            <span>
+              <i class="iconfont icon-file"></i>
+              
+              <a href="/categories/%E6%8A%80%E6%9C%AF/" style="color: #716e77;">技术</a>
+              
+            </span>
+          </div>
+          
+          <div class="post-share" >
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+        <!-- <div class="tag-cloud">
+          <div class="tag-cloud-title">
+          </div>
+          <div class="tag-cloud-tags">
+            <a href="/tags/ARP/" style="font-size: 10px; color: #f06966">ARP</a> <a href="/tags/GVRP/" style="font-size: 10px; color: #f06966">GVRP</a> <a href="/tags/HCIA/" style="font-size: 20px; color: #39bae8">HCIA</a> <a href="/tags/OSPF/" style="font-size: 12.5px; color: #c27d87">OSPF</a> <a href="/tags/RIP/" style="font-size: 12.5px; color: #c27d87">RIP</a> <a href="/tags/VLAN/" style="font-size: 15px; color: #9592a7">VLAN</a> <a href="/tags/java/" style="font-size: 10px; color: #f06966">java</a> <a href="/tags/%E4%BA%A4%E6%8D%A2/" style="font-size: 10px; color: #f06966">交换</a> <a href="/tags/%E5%AE%9E%E9%AA%8C/" style="font-size: 10px; color: #f06966">实验</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 17.5px; color: #67a6c8">笔记</a>
+          </div>
+        </div> -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+          
+            <div class="post-nepre full next">
+              
+              <a href="/post/24da.html" rel="next">
+                <div class="background">
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/beijing22.jpg"
+                    style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
+                    onerror="imgError(this,3)" src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/beijing22.jpg">
+                </div>
+                <span class="label">Next Post</span>
+                <div class="info">
+                  <h3>HCIA学习笔记10</h3>
+                  <hr>
+                </div>
+              </a>
+            </div>
+            
+      </section>
+      <!-- 加密文章隐藏评论 -->
+      <section class="comment" >
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <div id="gitalk-container" class="comment"></div> 
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 <script src="/js/md5.min.js"></script>
@@ -338,37 +547,132 @@ gitalk.render('gitalk-container')
 </script>
 
 
-      <div class="single-reward">
-        <div class="reward-open">赏
-          <div class="reward-main">
-            <ul class="reward-row">
-              <li class="alipay-code"><img src="null"></li>
-              <li class="wechat-code"><img src="null"></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent">
-      </div>
-      <footer class="post-footer">
-        <div class="post-lincenses" style="color: #ff9966;">
-          欢迎转载，转载时请注明来源哦！
-          <br>
-          <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow">
-            <i class="fa fa-creative-commons" aria-hidden="true"></i>知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
-        </div>
-        <div class="post-tags">
-        </div>
-        <div class="post-share">
-          <div class="social-share sharehidden share-component"></div>
-          <i class="iconfont show-share icon-forward"></i>
-        </div>
-      </footer><!-- .entry-footer -->
-    </article>
-    <!-- #post-## -->
-    
+      </section>
+      <!-- 加密文章隐藏作者信息 -->
+      
+    </main><!-- #main -->
   </div><!-- #primary -->
-  </div>
+</div>
+
+
+<!--评论配置-->
+
+
+    <div id="vcomments"></div>
+    <script src="https://unpkg.com/valine/dist/Valine.min.js"></script><!-- 最新版 -->
+    <style>
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("https://gitee.com/cungudafa/source/raw/master/img/gif/Sitich/Sitich2.gif") 100% 100% no-repeat;
+    }
+    </style>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            enableQQ: true,
+            boolean: true,
+            appId: 'pJf0nLlIFPsrFbqcB2InonHd-gzGzoHsz',
+            appKey: 'RoAvgTeWI8wX4B5wXo6jB2YV',
+            //notify: 'false' === 'true',
+            //verify: 'true' === 'true',
+            visitor: 'false' === 'true',
+            avatar: 'monsterid',
+            pageSize: '10',
+            lang: 'zh-cn',
+            placeholder: '大家文明留言哈~',
+            requiredFields: ['nick','mail'], //设置必填项
+            // 设置Bilibili表情包地址
+            emojiCDN: '//i0.hdslb.com/bfs/emote/', 
+            // 表情title和图片映射
+            emojiMaps: {
+            "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+            "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+            "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+            "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+            "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+            "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+            "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+            "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+            "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+            "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+            "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+            "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+            "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+            "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+            "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+            "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+            "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+            "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+            "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+            "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+            "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+            "tv_打脸": "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+            "tv_抓狂": "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+            "tv_抠鼻": "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+            "tv_斜眼笑": "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+            "tv_无奈": "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+            "tv_晕": "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+            "tv_流汗": "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+            "tv_流泪": "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+            "tv_流鼻血": "c32d39db2737f89b904ca32700d140a9241b0767.png",
+            "tv_点赞": "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+            "tv_生气": "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+            "tv_生病": "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+            "tv_疑问": "0793d949b18d7be716078349c202c15ff166f314.png",
+            "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+            "tv_皱眉": "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+            "tv_目瞪口呆": "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+            "tv_睡着": "8b196675b53af58264f383c50ad0945048290b33.png",
+            "tv_笑哭": "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+            "tv_腼腆": "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+            "tv_色": "61822c7e9aae5da76475e7892534545336b23a6f.png",
+            "tv_调侃": "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+            "tv_调皮": "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+            "tv_鄙视": "6e72339f346a692a495b123174b49e4e8e781303.png",
+            "tv_闭嘴": "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+            "tv_难过": "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+            "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+            "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+            "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+            "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+                // ... 更多表情
+            }
+        });
+    </script>
+
+    <!-- 
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        jinrishici.load(function(result) {
+            var jrsc_plac =  result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin.dynasty + " · " + result.data.origin.author;
+            document.getElementById("veditor").setAttribute("placeholder",jrsc_plac);
+        })
+    </script>
+     -->
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<div id="gitalk-container" class="comment"></div> 
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="/js/md5.min.js"></script>
+<script type="text/javascript">
+	var gitalk = new Gitalk({
+  	clientID: '9ae3a88cd97b7b9bd1fa',
+  	clientSecret: 'c12b84cd9d9609551630939716dc990cc7d5af00',
+  	repo: 'SakuraMuxia.github.io',
+  	owner: 'SakuraMuxia',
+	admin: ['SakuraMuxia'],
+	distractionFreeMode: 'true',
+    id: md5(location.pathname)
+})
+gitalk.render('gitalk-container') 
+</script>
+
+
 
       <!-- body.end -->
     </div>
