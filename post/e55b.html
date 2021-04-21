@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">HCIA学习笔记10 | 慢一点，才更快 | 雨落</title>
+  <title itemprop="name">HCIA学习笔记12 | 慢一点，才更快 | 雨落</title>
   
     <link rel="shortcut icon" href="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tubiao.ico">
   
@@ -294,11 +294,11 @@
 
 <div class="pattern-center single-center">
   <!-- 有配图默认渲染第一张 -->
-  <div class="pattern-attachment-img lazyload" style="background-image: url(https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/beijing22.jpg);"
-    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/beijing22.jpg">
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/beijing24.jpg);"
+    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/beijing24.jpg">
   </div>
   <header class="pattern-header single-header">
-    <h1 class="entry-title">HCIA学习笔记10</h1>
+    <h1 class="entry-title">HCIA学习笔记12</h1>
     <p class="entry-census">
       
       <span class="post-meta-item">
@@ -318,7 +318,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-calendar"></i>
         </span>
-        <span class="post-meta-item-text"> 2021-4-15 </span>
+        <span class="post-meta-item-text"> 2021-4-21 </span>
       </span>
       <span class="bull">
         ·</span>
@@ -345,7 +345,7 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               </span class="post-meta-item-text">
-                <span class="valine-comment-count" data-xid="/24da"> </span>
+                <span class="valine-comment-count" data-xid="/e55b"> </span>
               </span>
           </span> -->
     </p>
@@ -362,106 +362,195 @@
         <!--套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h2 id="配置交换机接口二层三层转换"><a href="#配置交换机接口二层三层转换" class="headerlink" title="配置交换机接口二层三层转换"></a>配置交换机接口二层三层转换</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">// 创建g0/0/0接口</span>
+          <h1 id="STP"><a href="#STP" class="headerlink" title="STP"></a>STP</h1><p>为了提高网络可靠性，交换网络中通常会使用冗余链路，然而，冗余链路会给交换网络带来环路风险，并导致<strong>广播风暴</strong>以及<strong>MAC地址表不稳定</strong>等问题，进而会影响用户的通信质量，生成树协议STP（Spanning Tree Protocol）可以在提高可靠性的同时又能避免环路带来的各种问题。</p>
+<h2 id="二层网络设计需求和问题"><a href="#二层网络设计需求和问题" class="headerlink" title="二层网络设计需求和问题"></a>二层网络设计需求和问题</h2><ul>
+<li>为了提高可靠性，交换机之间会通过多条链路相连，从而避免单点故障。</li>
+<li>但同时会带来一些灾难性的环路问题。</li>
+</ul>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210416133208743.png" alt="image-20210416133208743"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210416133222748.png" alt="image-20210416133222748"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210416134347057.png" alt="image-20210416134347057"></p>
+<pre class=" language-java"><code class="language-java">dis <span class="token keyword">int</span> Ethernet <span class="token number">2</span> <span class="token comment" spellcheck="true">//进入Ethernet接口</span>
   
-portswitch <span class="token comment" spellcheck="true">//配置交换机接口二层接口</span>
+</code></pre>
+<h2 id="广播风暴"><a href="#广播风暴" class="headerlink" title="广播风暴"></a>广播风暴</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419103401455.png" alt="image-20210419103401455"></p>
+<ul>
+<li>环路会引起广播风暴</li>
+<li>网络中的主机会收到重复数据帧</li>
+</ul>
+<h2 id="MAC地址表震荡"><a href="#MAC地址表震荡" class="headerlink" title="MAC地址表震荡"></a>MAC地址表震荡</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419103633582.png" alt="image-20210419103633582"></p>
+<ul>
+<li>环路会引起MAC地址表震荡</li>
+</ul>
+<p>STP：Spanning TRee Protocol，生成树协议，提供两大功能：</p>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>消除环路</td>
+<td>通过阻断冗余链路来消除网络中可能存在的环路</td>
+</tr>
+<tr>
+<td>链路备份</td>
+<td>当活动路径发生故障时，激活备份链路，及时恢复网络连通性。</td>
+</tr>
+</tbody></table>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419104228223.png" alt="image-20210419104228223"></p>
+<h2 id="查看STP堵塞"><a href="#查看STP堵塞" class="headerlink" title="查看STP堵塞"></a>查看STP堵塞</h2><pre class=" language-java"><code class="language-java">dis stp b <span class="token comment" spellcheck="true">// 产看STP堵塞</span>
+</code></pre>
+<h2 id="STP操作"><a href="#STP操作" class="headerlink" title="STP操作"></a>STP操作</h2><p>通过构造一颗树来消除交换网络中的环路</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419110628666.png" alt="image-20210419110628666"></p>
+<ol>
+<li>选举一台根桥</li>
+<li>选举一个根端口</li>
+<li>选举指定端口</li>
+<li>阻塞剩余端口</li>
+</ol>
+<h2 id="BPDU："><a href="#BPDU：" class="headerlink" title="BPDU："></a>BPDU：</h2><p>Bridge Protocol Data Unit 桥协议数据单元</p>
+<p>使用组播 <strong>01-80-C2-00-00-00</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419111747819.png" alt="image-20210419111747819"></p>
+<h3 id="STP版本（PVI）"><a href="#STP版本（PVI）" class="headerlink" title="STP版本（PVI）"></a>STP版本（PVI）</h3><ol>
+<li>STP</li>
+<li>MSTP</li>
+<li>RSTP</li>
+</ol>
+<pre class=" language-java"><code class="language-java">sys <span class="token comment" spellcheck="true">//系统配置模式</span>
+stp mode stp <span class="token comment" spellcheck="true">//更改STP模式</span>
+</code></pre>
+<h3 id="BPDU-Type"><a href="#BPDU-Type" class="headerlink" title="BPDU Type"></a>BPDU Type</h3><ul>
+<li>configuration （配置）</li>
+<li>Topology change Notification （拓扑改变通知）</li>
+</ul>
+<h3 id="BPDU类型"><a href="#BPDU类型" class="headerlink" title="BPDU类型"></a>BPDU类型</h3><p>配置BPDU：Configuration</p>
+<ul>
+<li>选举根交换机以及确定每个交换机端口的角色和状态。</li>
+<li>在初始化过程中，每个桥都主动发送配置BPDU。</li>
+<li>在网络拓扑稳定以后，只有根桥主动发送配置BPDU，其他交换机在收到上游传来的配置BPDU，才会发送自己的配置BPDU</li>
+<li>发送周期为Hello Time</li>
+<li>老化时间为Max Age</li>
+</ul>
+<p>拓扑变更通告BPDU TCN BPDU</p>
+<ul>
+<li>下游交换机感知到拓扑发生变化时向上游发送的拓扑变化通知</li>
+</ul>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419113455320.png" alt="image-20210419113455320"></p>
+<h2 id="BPDU字段详解"><a href="#BPDU字段详解" class="headerlink" title="BPDU字段详解"></a>BPDU字段详解</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419113911925.png" alt="image-20210419113911925"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419114002863.png" alt="image-20210419114002863"></p>
+<p><strong>Bridge identifier：自身的ID</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419114221530.png" alt="image-20210419114221530"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 查看stp信息</span>
+dis stp brief <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">01</span> <span class="token comment" spellcheck="true">//查看接口的STP信息</span>
   
-undo portswitch <span class="token comment" spellcheck="true">// 配置交换机接口三层接口</span>
 </code></pre>
-<h2 id="交换机的接口类型"><a href="#交换机的接口类型" class="headerlink" title="交换机的接口类型"></a>交换机的接口类型</h2><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 2层物理口</span>
-<span class="token comment" spellcheck="true">// 3层物理口</span>
-<span class="token comment" spellcheck="true">// 3层虚拟口 vlanif</span>
-
-<span class="token comment" spellcheck="true">// 方案1</span>
-<span class="token comment" spellcheck="true">// 2层物理口+3层虚拟口</span>
-
-
-<span class="token comment" spellcheck="true">// 方案2</span>
-<span class="token comment" spellcheck="true">// 3层物理口</span>
-
-<span class="token comment" spellcheck="true">//在终端设备数据帧不含标签，在三层交换机以上路由器之间也不存在标签</span>
-
+<h2 id="桥ID"><a href="#桥ID" class="headerlink" title="桥ID"></a>桥ID</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419114333636.png" alt="image-20210419114333636"></p>
+<p>65535=2的16次方</p>
+<h2 id="端口ID"><a href="#端口ID" class="headerlink" title="端口ID"></a>端口ID</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419114519767.png" alt="image-20210419114519767"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419114535987.png" alt="image-20210419114535987"></p>
+<pre class=" language-java"><code class="language-java">dis stp <span class="token keyword">int</span> eth 
+  dis stp <span class="token keyword">int</span> Ethernet <span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> <span class="token comment" spellcheck="true">//查看对应接口的stp端口信息</span>
 </code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/image-20210415120858082.png" alt="image-20210415120858082"></p>
-<p><strong>综合实验配置</strong></p>
-<h2 id="配置代码"><a href="#配置代码" class="headerlink" title="配置代码:"></a>配置代码:</h2><pre class=" language-java"><code class="language-java"><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-<span class="token comment" spellcheck="true">//配置交换机SW1</span>
-sys
-sys SW1
-vlan ba <span class="token number">10</span> <span class="token number">20</span>
-<span class="token keyword">int</span> eth0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
-p l a 
-p d v <span class="token number">10</span>
-<span class="token keyword">int</span> eth0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">2</span>
-p l a 
-p d v <span class="token number">20</span>
-<span class="token keyword">int</span> eth0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">3</span>
-p l t
-p t a v <span class="token number">10</span> <span class="token number">20</span>
-
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
-<span class="token comment" spellcheck="true">//配置交换机SW2</span>
-sys
-sys SW2
-vlan ba <span class="token number">10</span> <span class="token number">20</span> <span class="token number">23</span>
-<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
-p l t 
-p t a v <span class="token number">10</span> <span class="token number">20</span>
-<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">2</span>
-p l a
-p d v <span class="token number">23</span>
-
-<span class="token keyword">int</span> vlanif <span class="token number">10</span>
-ip add <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">10.254</span> <span class="token number">24</span>
-<span class="token keyword">int</span> vlanif <span class="token number">20</span>
-ip add <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">20.254</span> <span class="token number">24</span>
-<span class="token keyword">int</span> vlanif <span class="token number">23</span>
-ip add <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.254</span> <span class="token number">24</span>
-
-ospf <span class="token number">1</span> router<span class="token operator">-</span>id <span class="token number">2.2</span><span class="token punctuation">.</span><span class="token number">2.2</span>
-area <span class="token number">0</span>
-net <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.254</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span>
-net <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">10.254</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span>
-net <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">20.254</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0</span><span class="token punctuation">.</span>0v
-
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-<span class="token comment" spellcheck="true">//配置交换机SW3</span>
-sys
-sys SW3
-vlan ba <span class="token number">23</span> <span class="token number">13</span>
-<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
-p l a
-p d v <span class="token number">23</span>
-<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">2</span>
-p l a
-p d v <span class="token number">13</span>
-
-<span class="token keyword">int</span> vlanif <span class="token number">23</span>
-ip add <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.3</span> <span class="token number">24</span>
-<span class="token keyword">int</span> vlanif <span class="token number">13</span>
-ip add <span class="token number">13.0</span><span class="token punctuation">.</span><span class="token number">0.3</span> <span class="token number">24</span>
-
-ospf <span class="token number">1</span> router<span class="token operator">-</span>id <span class="token number">3.3</span><span class="token punctuation">.</span><span class="token number">3.3</span>
-area <span class="token number">0</span>
-net <span class="token number">13.0</span><span class="token punctuation">.</span><span class="token number">0.3</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span>
-net <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.3</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span>
-
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
-<span class="token comment" spellcheck="true">//配置路由器R1</span>
-sys
-sys R1
-<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
-ip add <span class="token number">13.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">24</span>
-<span class="token keyword">int</span> lo <span class="token number">1</span>
-ip add <span class="token number">1.1</span><span class="token punctuation">.</span><span class="token number">1.1</span> <span class="token number">24</span>
-
-ospf <span class="token number">1</span> router<span class="token operator">-</span>id <span class="token number">1.1</span><span class="token punctuation">.</span><span class="token number">1.1</span>
-area <span class="token number">0</span>
-net <span class="token number">13.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span>
-net <span class="token number">1.1</span><span class="token punctuation">.</span><span class="token number">1.1</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
-
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+<h2 id="路径开销"><a href="#路径开销" class="headerlink" title="路径开销"></a>路径开销</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419120105104.png" alt="image-20210419120105104"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419115914908.png" alt="image-20210419115914908"></p>
+<pre class=" language-java"><code class="language-java">dis stp <span class="token comment" spellcheck="true">// </span>
 </code></pre>
+<h2 id="根路径开销"><a href="#根路径开销" class="headerlink" title="根路径开销"></a>根路径开销</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419120148354.png" alt="image-20210419120148354"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419120930719.png" alt="image-20210419120930719"></p>
+<h2 id="链路开销标准"><a href="#链路开销标准" class="headerlink" title="链路开销标准"></a>链路开销标准</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419120245998.png" alt="image-20210419120245998"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419120340228.png" alt="image-20210419120340228"></p>
+<h3 id="查看设置开销"><a href="#查看设置开销" class="headerlink" title="查看设置开销"></a><strong>查看设置开销</strong></h3><pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> <span class="token comment" spellcheck="true">//进入相关接口</span>
+  stp cost <span class="token operator">?</span> <span class="token comment" spellcheck="true">//设置开销</span>
+  
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419120546059.png" alt="image-20210419120546059"></p>
+<h3 id="设置-stp开销标准"><a href="#设置-stp开销标准" class="headerlink" title="设置 stp开销标准"></a><strong>设置 stp开销标准</strong></h3><pre class=" language-java"><code class="language-java">stp pathcost<span class="token operator">-</span>standard <span class="token comment" spellcheck="true">//设置开销标准</span>
+</code></pre>
+<h2 id="STP选举过程"><a href="#STP选举过程" class="headerlink" title="STP选举过程"></a>STP选举过程</h2><h3 id="根桥选举"><a href="#根桥选举" class="headerlink" title="根桥选举"></a>根桥选举</h3><p>BID最小的成为根桥（先比较优先级，再比较MAC）</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419121530092.png" alt="image-20210419121530092"></p>
+<ul>
+<li>每一台交换机启动STP后，都认为自己是根桥。</li>
+</ul>
+<h3 id="根端口选举（ROOT）"><a href="#根端口选举（ROOT）" class="headerlink" title="根端口选举（ROOT）"></a>根端口选举（ROOT）</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419122002394.png" alt="image-20210419122002394"></p>
+<ul>
+<li>非根交换机在选举根端口时分别依据该端口的根路径开销，对端BID，对端PID和本端PID。</li>
+</ul>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210420094118632.png" alt="image-20210420094118632"></p>
+<h3 id="指定端口选举（DESI）"><a href="#指定端口选举（DESI）" class="headerlink" title="指定端口选举（DESI）"></a>指定端口选举（DESI）</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210420094229928.png" alt="image-20210420094229928"></p>
+<ul>
+<li>非根交换机在选举指定端口时分别依据根路径开销（自己发送出去的），BID，PID</li>
+<li>未被选举为根端口或指定端口的端口为预备端口，将会被阻塞。</li>
+</ul>
+<h2 id="STP选举案例"><a href="#STP选举案例" class="headerlink" title="STP选举案例"></a>STP选举案例</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210420112803967.png" alt="image-20210420112803967"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210420113004486.png" alt="image-20210420113004486"></p>
+<h4 id="选根桥"><a href="#选根桥" class="headerlink" title="选根桥"></a>选根桥</h4><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210420113241239.png" alt="image-20210420113241239"></p>
+<h4 id="选根端口"><a href="#选根端口" class="headerlink" title="选根端口"></a>选根端口</h4><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210420113521001.png" alt="image-20210420113521001"></p>
+<h4 id="选指定端口"><a href="#选指定端口" class="headerlink" title="选指定端口"></a>选指定端口</h4><p><img src="C:\Users\Aqua\AppData\Roaming\Typora\typora-user-images\image-20210420113759942.png" alt="image-20210420113759942"></p>
+<h2 id="STP端口状态"><a href="#STP端口状态" class="headerlink" title="STP端口状态"></a>STP端口状态</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210421103018741.png" alt="image-20210421103018741"></p>
+<pre class=" language-java"><code class="language-java">dis stp bri <span class="token comment" spellcheck="true">//查看STP状态</span>
+  
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210421103419989.png" alt="image-20210421103419989"></p>
+<h2 id="STP的计时器"><a href="#STP的计时器" class="headerlink" title="STP的计时器"></a>STP的计时器</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210421103608480.png" alt="image-20210421103608480"></p>
+<h2 id="计时器"><a href="#计时器" class="headerlink" title="计时器"></a>计时器</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210421103956850.png" alt="image-20210421103956850"></p>
+<ul>
+<li>配置BPDU报文每经过一个交换机，MessageAge都加1</li>
+<li>如果MessageAge大于MaxAge，非根桥会丢弃该配置BPDU</li>
+</ul>
+<h2 id="STP端口转换"><a href="#STP端口转换" class="headerlink" title="STP端口转换"></a>STP端口转换</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210421104331645.png" alt="image-20210421104331645"></p>
+<h2 id="STP拓扑变化"><a href="#STP拓扑变化" class="headerlink" title="STP拓扑变化"></a>STP拓扑变化</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210421104607149.png" alt="image-20210421104607149"></p>
+<ul>
+<li>非根桥会在BPDU老化之后开始根桥的重新选举</li>
+</ul>
+<h2 id="直连链路故障"><a href="#直连链路故障" class="headerlink" title="直连链路故障"></a>直连链路故障</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210421105045436.png" alt="image-20210421105045436"></p>
+<h2 id="非直连链路故障"><a href="#非直连链路故障" class="headerlink" title="非直连链路故障"></a>非直连链路故障</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210421105326931.png" alt="image-20210421105326931"></p>
+<h2 id="拓扑改变导致MAC地址表错误"><a href="#拓扑改变导致MAC地址表错误" class="headerlink" title="拓扑改变导致MAC地址表错误"></a>拓扑改变导致MAC地址表错误</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210421110305170.png" alt="image-20210421110305170"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 清空ARP缓存</span>
+ 
+</code></pre>
+<h2 id="引入TCN"><a href="#引入TCN" class="headerlink" title="引入TCN"></a>引入TCN</h2><p>为了让MAC地址表的默认老化时间更改为15秒</p>
+<p><img src="C:\Users\Aqua\AppData\Roaming\Typora\typora-user-images\image-20210421111006999.png" alt="image-20210421111006999"></p>
+<h2 id="STP配置"><a href="#STP配置" class="headerlink" title="STP配置"></a>STP配置</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>stp mode {mstp | stp | rstp }</td>
+<td>配置STP模式，缺省为MSTP</td>
+</tr>
+<tr>
+<td>stp priority 4096</td>
+<td>配置BID优先级值，0~61440，步长为4096</td>
+</tr>
+<tr>
+<td>stp pathcost-standard｛dot 1d-1998 |dot1t|legacy｝</td>
+<td>配置路径开销值的标准</td>
+</tr>
+<tr>
+<td>开销标准：</td>
+<td>legacy：cost=1<del>200000，华为的私有<br>802.1d标准：cost=1</del>65535</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<pre class=" language-java"><code class="language-java">sys
+sys S1
+stp mode stp <span class="token comment" spellcheck="true">//更改STP模式</span>
+stp priority <span class="token number">0</span> <span class="token comment" spellcheck="true">//更改开销值</span>
+stp root primary <span class="token operator">/</span> secondary <span class="token comment" spellcheck="true">//指定主备根桥</span>
+  
+stp cost <span class="token comment" spellcheck="true">//更改入口的stp开销值 </span>
+<span class="token comment" spellcheck="true">// 更改优先级  </span>
+stp port priority <span class="token comment" spellcheck="true">//更改对端PID的优先级</span>
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210421114338908.png" alt="image-20210421114338908"></p>
 
         </div>
 
@@ -496,9 +585,7 @@ net <span class="token number">1.1</span><span class="token punctuation">.</span
               
               <a href="/tags/HCIA/" style="color: #716e77;">HCIA<em>·</em></a>
               
-              <a href="/tags/VLAN/" style="color: #716e77;">VLAN<em>·</em></a>
-              
-              <a href="/tags/%E5%AE%9E%E9%AA%8C/" style="color: #716e77;">实验<em>·</em></a>
+              <a href="/tags/STP/" style="color: #716e77;">STP<em>·</em></a>
               
             </span>
             <span>
@@ -526,36 +613,19 @@ net <span class="token number">1.1</span><span class="token punctuation">.</span
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-        
-        <div class="post-nepre half previous">
-          
-            <a href="/post/e41b.html" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/beijing23.jpg"
-                  style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
-                  src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/beijing23.jpg">
-              </div>
-              <span class="label">Previous Post</span>
-              <div class="info">
-                <h3>HCIA学习笔记11</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
           
           
-          
-          <div class="post-nepre half next">
-            
-              <a href="/post/dc40.html" rel="next">
+            <div class="post-nepre full next">
+              
+              <a href="/post/e41b.html" rel="next">
                 <div class="background">
-                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing20.jpg"
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/beijing23.jpg"
                     style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
-                    onerror="imgError(this,3)" src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing20.jpg">
+                    onerror="imgError(this,3)" src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/beijing23.jpg">
                 </div>
                 <span class="label">Next Post</span>
                 <div class="info">
-                  <h3>HCIA学习笔记9</h3>
+                  <h3>HCIA学习笔记11</h3>
                   <hr>
                 </div>
               </a>
