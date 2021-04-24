@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">HCIA学习笔记6 | 慢一点，才更快 | 雨落</title>
+  <title itemprop="name">HCIA学习笔记14 | 慢一点，才更快 | 雨落</title>
   
     <link rel="shortcut icon" href="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tubiao.ico">
   
@@ -294,11 +294,11 @@
 
 <div class="pattern-center single-center">
   <!-- 有配图默认渲染第一张 -->
-  <div class="pattern-attachment-img lazyload" style="background-image: url(https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/beijing16.jpg);"
-    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/beijing16.jpg">
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing26.jpg);"
+    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing26.jpg">
   </div>
   <header class="pattern-header single-header">
-    <h1 class="entry-title">HCIA学习笔记6</h1>
+    <h1 class="entry-title">HCIA学习笔记14</h1>
     <p class="entry-census">
       
       <span class="post-meta-item">
@@ -318,7 +318,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-calendar"></i>
         </span>
-        <span class="post-meta-item-text"> 2021-4-8 </span>
+        <span class="post-meta-item-text"> 2021-4-24 </span>
       </span>
       <span class="bull">
         ·</span>
@@ -345,7 +345,7 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               </span class="post-meta-item-text">
-                <span class="valine-comment-count" data-xid="/d800"> </span>
+                <span class="valine-comment-count" data-xid="/e7db"> </span>
               </span>
           </span> -->
     </p>
@@ -362,319 +362,228 @@
         <!--套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=413961906&amp;auto=0&amp;height=66"></iframe>
+          <h1 id="ACL"><a href="#ACL" class="headerlink" title="ACL"></a>ACL</h1><p>企业网络中的设备进行通讯时，需要保证数据传输的安全可靠和网络的性能稳定。访问控制列表ACL（Access Control List）可以定义一系列不同的规则，设备根据这些规则对数据包进行分类，并针对不同类型的报文进行不同的处理，从而实现对网络访问行为的控制、限制网络流量、提高网络性能、防止网络攻击等等。</p>
+<h2 id="ACL-1"><a href="#ACL-1" class="headerlink" title="ACL"></a>ACL</h2><p><strong>Access Control List ，访问控制列表</strong></p>
+<p> <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424084457249.png" alt="image-20210424084457249"></p>
+<pre class=" language-java"><code class="language-java">ospf <span class="token number">1</span> <span class="token comment" spellcheck="true">//进入OSPF界面</span>
+  
+filter<span class="token operator">-</span>policy <span class="token operator">?</span> <span class="token comment" spellcheck="true">//过滤策略</span>
+  
+filter<span class="token operator">-</span>policy acl<span class="token operator">-</span>name <span class="token comment" spellcheck="true">//后面跟策略名称  </span>
 
-<h3 id="OSPF区域概述"><a href="#OSPF区域概述" class="headerlink" title="OSPF区域概述"></a>OSPF区域概述</h3><table>
-<thead>
-<tr>
-<th>术语</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>区域（Area）</td>
-<td>为了适应大型的网络，OSPF在AS内划分多个区域，区域是以==接口为单位==来划分的，==每个OSPF路由器只维护所在区域的完整链路状态信息==</td>
-</tr>
-<tr>
-<td>区域ID（Area ID）</td>
-<td>可以表示成一个十进制的数字，如1，也可以表示成一个IP，如0.0.0.1</td>
-</tr>
-<tr>
-<td>区域优点</td>
-<td><strong>尽量减少路由表条目，使拓扑变化仅影响本区域内部</strong></td>
-</tr>
-</tbody></table>
-<pre class=" language-java"><code class="language-java">ospf <span class="token number">1</span> <span class="token comment" spellcheck="true">// 创建进程</span>
-area x<span class="token comment" spellcheck="true">// 2的32次方</span>
+<span class="token keyword">import</span><span class="token operator">-</span>route rip route<span class="token operator">-</span>policy <span class="token comment" spellcheck="true">//在导入路由时添加路由策略</span>
+
+<span class="token comment" spellcheck="true">//建立route policy</span>
+  
+route<span class="token operator">-</span>policy wakin permit node <span class="token number">10</span> <span class="token comment" spellcheck="true">//建立路由策略</span>
+<span class="token keyword">if</span><span class="token operator">-</span>match <span class="token operator">?</span> <span class="token comment" spellcheck="true">//条件</span>
+<span class="token comment" spellcheck="true">// nat技术  </span>
+nat outbound <span class="token operator">?</span>
+
+<span class="token comment" spellcheck="true">//接口调用acl</span>
+traffic<span class="token operator">-</span>filter inbound <span class="token operator">?</span> <span class="token comment" spellcheck="true">// 入方向调用acl，注意流量的方向走向</span>
+traffic<span class="token operator">-</span>filter outbound <span class="token operator">?</span> <span class="token comment" spellcheck="true">//  出方向调用acl，注意流量的方向走向</span>
+ 
 </code></pre>
-<h3 id="区域的类型"><a href="#区域的类型" class="headerlink" title="区域的类型"></a>区域的类型</h3><table>
-<thead>
-<tr>
-<th>类型</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>骨干区域</td>
-<td>Area0，核心区域也叫==传输区域==（负责在不同的非骨干区域之间分发路由信息）</td>
-</tr>
-<tr>
-<td>非骨干区域</td>
-<td>非Area 0 也称为常规区域</td>
-</tr>
-<tr>
-<td>PS</td>
-<td>==所有其他非骨干区域必须和骨干区域直接相连==</td>
-</tr>
-</tbody></table>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210404212657777.png" alt="image-20210404212657777"> </p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210404212708474.png" alt="image-20210404212708474"></p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>IR</td>
-<td>Internal Route，内部路由器，<strong>所有的接口都属于同一区域</strong></td>
-</tr>
-<tr>
-<td>BR</td>
-<td>Backbone Router，骨干路由器，至少有一个接口属于骨干区域</td>
-</tr>
-<tr>
-<td>ABR</td>
-<td>Area Border Router，区域边界路由器，连接一个或者多个区域到骨干区域，至少有一个接口属于骨干区域</td>
-</tr>
-<tr>
-<td>ASBR</td>
-<td>Autonomous System Border Router 自治系统边界路由器 把从其他路由器协议学习到的路由以引入的方式到OSPF进程中</td>
-</tr>
-<tr>
-<td>PS</td>
-<td>一台路由器可以同时属于多种类型</td>
-</tr>
-</tbody></table>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406142244392.png" alt="image-20210406142244392"></p>
-<h3 id="OSPF核心工作流程："><a href="#OSPF核心工作流程：" class="headerlink" title="OSPF核心工作流程："></a>OSPF核心工作流程：</h3><ol>
-<li><p>发现并建立邻居；</p>
-</li>
-<li><p>传播LSA（区别于距离矢量的路由表更新）</p>
-<p>​        Link State Advertisement,链路状态宣告（路况信息）</p>
-<p>​        链路：路由器接口</p>
-<p>​        状态：描述接口信息（地址、掩码、开销、网络类型、邻居关系等）</p>
-</li>
-<li><p>将LSA泛洪到区域的所有OSPF路由器，而不是直连的路由器</p>
-</li>
-<li><p>收集LSA创建LSDB（链路状态数据库、地图）</p>
-</li>
-<li><p>使用SPF算法计算到每个目标网络的最短距离，并将其置于路由表中</p>
-</li>
-</ol>
-<pre class=" language-java"><code class="language-java">dis ospf peer <span class="token comment" spellcheck="true">// 查看ospf邻居</span>
-dis ospf lsdb <span class="token comment" spellcheck="true">// 查看数据库</span>
-dis ospf bri <span class="token comment" spellcheck="true">//查看OSPF信息</span>
-dis ip routing<span class="token operator">-</span>table<span class="token comment" spellcheck="true">//查看路由表</span>
-dis ip routing<span class="token operator">-</span>table protocol ospf <span class="token comment" spellcheck="true">//过滤ospf路由协议</span>
-<span class="token comment" spellcheck="true">//配置ospf</span>
-ospf x<span class="token comment" spellcheck="true">//创建进程</span>
-area x<span class="token comment" spellcheck="true">//创建区域</span>
-network xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy <span class="token comment" spellcheck="true">//宣告路由</span>
-</code></pre>
-<h4 id="发现邻居"><a href="#发现邻居" class="headerlink" title="发现邻居"></a>发现邻居</h4><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406160029411.png" alt="image-20210406160029411"></p>
-<h4 id="泛洪LSAs"><a href="#泛洪LSAs" class="headerlink" title="泛洪LSAs"></a>泛洪LSAs</h4><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406160323914.png" alt="image-20210406160323914"></p>
-<p>建立数据库 </p>
-<p>说明：LSDB是一种数据库</p>
-<h4 id="SPF算法"><a href="#SPF算法" class="headerlink" title="SPF算法"></a>SPF算法</h4><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406160514844.png" alt="image-20210406160514844"></p>
-<h4 id="生成路由"><a href="#生成路由" class="headerlink" title="生成路由"></a>生成路由</h4><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406160656594.png" alt="image-20210406160656594"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406160728394.png" alt="image-20210406160728394"></p>
-<h4 id="OSPF三张表"><a href="#OSPF三张表" class="headerlink" title="OSPF三张表"></a>OSPF三张表</h4><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406160816139.png" alt="image-20210406160816139"></p>
-<h3 id="Route-ID"><a href="#Route-ID" class="headerlink" title="Route ID"></a>Route ID</h3><ul>
-<li>运行OSPF协议前，必须选取一个RID；</li>
-<li>用来唯一标识一台OSPF路由器；</li>
-<li>RID可以手动配置，也可以自动生成；</li>
+<h2 id="ACL应用场景"><a href="#ACL应用场景" class="headerlink" title="ACL应用场景"></a>ACL应用场景</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424085031472.png" alt="image-20210424085031472"></p>
+<ul>
+<li>ACL可以通过定义规则来允许或拒绝流量的通过。</li>
 </ul>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424085159432.png" alt="image-20210424085159432"></p>
+<h2 id="ACL工作原理"><a href="#ACL工作原理" class="headerlink" title="ACL工作原理"></a>ACL工作原理</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424085438747.png" alt="image-20210424085438747"></p>
+<ul>
+<li> ACL由一条或多条规则组成</li>
+<li>每条规则必须选择动作：允许或拒绝</li>
+<li><strong>每条规则都有一个id序列号（默认=5，间隔=5）</strong></li>
+<li><strong>序列号越小越先进行匹配</strong></li>
+<li><strong>只要有一条规则和报文匹配，就停止查找，称为命中规则</strong></li>
+<li><strong>查找完所有规则，如果没有符合条件的规则，称为未命中规则</strong></li>
+<li>ACL创建后，必须将其应用到某个接口或其他技术内才会生效</li>
+<li>应用在接口时必须选择方向：入站或出站（相对设备来判断）</li>
+<li>不能过滤由设备自己产生的数据</li>
+</ul>
+<p><strong>注意</strong>：制定规则时一定要<strong>先细后粗</strong></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 命名acl</span>
+acl name nolol <span class="token comment" spellcheck="true">// 第一种方式</span>
+acl number <span class="token number">2000</span> <span class="token comment" spellcheck="true">// 第二种方式</span>
+<span class="token comment" spellcheck="true">//增加描述</span>
+description xxx<span class="token operator">-</span>yyy <span class="token comment" spellcheck="true">//用英文表示</span>
+</code></pre>
+<h2 id="ACL规则"><a href="#ACL规则" class="headerlink" title="ACL规则"></a>ACL规则</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424101122072.png" alt="image-20210424101122072"></p>
+<ul>
+<li>每个ACL可以包含多个规则，RTA根据规则来对数据流量进行过滤。</li>
+</ul>
+<h2 id="ACL类型"><a href="#ACL类型" class="headerlink" title="ACL类型"></a>ACL类型</h2><p>分为数字型ACL和命名型ACL</p>
 <table>
 <thead>
 <tr>
+<th>分类</th>
+<th>编号范围</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>基本ACL</td>
+<td>2000-2999</td>
+<td>源IP地址等</td>
+</tr>
+<tr>
+<td>高级ACL</td>
+<td>3000-3999</td>
+<td>源IP地址、目的IP地址、源端口、目的端口等</td>
+</tr>
+<tr>
+<td>二层ACL</td>
+<td>4000-4999</td>
+<td>源MAC地址、目的MAC地址、以太网协议类型等</td>
+</tr>
+<tr>
+<td>用户ACL</td>
+<td>5000-5999</td>
+<td>用户自定义</td>
+</tr>
+</tbody></table>
+<h2 id="正掩码、反掩码、通配符区别："><a href="#正掩码、反掩码、通配符区别：" class="headerlink" title="正掩码、反掩码、通配符区别："></a>正掩码、反掩码、通配符区别：</h2><table>
+<thead>
+<tr>
+<th>名称</th>
 <th>规则</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>RID选取顺序规则</td>
-<td>1 手动配置（推荐） 2 活动回环接口IP地址最高的 3 活动物理接口上选取IP地址最高的</td>
-</tr>
-<tr>
-<td>PS</td>
-<td>RID选举具有非抢占性，，除非重启OSPF进程</td>
-</tr>
-</tbody></table>
-<p><strong>自动配置route id时，ID的选取先看回环口，再看物理口；</strong></p>
-<h4 id="配置Route-ID"><a href="#配置Route-ID" class="headerlink" title="配置Route ID"></a>配置Route ID</h4><pre class=" language-java"><code class="language-java">ospf x route<span class="token operator">-</span>id xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx <span class="token comment" spellcheck="true">//配置RouteID</span>
-reset ospf process <span class="token comment" spellcheck="true">//重启OSPF进程</span>
-</code></pre>
-<h3 id="OSPF数据包结构和类型"><a href="#OSPF数据包结构和类型" class="headerlink" title="OSPF数据包结构和类型"></a>OSPF数据包结构和类型</h3><p>封装于IP协议之上，IP协议号89</p>
-<p>协议号：1代表ICMP；6代表TCP；17代表UDP；</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406192444053.png" alt="image-20210406192444053"></p>
-<h3 id="OSPF数据包类型（5种）"><a href="#OSPF数据包类型（5种）" class="headerlink" title="OSPF数据包类型（5种）"></a>OSPF数据包类型（5种）</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406192758149.png" alt="image-20210406192758149"></p>
-<table>
-<thead>
-<tr>
-<th>OSPF数据包类型</th>
 <th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Hello</td>
-<td>建立并维护邻居关系</td>
-</tr>
-<tr>
-<td>Datebase Description</td>
-<td>LSDB的摘要（仅包含LSA包头）</td>
-</tr>
-<tr>
-<td>Link State Request（LSR）</td>
-<td>请求LSA</td>
-</tr>
-<tr>
-<td>Link State Update（LSU）</td>
-<td>发送LSA</td>
-</tr>
-<tr>
-<td>Link State Acknowledge（LSAck）</td>
-<td>对LSU的确认</td>
-</tr>
-</tbody></table>
-<p><strong>DB包用于对比路由器间的数据库</strong></p>
-<h3 id="OSPF状态机制（7种状态）"><a href="#OSPF状态机制（7种状态）" class="headerlink" title="OSPF状态机制（7种状态）"></a>OSPF状态机制（7种状态）</h3><table>
-<thead>
-<tr>
-<th>状态</th>
+<th>举例</th>
 <th>备注</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>失效状态（Down）</td>
-<td>没有收到Hello包</td>
+<td>掩码</td>
+<td>连续的1和0</td>
+<td>IP地址</td>
+<td>255.255.255.0</td>
+<td>1对应网络位，0对应主机位</td>
 </tr>
 <tr>
-<td>初始状态（init）</td>
-<td>收到Hello包，<strong>但没有看到自己</strong></td>
+<td>反掩码</td>
+<td>连续的0和1</td>
+<td>路由协议</td>
+<td>0.0.0.255</td>
+<td>0必须匹配，1无须匹配</td>
 </tr>
 <tr>
-<td>双向通讯状态（two-way）</td>
-<td>收到Hello包，<strong>且看到了自己，形成邻居关系</strong></td>
-</tr>
-<tr>
-<td>交换初始状态（Exstart）</td>
-<td>决定信息交换时路由器的主从关系</td>
-</tr>
-<tr>
-<td>交换状态（Exchange）</td>
-<td>向邻居发送DD数据包</td>
-</tr>
-<tr>
-<td>加载状态（Loading）</td>
-<td>LSR和LSU交换</td>
-</tr>
-<tr>
-<td>完全邻接状态（Full）</td>
-<td>LSDB同步，形成邻接关系</td>
-</tr>
-<tr>
-<td>PS</td>
-<td>只有Two-Way和Full是稳定状态</td>
+<td>通配符</td>
+<td>任意的0和1</td>
+<td>ACL</td>
+<td>0.0.255.0</td>
+<td>0必须匹配，1无须匹配</td>
 </tr>
 </tbody></table>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406200828033.png" alt="image-20210406200828033"></p>
-<h3 id="OSPF工作流程（数据包和状态切换过程）"><a href="#OSPF工作流程（数据包和状态切换过程）" class="headerlink" title="OSPF工作流程（数据包和状态切换过程）"></a>OSPF工作流程（数据包和状态切换过程）</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406202411075.png" alt="image-20210406202411075"></p>
-<p><strong>OSPF第一阶段是使用Hello包建立双向通信的过程，成为邻居关系。</strong> </p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210407113133475.png" alt="image-20210407113133475"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210407113258252.png" alt="image-20210407113258252"></p>
-<p>OSPF第二阶段是通过交换LSDB同步，建立<strong>邻接关系</strong></p>
-<p><strong>在同一个区域中，路由表可能不一样，邻居表可能不一样，但是数据库是一样的。</strong></p>
-<h3 id="OSPF邻居建立条件"><a href="#OSPF邻居建立条件" class="headerlink" title="OSPF邻居建立条件"></a>OSPF邻居建立条件</h3><p><strong>必须三层直连</strong></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210407162122044.png" alt="image-20210407162122044"></p>
-<p><strong>Hello报文用来发现和维护OSPF邻居关系</strong></p>
-<ul>
-<li>RID唯一</li>
-<li>Hello/Dead时间间隔一致</li>
-<li>区域ID一致</li>
-<li>认证（如果启用了认证）一致</li>
-<li>链路MTU大小一致（默认不开启检查，思科默认开启）</li>
-<li>子网掩码一致（以太网环境）</li>
-<li>网络地址一致</li>
-<li>末梢区域设置一致</li>
-</ul>
-<p><strong>当出现邻居建立问题时需要从这几方面入手排查</strong></p>
-<h4 id="配置OSPFHello时间"><a href="#配置OSPFHello时间" class="headerlink" title="配置OSPFHello时间"></a>配置OSPFHello时间</h4><pre class=" language-java"><code class="language-java">ospf timer hello x <span class="token comment" spellcheck="true">//配置ospf hello时间</span>
-<span class="token comment" spellcheck="true">//默认Dead时间为hello时间的4倍</span>
-</code></pre>
-<h3 id="OSPF网络类型：基于接口"><a href="#OSPF网络类型：基于接口" class="headerlink" title="OSPF网络类型：基于接口"></a>OSPF网络类型：基于接口</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210407170317870.png" alt="image-20210407170317870"></p>
-<ul>
-<li>缺省情况下，OSPF认为以太网的网络类型是广播类型，PPP、HDLC的网络类型是点到点类型</li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210407170601839.png" alt="image-20210407170601839"></p>
-<ul>
-<li>缺省情况下，OSPF认为帧中继（FR），ATM（异步传输）的网络类型是NBMA，BMA广播多路，NBMA非广播多路。</li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210408103026810.png" alt="image-20210408103026810"></p>
-<p>这些接口也是多路访问，因为他是以太网接口，不是因为他有邻居才是多路访问。</p>
-<h4 id="改封装（串口）"><a href="#改封装（串口）" class="headerlink" title="改封装（串口）"></a>改封装（串口）</h4><pre class=" language-java"><code class="language-java">link<span class="token operator">-</span>protocol <span class="token operator">?</span> <span class="token comment" spellcheck="true">// 封装类型为 fr hdlc lapb ppp sdlc x25</span>
-dis ospf <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">// 网络类型验证 p2p 是点到点的类型 broadcast是广播类型</span>
-<span class="token comment" spellcheck="true">//点到点的是没有MAC地址的</span>
-</code></pre>
-<h3 id="DR和BDR"><a href="#DR和BDR" class="headerlink" title="DR和BDR"></a>DR和BDR</h3><p>只要是<strong>多路访问BMA和NBMA网络中</strong>，为了<strong>减少邻接关系</strong>的数量，从而<strong>减少数据包</strong>交换次数，最终<strong>节省带宽</strong>，<strong>降低</strong>对路由器处理能力的压力，选举<strong>DR和BDR</strong>。</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210408091323260.png" alt="image-20210408091323260"></p>
 <table>
 <thead>
 <tr>
-<th>术语</th>
+<th>举例</th>
 <th>备注</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>DR</td>
-<td>Designed Route，指定路由器，类似班长，总经理</td>
+<td>192.168.0.1 0.0.0.0/0</td>
+<td>匹配一个主机地址</td>
 </tr>
 <tr>
-<td>BDR</td>
-<td>Backup DR，备用DR，类似副班长，副总经理</td>
+<td>192.168.0.0 0.0.0.255</td>
+<td>匹配一个网段</td>
 </tr>
 <tr>
-<td>DRothers</td>
-<td>类似普通学生，普通员工</td>
+<td>192.168.0.1 0.0.0.254</td>
+<td>匹配网段内奇数地址</td>
 </tr>
 <tr>
-<td>关系</td>
-<td>DR、BDR、DRothers之间都保持邻接关系（Full）DRother之间保持邻居关系（Two-Way）</td>
+<td>192.168.0.0 0.0.0.254</td>
+<td>匹配网段内偶数地址</td>
 </tr>
 <tr>
-<td>地址</td>
-<td>224.0.0.6向DR和BDR发送链路状态更新，224.0.0.5向所有OSPF路由器发送</td>
-</tr>
-<tr>
-<td>选举规则</td>
-<td>首先比较<strong>Hello报文中</strong>携带的<strong>优先级</strong>，优先级范围0~225，默认=1，<strong>优先级最高的被选举为DR</strong>，<strong>优先级次高的被选举为BDR</strong>，<strong>优先级为0的不参与选举</strong>，<strong>优先级一致</strong>的情况下，比较<strong>RID</strong>，<strong>越发越优先</strong>，选举具有<strong>非抢占性</strong>，除非当DR和BDR都失效或重启OSPF进程</td>
+<td>any=x.x.x.x 255.255.255.255</td>
+<td>匹配所有地址</td>
 </tr>
 </tbody></table>
-<pre class=" language-java"><code class="language-java">dis ospf <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//查看ospf协议对应接口的信息</span>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424111957914.png" alt="image-20210424111957914"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424112437263.png" alt="image-20210424112437263"></p>
+<p><strong>说明：直接写名字定义的ACL，也可以定义ACL的类型</strong></p>
+<hr>
+<p><strong>在配置路由时，打正掩码也会自动转换为反掩码，反掩码也就是 4个255减正掩码得到的。</strong></p>
+<hr>
+<p><strong>通配符相当于与运算 匹配0的位数</strong></p>
+<hr>
+<p><strong>奇数地址只要保证最后一位为1</strong>即可</p>
+<hr>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 直接写名字定义的ACL，也可以定义ACL的类型</span>
+acl name nogame <span class="token operator">?</span> <span class="token comment" spellcheck="true">// 默认为高级adv</span>
   
-dis ospf <span class="token keyword">int</span> lo <span class="token number">1</span> <span class="token comment" spellcheck="true">//查看ospf 回环口的接口信息</span>
   
-<span class="token comment" spellcheck="true">//更改回环口ospf的度量值</span>
-<span class="token keyword">int</span> lo <span class="token number">1</span>
-ospf cost x <span class="token comment" spellcheck="true">//输入更改的值即可</span>
+<span class="token comment" spellcheck="true">//查看所有acl</span>
+dis acl all <span class="token comment" spellcheck="true">//查看所有acl</span>
   
-dis ospf peer b <span class="token comment" spellcheck="true">//查看邻居  </span>
+<span class="token comment" spellcheck="true">//acl允许通过所有</span>
+rule per so <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">255.255</span><span class="token punctuation">.</span><span class="token number">255.255</span> <span class="token comment" spellcheck="true">//acl允许通过所有</span>
+rule per so any <span class="token comment" spellcheck="true">//acl允许通过所有</span>
+rule per <span class="token comment" spellcheck="true">//acl允许通过所有</span>
   
-<span class="token comment" spellcheck="true">//配置ospf  </span>
-sys
-sys R2
-<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
-ip add xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx yy
-ospf <span class="token number">1</span> router<span class="token operator">-</span>id zzz<span class="token punctuation">.</span>zzz<span class="token punctuation">.</span>zzz<span class="token punctuation">.</span>zzz
-a j
-net xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx kkk<span class="token punctuation">.</span>kkk<span class="token punctuation">.</span>kkk<span class="token punctuation">.</span>kkk
 </code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210408110646995.png" alt="image-20210408110646995"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210408110712272.png" alt="image-20210408110712272"></p>
-<p>DR，BDR是<strong>基于接口</strong>，一个路由器有好多接口，</p>
-<h3 id="ospf度量值（开销）"><a href="#ospf度量值（开销）" class="headerlink" title="ospf度量值（开销）"></a>ospf度量值（开销）</h3><ul>
-<li><p>在每一个运行OSPF的接口上，都维护着一个接口Cost</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424105857484.png" alt="image-20210424105857484"></p>
+<h2 id="ACL配置"><a href="#ACL配置" class="headerlink" title="ACL配置"></a>ACL配置</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>acl 2000</td>
+<td>创建一个基本acl</td>
+</tr>
+<tr>
+<td>rule 5 deny/permit source 192.168.1.0 0.0.0.255</td>
+<td>配置ACL的规则：<br>拒绝或允许源地址为<br>192.168.1.0 /24网段内的所有流量</td>
+</tr>
+<tr>
+<td>acl 3000</td>
+<td>创建一个高级ACL</td>
+</tr>
+<tr>
+<td>rule 5 deny/permit tcp source 192.168.1.0 0.0.0.255 destination 8.8.8.8 0 destination-port eq 80</td>
+<td>配置ACL的规则<br>拒绝或允许源地址为<br>192.168.1.0/24网段内到8.8.8.8 的HTTP流量</td>
+</tr>
+<tr>
+<td>traffic-filter inbound/outbound acl 2000</td>
+<td>在接口调用ACL过滤流量</td>
+</tr>
+<tr>
+<td>display acl 2000</td>
+<td>验证acl</td>
+</tr>
+<tr>
+<td>display traffic-filter applied-record</td>
+<td>查看设备上所有基于ACL调用情况</td>
+</tr>
+</tbody></table>
+<pre class=" language-java"><code class="language-java">rule <span class="token number">5</span> deny<span class="token operator">/</span>permit tcp source <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">1.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span> destination <span class="token number">8.8</span><span class="token punctuation">.</span><span class="token number">8.8</span> <span class="token number">0</span> destination<span class="token operator">-</span>port eq <span class="token number">80</span> <span class="token comment" spellcheck="true">//默认不写就是全部</span>
+rule <span class="token number">2</span> permit TCP destination<span class="token operator">-</span>port <span class="token operator">?</span>
+  
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424122341908.png" alt="image-20210424122341908"></p>
+<h2 id="基本ACL配置"><a href="#基本ACL配置" class="headerlink" title="基本ACL配置"></a>基本ACL配置</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424122816484.png" alt="image-20210424122816484"></p>
+<h2 id="高级ACL配置"><a href="#高级ACL配置" class="headerlink" title="高级ACL配置"></a>高级ACL配置</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424122933667.png" alt="image-20210424122933667"></p>
+<ul>
+<li><p>基本ACL：允许或拒绝所欲协议，我只关心你从哪里来</p>
 </li>
-<li><p>Cost = 10^8/BW(bps) = 100Mbps/BW = 接口带宽参考值/接口带宽</p>
+<li><p>高级ACL：我可以知道你从哪里来，到哪里去，去做什么</p>
 </li>
-<li><p>到一个目标网络的度量值 = </p>
-<p>​    从源到目标所有<strong>出站接口</strong>的Cost值累加（数据方向）</p>
-<p>​    从源到本路由器沿途所有<strong>入站接口</strong>的Cost值累加（路有方向）</p>
+<li><p>基本ACL调用离目标近一点</p>
+</li>
+<li><p>高级ACL调用离源近一点</p>
 </li>
 </ul>
-<p><strong>路由方向看入接口，数据方向看出接口</strong></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210408135018436.png" alt="image-20210408135018436"></p>
+<p>ACL接口调用方向的建议</p>
+<p>1、基本ACL尽量调用在离目标最近的出站接口</p>
+<p>2、高级ACL尽量调用在离源头最近的入站接口</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424124622328.png" alt="image-20210424124622328"></p>
 
         </div>
 
@@ -709,9 +618,7 @@ net xxx<span class="token punctuation">.</span>xxx<span class="token punctuation
               
               <a href="/tags/HCIA/" style="color: #716e77;">HCIA<em>·</em></a>
               
-              <a href="/tags/%E7%AC%94%E8%AE%B0/" style="color: #716e77;">笔记<em>·</em></a>
-              
-              <a href="/tags/OSPF/" style="color: #716e77;">OSPF<em>·</em></a>
+              <a href="/tags/ACL/" style="color: #716e77;">ACL<em>·</em></a>
               
             </span>
             <span>
@@ -739,36 +646,19 @@ net xxx<span class="token punctuation">.</span>xxx<span class="token punctuation
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-        
-        <div class="post-nepre half previous">
-          
-            <a href="/post/d801.html" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing17.jpg"
-                  style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
-                  src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing17.jpg">
-              </div>
-              <span class="label">Previous Post</span>
-              <div class="info">
-                <h3>HCIA学习笔记7</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
           
           
-          
-          <div class="post-nepre half next">
-            
-              <a href="/post/d940.html" rel="next">
+            <div class="post-nepre full next">
+              
+              <a href="/post/259a.html" rel="next">
                 <div class="background">
-                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/biaoti2.jpg"
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing25.jpg"
                     style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
-                    onerror="imgError(this,3)" src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/biaoti2.jpg">
+                    onerror="imgError(this,3)" src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing25.jpg">
                 </div>
                 <span class="label">Next Post</span>
                 <div class="info">
-                  <h3>HCIA学习笔记5</h3>
+                  <h3>HCIA学习笔记13</h3>
                   <hr>
                 </div>
               </a>
