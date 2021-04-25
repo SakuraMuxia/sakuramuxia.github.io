@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">HCIA学习笔记1 | 慢一点，才更快 | 雨落</title>
+  <title itemprop="name">HCIA学习笔记17 | 慢一点，才更快 | 雨落</title>
   
     <link rel="shortcut icon" href="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tubiao.ico">
   
@@ -294,11 +294,11 @@
 
 <div class="pattern-center single-center">
   <!-- 有配图默认渲染第一张 -->
-  <div class="pattern-attachment-img lazyload" style="background-image: url(https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing10.jpg);"
-    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing10.jpg">
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing29.jpg);"
+    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing29.jpg">
   </div>
   <header class="pattern-header single-header">
-    <h1 class="entry-title">HCIA学习笔记1</h1>
+    <h1 class="entry-title">HCIA学习笔记17</h1>
     <p class="entry-census">
       
       <span class="post-meta-item">
@@ -318,7 +318,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-calendar"></i>
         </span>
-        <span class="post-meta-item-text"> 2021-3-30 </span>
+        <span class="post-meta-item-text"> 2021-4-25 </span>
       </span>
       <span class="bull">
         ·</span>
@@ -345,7 +345,7 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               </span class="post-meta-item-text">
-                <span class="valine-comment-count" data-xid="/1a41"> </span>
+                <span class="valine-comment-count" data-xid="/e69b"> </span>
               </span>
           </span> -->
     </p>
@@ -362,328 +362,47 @@
         <!--套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=27901843&amp;auto=0&amp;height=66"></iframe>
+          <h1 id="HCNA综合实验"><a href="#HCNA综合实验" class="headerlink" title="HCNA综合实验"></a>HCNA综合实验</h1><h2 id="配置要求"><a href="#配置要求" class="headerlink" title="配置要求"></a>配置要求</h2><p><img src="C:\Users\Aqua\AppData\Roaming\Typora\typora-user-images\image-20210425104834085.png" alt="image-20210425104834085"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//配置说明</span>
 
-<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><h3 id="计算机网络的定义"><a href="#计算机网络的定义" class="headerlink" title="计算机网络的定义"></a>计算机网络的定义</h3><p>计算机网络是一组自治计算机互联的集合</p>
-<h3 id="网络的组成"><a href="#网络的组成" class="headerlink" title="网络的组成"></a>网络的组成</h3><p>设备Device；介质Media；报文Date；协议Protocol；信息源source（发送方）和信息目Destination（接收方）；</p>
-<h3 id="网络的演进"><a href="#网络的演进" class="headerlink" title="网络的演进"></a>网络的演进</h3><p><strong>ISP：Internet Services Provider，因特网服务提供商；</strong></p>
-<p><strong>最后一公里接入：宽带；</strong></p>
-<h3 id="网络的类型"><a href="#网络的类型" class="headerlink" title="网络的类型"></a>网络的类型</h3><p>覆盖范围不同组网技术不同（二层 物理层 数据链路层）</p>
-<h3 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h3><p><strong>网络通信中的语言：汉语英语；</strong></p>
-<p><strong>note：ping IP地址 -t 一直ping</strong></p>
-<h3 id="网络拓扑"><a href="#网络拓扑" class="headerlink" title="网络拓扑"></a>网络拓扑</h3><p>用来面熟网络结构（网络类型、设备类型、设备数量、线缆、带宽、服务、数据走向）</p>
-<h3 id="拓扑类型"><a href="#拓扑类型" class="headerlink" title="拓扑类型"></a>拓扑类型</h3><p>点到点；星型；</p>
-<h3 id="网络模型"><a href="#网络模型" class="headerlink" title="网络模型"></a>网络模型</h3><p><strong>网络打通：路由、交换技术即可；</strong></p>
-<p><strong>防火墙可以替代路由器；</strong></p>
-<h3 id="分层思想"><a href="#分层思想" class="headerlink" title="分层思想"></a>分层思想</h3><p><strong>==将复杂的流程分解为几个功能相对单一的子过程==；</strong></p>
-<h3 id="网络标准化"><a href="#网络标准化" class="headerlink" title="网络标准化"></a>网络标准化</h3><p>规范不同的互联标准，兼容；</p>
-<h3 id="两大模型"><a href="#两大模型" class="headerlink" title="两大模型"></a>两大模型</h3><p>==<strong>OSI模型：</strong>==</p>
-<p>物理层，数据链路层，网络层，传输层，会话层，表示层，应用层（七层）；</p>
-<p>==<strong>协议位于的层数：</strong>==</p>
-<p>DNS，HTTP， 位于应用层；</p>
-<p>TCP/IP，UDP，位于传输层；</p>
-<p>IP，ICMP，位于网络层；</p>
-<p>==<strong>TCP/IP模型：</strong>==</p>
-<p><strong>排查问题可以从 网络模型从下往上排查，或者从上往下排查；</strong></p>
-<p>抓包工具可以使用wireshark或科来工具进行抓包；</p>
-<p>选择好网卡，选择筛选器，选择要抓包的协议类型：icmp，http，dns。</p>
-<h3 id="数据的封装和解封"><a href="#数据的封装和解封" class="headerlink" title="数据的封装和解封"></a>数据的封装和解封</h3><ul>
-<li>封装：应用数据需要经过每一层处理后通过网络传输到目的端；</li>
-<li>OSI把每一层数据称为PDU（protocol Data Unit，协议数据单元）；</li>
-<li>TCP/IP根据不同层分别使用了段，包，帧，比特。</li>
-<li>逐层向下传递数据，并添加报文和报尾的过程称为封装（打包）；</li>
-<li>反之，接收方需要逐层向上传递数据，称为解封（拆包）；</li>
-</ul>
-<hr>
-<hr>
-<h3 id="常用的应用层协议"><a href="#常用的应用层协议" class="headerlink" title="常用的应用层协议"></a>常用的应用层协议</h3><ul>
-<li>DNS</li>
-<li>HTTP</li>
-<li>SMTP与POP3/IMAP</li>
-<li>Telnet</li>
-<li>FTP与TFTP</li>
-</ul>
-<p><strong>DNS： Domain Name System，域名解析系统；</strong></p>
-<ul>
-<li>建立IP地址与域名之间的映射关系；</li>
-<li>将域名解析为IP地址；</li>
-<li>将IP地址解析为域名；</li>
-</ul>
-<p>常见的DNS服务器：114.114.114.114/ 223.5.5.5/223.6.6.6/180.76.76.76</p>
-<p><strong>DNS专门调试模式：</strong></p>
-<pre class=" language-JAVA"><code class="language-JAVA">nslookup //再输入域名
-ipconfig/displaydns //查看DNS缓存
-ipconfig/flushdns //清空DNS缓存
+<span class="token comment" spellcheck="true">//配置所需的IP地址，都已在拓扑上标注。</span>
+
+<span class="token comment" spellcheck="true">//配置要求</span>
+
+配置Telnet，要求所有网络设备均支持远程管理，密码为admin。
+
+配置Trunk，交换机之间的链路均为Trunk模式。
+
+配置VLAN，在SW2和SW3上创建相关VLAN，关联<span class="token number">4</span>台pc到对应的VLAN接口。
+
+配置mls，通过sw1实现VLAN间路由。
+
+配置dhcp，使sw1可以为各个VLAN内主机分配地址信息。
+
+配置stp，使sw1成为所有vlan的根桥，要求手动修改优先级为<span class="token number">4096</span>。
+
+配置ospf，企业内网运行OSPF1。
+
+配置缺省和NAT，在R1上配置静态路由，sw1通过OSPF学习缺省路由。
+
+配置NAT，在R1上配置PAT（只需要转换四个VLAN网段）。
+
+配置PPP，R1和R2之间封装协议为PPP，使用CHAP双向认证，密码为love。
+
+配置OSPF，R2和R3和R4之间运行OSPF2
+
+配置DNS，可以通过www<span class="token punctuation">.</span>wakin<span class="token punctuation">.</span>com访问HTTP服务器，通过www<span class="token punctuation">.</span>movie<span class="token punctuation">.</span>com访问FTP服务器。
+
+配置ACL，在R1上配置ACL，拒绝VLAN20的主机通过浏览器访问HTTP服务器，其他流量不受影响。
 </code></pre>
-<h3 id="HTTP-协议-超文本传输协议"><a href="#HTTP-协议-超文本传输协议" class="headerlink" title="HTTP 协议 超文本传输协议"></a>HTTP 协议 超文本传输协议</h3><ul>
-<li> 帮助客户端访问万维网</li>
-<li> 网页浏览器通过翻译HtML文件来表现文本、图像、音乐、动画及视频等对象、</li>
-</ul>
-<p>第六讲抓包练习；</p>
-<p>SMTP与POP3：邮件服务</p>
-<table>
-<thead>
-<tr>
-<th>协议</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>SMTP</td>
-<td>Simple Mail Transfer Protocol，简单邮件传输协议</td>
-</tr>
-<tr>
-<td>POP3</td>
-<td>Post Office Protocol v3，邮局协议版本3</td>
-</tr>
-<tr>
-<td>IMAP</td>
-<td>Internet Message Access Protocol，互联网邮件访问协议</td>
-</tr>
-</tbody></table>
-<h3 id="Telnet协议：终端协议"><a href="#Telnet协议：终端协议" class="headerlink" title="Telnet协议：终端协议"></a>Telnet协议：终端协议</h3><p>远程管理的主要协议（网络设备、服务器、数据库）</p>
-<p>常用终端工具有：SecureCRT、Putty、Xshell</p>
-<p><strong>telnet应该开了这个服务才能响应；</strong></p>
-<h3 id="FTP和TFTP"><a href="#FTP和TFTP" class="headerlink" title="FTP和TFTP"></a>FTP和TFTP</h3><table>
-<thead>
-<tr>
-<th>协议</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>FTP</td>
-<td>File Transfer Protocol，文件传输协议</td>
-</tr>
-<tr>
-<td>TFTP</td>
-<td>Trivial File Transfer Protocol，简单文件传输协议，不可靠；</td>
-</tr>
-</tbody></table>
-<p>FTP://服务器的IP或域名/路径/文件名</p>
-<p>FTP://用户名:密码:@IP或域名:端口号</p>
-<h2 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h2><p>传输层定义了主机应用程序之间端到端的连通性，传输层中最为常见的两个协议分别是传输控制协议TCP（Transmission Control Protocol）和用户数据包协议UDP（User Datagram Protocol）</p>
-<h3 id="传输层概述"><a href="#传输层概述" class="headerlink" title="传输层概述"></a>传输层概述</h3><ul>
-<li>传输层提供端到端的连接：</li>
-<li>网络层提供点到点的连接：</li>
-</ul>
-<h3 id="传输层端口（port）"><a href="#传输层端口（port）" class="headerlink" title="传输层端口（port）"></a>传输层端口（port）</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210325180030816.png" alt="image-20210325180030816">==怎么查看自己或者目标服务器的端口是否打开==；</p>
-<p> <strong>端口号用于区分不同的网络服务；</strong></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210325180611198.png" alt="image-20210325180611198"></p>
-<p>端口号一共有 0 ~ 65535个（2的16次方）</p>
-<p> 既使用TCP和UDP的服务是DNS；</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210325184225329.png" alt="image-20210325184225329"></p>
-<ul>
-<li><p>源端口随机分配，目标端口使用知名端口；</p>
-</li>
-<li><p>应用客户端使用的源端口号一般为系统中未使用的且大于1023；</p>
-</li>
-<li><p>目的端口号为服务端开启的服务所侦听的端口，如HTTP缺省使用80；</p>
-</li>
-</ul>
-<p><strong>注意</strong>：</p>
-<ul>
-<li><p>ping不同有可能是防火墙是开着的；</p>
-</li>
-<li><p>开着哪些服务，哪些端口是开着的；</p>
-</li>
-<li><p>传输层要搞明白三个东西：==端口号，TCP/UDP,DNS；==</p>
-</li>
-<li><p>DNS既 会用到TCP也会用到UDP；</p>
-</li>
-<li><p>ping是网络层的技术；</p>
-</li>
-<li><p>telnet（TCP协议）命令 可以探测端口是否开启:IP加端口；</p>
-</li>
-<li><p>端口扫描：portScanner&amp;stuff工具软件；</p>
-</li>
-</ul>
-<hr>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210326104657370.png" alt="image-20210326104657370"></p>
-<p> 常见的协议端口号：</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210326104935310.png" alt="image-20210326104935310"></p>
-<h3 id="传输层协议"><a href="#传输层协议" class="headerlink" title="传输层协议"></a>传输层协议</h3><table>
-<thead>
-<tr>
-<th>协议</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>TCP</td>
-<td>Transmission Control Protocol，传输控制协议；</td>
-</tr>
-<tr>
-<td>UDP</td>
-<td>User Datagram Protocol，用户数据报协议；</td>
-</tr>
-</tbody></table>
-<h4 id="TCP-UDP数据包结构对比"><a href="#TCP-UDP数据包结构对比" class="headerlink" title="TCP UDP数据包结构对比"></a>TCP UDP数据包结构对比</h4><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210326110012805.png" alt="image-20210326110012805"></p>
-<h4 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h4><p>TCP是一种==面向连接==的传输层协议，提供==可靠==的传输服务；</p>
-<h5 id="TCP会话建立－三次握手"><a href="#TCP会话建立－三次握手" class="headerlink" title="TCP会话建立－三次握手"></a>TCP会话建立－三次握手</h5><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210326110644764.png" alt="image-20210326110644764"></p>
-<p>类似于打电话：</p>
-<p>甲：你好，你是小王吗？</p>
-<p>乙：是的，你是老李吗？</p>
-<p>甲：是的。</p>
-<h5 id="TCP会话的确认"><a href="#TCP会话的确认" class="headerlink" title="TCP会话的确认"></a>TCP会话的确认</h5><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210326115505822.png" alt="image-20210326115505822"></p>
-<h5 id="TCP会话的拥塞和流量控制"><a href="#TCP会话的拥塞和流量控制" class="headerlink" title="TCP会话的拥塞和流量控制"></a>TCP会话的拥塞和流量控制</h5><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210326115855153.png" alt="image-20210326115855153"></p>
-<h5 id="TCP会话的终止-四次挥手"><a href="#TCP会话的终止-四次挥手" class="headerlink" title="TCP会话的终止-四次挥手"></a>TCP会话的终止-四次挥手</h5><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210326141221937.png" alt="image-20210326141221937"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210326141336737.png" alt="image-20210326141336737"></p>
-<h4 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h4><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210326141455283.png" alt="image-20210326141455283"></p>
-<p>TCP和UDP的对比：</p>
-<table>
-<thead>
-<tr>
-<th>传输控制协议（TCP）</th>
-<th>用户数据报协议（UDP）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>面向连接</td>
-<td>无连接</td>
-</tr>
-<tr>
-<td>可靠传输</td>
-<td>尽力而为的传输</td>
-</tr>
-<tr>
-<td>支持流控及窗口机制</td>
-<td>无流控及窗口机制</td>
-</tr>
-<tr>
-<td>Http，FTP等</td>
-<td>TFTP，DNS，DHCP等</td>
-</tr>
-</tbody></table>
-<h2 id="数据链路层与以太网（二层）"><a href="#数据链路层与以太网（二层）" class="headerlink" title="数据链路层与以太网（二层）"></a>数据链路层与以太网（二层）</h2><p><strong>以太网：Ethnet，当今主导地位的局域网组网技术；</strong></p>
-<h3 id="网络标准："><a href="#网络标准：" class="headerlink" title="网络标准："></a>网络标准：</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210326143721225.png" alt="image-20210326143721225"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210326143817149.png" alt="image-20210326143817149"></p>
-<h3 id="数据链路层的分层设计"><a href="#数据链路层的分层设计" class="headerlink" title="数据链路层的分层设计"></a>数据链路层的分层设计</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210326144154821.png" alt="image-20210326144154821"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210326144348763.png" alt="image-20210326144348763"></p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>LLC</td>
-<td>Logical Link Control 逻辑链路控制：负责识别网络层的协议类型，接收上层数据包封装后帧后，向下层传递；</td>
-</tr>
-<tr>
-<td>MAC</td>
-<td>Media Access Control，介质访问控制；处理硬件设备的物理寻址，定义网络拓扑及数据帧的传递顺序</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h3 id="以太网的帧结构："><a href="#以太网的帧结构：" class="headerlink" title="以太网的帧结构："></a>以太网的帧结构：</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210326145521714.png" alt="image-20210326145521714"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210326145737246.png" alt="image-20210326145737246"></p>
-<p><strong>说明：</strong></p>
-<ul>
-<li>0800表IPV4；86DD代表IPV6；0806代表ARP</li>
-<li>ping 会产生ICMP协议的包；ping IP -l 2000</li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210326151839323.png" alt="image-20210326151839323"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210326151742802.png" alt="image-20210326151742802"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210326152453827.png" alt="image-20210326152453827"></p>
-<h2 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h2><h3 id="ARP"><a href="#ARP" class="headerlink" title="ARP"></a>ARP</h3><p>：Address Resolution Protocol，地址解析协议，获取MAC地址的东西；</p>
-<p>网络设备有数据要发送给另一台网络设备时，必须要知道对方而网络层地址（IP地址）。IP地址由网络层来提供，但是仅有IP地址是不够的，IP数据报文必须封装成帧才能通过数据链路进行发送。数据帧必须要包含目的MAC地址，因此发送端还必须获取到目的MAC地址，通过目的IP地址而获取目的MAC地址的过程是由ARP协议来实现的。</p>
-<p>数据链路层在进行数据封装时，需要目的MAC地址。</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210326153723923.png" alt="image-20210326153723923"></p>
-<pre class=" language-java"><code class="language-java">arp <span class="token operator">-</span>a <span class="token comment" spellcheck="true">//查看缓存MAC</span>
-arp <span class="token operator">-</span>d <span class="token comment" spellcheck="true">//清除缓存MAC</span>
+<p>拓扑文件下载地址：<a target="_blank" rel="noopener" href="https://liubei688.lanzoui.com/iUYS5oh0wtc">https://liubei688.lanzoui.com/iUYS5oh0wtc</a></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210425105949806.png" alt="image-20210425105949806"></p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+SW1
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>  
+sys
+sys SW1
 </code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210326155110740.png" alt="image-20210326155012736"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210326155133993.png" alt="image-20210326155133993"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210326155159749.png" alt="image-20210326155159749"></p>
-<p>说明：</p>
-<p>MAC：FFFFFFFFFFFF或全0代表广播；</p>
-<p> <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210326170005651.png" alt="image-20210326170005651"></p>
-<p>自己问自己，得到回复则代表地址冲突；</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210326170308763.png" alt="image-20210326170308763"></p>
-<h3 id="ICMP"><a href="#ICMP" class="headerlink" title="ICMP"></a>ICMP</h3><p>Internet控制报文协议，ICMP是网络层的一个重要协议，ICMP协议用来在网络设备间传递各种差错和控制信息，他对于收集各种网络信息、诊断和排除各种网络故障具有至关重要的作用。使用基于ICMP的应用时，需要对ICMP的工作原理非常熟悉。</p>
-<ul>
-<li>用于可达性测试；</li>
-<li>使用ping命令调用；</li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210326170827806.png" alt="image-20210326170827806"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210326171110304.png" alt="image-20210326171110304"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210326171120885.png" alt="image-20210326171120885"></p>
-<p>ping命令的结果：</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//无法访问主机</span>
-<span class="token comment" spellcheck="true">//请求超时 防火墙开启了 </span>
-<span class="token comment" spellcheck="true">//传输失败 网关失败</span>
-</code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210326172033062.png" alt="image-20210326172033062"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210326173220776.png" alt="image-20210326173220776"></p>
-<p> 是否在同一个地址段，</p>
-<ul>
-<li>在同一个地址段，不需要通过网关直接能ping同；</li>
-<li>不在同一个地址段，需要网关找相关的路由；</li>
-</ul>
-<p>网关MAC是否有问题；</p>
-<h3 id="IP协议"><a href="#IP协议" class="headerlink" title="IP协议"></a>IP协议</h3><p><strong>internet protocol 因特网协议；</strong></p>
-<p>网络层位于数据链路层与传输层之间，网络层中包含了许多协议，其中最为重要的协议就是IP协议，网络层提供了IP路由功能，理解IP路由除了要熟悉IP协议的工作机制之外，还必须理解IP编址以及合理地使用IP地址来设计网络；</p>
-<p><strong>IP的包头结构：</strong></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210326174747051.png" alt="image-20210326174747051"></p>
-<h4 id="协议号"><a href="#协议号" class="headerlink" title="协议号"></a>协议号</h4><p>用于标识上层协议;</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210327112535336.png" alt="image-20210327112535336"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210327112559476.png" alt="image-20210327112559476"></p>
-<h3 id="分片"><a href="#分片" class="headerlink" title="分片"></a>分片</h3><p>当数据包比链路MTU大时，就可以被被分解为很多的足够小片段的过程；</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210327094531957.png" alt="image-20210327094531957"></p>
-<p>ping命令：</p>
-<pre class=" language-java"><code class="language-java">ping IP <span class="token operator">-</span>l 数据包大小<span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//IPV4可以分段;</span>
-<span class="token comment" spellcheck="true">//IPV6不可以分段;</span>
-ping IP <span class="token operator">-</span>f <span class="token comment" spellcheck="true">//不允许分片；</span>
-    
-</code></pre>
-<h3 id="TTL-生存时间"><a href="#TTL-生存时间" class="headerlink" title="TTL 生存时间"></a>TTL 生存时间</h3><ul>
-<li>Time to Live 生存时间；</li>
-<li>防止IP数据包在网络内无休止地传输（环路）；</li>
-<li>没经过一次路由TTL值就会减1；</li>
-<li>当TTL=0的时候，就丢弃数据包；</li>
-<li>利用TTL特性，可以实现路由跟踪技术，排错的重要方法之一；</li>
-</ul>
-<pre class=" language-java"><code class="language-java">ping <span class="token operator">-</span>i
-tracert <span class="token operator">-</span>d <span class="token comment" spellcheck="true">//常用重要命令9</span>
-</code></pre>
-<p>TTL的默认值255；64；128；</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210327102616683.png" alt="image-20210327102616683"></p>
-<p>说明：</p>
-<ul>
-<li>网关就相当于一条默认路由；</li>
-<li>TTL的代码是11,0；</li>
-</ul>
-<p>问题：</p>
-<p>一去一回TTL会不会两倍消失？</p>
-<h3 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h3><p>在IP网络中，通信节点需要一个IP地址；</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210327113441022.png" alt="image-20210327113441022"></p>
-<ul>
-<li><p>以点分十进制，由32位二进制</p>
-</li>
-<li><p>分为网络位和主机位两部分:</p>
-<p>网络位，代表IP地址所属的网段；</p>
-<p>主机位，代表网段上的某个节点；</p>
-</li>
-<li><p>​    由子网掩码决定分界点；</p>
-</li>
-</ul>
-<p>类似为电话号码，国际号，区号，号码；</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210327114132753.png" alt="image-20210327114132753"></p>
-<h4 id="IP地址的分类："><a href="#IP地址的分类：" class="headerlink" title="IP地址的分类："></a>IP地址的分类：</h4><p>根据第一组八位二进制 </p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210327120739821.png" alt="image-20210327120739821"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210327121404232.png" alt="image-20210327121404232"></p>
-<p>127是一个环回网卡，回环 是自己；</p>
-<p>测试TCP/IP协议栈 组件是否安装；</p>
 
         </div>
 
@@ -718,7 +437,7 @@ tracert <span class="token operator">-</span>d <span class="token comment" spell
               
               <a href="/tags/HCIA/" style="color: #716e77;">HCIA<em>·</em></a>
               
-              <a href="/tags/%E7%AC%94%E8%AE%B0/" style="color: #716e77;">笔记<em>·</em></a>
+              <a href="/tags/%E5%AE%9E%E9%AA%8C/" style="color: #716e77;">实验<em>·</em></a>
               
             </span>
             <span>
@@ -746,36 +465,19 @@ tracert <span class="token operator">-</span>d <span class="token comment" spell
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-        
-        <div class="post-nepre half previous">
-          
-            <a href="/post/1b01.html" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing14.jpg"
-                  style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
-                  src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing14.jpg">
-              </div>
-              <span class="label">Previous Post</span>
-              <div class="info">
-                <h3>HCIA学习笔记2</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
           
           
-          
-          <div class="post-nepre half next">
-            
-              <a href="/post/3326.html" rel="next">
+            <div class="post-nepre full next">
+              
+              <a href="/post/265a.html" rel="next">
                 <div class="background">
-                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing11.jpg"
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing28.jpg"
                     style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
-                    onerror="imgError(this,3)" src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing11.jpg">
+                    onerror="imgError(this,3)" src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing28.jpg">
                 </div>
                 <span class="label">Next Post</span>
                 <div class="info">
-                  <h3>Java学习笔记1</h3>
+                  <h3>HCIA学习笔记16</h3>
                   <hr>
                 </div>
               </a>
