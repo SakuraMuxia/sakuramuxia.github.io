@@ -294,8 +294,8 @@
 
 <div class="pattern-center single-center">
   <!-- 有配图默认渲染第一张 -->
-  <div class="pattern-attachment-img lazyload" style="background-image: url();"
-    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="">
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing28.jpg);"
+    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/beijing28.jpg">
   </div>
   <header class="pattern-header single-header">
     <h1 class="entry-title">HCIA学习笔记16</h1>
@@ -384,8 +384,120 @@ ip add <span class="token number">10.0</span><span class="token punctuation">.</
 <li>地址租用的作用是：节省IP地址</li>
 </ul>
 <pre class=" language-java"><code class="language-java">dis ip <span class="token keyword">int</span> b <span class="token comment" spellcheck="true">// 查看三层接口ip信息</span>
- 
+Link<span class="token operator">-</span>protocol hdlc <span class="token comment" spellcheck="true">//更改链路类型为hdlC</span>
+IP address unnumber <span class="token keyword">interface</span> <span class="token class-name">loopback</span> <span class="token number">0</span> <span class="token comment" spellcheck="true">//hdlc接口地址借用</span>
 </code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210425084738260.png" alt="image-20210425084738260"></p>
+<p>说明：借用回环口的IP，但是出接口是在回环口上边的，拥有这个地址的真正地址是在回环口2，所以路由是在回环口出现的</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210425084944156.png" alt="image-20210425084944156"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//添加一个静态路由即可</span>
+ip route<span class="token operator">-</span><span class="token keyword">static</span> <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">32</span> s1<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//这个时候下一跳的地址应该是串口接口，而不是地址，因为地址下一跳还是自己，无意义。</span>
+</code></pre>
+<h2 id="PPP协议应用"><a href="#PPP协议应用" class="headerlink" title="PPP协议应用"></a>PPP协议应用</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210425085517695.png" alt="image-20210425085517695"></p>
+<ul>
+<li>PPP协议是一种点到点链路层协议，主要用于在全双工的同异步链路上进行点到点的数据传输。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>认证</th>
+<th>错误检测</th>
+<th>错误恢复</th>
+<th>支持同步或异步链路</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>HDLC</td>
+<td>×</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr>
+<td>PPP</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+</tbody></table>
+<h2 id="PPP组件"><a href="#PPP组件" class="headerlink" title="PPP组件"></a>PPP组件</h2><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>LCP链路控制协议<br>Link Control Protocol</td>
+<td>用来建立、拆除和监控PPP数据链路以及认证</td>
+</tr>
+<tr>
+<td>NCP 网络层控制协议<br>Network Control Protocol</td>
+<td>用于对不同的网络层协议进行连接建立和参数协商</td>
+</tr>
+</tbody></table>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210425091100942.png" alt="image-20210425091100942"></p>
+<pre class=" language-java"><code class="language-java">sys <span class="token comment" spellcheck="true">//进入系统模式</span>
+<span class="token keyword">int</span> s4<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//进入串口s4/0/0</span>
+link<span class="token operator">-</span>protocol ppp <span class="token comment" spellcheck="true">//更改链路协议类型为 ppp</span>
+<span class="token operator">--</span><span class="token operator">-</span>
+<span class="token comment" spellcheck="true">// 链路两边串口设置一样才行</span>
+dis <span class="token keyword">int</span> s4<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//查看串口配置</span>
+<span class="token comment" spellcheck="true">//当只配协议不配IP地址时，状态显示LCP open，IPCP状态关闭</span>
+IP add xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx yy <span class="token comment" spellcheck="true">//添加ip地址</span>
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210425092151765.png" alt="image-20210425092151765"></p>
+<h2 id="PPP认证模式"><a href="#PPP认证模式" class="headerlink" title="PPP认证模式"></a>PPP认证模式</h2><p><strong>PAP和CHAP</strong></p>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>PAP</strong></td>
+<td>Password Authentication Protocol ，<strong>密码认证协议</strong>，以<strong>明文</strong>方式直接发送密码，二次握手机制，<strong>发起方为被认证方</strong>，可以做无限次的尝试（暴力破解），只在链路建立的阶段进行认证，一旦链路建立成功将不再认证。<br><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210425092640519.png" alt="image-20210425092640519"></td>
+</tr>
+<tr>
+<td><strong>CHAP</strong></td>
+<td>Challenge Handshake Authentication Protocol 挑战/质询握手认证协议，以MD5来隐藏密码，三次握手机制，由认证方发起认证，有效避免暴力破解，在链路建立成功后具有再次认证检测机制，目前在企业网的远程接入环境中用的比较常见。<br><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210425095016278.png" alt="image-20210425095016278"></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="PPP认证配置"><a href="#PPP认证配置" class="headerlink" title="PPP认证配置"></a>PPP认证配置</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>aaa <br>local-user wakin password cipher huawei<br>local-user wakin service-type ppp （认证方）</td>
+<td>创建PPP认证用户</td>
+</tr>
+<tr>
+<td>ppp Authentication-mode pap/chap （认证方接口）</td>
+<td>开启PAP/CHAP</td>
+</tr>
+<tr>
+<td>ppp pap local-user wakin password cipher huawei</td>
+<td>配置PAP凭证</td>
+</tr>
+<tr>
+<td>ppp chap user wakin <br>ppp chap password cipher huawei</td>
+<td>配置CHAP凭证</td>
+</tr>
+</tbody></table>
+<h3 id="PAP配置"><a href="#PAP配置" class="headerlink" title="PAP配置"></a>PAP配置</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210425100741669.png" alt="image-20210425100741669"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210425100837554.png" alt="image-20210425100837554"></p>
+<h3 id="CHAP配置"><a href="#CHAP配置" class="headerlink" title="CHAP配置"></a>CHAP配置</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210425100912610.png" alt="image-20210425100912610"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210425100944205.png" alt="image-20210425100944205"></p>
 
         </div>
 
@@ -623,7 +735,7 @@ gitalk.render('gitalk-container')
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -635,10 +747,10 @@ gitalk.render('gitalk-container')
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: '文章',
-            // PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
+            POSTS: 'Posts',
+            // PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
