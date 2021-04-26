@@ -395,13 +395,178 @@
 
 配置ACL，在R1上配置ACL，拒绝VLAN20的主机通过浏览器访问HTTP服务器，其他流量不受影响。
 </code></pre>
-<p>拓扑文件下载地址：<a target="_blank" rel="noopener" href="https://liubei688.lanzoui.com/iUYS5oh0wtc">https://liubei688.lanzoui.com/iUYS5oh0wtc</a></p>
+<p>拓扑文件下载地址：<a target="_blank" rel="noopener" href="https://liubei688.lanzoui.com/icYBHoj3yni">https://liubei688.lanzoui.com/icYBHoj3yni</a></p>
 <p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210425105949806.png" alt="image-20210425105949806"></p>
 <pre class=" language-java"><code class="language-java"><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-SW1
 <span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>  
 sys
+sys SW2
+vlan bat <span class="token number">10</span> <span class="token number">20</span> <span class="token number">30</span> <span class="token number">40</span>
+<span class="token keyword">int</span> Eth0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">2</span>
+p l a
+p d v <span class="token number">10</span>
+<span class="token keyword">int</span> Eth0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">3</span>
+p l a
+p d v <span class="token number">20</span>
+<span class="token keyword">int</span> Eth0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">4</span>
+p l t
+p t a v <span class="token number">10</span> <span class="token number">20</span> <span class="token number">30</span> <span class="token number">40</span>
+<span class="token keyword">int</span> Eth0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+p l t
+p t a v <span class="token number">10</span> <span class="token number">20</span> <span class="token number">30</span> <span class="token number">40</span>
+<span class="token keyword">int</span> Eth0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">5</span>
+p l a
+p d v <span class="token number">20</span>
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+sys
+sys SW3
+vlan bat <span class="token number">10</span> <span class="token number">20</span> <span class="token number">30</span> <span class="token number">40</span>
+<span class="token keyword">int</span> Eth0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">2</span>
+p l a
+p d v <span class="token number">30</span>
+<span class="token keyword">int</span> Eth0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">3</span>
+p l a
+p d v <span class="token number">40</span>
+<span class="token keyword">int</span> Eth0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">4</span>
+p l t
+p t a v <span class="token number">10</span> <span class="token number">20</span> <span class="token number">30</span> <span class="token number">40</span>
+<span class="token keyword">int</span> Eth0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+p l t
+p t a v <span class="token number">10</span> <span class="token number">20</span> <span class="token number">30</span> <span class="token number">40</span>
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+sys
 sys SW1
+vlan bat <span class="token number">10</span> <span class="token number">12</span> <span class="token number">20</span> <span class="token number">30</span> <span class="token number">40</span>
+<span class="token keyword">int</span> Eth0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">2</span>
+p l t
+p t a v <span class="token number">10</span> <span class="token number">20</span>
+<span class="token keyword">int</span> Eth0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">3</span>
+p l t
+p t a v <span class="token number">30</span> <span class="token number">40</span>
+
+<span class="token keyword">int</span> Eth0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+p l a
+p d v <span class="token number">12</span>
+
+<span class="token keyword">int</span> vlanif <span class="token number">12</span>
+ip add <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">12.1</span> <span class="token number">24</span>
+<span class="token keyword">int</span> vlanif <span class="token number">10</span>
+ip add <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">10.1</span> <span class="token number">24</span>
+<span class="token keyword">int</span> vlanif <span class="token number">20</span>
+ip add <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">20.1</span> <span class="token number">24</span>
+<span class="token keyword">int</span> vlanif <span class="token number">30</span>
+ip add <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">30.1</span> <span class="token number">24</span>
+<span class="token keyword">int</span> vlanif <span class="token number">40</span>
+ip add <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">40.1</span> <span class="token number">24</span>
+
+ospf <span class="token number">1</span> router<span class="token operator">-</span>id <span class="token number">5.5</span><span class="token punctuation">.</span><span class="token number">5.5</span>
+area <span class="token number">0</span>
+net <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">10.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
+net <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">20.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
+net <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">30.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
+net <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">40.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
+net <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">12.1</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span>
+
+dhcp enable
+<span class="token keyword">int</span> vlanif <span class="token number">10</span>
+dhcp select <span class="token keyword">interface</span>
+<span class="token class-name">dhcp</span> server dns<span class="token operator">-</span>list <span class="token number">3.0</span><span class="token punctuation">.</span><span class="token number">0.1</span>
+<span class="token keyword">int</span> vlanif <span class="token number">20</span>
+dhcp select <span class="token keyword">interface</span>
+<span class="token class-name">dhcp</span> server dns<span class="token operator">-</span>list <span class="token number">3.0</span><span class="token punctuation">.</span><span class="token number">0.1</span>
+<span class="token keyword">int</span> vlanif <span class="token number">30</span>
+dhcp select <span class="token keyword">interface</span>
+<span class="token class-name">dhcp</span> server dns<span class="token operator">-</span>list <span class="token number">3.0</span><span class="token punctuation">.</span><span class="token number">0.1</span>
+<span class="token keyword">int</span> vlanif <span class="token number">40</span>
+dhcp select <span class="token keyword">interface</span>
+<span class="token class-name">dhcp</span> server dns<span class="token operator">-</span>list <span class="token number">3.0</span><span class="token punctuation">.</span><span class="token number">0.1</span>
+
+stp root primary
+
+stp priority <span class="token number">0</span> <span class="token comment" spellcheck="true">//设置成根桥</span>
+  
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+sys
+sys R1
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+ip add <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">12.2</span> <span class="token number">24</span>
+<span class="token keyword">int</span> Ser4<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+ip add <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">24</span>
+acl <span class="token number">2000</span>
+rule <span class="token number">1</span> permit
+acl <span class="token number">3000</span>
+rule <span class="token number">1</span> deny tcp so <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">20.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span> dest <span class="token number">4.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">0</span> dest eq <span class="token number">80</span>
+<span class="token keyword">int</span> Ser4<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+ppp chap user wakin
+ppp chap password cipher love
+
+ip route<span class="token operator">-</span><span class="token keyword">static</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0</span> <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.2</span>
+ospf <span class="token number">1</span> router<span class="token operator">-</span>id <span class="token number">2.2</span><span class="token punctuation">.</span><span class="token number">2.2</span>
+area <span class="token number">0</span>
+net <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">12.2</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span>
+<span class="token keyword">default</span><span class="token operator">-</span>route<span class="token operator">-</span>advertise
+
+<span class="token keyword">int</span> Ser4<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+nat outbound <span class="token number">2000</span>
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+traffic<span class="token operator">-</span>filter inbound acl <span class="token number">3000</span>
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+sys
+sys R2
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+ip add <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">24</span>
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+ip add <span class="token number">24.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">24</span>
+<span class="token keyword">int</span> Ser4<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+ip add <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> <span class="token number">24</span>
+  
+<span class="token keyword">int</span> Ser4<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+link<span class="token operator">-</span>protocol ppp
+ppp authentication<span class="token operator">-</span>mode chap
+aaa
+local<span class="token operator">-</span>user wakin password cipher love
+local<span class="token operator">-</span>user wakin service<span class="token operator">-</span>type ppp
+
+ospf <span class="token number">1</span> router<span class="token operator">-</span>id <span class="token number">1.1</span><span class="token punctuation">.</span><span class="token number">1.1</span>
+area <span class="token number">0</span>
+net <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span>
+net <span class="token number">24.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span>
+net <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span>
+  
+dis ip routing<span class="token operator">-</span>table pro ospf <span class="token comment" spellcheck="true">//验证OSPF建立信息</span>
+dis cu <span class="token comment" spellcheck="true">//查看全部配置信息</span>
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+sys
+sys R3
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+ip add <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> <span class="token number">24</span>
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+ip add <span class="token number">34.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">24</span>
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">2</span>
+ip add <span class="token number">3.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> <span class="token number">24</span>
+  
+ospf <span class="token number">1</span> router<span class="token operator">-</span>id <span class="token number">2.2</span><span class="token punctuation">.</span><span class="token number">2.2</span>
+area <span class="token number">0</span>
+net <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span>
+net <span class="token number">34.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span>
+net <span class="token number">3.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+sys
+sys R4
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+ip add <span class="token number">24.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> <span class="token number">24</span>
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+ip add <span class="token number">34.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> <span class="token number">24</span>
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">2</span>
+ip add <span class="token number">4.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> <span class="token number">24</span>
+  
+ospf <span class="token number">1</span> router<span class="token operator">-</span>id <span class="token number">3.3</span><span class="token punctuation">.</span><span class="token number">3.3</span>
+area <span class="token number">0</span>
+net <span class="token number">24.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span>
+net <span class="token number">34.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span>
+net <span class="token number">4.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
 </code></pre>
 
         </div>
