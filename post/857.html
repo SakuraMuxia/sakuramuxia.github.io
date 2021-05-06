@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">HCIA学习笔记14 | 慢一点，才更快 | 雨落</title>
+  <title itemprop="name">HCNP学习笔记2 | 慢一点，才更快 | 雨落</title>
   
     <link rel="shortcut icon" href="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tubiao.ico">
   
@@ -294,11 +294,11 @@
 
 <div class="pattern-center single-center">
   <!-- 有配图默认渲染第一张 -->
-  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/05/03/9NnrV3TWMawJ4sA.jpg);"
-    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/9NnrV3TWMawJ4sA.jpg">
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/05/06/eVhz71rqN4EL5pi.jpg);"
+    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/06/eVhz71rqN4EL5pi.jpg">
   </div>
   <header class="pattern-header single-header">
-    <h1 class="entry-title">HCIA学习笔记14</h1>
+    <h1 class="entry-title">HCNP学习笔记2</h1>
     <p class="entry-census">
       
       <span class="post-meta-item">
@@ -318,7 +318,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-calendar"></i>
         </span>
-        <span class="post-meta-item-text"> 2021-4-24 </span>
+        <span class="post-meta-item-text"> 2021-5-6 </span>
       </span>
       <span class="bull">
         ·</span>
@@ -345,7 +345,7 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               </span class="post-meta-item-text">
-                <span class="valine-comment-count" data-xid="/e7db"> </span>
+                <span class="valine-comment-count" data-xid="/857"> </span>
               </span>
           </span> -->
     </p>
@@ -362,228 +362,105 @@
         <!--套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h1 id="ACL"><a href="#ACL" class="headerlink" title="ACL"></a>ACL</h1><p>企业网络中的设备进行通讯时，需要保证数据传输的安全可靠和网络的性能稳定。访问控制列表ACL（Access Control List）可以定义一系列不同的规则，设备根据这些规则对数据包进行分类，并针对不同类型的报文进行不同的处理，从而实现对网络访问行为的控制、限制网络流量、提高网络性能、防止网络攻击等等。</p>
-<h2 id="ACL-1"><a href="#ACL-1" class="headerlink" title="ACL"></a>ACL</h2><p><strong>Access Control List ，访问控制列表</strong></p>
-<p> <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424084457249.png" alt="image-20210424084457249"></p>
-<pre class=" language-java"><code class="language-java">ospf <span class="token number">1</span> <span class="token comment" spellcheck="true">//进入OSPF界面</span>
-  
-filter<span class="token operator">-</span>policy <span class="token operator">?</span> <span class="token comment" spellcheck="true">//过滤策略</span>
-  
-filter<span class="token operator">-</span>policy acl<span class="token operator">-</span>name <span class="token comment" spellcheck="true">//后面跟策略名称  </span>
-
-<span class="token keyword">import</span><span class="token operator">-</span>route rip route<span class="token operator">-</span>policy <span class="token comment" spellcheck="true">//在导入路由时添加路由策略</span>
-
-<span class="token comment" spellcheck="true">//建立route policy</span>
-  
-route<span class="token operator">-</span>policy wakin permit node <span class="token number">10</span> <span class="token comment" spellcheck="true">//建立路由策略</span>
-<span class="token keyword">if</span><span class="token operator">-</span>match <span class="token operator">?</span> <span class="token comment" spellcheck="true">//条件</span>
-<span class="token comment" spellcheck="true">// nat技术  </span>
-nat outbound <span class="token operator">?</span>
-
-<span class="token comment" spellcheck="true">//接口调用acl</span>
-traffic<span class="token operator">-</span>filter inbound <span class="token operator">?</span> <span class="token comment" spellcheck="true">// 入方向调用acl，注意流量的方向走向</span>
-traffic<span class="token operator">-</span>filter outbound <span class="token operator">?</span> <span class="token comment" spellcheck="true">//  出方向调用acl，注意流量的方向走向</span>
- 
-</code></pre>
-<h2 id="ACL应用场景"><a href="#ACL应用场景" class="headerlink" title="ACL应用场景"></a>ACL应用场景</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424085031472.png" alt="image-20210424085031472"></p>
-<ul>
-<li>ACL可以通过定义规则来允许或拒绝流量的通过。</li>
+          <h1 id="信息安全"><a href="#信息安全" class="headerlink" title="信息安全"></a>信息安全</h1><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/image-20210428194432036.png" alt="image-20210428194432036"></p>
+<h2 id="信息安全的核心目标"><a href="#信息安全的核心目标" class="headerlink" title="信息安全的核心目标"></a>信息安全的核心目标</h2><p><strong>CIA模型保护</strong></p>
+<h2 id="PKI公钥基础架构"><a href="#PKI公钥基础架构" class="headerlink" title="PKI公钥基础架构"></a>PKI公钥基础架构</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210503155459157.png" alt="image-20210503155459157"></p>
+<h2 id="机密性技术"><a href="#机密性技术" class="headerlink" title="机密性技术"></a>机密性技术</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210503155817560.png" alt="image-20210503155817560"></p>
+<p>机密技术分类</p>
+<p><strong>根据密钥的使用方法</strong></p>
+<h3 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h3><ul>
+<li>对称加密：加密、解密使用相同的密钥</li>
+<li>特点：速度快、密文紧凑、密钥管理复杂、用于大量数据的传送</li>
 </ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424085159432.png" alt="image-20210424085159432"></p>
-<h2 id="ACL工作原理"><a href="#ACL工作原理" class="headerlink" title="ACL工作原理"></a>ACL工作原理</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424085438747.png" alt="image-20210424085438747"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210503163138151.png" alt="image-20210503163138151"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210503163226689.png" alt="image-20210503163226689"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210503163246222.png" alt="image-20210503163246222"></p>
+<p>Encrypt ：加密  Date Encrypt Standard 数据加密标准</p>
+<p>Dencrypt ：解密</p>
+<p><strong>说明：</strong></p>
 <ul>
-<li> ACL由一条或多条规则组成</li>
-<li>每条规则必须选择动作：允许或拒绝</li>
-<li><strong>每条规则都有一个id序列号（默认=5，间隔=5）</strong></li>
-<li><strong>序列号越小越先进行匹配</strong></li>
-<li><strong>只要有一条规则和报文匹配，就停止查找，称为命中规则</strong></li>
-<li><strong>查找完所有规则，如果没有符合条件的规则，称为未命中规则</strong></li>
-<li>ACL创建后，必须将其应用到某个接口或其他技术内才会生效</li>
-<li>应用在接口时必须选择方向：入站或出站（相对设备来判断）</li>
-<li>不能过滤由设备自己产生的数据</li>
+<li>加密的理念是转换和移位</li>
 </ul>
-<p><strong>注意</strong>：制定规则时一定要<strong>先细后粗</strong></p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 命名acl</span>
-acl name nolol <span class="token comment" spellcheck="true">// 第一种方式</span>
-acl number <span class="token number">2000</span> <span class="token comment" spellcheck="true">// 第二种方式</span>
-<span class="token comment" spellcheck="true">//增加描述</span>
-description xxx<span class="token operator">-</span>yyy <span class="token comment" spellcheck="true">//用英文表示</span>
-</code></pre>
-<h2 id="ACL规则"><a href="#ACL规则" class="headerlink" title="ACL规则"></a>ACL规则</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424101122072.png" alt="image-20210424101122072"></p>
-<ul>
-<li>每个ACL可以包含多个规则，RTA根据规则来对数据流量进行过滤。</li>
+<h3 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h3><ul>
+<li>加密、解密使用不同的密钥（公钥、私钥）</li>
+<li>特点：速度慢、密文不紧凑、密钥管理简单、通常只用于数字签名。</li>
+<li>公加私解，私加公解。</li>
 </ul>
-<h2 id="ACL类型"><a href="#ACL类型" class="headerlink" title="ACL类型"></a>ACL类型</h2><p>分为数字型ACL和命名型ACL</p>
-<table>
-<thead>
-<tr>
-<th>分类</th>
-<th>编号范围</th>
-<th>参数</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>基本ACL</td>
-<td>2000-2999</td>
-<td>源IP地址等</td>
-</tr>
-<tr>
-<td>高级ACL</td>
-<td>3000-3999</td>
-<td>源IP地址、目的IP地址、源端口、目的端口等</td>
-</tr>
-<tr>
-<td>二层ACL</td>
-<td>4000-4999</td>
-<td>源MAC地址、目的MAC地址、以太网协议类型等</td>
-</tr>
-<tr>
-<td>用户ACL</td>
-<td>5000-5999</td>
-<td>用户自定义</td>
-</tr>
-</tbody></table>
-<h2 id="正掩码、反掩码、通配符区别："><a href="#正掩码、反掩码、通配符区别：" class="headerlink" title="正掩码、反掩码、通配符区别："></a>正掩码、反掩码、通配符区别：</h2><table>
-<thead>
-<tr>
-<th>名称</th>
-<th>规则</th>
-<th>作用</th>
-<th>举例</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>掩码</td>
-<td>连续的1和0</td>
-<td>IP地址</td>
-<td>255.255.255.0</td>
-<td>1对应网络位，0对应主机位</td>
-</tr>
-<tr>
-<td>反掩码</td>
-<td>连续的0和1</td>
-<td>路由协议</td>
-<td>0.0.0.255</td>
-<td>0必须匹配，1无须匹配</td>
-</tr>
-<tr>
-<td>通配符</td>
-<td>任意的0和1</td>
-<td>ACL</td>
-<td>0.0.255.0</td>
-<td>0必须匹配，1无须匹配</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th>举例</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>192.168.0.1 0.0.0.0/0</td>
-<td>匹配一个主机地址</td>
-</tr>
-<tr>
-<td>192.168.0.0 0.0.0.255</td>
-<td>匹配一个网段</td>
-</tr>
-<tr>
-<td>192.168.0.1 0.0.0.254</td>
-<td>匹配网段内奇数地址</td>
-</tr>
-<tr>
-<td>192.168.0.0 0.0.0.254</td>
-<td>匹配网段内偶数地址</td>
-</tr>
-<tr>
-<td>any=x.x.x.x 255.255.255.255</td>
-<td>匹配所有地址</td>
-</tr>
-</tbody></table>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424111957914.png" alt="image-20210424111957914"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424112437263.png" alt="image-20210424112437263"></p>
-<p><strong>说明：直接写名字定义的ACL，也可以定义ACL的类型</strong></p>
-<hr>
-<p><strong>在配置路由时，打正掩码也会自动转换为反掩码，反掩码也就是 4个255减正掩码得到的。</strong></p>
-<hr>
-<p><strong>通配符相当于与运算 匹配0的位数</strong></p>
-<hr>
-<p><strong>奇数地址只要保证最后一位为1</strong>即可</p>
-<hr>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 直接写名字定义的ACL，也可以定义ACL的类型</span>
-acl name nogame <span class="token operator">?</span> <span class="token comment" spellcheck="true">// 默认为高级adv</span>
-  
-  
-<span class="token comment" spellcheck="true">//查看所有acl</span>
-dis acl all <span class="token comment" spellcheck="true">//查看所有acl</span>
-  
-<span class="token comment" spellcheck="true">//acl允许通过所有</span>
-rule per so <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">255.255</span><span class="token punctuation">.</span><span class="token number">255.255</span> <span class="token comment" spellcheck="true">//acl允许通过所有</span>
-rule per so any <span class="token comment" spellcheck="true">//acl允许通过所有</span>
-rule per <span class="token comment" spellcheck="true">//acl允许通过所有</span>
-  
-</code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424105857484.png" alt="image-20210424105857484"></p>
-<h2 id="ACL配置"><a href="#ACL配置" class="headerlink" title="ACL配置"></a>ACL配置</h2><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>acl 2000</td>
-<td>创建一个基本acl</td>
-</tr>
-<tr>
-<td>rule 5 deny/permit source 192.168.1.0 0.0.0.255</td>
-<td>配置ACL的规则：<br>拒绝或允许源地址为<br>192.168.1.0 /24网段内的所有流量</td>
-</tr>
-<tr>
-<td>acl 3000</td>
-<td>创建一个高级ACL</td>
-</tr>
-<tr>
-<td>rule 5 deny/permit tcp source 192.168.1.0 0.0.0.255 destination 8.8.8.8 0 destination-port eq 80</td>
-<td>配置ACL的规则<br>拒绝或允许源地址为<br>192.168.1.0/24网段内到8.8.8.8 的HTTP流量</td>
-</tr>
-<tr>
-<td>traffic-filter inbound/outbound acl 2000</td>
-<td>在接口调用ACL过滤流量</td>
-</tr>
-<tr>
-<td>display acl 2000</td>
-<td>验证acl</td>
-</tr>
-<tr>
-<td>display traffic-filter applied-record</td>
-<td>查看设备上所有基于ACL调用情况</td>
-</tr>
-</tbody></table>
-<pre class=" language-java"><code class="language-java">rule <span class="token number">5</span> deny<span class="token operator">/</span>permit tcp source <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">1.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span> destination <span class="token number">8.8</span><span class="token punctuation">.</span><span class="token number">8.8</span> <span class="token number">0</span> destination<span class="token operator">-</span>port eq <span class="token number">80</span> <span class="token comment" spellcheck="true">//默认不写就是全部</span>
-rule <span class="token number">2</span> permit TCP destination<span class="token operator">-</span>port <span class="token operator">?</span>
-  
-</code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424122341908.png" alt="image-20210424122341908"></p>
-<h2 id="基本ACL配置"><a href="#基本ACL配置" class="headerlink" title="基本ACL配置"></a>基本ACL配置</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424122816484.png" alt="image-20210424122816484"></p>
-<h2 id="高级ACL配置"><a href="#高级ACL配置" class="headerlink" title="高级ACL配置"></a>高级ACL配置</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424122933667.png" alt="image-20210424122933667"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210503164110637.png" alt="image-20210503164110637"></p>
 <ul>
-<li><p>基本ACL：允许或拒绝所欲协议，我只关心你从哪里来</p>
+<li>京东只需要把他的公钥给我们即可，然后我们用他们的公钥进行加密，发送过去，数据到他们那里，只有他们手中的私钥可以解密。（这是去的过程）同理，来的过程也是。</li>
+</ul>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210503164604227.png" alt="image-20210503164604227"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210504005559345.png" alt="image-20210504005559345"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210503164619055.png" alt="image-20210503164619055"></p>
+<ul>
+<li>私加公解的意义是为了数字签名，进行身份认证的作用。</li>
+<li>不要使用任何非公开的加密算法</li>
+</ul>
+<p><strong>说明：</strong></p>
+<ul>
+<li><p>DH：迪尔夫丶霍夫曼，两个人的名字简写，是一种加密算法。相当于把对称加密的密钥当作数据用非对称加密的进行传送交换。</p>
 </li>
-<li><p>高级ACL：我可以知道你从哪里来，到哪里去，去做什么</p>
-</li>
-<li><p>基本ACL调用离目标近一点</p>
-</li>
-<li><p>高级ACL调用离源近一点</p>
+<li><p>PRF：伪随机函数</p>
 </li>
 </ul>
-<p>ACL接口调用方向的建议</p>
-<p>1、基本ACL尽量调用在离目标最近的出站接口</p>
-<p>2、高级ACL尽量调用在离源头最近的入站接口</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424124622328.png" alt="image-20210424124622328"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210504012148317.png" alt="image-20210504012148317"></p>
+<h3 id="公钥加密技术"><a href="#公钥加密技术" class="headerlink" title="公钥加密技术"></a>公钥加密技术</h3><ul>
+<li>非对称加密也叫公钥加密，是PKI的基础</li>
+<li>公钥（public Key）和私钥（Private Key）</li>
+</ul>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210506090806137.png" alt="image-20210506090806137"></p>
+<ul>
+<li>根据实现的功能不同，可以分为数据加密和数字签名</li>
+</ul>
+<h4 id="延伸："><a href="#延伸：" class="headerlink" title="延伸："></a>延伸：</h4><p><strong>加密软件：</strong>PGP（pretty Good Privacy）优良保密协议是一套用于消息加密、验证的应用程序，可以加密一个分区，创建一个加密分区，整个硬盘。</p>
+<h3 id="数据加密-数字信封"><a href="#数据加密-数字信封" class="headerlink" title="数据加密-数字信封"></a>数据加密-数字信封</h3><p>发送方采用接收方的公钥来加密对称密钥。采用数字信封时，接收方需要使用自己的密钥才能打开数字信封得到对称密钥。结合对称加密和非对称加密的各自优点</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210506092620812.png" alt="image-20210506092620812"></p>
+<p><strong>注意</strong>：这个里面有漏洞就是无法确认发送方的身份和数据的完整性。</p>
+<h3 id="两种加密算法的结合"><a href="#两种加密算法的结合" class="headerlink" title="两种加密算法的结合"></a>两种加密算法的结合</h3><p>在实际使用中，通信双方通常会使用公钥密码学来<strong>交换密钥素材</strong>，双方最终计算出密钥，而用对称密码学来加密实际的数据，两者配合使用，保证了加密速度和安全性。</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210506093657181.png" alt="image-20210506093657181"></p>
+<h2 id="真实性验证"><a href="#真实性验证" class="headerlink" title="真实性验证"></a>真实性验证</h2><p>私钥加密，公钥解密，用于证明身份</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210506094151849.png" alt="image-20210506094151849"></p>
+<h2 id="完整性技术"><a href="#完整性技术" class="headerlink" title="完整性技术"></a>完整性技术</h2><p>信息摘要:单向散列函数，哈希（Hash）</p>
+<ul>
+<li>将任意长的字符串通过哈希计算出固定长度字符串，类似指纹、DNA</li>
+<li>特点：不可逆，雪崩效应</li>
+</ul>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210506101532749.png" alt="image-20210506101532749"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210506101725259.png" alt="image-20210506101725259"></p>
+<p>延伸：collision 碰撞，冲突</p>
+<p>抽屉定律：6本书，5个抽屉，那么肯定有一个抽屉里面有两本书。</p>
+<p>哈希算法碰撞理论起源：定长的，所以结果是有限的，但我们的数据是无限的，总能找到两个不同的数据，他们的哈希值是一样的。</p>
+<p>哈希加密：只是哈希隐藏了密码，它只是一个算法。即输入一个密码，系统做一个哈希，如果得到的哈希值跟系统中存储的哈希值一样则代表密码正确。系统中实际存储的是密码的哈希值，而不是密码。</p>
+<h2 id="数字签名"><a href="#数字签名" class="headerlink" title="数字签名"></a>数字签名</h2><p>说明这是我的唯一性</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210506104259202.png" alt="image-20210506104259202"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210506104332310.png" alt="image-20210506104332310"></p>
+<ul>
+<li>签名具有不可否认性</li>
+</ul>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210506104531852.png" alt="image-20210506104531852"></p>
+<ul>
+<li>摘要是指哈希值</li>
+<li>数字签名就是对数据摘要加密（自己的私钥）的一个密文</li>
+</ul>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210506105028695.png" alt="image-20210506105028695"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210506110059566.png" alt="image-20210506110059566"></p>
+<p><strong>这其中还有一个问题就是怎么证明 公钥是他们本人的。</strong></p>
+<h2 id="公钥技术的规模应用难题"><a href="#公钥技术的规模应用难题" class="headerlink" title="公钥技术的规模应用难题"></a>公钥技术的规模应用难题</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210506110442202.png" alt="image-20210506110442202"></p>
+<h2 id="载体：证书"><a href="#载体：证书" class="headerlink" title="载体：证书"></a>载体：证书</h2><p>证书：证明我的公钥是我自己</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210506110551167.png" alt="image-20210506110551167"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210506111944798.png" alt="image-20210506111944798"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210506112203077.png" alt="image-20210506112203077"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210506112326142.png" alt="image-20210506112326142"></p>
+<pre class=" language-java"><code class="language-java">certmgr<span class="token punctuation">.</span>msc \\查看颁发的证书
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210506114510888.png" alt="image-20210506114510888"></p>
+<h2 id="PKI协议的应用"><a href="#PKI协议的应用" class="headerlink" title="PKI协议的应用"></a>PKI协议的应用</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210506114536007.png" alt="image-20210506114536007"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210506135635952.png" alt="image-20210506135635952"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210506135820312.png" alt="image-20210506135820312"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210506135929537.png" alt="image-20210506135929537"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210506140645965.png" alt="image-20210506140645965"></p>
+<p>IPsec用的Hmac消息认证码</p>
 
         </div>
 
@@ -616,9 +493,9 @@ rule <span class="token number">2</span> permit TCP destination<span class="toke
           <div class="post-tags" style="color: #a39391">
             <span><i class="fa fa-tags"></i>
               
-              <a href="/tags/HCIA/" style="color: #716e77;">HCIA<em>·</em></a>
+              <a href="/tags/HCIP/" style="color: #716e77;">HCIP<em>·</em></a>
               
-              <a href="/tags/ACL/" style="color: #716e77;">ACL<em>·</em></a>
+              <a href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/" style="color: #716e77;">信息安全<em>·</em></a>
               
             </span>
             <span>
@@ -646,36 +523,19 @@ rule <span class="token number">2</span> permit TCP destination<span class="toke
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-        
-        <div class="post-nepre half previous">
-          
-            <a href="/post/271a.html" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/xJZfiRaXNBHDny9.jpg"
-                  style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
-                  src="https://i.loli.net/2021/05/03/xJZfiRaXNBHDny9.jpg">
-              </div>
-              <span class="label">Previous Post</span>
-              <div class="info">
-                <h3>HCIA学习笔记15</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
           
           
-          
-          <div class="post-nepre half next">
-            
-              <a href="/post/259a.html" rel="next">
+            <div class="post-nepre full next">
+              
+              <a href="/post/917.html" rel="next">
                 <div class="background">
-                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/ghxLdMNbE6PjzIO.jpg"
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/8zvZ7F1sPex6LAy.jpg"
                     style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
-                    onerror="imgError(this,3)" src="https://i.loli.net/2021/05/03/ghxLdMNbE6PjzIO.jpg">
+                    onerror="imgError(this,3)" src="https://i.loli.net/2021/05/03/8zvZ7F1sPex6LAy.jpg">
                 </div>
                 <span class="label">Next Post</span>
                 <div class="info">
-                  <h3>HCIA学习笔记13</h3>
+                  <h3>HCNP学习笔记1</h3>
                   <hr>
                 </div>
               </a>
