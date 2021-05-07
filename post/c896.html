@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">HCIA学习笔记6 | 慢一点，才更快 | 雨落</title>
+  <title itemprop="name">HCNP学习笔记3 | 慢一点，才更快 | 雨落</title>
   
     <link rel="shortcut icon" href="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tubiao.ico">
   
@@ -294,11 +294,11 @@
 
 <div class="pattern-center single-center">
   <!-- 有配图默认渲染第一张 -->
-  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/05/03/IQxru1MFNeZq85d.jpg);"
-    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/IQxru1MFNeZq85d.jpg">
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/05/08/VZcxt1HEqW4J9jw.jpg);"
+    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/08/VZcxt1HEqW4J9jw.jpg">
   </div>
   <header class="pattern-header single-header">
-    <h1 class="entry-title">HCIA学习笔记6</h1>
+    <h1 class="entry-title">HCNP学习笔记3</h1>
     <p class="entry-census">
       
       <span class="post-meta-item">
@@ -318,7 +318,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-calendar"></i>
         </span>
-        <span class="post-meta-item-text"> 2021-4-8 </span>
+        <span class="post-meta-item-text"> 2021-5-8 </span>
       </span>
       <span class="bull">
         ·</span>
@@ -345,7 +345,7 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               </span class="post-meta-item-text">
-                <span class="valine-comment-count" data-xid="/d800"> </span>
+                <span class="valine-comment-count" data-xid="/c896"> </span>
               </span>
           </span> -->
     </p>
@@ -362,253 +362,94 @@
         <!--套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=413961906&amp;auto=0&amp;height=66"></iframe>
-
-<h3 id="OSPF区域概述"><a href="#OSPF区域概述" class="headerlink" title="OSPF区域概述"></a>OSPF区域概述</h3><table>
-<thead>
-<tr>
-<th>术语</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>区域（Area）</td>
-<td>为了适应大型的网络，OSPF在AS内划分多个区域，区域是以==接口为单位==来划分的，==每个OSPF路由器只维护所在区域的完整链路状态信息==</td>
-</tr>
-<tr>
-<td>区域ID（Area ID）</td>
-<td>可以表示成一个十进制的数字，如1，也可以表示成一个IP，如0.0.0.1</td>
-</tr>
-<tr>
-<td>区域优点</td>
-<td><strong>尽量减少路由表条目，使拓扑变化仅影响本区域内部</strong></td>
-</tr>
-</tbody></table>
-<pre class=" language-java"><code class="language-java">ospf <span class="token number">1</span> <span class="token comment" spellcheck="true">// 创建进程</span>
-area x<span class="token comment" spellcheck="true">// 2的32次方</span>
-</code></pre>
-<h3 id="区域的类型"><a href="#区域的类型" class="headerlink" title="区域的类型"></a>区域的类型</h3><table>
-<thead>
-<tr>
-<th>类型</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>骨干区域</td>
-<td>Area0，核心区域也叫==传输区域==（负责在不同的非骨干区域之间分发路由信息）</td>
-</tr>
-<tr>
-<td>非骨干区域</td>
-<td>非Area 0 也称为常规区域</td>
-</tr>
-<tr>
-<td>PS</td>
-<td>==所有其他非骨干区域必须和骨干区域直接相连==</td>
-</tr>
-</tbody></table>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210404212657777.png" alt="image-20210404212657777"> </p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210404212708474.png" alt="image-20210404212708474"></p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>IR</td>
-<td>Internal Route，内部路由器，<strong>所有的接口都属于同一区域</strong></td>
-</tr>
-<tr>
-<td>BR</td>
-<td>Backbone Router，骨干路由器，至少有一个接口属于骨干区域</td>
-</tr>
-<tr>
-<td>ABR</td>
-<td>Area Border Router，区域边界路由器，连接一个或者多个区域到骨干区域，至少有一个接口属于骨干区域</td>
-</tr>
-<tr>
-<td>ASBR</td>
-<td>Autonomous System Border Router 自治系统边界路由器 把从其他路由器协议学习到的路由以引入的方式到OSPF进程中</td>
-</tr>
-<tr>
-<td>PS</td>
-<td>一台路由器可以同时属于多种类型</td>
-</tr>
-</tbody></table>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406142244392.png" alt="image-20210406142244392"></p>
-<h3 id="OSPF核心工作流程："><a href="#OSPF核心工作流程：" class="headerlink" title="OSPF核心工作流程："></a>OSPF核心工作流程：</h3><ol>
-<li><p>发现并建立邻居；</p>
-</li>
-<li><p>传播LSA（区别于距离矢量的路由表更新）</p>
-<p>​        Link State Advertisement,链路状态宣告（路况信息）</p>
-<p>​        链路：路由器接口</p>
-<p>​        状态：描述接口信息（地址、掩码、开销、网络类型、邻居关系等）</p>
-</li>
-<li><p>将LSA泛洪到区域的所有OSPF路由器，而不是直连的路由器</p>
-</li>
-<li><p>收集LSA创建LSDB（链路状态数据库、地图）</p>
-</li>
-<li><p>使用SPF算法计算到每个目标网络的最短距离，并将其置于路由表中</p>
-</li>
-</ol>
-<pre class=" language-java"><code class="language-java">dis ospf peer <span class="token comment" spellcheck="true">// 查看ospf邻居</span>
-dis ospf lsdb <span class="token comment" spellcheck="true">// 查看数据库</span>
-dis ospf bri <span class="token comment" spellcheck="true">//查看OSPF信息</span>
-dis ip routing<span class="token operator">-</span>table<span class="token comment" spellcheck="true">//查看路由表</span>
-dis ip routing<span class="token operator">-</span>table protocol ospf <span class="token comment" spellcheck="true">//过滤ospf路由协议</span>
-<span class="token comment" spellcheck="true">//配置ospf</span>
-ospf x<span class="token comment" spellcheck="true">//创建进程</span>
-area x<span class="token comment" spellcheck="true">//创建区域</span>
-network xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy <span class="token comment" spellcheck="true">//宣告路由</span>
-</code></pre>
-<h4 id="发现邻居"><a href="#发现邻居" class="headerlink" title="发现邻居"></a>发现邻居</h4><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406160029411.png" alt="image-20210406160029411"></p>
-<h4 id="泛洪LSAs"><a href="#泛洪LSAs" class="headerlink" title="泛洪LSAs"></a>泛洪LSAs</h4><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406160323914.png" alt="image-20210406160323914"></p>
-<p>建立数据库 </p>
-<p>说明：LSDB是一种数据库</p>
-<h4 id="SPF算法"><a href="#SPF算法" class="headerlink" title="SPF算法"></a>SPF算法</h4><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406160514844.png" alt="image-20210406160514844"></p>
-<h4 id="生成路由"><a href="#生成路由" class="headerlink" title="生成路由"></a>生成路由</h4><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406160656594.png" alt="image-20210406160656594"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406160728394.png" alt="image-20210406160728394"></p>
-<h4 id="OSPF三张表"><a href="#OSPF三张表" class="headerlink" title="OSPF三张表"></a>OSPF三张表</h4><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406160816139.png" alt="image-20210406160816139"></p>
-<h3 id="Route-ID"><a href="#Route-ID" class="headerlink" title="Route ID"></a>Route ID</h3><ul>
-<li>运行OSPF协议前，必须选取一个RID；</li>
-<li>用来唯一标识一台OSPF路由器；</li>
-<li>RID可以手动配置，也可以自动生成；</li>
+          <hr>
+<p>你不去做的事情，永远都不会实现</p>
+<hr>
+<h1 id="IPsec-VPN"><a href="#IPsec-VPN" class="headerlink" title="IPsec VPN"></a>IPsec VPN</h1><p>企业对网络安全性的需求日益提升，而传统的TCP/IP协议缺乏有效的安全认证和保密机制。IPsec（Internet Protocol Security）作为一种开放标准的安全框架结构，可以用来保证IP数据报文在网络上传输的机密性、完整性和防重放。</p>
+<h2 id="IPsec"><a href="#IPsec" class="headerlink" title="IPsec"></a>IPsec</h2><ul>
+<li>Internet Protocol Security</li>
+<li>源自IPV6</li>
+<li>IETF指定的一套安全保密性能框架</li>
+<li>建立在网络层的安全保障机制</li>
+<li>引入多种加密算法、验证算法和密钥管理机制</li>
+<li>也具有配置复杂、消耗运算资源较多、增加延迟、不支持组播等缺点</li>
+<li>IPsec VPN是利用IPsec隧道建立的VPN技术</li>
+<li>OSPF V3版本</li>
 </ul>
-<table>
-<thead>
-<tr>
-<th>规则</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>RID选取顺序规则</td>
-<td>1 手动配置（推荐） 2 活动回环接口IP地址最高的 3 活动物理接口上选取IP地址最高的</td>
-</tr>
-<tr>
-<td>PS</td>
-<td>RID选举具有非抢占性，，除非重启OSPF进程</td>
-</tr>
-</tbody></table>
-<p><strong>自动配置route id时，ID的选取先看回环口，再看物理口；</strong></p>
-<h4 id="配置Route-ID"><a href="#配置Route-ID" class="headerlink" title="配置Route ID"></a>配置Route ID</h4><pre class=" language-java"><code class="language-java">ospf x route<span class="token operator">-</span>id xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx <span class="token comment" spellcheck="true">//配置RouteID</span>
-reset ospf process <span class="token comment" spellcheck="true">//重启OSPF进程</span>
-</code></pre>
-<h3 id="OSPF数据包结构和类型"><a href="#OSPF数据包结构和类型" class="headerlink" title="OSPF数据包结构和类型"></a>OSPF数据包结构和类型</h3><p>封装于IP协议之上，IP协议号89</p>
-<p>协议号：1代表ICMP；6代表TCP；17代表UDP；</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406192444053.png" alt="image-20210406192444053"></p>
-<h3 id="OSPF数据包类型（5种）"><a href="#OSPF数据包类型（5种）" class="headerlink" title="OSPF数据包类型（5种）"></a>OSPF数据包类型（5种）</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406192758149.png" alt="image-20210406192758149"></p>
-<table>
-<thead>
-<tr>
-<th>OSPF数据包类型</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Hello</td>
-<td>建立并维护邻居关系</td>
-</tr>
-<tr>
-<td>Datebase Description</td>
-<td>LSDB的摘要（仅包含LSA包头）</td>
-</tr>
-<tr>
-<td>Link State Request（LSR）</td>
-<td>请求LSA</td>
-</tr>
-<tr>
-<td>Link State Update（LSU）</td>
-<td>发送LSA</td>
-</tr>
-<tr>
-<td>Link State Acknowledge（LSAck）</td>
-<td>对LSU的确认</td>
-</tr>
-</tbody></table>
-<p><strong>DB包用于对比路由器间的数据库</strong></p>
-<h3 id="OSPF状态机制（7种状态）"><a href="#OSPF状态机制（7种状态）" class="headerlink" title="OSPF状态机制（7种状态）"></a>OSPF状态机制（7种状态）</h3><table>
-<thead>
-<tr>
-<th>状态</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>失效状态（Down）</td>
-<td>没有收到Hello包</td>
-</tr>
-<tr>
-<td>初始状态（init）</td>
-<td>收到Hello包，<strong>但没有看到自己</strong></td>
-</tr>
-<tr>
-<td>双向通讯状态（two-way）</td>
-<td>收到Hello包，<strong>且看到了自己，形成邻居关系</strong></td>
-</tr>
-<tr>
-<td>交换初始状态（Exstart）</td>
-<td>决定信息交换时路由器的主从关系</td>
-</tr>
-<tr>
-<td>交换状态（Exchange）</td>
-<td>向邻居发送DD数据包</td>
-</tr>
-<tr>
-<td>加载状态（Loading）</td>
-<td>LSR和LSU交换</td>
-</tr>
-<tr>
-<td>完全邻接状态（Full）</td>
-<td>LSDB同步，形成邻接关系</td>
-</tr>
-<tr>
-<td>PS</td>
-<td>只有Two-Way和Full是稳定状态</td>
-</tr>
-</tbody></table>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406200828033.png" alt="image-20210406200828033"></p>
-<h3 id="OSPF工作流程（数据包和状态切换过程）"><a href="#OSPF工作流程（数据包和状态切换过程）" class="headerlink" title="OSPF工作流程（数据包和状态切换过程）"></a>OSPF工作流程（数据包和状态切换过程）</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210406202411075.png" alt="image-20210406202411075"></p>
-<p><strong>OSPF第一阶段是使用Hello包建立双向通信的过程，成为邻居关系。</strong> </p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210407113133475.png" alt="image-20210407113133475"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210407113258252.png" alt="image-20210407113258252"></p>
-<p>OSPF第二阶段是通过交换LSDB同步，建立<strong>邻接关系</strong></p>
-<p><strong>在同一个区域中，路由表可能不一样，邻居表可能不一样，但是数据库是一样的。</strong></p>
-<h3 id="OSPF邻居建立条件"><a href="#OSPF邻居建立条件" class="headerlink" title="OSPF邻居建立条件"></a>OSPF邻居建立条件</h3><p><strong>必须三层直连</strong></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210407162122044.png" alt="image-20210407162122044"></p>
-<p><strong>Hello报文用来发现和维护OSPF邻居关系</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210507113534999.png" alt="image-20210507113534999"></p>
+<p><strong>建立在网络层的安全保障机制，IP头部后边的数据进行加密。</strong></p>
+<h2 id="IPsec核心功能"><a href="#IPsec核心功能" class="headerlink" title="IPsec核心功能"></a>IPsec核心功能</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210507114350829.png" alt="image-20210507114350829"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210507114517691.png" alt="image-20210507114517691"></p>
+<p><strong>拓展：</strong></p>
+<p>PSK：预共享密钥</p>
+<p>证书搭建：用Windows的AD域来搭建证书服务</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210507115404116.png" alt="image-20210507115404116"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210507115515774.png" alt="image-20210507115515774"></p>
+<p>HMAC：基于消息摘要认证加密算法，对加密的数据做一个哈希，再用自己的私钥加密叫做数据签名，现在这里边他会加入一些信息，比如说他会加入一个随机数，这个随机数叫X，加入随机数后，在一起计算的这个技术叫做HMAC，这个HMAC后边用作完整性、真实性校验</p>
+<h2 id="IPsec技术框架"><a href="#IPsec技术框架" class="headerlink" title="IPsec技术框架"></a>IPsec技术框架</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210507144148517.png" alt="image-20210507144148517"></p>
 <ul>
-<li>RID唯一</li>
-<li>Hello/Dead时间间隔一致</li>
-<li>区域ID一致</li>
-<li>认证（如果启用了认证）一致</li>
-<li>链路MTU大小一致（默认不开启检查，思科默认开启）</li>
-<li>子网掩码一致（以太网环境）</li>
-<li>网络地址一致</li>
-<li>末梢区域设置一致</li>
+<li>IPsec Protocol IPsec协议</li>
+<li>confidentiality 机密性</li>
+<li>Data Integrity 数据完整性</li>
+<li>Origin Authentication 源认证</li>
+<li>Key Management 密钥管理</li>
 </ul>
-<p><strong>当出现邻居建立问题时需要从这几方面入手排查</strong></p>
-<h4 id="配置OSPFHello时间"><a href="#配置OSPFHello时间" class="headerlink" title="配置OSPFHello时间"></a>配置OSPFHello时间</h4><pre class=" language-java"><code class="language-java">ospf timer hello x <span class="token comment" spellcheck="true">//配置ospf hello时间</span>
-<span class="token comment" spellcheck="true">//默认Dead时间为hello时间的4倍</span>
-</code></pre>
-<h3 id="OSPF网络类型：基于接口"><a href="#OSPF网络类型：基于接口" class="headerlink" title="OSPF网络类型：基于接口"></a>OSPF网络类型：基于接口</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210407170317870.png" alt="image-20210407170317870"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210507144559568.png" alt="image-20210507144559568"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210507144743328.png" alt="image-20210507144743328"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210507145335320.png" alt="image-20210507145335320"></p>
+<hr>
 <ul>
-<li>缺省情况下，OSPF认为以太网的网络类型是广播类型，PPP、HDLC的网络类型是点到点类型</li>
+<li><p>IKE：IKE协议提供密钥协商，用来协商通道，建立和维护安全联盟SA等服务。</p>
+</li>
+<li><p>通过AH和ESP这两个安全协议来实现IP数据报文的安全传送</p>
+</li>
+<li><p>SA：SA安全联盟</p>
+</li>
+<li><p>建议ESP</p>
+</li>
 </ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210407170601839.png" alt="image-20210407170601839"></p>
 <ul>
-<li>缺省情况下，OSPF认为帧中继（FR），ATM（异步传输）的网络类型是NBMA，BMA广播多路，NBMA非广播多路。</li>
+<li><p>特定地点，特定时间，特定任务，特定特征，</p>
+</li>
+<li><p>事先协商好</p>
+</li>
+<li><p>街头后，再聊，再给任务</p>
+</li>
 </ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210408103026810.png" alt="image-20210408103026810"></p>
-<p>这些接口也是多路访问，因为他是以太网接口，不是因为他有邻居才是多路访问。</p>
-<h4 id="改封装（串口）"><a href="#改封装（串口）" class="headerlink" title="改封装（串口）"></a>改封装（串口）</h4><pre class=" language-java"><code class="language-java">link<span class="token operator">-</span>protocol <span class="token operator">?</span> <span class="token comment" spellcheck="true">// 封装类型为 fr hdlc lapb ppp sdlc x25</span>
-dis ospf <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">// 网络类型验证 p2p 是点到点的类型 broadcast是广播类型</span>
-<span class="token comment" spellcheck="true">//点到点的是没有MAC地址的</span>
-</code></pre>
-<h3 id="DR和BDR"><a href="#DR和BDR" class="headerlink" title="DR和BDR"></a>DR和BDR</h3><p>只要是<strong>多路访问BMA和NBMA网络中</strong>，为了<strong>减少邻接关系</strong>的数量，从而<strong>减少数据包</strong>交换次数，最终<strong>节省带宽</strong>，<strong>降低</strong>对路由器处理能力的压力，选举<strong>DR和BDR</strong>。</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210408091323260.png" alt="image-20210408091323260"></p>
+<hr>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210507150036889.png" alt="image-20210507150036889"></p>
+<h2 id="IPsec安全协议"><a href="#IPsec安全协议" class="headerlink" title="IPsec安全协议"></a>IPsec安全协议</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210507150726390.png" alt="image-20210507150726390"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210507150901605.png" alt="image-20210507150901605"></p>
+<h2 id="IPsec封装模式"><a href="#IPsec封装模式" class="headerlink" title="IPsec封装模式"></a>IPsec封装模式</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210507151240461.png" alt="image-20210507151240461"></p>
+<p> <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210507151405171.png" alt="image-20210507151405171"></p>
+<p><strong>说明：</strong></p>
+<ul>
+<li><p>IPsec头就是指AH或ESP或者AH+ESP</p>
+</li>
+<li><p>隧道模式就是跟GRE模式一样</p>
+</li>
+<li><p>传输模式就是不加新的包头</p>
+</li>
+</ul>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210507151912533.png" alt="image-20210507151912533"></p>
+<p><strong>说明：</strong></p>
+<p>当使用GRE封装的隧道模式将出现3个IP包头，一个是原IP包头，一个是GRE封装的新包头，一个是隧道模式下封装的IPsec新IP包头，但是外部只能看到一个IP包头，原因是后边的被加密了，但是数据包封装的结构是三个IP包头。</p>
+<h3 id="传输模式封装结构"><a href="#传输模式封装结构" class="headerlink" title="传输模式封装结构"></a>传输模式封装结构</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210507152244372.png" alt="image-20210507152244372"></p>
+<h3 id="隧道模式封装结构"><a href="#隧道模式封装结构" class="headerlink" title="隧道模式封装结构"></a>隧道模式封装结构</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210507152711186.png" alt="image-20210507152711186"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210507152928001.png" alt="image-20210507152928001"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210507153006038.png" alt="image-20210507153006038"></p>
+<p><strong>Windows安全策略</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210507153247597.png" alt="image-20210507153247597"></p>
+<h3 id="安全联盟"><a href="#安全联盟" class="headerlink" title="安全联盟"></a>安全联盟</h3><p>SA（Security Association）</p>
+<ul>
+<li>顾名思义，通信双方结成盟友，互相信任亲密无间，即达成约定。</li>
+<li>由一个（SPI，IP目的地址，安全协议号）三元组唯一标识。</li>
+<li>决定了对报文进行何种处理：模式、协议、算法、密钥、生存周期等。</li>
+<li>每个IPsec SA都是单向的。</li>
+<li>可以手工建立或通过IKE协商生成。</li>
+<li>SPD（Security Policy Database）安全策略数据库</li>
+<li>SAD（Security Association Database）</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -617,64 +458,70 @@ dis ospf <span class="token keyword">int</span> g0<span class="token operator">/
 </tr>
 </thead>
 <tbody><tr>
-<td>DR</td>
-<td>Designed Route，指定路由器，类似班长，总经理</td>
+<td>Negotiate</td>
+<td>协商，两个节点要开始安全发送数据之前，必须完成的事情</td>
 </tr>
 <tr>
-<td>BDR</td>
-<td>Backup DR，备用DR，类似副班长，副总经理</td>
+<td>SA</td>
+<td>Security Association 安全联盟，协商的结果，类似<strong>合约书</strong></td>
 </tr>
 <tr>
-<td>DRothers</td>
-<td>类似普通学生，普通员工</td>
+<td>SPI</td>
+<td>Security Parameter Index 安全参数索引，SA内包含，用于区分多个SA</td>
 </tr>
 <tr>
-<td>关系</td>
-<td>DR、BDR、DRothers之间都保持邻接关系（Full）DRother之间保持邻居关系（Two-Way）</td>
-</tr>
-<tr>
-<td>地址</td>
-<td>224.0.0.6向DR和BDR发送链路状态更新，224.0.0.5向所有OSPF路由器发送</td>
-</tr>
-<tr>
-<td>选举规则</td>
-<td>首先比较<strong>Hello报文中</strong>携带的<strong>优先级</strong>，优先级范围0~225，默认=1，<strong>优先级最高的被选举为DR</strong>，<strong>优先级次高的被选举为BDR</strong>，<strong>优先级为0的不参与选举</strong>，<strong>优先级一致</strong>的情况下，比较<strong>RID</strong>，<strong>越发越优先</strong>，选举具有<strong>非抢占性</strong>，除非当DR和BDR都失效或重启OSPF进程</td>
+<td><strong>IKE</strong></td>
+<td>Internet Kev Exchange，因特网密钥交换，SA协商的方法和标准。</td>
 </tr>
 </tbody></table>
-<pre class=" language-java"><code class="language-java">dis ospf <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//查看ospf协议对应接口的信息</span>
-  
-dis ospf <span class="token keyword">int</span> lo <span class="token number">1</span> <span class="token comment" spellcheck="true">//查看ospf 回环口的接口信息</span>
-  
-<span class="token comment" spellcheck="true">//更改回环口ospf的度量值</span>
-<span class="token keyword">int</span> lo <span class="token number">1</span>
-ospf cost x <span class="token comment" spellcheck="true">//输入更改的值即可</span>
-  
-dis ospf peer b <span class="token comment" spellcheck="true">//查看邻居  </span>
-  
-<span class="token comment" spellcheck="true">//配置ospf  </span>
-sys
-sys R2
-<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
-ip add xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx yy
-ospf <span class="token number">1</span> router<span class="token operator">-</span>id zzz<span class="token punctuation">.</span>zzz<span class="token punctuation">.</span>zzz<span class="token punctuation">.</span>zzz
-a j
-net xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx kkk<span class="token punctuation">.</span>kkk<span class="token punctuation">.</span>kkk<span class="token punctuation">.</span>kkk
-</code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210408110646995.png" alt="image-20210408110646995"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210408110712272.png" alt="image-20210408110712272"></p>
-<p>DR，BDR是<strong>基于接口</strong>，一个路由器有好多接口，</p>
-<h3 id="ospf度量值（开销）"><a href="#ospf度量值（开销）" class="headerlink" title="ospf度量值（开销）"></a>ospf度量值（开销）</h3><ul>
-<li><p>在每一个运行OSPF的接口上，都维护着一个接口Cost</p>
-</li>
-<li><p>Cost = 10^8/BW(bps) = 100Mbps/BW = 接口带宽参考值/接口带宽</p>
-</li>
-<li><p>到一个目标网络的度量值 = </p>
-<p>​    从源到目标所有<strong>出站接口</strong>的Cost值累加（数据方向）</p>
-<p>​    从源到本路由器沿途所有<strong>入站接口</strong>的Cost值累加（路有方向）</p>
-</li>
+<ul>
+<li><strong>IKE 用来协商通道的</strong></li>
+<li><strong>IPsec SA用来保护数据的</strong></li>
 </ul>
-<p><strong>路由方向看入接口，数据方向看出接口</strong></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210408135018436.png" alt="image-20210408135018436"></p>
+<p><strong>IKE协商过程</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210507163819686.png" alt="image-20210507163819686"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210507163913038.png" alt="image-20210507163913038"></p>
+<p><strong>最终会协商出一个隧道</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210507164155478.png" alt="image-20210507164155478"></p>
+<pre class=" language-java"><code class="language-java">nat user xxx <span class="token operator">/</span>add <span class="token comment" spellcheck="true">//建立Windows用户</span>
+nat user xxx yyy <span class="token comment" spellcheck="true">//创建用户密码</span>
+</code></pre>
+<h2 id="IKE"><a href="#IKE" class="headerlink" title="IKE"></a>IKE</h2><p>Internet Key Exchange 因特网密钥交换</p>
+<ul>
+<li>建立在ISAKMP （Internet安全联盟和密钥管理协议）定义的框架上</li>
+<li>基于UDP（<strong>端口号500</strong>）的应用层协议，可为数据加密提供所需的密钥</li>
+<li>使用DH算法，在不安全的网络上安全地分发密钥，验证身份</li>
+<li>定时更新SA和密钥，实现完善的向前安全性</li>
+<li>允许IPsec提供抗重播服务（添加有随机数）</li>
+<li>简化IPsec的使用和管理，大大简化了IPsec的配置和维护工作</li>
+</ul>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210507175231232.png" alt="image-20210507175231232"></p>
+<hr>
+<h3 id="IKE在中间的作用："><a href="#IKE在中间的作用：" class="headerlink" title="IKE在中间的作用："></a><strong>IKE在中间的作用：</strong></h3><p>SA会建立两种SA，一种是IKE SA，一种是IPsec SA，IKE SA主要是协商后边通道的，在通道中传数据的时候，数据的加密使用的是IPsec SA来进行的。先做IKE的协商，再做IPsec的协商。</p>
+<p><strong>IKE是一种框架</strong></p>
+<p>PFS：prefect Forward Security 完全向前保密，类似DH，用于密钥管理分发，但是做一次额外的密钥交换。</p>
+<p>当私钥泄漏时，就必然会导致之前的数据被破解，但是保证未来的数据能被保护。</p>
+<h3 id="IKE在协商过程中有两个阶段"><a href="#IKE在协商过程中有两个阶段" class="headerlink" title="IKE在协商过程中有两个阶段"></a><strong>IKE在协商过程中有两个阶段</strong></h3><hr>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210507175448641.png" alt="image-20210507175448641"></p>
+<p>对等体之间建立一个IKE SA完成身份验证和密钥信息交换后，在IKE SA的保护下，根据配置的AH/ESP安全协议等参数协商出一对IPsec SA。</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210507235828154.png" alt="image-20210507235828154"></p>
+<h4 id="阶段1"><a href="#阶段1" class="headerlink" title="阶段1"></a>阶段1</h4><h5 id="主模式协商过程"><a href="#主模式协商过程" class="headerlink" title="主模式协商过程"></a>主模式协商过程</h5><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210508001428084.png" alt="image-20210508001428084"></p>
+<p><strong>说明：</strong></p>
+<ul>
+<li>主模式中有加密的过程，推荐使用主模式，但是在早期的设备中不支持加密的信息，所以选择野蛮模式。 </li>
+<li>PRF算法：数据做校验的时候，额外添加的算法。</li>
+<li>IKE的版本有V1还有V2，其中V2种有支持多种算法。</li>
+</ul>
+<h5 id="野蛮模式协商过程"><a href="#野蛮模式协商过程" class="headerlink" title="野蛮模式协商过程"></a>野蛮模式协商过程</h5><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210508001505525.png" alt="image-20210508001505525"></p>
+<h4 id="阶段2"><a href="#阶段2" class="headerlink" title="阶段2"></a>阶段2</h4><h5 id="快速模式"><a href="#快速模式" class="headerlink" title="快速模式"></a>快速模式</h5><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210508002242704.png" alt="image-20210508002242704"></p>
+<h3 id="IKE-SA-与IPsec-SA的区别"><a href="#IKE-SA-与IPsec-SA的区别" class="headerlink" title="IKE SA 与IPsec SA的区别"></a>IKE SA 与IPsec SA的区别</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210508002326242.png" alt="image-20210508002326242"></p>
+<h3 id="实际过程中的界面配置"><a href="#实际过程中的界面配置" class="headerlink" title="实际过程中的界面配置"></a>实际过程中的界面配置</h3><h4 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h4><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210508002438819.png" alt="image-20210508002438819"></p>
+<h4 id="IKE通道配置"><a href="#IKE通道配置" class="headerlink" title="IKE通道配置"></a>IKE通道配置</h4><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210508002529593.png" alt="image-20210508002529593"></p>
+<h4 id="IPsec配置"><a href="#IPsec配置" class="headerlink" title="IPsec配置"></a>IPsec配置</h4><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210508002619132.png" alt="image-20210508002619132"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//科来数据抓包中过滤IPsec的数据包支持的类型有</span>
+  AH、ESP、isakmp、
+<span class="token comment" spellcheck="true">//科来过滤指定的IP地址 ip.addr == 114.114.114.114</span>
+</code></pre>
 
         </div>
 
@@ -707,11 +554,9 @@ net xxx<span class="token punctuation">.</span>xxx<span class="token punctuation
           <div class="post-tags" style="color: #a39391">
             <span><i class="fa fa-tags"></i>
               
-              <a href="/tags/HCIA/" style="color: #716e77;">HCIA<em>·</em></a>
+              <a href="/tags/HCIP/" style="color: #716e77;">HCIP<em>·</em></a>
               
-              <a href="/tags/%E7%AC%94%E8%AE%B0/" style="color: #716e77;">笔记<em>·</em></a>
-              
-              <a href="/tags/OSPF/" style="color: #716e77;">OSPF<em>·</em></a>
+              <a href="/tags/IPsec-VPN/" style="color: #716e77;">IPsec VPN<em>·</em></a>
               
             </span>
             <span>
@@ -739,36 +584,19 @@ net xxx<span class="token punctuation">.</span>xxx<span class="token punctuation
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-        
-        <div class="post-nepre half previous">
-          
-            <a href="/post/d801.html" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/i6fNdDPUampZLG9.jpg"
-                  style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
-                  src="https://i.loli.net/2021/05/03/i6fNdDPUampZLG9.jpg">
-              </div>
-              <span class="label">Previous Post</span>
-              <div class="info">
-                <h3>HCIA学习笔记7</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
           
           
-          
-          <div class="post-nepre half next">
-            
-              <a href="/post/d940.html" rel="next">
+            <div class="post-nepre full next">
+              
+              <a href="/post/857.html" rel="next">
                 <div class="background">
-                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/R9bYJFmBAaC2trV.jpg"
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/06/eVhz71rqN4EL5pi.jpg"
                     style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
-                    onerror="imgError(this,3)" src="https://i.loli.net/2021/05/03/R9bYJFmBAaC2trV.jpg">
+                    onerror="imgError(this,3)" src="https://i.loli.net/2021/05/06/eVhz71rqN4EL5pi.jpg">
                 </div>
                 <span class="label">Next Post</span>
                 <div class="info">
-                  <h3>HCIA学习笔记5</h3>
+                  <h3>HCNP学习笔记2</h3>
                   <hr>
                 </div>
               </a>
