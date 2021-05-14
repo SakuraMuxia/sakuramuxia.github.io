@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">HCIA学习笔记4 | 慢一点，才更快 | 雨落</title>
+  <title itemprop="name">HCNP学习笔记4 | 慢一点，才更快 | 雨落</title>
   
     <link rel="shortcut icon" href="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tubiao.ico">
   
@@ -294,11 +294,11 @@
 
 <div class="pattern-center single-center">
   <!-- 有配图默认渲染第一张 -->
-  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/05/03/bQDYTx6MECP3moF.jpg);"
-    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/bQDYTx6MECP3moF.jpg">
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/05/15/4xct289M7ikeIAB.jpg);"
+    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/15/4xct289M7ikeIAB.jpg">
   </div>
   <header class="pattern-header single-header">
-    <h1 class="entry-title">HCIA学习笔记4</h1>
+    <h1 class="entry-title">HCNP学习笔记4</h1>
     <p class="entry-census">
       
       <span class="post-meta-item">
@@ -318,7 +318,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-calendar"></i>
         </span>
-        <span class="post-meta-item-text"> 2021-4-2 </span>
+        <span class="post-meta-item-text"> 2021-5-15 </span>
       </span>
       <span class="bull">
         ·</span>
@@ -345,7 +345,7 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               </span class="post-meta-item-text">
-                <span class="valine-comment-count" data-xid="/1981"> </span>
+                <span class="valine-comment-count" data-xid="/ad7"> </span>
               </span>
           </span> -->
     </p>
@@ -362,276 +362,240 @@
         <!--套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h2 id="路由备份-浮动静态路由"><a href="#路由备份-浮动静态路由" class="headerlink" title="路由备份-浮动静态路由"></a>路由备份-浮动静态路由</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210402091048297.png" alt="image-20210402091048297"></p>
+          <h1 id="防火墙厂商产品介绍"><a href="#防火墙厂商产品介绍" class="headerlink" title="防火墙厂商产品介绍"></a>防火墙厂商产品介绍</h1><p>1、checkpoint（老牌）</p>
+<p>2、juniper（有认证）</p>
+<p>3、Cisco </p>
+<p>4、palo alto </p>
+<p>5、华为 （USG6530）</p>
+<p>6、山石 （VFW01）</p>
+<p>7、爱快防火墙 （免费）</p>
+<p><strong>说明：</strong></p>
+<p>可以把这些防火墙的镜像从虚拟机安装启动，就相当于有这样一台防火墙，可以作为一个虚拟防火墙，可以部署到一台X86的服务器上，就可以直接使用。</p>
+<p>关键字搜索：企业防火墙魔力象限</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210513085941793.png" alt="image-20210513085941793"></p>
+<p><strong>说明：</strong></p>
+<p>山石防火墙默认账号和密码：均为hellstone</p>
+<p>将山石防火墙挂在在虚拟机中通过查询IP地址，用浏览器登陆IP地址（https）使用web界面配置</p>
+<pre class=" language-java"><code class="language-java">show <span class="token keyword">interface</span> <span class="token comment" spellcheck="true">//linux查询IP地址</span>
+</code></pre>
+<p><strong>镜像文件</strong></p>
+<p>Checkpoint gala R80 public EA EA3.iso</p>
+<p>palo Alto Network PA VM ESX 8.0.0.exe</p>
+<p>山石防火墙SD6000 VTWD1 -5 5RB11.iso</p>
+<pre class=" language-java"><code class="language-java">dis arp <span class="token operator">|</span> in e2 <span class="token comment" spellcheck="true">//mac地址过滤</span>
+  dis ip pool <span class="token keyword">interface</span> <span class="token class-name">vlanif108</span> used<span class="token comment" spellcheck="true">//查看IP地址池使用的IP地址</span>
+</code></pre>
+<p>专门的防火墙课程</p>
+<h1 id="高可靠性"><a href="#高可靠性" class="headerlink" title="高可靠性"></a>高可靠性</h1><p>集群在硬件中可以实现，在数据库中可以实现，在网络设备中可以实现，在操作系统中也可以实现。 </p>
+<p>在学习过程中很多专业术语，在以后做项目文档，聊天时，都要回去讲这些东西，技术背景，技术框架讲明白，优点，缺点，适用场景，解决方案有哪些</p>
+<p>NA路搞通，NP保障性，管理性，安全性，设计性的东西；</p>
+<p>在实际网络中，避免不了各种技术因素造成的网络故障和服务中断，因此， 提高系统容错能力，提高故障速度，降低故障对业务的影响，是提高系统可靠性的有效途径。</p>
+<h3 id="可靠性需求："><a href="#可靠性需求：" class="headerlink" title="可靠性需求："></a><strong>可靠性需求：</strong></h3><p>根据其目标和实现方法的不同，可分为三个级别：</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210513125639626.png" alt="image-20210513125639626"></p>
+<h3 id="可靠性的度量："><a href="#可靠性的度量：" class="headerlink" title="可靠性的度量："></a><strong>可靠性的度量：</strong></h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210513130304590.png" alt="image-20210513130304590"></p>
+<h4 id="HA："><a href="#HA：" class="headerlink" title="HA："></a><strong>HA：</strong></h4><p>High Availability，指一个产品或系统具有很高的可靠性，是一整套综合技术，主要包括冗余容错，链路保证，节点故障及流量工程。</p>
 <ul>
-<li>利用优先级的特性，配置浮动路由；</li>
-<li>在主路由失效的情况下，浮动路由会加入到路由表并承担数据转发业务；</li>
-<li>在主链路正常情况下，只有主路由会出现在路由表中；</li>
+<li>不能频频出现故障</li>
+<li>出现故障后能很快恢复</li>
 </ul>
-<h2 id="配置验证"><a href="#配置验证" class="headerlink" title="配置验证"></a>配置验证</h2><pre class=" language-java"><code class="language-java">dis ip routing<span class="token operator">-</span>table <span class="token comment" spellcheck="true">//查看路由表</span>
+<h4 id="可靠性设计主要包括两个方面："><a href="#可靠性设计主要包括两个方面：" class="headerlink" title="可靠性设计主要包括两个方面："></a>可靠性设计主要包括两个方面：</h4><p><strong>设备可靠性</strong>：要求多设备能够堆叠组网，要求单设备具有电信级可靠性<strong>99.999</strong>%，支持双电源接入，支持双风扇等。</p>
+<p><strong>链路可靠性</strong>：体现在链路设计以及组网形态上，通常采用多链路上行，包括Eth-Trunk/LAG，双归上行等。</p>
+<pre class=" language-java"><code class="language-java"><span class="token number">99.999</span><span class="token operator">%</span> <span class="token comment" spellcheck="true">//一年内故障大约是5分钟</span>
+<span class="token number">86400</span><span class="token operator">*</span><span class="token number">365</span><span class="token operator">-</span><span class="token number">86400</span><span class="token operator">*</span><span class="token number">365</span><span class="token operator">*</span><span class="token number">0.99999</span>
+<span class="token comment" spellcheck="true">//传统方向：金融、证券、互联网、运营商、游戏公司</span>
+<span class="token comment" spellcheck="true">//云计算 5个9 毫无价值毫无意义 云计算12个9</span>
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210513132425756.png" alt="image-20210513132425756"></p>
+<p> <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514105914180.png" alt="image-20210514105914180"></p>
+<ul>
+<li><p>Eth-trunk：链路聚合</p>
+</li>
+<li><p>iStack/CSS：堆叠技术（华为）；盒式的交换机用的是IStack，机架式的交换机用的是CSS。稍微有一点技术上的区别，但是大致上都一样。自动的响应故障并且切换。</p>
+</li>
+<li><p>级联：把多个交换机用线连在一起，级联是没有任何功能上的提升。</p>
+</li>
+<li><p>堆叠和级联的区别，堆叠是二合一，管理上就管理一台设备，性能上二合一，级联性能上没有提升。</p>
+</li>
+</ul>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514110921178.png" alt="image-20210514110921178"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514111017898.png" alt="image-20210514111017898"></p>
+<p>跨设备链路技术：双归路设计 LAG</p>
+<p> <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514111226883.png" alt="image-20210514111226883"></p>
+<p>二层必须开启STP，防止出现环路，三层不怕有环路出现。因为有TTL，三层中跑的是合理的路由设计，肯定会选择最有路由，不可能有环路，但是链路聚合在二层里面要用到，三层里面也可以用到，课程中主要将二层，因为二层里面的需求很大，因为二层这种环路设计都有STP，STP就会阻塞，那么我们要用到，该怎么办，所以这个时候我们会用到链路聚合，同时再加上VRRP，因为我们要用网关，网关有两个，我们到底要用哪一个，用左边的那个，左边的那个如果挂了，要切换到右边的，你得把下边服务器网关地址给换了，这是不可能去实现的，所以我们得提供一个稳定的网关地址，这个网关地址其实就是虚拟出来的，后边有两个真实的网关，所以这个叫做VRRP。</p>
+<p>而如果有堆叠技术，我们可以把多个设备合为一个，通过链路聚合，这个是一根线，这个是一个设备，图形变成了这个样子，这个样子就没有环路了，单点设备，单条链路，就不会有环路出现了。就算开启STP也检测不出来阻塞状态，有了堆叠技术，就不需要STP和VRRP技术了。堆叠技术有一个致命伤：</p>
+<p>VNC </p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//各厂商堆叠技术名称    </span>
+    思科：VSS
+  华三：IRF
+  华为：CSS
+    私有不公开
+  出问题，原厂，专业的工程师。
+  堆叠做集群
+堆叠
+  心跳检测出现问题时，主备交换机都认为是主交换机时，就会出现脑裂。
+<span class="token comment" spellcheck="true">//配置集群</span>
   
-<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//进入对应接口模式</span>
-  
+</code></pre>
+<p><strong>拓展</strong></p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+云计算
+  云计算是先把虚拟化学好，虚拟化实际上是把IT三架马车，给虚拟化放到资源池里进行利用。
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+  三驾马车：计算、网络、存储
+  云计算最底层就三种东西，计算、网络、存储。
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>  
+  计算资源：服务器（硬盘装一个操作系统即可）<span class="token operator">-</span>CPU、内存、
+  网络资源：交换机、网卡、路由器、防火墙
+  存储资源：SAN、NAS、DAS 三种存储网络架构；RAID；
+  NAS：群晖，网络附加存储（网络存储服务器）。
+  RAID：独立（廉价）磁盘冗余阵列（Redundant Array of Independent Disks）
+  RAID <span class="token number">0</span> 新建带区极大提升性能速度最快 大小累加 数据分散在多个硬盘中
+  RAID <span class="token number">1</span> 新建镜像区 <span class="token number">1</span><span class="token operator">:</span><span class="token number">1</span>备份 大小只有一半 只能两块 
+  RAID <span class="token number">5</span> 至少三个硬盘 相互校验 数据是分散在三块硬盘中 同时写入两块硬盘数据，并把校验放在另外一个硬盘中。有校验数据的存在，所以用硬盘数据的容量其实要去掉一块硬盘，RAID <span class="token number">5</span> 是去掉一块硬盘的容量。<span class="token number">5</span>快1G的最终的容量就是4G 修复卷 重新激活。
+  RAID <span class="token number">6</span> 有校验
+  RAID <span class="token number">10</span> 是RAID1和RAID0的综合，RAID10 和RAID01 的优缺点和比较，RAID5和RAID6的区别，在生产环境中用RAID5好还是RAID10好。根据业务分析，应用场景选取。
+ 虚拟化集群特性：
+ 
+   
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514163456039.png" alt="image-20210514163456039"></p>
+<p>当其中一个物理机挂掉之后，他上边的虚拟机会跑到其他的物理机上重新启动。启动时间就是故障时间。</p>
+<p>华为虚拟化的技术：HA</p>
+<p>VMWare特有技术：FT（fault Tolerance）故障转移， 实现零停机，零数据丢失，在其他主机上有影子虚拟机。</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514164101536.png" alt="image-20210514164101536"></p>
+<p>vCenter Server ：统一管理平台，把主机加入集群中。</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514164754595.png" alt="image-20210514164754595"></p>
+<h1 id="Eth-Trunk链路聚合"><a href="#Eth-Trunk链路聚合" class="headerlink" title="Eth-Trunk链路聚合"></a>Eth-Trunk链路聚合</h1><p>随着网络规模不断扩大，用户对骨干链路的带宽和可靠性提出了越来越高的要求，在传统技术中，常用更换高速率的接口板或更换支持高速率接口板的设备方式来增加带宽，但这种方案需要付出高额的费用，而且不够灵活。</p>
+<p>采用链路聚合技术可以在不进行硬件升级的条件下，通过将多个物理接口捆绑为一个逻辑接口，来达到增加链路带宽的目的，在实现增大带宽目的的同时，链路聚合采用备份链路的机制，可以有效的提高设备之间链路的可靠性。</p>
+<h2 id="技术背景："><a href="#技术背景：" class="headerlink" title="技术背景："></a>技术背景：</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514171905297.png" alt="image-20210514171905297"></p>
+<h2 id="Eth-Trunk：以太网链路聚合"><a href="#Eth-Trunk：以太网链路聚合" class="headerlink" title="Eth-Trunk：以太网链路聚合"></a>Eth-Trunk：以太网链路聚合</h2><ul>
+<li>将多条物理链路捆绑在一起成为一条逻辑链路</li>
+</ul>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514172140846.png" alt="image-20210514172140846"></p>
+<p> <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514172429665.png" alt="image-20210514172429665"> </p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514172540544.png" alt="image-20210514172540544"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514172627224.png" alt="image-20210514172627224"></p>
+<h2 id="链路聚合对STP开销影响"><a href="#链路聚合对STP开销影响" class="headerlink" title="链路聚合对STP开销影响"></a>链路聚合对STP开销影响</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514172818535.png" alt="image-20210514172818535"></p>
+<h2 id="链路聚合模式"><a href="#链路聚合模式" class="headerlink" title="链路聚合模式"></a>链路聚合模式</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514172953693.png" alt="image-20210514172953693"></p>
+<ul>
+<li>捆绑=链路聚合 </li>
+<li>服务器是不支持LACP模式的</li>
+</ul>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514174013696.png" alt="image-20210514174013696"></p>
+<ul>
+<li>如果两端设备均支持LACP协议，推荐使用LACP模式链路聚合</li>
+<li>如果对端设备不支持LACP协议，必须使用手工模式链路聚合</li>
+</ul>
+<p><strong>链路错连：</strong></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> eth<span class="token operator">-</span>Trunk <span class="token number">1</span> <span class="token comment" spellcheck="true">//创建一个聚合口</span>
+  mode <span class="token operator">?</span> <span class="token comment" spellcheck="true">//选择模式</span>
+<span class="token comment" spellcheck="true">//然后将物理口加进来就可以了</span>
+<span class="token comment" spellcheck="true">//验证  </span>
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514201753900.png" alt="image-20210514201753900"></p>
+<h3 id="手工链路聚合："><a href="#手工链路聚合：" class="headerlink" title="手工链路聚合："></a>手工链路聚合：</h3><ul>
+<li>Eth-Trunk的建立、成员接口的加入由手工配置，没有LACP的参与。</li>
+<li>所有活动链路都参加数据的转发，平均分担流量。</li>
+</ul>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514202358131.png" alt="image-20210514202358131"></p>
+<h3 id="LACP模式链路聚合"><a href="#LACP模式链路聚合" class="headerlink" title="LACP模式链路聚合"></a>LACP模式链路聚合</h3><ul>
+<li><p>通过LACP报文进行协商，确定活动接口和非活动接口，即提供<strong>备份功能</strong>。</p>
+</li>
+<li><p>LACP负责维护链路状态，在聚合条件发生变化时，自动调整或解散链路聚合。</p>
+</li>
+<li><p>建立过程：<strong>发送LACPDU</strong>→<strong>确定主动端</strong>→<strong>确定活动接口</strong></p>
+<ul>
+<li>比较规则：<strong>值越小越优先</strong>（STP选择根桥、优先级、MAC地址、）</li>
+</ul>
+</li>
+<li><p>​    主动端：系统优先级→MAC地址</p>
+</li>
+<li><p>​    活动接口：接口优先级→接口编号</p>
+</li>
+</ul>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514203828393.png" alt="image-20210514203828393"></p>
+<h3 id="抢占机制"><a href="#抢占机制" class="headerlink" title="抢占机制"></a>抢占机制</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514204016811.png" alt="image-20210514204016811"></p>
+<p>为什么要配置抢占延迟：</p>
+<p>1、首先是为了网络的收敛和流量的一致性。举个例子，有个流量在3口转发，我们流量的负载均衡就会根据算法，比如说根据源MAC，根据源地址，根据目标MAC，假设访问的是同一个主机，同一个MAC地址，MAC是固定的，那么对端不管是那台主机发送的流量，走的可能都是这条链路，但是如果说故障切换，抢过来了，那么会导致流量会从其他地方走，等价路由，负载均衡，是根据数据流来分担的，一组相同的数据包，永远走一条链路，不同的数据包走不同的链路，设计可以改，但是初衷是如果访问同一台主句，数据包都是从三个链路平均发过来的话，就会产生一个微妙的东西，就是数据包会发生乱序，你能保证数据包发送的123，到另一端的数据包也是123吗，有一条链路万一阻塞了呢，故障了呢，从一条链路发不可能是乱序的。这也是多路径的问题。在存储里面有一个叫做多路径问题。</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514205648430.png" alt="image-20210514205648430"></p>
+<p>现在学的是LAN WAN技术，后边的是IPSAN、FCSAN技术，S代表Storage的意思，服务器到存储有多条路径可以到达，这就是存储里面的一个典型的问题，叫做多路径问题，这个问题都是由厂商会提供一些专门的软件去解决它，毕竟为了可靠性，</p>
+<h3 id="链路聚合条件："><a href="#链路聚合条件：" class="headerlink" title="链路聚合条件："></a>链路聚合条件：</h3><p>所有参数 必须一致：接口数量、速率、双工方式、流控方式等。</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514210303907.png" alt="image-20210514210303907"></p>
+<p>聚合以后可以二层，也可以三层，三层就在新创建的聚合口配置IP地址即可。</p>
+<h3 id="负载分担机制："><a href="#负载分担机制：" class="headerlink" title="负载分担机制："></a>负载分担机制：</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514210524944.png" alt="image-20210514210524944"></p>
+<h3 id="负载分担方式："><a href="#负载分担方式：" class="headerlink" title="负载分担方式："></a>负载分担方式：</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514210729138.png" alt="image-20210514210729138"></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> Eth<span class="token operator">-</span>trunk <span class="token number">1</span> <span class="token comment" spellcheck="true">//创建聚合口 1</span>
+  load<span class="token operator">-</span>balance <span class="token operator">?</span> <span class="token comment" spellcheck="true">//负载均衡方式</span>
+<span class="token comment" spellcheck="true">//默认使用的是源目IP方式</span>
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514210945306.png" alt="image-20210514210945306"></p>
+<p>基于源目MAC它会通过一个异或的<strong>算法</strong>去计算</p>
+<p>选择的问题：</p>
+<p>如果左边的设备很少，就不能选择基于源MAC这种方式，因为它会使得很多数据都从一条链路过去，都压在一条链路上了。这时候可以选择目标MAC。</p>
+<h2 id="Eth-Trunk配置（手动）"><a href="#Eth-Trunk配置（手动）" class="headerlink" title="Eth-Trunk配置（手动）"></a>Eth-Trunk配置（手动）</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514221759182.png" alt="image-20210514221759182"></p>
+<pre class=" language-java"><code class="language-java">dis stp b <span class="token comment" spellcheck="true">//查看STP状态</span>
+dis port v <span class="token comment" spellcheck="true">//</span>
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514222722739.png" alt="image-20210514222722739"></p>
+<p><strong>作用：</strong>提高带宽，提高高可靠性。</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514222852362.png" alt="image-20210514222852362"></p>
+<p>两边的聚合链路ID不一定要保持一致，只对本地有效；</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514223809850.png" alt="image-20210514223809850"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514224247483.png" alt="image-20210514224247483"></p>
+<p><strong>workingMode：Normal 代表的是manual</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514224408989.png" alt="image-20210514224408989"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514224532430.png" alt="image-20210514224532430"></p>
+<p>说明：</p>
+<ul>
+<li>手动创建聚合链路的时候只需要创建一个聚合口（其他保持默认），然后把接口加入即可。</li>
+</ul>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514225159123.png" alt="image-20210514225159123"></p>
+<p>当把两个接口进行聚合后的效果：</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514225423419.png" alt="image-20210514225423419"></p>
+<p>STP查看后状态是逻辑的聚合口。</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//配置命令</span>
+<span class="token keyword">int</span> eth<span class="token operator">-</span>t <span class="token number">1</span> <span class="token comment" spellcheck="true">//创建聚合口</span>
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> <span class="token comment" spellcheck="true">//进入对应的接口</span>
+eth<span class="token operator">-</span>t <span class="token number">1</span> <span class="token comment" spellcheck="true">//加入聚合端口</span>
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+<span class="token keyword">int</span> eth<span class="token operator">-</span>t <span class="token number">1</span>
+  trunkport g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> to g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> <span class="token comment" spellcheck="true">//加入成员的另外一种方式</span>
+</code></pre>
+<h2 id="Eth-Trunk配置（LACP）"><a href="#Eth-Trunk配置（LACP）" class="headerlink" title="Eth-Trunk配置（LACP）"></a>Eth-Trunk配置（LACP）</h2><p>在配置Eth-Trunk配置模式的时候需要把里面的成员都先退出，然后再配置模式，这也使得需要先配置模式，然后再配置成员。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> eth<span class="token operator">-</span>trunk <span class="token number">1</span> <span class="token comment" spellcheck="true">//进入聚合口1</span>
+undo trunk g <span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> to <span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">3</span> <span class="token comment" spellcheck="true">//删除聚合口中的成员</span>
+mode lacp<span class="token operator">-</span><span class="token keyword">static</span> <span class="token comment" spellcheck="true">//更改为lacp静态模式</span>
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> <span class="token comment" spellcheck="true">//进入对应接口</span>
 shutdown <span class="token comment" spellcheck="true">//关闭接口</span>
-  
-d th <span class="token comment" spellcheck="true">// 查看当前配置</span>
-
-dis ip routing<span class="token operator">-</span>table pro <span class="token keyword">static</span> <span class="token comment" spellcheck="true">//查看路由表详细信息</span>
-  
-
-tracert <span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">0.10</span> <span class="token comment" spellcheck="true">// 跟踪路由</span>
-  
-<span class="token comment" spellcheck="true">// 写错的路由一定要删除</span>
-
+undo shutdown <span class="token comment" spellcheck="true">//恢复接口</span>
 </code></pre>
-<h2 id="缺省路由"><a href="#缺省路由" class="headerlink" title="缺省路由"></a>缺省路由</h2><p><strong>一种特殊的路由，能匹配所有目标网络。</strong></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210402100442073.png" alt="image-20210402100442073"></p>
+<p><strong>两种配置方式的结果对比（手动和LACP）</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514233139100.png" alt="image-20210514233139100"></p>
 <ul>
-<li>可以通过静态路由配置，也可以通过动态路由协议发布。</li>
-<li>在路由表中，以到网络0.0.0.0（掩码为0.0.0.0）的形式出现、</li>
-<li>通常用于末梢网络（如：家庭上网、企业出口）</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>ip route-static 0.0.0.0 0.0.0.0/0 下一跳地址/出接口</td>
-<td>配置缺省路由</td>
-</tr>
-</tbody></table>
-<h3 id="缺省路由配置"><a href="#缺省路由配置" class="headerlink" title="缺省路由配置"></a><strong>缺省路由配置</strong></h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210402102900197.png" alt="image-20210402102900197"></p>
-<ul>
-<li>缺省路由是目标网络和掩码都为0的特殊路由；</li>
-<li>如果报文的目标地址无法匹配路由表中的任何一项，路由器将选择依照缺省路由来转发报文</li>
-</ul>
-<h2 id="Loopback接口"><a href="#Loopback接口" class="headerlink" title="Loopback接口"></a>Loopback接口</h2><p><strong>回环口，逻辑的、虚拟的接口；</strong></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210402103422820.png" alt="image-20210402103422820"></p>
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>interface loopback 编号</td>
-<td>创建或配置一个回环口，创建后，默认up</td>
-</tr>
-<tr>
-<td>作用</td>
-<td>==模拟直连网段==，可用于测试；设备管理（稳定）；供其他协议使用（ospf、bgp、mpls等）SNMP Traps消息的源地址；其他用途（用途十分广泛）</td>
-</tr>
-</tbody></table>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> lo <span class="token number">2</span> <span class="token comment" spellcheck="true">// 进入回环口2</span>
-
-ip add xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx aa <span class="token comment" spellcheck="true">// 配置IP地址</span>
-  
-dis ip routing<span class="token operator">-</span>table  <span class="token comment" spellcheck="true">// 查看路由表</span>
-  
-dis ip <span class="token keyword">int</span> b <span class="token comment" spellcheck="true">// 查看接口 ip地址</span>
-  
-<span class="token comment" spellcheck="true">//网关就是一条缺省路由</span>
-<span class="token comment" spellcheck="true">//本地网络不需要网关</span>
-  
-<span class="token comment" spellcheck="true">//windows添加静态路由</span>
-rpute print  
-route add xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx aa yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy 
-  
-ipconfig <span class="token operator">/</span>release <span class="token comment" spellcheck="true">// 去除网卡(适配器1)的动态IP地址</span>
-  
-ipconfig <span class="token operator">/</span>renew <span class="token comment" spellcheck="true">//为网卡重新动态分配IP地址</span>
-  
-ipconfig <span class="token operator">/</span>all <span class="token comment" spellcheck="true">//显示所有网络适配器（网卡）TCP/IP配置</span>
-  
-netsh winsock set <span class="token comment" spellcheck="true">//重置 Winsock 目录,重置网络编程接口</span>
-  
-netsh winhttp  reset  proxy <span class="token comment" spellcheck="true">// 解除代理设置</span>
-  
-netsh <span class="token keyword">int</span> ip  reset  c<span class="token operator">:</span><span class="token operator">/</span>catalog<span class="token punctuation">.</span>txt <span class="token comment" spellcheck="true">// 重置IP 设置，恢复到默认自动获取IP 和DNS 服务器地址。</span>
-  
-nslookup 域名 <span class="token comment" spellcheck="true">//查询一台机器的IP地址和其对应的域名,通常它能监测网络中DNS服务器是否能正确实现域名解析它。</span>
-  
-ping <span class="token operator">-</span>a yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx  <span class="token comment" spellcheck="true">//y为源IP，x为目的IP</span>
-
-
-</code></pre>
-<p>小工具：IPOP配置路由的工具；</p>
-<h2 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h2><p><strong>路由协议概述：</strong></p>
-<ul>
-<li>路由器之间交互信息的一种语言；</li>
-<li>共享路由信息；</li>
-<li>维护路由表、提供最佳转发路径；</li>
-</ul>
-<p><strong>路由协议总览</strong></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210402121748882.png" alt="image-20210402121748882"></p>
-<h3 id="动态路由的分类："><a href="#动态路由的分类：" class="headerlink" title="动态路由的分类："></a>动态路由的分类：</h3><p> <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210402141714721.png" alt="image-20210402141714721"></p>
-<pre class=" language-java"><code class="language-java">show ip bgp sum <span class="token comment" spellcheck="true">//查看bgp的总和 </span>
-  
-CNNIC <span class="token comment" spellcheck="true">// 中国互联网信息中心</span>
-  
- 
-</code></pre>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>IGP（Interior Gateway Protocol）内部网关协议</td>
-<td>用于一个AS内部交换路由信息RIP、OSPF、IS-IS</td>
-</tr>
-<tr>
-<td>EGP（Exterior Gateway Protocol）外部网关协议</td>
-<td>用于多个AS之间交换路由信息BGP</td>
-</tr>
-<tr>
-<td>AS（Autonomous System）自制系统</td>
-<td>处于单个管理机制下的网络（如：企业、电信、移动、联通）</td>
-</tr>
-</tbody></table>
-<pre class=" language-java"><code class="language-java">rip <span class="token operator">?</span> <span class="token comment" spellcheck="true">// 进程号</span>
-ospf <span class="token operator">?</span> <span class="token comment" spellcheck="true">// 进程号</span>
-isis <span class="token operator">?</span> <span class="token comment" spellcheck="true">// 进程号</span>
-<span class="token comment" spellcheck="true">//中国电信骨干网 AS 4134</span>
-bgp <span class="token operator">?</span> <span class="token comment" spellcheck="true">// AS号</span>
-</code></pre>
-<h3 id="路由协议分类：根据协议分类"><a href="#路由协议分类：根据协议分类" class="headerlink" title="路由协议分类：根据协议分类"></a>路由协议分类：根据协议分类</h3><table>
-<thead>
-<tr>
-<th>类型</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>DV（Distance-Vector）距离矢量</td>
-<td>基于距离矢量算法，路由器并不了解网络拓扑结构类似路牌，道听途说如：RIP、EIGRP</td>
-</tr>
-<tr>
-<td>LS（Link-State）链路状态</td>
-<td>基于SPF（Shortest Path First，最短路径优先）算法，路由器了解完整的网络拓扑结构，类似地图如OSPF、IS-IS</td>
-</tr>
-</tbody></table>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210402150035241.png" alt="image-20210402150035241"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210402150119547.png" alt="image-20210402150119547"></p>
-<hr>
-<ul>
-<li>RIP：只看眼前</li>
-<li>LSA：链路状态宣告</li>
-<li>OSPF：看带宽</li>
-<li>有类：不携带掩码；</li>
-<li>无类：携带掩码；</li>
-</ul>
-<h3 id="根据业务应用："><a href="#根据业务应用：" class="headerlink" title="根据业务应用："></a>根据业务应用：</h3><table>
-<thead>
-<tr>
-<th>类型</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Unicast Routing Protocol 单播路由协议</td>
-<td>如：RIP、EIGRP、OSPF、BGP、IS-IS</td>
-</tr>
-<tr>
-<td>Multicast Routing Protocol 组播路由协议</td>
-<td>如：DVMRP、PIM-SM、PIM-DM</td>
-</tr>
-</tbody></table>
-<h2 id="路由协议的操作规则"><a href="#路由协议的操作规则" class="headerlink" title="路由协议的操作规则"></a>路由协议的操作规则</h2><ul>
-<li>协议是在接口上运行的；</li>
-<li>只能学习和发布相同协议已知的路由信息；</li>
-<li>如果不同的路由协议间需要交换路由信息，就需要进行==注入（import）；==</li>
-</ul>
-<pre class=" language-java"><code class="language-java">rip <span class="token number">1</span> <span class="token comment" spellcheck="true">//创建进程</span>
-<span class="token comment" spellcheck="true">// 宣告方式一  </span>
-network xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx <span class="token comment" spellcheck="true">//宣告网络</span>
-<span class="token comment" spellcheck="true">// 注入方式二  </span>
-<span class="token comment" spellcheck="true">//在RIP 1接口环境下注入</span>
-  <span class="token keyword">import</span> route OSPF <span class="token number">1</span> 
-<span class="token comment" spellcheck="true">// ver 1 RIP v1 版本</span>
-<span class="token comment" spellcheck="true">// ver 2 RIP v2 版本</span>
- 
-</code></pre>
-<h2 id="路由器收敛"><a href="#路由器收敛" class="headerlink" title="路由器收敛"></a>路由器收敛</h2><ul>
-<li>当所有路由表包含相同网络可达性信息</li>
-<li>网络（路由）进入一个稳定状态</li>
-<li>网络在达到收敛前无法完全正常工作</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>指标</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>正确性</td>
-<td>能够正确找到最优的路由，且无闭环</td>
-</tr>
-<tr>
-<td>快收敛</td>
-<td>当拓扑结构发生变化之后，能够迅速作出相应的路由改变</td>
-</tr>
-<tr>
-<td>低开销</td>
-<td>协议自身的开销（内存、CPU、网络带宽）最小</td>
-</tr>
-<tr>
-<td>安全性</td>
-<td>协议自身不易受攻击，有安全机制</td>
-</tr>
-<tr>
-<td>普适性</td>
-<td>适应各种拓扑结构和各种规模的网络</td>
-</tr>
-</tbody></table>
-<h2 id="RIP"><a href="#RIP" class="headerlink" title="RIP"></a>RIP</h2><p>路由信息协议（Routing Information Protocol）的简称，它是一种基于距离矢量（Distance Vector）算法的协议，使用跳数作为度量来衡量到达目的网络的距离。RIP主要应用于规模较小的网络中。</p>
-<h3 id="特点："><a href="#特点：" class="headerlink" title="特点："></a><strong>特点：</strong></h3><ul>
-<li>距离矢量路由协议，属于IGP协议；</li>
-<li>适用于中小型网络，有RIPV1和RIPv2两个版本；</li>
-<li>基于UDP，目标端口号520；</li>
-<li>周期性更新约30s一次；</li>
-<li>支持水平分割。毒性逆转和触发更新等防环特性；</li>
-</ul>
-<h3 id="工作原理："><a href="#工作原理：" class="headerlink" title="工作原理："></a><strong>工作原理：</strong></h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210402155816266.png" alt="image-20210402155816266"></p>
-<ul>
-<li>路由器运行RIP后，会首先发送路由器更新请求，受到请求的路由器会发送自己的RIP路由进行响应。</li>
-<li>网络稳定后，路由器会周期性发送路由更新信息。</li>
-</ul>
-<h3 id="RIP-度量"><a href="#RIP-度量" class="headerlink" title="RIP-度量"></a><strong>RIP-度量</strong></h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210402160205421.png" alt="image-20210402160205421"></p>
-<ul>
-<li><p>RIP使用跳数作为度量值来衡量到达目的网络的距离；</p>
+<li><p>这两个之间最大的区别在于，手动配置的Eth-Trunk只能配置最大的带宽是多少，不能配置激活的链路个数是多少，而LACP配置的就可以配置。</p>
 </li>
-<li><p>缺省情况下，直连网络的路由跳数为0，当路由器发送路由更新时，会把度量值加1；</p>
+<li><p>在选择主动端，选择激活链路时，优先级一样，端口编号越小约优先。</p>
 </li>
-<li><p>RIP规定超过15跳为网络不可达；</p>
-</li>
-<li><p>组播地址：224~239</p>
-</li>
-<li><p>RIP V1广播，V2组播</p>
+<li><p>谁是主动端，听谁的</p>
 </li>
 </ul>
-<h3 id="RIPv1和RIP-v2的区别"><a href="#RIPv1和RIP-v2的区别" class="headerlink" title="RIPv1和RIP v2的区别"></a><strong>RIPv1和RIP v2的区别</strong></h3><hr>
-<p>RIPv1是有类路由协议，不支持VLSM和CIDR；</p>
-<p>以广播的形式发送报文；</p>
-<p>不支持认证；</p>
-<hr>
-<p>RIPv2是无类路由协议，支持VLSM支持路由聚合与CIDR；</p>
-<p>支持以广播或者组播（224.0.0.9）方式发送报文；</p>
-<p>支持明文认证和MD5密文认证；</p>
-<hr>
-<h3 id="RIP环路"><a href="#RIP环路" class="headerlink" title="RIP环路"></a>RIP环路</h3><p>当网络发生故障时，RIP网络有可能产生路由环路；</p>
-<h3 id="配置RIP"><a href="#配置RIP" class="headerlink" title="配置RIP"></a>配置RIP</h3><pre class=" language-java"><code class="language-java">rip <span class="token number">1</span>
-ver <span class="token number">2</span>
-net xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx <span class="token comment" spellcheck="true">// 宣告这个路由器的路由信息</span>
-net yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy <span class="token comment" spellcheck="true">// 等等</span>
+<p>配置系统优先级：</p>
+<pre class=" language-java"><code class="language-java">lacp priority <span class="token operator">?</span> <span class="token comment" spellcheck="true">//在系统模式配置</span>
+<span class="token comment" spellcheck="true">//默认是32768，可以配置成32767，STP配置优先级的时候是以4096为一块。</span>
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//进入接口模式</span>
+  lacp priority <span class="token number">3</span><span class="token comment" spellcheck="true">//配置接口的优先级</span>
+<span class="token keyword">int</span> eth <span class="token number">1</span> <span class="token comment" spellcheck="true">//进入聚合接口</span>
+  lacp preempt delay <span class="token number">10</span> <span class="token comment" spellcheck="true">//配置lacp抢占延迟为10秒</span>
+  
+  
 </code></pre>
+<ul>
+<li><p>LACP的好处是可以动态的检测，也可以选择主备，检测出错的接口。</p>
+</li>
+<li><p>交换机之间可以用，交换机路由器之间可以用，路由器之间可以用，服务器之间也可以用。</p>
+</li>
+</ul>
+<p>NIC Teaming ：网卡绑定</p>
 
         </div>
 
@@ -664,11 +628,11 @@ net yyy<span class="token punctuation">.</span>yyy<span class="token punctuation
           <div class="post-tags" style="color: #a39391">
             <span><i class="fa fa-tags"></i>
               
-              <a href="/tags/HCIA/" style="color: #716e77;">HCIA<em>·</em></a>
+              <a href="/tags/HCIP/" style="color: #716e77;">HCIP<em>·</em></a>
               
-              <a href="/tags/%E7%AC%94%E8%AE%B0/" style="color: #716e77;">笔记<em>·</em></a>
+              <a href="/tags/%E9%98%B2%E7%81%AB%E5%A2%99/" style="color: #716e77;">防火墙<em>·</em></a>
               
-              <a href="/tags/RIP/" style="color: #716e77;">RIP<em>·</em></a>
+              <a href="/tags/Eth-Trunk%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88/" style="color: #716e77;">Eth-Trunk链路聚合<em>·</em></a>
               
             </span>
             <span>
@@ -696,36 +660,19 @@ net yyy<span class="token punctuation">.</span>yyy<span class="token punctuation
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-        
-        <div class="post-nepre half previous">
-          
-            <a href="/post/d940.html" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/R9bYJFmBAaC2trV.jpg"
-                  style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
-                  src="https://i.loli.net/2021/05/03/R9bYJFmBAaC2trV.jpg">
-              </div>
-              <span class="label">Previous Post</span>
-              <div class="info">
-                <h3>HCIA学习笔记5</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
           
           
-          
-          <div class="post-nepre half next">
-            
-              <a href="/post/dbc0.html" rel="next">
+            <div class="post-nepre full next">
+              
+              <a href="/post/c896.html" rel="next">
                 <div class="background">
-                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/35c7xzED4TBK9Vb.jpg"
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/12/fM1yFYZQXlK7NPd.jpg"
                     style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
-                    onerror="imgError(this,3)" src="https://i.loli.net/2021/05/03/35c7xzED4TBK9Vb.jpg">
+                    onerror="imgError(this,3)" src="https://i.loli.net/2021/05/12/fM1yFYZQXlK7NPd.jpg">
                 </div>
                 <span class="label">Next Post</span>
                 <div class="info">
-                  <h3>HCIA学习笔记3</h3>
+                  <h3>HCNP学习笔记3</h3>
                   <hr>
                 </div>
               </a>
