@@ -362,9 +362,63 @@
         <!--套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h1 id="VRRP配置实例"><a href="#VRRP配置实例" class="headerlink" title="VRRP配置实例"></a>VRRP配置实例</h1><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210518004451144.png" alt="image-20210518004451144"></p>
-<h1 id="VRRP应用场景"><a href="#VRRP应用场景" class="headerlink" title="VRRP应用场景"></a>VRRP应用场景</h1><h4 id="主备备份"><a href="#主备备份" class="headerlink" title="主备备份"></a>主备备份</h4><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210518004648077.png" alt="image-20210518004648077"></p>
-<h4 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h4><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210518004716706.png" alt="image-20210518004716706"></p>
+          <h1 id="VRRP配置"><a href="#VRRP配置" class="headerlink" title="VRRP配置"></a>VRRP配置</h1><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210518004451144.png" alt="image-20210518004451144"></p>
+<h2 id="VRRP应用场景"><a href="#VRRP应用场景" class="headerlink" title="VRRP应用场景"></a>VRRP应用场景</h2><h3 id="主备备份"><a href="#主备备份" class="headerlink" title="主备备份"></a>主备备份</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210518004648077.png" alt="image-20210518004648077"></p>
+<h3 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210518004716706.png" alt="image-20210518004716706"></p>
+<h2 id="VRRP配置-1"><a href="#VRRP配置-1" class="headerlink" title="VRRP配置"></a>VRRP配置</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210520100337569.png" alt="image-20210520100337569"></p>
+<p><strong>说明：</strong></p>
+<p>在同一个组，要保证配置的虚拟IP地址一样。</p>
+<p><strong>VRRP数据包结构</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210522105820687.png" alt="image-20210522105820687"></p>
+<p> 当Master Down了之后,出现的结果如下：</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210520103246497.png" alt="image-20210520103246497"></p>
+<p>原因在于STP收敛需要时间，不是VRRP的问题。</p>
+<h2 id="监视"><a href="#监视" class="headerlink" title="监视"></a>监视</h2><p>当SW2的上行链路down掉了，不会引起VRRP的配置，Master和Backup不会发生改变。但是可以与上行服务器的通信，原因在于配置了ospf，路由收敛后会从右边走，但是过程就是从左边先走，然后回来再从右边走，绕路了，因此就需要监视。</p>
+<p><strong>监视的作用</strong>就是当Master的上行链路down掉了之后呢，能够将Master的位置让出来，让右边成为master，直接从右边走，不要再回来从右边走，<strong>实现的方法</strong>就是把Master的优先级减一定的值，</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210520112241557.png" alt="image-20210520112241557"></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> vlanif <span class="token number">10</span>
+vrrp vrid <span class="token number">10</span> track <span class="token keyword">interface</span> <span class="token class-name">vlanif</span> <span class="token number">2</span> reduce<span class="token operator">/</span>add xxx <span class="token comment" spellcheck="true">//配置监视接口，以及配置自动减或加优先级。默认减10， </span>
+  
+dis vrrp <span class="token keyword">interface</span> <span class="token class-name">vlanif</span> <span class="token number">10</span> <span class="token comment" spellcheck="true">//直接查看VRRP接口的详细信息</span>
+  
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210520113251598.png" alt="image-20210520113251598"></p>
+<p><strong>三个优先级：</strong></p>
+<p>priorityRun：实际的优先级，当为255时，代表虚拟地址和接口地址一样。 </p>
+<p>PriorityConfig：自己配置</p>
+<p>MasterPriority：Master的优先级</p>
+<pre class=" language-java"><code class="language-java">
+VRRP vrid <span class="token number">10</span> track <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">2</span> reducked <span class="token number">101</span> <span class="token comment" spellcheck="true">//配置接口监视自动减优先级101</span>
+  
+dis vrrp <span class="token keyword">interface</span> <span class="token class-name">vlanif</span> <span class="token number">10</span> <span class="token comment" spellcheck="true">//直接查看VRRP接口的详细信息</span>
+</code></pre>
+<h3 id="利用路由技术-BFD-NQA监视"><a href="#利用路由技术-BFD-NQA监视" class="headerlink" title="利用路由技术\BFD\NQA监视"></a>利用路由技术\BFD\NQA监视</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210521100508440.png" alt="image-20210521100508440"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210521100530268.png" alt="image-20210521100530268"></p>
+<p>当遇到上行非直连的故障该怎么检测，我们可以用BFD或者用路由的方式进行检测，</p>
+<p><strong>实验环境如下：</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210521100700715.png" alt="image-20210521100700715"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master//blog-hcnp/image-20210521101525857.png" alt="image-20210521101525857"></p>
+<p>当sw4与AR1之间的链路发生故障时，由于sw2的接口就检测不到了，等待路由收敛后，路径方向会先到sw4网关然后再回来，从右边的路由走，这样的设计就不合理。于是就需要监视这条路由。</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span>
+  sw2
+sys
+dis ospf routing <span class="token comment" spellcheck="true">//查看ospf路由</span>
+dis ip rou pro os <span class="token comment" spellcheck="true">//查看ospf路由信息</span>
+<span class="token keyword">int</span> vlanif <span class="token number">10</span> <span class="token comment" spellcheck="true">//进入vlan10接口</span>
+vrrp vrid <span class="token number">10</span> track ip route xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx <span class="token number">24</span> reduce <span class="token number">150</span> <span class="token comment" spellcheck="true">//跟踪xxx网段的路由，并且故障时，优先级减150.</span>
+dis vrrp <span class="token keyword">int</span> vlan <span class="token number">10</span> <span class="token comment" spellcheck="true">//查看vlan110的vrrp接口信息</span>
+
+  
+</code></pre>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h3 id="心跳线"><a href="#心跳线" class="headerlink" title="心跳线"></a>心跳线</h3><p>防止接入层链路不通或不稳定</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210520165613037.png" alt="image-20210520165613037"></p>
+<p>接入层的链路，跟业务跑在一块了，假如组很多，有50个组有50个VRRP，这个时候有两种解决方案：</p>
+<p>1、第一个是起一个心跳线，在心跳线里跑VRRP的状态。</p>
+<p>2、 admin-vrrp vrid 10 建立管理组vrrp用于管理同一个VLAN流量走向</p>
+<p>心跳线就是再加一个接口就是一条线，没有其他的命令，这个接口这要跟下面提供的vlanif一样的性质就行了，把心跳线配置一个trunk，跑VLAN10 或VLAN20 就可以了，但是这个时候就会产生一个问题就是环路。<strong>所以STP得配置</strong>，因为有一些交换机会阻止一些非法的组播流量，所以有些交换机可以丢弃一些未知的组播流量，所以有一些VRRP报文可能就过不去，也回不来，因此这时建议用心跳。</p>
+<h2 id="配置案例"><a href="#配置案例" class="headerlink" title="配置案例"></a>配置案例</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210520111005401.png" alt="image-20210520111005401"></p>
+<p><strong>说明：</strong></p>
+<p>这个配置中 一个接口下面有两个组。因为他下边的主机都是一个VLAN。</p>
 <h1 id="综合实验"><a href="#综合实验" class="headerlink" title="综合实验"></a>综合实验</h1><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210518012137229.png" alt="image-20210518012137229"></p>
 <h2 id="实验基本环境"><a href="#实验基本环境" class="headerlink" title="实验基本环境"></a>实验基本环境</h2><pre class=" language-java"><code class="language-java">要求：
 <span class="token number">1</span>、配置交换和路由保证全网通
@@ -587,51 +641,20 @@ STP disable <span class="token comment" spellcheck="true">//关闭STP，因为�
 <p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210518173616935.png" alt="image-20210518173616935"></p>
 <p>由于STP的存在将SW3和SW4之间的链路阻断了，所以SW4ping不通SW3，查看ospf路由发现，34网段是直连的，但是走的仍然是被阻断的那一条链路，所以要不就把上层接口的STP关掉，要不就用Mstp，或者就把上边配置成纯的物理口。</p>
 <h3 id="完整拓扑配置"><a href="#完整拓扑配置" class="headerlink" title="完整拓扑配置"></a>完整拓扑配置</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210520100141105.png" alt="image-20210520100141105"></p>
-<h2 id="VRRP配置"><a href="#VRRP配置" class="headerlink" title="VRRP配置"></a>VRRP配置</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210520100337569.png" alt="image-20210520100337569"></p>
-<p><strong>说明：</strong></p>
-<p>在同一个组，要保证配置的虚拟IP地址一样。</p>
-<p><strong>VRRP数据包结构</strong></p>
-<p><img src="C:\Users\Senera\AppData\Roaming\Typora\typora-user-images\image-20210520103014787.png" alt="image-20210520103014787"></p>
-<p> 当Master Down了之后,出现的结果如下：</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210520103246497.png" alt="image-20210520103246497"></p>
-<p>原因在于STP收敛需要时间，不是VRRP的问题。</p>
-<h2 id="配置案例"><a href="#配置案例" class="headerlink" title="配置案例"></a>配置案例</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210520111005401.png" alt="image-20210520111005401"></p>
-<p><strong>说明：</strong></p>
-<p>这个配置中 一个接口下面有两个组。因为他下边的主机都是一个VLAN。</p>
-<h2 id="监视"><a href="#监视" class="headerlink" title="监视"></a>监视</h2><p>当SW2的上行链路down掉了，不会引起VRRP的配置，Master和Backup不会发生改变。但是可以与上行服务器的通信，原因在于配置了ospf，路由收敛后会从右边走，但是过程就是从左边先走，然后回来再从右边走，绕路了，因此就需要监视。</p>
-<p><strong>监视的作用</strong>就是当Master的上行链路down掉了之后呢，能够将Master的位置让出来，让右边成为master，直接从右边走，不要再回来从右边走，<strong>实现的方法</strong>就是把Master的优先级减一定的值，</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210520112241557.png" alt="image-20210520112241557"></p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> vlanif <span class="token number">10</span>
-vrrp vrid <span class="token number">10</span> track <span class="token keyword">interface</span> <span class="token class-name">vlanif</span> <span class="token number">2</span> reduce<span class="token operator">/</span>add xxx <span class="token comment" spellcheck="true">//配置监视接口，以及配置自动减或加优先级。默认减10， </span>
-  
-dis vrrp <span class="token keyword">interface</span> <span class="token class-name">vlanif</span> <span class="token number">10</span> <span class="token comment" spellcheck="true">//直接查看VRRP接口的详细信息</span>
-  
-</code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210520113251598.png" alt="image-20210520113251598"></p>
-<p><strong>三个优先级：</strong></p>
-<p>priorityRun：实际的优先级，当为255时，代表虚拟地址和接口地址一样。 </p>
-<p>PriorityConfig：自己配置</p>
-<p>MasterPriority：Master的优先级</p>
-<pre class=" language-java"><code class="language-java">
-VRRP vrid <span class="token number">10</span> track <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">2</span> reducked <span class="token number">101</span> <span class="token comment" spellcheck="true">//配置接口监视自动减优先级101</span>
-  
-dis vrrp <span class="token keyword">interface</span> <span class="token class-name">vlanif</span> <span class="token number">10</span> <span class="token comment" spellcheck="true">//直接查看VRRP接口的详细信息</span>
-  
-
-</code></pre>
-<h2 id="心跳线"><a href="#心跳线" class="headerlink" title="心跳线"></a>心跳线</h2><p>防止接入层链路不通或不稳定</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210520165613037.png" alt="image-20210520165613037"></p>
-<p>接入层的链路，跟业务跑在一块了，假如组很多，有50个组有50个VRRP，这个时候有两种解决方案：</p>
-<p>1、第一个是起一个心跳线，在心跳线里跑VRRP的状态。</p>
-<p>2、 admin-vrrp vrid 10 建立管理组vrrp用于管理同一个VLAN流量走向</p>
-<p>心跳线就是再加一个接口就是一条线，没有其他的命令，这个接口这要跟下面提供的vlanif一样的性质就行了，把心跳线配置一个trunk，跑VLAN10 或VLAN20 就可以了，但是这个时候就会产生一个问题就是环路。<strong>所以STP得配置</strong>，因为有一些交换机会阻止一些非法的组播流量，所以有些交换机可以丢弃一些未知的组播流量，所以有一些VRRP报文可能就过不去，也回不来，因此这时建议用心跳。</p>
-<h1 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h1><pre class=" language-java"><code class="language-java">system<span class="token operator">-</span>view
+<h2 id="-1"><a href="#-1" class="headerlink" title=""></a></h2><h1 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h1><pre class=" language-java"><code class="language-java">system<span class="token operator">-</span>view
 <span class="token keyword">interface</span> <span class="token class-name">10ge</span> <span class="token number">1</span><span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
 undo negotiation disable <span class="token comment" spellcheck="true">//配置以太网接口工作在自协商模式</span>
 speed auto <span class="token number">100</span> <span class="token comment" spellcheck="true">//配置10GE1/0/1在自协商模式下协商速率为100Mbit/s</span>
 <span class="token comment" spellcheck="true">//在单独的口关闭STP</span>
 <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
 stp disable
+ 
+<span class="token comment" spellcheck="true">//查看接口光模块信息</span>
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> <span class="token comment" spellcheck="true">//进入相关接口</span>
+  d th <span class="token comment" spellcheck="true">//查看接口对应配置信息</span>
+dis <span class="token keyword">interface</span> <span class="token class-name">transceiver</span> verbose <span class="token comment" spellcheck="true">//查看接口光模块详细信息</span>
+<span class="token comment" spellcheck="true">//或直接打以下命令</span>
+display <span class="token keyword">interface</span> <span class="token class-name">10ge</span> <span class="token number">1</span><span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> transceiver verbose <span class="token comment" spellcheck="true">//查看光模块的诊断信息</span>
 </code></pre>
 
         </div>
@@ -868,7 +891,7 @@ gitalk.render('gitalk-container')
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -880,10 +903,10 @@ gitalk.render('gitalk-container')
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: '文章',
-            // PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
+            POSTS: 'Posts',
+            // PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
