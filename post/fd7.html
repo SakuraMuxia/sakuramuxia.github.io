@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">HCIA学习笔记7 | 慢一点，才更快 | 雨落</title>
+  <title itemprop="name">HCNP学习笔记8 | 慢一点，才更快 | 雨落</title>
   
     <link rel="shortcut icon" href="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tubiao.ico">
   
@@ -294,11 +294,11 @@
 
 <div class="pattern-center single-center">
   <!-- 有配图默认渲染第一张 -->
-  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/05/03/i6fNdDPUampZLG9.jpg);"
-    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/i6fNdDPUampZLG9.jpg">
+  <div class="pattern-attachment-img lazyload" style="background-image: url(![](https://i.loli.net/2021/05/24/h24Ko7gdnO3J8za.jpg));"
+    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="![](https://i.loli.net/2021/05/24/h24Ko7gdnO3J8za.jpg)">
   </div>
   <header class="pattern-header single-header">
-    <h1 class="entry-title">HCIA学习笔记7</h1>
+    <h1 class="entry-title">HCNP学习笔记8</h1>
     <p class="entry-census">
       
       <span class="post-meta-item">
@@ -318,7 +318,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-calendar"></i>
         </span>
-        <span class="post-meta-item-text"> 2021-4-9 </span>
+        <span class="post-meta-item-text"> 2021-5-24 </span>
       </span>
       <span class="bull">
         ·</span>
@@ -345,7 +345,7 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               </span class="post-meta-item-text">
-                <span class="valine-comment-count" data-xid="/d801"> </span>
+                <span class="valine-comment-count" data-xid="/fd7"> </span>
               </span>
           </span> -->
     </p>
@@ -362,130 +362,210 @@
         <!--套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <hr>
-<p id="hitokoto">获取中...</p>
-<script src="https://v1.hitokoto.cn/?encode=js&amp;select=%23hitokoto" defer=""></script>
-
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=1835295321&amp;auto=0&amp;height=66"></iframe>
-
-<h2 id="OSPF配置"><a href="#OSPF配置" class="headerlink" title="OSPF配置"></a>OSPF配置</h2><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>ospf 1 router-id 1.1.1.1</td>
-<td>开启ospf，进程号缺省为1，手动配置Route ID</td>
-</tr>
-<tr>
-<td>area0/0.0.0.0</td>
-<td>配置区域</td>
-</tr>
-<tr>
-<td>network 192.168.0.0 0.0.0.255</td>
-<td>宣告网络，即指定运行ospf的接口；使用反掩码来匹配（255.255.255.255-掩码）</td>
-</tr>
-<tr>
-<td>display ospf peer [brief]</td>
-<td>显示ospf邻居信息</td>
-</tr>
-<tr>
-<td>ospf timer hello 10</td>
-<td>修改Hello包发送间隔</td>
-</tr>
-<tr>
-<td>ospf timer dead 40</td>
-<td>修改Hello包超时时间（默认是4倍关系）</td>
-</tr>
-<tr>
-<td>display ospf interface g0/0/0</td>
-<td>显示ospf接口信息</td>
-</tr>
-<tr>
-<td>ospf dr-priority 100</td>
-<td>修改ospf接口优先级（在接口下面）</td>
-</tr>
-<tr>
-<td>ospf Cost 10</td>
-<td>修改开销，范围1~65535，缺省为1</td>
-</tr>
-<tr>
-<td>bandwidth-reference 100</td>
-<td>调整带宽参考值，默认为100Mbps，需要在整个ospf网络中统一进行调整</td>
-</tr>
-<tr>
-<td>reset ospf process</td>
-<td>重启OSPF进程</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<p><strong>说明：</strong></p>
+          <h1 id="BFD"><a href="#BFD" class="headerlink" title="BFD"></a>BFD</h1><p>为了减少链路，设备故障对业务的影响，提高网络的可靠性，网络设备需要尽快检测与相邻设备间的通信故障，以便及时采取措施，保证业务正常进行。</p>
+<p>双向转发检测BFD（Bidirectional Forwarding Detection）提供了一个通用的标准化介质无关和协议无关的快速故障检测机制，用于快速检测、监控网络中链路或者IP路由的转发连通状况。</p>
+<h2 id="技术背景："><a href="#技术背景：" class="headerlink" title="技术背景："></a>技术背景：</h2><h3 id="场景一："><a href="#场景一：" class="headerlink" title="场景一："></a>场景一：</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master//blog-hcnp/image-20210521105128160.png" alt="image-20210521105128160"></p>
+<p>不会，需要等待40秒的时间，ospf邻居数据包10秒发一次hello，大概需要30秒才会收敛完成。</p>
+<p>VRRP Master数据包每秒发送一次，backup3秒监听确认一次。</p>
+<h3 id="场景二："><a href="#场景二：" class="headerlink" title="场景二："></a>场景二：</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master//blog-hcnp/image-20210521105429019.png" alt="image-20210521105429019"></p>
+<p>在没有监视的情况下，通过路由收敛，流量也会从左边走，但是需要大概40秒的时间，而如果配置了路由监视的功能就会很快的改变流量方向，但是还是要等待路由的收敛。</p>
+<h3 id="传统检测方法："><a href="#传统检测方法：" class="headerlink" title="传统检测方法："></a>传统检测方法：</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master//blog-hcnp/image-20210521105838880.png" alt="image-20210521105838880"></p>
+<p> <strong>BFD：Bidirectional Forwording Detection 双向转发检测</strong></p>
 <ul>
-<li>反掩码是根据前边添加的IP地址掩码对应匹配的网络地址或者IP地址</li>
-<li>命令的执行在哪个界面使用，看命令的起手,例如ospf  …是在接口的界面下更改的，前面没有ospf，是在进程的界面下更改的。</li>
+<li>一种通用、标准化、介质无关、协议无关的快速故障检测机制。</li>
+<li>用于快速检测、监控网络中链路或路由的转发连通状况</li>
+<li>不管是物理接口状态、二层链路状态、网络层地址可达性、还是传输层连接状态、应用层协议运行状态、都可以被BFD感知到。</li>
 </ul>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//做完每一步进行验证</span>
-dis ospf peer b <span class="token comment" spellcheck="true">// 查看是否已经建立好了邻居</span>
-<span class="token comment" spellcheck="true">//串口的速度为2.048</span>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master//blog-hcnp/image-20210521110552799.png" alt="image-20210521110552799"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//技术联动</span>
+安全防火墙里面有
+IPS IDS 告警 通知 防火墙<span class="token comment" spellcheck="true">//入侵检测，入侵防御</span>
+<span class="token comment" spellcheck="true">//认证 portal NAC AAA </span>
+
 </code></pre>
-<h2 id="缺省路由的发布"><a href="#缺省路由的发布" class="headerlink" title="缺省路由的发布"></a>缺省路由的发布</h2><p>缺省路由：能匹配所有网络，配置方法有以下两种：</p>
-<table>
-<thead>
-<tr>
-<th>方式</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>静态配置</td>
-<td>使用命令：ip route-static 0.0.0.0 0.0.0.0</td>
-</tr>
-<tr>
-<td>动态发布</td>
-<td>使用动态路由协议进行发布</td>
-</tr>
-</tbody></table>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210409133453109.png" alt="image-20210409133453109"></p>
-<h3 id="OSPF缺省路由发布命令"><a href="#OSPF缺省路由发布命令" class="headerlink" title="OSPF缺省路由发布命令"></a>OSPF缺省路由发布命令</h3><pre class=" language-java"><code class="language-java">ip route<span class="token operator">-</span><span class="token keyword">static</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0</span> xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx
-<span class="token keyword">default</span><span class="token operator">-</span>route<span class="token operator">-</span>advertise <span class="token comment" spellcheck="true">//缺省路由发布命令 类似于引入的方式</span>
+<h2 id="BFD工作原理"><a href="#BFD工作原理" class="headerlink" title="BFD工作原理"></a>BFD工作原理</h2><ul>
+<li>本身没有邻居发现机制，靠被服务的上层应用通知其邻居建立BFD会话。</li>
+<li>建立会话后周期性（100ms）发送BFD控制报文进行检测。</li>
+<li>检测到故障后，通知被服务的相关应用进行相应的处理。</li>
+</ul>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210521202948250.png" alt="image-20210521202948250"></p>
+<pre class=" language-java"><code class="language-java">dis bfd session all <span class="token comment" spellcheck="true">//验证BFD会话</span>
 </code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210409133741037.png" alt="image-20210409133741037"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210409133752581.png" alt="image-20210409133752581"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210409133834887.png" alt="image-20210409133834887"></p>
-<pre class=" language-java"><code class="language-java">acl <span class="token number">2000</span> <span class="token comment" spellcheck="true">// 建立一个规则</span>
-rule <span class="token number">1</span> permit <span class="token comment" spellcheck="true">//permit 允许</span>
-nat outbound <span class="token number">2000</span> <span class="token comment" spellcheck="true">//</span>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210521203407081.png" alt="image-20210521203407081"></p>
+<h2 id="BFD会话会话标识符"><a href="#BFD会话会话标识符" class="headerlink" title="BFD会话会话标识符"></a>BFD会话会话标识符</h2><ul>
+<li>本地标识符（Local Discriminator）</li>
+<li>远程标识符（Remote Discriminator）</li>
+</ul>
+<pre class=" language-java"><code class="language-java">sys
+  bfd <span class="token comment" spellcheck="true">//开启bfd模式</span>
+  bfd <span class="token number">1</span> <span class="token comment" spellcheck="true">//开启BFD，建立会话</span>
+  bfd <span class="token number">1</span> bind peer<span class="token operator">-</span>ip <span class="token keyword">default</span><span class="token operator">-</span>ip <span class="token keyword">interface</span> <span class="token class-name">g0</span><span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> <span class="token comment" spellcheck="true">//?</span>
+  discriminator local xxx<span class="token operator">/</span>remote xxx <span class="token comment" spellcheck="true">//配置本地or远程标识符</span>
+  
 </code></pre>
-<h2 id="路由认证"><a href="#路由认证" class="headerlink" title="路由认证"></a>路由认证</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210409135557741.png" alt="image-20210409135557741"></p>
-<h2 id="OSFP认证命令："><a href="#OSFP认证命令：" class="headerlink" title="OSFP认证命令："></a>OSFP认证命令：</h2><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>int g0/0/0 ospf authentication-mode md5 1cipher wakin</td>
-<td>配置接口认证</td>
-</tr>
-<tr>
-<td>ospf 1 area 0 authentication-mode md5 1 cipher wakin</td>
-<td>配置区域认证</td>
-</tr>
-<tr>
-<td>PS：如果同时配置，接口认证优先生效</td>
-<td></td>
-</tr>
-</tbody></table>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210409140834342.png" alt="image-20210409140834342"></p>
-<pre class=" language-java"><code class="language-java">ping <span class="token operator">-</span>a xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy <span class="token comment" spellcheck="true">//从xxxping到yyy </span>
-tracert <span class="token operator">-</span>a xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy <span class="token comment" spellcheck="true">//跟踪从xxx到yyy</span>
+<h2 id="BFD会话建立方式"><a href="#BFD会话建立方式" class="headerlink" title="BFD会话建立方式"></a>BFD会话建立方式</h2><p><strong>根据标识符配置不同</strong></p>
+<h3 id="静态建立BFD会话"><a href="#静态建立BFD会话" class="headerlink" title="静态建立BFD会话"></a>静态建立BFD会话</h3><p>通过命令行手工配置BFD会话参数，包括配置本地标识符和远程标识符等，然后手工下发BFD会话建立请求。</p>
+<h3 id="动态建立BFD会话"><a href="#动态建立BFD会话" class="headerlink" title="动态建立BFD会话"></a>动态建立BFD会话</h3><p>系统对本地标识符和远端标识符的处理方式如下</p>
+<h4 id="动态分配本地标识符"><a href="#动态分配本地标识符" class="headerlink" title="动态分配本地标识符"></a>动态分配本地标识符</h4><p>当<strong>应用程序（ospf）</strong>触发动态创建BFD会话时，系统分配属于动态(可以理解成会生成一个随机的数字)会话标识符区域的值作为BFD会话的本地标识符，然后向对端发送Remote Discriminator 的值<strong>为0</strong>的BFD控制报文，进行会话协商。</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210521220751067.png" alt="image-20210521220751067"></p>
+<h4 id="自学习远端标识符"><a href="#自学习远端标识符" class="headerlink" title="自学习远端标识符"></a>自学习远端标识符</h4><p>当BFD会话的一端收到Remote Discriminator 的值为0 的BFD控制报文时，判断该报文是否与本地BFD会话匹配，如果匹配，则学习接收到的BFDLocal Discriminator的值，获取远端标识符。</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210521221004781.png" alt="image-20210521221004781"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//高端的设备在配置完成之后要进行提交才能生效</span>
+commit <span class="token comment" spellcheck="true">//提交</span>
+dis ip <span class="token keyword">int</span> b <span class="token comment" spellcheck="true">//查看三层接口信息</span>
+dis <span class="token keyword">int</span> b <span class="token comment" spellcheck="true">//查看二层接口信息</span>
+undo portswitch <span class="token comment" spellcheck="true">//把接口的模式改成三层接口</span>
 </code></pre>
+<p><strong>注意：</strong></p>
+<p><strong>commit 提交过后的东西，不能随便改了，不能删除，除非把整个bfd 1 的内容全部删除才可以。</strong></p>
+<h2 id="BFD检测机制"><a href="#BFD检测机制" class="headerlink" title="BFD检测机制"></a>BFD检测机制</h2><ul>
+<li>两个系统建立BFD会话后，周期性发送BFD控制报文，如果一方在<strong>既定的时间</strong>内没有收到BFD控制报文，则认为路径上发生了故障。（用时间做检测）</li>
+<li>提供异步检测模式。在这种模式下，系统之间相互周期性地发送BFD控制报文，如果某个系统<strong>连续几个报文</strong>都没有接受到，就认为此BFD会话的状态时Down。（用报文做检测）</li>
+</ul>
+<h2 id="BFD状态机制"><a href="#BFD状态机制" class="headerlink" title="BFD状态机制"></a>BFD状态机制</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210521225132114.png" alt="image-20210521225132114"></p>
+<p>BFD状态机的建立和拆除都采用<strong>三次握手</strong>（TCP三次握手），以确保两端系统都能知道状态的变化。</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210521225345838.png" alt="image-20210521225345838"></p>
+<h2 id="BFD报文类型和结构"><a href="#BFD报文类型和结构" class="headerlink" title="BFD报文类型和结构"></a>BFD报文类型和结构</h2><p>默认组播地址=<strong>224.0.0.184</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210521225536351.png" alt="image-20210521225536351"></p>
+<p>控制报文：单跳说白了就是直连，多跳就是非直连，多用于跨ip路由的检测。</p>
+<p>Echo报文：当两端的设备有一个不支持BFD的报文时使用的。</p>
+<p>单臂回声：相当于对着山，喊一声能听见回声。</p>
+<p>TLD 结构：Auth Type，Auth Len，Authentication Date</p>
+<pre class=" language-java"><code class="language-java">bfd
+<span class="token punctuation">[</span>Huawei<span class="token operator">-</span>bfd<span class="token punctuation">]</span><span class="token keyword">default</span><span class="token operator">-</span>ip<span class="token operator">-</span>address <span class="token operator">?</span> <span class="token comment" spellcheck="true">//更改默认组播地址</span>
+  X<span class="token punctuation">.</span>X<span class="token punctuation">.</span>X<span class="token punctuation">.</span>X  Default multicast address <span class="token number">224.0</span><span class="token punctuation">.</span><span class="token number">0.107</span><span class="token operator">-</span><span class="token number">224.0</span><span class="token punctuation">.</span><span class="token number">0.250</span>
+  
+<span class="token comment" spellcheck="true">//更改默认组播地址目的是当会话多了的时候，也有可能在一条链路上产生冲突，会话的检测，数据包的地址是一个地址，端口也是一个端口，所以会产生冲突。所以这个时候建议修改组播地址，或者更改端口号。</span>
+</code></pre>
+<h2 id="BFD联动功能"><a href="#BFD联动功能" class="headerlink" title="BFD联动功能"></a>BFD联动功能</h2><ul>
+<li>监控模块：负责对链路状态、网络性能等进行检测，并将探测结果通知给Track模块。</li>
+<li>Track模块：收到检测模块的探测结果后，及时改变Track项的状态，并通知应用模块。</li>
+<li>应用模块：根据Track项的状态，进行相应的处理，从而实现联动。</li>
+</ul>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210521231259746.png" alt="image-20210521231259746"></p>
+<h2 id="BFD应用场景"><a href="#BFD应用场景" class="headerlink" title="BFD应用场景"></a>BFD应用场景</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210521231507120.png" alt="image-20210521231507120"></p>
+<h3 id="BFD检测IP链路"><a href="#BFD检测IP链路" class="headerlink" title="BFD检测IP链路"></a>BFD检测IP链路</h3><p>在ip链路上建立BFD会话，利用BFD检测机制快速检测故障。</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210521231845192.png" alt="image-20210521231845192"></p>
+<p>可以直接检测二层的接口，都不用配置IP地址，使用默认的组播地址进行检测。</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210521232117875.png" alt="image-20210521232117875"></p>
+<p>根据源ip和目标ip，源ip可以不用指定，默认从源接口出去，目标ip要配置。</p>
+<h3 id="BFD单臂回声功能"><a href="#BFD单臂回声功能" class="headerlink" title="BFD单臂回声功能"></a>BFD单臂回声功能</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210521232349942.png" alt="image-20210521232349942"></p>
+<p>源地址是一个回环口，目标地址是一个出接口。</p>
+<h3 id="BFD与接口状态联动"><a href="#BFD与接口状态联动" class="headerlink" title="BFD与接口状态联动"></a>BFD与接口状态联动</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210521232633322.png" alt="image-20210521232633322"></p>
+<p>在接口中可以看到BFD的状态Down，但是接口不会Down掉，如果你需要让接口也跟着Down，就需要单独敲一条命令：状态联动。</p>
+<h3 id="BFD与静态路由联动"><a href="#BFD与静态路由联动" class="headerlink" title="BFD与静态路由联动"></a>BFD与静态路由联动</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210521232924325.png" alt="image-20210521232924325"></p>
+<h3 id="BFD与OSPF联动"><a href="#BFD与OSPF联动" class="headerlink" title="BFD与OSPF联动"></a>BFD与OSPF联动</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210521233046376.png" alt="image-20210521233046376"></p>
+<h3 id="BFD与BGP联动"><a href="#BFD与BGP联动" class="headerlink" title="BFD与BGP联动"></a>BFD与BGP联动</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210521233136928.png" alt="image-20210521233136928"></p>
+<p><strong>BGP的hello包 60s发一次，180s检测一次。</strong></p>
+<h3 id="BFD与VRRP联动"><a href="#BFD与VRRP联动" class="headerlink" title="BFD与VRRP联动"></a>BFD与VRRP联动</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210521233250526.png" alt="image-20210521233250526"></p>
+<h3 id="BFD与PIM联动"><a href="#BFD与PIM联动" class="headerlink" title="BFD与PIM联动"></a>BFD与PIM联动</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210521233330855.png" alt="image-20210521233330855"></p>
+<p>PIM：组播路由技术</p>
+<p>现在都是SD1开局，后边联网，然后后台技术接管，通过管理平台直接刷进去，而不是手动的刷进入几千行的命令，因为链接的节点数太多了，不好管理。</p>
+<h2 id="BFD配置"><a href="#BFD配置" class="headerlink" title="BFD配置"></a>BFD配置</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210521234732272.png" alt="image-20210521234732272"></p>
+<p><strong>静态配置</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210521234853147.png" alt="image-20210521234853147"></p>
+<pre class=" language-java"><code class="language-java">dis cu <span class="token comment" spellcheck="true">//查看配置文件</span>
+</code></pre>
+<p><strong>动态配置</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210521235119620.png" alt="image-20210521235119620"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//如果想要和OSPF联动</span>
+<span class="token comment" spellcheck="true">//只需要在OSPF下面的进程下输入 </span>
+bfd all<span class="token operator">-</span>interfaces enable <span class="token comment" spellcheck="true">//配置bfd与OSPF联动</span>
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210522000015122.png" alt="image-20210522000015122"></p>
+<p>BFD控制报文</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210522000705621.png" alt="image-20210522000705621"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//LSW 1配置</span>
+bfd 
+bfd <span class="token number">1</span> bind peer<span class="token operator">-</span>ip <span class="token keyword">default</span><span class="token operator">-</span>ip <span class="token keyword">int</span> G0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> 
+discriminator local <span class="token number">321</span> 
+discriminator remote <span class="token number">123</span>
+commit 
+<span class="token comment" spellcheck="true">//单纯的会话，没有技术联动</span>
+</code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//LSW 2配置</span>
+bfd 
+bfd <span class="token number">1</span> bind peer<span class="token operator">-</span>ip <span class="token keyword">default</span><span class="token operator">-</span>ip <span class="token keyword">int</span> G0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> 
+discriminator local <span class="token number">123</span>
+discriminator remote <span class="token number">321</span>
+commit 
+</code></pre>
+<pre class=" language-java"><code class="language-java">dis bfd <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> <span class="token comment" spellcheck="true">//查看接口BFD信息</span>
+dis bfd configration all <span class="token comment" spellcheck="true">//查看BFD配置信息</span>
+dis bfd statistics <span class="token comment" spellcheck="true">//查看BFD统计信息</span>
+dis bfd session peer<span class="token operator">-</span>ip <span class="token keyword">default</span><span class="token operator">-</span>ip verbose <span class="token comment" spellcheck="true">//查看BFD详细会话信息</span>
+dis b s p xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx ver <span class="token comment" spellcheck="true">//上条命令简写</span>
+dis bfd session all <span class="token comment" spellcheck="true">//查看BFD会话信息</span>
+d b s a <span class="token comment" spellcheck="true">//查看BFD会话信息</span>
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210522003741346.png" alt="image-20210522003741346"></p>
+<ul>
+<li>Local Detect Multi :3 倍数为3</li>
+<li>Acl Number : 关联Acl </li>
+</ul>
+<p>AR1与AR2配置单跳检测之后回显</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210524230331452.png" alt="image-20210524230331452"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//AR1 配置</span>
+sys
+  sys R1
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+  ip add <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">24</span>
+bfd
+  bfd <span class="token number">1</span> bind peer<span class="token operator">-</span>ip <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> <span class="token keyword">int</span> G0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> 
+    discriminator local <span class="token number">123</span> 
+    discriminator remote <span class="token number">123</span>
+<span class="token comment" spellcheck="true">//这里配置的是单播地址所以可以配置相同的标识符</span>
+  bfd <span class="token number">2</span> bind peer<span class="token operator">-</span>ip <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.3</span> <span class="token comment" spellcheck="true">//多跳检测</span>
+  Discriminator local <span class="token number">456</span>
+  Discriminator remote <span class="token number">456</span>
+ip route<span class="token operator">-</span>s <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0</span> <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> <span class="token comment" spellcheck="true">//添加静态路由</span>
+  
+
+</code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//AR2 配置</span>
+sys
+  sys R2
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+  ip add <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> <span class="token number">24</span>
+bfd
+  bfd <span class="token number">1</span> bind peer<span class="token operator">-</span>ip <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token keyword">int</span> G0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+    discriminator local <span class="token number">123</span> 
+    discriminator remote <span class="token number">123</span>
+<span class="token comment" spellcheck="true">//当配置的是组播地址（default-ip）时ID不可以一样</span>
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span> 
+bfd
+  bfd <span class="token number">1</span> bind peer<span class="token operator">-</span>ip <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token keyword">int</span> G0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token operator">?</span> 
+<span class="token comment" spellcheck="true">//以指定源地址出去，默认是从出接口地址出去的。</span>
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+  ip add <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> <span class="token number">24</span>
+  
+ 
+</code></pre>
+<pre class=" language-java"><code class="language-java">sys
+  sys R3
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+  ip add <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.3</span> <span class="token number">24</span>
+ip route<span class="token operator">-</span>s <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0</span> <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> <span class="token comment" spellcheck="true">//添加静态路由</span>
+bfd
+bfd <span class="token number">1</span> bind peer<span class="token operator">-</span>ip <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> 
+  discriminator local <span class="token number">456</span>
+  discriminator remote <span class="token number">456</span>
+  com
+  
+  
+</code></pre>
+<p>说明：</p>
+<p><strong>单跳需要配置接口，但是多跳不需要配置接口</strong></p>
+<h3 id="配置时间间隔"><a href="#配置时间间隔" class="headerlink" title="配置时间间隔"></a>配置时间间隔</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210524233529555.png" alt="image-20210524233529555"></p>
+<p>A：我最小接收300，你最小发送600，以你600为准。</p>
+<p>我最小发送800，你最小接收500，以我800为准。</p>
+<p>相当于都取最大值。</p>
+<p>B：同理</p>
+<p>公式：</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210524233835580.png" alt="image-20210524233835580"></p>
+<p>A：5*（600）=3000</p>
+<p>B：3*（800）=2400</p>
 
         </div>
 
@@ -518,11 +598,7 @@ tracert <span class="token operator">-</span>a xxx<span class="token punctuation
           <div class="post-tags" style="color: #a39391">
             <span><i class="fa fa-tags"></i>
               
-              <a href="/tags/HCIA/" style="color: #716e77;">HCIA<em>·</em></a>
-              
-              <a href="/tags/%E7%AC%94%E8%AE%B0/" style="color: #716e77;">笔记<em>·</em></a>
-              
-              <a href="/tags/OSPF/" style="color: #716e77;">OSPF<em>·</em></a>
+              <a href="/tags/BFD/" style="color: #716e77;">BFD<em>·</em></a>
               
             </span>
             <span>
@@ -550,36 +626,19 @@ tracert <span class="token operator">-</span>a xxx<span class="token punctuation
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-        
-        <div class="post-nepre half previous">
-          
-            <a href="/post/1c81.html" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/h2SoOwiBqLIsPca.jpg"
-                  style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
-                  src="https://i.loli.net/2021/05/03/h2SoOwiBqLIsPca.jpg">
-              </div>
-              <span class="label">Previous Post</span>
-              <div class="info">
-                <h3>HCIA学习笔记8</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
           
           
-          
-          <div class="post-nepre half next">
-            
-              <a href="/post/d800.html" rel="next">
+            <div class="post-nepre full next">
+              
+              <a href="/post/b97.html" rel="next">
                 <div class="background">
-                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/IQxru1MFNeZq85d.jpg"
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/20/5B3mHlQZC8wLkOa.jpg"
                     style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
-                    onerror="imgError(this,3)" src="https://i.loli.net/2021/05/03/IQxru1MFNeZq85d.jpg">
+                    onerror="imgError(this,3)" src="https://i.loli.net/2021/05/20/5B3mHlQZC8wLkOa.jpg">
                 </div>
                 <span class="label">Next Post</span>
                 <div class="info">
-                  <h3>HCIA学习笔记6</h3>
+                  <h3>HCNP学习笔记7</h3>
                   <hr>
                 </div>
               </a>
