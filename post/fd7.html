@@ -566,7 +566,60 @@ bfd <span class="token number">1</span> bind peer<span class="token operator">-<
 <p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/image-20210524233835580.png" alt="image-20210524233835580"></p>
 <p>A：5*（600）=3000</p>
 <p>B：3*（800）=2400</p>
+<h2 id="BFD联动技术"><a href="#BFD联动技术" class="headerlink" title="BFD联动技术"></a>BFD联动技术</h2><h3 id="BFD配置命令"><a href="#BFD配置命令" class="headerlink" title="BFD配置命令"></a>BFD配置命令</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master//blog-hcnp/image-20210526140959275.png" alt="image-20210526140959275"></p>
+<h3 id="组播BFD会话与接口状态联动"><a href="#组播BFD会话与接口状态联动" class="headerlink" title="组播BFD会话与接口状态联动"></a>组播BFD会话与接口状态联动</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master//blog-hcnp/image-20210526114633377.png" alt="image-20210526114633377"></p>
+<pre class=" language-java"><code class="language-java">dis ip <span class="token keyword">int</span> b <span class="token comment" spellcheck="true">//查看三层接口状态</span>
+<span class="token comment" spellcheck="true">//前提条件是单跳组播地址的会话才可以绑定接口状态</span>
+  bfd <span class="token number">1</span> bind peer<span class="token operator">-</span>ip <span class="token keyword">default</span> ip <span class="token keyword">interface</span> <span class="token class-name">g0</span><span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+  process<span class="token operator">-</span><span class="token keyword">interface</span><span class="token operator">-</span>status
+  com 
+  
+  stp disable <span class="token comment" spellcheck="true">//关闭stp</span>
+  <span class="token comment" spellcheck="true">//联动接口状态绑定后，当shutdown一个接口（下边的一条路径），对应的BFD状态就变成了down状态，对应的静态路由变成了非激活状态。</span>
+  <span class="token comment" spellcheck="true">//也可以设置成BFD状态导致物理层变为down，</span>
+  sys
+  oam<span class="token operator">-</span>mgr <span class="token comment" spellcheck="true">//oam 管理层的技术</span>
+  oam<span class="token operator">-</span>bind ingress bfd<span class="token operator">-</span>session xxx trigger <span class="token keyword">if</span><span class="token operator">-</span>down egress <span class="token keyword">interface</span> <span class="token class-name">gigabitethernet</span> <span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> <span class="token comment" spellcheck="true">//绑定物理层接口状态：Linux系统中输入事件绑定bfd会话的状态，输出事件是对应的接口变成down状态。</span>
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master//blog-hcnp/image-20210526135553374.png" alt="image-20210526135553374"></p>
+<h3 id="配置与静态路由联动"><a href="#配置与静态路由联动" class="headerlink" title="配置与静态路由联动"></a>配置与静态路由联动</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master//blog-hcnp/image-20210526141113903.png" alt="image-20210526141113903"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//配置AR1到AR2之间的静态路由，下边的两个交换机LSW4和LSW5没有进行配置</span>
+AR1<span class="token operator">:</span>
+sys
+  ip route<span class="token operator">-</span>s <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">172.16</span><span class="token punctuation">.</span><span class="token number">12.2</span> preference <span class="token number">61</span> <span class="token comment" spellcheck="true">//配置静态路由配置优先级</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+  ip add <span class="token number">172.16</span><span class="token punctuation">.</span><span class="token number">12.1</span> <span class="token number">24</span> 
+  ip route<span class="token operator">-</span>s <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> preference <span class="token number">61</span> track bfd<span class="token operator">-</span>session <span class="token number">1</span> <span class="token comment" spellcheck="true">//联动静态路由</span>
+</code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">2</span> <span class="token comment" spellcheck="true">//进入接口</span>
+  IP add <span class="token number">172.16</span><span class="token punctuation">.</span><span class="token number">12.2</span> <span class="token number">24</span> 
+  dis bfd session peer<span class="token operator">-</span>ip <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> verbose <span class="token comment" spellcheck="true">//查看BFD单播会话详细信息。</span>
+  
+</code></pre>
+<h3 id="配置联动OSPF动态路由"><a href="#配置联动OSPF动态路由" class="headerlink" title="配置联动OSPF动态路由"></a>配置联动OSPF动态路由</h3><pre class=" language-java"><code class="language-java">dis port vlan <span class="token comment" spellcheck="true">//查看vlan ID 与接口配置信息</span>
+<span class="token comment" spellcheck="true">//当配置不通时也有可能是stp阻塞了</span>
 
+dis ospf pee b <span class="token comment" spellcheck="true">//查看ospf建立邻居</span>
+
+<span class="token comment" spellcheck="true">//在ospf进程下输入</span>
+
+BFD all <span class="token keyword">interface</span> <span class="token class-name">enable</span> <span class="token comment" spellcheck="true">//配置ospf联动接口，两端都要配置</span>
+
+dis bfd session all <span class="token comment" spellcheck="true">//查看BFD会话信息</span>
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master//blog-hcnp/Snipaste_2021-05-26_14-57-24.png"></p>
+<h3 id="配置与VRRP联动"><a href="#配置与VRRP联动" class="headerlink" title="配置与VRRP联动"></a>配置与VRRP联动</h3><pre class=" language-java"><code class="language-java">vrrp vrid <span class="token number">1</span> track bfd<span class="token operator">-</span>session <span class="token number">10</span>  <span class="token comment" spellcheck="true">//配置与vrrp联动</span>
+  
+<span class="token keyword">int</span> vlanif <span class="token number">1</span>
+  vrrp VRID <span class="token number">1</span> track BFD<span class="token operator">-</span>session session<span class="token operator">-</span>name <span class="token number">1</span> <span class="token comment" spellcheck="true">//配置BFD与vrrp联动</span>
+<span class="token comment" spellcheck="true">//vrrp注意的地方，当BFD配置的方式是静态的方式则，需要在</span>
+  vrrp VRID <span class="token number">1</span> track BFD<span class="token operator">-</span>session xxx <span class="token comment" spellcheck="true">//直接输入本地标识符xxx。</span>
+<span class="token comment" spellcheck="true">//也可以配置名称后面加session-name</span>
+  vrrp VRID <span class="token number">1</span> track BFD<span class="token operator">-</span>session session name x
+<span class="token comment" spellcheck="true">//静态不支持vrrp绑定，必须都是静态。</span>
+  
+</code></pre>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1>
         </div>
 
         <!-- .entry-content -->
@@ -618,7 +671,7 @@ bfd <span class="token number">1</span> bind peer<span class="token operator">-<
           <div class="tag-cloud-title">
           </div>
           <div class="tag-cloud-tags">
-            <a href="/tags/ACL/" style="font-size: 10px; color: #f06966">ACL</a> <a href="/tags/ARP/" style="font-size: 10px; color: #f06966">ARP</a> <a href="/tags/BFD/" style="font-size: 10px; color: #f06966">BFD</a> <a href="/tags/DHCP/" style="font-size: 10px; color: #f06966">DHCP</a> <a href="/tags/Eth-Trunk%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88/" style="font-size: 10px; color: #f06966">Eth-Trunk链路聚合</a> <a href="/tags/GRE/" style="font-size: 10px; color: #f06966">GRE</a> <a href="/tags/GVRP/" style="font-size: 10px; color: #f06966">GVRP</a> <a href="/tags/HCIA/" style="font-size: 20px; color: #39bae8">HCIA</a> <a href="/tags/HCIP/" style="font-size: 16px; color: #829ab4">HCIP</a> <a href="/tags/IPsec-VPN/" style="font-size: 10px; color: #f06966">IPsec VPN</a> <a href="/tags/IPsec-%E9%85%8D%E7%BD%AE/" style="font-size: 10px; color: #f06966">IPsec 配置</a> <a href="/tags/NAT/" style="font-size: 10px; color: #f06966">NAT</a> <a href="/tags/OSPF/" style="font-size: 12px; color: #cb7980">OSPF</a> <a href="/tags/PPP/" style="font-size: 10px; color: #f06966">PPP</a> <a href="/tags/RIP/" style="font-size: 12px; color: #cb7980">RIP</a> <a href="/tags/STP/" style="font-size: 10px; color: #f06966">STP</a> <a href="/tags/VLAN/" style="font-size: 14px; color: #a7899a">VLAN</a> <a href="/tags/VRRP/" style="font-size: 10px; color: #f06966">VRRP</a> <a href="/tags/VRRP%E9%85%8D%E7%BD%AE/" style="font-size: 10px; color: #f06966">VRRP配置</a> <a href="/tags/java/" style="font-size: 10px; color: #f06966">java</a> <a href="/tags/%E4%BA%A4%E6%8D%A2/" style="font-size: 10px; color: #f06966">交换</a> <a href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/" style="font-size: 10px; color: #f06966">信息安全</a> <a href="/tags/%E5%AE%9E%E9%AA%8C/" style="font-size: 14px; color: #a7899a">实验</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 18px; color: #5eaace">笔记</a> <a href="/tags/%E9%98%B2%E7%81%AB%E5%A2%99/" style="font-size: 10px; color: #f06966">防火墙</a>
+            <a href="/tags/ACL/" style="font-size: 10px; color: #f06966">ACL</a> <a href="/tags/ARP/" style="font-size: 10px; color: #f06966">ARP</a> <a href="/tags/BFD/" style="font-size: 10px; color: #f06966">BFD</a> <a href="/tags/DHCP/" style="font-size: 10px; color: #f06966">DHCP</a> <a href="/tags/Eth-Trunk%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88/" style="font-size: 10px; color: #f06966">Eth-Trunk链路聚合</a> <a href="/tags/GRE/" style="font-size: 10px; color: #f06966">GRE</a> <a href="/tags/GVRP/" style="font-size: 10px; color: #f06966">GVRP</a> <a href="/tags/HCIA/" style="font-size: 20px; color: #39bae8">HCIA</a> <a href="/tags/HCIP/" style="font-size: 16px; color: #829ab4">HCIP</a> <a href="/tags/IPsec-VPN/" style="font-size: 10px; color: #f06966">IPsec VPN</a> <a href="/tags/IPsec-%E9%85%8D%E7%BD%AE/" style="font-size: 10px; color: #f06966">IPsec 配置</a> <a href="/tags/MUX-VLAN/" style="font-size: 10px; color: #f06966">MUX VLAN</a> <a href="/tags/NAT/" style="font-size: 10px; color: #f06966">NAT</a> <a href="/tags/OSPF/" style="font-size: 12px; color: #cb7980">OSPF</a> <a href="/tags/PPP/" style="font-size: 10px; color: #f06966">PPP</a> <a href="/tags/RIP/" style="font-size: 12px; color: #cb7980">RIP</a> <a href="/tags/STP/" style="font-size: 10px; color: #f06966">STP</a> <a href="/tags/VLAN/" style="font-size: 14px; color: #a7899a">VLAN</a> <a href="/tags/VRRP/" style="font-size: 10px; color: #f06966">VRRP</a> <a href="/tags/VRRP%E9%85%8D%E7%BD%AE/" style="font-size: 10px; color: #f06966">VRRP配置</a> <a href="/tags/java/" style="font-size: 10px; color: #f06966">java</a> <a href="/tags/%E4%BA%A4%E6%8D%A2/" style="font-size: 10px; color: #f06966">交换</a> <a href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/" style="font-size: 10px; color: #f06966">信息安全</a> <a href="/tags/%E5%AE%9E%E9%AA%8C/" style="font-size: 14px; color: #a7899a">实验</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 18px; color: #5eaace">笔记</a> <a href="/tags/%E9%98%B2%E7%81%AB%E5%A2%99/" style="font-size: 10px; color: #f06966">防火墙</a> <a href="/tags/%E9%9A%94%E7%A6%BB%E6%8A%80%E6%9C%AF/" style="font-size: 10px; color: #f06966">隔离技术</a>
           </div>
         </div> -->
       </article>
@@ -626,10 +679,27 @@ bfd <span class="token number">1</span> bind peer<span class="token operator">-<
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
+        
+        <div class="post-nepre half previous">
+          
+            <a href="/post/cf16.html" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/28/XsU37P91nzjYt8M.png"
+                  style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
+                  src="https://i.loli.net/2021/05/28/XsU37P91nzjYt8M.png">
+              </div>
+              <span class="label">Previous Post</span>
+              <div class="info">
+                <h3>HCNP学习笔记9</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
           
           
-            <div class="post-nepre full next">
-              
+          
+          <div class="post-nepre half next">
+            
               <a href="/post/b97.html" rel="next">
                 <div class="background">
                   <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/20/5B3mHlQZC8wLkOa.jpg"
@@ -799,7 +869,7 @@ gitalk.render('gitalk-container')
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -811,10 +881,10 @@ gitalk.render('gitalk-container')
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Posts',
-            // PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',

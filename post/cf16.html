@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">HCIA学习笔记9 | 慢一点，才更快 | 雨落</title>
+  <title itemprop="name">HCNP学习笔记9 | 慢一点，才更快 | 雨落</title>
   
     <link rel="shortcut icon" href="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tubiao.ico">
   
@@ -294,11 +294,11 @@
 
 <div class="pattern-center single-center">
   <!-- 有配图默认渲染第一张 -->
-  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/05/03/hfx6mv9Gyo8UFw1.jpg);"
-    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/hfx6mv9Gyo8UFw1.jpg">
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/05/28/XsU37P91nzjYt8M.png);"
+    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/28/XsU37P91nzjYt8M.png">
   </div>
   <header class="pattern-header single-header">
-    <h1 class="entry-title">HCIA学习笔记9</h1>
+    <h1 class="entry-title">HCNP学习笔记9</h1>
     <p class="entry-census">
       
       <span class="post-meta-item">
@@ -318,7 +318,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-calendar"></i>
         </span>
-        <span class="post-meta-item-text"> 2021-4-14 </span>
+        <span class="post-meta-item-text"> 2021-5-28 </span>
       </span>
       <span class="bull">
         ·</span>
@@ -345,7 +345,7 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               </span class="post-meta-item-text">
-                <span class="valine-comment-count" data-xid="/dc40"> </span>
+                <span class="valine-comment-count" data-xid="/cf16"> </span>
               </span>
           </span> -->
     </p>
@@ -362,371 +362,183 @@
         <!--套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h1 id="VLAN"><a href="#VLAN" class="headerlink" title="VLAN"></a>VLAN</h1><p><strong>VLAN即虚拟局域网</strong>，是将一个物理的局域网在逻辑上划分成多个广播域的技术，通过在交换机上配置VLAN，可以实现在同一个VLAN内的用户可以进行二层互访，而不同VLAN间的用户被二层隔离。这样既能够隔离广播域，又能提升网络的安全性。</p>
-<h2 id="VLAN技术背景"><a href="#VLAN技术背景" class="headerlink" title="VLAN技术背景"></a>VLAN技术背景</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hica/image-20210412143204364.png" alt="image-20210412143204364"></p>
-<ul>
-<li>交换机的所有接口属于一个广播域，往往也是一个逻辑子网；</li>
-<li>用户无法根据业务需要灵活的在交换机上进行广播域的隔离；</li>
-<li>随着网络规模越来越大，数量越来越多，广播风暴将给网络带来重大问题；</li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hica/image-20210412143507170.png" alt="image-20210412143507170"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hica/image-20210412150815709.png" alt="image-20210412150815709"></p>
-<p><strong>不进行隔离容易引起广播泛滥</strong></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hica/image-20210412150850803.png" alt="image-20210412150850803"></p>
-<ul>
-<li>VLAN技术提供了一种灵活的解决方案</li>
-<li>将交换机的接口根据业务需要添加到不同的VLAN中，从而实现二层隔离。</li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hica/image-20210412151243179.png" alt="image-20210412151243179"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hica/image-20210412151411535.png" alt="image-20210412151411535"></p>
-<p><strong>说明</strong>：划分VLAN后就算在同一个网段，也无法通信，原因在于在一个ARP请求过不去。</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hica/image-20210412151626463.png" alt="image-20210412151626463"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hica/image-20210412151656393.png" alt="image-20210412151656393"></p>
-<p><strong>VLAN优点：</strong></p>
-<ul>
-<li>有效控制广播域范围</li>
-<li>增强局域网的安全性</li>
-<li>灵活构建虚拟工作组</li>
-<li>简化网络管理</li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210412174424494.png" alt="image-20210412174424494"></p>
-<h2 id="VLAN概述"><a href="#VLAN概述" class="headerlink" title="VLAN概述"></a>VLAN概述</h2><p>Virtual LAN 虚拟局域网</p>
-<ul>
-<li>将一个物理局域网在逻辑上划分成多个广播域；</li>
-<li>1 VLAN = 1 广播域 = 1 子网；</li>
-<li>广播不会在VLAN之间转发，而是被限制在各自的VLAN中；</li>
-<li>不同VLAN间的设备默认无法通信，需要第三层设备才能实现互通；</li>
-</ul>
-<h2 id="VLAN范围"><a href="#VLAN范围" class="headerlink" title="VLAN范围"></a>VLAN范围</h2><p>0~4095共4096个（0和4095为保留、1为默认）</p>
-<h2 id="VLAN标签介绍"><a href="#VLAN标签介绍" class="headerlink" title="VLAN标签介绍"></a>VLAN标签介绍</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210412175746080.png" alt="image-20210412175746080"></p>
-<ul>
-<li>通过Tag区分不同VLAN</li>
-</ul>
-<p>IEEE 802.1q:<strong>dot1q</strong>,是VLAN的正式标准，对Ethernet帧格式进行了修改，在源MAC地址字段和协议类型字段之间加入<strong>4字节的802.1q Tag</strong> <strong>每台支持802.1q协议的交换机发送的数据包都会包含VLAN ID，以指明交换机属于哪一个VLAN</strong>。因此，在一个VLAN交换网络中，以太网帧有以下两种形式：</p>
-<h2 id="VLAN链路类型"><a href="#VLAN链路类型" class="headerlink" title="VLAN链路类型"></a>VLAN链路类型</h2><table>
-<thead>
-<tr>
-<th>类型</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>AccessLink接入链路</td>
-<td>用于连接主机和交换机的链路。接入链路上传输的帧都是untagged帧。</td>
-</tr>
-<tr>
-<td>TrunkLink干道/中继链路</td>
-<td>用于<strong>交换机间的互连</strong>或<strong>交换机与路由器</strong>之间的链路。干道链路上传输的帧几乎都是tagged帧用于两端识别。</td>
-</tr>
-</tbody></table>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210412181732095.png" alt="image-20210412181732095"></p>
-<pre class=" language-java"><code class="language-java">dis port vlan <span class="token comment" spellcheck="true">//</span>
+          <h1 id="隔离技术"><a href="#隔离技术" class="headerlink" title="隔离技术"></a>隔离技术</h1><p><img src="https://i.loli.net/2021/05/26/nQ39C1AkvrFw5EX.png"></p>
+<p><strong>实例：</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master//blog-hcnp/image-20210527160548635.png" alt="image-20210527160548635"></p>
+<p><strong>实例说明：</strong></p>
+<p>pc1和pc2不能互访，pc2可以访问pc3，pc1可以单向访问到pc3，但是这三个PC是在同一个VLAN（广播域）中</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//使用acl实现</span>
+sys
+sys sw1
+  stp disable
+<span class="token comment" spellcheck="true">//PC1 ip地址位为1.0.0.1，PC2 IP地址为1.0.0.2，PC3 IP地址为1.0.0.3</span>
+  acl <span class="token number">3000</span> <span class="token comment" spellcheck="true">//指定源和目标</span>
+  rule deny ip so <span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">0</span> des <span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> <span class="token number">0</span> <span class="token comment" spellcheck="true">//acl拒绝1.0.0.1到1.0.0.2 之间的访问</span>
+  acl <span class="token number">3001</span> 
+  rule deny ip so <span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> <span class="token number">0</span> des <span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">0</span> <span class="token comment" spellcheck="true">//acl拒绝1.0.0.2到1.0.0.1 之间的访问</span>
+  acl <span class="token number">3002</span> 
+  rule deny ip so <span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">0.3</span> <span class="token number">0</span> des <span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">0</span>
   
-dis vlan <span class="token comment" spellcheck="true">//查看</span>
-</code></pre>
-<h3 id="PVID："><a href="#PVID：" class="headerlink" title="PVID："></a>PVID：</h3><ul>
-<li>即Port VLAN ID ，代表端口的缺省VLAN</li>
-<li>X7系列交换机每个接口PVID=1</li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210413110528718.png" alt="image-20210413110528718"></p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> eth
-<span class="token keyword">int</span> Ethernet0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">11</span> <span class="token comment" spellcheck="true">//进入接口</span>
-</code></pre>
-<h2 id="VLAN端口类型"><a href="#VLAN端口类型" class="headerlink" title="VLAN端口类型"></a>VLAN端口类型</h2><ul>
-<li><table>
-<thead>
-<tr>
-<th>类型</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Access接入端口</td>
-<td><strong>用于连接主机</strong><br>收到数据后会添加VLAN Tag，VLAN ID和端口PVID相同<br>从相同的PVID转发出去<br>转发数据前会移除VLAN Tag<br><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210413111033740.png" alt="image-20210413111033740"></td>
-</tr>
-<tr>
-<td></td>
-<td>带标签后，终端是无法识别的，<strong>终端设备</strong>发的时候不带标签，收的时候也不带标签。<br>交换机收的时候不带标签，发的时候也不带标签，交换机内部带标签。<br>如果交换机收到数据帧是带标签的，保留。</td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-<pre class=" language-java"><code class="language-java">sys 
-<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//进入接口</span>
-port link<span class="token operator">-</span>type <span class="token operator">?</span> <span class="token comment" spellcheck="true">//更改接口类型</span>
-<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">2</span>  <span class="token comment" spellcheck="true">//进入接口</span>
-p l a <span class="token comment" spellcheck="true">//缩写命令 </span>
-
-<span class="token comment" spellcheck="true">//更改PVID</span>
-port <span class="token keyword">default</span> vlan <span class="token number">2</span> <span class="token comment" spellcheck="true">//更改PVID的接口为2  </span>
-
-port trunk allow<span class="token operator">-</span>pass vlan <span class="token number">10</span> to <span class="token number">20</span> <span class="token comment" spellcheck="true">//允许trunk 10 到20 接口通过</span>
+<span class="token comment" spellcheck="true">//在SW1的对应接口调用acl</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+  traffic<span class="token operator">-</span>filter inbound acl <span class="token number">3000</span> <span class="token comment" spellcheck="true">//在入方向调用acl</span>
+  arp <span class="token operator">-</span>d <span class="token comment" spellcheck="true">//清空arp --windows 环境下运行的命令</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">2</span>
+  traffic<span class="token operator">-</span>filter inbound acl <span class="token number">3001</span> <span class="token comment" spellcheck="true">//在入方向调用acl</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">3</span>
+  traffic<span class="token operator">-</span>filter inbound acl <span class="token number">3002</span> <span class="token comment" spellcheck="true">//在入方向调用acl</span>
+  dis traffic<span class="token operator">-</span>applied <span class="token keyword">interface</span> <span class="token class-name">inbound</span> <span class="token comment" spellcheck="true">//验证acl 哪个接口调用了哪些acl</span>
+  当下边的主机个数多了之后，一个一个写acl这种方式就显得十分不灵活，这种时候就需要一种新技术<span class="token operator">--</span><span class="token operator">-</span>端口隔离
   
-
-</code></pre>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Trunk干道端口</td>
-<td>用于连接交换机或路由器，<br>收到帧时，<br>如果该帧不包含Tag，将打上端口的PVID；<br>如果该帧包含Tag，则不改变。<br>发送帧时，该帧的VLAN ID在Trunk的允许发送列表中：<br>若与端口的PVID相同时，则剥离Tag发送<br>若与端口的PVID不同时，则直接发送<br>Trunk为1则代表允许VLAN1的流量通过<br>如果没有Trunk，则代表只能多接好几根线，一根线一个VLAN <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210414121418888.png" alt="image-20210414121418888"><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210414103210255.png" alt="image-20210414103210255"><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210413113631169.png" alt="image-20210413113631169"></td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Hybrid</td>
-<td>既可以连接主机，又可以连接其他交换机<br>既可以充当Access角色，又可以充当Trunk角色<br>既可以连接接入链路又可以连接干道链路<br>允许多个VLAN的帧通过，并可以在出接口方向将某些VLAN帧的Tag剥掉（<strong>由命令决定</strong>）<br><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210413145842703.png" alt="image-20210413145842703"></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="VLAN转发流程"><a href="#VLAN转发流程" class="headerlink" title="VLAN转发流程"></a>VLAN转发流程</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210413150614553.png" alt="image-20210413150614553"></p>
-<h2 id="VLAN规划"><a href="#VLAN规划" class="headerlink" title="VLAN规划"></a>VLAN规划</h2><p><strong>基于端口最为常见</strong></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210413155130474.png" alt="image-20210413155130474"></p>
-<h2 id="VLAN配置"><a href="#VLAN配置" class="headerlink" title="VLAN配置"></a>VLAN配置</h2><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>vlan 10</td>
-<td>创建单个vlan</td>
-</tr>
-<tr>
-<td>vlan batch 10 to 20</td>
-<td>创建多个vlan</td>
-</tr>
-<tr>
-<td>port link-type access/trunk/hybird</td>
-<td>配置接口类型</td>
-</tr>
-<tr>
-<td>port default vlan 10</td>
-<td>配置Access关联VLAN/PVID</td>
-</tr>
-<tr>
-<td>port trunk allow-pass vlan 10</td>
-<td>配置Trunk允许VLAN<br>默认只允许VLAN1<br></td>
-</tr>
-<tr>
-<td>port trunk pvid vlan 10</td>
-<td>配置Trunk 的PVID</td>
-</tr>
-<tr>
-<td>port hybrid pvid vlan 10</td>
-<td>配置Hybird的PVID</td>
-</tr>
-<tr>
-<td>display vlan</td>
-<td>验证VLAN</td>
-</tr>
-<tr>
-<td>display port vlan</td>
-<td>验证VLAN</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//进入相关接口</span>
- 
-port link<span class="token operator">-</span>type access <span class="token comment" spellcheck="true">// 配置接口Access类型</span>
- 
-p l a <span class="token comment" spellcheck="true">// 配置接口Access类型的缩写</span>
- 
-dis port vlan <span class="token comment" spellcheck="true">//验证port vlan类型缩写= dis por v </span>
- 
-port <span class="token keyword">default</span> vlan <span class="token number">3</span> <span class="token comment" spellcheck="true">//更改PVID</span>
- 
-p d v <span class="token number">3</span> <span class="token comment" spellcheck="true">//更改vlan的ID缩写</span>
-<span class="token comment" spellcheck="true">//配置Trunk</span>
-<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
- 
-p l t  <span class="token comment" spellcheck="true">//配置接口Trunk类型的缩写</span>
- 
-port trunk allow<span class="token operator">-</span>pass vlan <span class="token number">3</span><span class="token comment" spellcheck="true">//配置trunk类型允许通过的vlan</span>
-
-port trunk pvid vlan <span class="token number">3</span> <span class="token comment" spellcheck="true">//配置接口trunk类型pvid</span>
- 
-dis por v <span class="token comment" spellcheck="true">//验证VLAN</span>
- 
-<span class="token comment" spellcheck="true">//hybrid模式</span>
- 
-port hybrid pvid vlan <span class="token number">3</span> <span class="token comment" spellcheck="true">//配置hybrid vlan ID 等同于 Access </span>
- 
-port hybrid untagged vlan <span class="token number">3</span> <span class="token comment" spellcheck="true">//剥离VLAN3的标签</span>
-
-port hybrid tagged vlan <span class="token number">3</span> <span class="token comment" spellcheck="true">//包含vlan3标签</span>
- 
-</code></pre>
-<p>注意：</p>
-<ul>
-<li>在更改接口类型的时候，要注意如果配置了子命令，应该先删除子命令，再更改接口类型。</li>
-<li>Trunk允许VLAN默认为1，思科的设备默认为所有。</li>
-</ul>
-<h3 id="创建VLAN"><a href="#创建VLAN" class="headerlink" title="创建VLAN"></a>创建VLAN</h3><pre class=" language-java"><code class="language-java">sys 
-vlan <span class="token number">1</span> <span class="token comment" spellcheck="true">//创建VLAN1</span>
-  
-<span class="token operator">--</span><span class="token operator">-</span>
-
-vlan batch <span class="token number">10</span> <span class="token number">20</span> <span class="token number">30</span> to <span class="token number">40</span> <span class="token comment" spellcheck="true">//创建多个vlan</span>
   
 </code></pre>
-<h3 id="验证VLAN"><a href="#验证VLAN" class="headerlink" title="验证VLAN"></a>验证VLAN</h3><pre class=" language-java"><code class="language-java">display vlan <span class="token comment" spellcheck="true">//验证VLAN</span>
-</code></pre>
-<h3 id="配置接口类型"><a href="#配置接口类型" class="headerlink" title="配置接口类型"></a>配置接口类型</h3><pre class=" language-java"><code class="language-java"><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-<span class="token comment" spellcheck="true">// 配置access</span>
-
-<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//进入相关接口</span>
-  
-port link<span class="token operator">-</span>type access <span class="token comment" spellcheck="true">//配置接口access</span>
-  
-dis port vlan <span class="token comment" spellcheck="true">//验证接口配置</span>
-  
-port <span class="token keyword">default</span> vlan <span class="token number">3</span> <span class="token comment" spellcheck="true">//配置接口的pvid</span>
-  
-d th <span class="token comment" spellcheck="true">//验证配置结果</span>
-  
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
-<span class="token comment" spellcheck="true">//配置Trunk</span>
-  
-<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">2</span> <span class="token comment" spellcheck="true">//进入接口</span>
-  
-p l t <span class="token comment" spellcheck="true">//配置接口类型为Trunk</span>
-  
-d th <span class="token comment" spellcheck="true">// 验证配置</span>
-  
-di p v <span class="token comment" spellcheck="true">//验证接口配置</span>
-  
-port trunk allow<span class="token operator">-</span>pass v <span class="token number">3</span> <span class="token comment" spellcheck="true">//默认只允许vlan1通过，允许vlan3通过</span>
-  
-d th <span class="token comment" spellcheck="true">//验证配置</span>
- 
-di p v <span class="token comment" spellcheck="true">//验证接口配置</span>
-  
-port trunk pvid vlan <span class="token number">3</span> <span class="token comment" spellcheck="true">//配置trunk的PVID</span>
-  
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-<span class="token comment" spellcheck="true">//配置hybrid //和配置trunk是一样的</span>
-
-<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">3</span> <span class="token comment" spellcheck="true">//进入接口</span>
-  
-p l h <span class="token comment" spellcheck="true">//配置接口类型为hybrid</span>
-  
-d th <span class="token comment" spellcheck="true">//验证当前配置</span>
-  
-d p v <span class="token comment" spellcheck="true">//验证接口配置</span>
-  
-port hybrid untagged vlan <span class="token number">3</span> <span class="token comment" spellcheck="true">//配置hybrid vlan3 剥离标签</span>
-
-p h unt vlan <span class="token number">3</span> <span class="token comment" spellcheck="true">//配置hybrid vlan3 剥离标签缩写</span>
-  
-port hybrid untagged vlan <span class="token number">3</span> <span class="token comment" spellcheck="true">//配置hybrid vlan3 带标签 </span>
-  
-port hybrid pvid vlan <span class="token number">3</span> <span class="token comment" spellcheck="true">//配置hybrid的PVID </span>
-
-p h pv v <span class="token number">3</span> <span class="token comment" spellcheck="true">//配置hybrid的pvid缩写</span>
-  
-</code></pre>
-<p><strong>说明：</strong></p>
-<p><strong>不带标签的数据，接口默认允许通过</strong></p>
-<h1 id="VLAN间路由"><a href="#VLAN间路由" class="headerlink" title="VLAN间路由"></a>VLAN间路由</h1><p>部署了vlan的传统交换机不能实现不同VLAN间的二层报文转发，因此必须引入路由技术来实现不同VLAN间的通信，VLAN路由可以通过二层交换机配合路由器来实现，也可以通过三层交换机来实现。</p>
-<h2 id="VLAN间通讯限制"><a href="#VLAN间通讯限制" class="headerlink" title="VLAN间通讯限制"></a>VLAN间通讯限制</h2><p>每个VLAN都是一个独立的广播域，不同的VLAN之间二层就已经隔离，因此属于不同VLAN的节点之间是无法直接互访的。</p>
-<p> <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210414144857135.png" alt="image-20210414144857135"></p>
+<h2 id="端口隔离"><a href="#端口隔离" class="headerlink" title="端口隔离"></a>端口隔离</h2><p>实现同一VLAN内端口之间的隔离</p>
+<p>位于<strong>相同端口隔离组内</strong>的端口之间无法互相访问。</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210527220326574.png" alt="image-20210527220326574"></p>
+<p>把多个端口放在一个隔离组中，这个隔离组有编号，比如说1，如果把Fa0/1和Fa0/2放在一个隔离组中，这两个接口的数据转发就不允许了，1口进2口不会出来，2口进1口不会出来。 </p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210527221255024.png" alt="image-20210527221255024"></p>
+<p>当把Fa0/1和G0/1放在一个隔离组中，把Fa0/2和G0/1放在一个隔离组中，这样就能让PC1不能访问互联网，PC2不能访问互联网，但是PC1和PC2可以互相访问。</p>
+<h2 id="两种模式"><a href="#两种模式" class="headerlink" title="两种模式"></a>两种模式</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210527221535631.png" alt="image-20210527221535631"></p>
 <p>说明：</p>
-<p><strong>路由器不能识别标签，标签只能在交换机之间识别</strong></p>
-<h2 id="VLAN间通讯方法（路由）"><a href="#VLAN间通讯方法（路由）" class="headerlink" title="VLAN间通讯方法（路由）"></a>VLAN间通讯方法（路由）</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210414145752416.png" alt="image-20210414145752416"></p>
-<p><strong>到路由器的帧不带标签即可</strong></p>
-<h2 id="VLAN路由-单臂路由"><a href="#VLAN路由-单臂路由" class="headerlink" title="VLAN路由-单臂路由"></a>VLAN路由-单臂路由</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210414150243285.png" alt="image-20210414150243285"></p>
-<h3 id="单臂路由的配置"><a href="#单臂路由的配置" class="headerlink" title="单臂路由的配置"></a>单臂路由的配置</h3><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>dot1q termination</td>
-<td>关联子接口和VLAN</td>
-</tr>
-<tr>
-<td>arp Broadcast enable</td>
-<td>开启子接口的arp广播功能</td>
-</tr>
-</tbody></table>
-<pre class=" language-java"><code class="language-java">
-</code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210414151230596.png" alt="image-20210414151230596"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210414151247361.png" alt="image-20210414151247361"></p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-<span class="token comment" spellcheck="true">//单臂路由的配置</span>
+<p>二层隔离三层互通是默认配置，不用敲命令，二层三层均隔离，需要敲命令。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//进入相关接口</span>
+port<span class="token operator">-</span>isolate enable <span class="token comment" spellcheck="true">//默认是组1，端口隔离开启</span>
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> <span class="token comment" spellcheck="true">//进入相关接口</span>
+port<span class="token operator">-</span>isolate enable <span class="token comment" spellcheck="true">//默认是组1，端口隔离开启</span>
   
-<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0.1</span> <span class="token comment" spellcheck="true">//创建子接口</span>
-  
-dot1q termination vid <span class="token number">10</span> <span class="token comment" spellcheck="true">//关联子接口VLAN ID</span>
- 
-IP address xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy <span class="token comment" spellcheck="true">//配置IP地址</span>
-  
-arp Broadcast enable <span class="token comment" spellcheck="true">//开启子接口的arp广播功能</span>
+dis port<span class="token operator">-</span>isolate group xxx<span class="token operator">/</span>all <span class="token comment" spellcheck="true">//验证端口隔离</span>
   
 
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">2</span> <span class="token comment" spellcheck="true">//进入相关接口</span>
+port<span class="token operator">-</span>isolate enable <span class="token comment" spellcheck="true">//默认是组1，端口隔离开启</span>
+  
+  
+<span class="token comment" spellcheck="true">//无法访问目标主机 代表ARP都过不去</span>
+<span class="token comment" spellcheck="true">//请求超时 主机没上线</span>
+arp <span class="token operator">-</span>a <span class="token comment" spellcheck="true">//如果显示学习到mac地址代表数据包到了，请求到了没有回复。</span>
+arp <span class="token operator">-</span>d <span class="token comment" spellcheck="true">//清空arp 均为windows命令</span>
+  
+VLAN <span class="token number">4096</span>个
   
 </code></pre>
-<p><strong>网关放在那一层比较好？</strong></p>
-<p>园区网放在汇聚层比较好</p>
-<p>运营商可以放在接入层</p>
-<h2 id="VLAN路由-三层交换"><a href="#VLAN路由-三层交换" class="headerlink" title="VLAN路由-三层交换"></a>VLAN路由-三层交换</h2><p> <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210414160213534.png" alt="image-20210414160213534"></p>
+<h2 id="相关配置"><a href="#相关配置" class="headerlink" title="相关配置"></a>相关配置</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210527222405568.png" alt="image-20210527222405568"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210527231858268.png" alt="image-20210527231858268"></p>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210527232051779.png" alt="image-20210527232051779"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210527232123323.png" alt="image-20210527232123323"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210527232157058.png" alt="image-20210527232157058"></p>
+<p>端口保护/隔离：switchport protect</p>
+<p>技术背景：虽然端口进行隔离了，但是仍然有办法打破隔离，实现PC1到PC2的互访。</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210528005035820.png" alt="image-20210528005035820"></p>
+<p>在默认情况下，PC1的ARP请求是找1.0.0.2，当ARP到AR1时，因为AR1的地址是254，AR1不予回应，当开启代理ARP时，他会发现，AR1可以帮助PC1通过查找路由表，找PC2的MAC地址给PC1，</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210528010441986.png" alt="image-20210528010441986"></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> vlanif <span class="token number">1</span> <span class="token comment" spellcheck="true">//进入三层口</span>
+arp<span class="token operator">-</span>proxy <span class="token operator">?</span> enable<span class="token comment" spellcheck="true">//开启arp代理</span>
+<span class="token comment" spellcheck="true">//这样就可以设置成二层隔离，三层通讯。代理ARP的接口会把自己的MAC地址给请求者，然后请求者会把这个MAC地址作为目标ip的MAC地址使用，发送数据包，然后代理ARP接口再查找路由表发送数据包给目标ip设备。</span>
+<span class="token comment" spellcheck="true">//VLAN间ARP代理模式多用于SUPER-VLAN</span>
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210528011133577.png" alt="image-20210528011133577"></p>
+<h2 id="MUX-VLAN"><a href="#MUX-VLAN" class="headerlink" title="MUX VLAN"></a>MUX VLAN</h2><p><strong>Multiple VLAN</strong></p>
 <ul>
-<li>为每个VLAN创建一个VLANIF接口作为网关</li>
+<li>一种通过VLAN进行网络资源控制的机制</li>
+<li>只适用于二层网络中，对同一网段的用户进行互通和隔离</li>
+<li>实现处于相同网段的设备划入不同的VLAN后，可以和指定VLAN通讯，可以实现禁止相同VLAN内的不同设备间的通信</li>
+<li>即可以同时实现VLAN间互通，VLAN间隔离，VLAN内隔离</li>
+<li>对应思科技术：private VLAN</li>
 </ul>
-<h3 id="配置MLS"><a href="#配置MLS" class="headerlink" title="配置MLS"></a>配置MLS</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> vlanif <span class="token number">10</span> <span class="token comment" spellcheck="true">//配置VLAN 接口</span>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210528143923838.png" alt="image-20210528143923838"></p>
+<h3 id="技术术语"><a href="#技术术语" class="headerlink" title="技术术语"></a>技术术语</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210528144033306.png" alt="image-20210528144033306"></p>
+<h3 id="接入层场景"><a href="#接入层场景" class="headerlink" title="接入层场景"></a>接入层场景</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210528144121541.png" alt="image-20210528144121541"></p>
+<h3 id="汇聚层场景"><a href="#汇聚层场景" class="headerlink" title="汇聚层场景"></a>汇聚层场景</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210528144227683.png" alt="image-20210528144227683"></p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210528144310588.png" alt="image-20210528144310588"></p>
+<h3 id="思科-Private-VLAN"><a href="#思科-Private-VLAN" class="headerlink" title="思科 Private VLAN"></a>思科 Private VLAN</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210528144426236.png" alt="image-20210528144426236"></p>
+<h3 id="相关配置-1"><a href="#相关配置-1" class="headerlink" title="相关配置"></a>相关配置</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210528144628715.png" alt="image-20210528144628715"></p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210528144738457.png" alt="image-20210528144738457"></p>
+<h3 id="实例配置"><a href="#实例配置" class="headerlink" title="实例配置"></a>实例配置</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//SW1配置</span>
+sys
+  sys sw1
+  vlan bat <span class="token number">10</span> <span class="token number">20</span> <span class="token number">30</span> <span class="token number">100</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">3</span>
+  p l a 
+  p d v <span class="token number">100</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+  p l t 
+  p t a v <span class="token number">10</span> <span class="token number">20</span> <span class="token number">30</span> <span class="token number">100</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">2</span>
+  p l t
+  p t a v <span class="token number">30</span>
   
-IP add xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx y <span class="token comment" spellcheck="true">//配置IP地址</span>
+<span class="token comment" spellcheck="true">//配置MUX VLAN </span>
+  vlan <span class="token number">100</span>
+  mux<span class="token operator">-</span>vlan <span class="token comment" spellcheck="true">//配置主VLAN</span>
+  subordinate group <span class="token number">10</span> <span class="token number">20</span> <span class="token comment" spellcheck="true">//配置互通性从VLAN</span>
+  subordinate separate <span class="token number">30</span> <span class="token comment" spellcheck="true">//配置隔离性从VLAN</span>
+  dis mux<span class="token operator">-</span>vlan <span class="token comment" spellcheck="true">//验证MUX VLAN配置</span>
   
-<span class="token comment" spellcheck="true">//注意:VLAN接口的编号必须对应一个已创建的VLAN </span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">3</span> <span class="token comment" spellcheck="true">//进入接口进行调用</span>
+  port mux<span class="token operator">-</span>vlan enable <span class="token comment" spellcheck="true">//接口启用MUX VLAN</span>
   
-</code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210414161234670.png" alt="image-20210414161234670"></p>
-<pre class=" language-java"><code class="language-java">vlan ba <span class="token number">2</span> <span class="token number">3</span> <span class="token comment" spellcheck="true">//创建VLAN 2 3 </span>
   
-<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> <span class="token comment" spellcheck="true">//进入接口界面</span>
+<span class="token comment" spellcheck="true">//SW2配置</span>
+  sys
+  sys sw2
+  vlan bat <span class="token number">10</span> <span class="token number">20</span> <span class="token number">30</span> <span class="token number">100</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+  p l a 
+  p d v <span class="token number">10</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">2</span>
+  p l a 
+  p d v <span class="token number">10</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">3</span>
+  p l a 
+  p d v <span class="token number">20</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">4</span>
+  p l a 
+  p d v <span class="token number">20</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">5</span>
+  p l t
+  p t a v 
+<span class="token comment" spellcheck="true">//导入关系</span>
+  vlan <span class="token number">100</span>
+  mux<span class="token operator">-</span>vlan <span class="token comment" spellcheck="true">//配置主VLAN</span>
+  subordinate group <span class="token number">10</span> <span class="token number">20</span> <span class="token comment" spellcheck="true">//配置互通性从VLAN</span>
+  subordinate separate <span class="token number">30</span> <span class="token comment" spellcheck="true">//配置隔离性从VLAN</span>
+<span class="token comment" spellcheck="true">//进入接口进行调用开启</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> 
+  port mux<span class="token operator">-</span>vlan enable
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">2</span> 
+  port mux<span class="token operator">-</span>vlan enable
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">3</span> 
+  port mux<span class="token operator">-</span>vlan enable
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">4</span> 
+  port mux<span class="token operator">-</span>vlan enable
   
-p l a <span class="token comment" spellcheck="true">//配置接口类型为access</span>
+<span class="token keyword">int</span> range <span class="token comment" spellcheck="true">//真机直接进入多个接口进行配置</span>
+
+  <span class="token comment" spellcheck="true">//SW3配置</span>
+    sys
+  sys sw3
+  vlan bat <span class="token number">10</span> <span class="token number">20</span> <span class="token number">30</span> <span class="token number">100</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+  p l t 
+  p t a v <span class="token number">10</span> <span class="token number">20</span> <span class="token number">30</span> <span class="token number">100</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">2</span>
+  p l a 
+  p d v <span class="token number">30</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">3</span>
+  p l a
+  p d v <span class="token number">30</span>
+  <span class="token comment" spellcheck="true">//导入关系</span>
+  vlan <span class="token number">100</span>
+  mux<span class="token operator">-</span>vlan <span class="token comment" spellcheck="true">//配置主VLAN</span>
+  subordinate group <span class="token number">10</span> <span class="token number">20</span> <span class="token comment" spellcheck="true">//配置互通性从VLAN</span>
+  subordinate separate <span class="token number">30</span> <span class="token comment" spellcheck="true">//配置隔离性从VLAN</span>
+<span class="token comment" spellcheck="true">//进入接口进行调用开启</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">2</span> 
+  port mux<span class="token operator">-</span>vlan enable
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">3</span> 
+  port mux<span class="token operator">-</span>vlan enable
   
-p d v <span class="token number">2</span> <span class="token comment" spellcheck="true">//配置pvid</span>
-  
-<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">2</span> <span class="token comment" spellcheck="true">//进入接口界面</span>
-  
-p l a <span class="token comment" spellcheck="true">//配置接口类型为access</span>
-  
-p d v <span class="token number">3</span> <span class="token comment" spellcheck="true">//配置pvid</span>
-  
-<span class="token keyword">int</span> vlanif <span class="token number">2</span> <span class="token comment" spellcheck="true">//创建三层vlanif接口</span>
-  
-ip add xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx y <span class="token comment" spellcheck="true">// 配置IP地址</span>
-  
-q
-  
-<span class="token keyword">int</span> vlanif <span class="token number">3</span> <span class="token comment" spellcheck="true">//创建三层vlanif接口</span>
-  
-ip add xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx y <span class="token comment" spellcheck="true">// 配置IP地址</span>
-  
-q
+  dis port vlan <span class="token comment" spellcheck="true">//验证VLAN关联的接口</span>
   
 </code></pre>
 
@@ -761,9 +573,9 @@ q
           <div class="post-tags" style="color: #a39391">
             <span><i class="fa fa-tags"></i>
               
-              <a href="/tags/HCIA/" style="color: #716e77;">HCIA<em>·</em></a>
+              <a href="/tags/%E9%9A%94%E7%A6%BB%E6%8A%80%E6%9C%AF/" style="color: #716e77;">隔离技术<em>·</em></a>
               
-              <a href="/tags/VLAN/" style="color: #716e77;">VLAN<em>·</em></a>
+              <a href="/tags/MUX-VLAN/" style="color: #716e77;">MUX VLAN<em>·</em></a>
               
             </span>
             <span>
@@ -791,36 +603,19 @@ q
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-        
-        <div class="post-nepre half previous">
-          
-            <a href="/post/24da.html" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/hfx6mv9Gyo8UFw1.jpg"
-                  style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
-                  src="https://i.loli.net/2021/05/03/hfx6mv9Gyo8UFw1.jpg">
-              </div>
-              <span class="label">Previous Post</span>
-              <div class="info">
-                <h3>HCIA学习笔记10</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
           
           
-          
-          <div class="post-nepre half next">
-            
-              <a href="/post/1c81.html" rel="next">
+            <div class="post-nepre full next">
+              
+              <a href="/post/fd7.html" rel="next">
                 <div class="background">
-                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/h2SoOwiBqLIsPca.jpg"
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/24/h24Ko7gdnO3J8za.jpg"
                     style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
-                    onerror="imgError(this,3)" src="https://i.loli.net/2021/05/03/h2SoOwiBqLIsPca.jpg">
+                    onerror="imgError(this,3)" src="https://i.loli.net/2021/05/24/h24Ko7gdnO3J8za.jpg">
                 </div>
                 <span class="label">Next Post</span>
                 <div class="info">
-                  <h3>HCIA学习笔记8</h3>
+                  <h3>HCNP学习笔记8</h3>
                   <hr>
                 </div>
               </a>
