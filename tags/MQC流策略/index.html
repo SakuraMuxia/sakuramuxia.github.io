@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">HCIA学习笔记16 | 慢一点，才更快 | 雨落</title>
+  <title itemprop="name">Tag: MQC流策略 | 慢一点，才更快 | 雨落</title>
   
     <link rel="shortcut icon" href="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tubiao.ico">
   
@@ -288,463 +288,79 @@
 
       
       <!-- body -->
-      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/cungudafa/cdn/css/sharejs.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+      
 <div class="pattern-center-blank"></div>
-
-<div class="pattern-center single-center">
-  <!-- 有配图默认渲染第一张 -->
-  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/05/03/CjRY4MpdyQJ5uwv.jpg);"
-    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/CjRY4MpdyQJ5uwv.jpg">
+<div class="pattern-center ">
+  <div class="pattern-attachment-img">
+    <img src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="MQC流策略.img" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
   </div>
-  <header class="pattern-header single-header">
-    <h1 class="entry-title">HCIA学习笔记16</h1>
-    <p class="entry-census">
-      
-      <span class="post-meta-item">
-        <a href="">
-          <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tx.jpg">
-        </a>
-      </span>
-      
-      
-      <span class="post-meta-item">
-        <a href=""> SakuraMuxia </a>
-      </span>
-      <span class="bull">
-        ·</span>
-      
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="fa fa-calendar"></i>
-        </span>
-        <span class="post-meta-item-text"> 2021-4-24 </span>
-      </span>
-      <span class="bull">
-        ·</span>
-      <!-- 浏览数显示 -->
-      <span class="post-meta-item" >
-        <span class="post-meta-item-icon">
-          <i class="iconfont icon-attention"></i>
-        </span>
-        <span class="post-meta-item-text">本文共<span id="busuanzi_value_page_pv"> </span>次阅读
-        </span>
-      </span>
-      <span class="bull">
-        ·</span>
-      <!-- 字数统计-->
-      <span class="post-meta-item" >
-
-        
-      </span>
-      <span class="bull">
-        ·</span>
-      <!-- 评论数显示 -->
-      <!-- <span class="post-meta-item" >
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              </span class="post-meta-item-text">
-                <span class="valine-comment-count" data-xid="/265a"> </span>
-              </span>
-          </span> -->
-    </p>
+  <header class="pattern-header ">
+    <h1 class="cat-title">MQC流策略</h1>
+    <br>
+    <span class="post-meta-item-icon">
+      <i class="iconfont icon-attention"></i>
+    </span>
+    <span class="post-meta-item-text"><span id="busuanzi_value_page_pv"> </span>
+    </span>
   </header>
 </div>
-
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      <article id="post-1"
-        class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
-        <div class="toc"></div>
-        <!--<div class="toc-entry-content">  -->
-        <!--套嵌目录使用（主要为了支援评论）-->
-        
-        <div class="entry-content">
-          <h1 id="PPP"><a href="#PPP" class="headerlink" title="PPP"></a>PPP</h1><p>广域网中经常会使用串行链路来提供远距离的数据传输，高级数据链路控制HDLC（High-Level Data Link Control）和点对点协议PPP（Point to Point Protocol）是两种典型的串口封装协议。</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424180558912.png" alt="image-20210424180558912"></p>
-<h2 id="HDLC-协议应用"><a href="#HDLC-协议应用" class="headerlink" title="HDLC 协议应用"></a>HDLC 协议应用</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424181003123.png" alt="image-20210424181003123"></p>
-<h2 id="HDLC基本配置"><a href="#HDLC基本配置" class="headerlink" title="HDLC基本配置"></a>HDLC基本配置</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424181205051.png" alt="image-20210424181205051"></p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> serial <span class="token number">1</span><span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//进入串口1/0/0</span>
-link<span class="token operator">-</span>protocol hdlc <span class="token comment" spellcheck="true">//配置链路协议为hdlC</span>
-ip add <span class="token number">10.0</span><span class="token punctuation">.</span><span class="token number">1.1</span> <span class="token number">30</span> <span class="token comment" spellcheck="true">//配置IP地址</span>
-</code></pre>
-<p><strong>说明：</strong></p>
-<ul>
-<li><strong>华为设备上的串行接口默认运行PPP协议</strong></li>
-<li><strong>思科设备上的串行接口默认运行HDLC协议</strong></li>
-<li><strong>只限用于串口</strong></li>
-</ul>
-<h2 id="HDLC接口地址借用"><a href="#HDLC接口地址借用" class="headerlink" title="HDLC接口地址借用"></a>HDLC接口地址借用</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424181855740.png" alt="image-20210424181855740"></p>
-<ul>
-<li>串行接口可以借用Loopback接口的IP地址和对端建立连接。</li>
-<li>点到点之间没有mac地址，没有第三者，不需要mac地址，不需要arp </li>
-<li>地址租用：S1/0/0不配地址，借用另外一个接口的地址，这样就可以实现多个这样的接口的地址一样，这样可以实现让多个物理接口用相同的地址。 </li>
-<li>地址租用的作用是：节省IP地址</li>
-</ul>
-<pre class=" language-java"><code class="language-java">dis ip <span class="token keyword">int</span> b <span class="token comment" spellcheck="true">// 查看三层接口ip信息</span>
-Link<span class="token operator">-</span>protocol hdlc <span class="token comment" spellcheck="true">//更改链路类型为hdlC</span>
-IP address unnumber <span class="token keyword">interface</span> <span class="token class-name">loopback</span> <span class="token number">0</span> <span class="token comment" spellcheck="true">//hdlc接口地址借用</span>
-</code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210425084738260.png" alt="image-20210425084738260"></p>
-<p>说明：借用回环口的IP，但是出接口是在回环口上边的，拥有这个地址的真正地址是在回环口2，所以路由是在回环口出现的</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210425084944156.png" alt="image-20210425084944156"></p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//添加一个静态路由即可</span>
-ip route<span class="token operator">-</span><span class="token keyword">static</span> <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">32</span> s1<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//这个时候下一跳的地址应该是串口接口，而不是地址，因为地址下一跳还是自己，无意义。</span>
-</code></pre>
-<h2 id="PPP协议应用"><a href="#PPP协议应用" class="headerlink" title="PPP协议应用"></a>PPP协议应用</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210425085517695.png" alt="image-20210425085517695"></p>
-<ul>
-<li>PPP协议是一种点到点链路层协议，主要用于在全双工的同异步链路上进行点到点的数据传输。</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>认证</th>
-<th>错误检测</th>
-<th>错误恢复</th>
-<th>支持同步或异步链路</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>HDLC</td>
-<td>×</td>
-<td>√</td>
-<td>×</td>
-<td>×</td>
-</tr>
-<tr>
-<td>PPP</td>
-<td>√</td>
-<td>√</td>
-<td>√</td>
-<td>√</td>
-</tr>
-</tbody></table>
-<h2 id="PPP组件"><a href="#PPP组件" class="headerlink" title="PPP组件"></a>PPP组件</h2><table>
-<thead>
-<tr>
-<th>名称</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>LCP链路控制协议<br>Link Control Protocol</td>
-<td>用来建立、拆除和监控PPP数据链路以及认证</td>
-</tr>
-<tr>
-<td>NCP 网络层控制协议<br>Network Control Protocol</td>
-<td>用于对不同的网络层协议进行连接建立和参数协商</td>
-</tr>
-</tbody></table>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210425091100942.png" alt="image-20210425091100942"></p>
-<pre class=" language-java"><code class="language-java">sys <span class="token comment" spellcheck="true">//进入系统模式</span>
-<span class="token keyword">int</span> s4<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//进入串口s4/0/0</span>
-link<span class="token operator">-</span>protocol ppp <span class="token comment" spellcheck="true">//更改链路协议类型为 ppp</span>
-<span class="token operator">--</span><span class="token operator">-</span>
-<span class="token comment" spellcheck="true">// 链路两边串口设置一样才行</span>
-dis <span class="token keyword">int</span> s4<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//查看串口配置</span>
-<span class="token comment" spellcheck="true">//当只配协议不配IP地址时，状态显示LCP open，IPCP状态关闭</span>
-IP add xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx yy <span class="token comment" spellcheck="true">//添加ip地址</span>
-</code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210425092151765.png" alt="image-20210425092151765"></p>
-<h2 id="PPP认证模式"><a href="#PPP认证模式" class="headerlink" title="PPP认证模式"></a>PPP认证模式</h2><p><strong>PAP和CHAP</strong></p>
-<table>
-<thead>
-<tr>
-<th>模式</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>PAP</strong></td>
-<td>Password Authentication Protocol ，<strong>密码认证协议</strong>，以<strong>明文</strong>方式直接发送密码，二次握手机制，<strong>发起方为被认证方</strong>，可以做无限次的尝试（暴力破解），只在链路建立的阶段进行认证，一旦链路建立成功将不再认证。<br><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210425092640519.png" alt="image-20210425092640519"></td>
-</tr>
-<tr>
-<td><strong>CHAP</strong></td>
-<td>Challenge Handshake Authentication Protocol 挑战/质询握手认证协议，以MD5来隐藏密码，三次握手机制，由认证方发起认证，有效避免暴力破解，在链路建立成功后具有再次认证检测机制，目前在企业网的远程接入环境中用的比较常见。<br><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210425095016278.png" alt="image-20210425095016278"></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="PPP认证配置"><a href="#PPP认证配置" class="headerlink" title="PPP认证配置"></a>PPP认证配置</h2><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>aaa <br>local-user wakin password cipher huawei<br>local-user wakin service-type ppp （认证方）</td>
-<td>创建PPP认证用户</td>
-</tr>
-<tr>
-<td>ppp Authentication-mode pap/chap （认证方接口）</td>
-<td>开启PAP/CHAP</td>
-</tr>
-<tr>
-<td>ppp pap local-user wakin password cipher huawei</td>
-<td>配置PAP凭证</td>
-</tr>
-<tr>
-<td>ppp chap user wakin <br>ppp chap password cipher huawei</td>
-<td>配置CHAP凭证</td>
-</tr>
-</tbody></table>
-<h3 id="PAP配置"><a href="#PAP配置" class="headerlink" title="PAP配置"></a>PAP配置</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210425100741669.png" alt="image-20210425100741669"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210425100837554.png" alt="image-20210425100837554"></p>
-<h3 id="CHAP配置"><a href="#CHAP配置" class="headerlink" title="CHAP配置"></a>CHAP配置</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210425100912610.png" alt="image-20210425100912610"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210425100944205.png" alt="image-20210425100944205"></p>
-
-        </div>
-
-        <!-- .entry-content -->
-        <div class="single-reward">
-          <div class="reward-open">赏
-            <div class="reward-main">
-              <ul class="reward-row">
-                <li class="alipay-code"><img src="null"></li>
-                <li class="wechat-code"><img src="null"></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent">
-        </div>
-        <!-- 评分 -->
-        <div class="single-reward">
-          
-        </div>
-        <!-- 自定义署名方式 -->
-        <footer class="post-footer">
-          <div class="post-lincenses" style="color: #ff9966;">
-            欢迎转载，转载时请注明来源哦！
-            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" style="color: #ff9966;" target="_blank"
-              rel="nofollow">
-              <i class="fa fa-creative-commons" aria-hidden="true"></i>ncsa4.0</a>
-          </div>
-          
-          <div class="post-tags" style="color: #a39391">
-            <span><i class="fa fa-tags"></i>
-              
-              <a href="/tags/HCIA/" style="color: #716e77;">HCIA<em>·</em></a>
-              
-              <a href="/tags/%E5%AE%9E%E9%AA%8C/" style="color: #716e77;">实验<em>·</em></a>
-              
-              <a href="/tags/PPP/" style="color: #716e77;">PPP<em>·</em></a>
-              
-            </span>
-            <span>
-              <i class="iconfont icon-file"></i>
-              
-              <a href="/categories/%E6%8A%80%E6%9C%AF/" style="color: #716e77;">技术</a>
-              
-            </span>
-          </div>
-          
-          <div class="post-share" >
-            <div class="social-share sharehidden share-component"></div>
-            <i class="iconfont show-share icon-forward"></i>
-          </div>
-        </footer><!-- .entry-footer -->
-        <!-- <div class="tag-cloud">
-          <div class="tag-cloud-title">
-          </div>
-          <div class="tag-cloud-tags">
-            <a href="/tags/ACL/" style="font-size: 10px; color: #f06966">ACL</a> <a href="/tags/ARP/" style="font-size: 10px; color: #f06966">ARP</a> <a href="/tags/BFD/" style="font-size: 10px; color: #f06966">BFD</a> <a href="/tags/DHCP/" style="font-size: 10px; color: #f06966">DHCP</a> <a href="/tags/Eth-Trunk%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88/" style="font-size: 10px; color: #f06966">Eth-Trunk链路聚合</a> <a href="/tags/GRE/" style="font-size: 10px; color: #f06966">GRE</a> <a href="/tags/GVRP/" style="font-size: 10px; color: #f06966">GVRP</a> <a href="/tags/HCIA/" style="font-size: 20px; color: #39bae8">HCIA</a> <a href="/tags/HCIP/" style="font-size: 16px; color: #829ab4">HCIP</a> <a href="/tags/IPsec-VPN/" style="font-size: 10px; color: #f06966">IPsec VPN</a> <a href="/tags/IPsec-%E9%85%8D%E7%BD%AE/" style="font-size: 10px; color: #f06966">IPsec 配置</a> <a href="/tags/MQC%E6%B5%81%E7%AD%96%E7%95%A5/" style="font-size: 10px; color: #f06966">MQC流策略</a> <a href="/tags/MUX-VLAN/" style="font-size: 10px; color: #f06966">MUX VLAN</a> <a href="/tags/NAT/" style="font-size: 10px; color: #f06966">NAT</a> <a href="/tags/OSPF/" style="font-size: 12px; color: #cb7980">OSPF</a> <a href="/tags/PPP/" style="font-size: 10px; color: #f06966">PPP</a> <a href="/tags/RIP/" style="font-size: 12px; color: #cb7980">RIP</a> <a href="/tags/STP/" style="font-size: 10px; color: #f06966">STP</a> <a href="/tags/SUPER-VLAN/" style="font-size: 10px; color: #f06966">SUPER VLAN</a> <a href="/tags/VLAN/" style="font-size: 14px; color: #a7899a">VLAN</a> <a href="/tags/VRRP/" style="font-size: 10px; color: #f06966">VRRP</a> <a href="/tags/VRRP%E9%85%8D%E7%BD%AE/" style="font-size: 10px; color: #f06966">VRRP配置</a> <a href="/tags/java/" style="font-size: 10px; color: #f06966">java</a> <a href="/tags/%E4%BA%A4%E6%8D%A2/" style="font-size: 10px; color: #f06966">交换</a> <a href="/tags/%E4%BB%A3%E7%90%86ARP/" style="font-size: 10px; color: #f06966">代理ARP</a> <a href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/" style="font-size: 10px; color: #f06966">信息安全</a> <a href="/tags/%E5%AE%9E%E9%AA%8C/" style="font-size: 14px; color: #a7899a">实验</a> <a href="/tags/%E7%AB%AF%E5%8F%A3%E5%AE%89%E5%85%A8/" style="font-size: 10px; color: #f06966">端口安全</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 18px; color: #5eaace">笔记</a> <a href="/tags/%E9%98%B2%E7%81%AB%E5%A2%99/" style="font-size: 10px; color: #f06966">防火墙</a> <a href="/tags/%E9%9A%94%E7%A6%BB%E6%8A%80%E6%9C%AF/" style="font-size: 10px; color: #f06966">隔离技术</a>
-          </div>
-        </div> -->
-      </article>
-      <!-- #post-## -->
-      <div class="toc" style="background: none;"></div>
-      <section class="post-squares nextprev">
-        
-        
-        <div class="post-nepre half previous">
-          
-            <a href="/post/e69b.html" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/yjcVp2SGkbht9MI.jpg"
-                  style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
-                  src="https://i.loli.net/2021/05/03/yjcVp2SGkbht9MI.jpg">
-              </div>
-              <span class="label">Previous Post</span>
-              <div class="info">
-                <h3>HCIA学习笔记17</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-          
-          
-          
-          <div class="post-nepre half next">
-            
-              <a href="/post/271a.html" rel="next">
-                <div class="background">
-                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/xJZfiRaXNBHDny9.jpg"
-                    style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
-                    onerror="imgError(this,3)" src="https://i.loli.net/2021/05/03/xJZfiRaXNBHDny9.jpg">
-                </div>
-                <span class="label">Next Post</span>
-                <div class="info">
-                  <h3>HCIA学习笔记15</h3>
-                  <hr>
-                </div>
-              </a>
-            </div>
-            
-      </section>
-      <!-- 加密文章隐藏评论 -->
-      <section class="comment" >
-        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<div id="gitalk-container" class="comment"></div> 
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-<script src="/js/md5.min.js"></script>
-<script type="text/javascript">
-	var gitalk = new Gitalk({
-  	clientID: '9ae3a88cd97b7b9bd1fa',
-  	clientSecret: 'c12b84cd9d9609551630939716dc990cc7d5af00',
-  	repo: 'SakuraMuxia.github.io',
-  	owner: 'SakuraMuxia',
-	admin: ['SakuraMuxia'],
-	distractionFreeMode: 'true',
-    id: md5(location.pathname)
-})
-gitalk.render('gitalk-container') 
-</script>
-
-
-      </section>
-      <!-- 加密文章隐藏作者信息 -->
       
-    </main><!-- #main -->
-  </div><!-- #primary -->
+    <!-- 置顶文章 -->
+    
+      
+    
+    <!-- 首页默认取最最新文章集 -->
+    
+      <!-- 其余文章 -->
+      
+        <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <div class="post-entry">
+    <div class="feature">
+      <a href="/post/1a49.html">
+        <div class="overlay">
+          <i class="iconfont icon-text">
+          </i>
+        </div>
+        <img width="150" height="150" src="https://i.loli.net/2021/05/31/jDO893BZRpusY2T.jpg"
+          class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="">
+      </a>
+    </div>
+    <h1 class="entry-title">
+      <a href="/post/1a49.html">
+        HCNP学习笔记10</a>
+    </h1>
+    <div class="p-time">
+      <i class="iconfont icon-time">
+      </i>
+      2021-5-31</div>
+    <p>
+      </p>
+    <footer class="entry-footer">
+      <div class="post-more">
+        <a href="/post/1a49.html">
+          <i class="iconfont icon-caidan">
+          </i>
+        </a>
+      </div>
+    </footer>
+  </div>
+  <hr>
+</article>
+       
+    
+
+
+
+      <div class="clearer">
+      </div>
+    </main>
+    <!--  -->
+    
+  </div>
 </div>
-
-
-<!--评论配置-->
-
-
-    <div id="vcomments"></div>
-    <script src="https://unpkg.com/valine/dist/Valine.min.js"></script><!-- 最新版 -->
-    <style>
-    #vcomments textarea {
-        box-sizing: border-box;
-        background: url("https://gitee.com/cungudafa/source/raw/master/img/gif/Sitich/Sitich2.gif") 100% 100% no-repeat;
-    }
-    </style>
-    <script>
-        new Valine({
-            el: '#vcomments',
-            enableQQ: true,
-            boolean: true,
-            appId: 'pJf0nLlIFPsrFbqcB2InonHd-gzGzoHsz',
-            appKey: 'RoAvgTeWI8wX4B5wXo6jB2YV',
-            //notify: 'false' === 'true',
-            //verify: 'true' === 'true',
-            visitor: 'false' === 'true',
-            avatar: 'monsterid',
-            pageSize: '10',
-            lang: 'zh-cn',
-            placeholder: '大家文明留言哈~',
-            requiredFields: ['nick','mail'], //设置必填项
-            // 设置Bilibili表情包地址
-            emojiCDN: '//i0.hdslb.com/bfs/emote/', 
-            // 表情title和图片映射
-            emojiMaps: {
-            "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
-            "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
-            "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
-            "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
-            "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
-            "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
-            "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
-            "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
-            "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
-            "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
-            "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
-            "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
-            "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
-            "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
-            "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
-            "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
-            "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
-            "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
-            "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
-            "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
-            "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
-            "tv_打脸": "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
-            "tv_抓狂": "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
-            "tv_抠鼻": "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
-            "tv_斜眼笑": "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
-            "tv_无奈": "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
-            "tv_晕": "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
-            "tv_流汗": "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
-            "tv_流泪": "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
-            "tv_流鼻血": "c32d39db2737f89b904ca32700d140a9241b0767.png",
-            "tv_点赞": "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
-            "tv_生气": "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
-            "tv_生病": "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
-            "tv_疑问": "0793d949b18d7be716078349c202c15ff166f314.png",
-            "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
-            "tv_皱眉": "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
-            "tv_目瞪口呆": "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
-            "tv_睡着": "8b196675b53af58264f383c50ad0945048290b33.png",
-            "tv_笑哭": "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
-            "tv_腼腆": "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
-            "tv_色": "61822c7e9aae5da76475e7892534545336b23a6f.png",
-            "tv_调侃": "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
-            "tv_调皮": "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
-            "tv_鄙视": "6e72339f346a692a495b123174b49e4e8e781303.png",
-            "tv_闭嘴": "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
-            "tv_难过": "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
-            "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
-            "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
-            "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
-            "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
-                // ... 更多表情
-            }
-        });
-    </script>
-
-    <!-- 
-    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-    <script type="text/javascript">
-        jinrishici.load(function(result) {
-            var jrsc_plac =  result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin.dynasty + " · " + result.data.origin.author;
-            document.getElementById("veditor").setAttribute("placeholder",jrsc_plac);
-        })
-    </script>
-     -->
-
-
-
-
-
-
-  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<div id="gitalk-container" class="comment"></div> 
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-<script src="/js/md5.min.js"></script>
-<script type="text/javascript">
-	var gitalk = new Gitalk({
-  	clientID: '9ae3a88cd97b7b9bd1fa',
-  	clientSecret: 'c12b84cd9d9609551630939716dc990cc7d5af00',
-  	repo: 'SakuraMuxia.github.io',
-  	owner: 'SakuraMuxia',
-	admin: ['SakuraMuxia'],
-	distractionFreeMode: 'true',
-    id: md5(location.pathname)
-})
-gitalk.render('gitalk-container') 
-</script>
-
-
-
       <!-- body.end -->
     </div>
     <!-- search -->    

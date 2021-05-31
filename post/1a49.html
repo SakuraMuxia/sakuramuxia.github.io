@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">HCIA学习笔记14 | 慢一点，才更快 | 雨落</title>
+  <title itemprop="name">HCNP学习笔记10 | 慢一点，才更快 | 雨落</title>
   
     <link rel="shortcut icon" href="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tubiao.ico">
   
@@ -294,11 +294,11 @@
 
 <div class="pattern-center single-center">
   <!-- 有配图默认渲染第一张 -->
-  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/05/03/9NnrV3TWMawJ4sA.jpg);"
-    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/9NnrV3TWMawJ4sA.jpg">
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/05/31/jDO893BZRpusY2T.jpg);"
+    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/31/jDO893BZRpusY2T.jpg">
   </div>
   <header class="pattern-header single-header">
-    <h1 class="entry-title">HCIA学习笔记14</h1>
+    <h1 class="entry-title">HCNP学习笔记10</h1>
     <p class="entry-census">
       
       <span class="post-meta-item">
@@ -318,7 +318,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-calendar"></i>
         </span>
-        <span class="post-meta-item-text"> 2021-4-24 </span>
+        <span class="post-meta-item-text"> 2021-5-31 </span>
       </span>
       <span class="bull">
         ·</span>
@@ -345,7 +345,7 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               </span class="post-meta-item-text">
-                <span class="valine-comment-count" data-xid="/e7db"> </span>
+                <span class="valine-comment-count" data-xid="/1a49"> </span>
               </span>
           </span> -->
     </p>
@@ -362,228 +362,220 @@
         <!--套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h1 id="ACL"><a href="#ACL" class="headerlink" title="ACL"></a>ACL</h1><p>企业网络中的设备进行通讯时，需要保证数据传输的安全可靠和网络的性能稳定。访问控制列表ACL（Access Control List）可以定义一系列不同的规则，设备根据这些规则对数据包进行分类，并针对不同类型的报文进行不同的处理，从而实现对网络访问行为的控制、限制网络流量、提高网络性能、防止网络攻击等等。</p>
-<h2 id="ACL-1"><a href="#ACL-1" class="headerlink" title="ACL"></a>ACL</h2><p><strong>Access Control List ，访问控制列表</strong></p>
-<p> <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424084457249.png" alt="image-20210424084457249"></p>
-<pre class=" language-java"><code class="language-java">ospf <span class="token number">1</span> <span class="token comment" spellcheck="true">//进入OSPF界面</span>
+          <h1 id="代理ARP"><a href="#代理ARP" class="headerlink" title="代理ARP"></a>代理ARP</h1><p>Proxy ARP：如果arp请求是从一个网络的主机发往<strong>同一网段却不在同一物理网络上</strong>的另一台主机，那么连接他们的具有代理ARP功能的设备就可以回答该请求，这个过程称为<strong>代理ARP</strong>。</p>
+<p><strong>特点：</strong></p>
+<ul>
+<li>部署在网关上，网络中的主机不必做任何改动。</li>
+<li>可以隐藏物理网络细节，使两个物理网络可以使用同一个网络号。</li>
+<li>只影响主机的ARP表，对网关的ARP表和路由表没有影响。</li>
+</ul>
+<p><strong>类型：</strong></p>
+<h2 id="路由式Proxy-ARP"><a href="#路由式Proxy-ARP" class="headerlink" title="路由式Proxy ARP"></a>路由式Proxy ARP</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210528174702349.png" alt="image-20210528174702349"></p>
+<p>当主机不在同一个网段时，他们会通过查找路由过去，这时候PC2得到的MAC地址是路由器g0/0/1的网关的MAC地址。</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210528175415713.png" alt="image-20210528175415713"></p>
+<p>当掩码更改成/16时，Pc1和PC2会认为他们处于同一个网段，不需要走网关直接发送Arp请求。但是ARP请求过不去，就拿不到PC2的MAC地址。</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//路由式代理ARP配置</span>
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+arp<span class="token operator">-</span>proxy enable <span class="token comment" spellcheck="true">//开启路由式代理arp</span>
+<span class="token comment" spellcheck="true">//当配置一边时,数据包到了g0/0/0,进行解封装，然后再查找路由，再从g0/0/1接口出去，然后PC2进行回包，但是另一边不配置就无法进行通信。</span>
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+arp<span class="token operator">-</span>proxy enable
+</code></pre>
+<h2 id="VLAN内proxy-ARP"><a href="#VLAN内proxy-ARP" class="headerlink" title="VLAN内proxy ARP"></a>VLAN内proxy ARP</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529081349455.png" alt="image-20210529081349455"></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> vlan <span class="token number">1</span><span class="token comment" spellcheck="true">//配置一个VLANIF 接口</span>
+ip add <span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">0.10</span> <span class="token number">24</span>
+arp<span class="token operator">-</span>proxy inner<span class="token operator">-</span>sub<span class="token operator">-</span>vlan<span class="token operator">-</span>proxy enable <span class="token comment" spellcheck="true">//开启代理同一个VLAN内的代理arp</span>
+</code></pre>
+<h2 id="VLAN间的proxy-arp"><a href="#VLAN间的proxy-arp" class="headerlink" title="VLAN间的proxy arp"></a>VLAN间的proxy arp</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529081821171.png" alt="image-20210529081821171"></p>
+<p>VLAN间proxy arp的主要用途，用在聚合VLAN或者超级VLAN里用的，SUPER VLAN 叫做超级VLAN，</p>
+<h2 id="相关配置"><a href="#相关配置" class="headerlink" title="相关配置"></a>相关配置</h2><p><img src="C:\Users\Aqua\AppData\Roaming\Typora\typora-user-images\image-20210529082138288.png" alt="image-20210529082138288"></p>
+<h1 id="MQC流策略"><a href="#MQC流策略" class="headerlink" title="MQC流策略"></a>MQC流策略</h1><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529082306498.png" alt="image-20210529082306498"></p>
+<h2 id="MQC三要素"><a href="#MQC三要素" class="headerlink" title="MQC三要素"></a>MQC三要素</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529082508586.png" alt="image-20210529082508586"></p>
+<pre class=" language-java"><code class="language-java">traffic <span class="token operator">?</span> <span class="token comment" spellcheck="true">//配置traffic模式</span>
+traffic classifier <span class="token number">1</span> <span class="token comment" spellcheck="true">//配置流分类</span>
+<span class="token keyword">if</span><span class="token operator">-</span>match <span class="token operator">?</span> <span class="token comment" spellcheck="true">//匹配的范围</span>
+<span class="token comment" spellcheck="true">//对数据包的理解，对流量的过滤</span>
+traffic behavior <span class="token number">1</span> <span class="token comment" spellcheck="true">//配置流行为</span>
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529083213450.png" alt="image-20210529083213450"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529083254770.png" alt="image-20210529083254770"></p>
+<p>说明：</p>
+<p>cir ：承诺信息速率，car：限速的命令</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529083545280.png" alt="image-20210529083545280"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//模块化的配置</span>
+traffic polixy <span class="token number">1</span> <span class="token comment" spellcheck="true">//配置流策略</span>
+classifier <span class="token number">1</span> behavier <span class="token number">1</span> <span class="token comment" spellcheck="true">//调用流分类，调用流行为</span>
+</code></pre>
+<h2 id="流策略在VLAN中应用"><a href="#流策略在VLAN中应用" class="headerlink" title="流策略在VLAN中应用"></a>流策略在VLAN中应用</h2><p>VLAN内二层隔离：VLAN内用户能够自由隔离（即任意用户间的单、双向隔离）</p>
+<p>VLAN间三层隔离：禁止部分用户互访或者只允许用户单向访问</p>
+<h2 id="MQC配置流程"><a href="#MQC配置流程" class="headerlink" title="MQC配置流程"></a>MQC配置流程</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529084509956.png" alt="image-20210529084509956"></p>
+<h2 id="配置流策略"><a href="#配置流策略" class="headerlink" title="配置流策略"></a>配置流策略</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529084808266.png" alt="image-20210529084808266"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529084845881.png" alt="image-20210529084845881"></p>
+<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529084955715.png" alt="image-20210529084955715"></p>
+<p>默认配置：</p>
+<pre class=" language-java"><code class="language-java">PC1<span class="token operator">:</span><span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">0.1</span>
+PC2<span class="token operator">:</span><span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">0.2</span>
+PC3<span class="token operator">:</span><span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">0.3</span>
+</code></pre>
+<p>配置：</p>
+<pre class=" language-java"><code class="language-java">acl <span class="token number">3000</span>
+  rule permit ip so <span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">0</span> des <span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">0.3</span> <span class="token number">0</span> <span class="token comment" spellcheck="true">//acl匹配作为条件</span>
+sys
+ <span class="token comment" spellcheck="true">//acl作为一个条件，然后让流分类进行过滤，流行为做出反应</span>
+ <span class="token comment" spellcheck="true">//配置流分类</span>
+  traffic classifier pc1topc3 
+  <span class="token keyword">if</span><span class="token operator">-</span>match acl <span class="token number">3000</span>
+ <span class="token comment" spellcheck="true">//配置流行为</span>
+  traffic be pc1topc3
+  deny 
+ <span class="token comment" spellcheck="true">//配置流策略</span>
+  traffic policy wakin 
+  classifier pc1topc3 behavior pc1topc3
+ <span class="token comment" spellcheck="true">//在接口进行调用</span>
+ traffic<span class="token operator">-</span>polixy wakin inbound
+<span class="token comment" spellcheck="true">//如果出现经常更换端口的情况，在接口调用acl就十分的麻烦，于是可以在VLAN中调用。</span>
+ vlan <span class="token number">1</span>
+ traffic<span class="token operator">-</span>police wakin inbound <span class="token comment" spellcheck="true">//在VLAN的入接口进行调用</span>
   
-filter<span class="token operator">-</span>policy <span class="token operator">?</span> <span class="token comment" spellcheck="true">//过滤策略</span>
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529120849251.png" alt="image-20210529120849251"></p>
+<pre class=" language-java"><code class="language-java">vlan <span class="token number">100</span>
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+p l a 
+p d v <span class="token number">100</span>
+<span class="token keyword">int</span> vlan <span class="token number">1</span>
+ip add <span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">0.254</span> <span class="token number">24</span>
+<span class="token keyword">int</span> vlanif <span class="token number">100</span>
+ip add <span class="token number">100.0</span><span class="token punctuation">.</span><span class="token number">0.254</span> <span class="token number">24</span>
+<span class="token comment" spellcheck="true">//需求：拒绝VLAN1内的所有主机访问server服务器</span>
+traffic classifier vlan1<span class="token comment" spellcheck="true">//新建一个流分类</span>
+<span class="token keyword">if</span><span class="token operator">-</span>match vlan<span class="token operator">-</span>id <span class="token number">1</span> <span class="token comment" spellcheck="true">//直接匹配VLAN1的流量，因为数据包有打标签可以知道VLAN1 的ID</span>
+traffic policy wakin <span class="token comment" spellcheck="true">//然后在策略中添加关联流分类和流行为</span>
+classifier VLAN1 behavior pc1topc3
+<span class="token comment" spellcheck="true">//在一个流分类中添加两个条件是有或和与的区分的</span>
+traffic classifier hcip
+  <span class="token keyword">if</span><span class="token operator">-</span>match acl <span class="token number">3000</span>
+  <span class="token keyword">if</span><span class="token operator">-</span>match vlan<span class="token operator">-</span>id <span class="token number">1</span>
+d th
+   and <span class="token comment" spellcheck="true">//同时满足，默认是与的关系</span>
+traffic classifier hcip operator <span class="token operator">?</span> <span class="token comment" spellcheck="true">//更改流分类条件是与还是或的关系</span>
+<span class="token comment" spellcheck="true">//acl只是匹配路由的工具</span>
+   
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529130753405.png" alt="image-20210529130753405"></p>
+<h1 id="Super-vlan"><a href="#Super-vlan" class="headerlink" title="Super vlan"></a>Super vlan</h1><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529131134653.png" alt="image-20210529131134653"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529131301277.png" alt="image-20210529131301277"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529132614478.png" alt="image-20210529132614478"></p>
+<p> <img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529132740523.png" alt="image-20210529132740523"></p>
+<p><strong>像模像样的东西，体现出正式，体现出专业性</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529132949661.png" alt="image-20210529132949661"></p>
+<h2 id="SUPER-VLAN"><a href="#SUPER-VLAN" class="headerlink" title="SUPER VLAN"></a>SUPER VLAN</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529133249904.png" alt="image-20210529133249904"></p>
+<ul>
+<li> subvlan：是二层的物理接口，配置VLAN id的，不建立三层VLANIF接口，隔离广播域</li>
+<li>SUPER VLAN：是配置IP地址的逻辑3层接口，</li>
+</ul>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529133634943.png" alt="image-20210529133634943"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529133750459.png" alt="image-20210529133750459"></p>
+<h2 id="SUPER-VLAN通信规则"><a href="#SUPER-VLAN通信规则" class="headerlink" title="SUPER VLAN通信规则"></a>SUPER VLAN通信规则</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529133919025.png" alt="image-20210529133919025"></p>
+<h2 id="subVLAN与其他网络的三层通信"><a href="#subVLAN与其他网络的三层通信" class="headerlink" title="subVLAN与其他网络的三层通信"></a>subVLAN与其他网络的三层通信</h2><p>Super-VLAN只负责网关的功能</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529134222951.png" alt="image-20210529134222951"></p>
+<p>重点：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">super</span> vlan 只负责网关的功能，主机<span class="token number">1</span>发送一个数据帧，交换机收到后打上标签<span class="token number">2</span>，主机<span class="token number">2</span>发送的数据帧打上标签<span class="token number">3</span>，不管是<span class="token number">2</span>还是<span class="token number">3</span>，因为之前我们从<span class="token number">10.1</span><span class="token punctuation">.</span><span class="token number">1.2</span> 去往<span class="token number">10.1</span><span class="token punctuation">.</span><span class="token number">2.2</span>，首先不是同一个网段，因为<span class="token number">3</span>层通讯，所以我们先找到的是网关的接口，咱们发送arp问的是网关，到了VLAN4的网关，进行二层解封装，到三层，三层一看目标ip，查路由，查完路由以后发现出接口是VLANIF10 接口，这个时候封装二层的时候，封装的标签是<span class="token number">10</span>，永远不会封装<span class="token number">4</span>的标签，VLANIF4只是负责网关的功能呢进行路由查找，查找出来真正出来的接口是VLANIF10的接口，如果是access则没有标签，如果是trunk，pvid一样也没有标签，pvid不一样就有标签，VLAN4的三层只是作为网关的作用，收到数据帧进行路由查找，找到出接口就可以了，VLANIF4作为SUPER VLAN 是不能跟物理口进行关联的，VLANIF作为一个网关他是一个虚拟口，不能和物理口进行关联。 就算收到一个VLAN4的数据包过来也会丢弃，因为VLANIF4没有对应的物理口进行转发。
+</code></pre>
+<h2 id="sub-VLAN与其他设备的二层通信"><a href="#sub-VLAN与其他设备的二层通信" class="headerlink" title="sub -VLAN与其他设备的二层通信"></a>sub -VLAN与其他设备的二层通信</h2><p>不会涉及到SUPER-VLAN，与正常的二层通信流程一样</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529135825698.png" alt="image-20210529135825698"></p>
+<h2 id="Super-VLAN配置"><a href="#Super-VLAN配置" class="headerlink" title="Super VLAN配置"></a>Super VLAN配置</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529140138919.png" alt="image-20210529140138919"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529140206183.png" alt="image-20210529140206183"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529140308181.png" alt="image-20210529140308181"></p>
+<h1 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h1><p> <img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529140636696.png" alt="image-20210529140636696"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//配置超级VLAN</span>
+VLAN <span class="token number">10</span>
+  aggregate<span class="token operator">-</span>vlan 
+  access<span class="token operator">-</span>vlan <span class="token number">2</span> <span class="token number">3</span> 
+  dis <span class="token keyword">super</span><span class="token operator">-</span>vlan <span class="token comment" spellcheck="true">//验证超级vlan</span>
+  dis sub<span class="token operator">-</span>vlan <span class="token comment" spellcheck="true">//验证subVLAN</span>
+  <span class="token keyword">int</span> v <span class="token number">10</span>
+  ip add <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">0.254</span> <span class="token number">24</span>
+  q
+dhcp enable
+  <span class="token keyword">int</span> vlanif <span class="token number">10</span>
+  dhcp select <span class="token keyword">interface</span> 
+  <span class="token class-name">d</span> th
+这样的配置结果就是感觉上是在同一个网段但是她默认是不通的
+  arp<span class="token operator">-</span>proxy inter<span class="token operator">-</span>sub<span class="token operator">-</span>vlan<span class="token operator">-</span>proxy <span class="token comment" spellcheck="true">//开启vlan间的代理arp，让两个隔离的sub-VLAN进行通信。</span>
   
-filter<span class="token operator">-</span>policy acl<span class="token operator">-</span>name <span class="token comment" spellcheck="true">//后面跟策略名称  </span>
+</code></pre>
+<h1 id="端口安全"><a href="#端口安全" class="headerlink" title="端口安全"></a>端口安全</h1><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529142800936.png" alt="image-20210529142800936"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529143057257.png" alt="image-20210529143057257"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210530102404212.png" alt="image-20210530102404212"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210530102632389.png" alt="image-20210530102632389"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210530102934529.png" alt="image-20210530102934529"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//dynamic mac 可以同时设置动态mac数量和mac内容,数量默认为1个。先到先得。</span>
+<span class="token comment" spellcheck="true">//sticky 就相当于两者的特性各有一点，当动态学习到server2的MAC地址后就把它转化成静态的MAC，同时具有静态和动态的特性。</span>
 
-<span class="token keyword">import</span><span class="token operator">-</span>route rip route<span class="token operator">-</span>policy <span class="token comment" spellcheck="true">//在导入路由时添加路由策略</span>
+</code></pre>
+<h2 id="保护动作"><a href="#保护动作" class="headerlink" title="保护动作"></a>保护动作</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210530113729322.png" alt="image-20210530113729322"></p>
+<pre class=" language-java"><code class="language-java">
+<span class="token comment" spellcheck="true">//在接口模式下    restart 相当于 shutdown 再undo shutdown //思科默认交换机为shutdown</span>
 
-<span class="token comment" spellcheck="true">//建立route policy</span>
-  
-route<span class="token operator">-</span>policy wakin permit node <span class="token number">10</span> <span class="token comment" spellcheck="true">//建立路由策略</span>
-<span class="token keyword">if</span><span class="token operator">-</span>match <span class="token operator">?</span> <span class="token comment" spellcheck="true">//条件</span>
-<span class="token comment" spellcheck="true">// nat技术  </span>
-nat outbound <span class="token operator">?</span>
+<span class="token comment" spellcheck="true">//在系统界面下</span>
+error<span class="token operator">-</span>down auto<span class="token operator">-</span>recovery cause port<span class="token operator">-</span>security <span class="token comment" spellcheck="true">//接口关闭后会自动恢复</span>
+error<span class="token operator">-</span>down auto<span class="token operator">-</span>recovery cause mac<span class="token operator">-</span>address<span class="token operator">-</span>flapping interval <span class="token number">30</span> <span class="token comment" spellcheck="true">//配置自动恢复的间隔</span>
 
-<span class="token comment" spellcheck="true">//接口调用acl</span>
-traffic<span class="token operator">-</span>filter inbound <span class="token operator">?</span> <span class="token comment" spellcheck="true">// 入方向调用acl，注意流量的方向走向</span>
-traffic<span class="token operator">-</span>filter outbound <span class="token operator">?</span> <span class="token comment" spellcheck="true">//  出方向调用acl，注意流量的方向走向</span>
- 
+dis error<span class="token operator">-</span>down recovery <span class="token comment" spellcheck="true">//验证接口关闭后恢复情况</span>
+
+dis mac<span class="token operator">-</span>address <span class="token comment" spellcheck="true">//查看mac地址</span>
+
+dis trapbuffer <span class="token comment" spellcheck="true">//查看自动告警的trap缓存信息</span>
+dis log <span class="token comment" spellcheck="true">//查看系统日志</span>
+
+在汇聚层看到所有mac，然后看在哪个接口，然后在在接入层查看。
 </code></pre>
-<h2 id="ACL应用场景"><a href="#ACL应用场景" class="headerlink" title="ACL应用场景"></a>ACL应用场景</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424085031472.png" alt="image-20210424085031472"></p>
-<ul>
-<li>ACL可以通过定义规则来允许或拒绝流量的通过。</li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424085159432.png" alt="image-20210424085159432"></p>
-<h2 id="ACL工作原理"><a href="#ACL工作原理" class="headerlink" title="ACL工作原理"></a>ACL工作原理</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424085438747.png" alt="image-20210424085438747"></p>
-<ul>
-<li> ACL由一条或多条规则组成</li>
-<li>每条规则必须选择动作：允许或拒绝</li>
-<li><strong>每条规则都有一个id序列号（默认=5，间隔=5）</strong></li>
-<li><strong>序列号越小越先进行匹配</strong></li>
-<li><strong>只要有一条规则和报文匹配，就停止查找，称为命中规则</strong></li>
-<li><strong>查找完所有规则，如果没有符合条件的规则，称为未命中规则</strong></li>
-<li>ACL创建后，必须将其应用到某个接口或其他技术内才会生效</li>
-<li>应用在接口时必须选择方向：入站或出站（相对设备来判断）</li>
-<li>不能过滤由设备自己产生的数据</li>
-</ul>
-<p><strong>注意</strong>：制定规则时一定要<strong>先细后粗</strong></p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 命名acl</span>
-acl name nolol <span class="token comment" spellcheck="true">// 第一种方式</span>
-acl number <span class="token number">2000</span> <span class="token comment" spellcheck="true">// 第二种方式</span>
-<span class="token comment" spellcheck="true">//增加描述</span>
-description xxx<span class="token operator">-</span>yyy <span class="token comment" spellcheck="true">//用英文表示</span>
+<h2 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529143653774.png" alt="image-20210529143653774"></p>
+<p>ARP欺骗：告诉主机1，我是2我的MAC地址是C。欺骗主机的ARP缓存</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529143918488.png" alt="image-20210529143918488"></p>
+<p>MAC欺骗：欺骗交换机的MAC记录</p>
+<p>攻击者频繁发送2的MAC地址为B。</p>
+<pre class=" language-java"><code class="language-java">dis mac<span class="token operator">-</span>ad su <span class="token comment" spellcheck="true">//查看交换机MAC地址总数</span>
 </code></pre>
-<h2 id="ACL规则"><a href="#ACL规则" class="headerlink" title="ACL规则"></a>ACL规则</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424101122072.png" alt="image-20210424101122072"></p>
-<ul>
-<li>每个ACL可以包含多个规则，RTA根据规则来对数据流量进行过滤。</li>
-</ul>
-<h2 id="ACL类型"><a href="#ACL类型" class="headerlink" title="ACL类型"></a>ACL类型</h2><p>分为数字型ACL和命名型ACL</p>
-<table>
-<thead>
-<tr>
-<th>分类</th>
-<th>编号范围</th>
-<th>参数</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>基本ACL</td>
-<td>2000-2999</td>
-<td>源IP地址等</td>
-</tr>
-<tr>
-<td>高级ACL</td>
-<td>3000-3999</td>
-<td>源IP地址、目的IP地址、源端口、目的端口等</td>
-</tr>
-<tr>
-<td>二层ACL</td>
-<td>4000-4999</td>
-<td>源MAC地址、目的MAC地址、以太网协议类型等</td>
-</tr>
-<tr>
-<td>用户ACL</td>
-<td>5000-5999</td>
-<td>用户自定义</td>
-</tr>
-</tbody></table>
-<h2 id="正掩码、反掩码、通配符区别："><a href="#正掩码、反掩码、通配符区别：" class="headerlink" title="正掩码、反掩码、通配符区别："></a>正掩码、反掩码、通配符区别：</h2><table>
-<thead>
-<tr>
-<th>名称</th>
-<th>规则</th>
-<th>作用</th>
-<th>举例</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>掩码</td>
-<td>连续的1和0</td>
-<td>IP地址</td>
-<td>255.255.255.0</td>
-<td>1对应网络位，0对应主机位</td>
-</tr>
-<tr>
-<td>反掩码</td>
-<td>连续的0和1</td>
-<td>路由协议</td>
-<td>0.0.0.255</td>
-<td>0必须匹配，1无须匹配</td>
-</tr>
-<tr>
-<td>通配符</td>
-<td>任意的0和1</td>
-<td>ACL</td>
-<td>0.0.255.0</td>
-<td>0必须匹配，1无须匹配</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th>举例</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>192.168.0.1 0.0.0.0/0</td>
-<td>匹配一个主机地址</td>
-</tr>
-<tr>
-<td>192.168.0.0 0.0.0.255</td>
-<td>匹配一个网段</td>
-</tr>
-<tr>
-<td>192.168.0.1 0.0.0.254</td>
-<td>匹配网段内奇数地址</td>
-</tr>
-<tr>
-<td>192.168.0.0 0.0.0.254</td>
-<td>匹配网段内偶数地址</td>
-</tr>
-<tr>
-<td>any=x.x.x.x 255.255.255.255</td>
-<td>匹配所有地址</td>
-</tr>
-</tbody></table>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424111957914.png" alt="image-20210424111957914"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424112437263.png" alt="image-20210424112437263"></p>
-<p><strong>说明：直接写名字定义的ACL，也可以定义ACL的类型</strong></p>
-<hr>
-<p><strong>在配置路由时，打正掩码也会自动转换为反掩码，反掩码也就是 4个255减正掩码得到的。</strong></p>
-<hr>
-<p><strong>通配符相当于与运算 匹配0的位数</strong></p>
-<hr>
-<p><strong>奇数地址只要保证最后一位为1</strong>即可</p>
-<hr>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 直接写名字定义的ACL，也可以定义ACL的类型</span>
-acl name nogame <span class="token operator">?</span> <span class="token comment" spellcheck="true">// 默认为高级adv</span>
-  
-  
-<span class="token comment" spellcheck="true">//查看所有acl</span>
-dis acl all <span class="token comment" spellcheck="true">//查看所有acl</span>
-  
-<span class="token comment" spellcheck="true">//acl允许通过所有</span>
-rule per so <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">255.255</span><span class="token punctuation">.</span><span class="token number">255.255</span> <span class="token comment" spellcheck="true">//acl允许通过所有</span>
-rule per so any <span class="token comment" spellcheck="true">//acl允许通过所有</span>
-rule per <span class="token comment" spellcheck="true">//acl允许通过所有</span>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529144930655.png" alt="image-20210529144930655"></p>
+<p>MAC泛洪：制造大量的伪造MAC来频繁更新交换机的MAC地址表</p>
+<pre class=" language-java"><code class="language-java">dis mac<span class="token operator">-</span>ad <span class="token comment" spellcheck="true">//查看MAC地址表</span>
+</code></pre>
+<p>发送数据包工具：IPOP V6.1 可以根据改装的数据包发送，欺骗网络设备</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529145916296.png" alt="image-20210529145916296"></p>
+<p>Kali系统</p>
+<p>桥接回环网卡</p>
+<pre class=" language-java"><code class="language-java">yersimia <span class="token operator">-</span>G <span class="token comment" spellcheck="true">//yersimia工具</span>
+macof <span class="token comment" spellcheck="true">//f代表float泛洪 在kali的cli状态下。</span>
+流量性攻击<span class="token comment" spellcheck="true">//</span>
+</code></pre>
+<p>Dos攻击，拒绝服务攻击，你提供一个DHCP服务，我指派很多人过去把资源消耗完，让正常的主机得不到地址。泛洪类攻击最有效也最可怕。</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//清空mac地址缓存</span>
+clear mac <span class="token comment" spellcheck="true">//思科</span>
+reset mac <span class="token comment" spellcheck="true">//华为</span>
+undo mac address <span class="token comment" spellcheck="true">//清楚MAC地址表</span>
+每个mac表刷新的时间为300s
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210530102216141.png" alt="image-20210530102216141"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//大量非法的接入</span>
+<span class="token comment" spellcheck="true">//限制数量</span>
+<span class="token comment" spellcheck="true">//限制地址</span>
   
 </code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424105857484.png" alt="image-20210424105857484"></p>
-<h2 id="ACL配置"><a href="#ACL配置" class="headerlink" title="ACL配置"></a>ACL配置</h2><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>acl 2000</td>
-<td>创建一个基本acl</td>
-</tr>
-<tr>
-<td>rule 5 deny/permit source 192.168.1.0 0.0.0.255</td>
-<td>配置ACL的规则：<br>拒绝或允许源地址为<br>192.168.1.0 /24网段内的所有流量</td>
-</tr>
-<tr>
-<td>acl 3000</td>
-<td>创建一个高级ACL</td>
-</tr>
-<tr>
-<td>rule 5 deny/permit tcp source 192.168.1.0 0.0.0.255 destination 8.8.8.8 0 destination-port eq 80</td>
-<td>配置ACL的规则<br>拒绝或允许源地址为<br>192.168.1.0/24网段内到8.8.8.8 的HTTP流量</td>
-</tr>
-<tr>
-<td>traffic-filter inbound/outbound acl 2000</td>
-<td>在接口调用ACL过滤流量</td>
-</tr>
-<tr>
-<td>display acl 2000</td>
-<td>验证acl</td>
-</tr>
-<tr>
-<td>display traffic-filter applied-record</td>
-<td>查看设备上所有基于ACL调用情况</td>
-</tr>
-</tbody></table>
-<pre class=" language-java"><code class="language-java">rule <span class="token number">5</span> deny<span class="token operator">/</span>permit tcp source <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">1.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span> destination <span class="token number">8.8</span><span class="token punctuation">.</span><span class="token number">8.8</span> <span class="token number">0</span> destination<span class="token operator">-</span>port eq <span class="token number">80</span> <span class="token comment" spellcheck="true">//默认不写就是全部</span>
-rule <span class="token number">2</span> permit TCP destination<span class="token operator">-</span>port <span class="token operator">?</span>
-  
+<h2 id="应用案例"><a href="#应用案例" class="headerlink" title="应用案例"></a>应用案例</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210530114203762.png" alt="image-20210530114203762"></p>
+<h2 id="配置命令："><a href="#配置命令：" class="headerlink" title="配置命令："></a>配置命令：</h2><pre class=" language-java"><code class="language-java">port<span class="token operator">-</span>security enable <span class="token comment" spellcheck="true">//开启端口安全</span>
+<span class="token comment" spellcheck="true">//默认配置是只允许一个安全mac，而且类型是安全动态mac，而且动作是restrict。</span>
+dis mac<span class="token operator">-</span>address security <span class="token operator">?</span><span class="token comment" spellcheck="true">//验证查看安全mac配置</span>
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">3</span> 
+
+port<span class="token operator">-</span>security max<span class="token operator">-</span>mac<span class="token operator">-</span>num x <span class="token comment" spellcheck="true">//配置端口安全最大的数量</span>
+port<span class="token operator">-</span>security mac<span class="token operator">-</span>address stick <span class="token comment" spellcheck="true">//启用mac stick</span>
+port<span class="token operator">-</span>security mac<span class="token operator">-</span>address stick xxxx<span class="token operator">-</span>xxxx<span class="token operator">-</span>xxxx vlan1 <span class="token comment" spellcheck="true">//在安全端口启动stick</span>
 </code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424122341908.png" alt="image-20210424122341908"></p>
-<h2 id="基本ACL配置"><a href="#基本ACL配置" class="headerlink" title="基本ACL配置"></a>基本ACL配置</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424122816484.png" alt="image-20210424122816484"></p>
-<h2 id="高级ACL配置"><a href="#高级ACL配置" class="headerlink" title="高级ACL配置"></a>高级ACL配置</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424122933667.png" alt="image-20210424122933667"></p>
-<ul>
-<li><p>基本ACL：允许或拒绝所欲协议，我只关心你从哪里来</p>
-</li>
-<li><p>高级ACL：我可以知道你从哪里来，到哪里去，去做什么</p>
-</li>
-<li><p>基本ACL调用离目标近一点</p>
-</li>
-<li><p>高级ACL调用离源近一点</p>
-</li>
-</ul>
-<p>ACL接口调用方向的建议</p>
-<p>1、基本ACL尽量调用在离目标最近的出站接口</p>
-<p>2、高级ACL尽量调用在离源头最近的入站接口</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210424124622328.png" alt="image-20210424124622328"></p>
+<h2 id="相关命令："><a href="#相关命令：" class="headerlink" title="相关命令："></a>相关命令：</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210531225531355.png" alt="image-20210531225531355"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210531225600856.png" alt="image-20210531225600856"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210531231210645.png" alt="image-20210531231210645"></p>
 
         </div>
 
@@ -616,9 +608,13 @@ rule <span class="token number">2</span> permit TCP destination<span class="toke
           <div class="post-tags" style="color: #a39391">
             <span><i class="fa fa-tags"></i>
               
-              <a href="/tags/HCIA/" style="color: #716e77;">HCIA<em>·</em></a>
+              <a href="/tags/%E4%BB%A3%E7%90%86ARP/" style="color: #716e77;">代理ARP<em>·</em></a>
               
-              <a href="/tags/ACL/" style="color: #716e77;">ACL<em>·</em></a>
+              <a href="/tags/MQC%E6%B5%81%E7%AD%96%E7%95%A5/" style="color: #716e77;">MQC流策略<em>·</em></a>
+              
+              <a href="/tags/SUPER-VLAN/" style="color: #716e77;">SUPER VLAN<em>·</em></a>
+              
+              <a href="/tags/%E7%AB%AF%E5%8F%A3%E5%AE%89%E5%85%A8/" style="color: #716e77;">端口安全<em>·</em></a>
               
             </span>
             <span>
@@ -646,36 +642,19 @@ rule <span class="token number">2</span> permit TCP destination<span class="toke
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-        
-        <div class="post-nepre half previous">
-          
-            <a href="/post/271a.html" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/xJZfiRaXNBHDny9.jpg"
-                  style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
-                  src="https://i.loli.net/2021/05/03/xJZfiRaXNBHDny9.jpg">
-              </div>
-              <span class="label">Previous Post</span>
-              <div class="info">
-                <h3>HCIA学习笔记15</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
           
           
-          
-          <div class="post-nepre half next">
-            
-              <a href="/post/259a.html" rel="next">
+            <div class="post-nepre full next">
+              
+              <a href="/post/cf16.html" rel="next">
                 <div class="background">
-                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/ghxLdMNbE6PjzIO.jpg"
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/28/XsU37P91nzjYt8M.png"
                     style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
-                    onerror="imgError(this,3)" src="https://i.loli.net/2021/05/03/ghxLdMNbE6PjzIO.jpg">
+                    onerror="imgError(this,3)" src="https://i.loli.net/2021/05/28/XsU37P91nzjYt8M.png">
                 </div>
                 <span class="label">Next Post</span>
                 <div class="info">
-                  <h3>HCIA学习笔记13</h3>
+                  <h3>HCNP学习笔记9</h3>
                   <hr>
                 </div>
               </a>
