@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <!-- cungudafa百度收录验证编号 -->
+  <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+  <title itemprop="name">HCNP学习笔记4 | 慢一点，才更快 | 雨落</title>
+  
+    <link rel="shortcut icon" href="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tubiao.ico">
+  
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/cungudafa/cdn/css/style.css" type="text/css" media="all" id="saukra_css-css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/cungudafa/cdn/css/jquery.fancybox.min.css" media="all">  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/cungudafa/cdn/css/lib.min.css" media="all">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/cungudafa/cdn/css/font.css" media="all">
+  <link rel="stylesheet" href="/css/insight.css" media="all">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/cungudafa/cdn/css/tags.css" media="all">
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+
+  <!-- 分析 -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <!-- Baidu Analytics -->
+
+  
+  <!--   <link rel="stylesheet" id="saukra_css-css" href="https://2heng.xin/wp-content/cache/autoptimize/css/autoptimize_ad42a61f4c7d4bdd9f91afcff6b5dda5.css
+  " type="text/css" media="all"> -->
+  <script>
+    /*Initial Variables*/
+    var mashiro_option = new Object();
+    var mashiro_global = new Object();
+    mashiro_option.NProgressON = true;
+    /* 
+    * 邮箱信息之类的东西可以填在这里，这些js变量基本都作用于sakura-app.js
+    * 这样的设置仅是为了方便在基于PHP开发的主题中设置js变量，既然移植到了Node上，我想或许可以精简这一逻辑吧
+    */
+    mashiro_option.email_domain = "";
+    mashiro_option.email_name = "";
+    mashiro_option.cookie_version_control = "";
+    mashiro_option.qzone_autocomplete = false;
+    mashiro_option.site_name = "SakuraMuxia雨落辰潇";
+    mashiro_option.author_name = "雨落辰潇";
+    mashiro_option.site_url = "";
+    mashiro_option.v_appId = "pJf0nLlIFPsrFbqcB2InonHd-gzGzoHsz";//
+    mashiro_option.v_appKey = "RoAvgTeWI8wX4B5wXo6jB2YV";//
+    mashiro_option.mathjax = "1";
+    mashiro_option.copyright_enable = "true" ;
+    mashiro_option.copyright_minCharNumber = parseInt("120") ;
+    mashiro_option.copyright_description = "本文章著作权归作者所有，任何形式的转载都请注明出处。" ;
+    mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/"; 
+    mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
+
+    // mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.4.5/css/lib.min.css";
+    // mashiro_option.float_player_on = true;
+
+    /*End of Initial Variables*/
+  </script>
+  <script type="text/javascript">
+    var bg = "https://i.loli.net/2021/05/02/qBuo7CzMLK1DTbc.jpg,https://i.loli.net/2021/05/03/CjRY4MpdyQJ5uwv.jpg,https://i.loli.net/2021/05/03/8zvZ7F1sPex6LAy.jpg,https://i.loli.net/2021/05/03/GH93Q4XZxtIFMrw.jpg,https://i.loli.net/2021/05/03/1kc4VMaPHxuXSBb.jpg,https://i.loli.net/2021/05/03/ghxLdMNbE6PjzIO.jpg,https://i.loli.net/2021/05/03/9NnrV3TWMawJ4sA.jpg,https://i.loli.net/2021/05/03/xJZfiRaXNBHDny9.jpg".split(",");
+    var bgindex = Math.floor(Math.random()*bg.length);
+    if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+      alert('朋友，IE浏览器未适配哦~');
+    }
+  </script>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head> 
+  <!-- 自定义logo -->
+  <link rel="stylesheet" type="text/css" href="/css/logo.css">
+  <link rel="stylesheet" type="text/css" href="/fonts/LOGO/logo.css">
+  <!--自定义看板娘-->
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <script src="/live2d-widget/autoload.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
+  
+
+<body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
+  <!-- Dynamic sliders -->
+  <div class="scrollbar" id="bar">
+  </div>
+  <a href="#" class="cd-top faa-float animated"></a>
+  <!-- Main content -->
+  <section id="main-container">
+    <!-- Top menu -->
+    <div class="headertop filter-dot">
+  <div id="banner_wave_1"></div>
+  <div id="banner_wave_2"></div>
+  <figure id="centerbg" class="centerbg">
+    <div class="focusinfo no-select">
+      <div class="header-tou">
+        <a href="">
+          <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tx.jpg">
+        </a>
+      </div>
+      <div class="header-info">
+        <p>世事变幻无常，而近乎永恒不变者，唯你我头上的同一片星空。</p>
+        <div class="top-social_v2">
+          <li id="bg-pre">
+            <img class="flipx" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+          
+            
+              
+                <li>
+                  <a href="https://wpa.qq.com/msgrd?v=3&amp;uin=2216847528&amp;site=qq&amp;menu=yes" target="_blank" class="social-github" title="QQ">
+                    <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/QQ.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li class="wechat">
+                  <a href="/#">
+                    <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/wechat.png">
+                  </a>
+                  <div class="wechatInner">
+                    <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/wechat35.png">
+                  </div>
+                </li>
+              
+            
+          
+          <li id="bg-next">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+        </div>
+      </div>
+    </div>
+  </figure>
+  
+  <div id="video-container">
+    <video style="object-fit: fill" id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto">
+    </video>
+    <div id="video-btn" class="loadvideo videolive">
+    </div>
+    <div id="video-add">
+    </div>
+    <div class="video-stu">
+    </div>
+  </div>
+  <div class="headertop-down faa-float animated" onclick="headertop_down()">
+    <span>
+      <i class="fa fa-chevron-down" aria-hidden="true">
+      </i>
+    </span>
+  </div>
+</div>
+    <div id="page" class="site wrapper">
+      <!-- banner -->
+      <header class="site-header no-select gizle sabit" role="banner">
+  <div class="site-top">
+    <div class="site-branding">
+        		<span class="site-title">
+            <span class="logolink logo">
+                <a href="/">
+                    <ruby>
+                    <span class="sakuraso">雨</span>
+                    <span class="no">落</span>
+                    <span class="shironeko">辰潇</span>
+                    <rp></rp>
+                    <rt class="logo">SakuraMuxia</rt>
+                    <rp></rp>
+                    </ruby>
+                  </a>
+            </span>
+          </span>
+    </div>
+    <div class="searchbox search-form-submit">
+      <i class="iconfont js-toggle-search iconsearch icon-search">
+      </i>
+    </div>
+    <div id="show-nav" class="showNav mobile-fit">
+      <div class="line line1">
+      </div>
+      <div class="line line2">
+      </div>
+      <div class="line line3">
+      </div>
+    </div>
+    <div class="lower-cantiner">
+      <div class="lower">
+        <nav class="mobile-fit-control hide">
+          <ul id="menu-new" class="menu">
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+                    首页
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+                    归档
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/tags">
+                          <i class="fa fa-tags" aria-hidden="true"></i>
+                          标签
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/%E6%8A%80%E6%9C%AF/">
+                          <i class="fa fa-code" aria-hidden="true"></i>
+                          技术
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="javascript:;">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+                    清单
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/music/">
+                          <i class="fa fa-music" aria-hidden="true"></i>
+                          歌单
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/comment/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+                    留言板
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+                    关于
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/about/">
+                          <i class="fa fa-meetup" aria-hidden="true"></i>
+                          我？
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+      
+      <!-- body -->
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/cungudafa/cdn/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+<div class="pattern-center single-center">
+  <!-- 有配图默认渲染第一张 -->
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/05/12/fM1yFYZQXlK7NPd.jpg);"
+    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/12/fM1yFYZQXlK7NPd.jpg">
+  </div>
+  <header class="pattern-header single-header">
+    <h1 class="entry-title">HCNP学习笔记4</h1>
+    <p class="entry-census">
+      
+      <span class="post-meta-item">
+        <a href="">
+          <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tx.jpg">
+        </a>
+      </span>
+      
+      
+      <span class="post-meta-item">
+        <a href=""> SakuraMuxia </a>
+      </span>
+      <span class="bull">
+        ·</span>
+      
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-calendar"></i>
+        </span>
+        <span class="post-meta-item-text"> 2021-5-12 </span>
+      </span>
+      <span class="bull">
+        ·</span>
+      <!-- 浏览数显示 -->
+      <span class="post-meta-item" >
+        <span class="post-meta-item-icon">
+          <i class="iconfont icon-attention"></i>
+        </span>
+        <span class="post-meta-item-text">本文共<span id="busuanzi_value_page_pv"> </span>次阅读
+        </span>
+      </span>
+      <span class="bull">
+        ·</span>
+      <!-- 字数统计-->
+      <span class="post-meta-item" >
+
+        
+      </span>
+      <span class="bull">
+        ·</span>
+      <!-- 评论数显示 -->
+      <!-- <span class="post-meta-item" >
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              </span class="post-meta-item-text">
+                <span class="valine-comment-count" data-xid="/4455"> </span>
+              </span>
+          </span> -->
+    </p>
+  </header>
+</div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1"
+        class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content">  -->
+        <!--套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h1 id="IPsec-VPN配置（手动配置）"><a href="#IPsec-VPN配置（手动配置）" class="headerlink" title="IPsec VPN配置（手动配置）"></a>IPsec VPN配置（手动配置）</h1><h2 id="IPsec-VPN配置步骤"><a href="#IPsec-VPN配置步骤" class="headerlink" title="IPsec VPN配置步骤"></a>IPsec VPN配置步骤</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210508140238598.png" alt="image-20210508140238598"></p>
+<h2 id="实验拓扑"><a href="#实验拓扑" class="headerlink" title="实验拓扑"></a>实验拓扑</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210508140512672.png" alt="image-20210508140512672"></p>
+<pre class=" language-java"><code class="language-java">sys
+sys HF
+dhcp enable
+  acl <span class="token number">2000</span>
+  rule permit so <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">10.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+  ip add <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">10.254</span> <span class="token number">24</span>
+  dhcp sel <span class="token keyword">int</span> 
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+  ip add <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">24</span>
+<span class="token comment" spellcheck="true">//net outbound 2000</span>
+  ip route<span class="token operator">-</span>s <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0</span> <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.2</span>
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+<span class="token comment" spellcheck="true">//合肥</span>
+<span class="token comment" spellcheck="true">//配置感兴趣流</span>
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+  acl <span class="token number">3000</span>
+  rule permit <span class="token function">ip</span><span class="token punctuation">(</span>协议<span class="token punctuation">)</span> so <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">10.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span> des <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">20.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span> 
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+<span class="token comment" spellcheck="true">//配置提议</span>
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+  dis IPsec sa <span class="token comment" spellcheck="true">//验证IPsec SA</span>
+  dis IKE sa <span class="token comment" spellcheck="true">//验证IKE SA</span>
+  dis IPsec proposal <span class="token comment" spellcheck="true">//验证IPsec提议</span>
+  IPsec proposal HF2SH <span class="token comment" spellcheck="true">//配置IPsec 名字随意配</span>
+  dis IPsec proposal <span class="token comment" spellcheck="true">//验证IPsec提议，当只新建一个IPsec，什么都不配置的时候，默认值封装模式为Tunnel，安全协议为ESP，认证算法为MD5，加密算法为DES。</span>
+<span class="token comment" spellcheck="true">//transform ah //将安全协议更改成AH</span>
+  ESP encryption<span class="token operator">-</span>algorithm AES<span class="token operator">-</span><span class="token number">256</span> <span class="token comment" spellcheck="true">//配置加密算法</span>
+  ESP Authentication<span class="token operator">-</span>algorithm sha2<span class="token operator">-</span><span class="token number">256</span> <span class="token comment" spellcheck="true">//配置认证算法</span>
+  d th
+  <span class="token comment" spellcheck="true">//手动的话是永久存在的，没有配置超时时间的选项。</span>
+  <span class="token comment" spellcheck="true">//当选择安全协议为ESP时可以配置的有两个，当选择安全协议为AH时，可以配置的只有认证算法。</span>
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+<span class="token comment" spellcheck="true">//配置IPsec 策略</span>
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+  <span class="token comment" spellcheck="true">//先配置IPsec proposal 再配置IPsec policy</span>
+  IPsec policy HF2SH <span class="token number">1</span> manual <span class="token comment" spellcheck="true">//名称 序列号 手动orIKE</span>
+  dis IPsec policy <span class="token comment" spellcheck="true">//验证IPsec策略配置</span>
+  security acl <span class="token number">3000</span> <span class="token comment" spellcheck="true">//引入感兴趣流 </span>
+  proposal HF2SH <span class="token comment" spellcheck="true">//引入提议</span>
+  tunnel local <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token comment" spellcheck="true">//配置隧道本端地址，为公网地址</span>
+  tunnel remote <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.3</span> <span class="token comment" spellcheck="true">//配置隧道对端地址，为对端公网地址</span>
+  dis ipsec policy <span class="token comment" spellcheck="true">//验证IPsec策略配置</span>
+  sa spi inbound esp <span class="token number">12345</span> <span class="token comment" spellcheck="true">//配置SPI序列号</span>
+  sa spi outbound esp <span class="token number">12345</span> <span class="token comment" spellcheck="true">//可以配置相同的spi序列号</span>
+  sa string<span class="token operator">-</span>key inbound ESP cipher <span class="token number">123</span><span class="token punctuation">.</span>com <span class="token comment" spellcheck="true">//配置入方向预共享密钥加密 </span>
+  sa string<span class="token operator">-</span>key outbound ESP cipher <span class="token number">123</span><span class="token punctuation">.</span>com <span class="token comment" spellcheck="true">//配置出方向预共享密钥加密</span>
+  dis IPsec policy <span class="token comment" spellcheck="true">//验证IPsec策略</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> <span class="token comment" spellcheck="true">//进入相关接口</span>
+  IPsec policy HF2SH <span class="token comment" spellcheck="true">// 调用策略</span>
+  <span class="token comment" spellcheck="true">//当更改协议后需要重新调用一下</span>
+  dis IPsec sa bri<span class="token comment" spellcheck="true">//验证IPsec sa 配置 （简化）</span>
+  dis IPsec sa duration <span class="token comment" spellcheck="true">//验证IPsec协议生存时间</span>
+  dis IPsec statistics ESP <span class="token comment" spellcheck="true">//查看IPsec数据包入和出</span>
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+<span class="token comment" spellcheck="true">//这样配置VPN会通，但是无法访问互联网了。所以还要把NAT转发开启，但是开启之后，因为IPsec策略的源地址是私网地址，NAT转发之后会变成公网地址，数据包有去无回，造成无法通信，所以要把IPsec的源地址变成出去对应的公网地址。</span>
+  acl <span class="token number">3000</span>
+  rule permit <span class="token function">ip</span><span class="token punctuation">(</span>协议<span class="token punctuation">)</span> so <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">10.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span> des <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">20.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span> <span class="token comment" spellcheck="true">//源地址192.168.10.1变成12.0.0.1</span>
+<span class="token comment" spellcheck="true">//还有一种解决办法就是把NAT调用的acl把VPN的流量排除，感兴趣流仍然写成对应的私网地址，这样也更符合使用习惯。</span>
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+  acl <span class="token number">3001</span>
+  rule deny ip so <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">10.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span> des <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">20.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
+  rule permit ip so
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> <span class="token comment" spellcheck="true">//进入相关的接口</span>
+  nat outbound <span class="token number">3001</span> <span class="token comment" spellcheck="true">//NAT调用acl</span>
+  debugging <span class="token operator">?</span> <span class="token comment" spellcheck="true">//调试信息</span>
+  terminal debugging <span class="token comment" spellcheck="true">//开启debugging调试</span>
+  debugging NAT <span class="token operator">?</span> <span class="token comment" spellcheck="true">//查看debugging nat信息</span>
+  debugging IPsec all
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210511205557360.png" alt="image-20210511205557360"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210511003423880.png" alt="image-20210511003423880"></p>
+<pre class=" language-java"><code class="language-java">sys
+sys SH 
+dhcp enable
+  acl <span class="token number">2000</span>
+  rule permit so <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">20.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+  ip add <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">20.254</span> <span class="token number">24</span>
+  dhcp sel <span class="token keyword">int</span> 
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+  ip add <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.3</span> <span class="token number">24</span>
+  net outbound <span class="token number">2000</span>
+  ip route<span class="token operator">-</span>s <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0</span> <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.2</span>
+</code></pre>
+<pre class=" language-java"><code class="language-java">sys
+sys ISP
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+  ip add <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> <span class="token number">24</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+  ip add <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> <span class="token number">24</span>
+  <span class="token keyword">int</span> lo <span class="token number">2</span>
+  ip add <span class="token number">2.2</span><span class="token punctuation">.</span><span class="token number">2.2</span> <span class="token number">32</span>
+  
+</code></pre>
+<p><strong>手动配置对比图形化界面配置</strong></p>
+<p><img src="https://i.loli.net/2021/05/09/4Ia76AGeYxbpMEg.png" alt="image-20210509010301085"></p>
+<h2 id="创建安全提议配置过程"><a href="#创建安全提议配置过程" class="headerlink" title="创建安全提议配置过程"></a><strong>创建安全提议配置过程</strong></h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210509010935857.png" alt="image-20210509010935857"></p>
+<p>静态手动配置的需要用流量触发。</p>
+<h2 id="手动配置IPsec"><a href="#手动配置IPsec" class="headerlink" title="手动配置IPsec"></a>手动配置IPsec</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210510222902374.png" alt="image-20210510222902374"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210511002702283.png" alt="image-20210511002702283"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210511002730439.png" alt="image-20210511002730439"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210511002800358.png" alt="image-20210511002800358"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210511002824734.png" alt="image-20210511002824734"></p>
+<pre class=" language-java"><code class="language-java">ping <span class="token operator">-</span>a xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy <span class="token comment" spellcheck="true">//以x的身份ping y</span>
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512094537431.png" alt="image-20210512094537431"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512094932864.png" alt="image-20210512094932864"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512095051140.png" alt="image-20210512095051140"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512095103621.png" alt="image-20210512095103621"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512095116954.png" alt="image-20210512095116954"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512095155610.png" alt="image-20210512095155610"></p>
+<pre class=" language-java"><code class="language-java">ping <span class="token operator">-</span>a xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy <span class="token comment" spellcheck="true">//以x的身份ping y</span>
+</code></pre>
+<h1 id="IPsec配置案例（IKE协商）"><a href="#IPsec配置案例（IKE协商）" class="headerlink" title="IPsec配置案例（IKE协商）"></a>IPsec配置案例（IKE协商）</h1><pre class=" language-java"><code class="language-java"><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+<span class="token comment" spellcheck="true">//配置IKe提议</span>
+IKE proposal <span class="token number">1</span> <span class="token comment" spellcheck="true">//新建一个IKE提议序列号1</span>
+dis IKE proposal <span class="token comment" spellcheck="true">//查看IKE提议默认值</span>
+<span class="token comment" spellcheck="true">//IKE协商中由一个默认的配置，认证算法为SHA1，加密为DES，生存时间86400，PRF算法为SHA。</span>
+authentication<span class="token operator">-</span>algorithm SM3<span class="token comment" spellcheck="true">//配置认证算法</span>
+authentication<span class="token operator">-</span>method pre<span class="token operator">-</span>share<span class="token comment" spellcheck="true">//配置认证模式预共享密钥</span>
+encryption<span class="token operator">-</span>algorithm aes<span class="token operator">-</span>cbc<span class="token operator">-</span><span class="token number">256</span><span class="token comment" spellcheck="true">//配置加密算法AES</span>
+DH group <span class="token operator">?</span> <span class="token comment" spellcheck="true">//配置DH group组</span>
+sa duration <span class="token comment" spellcheck="true">//配置超时时间</span>
+prf <span class="token operator">?</span> <span class="token comment" spellcheck="true">//配置prf完全向前保密，加强保密算法</span>
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+<span class="token comment" spellcheck="true">//配置对等体,协商</span>
+IKE peer SH V1<span class="token comment" spellcheck="true">//配置IKE协商版本为V1</span>
+dis IKE peer <span class="token comment" spellcheck="true">//查看IKE协商默认值</span>
+<span class="token comment" spellcheck="true">//默认不做配置的传输模式为主模式，Nat穿越为关闭, </span>
+exchange<span class="token operator">-</span>mode main <span class="token comment" spellcheck="true">//配置交换模式为主模式</span>
+pre<span class="token operator">-</span>share<span class="token operator">-</span>key cipher huawei <span class="token comment" spellcheck="true">//配置预共享密钥</span>
+IKE<span class="token operator">-</span>proposal <span class="token number">1</span> <span class="token comment" spellcheck="true">//调用Ike提议</span>
+local<span class="token operator">-</span>address <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token comment" spellcheck="true">//配置本段IP</span>
+remote<span class="token operator">-</span>address <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.3</span> <span class="token comment" spellcheck="true">//配置对端IP</span>
+
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+<span class="token comment" spellcheck="true">//创建一个新的策略进行关联</span>
+ipsec policy SH2HF <span class="token number">1</span> isakmp <span class="token comment" spellcheck="true">//创建ipsec安全策略</span>
+security acl <span class="token number">3000</span> <span class="token comment" spellcheck="true">//关联acl策略（和手动一样）</span>
+proposal HF2SH <span class="token comment" spellcheck="true">//关联提议</span>
+ike<span class="token operator">-</span>peer SH <span class="token comment" spellcheck="true">//调用对等体</span>
+  
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+<span class="token comment" spellcheck="true">//进入接口进行调用</span>
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+  d th
+  undo ipsec policy
+  ipsec policy hefei2shanghai
+
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+<span class="token comment" spellcheck="true">//配置ike的脚本软件，直接把参数输入进去，然后运行脚本，就把命令刷出来了，直接复制粘贴</span>
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+</code></pre>
+<p>得用IKE的提议建立一个IKE的SA，在IKE的情况下建立一个IPsec的SA，再调用提议。</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512095831927.png" alt="image-20210512095831927"></p>
+<h2 id="IKE配置"><a href="#IKE配置" class="headerlink" title="IKE配置"></a>IKE配置</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512104023868.png" alt="image-20210512104023868"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512104841538.png" alt="image-20210512104841538"></p>
+<h2 id="验证ipsec配置"><a href="#验证ipsec配置" class="headerlink" title="验证ipsec配置"></a>验证ipsec配置</h2><pre class=" language-java"><code class="language-java">dis ike sa 
+dis ipsec sa 
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512114559219.png" alt="image-20210512114559219"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512114621892.png" alt="image-20210512114621892"></p>
+<h1 id="GRE-over-IPsec"><a href="#GRE-over-IPsec" class="headerlink" title="GRE over IPsec"></a>GRE over IPsec</h1><h2 id="技术背景："><a href="#技术背景：" class="headerlink" title="技术背景："></a>技术背景：</h2><p>IPsec VPN用于在两个端点之间提供安全的IP通信，但<strong>只能加密并传播单播数据</strong>，无法加密和传输语音，视频，动态路由协议信息等<strong>组播</strong>数据流量。</p>
+<p>GRE可以封装组播数据，并可以和IPsec结合使用，从而保证语音，视频等组播业务的安全。</p>
+<h2 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h2><p>首先通过GRE对报文进行封装，然后再由ipsec对封装后的报文进行加密和传输。</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512132125269.png" alt="image-20210512132125269"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512132136647.png" alt="image-20210512132136647"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512132203539.png" alt="image-20210512132203539"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512132343982.png" alt="image-20210512132343982"></p>
+<p>说明：</p>
+<p>在原始的包头上添加GRE封装的公网IP包头，如果用的IPsec模式是tunnel模式的话还会在外层再添加一个IP包头，会出现最多有3个包头。或两个包头（传输模式），实际中只能看到最外面的一层IP包头，里层的数据都进行了加密，是看不到的。</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512132810872.png" alt="image-20210512132810872"></p>
+<p> 在配置的时候注意，先做GRE，再做IPsec保护GRE。</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+  <span class="token comment" spellcheck="true">//合肥配置</span>
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+sys
+  sys HF
+  dhcp enable
+  acl <span class="token number">3001</span>
+  rule permit ip 
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+  ip add <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">10.254</span> <span class="token number">24</span>
+  dhcp sel <span class="token keyword">int</span> 
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+  ip add <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">24</span>
+  nat outbound <span class="token number">3001</span>
+  ip route<span class="token operator">-</span>s <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0</span> <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.2</span>
+<span class="token comment" spellcheck="true">//配置GRE</span>
+  <span class="token keyword">int</span> tunnel0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+    tunnel<span class="token operator">-</span>protocol gre <span class="token comment" spellcheck="true">//封装协议为GRE</span>
+  so <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token comment" spellcheck="true">//隧道源地址</span>
+  des <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.3</span> <span class="token comment" spellcheck="true">//隧道目的地址</span>
+  IP add <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">12.1</span> <span class="token number">24</span> <span class="token comment" spellcheck="true">//隧道配置IP地址</span>
+<span class="token comment" spellcheck="true">//配置ospf</span>
+  ospf <span class="token number">1</span> router<span class="token operator">-</span>id <span class="token number">1.1</span><span class="token punctuation">.</span><span class="token number">1.1</span>
+  area <span class="token number">0</span>
+<span class="token comment" spellcheck="true">//宣告内网口和隧道口</span>
+  net <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">10.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span> <span class="token comment" spellcheck="true">//宣告内网地址</span>
+  net <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">12.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span> <span class="token comment" spellcheck="true">//宣告隧道地址</span>
+<span class="token comment" spellcheck="true">//配置ipsec</span>
+<span class="token comment" spellcheck="true">//配置感兴趣流公网加密的</span>
+acl <span class="token number">3000</span>
+  rule permit GRE so <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span> des <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.3</span> <span class="token number">0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
+<span class="token comment" spellcheck="true">//配置提议</span>
+  ipsec proposal HF2SH
+  transform esp
+  ESP authentication<span class="token operator">-</span>algorithm sha2<span class="token operator">-</span><span class="token number">256</span>
+  esp encryption<span class="token operator">-</span>algorithm AES<span class="token operator">-</span><span class="token number">256</span>
+<span class="token comment" spellcheck="true">//配置策略</span>
+  ipsec policy HF2SH <span class="token number">1</span> manual
+  security acl <span class="token number">3000</span>
+  proposal HF2SH
+  tunnel local <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.1</span>
+  tunnel remote <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.3</span>
+  sa spi inbound esp ciper <span class="token number">123</span><span class="token punctuation">.</span>com
+  sa string<span class="token operator">-</span>key outound esp cipher <span class="token number">123</span><span class="token punctuation">.</span>com
+<span class="token comment" spellcheck="true">//调用</span>
+  ipsec policy HF2SH
+  
+</code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+  <span class="token comment" spellcheck="true">//上海配置</span>
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+sys 
+  sys SH
+  dhcp enable
+  acl <span class="token number">3001</span>
+  rule permit ip 
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+  ip add <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">20.254</span> <span class="token number">24</span>
+  dhcp sel <span class="token keyword">int</span> 
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+  ip add <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.3</span> <span class="token number">24</span>
+  nat outbound <span class="token number">3001</span>
+  ip route<span class="token operator">-</span>s <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0</span> <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.2</span>
+<span class="token comment" spellcheck="true">//配置GRE</span>
+  <span class="token keyword">int</span> tunnel0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+    tunnel<span class="token operator">-</span>protocol gre <span class="token comment" spellcheck="true">//封装协议为GRE</span>
+  so <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token comment" spellcheck="true">//隧道源地址</span>
+  des <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.3</span> <span class="token comment" spellcheck="true">//隧道目的地址</span>
+  IP add <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">12.2</span> <span class="token number">24</span> <span class="token comment" spellcheck="true">//隧道配置IP地址</span>
+<span class="token comment" spellcheck="true">//配置ospf</span>
+  ospf <span class="token number">1</span> router<span class="token operator">-</span>id <span class="token number">3.3</span><span class="token punctuation">.</span><span class="token number">3.3</span>
+  area <span class="token number">0</span>
+<span class="token comment" spellcheck="true">//宣告内网口和隧道口</span>
+  net <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">20.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span> <span class="token comment" spellcheck="true">//宣告内网地址</span>
+  net <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">12.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span> <span class="token comment" spellcheck="true">//宣告隧道地址</span>
+<span class="token comment" spellcheck="true">//配置ipsec</span>
+<span class="token comment" spellcheck="true">//配置感兴趣流公网加密的</span>
+acl <span class="token number">3000</span>
+  rule permit GRE so <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.3</span> <span class="token number">0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span> des <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
+<span class="token comment" spellcheck="true">//配置提议</span>
+  ipsec proposal SH2HF
+  transform esp
+  ESP authentication<span class="token operator">-</span>algorithm sha2<span class="token operator">-</span><span class="token number">256</span>
+  esp encryption<span class="token operator">-</span>algorithm AES<span class="token operator">-</span><span class="token number">256</span>
+<span class="token comment" spellcheck="true">//配置策略</span>
+  ipsec policy SH2HF <span class="token number">1</span> manual
+  security acl <span class="token number">3000</span>
+  proposal SH2HF
+  tunnel local <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.3</span>
+  tunnel remote <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.1</span>
+  sa spi inbound esp ciper <span class="token number">123</span><span class="token punctuation">.</span>com
+  sa string<span class="token operator">-</span>key outound esp cipher <span class="token number">123</span><span class="token punctuation">.</span>com
+<span class="token comment" spellcheck="true">//调用</span>
+  ipsec policy SH2HF
+</code></pre>
+<p><strong>说明：</strong></p>
+<p>1、<strong>ospf的hello数据包 10秒钟一个</strong></p>
+<p>2、对专线与专网应在不同语境下使用的两个词，没有必然联系。<br>专线：物理层面，强调的是你使用一条或多条专有的物理传输线路。<br>专网：使用性质层面，强调的是用途，这个网专门用于干嘛的，专注于某一个特定人群、行业、目的等等。比如军队专网、交通专网等。<br>专线与专网没有必然联系，专网的建立依赖与底层（物理层）的传输链路与设备，这个物理层的东西可以是专线也可以不是（若没有安全方面的考虑话）；而专线呢，你可以拉条专线上因特网，也可以专门用来承载专网的业务。</p>
+<p>也有ADSL专线上网，也就是ADSL＋专线。 专网的说法有很多，有把专线＋交换机实现的VOIP，叫做专网，也有叫综合语音接入。</p>
+
+        </div>
+
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="null"></li>
+                <li class="wechat-code"><img src="null"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent">
+        </div>
+        <!-- 评分 -->
+        <div class="single-reward">
+          
+        </div>
+        <!-- 自定义署名方式 -->
+        <footer class="post-footer">
+          <div class="post-lincenses" style="color: #ff9966;">
+            欢迎转载，转载时请注明来源哦！
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" style="color: #ff9966;" target="_blank"
+              rel="nofollow">
+              <i class="fa fa-creative-commons" aria-hidden="true"></i>ncsa4.0</a>
+          </div>
+          
+          <div class="post-tags" style="color: #a39391">
+            <span><i class="fa fa-tags"></i>
+              
+              <a href="/tags/HCIP/" style="color: #716e77;">HCIP<em>·</em></a>
+              
+              <a href="/tags/IPsec-%E9%85%8D%E7%BD%AE/" style="color: #716e77;">IPsec 配置<em>·</em></a>
+              
+            </span>
+            <span>
+              <i class="iconfont icon-file"></i>
+              
+              <a href="/categories/%E6%8A%80%E6%9C%AF/" style="color: #716e77;">技术</a>
+              
+            </span>
+          </div>
+          
+          <div class="post-share" >
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+        <!-- <div class="tag-cloud">
+          <div class="tag-cloud-title">
+          </div>
+          <div class="tag-cloud-tags">
+            <a href="/tags/ACL/" style="font-size: 10px; color: #f06966">ACL</a> <a href="/tags/ARP/" style="font-size: 10px; color: #f06966">ARP</a> <a href="/tags/BFD/" style="font-size: 10px; color: #f06966">BFD</a> <a href="/tags/DHCP/" style="font-size: 10px; color: #f06966">DHCP</a> <a href="/tags/Eth-Trunk%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88/" style="font-size: 10px; color: #f06966">Eth-Trunk链路聚合</a> <a href="/tags/GRE/" style="font-size: 10px; color: #f06966">GRE</a> <a href="/tags/GVRP/" style="font-size: 10px; color: #f06966">GVRP</a> <a href="/tags/HCIA/" style="font-size: 20px; color: #39bae8">HCIA</a> <a href="/tags/HCIP/" style="font-size: 16px; color: #829ab4">HCIP</a> <a href="/tags/IPsec-VPN/" style="font-size: 10px; color: #f06966">IPsec VPN</a> <a href="/tags/IPsec-%E9%85%8D%E7%BD%AE/" style="font-size: 10px; color: #f06966">IPsec 配置</a> <a href="/tags/MQC%E6%B5%81%E7%AD%96%E7%95%A5/" style="font-size: 10px; color: #f06966">MQC流策略</a> <a href="/tags/MUX-VLAN/" style="font-size: 10px; color: #f06966">MUX VLAN</a> <a href="/tags/NAT/" style="font-size: 10px; color: #f06966">NAT</a> <a href="/tags/OSPF/" style="font-size: 12px; color: #cb7980">OSPF</a> <a href="/tags/PPP/" style="font-size: 10px; color: #f06966">PPP</a> <a href="/tags/RIP/" style="font-size: 12px; color: #cb7980">RIP</a> <a href="/tags/STP/" style="font-size: 10px; color: #f06966">STP</a> <a href="/tags/SUPER-VLAN/" style="font-size: 10px; color: #f06966">SUPER VLAN</a> <a href="/tags/VLAN/" style="font-size: 14px; color: #a7899a">VLAN</a> <a href="/tags/VRRP/" style="font-size: 10px; color: #f06966">VRRP</a> <a href="/tags/VRRP%E9%85%8D%E7%BD%AE/" style="font-size: 10px; color: #f06966">VRRP配置</a> <a href="/tags/java/" style="font-size: 10px; color: #f06966">java</a> <a href="/tags/%E4%BA%A4%E6%8D%A2/" style="font-size: 10px; color: #f06966">交换</a> <a href="/tags/%E4%BB%A3%E7%90%86ARP/" style="font-size: 10px; color: #f06966">代理ARP</a> <a href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/" style="font-size: 10px; color: #f06966">信息安全</a> <a href="/tags/%E5%AE%9E%E9%AA%8C/" style="font-size: 14px; color: #a7899a">实验</a> <a href="/tags/%E7%AB%AF%E5%8F%A3%E5%AE%89%E5%85%A8/" style="font-size: 10px; color: #f06966">端口安全</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 18px; color: #5eaace">笔记</a> <a href="/tags/%E9%98%B2%E7%81%AB%E5%A2%99/" style="font-size: 10px; color: #f06966">防火墙</a> <a href="/tags/%E9%9A%94%E7%A6%BB%E6%8A%80%E6%9C%AF/" style="font-size: 10px; color: #f06966">隔离技术</a>
+          </div>
+        </div> -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+        <div class="post-nepre half previous">
+          
+            <a href="/post/ad7.html" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/15/4xct289M7ikeIAB.jpg"
+                  style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
+                  src="https://i.loli.net/2021/05/15/4xct289M7ikeIAB.jpg">
+              </div>
+              <span class="label">Previous Post</span>
+              <div class="info">
+                <h3>HCNP学习笔记5</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+          
+          
+          
+          <div class="post-nepre half next">
+            
+              <a href="/post/c896.html" rel="next">
+                <div class="background">
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/08/VZcxt1HEqW4J9jw.jpg"
+                    style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
+                    onerror="imgError(this,3)" src="https://i.loli.net/2021/05/08/VZcxt1HEqW4J9jw.jpg">
+                </div>
+                <span class="label">Next Post</span>
+                <div class="info">
+                  <h3>HCNP学习笔记3</h3>
+                  <hr>
+                </div>
+              </a>
+            </div>
+            
+      </section>
+      <!-- 加密文章隐藏评论 -->
+      <section class="comment" >
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<div id="gitalk-container" class="comment"></div> 
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="/js/md5.min.js"></script>
+<script type="text/javascript">
+	var gitalk = new Gitalk({
+  	clientID: '9ae3a88cd97b7b9bd1fa',
+  	clientSecret: 'c12b84cd9d9609551630939716dc990cc7d5af00',
+  	repo: 'SakuraMuxia.github.io',
+  	owner: 'SakuraMuxia',
+	admin: ['SakuraMuxia'],
+	distractionFreeMode: 'true',
+    id: md5(location.pathname)
+})
+gitalk.render('gitalk-container') 
+</script>
+
+
+      </section>
+      <!-- 加密文章隐藏作者信息 -->
+      
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div>
+
+
+<!--评论配置-->
+
+
+    <div id="vcomments"></div>
+    <script src="https://unpkg.com/valine/dist/Valine.min.js"></script><!-- 最新版 -->
+    <style>
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("https://gitee.com/cungudafa/source/raw/master/img/gif/Sitich/Sitich2.gif") 100% 100% no-repeat;
+    }
+    </style>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            enableQQ: true,
+            boolean: true,
+            appId: 'pJf0nLlIFPsrFbqcB2InonHd-gzGzoHsz',
+            appKey: 'RoAvgTeWI8wX4B5wXo6jB2YV',
+            //notify: 'false' === 'true',
+            //verify: 'true' === 'true',
+            visitor: 'false' === 'true',
+            avatar: 'monsterid',
+            pageSize: '10',
+            lang: 'zh-cn',
+            placeholder: '大家文明留言哈~',
+            requiredFields: ['nick','mail'], //设置必填项
+            // 设置Bilibili表情包地址
+            emojiCDN: '//i0.hdslb.com/bfs/emote/', 
+            // 表情title和图片映射
+            emojiMaps: {
+            "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+            "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+            "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+            "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+            "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+            "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+            "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+            "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+            "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+            "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+            "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+            "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+            "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+            "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+            "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+            "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+            "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+            "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+            "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+            "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+            "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+            "tv_打脸": "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+            "tv_抓狂": "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+            "tv_抠鼻": "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+            "tv_斜眼笑": "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+            "tv_无奈": "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+            "tv_晕": "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+            "tv_流汗": "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+            "tv_流泪": "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+            "tv_流鼻血": "c32d39db2737f89b904ca32700d140a9241b0767.png",
+            "tv_点赞": "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+            "tv_生气": "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+            "tv_生病": "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+            "tv_疑问": "0793d949b18d7be716078349c202c15ff166f314.png",
+            "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+            "tv_皱眉": "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+            "tv_目瞪口呆": "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+            "tv_睡着": "8b196675b53af58264f383c50ad0945048290b33.png",
+            "tv_笑哭": "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+            "tv_腼腆": "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+            "tv_色": "61822c7e9aae5da76475e7892534545336b23a6f.png",
+            "tv_调侃": "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+            "tv_调皮": "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+            "tv_鄙视": "6e72339f346a692a495b123174b49e4e8e781303.png",
+            "tv_闭嘴": "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+            "tv_难过": "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+            "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+            "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+            "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+            "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+                // ... 更多表情
+            }
+        });
+    </script>
+
+    <!-- 
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        jinrishici.load(function(result) {
+            var jrsc_plac =  result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin.dynasty + " · " + result.data.origin.author;
+            document.getElementById("veditor").setAttribute("placeholder",jrsc_plac);
+        })
+    </script>
+     -->
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<div id="gitalk-container" class="comment"></div> 
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="/js/md5.min.js"></script>
+<script type="text/javascript">
+	var gitalk = new Gitalk({
+  	clientID: '9ae3a88cd97b7b9bd1fa',
+  	clientSecret: 'c12b84cd9d9609551630939716dc990cc7d5af00',
+  	repo: 'SakuraMuxia.github.io',
+  	owner: 'SakuraMuxia',
+	admin: ['SakuraMuxia'],
+	distractionFreeMode: 'true',
+    id: md5(location.pathname)
+})
+gitalk.render('gitalk-container') 
+</script>
+
+
+
+      <!-- body.end -->
+    </div>
+    <!-- search -->    
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            // PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+    <!-- footer-->    
+    
+    <footer id="colophon" class="site-footer" role="contentinfo">
+    <div class="site-info">
+        <div class="footertext">
+          <div class="img-preload">
+              <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
+              <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
+          </div>
+        </div>
+        <!-- 网站数据统计 -->
+        <div class="footer-device">
+          <p style="font-family: 'Ubuntu', sans-serif;">
+            <span style="color: #ff9999;padding-left: 20px;">
+                <!-- 网站运行时间统计 -->
+                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                <span id="time" align="center">载入时间中...</span>
+                <script>
+                var now = new Date(); 
+                function createtime() { 
+                      var grt= new Date("Fri Feb 12 2021 01:20:00 GMT+0800 (中国标准时间)");//在此处修改你的建站时间
+                      now.setTime(now.getTime()+250); 
+                      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+                      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+                      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+                      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+                      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+                      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+                      document.getElementById("time").innerHTML = "小破站在各种灾难中苟活了 "+ dnum +" 天 "+hnum + " 小时 " + mnum + " 分 " + snum + " 秒";      
+                  } 
+                  setInterval("createtime()",250);
+                </script>
+            </span> 
+          </p>
+        </div>
+        <div class="footer-device">
+          <p style="font-family: 'Ubuntu', sans-serif;">
+            <span style="color: #b9b9b9;padding-left: 20px;">
+              <!-- 全网站字数统计wordcount -->
+              
+              <!-- 不蒜子网页计数器 -->
+              
+              <span style="padding-left: 20px;"><i class="fa fa-fire" aria-hidden="true" style="color: #ff9999;display:inline-block"></i><span id="busuanzi_container_site_pv">总访问量： <span id="busuanzi_value_site_pv" style="color:#ff9999;"></span>次</span>
+              </span>
+              
+              
+              <span style="padding-left: 20px;"><i class="fa fa-user" aria-hidden="true" style="color: #ff9999;display:inline-block"></i><span id="busuanzi_container_site_uv">总访问人数： <span id="busuanzi_value_site_uv" style="color:#ff9999;"></span>人</span>
+              </span>
+              
+            </span>
+          </p>
+        </div>
+        <!-- 作者注明 -->
+        <div class="footer-device">
+          <p style="font-family: 'Ubuntu', sans-serif;">
+              <span style="color: #b9b9b9;">
+                Copyright &copy; 2021
+                &nbsp;<a style="color: #ff9999;display:inline-block"> 慢一点，才更快 | 雨落 </a>
+                &nbsp;<i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> 
+                &nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank" style="color: #ff9999;display:inline-block">Hexo</a>
+                |&nbsp;Theme&nbsp;<a href="https://gitee.com/cungudafa/hexo-theme-sakuraplus" target="_blank" style="color: #ff9999;display:inline-block">SakuraPlus</a>
+              </span>
+          </p>
+        </div>
+         <!-- 网站作者版权注明 -->
+         
+    </div><!-- .site-info -->
+</footer>
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/js/lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/js/InsightSearch.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/js/sakura-app.js"></script>
+
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- fancybox大图查看 需jq -->
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/js/jquery.fancybox.min.js"></script>
+  <script>
+    $('[data-fancybox="images"]').fancybox({
+      thumbs : {
+        autoStart : true //缩略图
+      }
+    });
+    $('[data-fancybox]').fancybox({
+      protect: true,//图片右键不能下载
+      youtube : {
+          controls : 0,
+          showinfo : 0
+      },
+      vimeo : {
+          color : 'f00'
+      }
+    });
+  </script>
+
+
+<!-- 自适应浏览器 -->
+<script type="text/javascript">
+  /* <![CDATA[ */
+  if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    var Poi = {"pjax":"0","movies":{"url": "https://cdn.jsdelivr.net/gh/SakuraMuxia/cdn@2.1.1/","name":"2.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+  } else {
+    var Poi = {"pjax":"0","movies":{"url": "https://cdn.jsdelivr.net/gh/SakuraMuxia/cdn@2.1.1/","name":"2.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+  }
+  /* ]]> */
+  
+  </script>
+  <script>
+  $(document).ready(function() {
+    if ($(".toc").length > 0 && document.body.clientWidth > 1200) {
+      if ($(".pattern-center").length > 0) { //有图的情况
+        tocbot.init({
+            // Where to render the table of contents.
+            tocSelector: '.toc', // 放置目录的容器
+            // Where to grab the headings to build the table of contents.
+            contentSelector: '.entry-content', // 正文内容所在
+            // Which headings to grab inside of the contentSelector element.
+            scrollSmooth: true,
+            headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+            headingsOffset: -400,
+            scrollSmoothOffset: -85
+        });
+      } else {
+        tocbot.init({
+            // Where to render the table of contents.
+            tocSelector: '.toc', // 放置目录的容器
+            // Where to grab the headings to build the table of contents.
+            contentSelector: '.entry-content', // 正文内容所在
+            // Which headings to grab inside of the contentSelector element.
+            scrollSmooth: true,
+            headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+            headingsOffset: -85,
+            scrollSmoothOffset: -85
+        });
+      }
+      var offsetTop = $('.toc').offset().top - 95;
+      window.onscroll = function() {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+        if (scrollTop >= offsetTop) {
+          $('.toc').addClass('toc-fixed');
+        } else {
+          $('.toc').removeClass('toc-fixed');
+        }
+      }
+    }
+  });
+  </script>
+  <script src="https://cdn.jsdelivr.net/gh/wallleap/cdn@latest/js/sakura.js"></script>
+  
+<link href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+<link href="https://cdn.bootcss.com/dplayer/1.22.2/DPlayer.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/dplayer/1.22.2/DPlayer.min.js"></script>
+
+    <!-- Side menu -->
+    <div class="openNav no-select" style="height: 50px;">
+      <div class="iconflat no-select" style="width: 50px; height: 50px;">
+        <div class="icon"></div>
+      </div>
+      <div class="site-branding search-form-submit">
+        <i class="iconfont js-toggle-search iconsearch icon-search"></i>
+      </div>
+    </div>
+  </section>
+  <!-- Floating window -->
+  <div id="mo-nav" class="">
+  <div class="m-avatar">
+    <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tx.jpg">
+  </div>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">SakuraMuxia雨落辰潇</p>
+  <p style="text-align: center; word-spacing: 20px;">
+    
+  </p>
+  <ul id="menu-new-1" class="menu">
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+            首页
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/archives">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+            归档
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/tags">
+                  <i class="fa fa-tags" aria-hidden="true"></i>
+                  标签
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/%E6%8A%80%E6%9C%AF/">
+                  <i class="fa fa-code" aria-hidden="true"></i>
+                  技术
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="javascript:;">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+            清单
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/music/">
+                  <i class="fa fa-music" aria-hidden="true"></i>
+                  歌单
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/comment/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+            留言板
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+            关于
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/about/">
+                  <i class="fa fa-meetup" aria-hidden="true"></i>
+                  我？
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+  <p style="text-align: center; font-size: 13px; color: #b9b9b9;">&copy 2020 hexo-sakuraplus</p>
+</div>
+<button onclick="topFunction()" class="mobile-cd-top" id="moblieGoTop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<style>
+  .aplayer .aplayer-lrc {
+    height: 35px;
+  }
+  .aplayer .aplayer-lrc p{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px !important;
+  }
+  .aplayer .aplayer-lrc p.aplayer-lrc-current{
+    color: #FF1493;
+  }
+  .aplayer.aplayer-narrow .aplayer-body{
+    left: -66px !important;
+  }
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    display: none;
+  }
+  .aplayer .aplayer-lrc.aplayer-lrc-hide {
+      display:none !important;
+  }
+  .aplayer.aplayer-fixed .lrc-show {
+    display: block;
+    background: rgba(255, 255, 255, 0.8);
+  }
+</style>
+<meting-js
+
+    enable="true"
+
+    id="376685368"
+
+    server="netease"
+
+    type="playlist"
+
+    fixed="true"
+
+    autoplay="false"
+
+    loop="all"
+
+    order="random"
+
+    preload="auto"
+
+    volume="0.7"
+
+    mutex="true"
+
+    meting="true"
+
+    asset_inject="false"
+
+>
+</meting-js>
+<script>
+  $(function(){
+    $('body').on('click', '.aplayer', function(){
+      if($('.aplayer-button').hasClass('aplayer-play')) {
+        $('.aplayer-lrc').removeClass('lrc-show');
+      } else {
+        $('.aplayer-lrc').addClass('lrc-show');
+      }
+    })
+  });
+</script>
+
+   <!-- pages壁纸切换 -->
+ 
+    <div class="skin-menu no-select" id="mainskin"  style="position: fixed">
+        <div class="theme-controls row-container">
+            <ul class="menu-list">
+                <li id="white-bg"> <i class="fa fa-television" aria-hidden="true"></i></li>
+                <li id="sakura-bg"> <i class="iconfont icon-sakura"></i></li>
+                <li id="gribs-bg"> <i class="fa fa-slack" aria-hidden="true"></i></li>
+                <li id="KAdots-bg"> <i class="iconfont icon-dots"></i></li>
+                <li id="totem-bg"> <i class="fa fa-optin-monster" aria-hidden="true"></i></li>
+                <li id="pixiv-bg"> <i class="iconfont icon-pixiv"></i></li>
+                <li id="bing-bg"> <i class="iconfont icon-bing"></i></li>
+                <li id="dark-bg"> <i class="fa fa-moon-o" aria-hidden="true"></i></li>
+            </ul>
+        </div>
+        <div class="font-family-controls row-container">
+            <button type="button" class="control-btn-serif selected" data-mode="serif" onclick="mashiro_global.font_control.change_font()">Serif</button>
+            <button type="button" class="control-btn-sans-serif" data-mode="sans-serif" onclick="mashiro_global.font_control.change_font()">Sans Serif</button>
+        </div>
+    </div>   
+    <canvas id="night-mode-cover"></canvas> 
+        <div class="changeSkin-gear no-select">
+        <div class="keys" id="setbtn"> <span id="open-skinMenu"> 切换壁纸 | SCHEME TOOL 
+            &nbsp;<i class="iconfont icon-gear inline-block rotating"></i> </span></div>
+    </div><!-- skin.end -->
+
+  <!-- left side bar -->
+
+ </body>
+</html>

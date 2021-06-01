@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">HCNP学习笔记4 | 慢一点，才更快 | 雨落</title>
+  <title itemprop="name">HCNP学习笔记5 | 慢一点，才更快 | 雨落</title>
   
     <link rel="shortcut icon" href="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tubiao.ico">
   
@@ -294,11 +294,11 @@
 
 <div class="pattern-center single-center">
   <!-- 有配图默认渲染第一张 -->
-  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/05/12/fM1yFYZQXlK7NPd.jpg);"
-    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/12/fM1yFYZQXlK7NPd.jpg">
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/05/15/4xct289M7ikeIAB.jpg);"
+    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/15/4xct289M7ikeIAB.jpg">
   </div>
   <header class="pattern-header single-header">
-    <h1 class="entry-title">HCNP学习笔记4</h1>
+    <h1 class="entry-title">HCNP学习笔记5</h1>
     <p class="entry-census">
       
       <span class="post-meta-item">
@@ -318,7 +318,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-calendar"></i>
         </span>
-        <span class="post-meta-item-text"> 2021-5-12 </span>
+        <span class="post-meta-item-text"> 2021-5-15 </span>
       </span>
       <span class="bull">
         ·</span>
@@ -362,283 +362,240 @@
         <!--套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h1 id="IPsec-VPN配置（手动配置）"><a href="#IPsec-VPN配置（手动配置）" class="headerlink" title="IPsec VPN配置（手动配置）"></a>IPsec VPN配置（手动配置）</h1><h2 id="IPsec-VPN配置步骤"><a href="#IPsec-VPN配置步骤" class="headerlink" title="IPsec VPN配置步骤"></a>IPsec VPN配置步骤</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210508140238598.png" alt="image-20210508140238598"></p>
-<h2 id="实验拓扑"><a href="#实验拓扑" class="headerlink" title="实验拓扑"></a>实验拓扑</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210508140512672.png" alt="image-20210508140512672"></p>
-<pre class=" language-java"><code class="language-java">sys
-sys HF
-dhcp enable
-  acl <span class="token number">2000</span>
-  rule permit so <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">10.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
-  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
-  ip add <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">10.254</span> <span class="token number">24</span>
-  dhcp sel <span class="token keyword">int</span> 
-  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
-  ip add <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">24</span>
-<span class="token comment" spellcheck="true">//net outbound 2000</span>
-  ip route<span class="token operator">-</span>s <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0</span> <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.2</span>
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
-<span class="token comment" spellcheck="true">//合肥</span>
-<span class="token comment" spellcheck="true">//配置感兴趣流</span>
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
-  acl <span class="token number">3000</span>
-  rule permit <span class="token function">ip</span><span class="token punctuation">(</span>协议<span class="token punctuation">)</span> so <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">10.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span> des <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">20.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span> 
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
-<span class="token comment" spellcheck="true">//配置提议</span>
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
-  dis IPsec sa <span class="token comment" spellcheck="true">//验证IPsec SA</span>
-  dis IKE sa <span class="token comment" spellcheck="true">//验证IKE SA</span>
-  dis IPsec proposal <span class="token comment" spellcheck="true">//验证IPsec提议</span>
-  IPsec proposal HF2SH <span class="token comment" spellcheck="true">//配置IPsec 名字随意配</span>
-  dis IPsec proposal <span class="token comment" spellcheck="true">//验证IPsec提议，当只新建一个IPsec，什么都不配置的时候，默认值封装模式为Tunnel，安全协议为ESP，认证算法为MD5，加密算法为DES。</span>
-<span class="token comment" spellcheck="true">//transform ah //将安全协议更改成AH</span>
-  ESP encryption<span class="token operator">-</span>algorithm AES<span class="token operator">-</span><span class="token number">256</span> <span class="token comment" spellcheck="true">//配置加密算法</span>
-  ESP Authentication<span class="token operator">-</span>algorithm sha2<span class="token operator">-</span><span class="token number">256</span> <span class="token comment" spellcheck="true">//配置认证算法</span>
-  d th
-  <span class="token comment" spellcheck="true">//手动的话是永久存在的，没有配置超时时间的选项。</span>
-  <span class="token comment" spellcheck="true">//当选择安全协议为ESP时可以配置的有两个，当选择安全协议为AH时，可以配置的只有认证算法。</span>
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
-<span class="token comment" spellcheck="true">//配置IPsec 策略</span>
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
-  <span class="token comment" spellcheck="true">//先配置IPsec proposal 再配置IPsec policy</span>
-  IPsec policy HF2SH <span class="token number">1</span> manual <span class="token comment" spellcheck="true">//名称 序列号 手动orIKE</span>
-  dis IPsec policy <span class="token comment" spellcheck="true">//验证IPsec策略配置</span>
-  security acl <span class="token number">3000</span> <span class="token comment" spellcheck="true">//引入感兴趣流 </span>
-  proposal HF2SH <span class="token comment" spellcheck="true">//引入提议</span>
-  tunnel local <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token comment" spellcheck="true">//配置隧道本端地址，为公网地址</span>
-  tunnel remote <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.3</span> <span class="token comment" spellcheck="true">//配置隧道对端地址，为对端公网地址</span>
-  dis ipsec policy <span class="token comment" spellcheck="true">//验证IPsec策略配置</span>
-  sa spi inbound esp <span class="token number">12345</span> <span class="token comment" spellcheck="true">//配置SPI序列号</span>
-  sa spi outbound esp <span class="token number">12345</span> <span class="token comment" spellcheck="true">//可以配置相同的spi序列号</span>
-  sa string<span class="token operator">-</span>key inbound ESP cipher <span class="token number">123</span><span class="token punctuation">.</span>com <span class="token comment" spellcheck="true">//配置入方向预共享密钥加密 </span>
-  sa string<span class="token operator">-</span>key outbound ESP cipher <span class="token number">123</span><span class="token punctuation">.</span>com <span class="token comment" spellcheck="true">//配置出方向预共享密钥加密</span>
-  dis IPsec policy <span class="token comment" spellcheck="true">//验证IPsec策略</span>
-  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> <span class="token comment" spellcheck="true">//进入相关接口</span>
-  IPsec policy HF2SH <span class="token comment" spellcheck="true">// 调用策略</span>
-  <span class="token comment" spellcheck="true">//当更改协议后需要重新调用一下</span>
-  dis IPsec sa bri<span class="token comment" spellcheck="true">//验证IPsec sa 配置 （简化）</span>
-  dis IPsec sa duration <span class="token comment" spellcheck="true">//验证IPsec协议生存时间</span>
-  dis IPsec statistics ESP <span class="token comment" spellcheck="true">//查看IPsec数据包入和出</span>
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-<span class="token comment" spellcheck="true">//这样配置VPN会通，但是无法访问互联网了。所以还要把NAT转发开启，但是开启之后，因为IPsec策略的源地址是私网地址，NAT转发之后会变成公网地址，数据包有去无回，造成无法通信，所以要把IPsec的源地址变成出去对应的公网地址。</span>
-  acl <span class="token number">3000</span>
-  rule permit <span class="token function">ip</span><span class="token punctuation">(</span>协议<span class="token punctuation">)</span> so <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">10.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span> des <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">20.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span> <span class="token comment" spellcheck="true">//源地址192.168.10.1变成12.0.0.1</span>
-<span class="token comment" spellcheck="true">//还有一种解决办法就是把NAT调用的acl把VPN的流量排除，感兴趣流仍然写成对应的私网地址，这样也更符合使用习惯。</span>
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
-  acl <span class="token number">3001</span>
-  rule deny ip so <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">10.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span> des <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">20.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
-  rule permit ip so
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
-  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> <span class="token comment" spellcheck="true">//进入相关的接口</span>
-  nat outbound <span class="token number">3001</span> <span class="token comment" spellcheck="true">//NAT调用acl</span>
-  debugging <span class="token operator">?</span> <span class="token comment" spellcheck="true">//调试信息</span>
-  terminal debugging <span class="token comment" spellcheck="true">//开启debugging调试</span>
-  debugging NAT <span class="token operator">?</span> <span class="token comment" spellcheck="true">//查看debugging nat信息</span>
-  debugging IPsec all
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-</code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210511205557360.png" alt="image-20210511205557360"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210511003423880.png" alt="image-20210511003423880"></p>
-<pre class=" language-java"><code class="language-java">sys
-sys SH 
-dhcp enable
-  acl <span class="token number">2000</span>
-  rule permit so <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">20.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
-  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
-  ip add <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">20.254</span> <span class="token number">24</span>
-  dhcp sel <span class="token keyword">int</span> 
-  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
-  ip add <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.3</span> <span class="token number">24</span>
-  net outbound <span class="token number">2000</span>
-  ip route<span class="token operator">-</span>s <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0</span> <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.2</span>
-</code></pre>
-<pre class=" language-java"><code class="language-java">sys
-sys ISP
-  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
-  ip add <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> <span class="token number">24</span>
-  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
-  ip add <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> <span class="token number">24</span>
-  <span class="token keyword">int</span> lo <span class="token number">2</span>
-  ip add <span class="token number">2.2</span><span class="token punctuation">.</span><span class="token number">2.2</span> <span class="token number">32</span>
-  
-</code></pre>
-<p><strong>手动配置对比图形化界面配置</strong></p>
-<p><img src="https://i.loli.net/2021/05/09/4Ia76AGeYxbpMEg.png" alt="image-20210509010301085"></p>
-<h2 id="创建安全提议配置过程"><a href="#创建安全提议配置过程" class="headerlink" title="创建安全提议配置过程"></a><strong>创建安全提议配置过程</strong></h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210509010935857.png" alt="image-20210509010935857"></p>
-<p>静态手动配置的需要用流量触发。</p>
-<h2 id="手动配置IPsec"><a href="#手动配置IPsec" class="headerlink" title="手动配置IPsec"></a>手动配置IPsec</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210510222902374.png" alt="image-20210510222902374"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210511002702283.png" alt="image-20210511002702283"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210511002730439.png" alt="image-20210511002730439"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210511002800358.png" alt="image-20210511002800358"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210511002824734.png" alt="image-20210511002824734"></p>
-<pre class=" language-java"><code class="language-java">ping <span class="token operator">-</span>a xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy <span class="token comment" spellcheck="true">//以x的身份ping y</span>
-</code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512094537431.png" alt="image-20210512094537431"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512094932864.png" alt="image-20210512094932864"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512095051140.png" alt="image-20210512095051140"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512095103621.png" alt="image-20210512095103621"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512095116954.png" alt="image-20210512095116954"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512095155610.png" alt="image-20210512095155610"></p>
-<pre class=" language-java"><code class="language-java">ping <span class="token operator">-</span>a xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy <span class="token comment" spellcheck="true">//以x的身份ping y</span>
-</code></pre>
-<h1 id="IPsec配置案例（IKE协商）"><a href="#IPsec配置案例（IKE协商）" class="headerlink" title="IPsec配置案例（IKE协商）"></a>IPsec配置案例（IKE协商）</h1><pre class=" language-java"><code class="language-java"><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-<span class="token comment" spellcheck="true">//配置IKe提议</span>
-IKE proposal <span class="token number">1</span> <span class="token comment" spellcheck="true">//新建一个IKE提议序列号1</span>
-dis IKE proposal <span class="token comment" spellcheck="true">//查看IKE提议默认值</span>
-<span class="token comment" spellcheck="true">//IKE协商中由一个默认的配置，认证算法为SHA1，加密为DES，生存时间86400，PRF算法为SHA。</span>
-authentication<span class="token operator">-</span>algorithm SM3<span class="token comment" spellcheck="true">//配置认证算法</span>
-authentication<span class="token operator">-</span>method pre<span class="token operator">-</span>share<span class="token comment" spellcheck="true">//配置认证模式预共享密钥</span>
-encryption<span class="token operator">-</span>algorithm aes<span class="token operator">-</span>cbc<span class="token operator">-</span><span class="token number">256</span><span class="token comment" spellcheck="true">//配置加密算法AES</span>
-DH group <span class="token operator">?</span> <span class="token comment" spellcheck="true">//配置DH group组</span>
-sa duration <span class="token comment" spellcheck="true">//配置超时时间</span>
-prf <span class="token operator">?</span> <span class="token comment" spellcheck="true">//配置prf完全向前保密，加强保密算法</span>
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-<span class="token comment" spellcheck="true">//配置对等体,协商</span>
-IKE peer SH V1<span class="token comment" spellcheck="true">//配置IKE协商版本为V1</span>
-dis IKE peer <span class="token comment" spellcheck="true">//查看IKE协商默认值</span>
-<span class="token comment" spellcheck="true">//默认不做配置的传输模式为主模式，Nat穿越为关闭, </span>
-exchange<span class="token operator">-</span>mode main <span class="token comment" spellcheck="true">//配置交换模式为主模式</span>
-pre<span class="token operator">-</span>share<span class="token operator">-</span>key cipher huawei <span class="token comment" spellcheck="true">//配置预共享密钥</span>
-IKE<span class="token operator">-</span>proposal <span class="token number">1</span> <span class="token comment" spellcheck="true">//调用Ike提议</span>
-local<span class="token operator">-</span>address <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token comment" spellcheck="true">//配置本段IP</span>
-remote<span class="token operator">-</span>address <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.3</span> <span class="token comment" spellcheck="true">//配置对端IP</span>
-
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-<span class="token comment" spellcheck="true">//创建一个新的策略进行关联</span>
-ipsec policy SH2HF <span class="token number">1</span> isakmp <span class="token comment" spellcheck="true">//创建ipsec安全策略</span>
-security acl <span class="token number">3000</span> <span class="token comment" spellcheck="true">//关联acl策略（和手动一样）</span>
-proposal HF2SH <span class="token comment" spellcheck="true">//关联提议</span>
-ike<span class="token operator">-</span>peer SH <span class="token comment" spellcheck="true">//调用对等体</span>
-  
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-<span class="token comment" spellcheck="true">//进入接口进行调用</span>
-<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
-  d th
-  undo ipsec policy
-  ipsec policy hefei2shanghai
-
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-<span class="token comment" spellcheck="true">//配置ike的脚本软件，直接把参数输入进去，然后运行脚本，就把命令刷出来了，直接复制粘贴</span>
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
-</code></pre>
-<p>得用IKE的提议建立一个IKE的SA，在IKE的情况下建立一个IPsec的SA，再调用提议。</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512095831927.png" alt="image-20210512095831927"></p>
-<h2 id="IKE配置"><a href="#IKE配置" class="headerlink" title="IKE配置"></a>IKE配置</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512104023868.png" alt="image-20210512104023868"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512104841538.png" alt="image-20210512104841538"></p>
-<h2 id="验证ipsec配置"><a href="#验证ipsec配置" class="headerlink" title="验证ipsec配置"></a>验证ipsec配置</h2><pre class=" language-java"><code class="language-java">dis ike sa 
-dis ipsec sa 
-</code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512114559219.png" alt="image-20210512114559219"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512114621892.png" alt="image-20210512114621892"></p>
-<h1 id="GRE-over-IPsec"><a href="#GRE-over-IPsec" class="headerlink" title="GRE over IPsec"></a>GRE over IPsec</h1><h2 id="技术背景："><a href="#技术背景：" class="headerlink" title="技术背景："></a>技术背景：</h2><p>IPsec VPN用于在两个端点之间提供安全的IP通信，但<strong>只能加密并传播单播数据</strong>，无法加密和传输语音，视频，动态路由协议信息等<strong>组播</strong>数据流量。</p>
-<p>GRE可以封装组播数据，并可以和IPsec结合使用，从而保证语音，视频等组播业务的安全。</p>
-<h2 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h2><p>首先通过GRE对报文进行封装，然后再由ipsec对封装后的报文进行加密和传输。</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512132125269.png" alt="image-20210512132125269"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512132136647.png" alt="image-20210512132136647"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512132203539.png" alt="image-20210512132203539"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512132343982.png" alt="image-20210512132343982"></p>
-<p>说明：</p>
-<p>在原始的包头上添加GRE封装的公网IP包头，如果用的IPsec模式是tunnel模式的话还会在外层再添加一个IP包头，会出现最多有3个包头。或两个包头（传输模式），实际中只能看到最外面的一层IP包头，里层的数据都进行了加密，是看不到的。</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210512132810872.png" alt="image-20210512132810872"></p>
-<p> 在配置的时候注意，先做GRE，再做IPsec保护GRE。</p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-  <span class="token comment" spellcheck="true">//合肥配置</span>
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-sys
-  sys HF
-  dhcp enable
-  acl <span class="token number">3001</span>
-  rule permit ip 
-  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
-  ip add <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">10.254</span> <span class="token number">24</span>
-  dhcp sel <span class="token keyword">int</span> 
-  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
-  ip add <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">24</span>
-  nat outbound <span class="token number">3001</span>
-  ip route<span class="token operator">-</span>s <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0</span> <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.2</span>
-<span class="token comment" spellcheck="true">//配置GRE</span>
-  <span class="token keyword">int</span> tunnel0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
-    tunnel<span class="token operator">-</span>protocol gre <span class="token comment" spellcheck="true">//封装协议为GRE</span>
-  so <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token comment" spellcheck="true">//隧道源地址</span>
-  des <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.3</span> <span class="token comment" spellcheck="true">//隧道目的地址</span>
-  IP add <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">12.1</span> <span class="token number">24</span> <span class="token comment" spellcheck="true">//隧道配置IP地址</span>
-<span class="token comment" spellcheck="true">//配置ospf</span>
-  ospf <span class="token number">1</span> router<span class="token operator">-</span>id <span class="token number">1.1</span><span class="token punctuation">.</span><span class="token number">1.1</span>
-  area <span class="token number">0</span>
-<span class="token comment" spellcheck="true">//宣告内网口和隧道口</span>
-  net <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">10.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span> <span class="token comment" spellcheck="true">//宣告内网地址</span>
-  net <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">12.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span> <span class="token comment" spellcheck="true">//宣告隧道地址</span>
-<span class="token comment" spellcheck="true">//配置ipsec</span>
-<span class="token comment" spellcheck="true">//配置感兴趣流公网加密的</span>
-acl <span class="token number">3000</span>
-  rule permit GRE so <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span> des <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.3</span> <span class="token number">0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
-<span class="token comment" spellcheck="true">//配置提议</span>
-  ipsec proposal HF2SH
-  transform esp
-  ESP authentication<span class="token operator">-</span>algorithm sha2<span class="token operator">-</span><span class="token number">256</span>
-  esp encryption<span class="token operator">-</span>algorithm AES<span class="token operator">-</span><span class="token number">256</span>
-<span class="token comment" spellcheck="true">//配置策略</span>
-  ipsec policy HF2SH <span class="token number">1</span> manual
-  security acl <span class="token number">3000</span>
-  proposal HF2SH
-  tunnel local <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.1</span>
-  tunnel remote <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.3</span>
-  sa spi inbound esp ciper <span class="token number">123</span><span class="token punctuation">.</span>com
-  sa string<span class="token operator">-</span>key outound esp cipher <span class="token number">123</span><span class="token punctuation">.</span>com
-<span class="token comment" spellcheck="true">//调用</span>
-  ipsec policy HF2SH
-  
-</code></pre>
-<pre class=" language-java"><code class="language-java"><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-  <span class="token comment" spellcheck="true">//上海配置</span>
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-sys 
-  sys SH
-  dhcp enable
-  acl <span class="token number">3001</span>
-  rule permit ip 
-  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
-  ip add <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">20.254</span> <span class="token number">24</span>
-  dhcp sel <span class="token keyword">int</span> 
-  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
-  ip add <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.3</span> <span class="token number">24</span>
-  nat outbound <span class="token number">3001</span>
-  ip route<span class="token operator">-</span>s <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0</span> <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.2</span>
-<span class="token comment" spellcheck="true">//配置GRE</span>
-  <span class="token keyword">int</span> tunnel0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
-    tunnel<span class="token operator">-</span>protocol gre <span class="token comment" spellcheck="true">//封装协议为GRE</span>
-  so <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token comment" spellcheck="true">//隧道源地址</span>
-  des <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.3</span> <span class="token comment" spellcheck="true">//隧道目的地址</span>
-  IP add <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">12.2</span> <span class="token number">24</span> <span class="token comment" spellcheck="true">//隧道配置IP地址</span>
-<span class="token comment" spellcheck="true">//配置ospf</span>
-  ospf <span class="token number">1</span> router<span class="token operator">-</span>id <span class="token number">3.3</span><span class="token punctuation">.</span><span class="token number">3.3</span>
-  area <span class="token number">0</span>
-<span class="token comment" spellcheck="true">//宣告内网口和隧道口</span>
-  net <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">20.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span> <span class="token comment" spellcheck="true">//宣告内网地址</span>
-  net <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">12.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span> <span class="token comment" spellcheck="true">//宣告隧道地址</span>
-<span class="token comment" spellcheck="true">//配置ipsec</span>
-<span class="token comment" spellcheck="true">//配置感兴趣流公网加密的</span>
-acl <span class="token number">3000</span>
-  rule permit GRE so <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.3</span> <span class="token number">0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span> des <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
-<span class="token comment" spellcheck="true">//配置提议</span>
-  ipsec proposal SH2HF
-  transform esp
-  ESP authentication<span class="token operator">-</span>algorithm sha2<span class="token operator">-</span><span class="token number">256</span>
-  esp encryption<span class="token operator">-</span>algorithm AES<span class="token operator">-</span><span class="token number">256</span>
-<span class="token comment" spellcheck="true">//配置策略</span>
-  ipsec policy SH2HF <span class="token number">1</span> manual
-  security acl <span class="token number">3000</span>
-  proposal SH2HF
-  tunnel local <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.3</span>
-  tunnel remote <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.1</span>
-  sa spi inbound esp ciper <span class="token number">123</span><span class="token punctuation">.</span>com
-  sa string<span class="token operator">-</span>key outound esp cipher <span class="token number">123</span><span class="token punctuation">.</span>com
-<span class="token comment" spellcheck="true">//调用</span>
-  ipsec policy SH2HF
-</code></pre>
+          <h1 id="防火墙厂商产品介绍"><a href="#防火墙厂商产品介绍" class="headerlink" title="防火墙厂商产品介绍"></a>防火墙厂商产品介绍</h1><p>1、checkpoint（老牌）</p>
+<p>2、juniper（有认证）</p>
+<p>3、Cisco </p>
+<p>4、palo alto </p>
+<p>5、华为 （USG6530）</p>
+<p>6、山石 （VFW01）</p>
+<p>7、爱快防火墙 （免费）</p>
 <p><strong>说明：</strong></p>
-<p>1、<strong>ospf的hello数据包 10秒钟一个</strong></p>
-<p>2、对专线与专网应在不同语境下使用的两个词，没有必然联系。<br>专线：物理层面，强调的是你使用一条或多条专有的物理传输线路。<br>专网：使用性质层面，强调的是用途，这个网专门用于干嘛的，专注于某一个特定人群、行业、目的等等。比如军队专网、交通专网等。<br>专线与专网没有必然联系，专网的建立依赖与底层（物理层）的传输链路与设备，这个物理层的东西可以是专线也可以不是（若没有安全方面的考虑话）；而专线呢，你可以拉条专线上因特网，也可以专门用来承载专网的业务。</p>
-<p>也有ADSL专线上网，也就是ADSL＋专线。 专网的说法有很多，有把专线＋交换机实现的VOIP，叫做专网，也有叫综合语音接入。</p>
+<p>可以把这些防火墙的镜像从虚拟机安装启动，就相当于有这样一台防火墙，可以作为一个虚拟防火墙，可以部署到一台X86的服务器上，就可以直接使用。</p>
+<p>关键字搜索：企业防火墙魔力象限</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210513085941793.png" alt="image-20210513085941793"></p>
+<p><strong>说明：</strong></p>
+<p>山石防火墙默认账号和密码：均为hellstone</p>
+<p>将山石防火墙挂在在虚拟机中通过查询IP地址，用浏览器登陆IP地址（https）使用web界面配置</p>
+<pre class=" language-java"><code class="language-java">show <span class="token keyword">interface</span> <span class="token comment" spellcheck="true">//linux查询IP地址</span>
+</code></pre>
+<p><strong>镜像文件</strong></p>
+<p>Checkpoint gala R80 public EA EA3.iso</p>
+<p>palo Alto Network PA VM ESX 8.0.0.exe</p>
+<p>山石防火墙SD6000 VTWD1 -5 5RB11.iso</p>
+<pre class=" language-java"><code class="language-java">dis arp <span class="token operator">|</span> in e2 <span class="token comment" spellcheck="true">//mac地址过滤</span>
+  dis ip pool <span class="token keyword">interface</span> <span class="token class-name">vlanif108</span> used<span class="token comment" spellcheck="true">//查看IP地址池使用的IP地址</span>
+</code></pre>
+<p>专门的防火墙课程</p>
+<h1 id="高可靠性"><a href="#高可靠性" class="headerlink" title="高可靠性"></a>高可靠性</h1><p>集群在硬件中可以实现，在数据库中可以实现，在网络设备中可以实现，在操作系统中也可以实现。 </p>
+<p>在学习过程中很多专业术语，在以后做项目文档，聊天时，都要回去讲这些东西，技术背景，技术框架讲明白，优点，缺点，适用场景，解决方案有哪些</p>
+<p>NA路搞通，NP保障性，管理性，安全性，设计性的东西；</p>
+<p>在实际网络中，避免不了各种技术因素造成的网络故障和服务中断，因此， 提高系统容错能力，提高故障速度，降低故障对业务的影响，是提高系统可靠性的有效途径。</p>
+<h3 id="可靠性需求："><a href="#可靠性需求：" class="headerlink" title="可靠性需求："></a><strong>可靠性需求：</strong></h3><p>根据其目标和实现方法的不同，可分为三个级别：</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210513125639626.png" alt="image-20210513125639626"></p>
+<h3 id="可靠性的度量："><a href="#可靠性的度量：" class="headerlink" title="可靠性的度量："></a><strong>可靠性的度量：</strong></h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210513130304590.png" alt="image-20210513130304590"></p>
+<h4 id="HA："><a href="#HA：" class="headerlink" title="HA："></a><strong>HA：</strong></h4><p>High Availability，指一个产品或系统具有很高的可靠性，是一整套综合技术，主要包括冗余容错，链路保证，节点故障及流量工程。</p>
+<ul>
+<li>不能频频出现故障</li>
+<li>出现故障后能很快恢复</li>
+</ul>
+<h4 id="可靠性设计主要包括两个方面："><a href="#可靠性设计主要包括两个方面：" class="headerlink" title="可靠性设计主要包括两个方面："></a>可靠性设计主要包括两个方面：</h4><p><strong>设备可靠性</strong>：要求多设备能够堆叠组网，要求单设备具有电信级可靠性<strong>99.999</strong>%，支持双电源接入，支持双风扇等。</p>
+<p><strong>链路可靠性</strong>：体现在链路设计以及组网形态上，通常采用多链路上行，包括Eth-Trunk/LAG，双归上行等。</p>
+<pre class=" language-java"><code class="language-java"><span class="token number">99.999</span><span class="token operator">%</span> <span class="token comment" spellcheck="true">//一年内故障大约是5分钟</span>
+<span class="token number">86400</span><span class="token operator">*</span><span class="token number">365</span><span class="token operator">-</span><span class="token number">86400</span><span class="token operator">*</span><span class="token number">365</span><span class="token operator">*</span><span class="token number">0.99999</span>
+<span class="token comment" spellcheck="true">//传统方向：金融、证券、互联网、运营商、游戏公司</span>
+<span class="token comment" spellcheck="true">//云计算 5个9 毫无价值毫无意义 云计算12个9</span>
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210513132425756.png" alt="image-20210513132425756"></p>
+<p> <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514105914180.png" alt="image-20210514105914180"></p>
+<ul>
+<li><p>Eth-trunk：链路聚合</p>
+</li>
+<li><p>iStack/CSS：堆叠技术（华为）；盒式的交换机用的是IStack，机架式的交换机用的是CSS。稍微有一点技术上的区别，但是大致上都一样。自动的响应故障并且切换。</p>
+</li>
+<li><p>级联：把多个交换机用线连在一起，级联是没有任何功能上的提升。</p>
+</li>
+<li><p>堆叠和级联的区别，堆叠是二合一，管理上就管理一台设备，性能上二合一，级联性能上没有提升。</p>
+</li>
+</ul>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514110921178.png" alt="image-20210514110921178"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514111017898.png" alt="image-20210514111017898"></p>
+<p>跨设备链路技术：双归路设计 LAG</p>
+<p> <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514111226883.png" alt="image-20210514111226883"></p>
+<p>二层必须开启STP，防止出现环路，三层不怕有环路出现。因为有TTL，三层中跑的是合理的路由设计，肯定会选择最有路由，不可能有环路，但是链路聚合在二层里面要用到，三层里面也可以用到，课程中主要将二层，因为二层里面的需求很大，因为二层这种环路设计都有STP，STP就会阻塞，那么我们要用到，该怎么办，所以这个时候我们会用到链路聚合，同时再加上VRRP，因为我们要用网关，网关有两个，我们到底要用哪一个，用左边的那个，左边的那个如果挂了，要切换到右边的，你得把下边服务器网关地址给换了，这是不可能去实现的，所以我们得提供一个稳定的网关地址，这个网关地址其实就是虚拟出来的，后边有两个真实的网关，所以这个叫做VRRP。</p>
+<p>而如果有堆叠技术，我们可以把多个设备合为一个，通过链路聚合，这个是一根线，这个是一个设备，图形变成了这个样子，这个样子就没有环路了，单点设备，单条链路，就不会有环路出现了。就算开启STP也检测不出来阻塞状态，有了堆叠技术，就不需要STP和VRRP技术了。堆叠技术有一个致命伤：</p>
+<p>VNC </p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//各厂商堆叠技术名称    </span>
+    思科：VSS
+  华三：IRF
+  华为：CSS
+    私有不公开
+  出问题，原厂，专业的工程师。
+  堆叠做集群
+堆叠
+  心跳检测出现问题时，主备交换机都认为是主交换机时，就会出现脑裂。
+<span class="token comment" spellcheck="true">//配置集群</span>
+  
+</code></pre>
+<p><strong>拓展</strong></p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+云计算
+  云计算是先把虚拟化学好，虚拟化实际上是把IT三架马车，给虚拟化放到资源池里进行利用。
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+  三驾马车：计算、网络、存储
+  云计算最底层就三种东西，计算、网络、存储。
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>  
+  计算资源：服务器（硬盘装一个操作系统即可）<span class="token operator">-</span>CPU、内存、
+  网络资源：交换机、网卡、路由器、防火墙
+  存储资源：SAN、NAS、DAS 三种存储网络架构；RAID；
+  NAS：群晖，网络附加存储（网络存储服务器）。
+  RAID：独立（廉价）磁盘冗余阵列（Redundant Array of Independent Disks）
+  RAID <span class="token number">0</span> 新建带区极大提升性能速度最快 大小累加 数据分散在多个硬盘中
+  RAID <span class="token number">1</span> 新建镜像区 <span class="token number">1</span><span class="token operator">:</span><span class="token number">1</span>备份 大小只有一半 只能两块 
+  RAID <span class="token number">5</span> 至少三个硬盘 相互校验 数据是分散在三块硬盘中 同时写入两块硬盘数据，并把校验放在另外一个硬盘中。有校验数据的存在，所以用硬盘数据的容量其实要去掉一块硬盘，RAID <span class="token number">5</span> 是去掉一块硬盘的容量。<span class="token number">5</span>快1G的最终的容量就是4G 修复卷 重新激活。
+  RAID <span class="token number">6</span> 有校验
+  RAID <span class="token number">10</span> 是RAID1和RAID0的综合，RAID10 和RAID01 的优缺点和比较，RAID5和RAID6的区别，在生产环境中用RAID5好还是RAID10好。根据业务分析，应用场景选取。
+ 虚拟化集群特性：
+ 
+   
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514163456039.png" alt="image-20210514163456039"></p>
+<p>当其中一个物理机挂掉之后，他上边的虚拟机会跑到其他的物理机上重新启动。启动时间就是故障时间。</p>
+<p>华为虚拟化的技术：HA</p>
+<p>VMWare特有技术：FT（fault Tolerance）故障转移， 实现零停机，零数据丢失，在其他主机上有影子虚拟机。</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514164101536.png" alt="image-20210514164101536"></p>
+<p>vCenter Server ：统一管理平台，把主机加入集群中。</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514164754595.png" alt="image-20210514164754595"></p>
+<h1 id="Eth-Trunk链路聚合"><a href="#Eth-Trunk链路聚合" class="headerlink" title="Eth-Trunk链路聚合"></a>Eth-Trunk链路聚合</h1><p>随着网络规模不断扩大，用户对骨干链路的带宽和可靠性提出了越来越高的要求，在传统技术中，常用更换高速率的接口板或更换支持高速率接口板的设备方式来增加带宽，但这种方案需要付出高额的费用，而且不够灵活。</p>
+<p>采用链路聚合技术可以在不进行硬件升级的条件下，通过将多个物理接口捆绑为一个逻辑接口，来达到增加链路带宽的目的，在实现增大带宽目的的同时，链路聚合采用备份链路的机制，可以有效的提高设备之间链路的可靠性。</p>
+<h2 id="技术背景："><a href="#技术背景：" class="headerlink" title="技术背景："></a>技术背景：</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514171905297.png" alt="image-20210514171905297"></p>
+<h2 id="Eth-Trunk：以太网链路聚合"><a href="#Eth-Trunk：以太网链路聚合" class="headerlink" title="Eth-Trunk：以太网链路聚合"></a>Eth-Trunk：以太网链路聚合</h2><ul>
+<li>将多条物理链路捆绑在一起成为一条逻辑链路</li>
+</ul>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514172140846.png" alt="image-20210514172140846"></p>
+<p> <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514172429665.png" alt="image-20210514172429665"> </p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514172540544.png" alt="image-20210514172540544"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514172627224.png" alt="image-20210514172627224"></p>
+<h2 id="链路聚合对STP开销影响"><a href="#链路聚合对STP开销影响" class="headerlink" title="链路聚合对STP开销影响"></a>链路聚合对STP开销影响</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514172818535.png" alt="image-20210514172818535"></p>
+<h2 id="链路聚合模式"><a href="#链路聚合模式" class="headerlink" title="链路聚合模式"></a>链路聚合模式</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514172953693.png" alt="image-20210514172953693"></p>
+<ul>
+<li>捆绑=链路聚合 </li>
+<li>服务器是不支持LACP模式的</li>
+</ul>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514174013696.png" alt="image-20210514174013696"></p>
+<ul>
+<li>如果两端设备均支持LACP协议，推荐使用LACP模式链路聚合</li>
+<li>如果对端设备不支持LACP协议，必须使用手工模式链路聚合</li>
+</ul>
+<p><strong>链路错连：</strong></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> eth<span class="token operator">-</span>Trunk <span class="token number">1</span> <span class="token comment" spellcheck="true">//创建一个聚合口</span>
+  mode <span class="token operator">?</span> <span class="token comment" spellcheck="true">//选择模式</span>
+<span class="token comment" spellcheck="true">//然后将物理口加进来就可以了</span>
+<span class="token comment" spellcheck="true">//验证  </span>
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514201753900.png" alt="image-20210514201753900"></p>
+<h3 id="手工链路聚合："><a href="#手工链路聚合：" class="headerlink" title="手工链路聚合："></a>手工链路聚合：</h3><ul>
+<li>Eth-Trunk的建立、成员接口的加入由手工配置，没有LACP的参与。</li>
+<li>所有活动链路都参加数据的转发，平均分担流量。</li>
+</ul>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514202358131.png" alt="image-20210514202358131"></p>
+<h3 id="LACP模式链路聚合"><a href="#LACP模式链路聚合" class="headerlink" title="LACP模式链路聚合"></a>LACP模式链路聚合</h3><ul>
+<li><p>通过LACP报文进行协商，确定活动接口和非活动接口，即提供<strong>备份功能</strong>。</p>
+</li>
+<li><p>LACP负责维护链路状态，在聚合条件发生变化时，自动调整或解散链路聚合。</p>
+</li>
+<li><p>建立过程：<strong>发送LACPDU</strong>→<strong>确定主动端</strong>→<strong>确定活动接口</strong></p>
+<ul>
+<li>比较规则：<strong>值越小越优先</strong>（STP选择根桥、优先级、MAC地址、）</li>
+</ul>
+</li>
+<li><p>​    主动端：系统优先级→MAC地址</p>
+</li>
+<li><p>​    活动接口：接口优先级→接口编号</p>
+</li>
+</ul>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514203828393.png" alt="image-20210514203828393"></p>
+<h3 id="抢占机制"><a href="#抢占机制" class="headerlink" title="抢占机制"></a>抢占机制</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514204016811.png" alt="image-20210514204016811"></p>
+<p>为什么要配置抢占延迟：</p>
+<p>1、首先是为了网络的收敛和流量的一致性。举个例子，有个流量在3口转发，我们流量的负载均衡就会根据算法，比如说根据源MAC，根据源地址，根据目标MAC，假设访问的是同一个主机，同一个MAC地址，MAC是固定的，那么对端不管是那台主机发送的流量，走的可能都是这条链路，但是如果说故障切换，抢过来了，那么会导致流量会从其他地方走，等价路由，负载均衡，是根据数据流来分担的，一组相同的数据包，永远走一条链路，不同的数据包走不同的链路，设计可以改，但是初衷是如果访问同一台主句，数据包都是从三个链路平均发过来的话，就会产生一个微妙的东西，就是数据包会发生乱序，你能保证数据包发送的123，到另一端的数据包也是123吗，有一条链路万一阻塞了呢，故障了呢，从一条链路发不可能是乱序的。这也是多路径的问题。在存储里面有一个叫做多路径问题。</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514205648430.png" alt="image-20210514205648430"></p>
+<p>现在学的是LAN WAN技术，后边的是IPSAN、FCSAN技术，S代表Storage的意思，服务器到存储有多条路径可以到达，这就是存储里面的一个典型的问题，叫做多路径问题，这个问题都是由厂商会提供一些专门的软件去解决它，毕竟为了可靠性，</p>
+<h3 id="链路聚合条件："><a href="#链路聚合条件：" class="headerlink" title="链路聚合条件："></a>链路聚合条件：</h3><p>所有参数 必须一致：接口数量、速率、双工方式、流控方式等。</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514210303907.png" alt="image-20210514210303907"></p>
+<p>聚合以后可以二层，也可以三层，三层就在新创建的聚合口配置IP地址即可。</p>
+<h3 id="负载分担机制："><a href="#负载分担机制：" class="headerlink" title="负载分担机制："></a>负载分担机制：</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514210524944.png" alt="image-20210514210524944"></p>
+<h3 id="负载分担方式："><a href="#负载分担方式：" class="headerlink" title="负载分担方式："></a>负载分担方式：</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514210729138.png" alt="image-20210514210729138"></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> Eth<span class="token operator">-</span>trunk <span class="token number">1</span> <span class="token comment" spellcheck="true">//创建聚合口 1</span>
+  load<span class="token operator">-</span>balance <span class="token operator">?</span> <span class="token comment" spellcheck="true">//负载均衡方式</span>
+<span class="token comment" spellcheck="true">//默认使用的是源目IP方式</span>
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514210945306.png" alt="image-20210514210945306"></p>
+<p>基于源目MAC它会通过一个异或的<strong>算法</strong>去计算</p>
+<p>选择的问题：</p>
+<p>如果左边的设备很少，就不能选择基于源MAC这种方式，因为它会使得很多数据都从一条链路过去，都压在一条链路上了。这时候可以选择目标MAC。</p>
+<h2 id="Eth-Trunk配置（手动）"><a href="#Eth-Trunk配置（手动）" class="headerlink" title="Eth-Trunk配置（手动）"></a>Eth-Trunk配置（手动）</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514221759182.png" alt="image-20210514221759182"></p>
+<pre class=" language-java"><code class="language-java">dis stp b <span class="token comment" spellcheck="true">//查看STP状态</span>
+dis port v <span class="token comment" spellcheck="true">//</span>
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514222722739.png" alt="image-20210514222722739"></p>
+<p><strong>作用：</strong>提高带宽，提高高可靠性。</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514222852362.png" alt="image-20210514222852362"></p>
+<p>两边的聚合链路ID不一定要保持一致，只对本地有效；</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514223809850.png" alt="image-20210514223809850"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514224247483.png" alt="image-20210514224247483"></p>
+<p><strong>workingMode：Normal 代表的是manual</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514224408989.png" alt="image-20210514224408989"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514224532430.png" alt="image-20210514224532430"></p>
+<p>说明：</p>
+<ul>
+<li>手动创建聚合链路的时候只需要创建一个聚合口（其他保持默认），然后把接口加入即可。</li>
+</ul>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514225159123.png" alt="image-20210514225159123"></p>
+<p>当把两个接口进行聚合后的效果：</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514225423419.png" alt="image-20210514225423419"></p>
+<p>STP查看后状态是逻辑的聚合口。</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//配置命令</span>
+<span class="token keyword">int</span> eth<span class="token operator">-</span>t <span class="token number">1</span> <span class="token comment" spellcheck="true">//创建聚合口</span>
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> <span class="token comment" spellcheck="true">//进入对应的接口</span>
+eth<span class="token operator">-</span>t <span class="token number">1</span> <span class="token comment" spellcheck="true">//加入聚合端口</span>
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+<span class="token keyword">int</span> eth<span class="token operator">-</span>t <span class="token number">1</span>
+  trunkport g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> to g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> <span class="token comment" spellcheck="true">//加入成员的另外一种方式</span>
+</code></pre>
+<h2 id="Eth-Trunk配置（LACP）"><a href="#Eth-Trunk配置（LACP）" class="headerlink" title="Eth-Trunk配置（LACP）"></a>Eth-Trunk配置（LACP）</h2><p>在配置Eth-Trunk配置模式的时候需要把里面的成员都先退出，然后再配置模式，这也使得需要先配置模式，然后再配置成员。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> eth<span class="token operator">-</span>trunk <span class="token number">1</span> <span class="token comment" spellcheck="true">//进入聚合口1</span>
+undo trunk g <span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> to <span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">3</span> <span class="token comment" spellcheck="true">//删除聚合口中的成员</span>
+mode lacp<span class="token operator">-</span><span class="token keyword">static</span> <span class="token comment" spellcheck="true">//更改为lacp静态模式</span>
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> <span class="token comment" spellcheck="true">//进入对应接口</span>
+shutdown <span class="token comment" spellcheck="true">//关闭接口</span>
+undo shutdown <span class="token comment" spellcheck="true">//恢复接口</span>
+</code></pre>
+<p><strong>两种配置方式的结果对比（手动和LACP）</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210514233139100.png" alt="image-20210514233139100"></p>
+<ul>
+<li><p>这两个之间最大的区别在于，手动配置的Eth-Trunk只能配置最大的带宽是多少，不能配置激活的链路个数是多少，而LACP配置的就可以配置。</p>
+</li>
+<li><p>在选择主动端，选择激活链路时，优先级一样，端口编号越小约优先。</p>
+</li>
+<li><p>谁是主动端，听谁的</p>
+</li>
+</ul>
+<p>配置系统优先级：</p>
+<pre class=" language-java"><code class="language-java">lacp priority <span class="token operator">?</span> <span class="token comment" spellcheck="true">//在系统模式配置</span>
+<span class="token comment" spellcheck="true">//默认是32768，可以配置成32767，STP配置优先级的时候是以4096为一块。</span>
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//进入接口模式</span>
+  lacp priority <span class="token number">3</span><span class="token comment" spellcheck="true">//配置接口的优先级</span>
+<span class="token keyword">int</span> eth <span class="token number">1</span> <span class="token comment" spellcheck="true">//进入聚合接口</span>
+  lacp preempt delay <span class="token number">10</span> <span class="token comment" spellcheck="true">//配置lacp抢占延迟为10秒</span>
+  
+  
+</code></pre>
+<ul>
+<li><p>LACP的好处是可以动态的检测，也可以选择主备，检测出错的接口。</p>
+</li>
+<li><p>交换机之间可以用，交换机路由器之间可以用，路由器之间可以用，服务器之间也可以用。</p>
+</li>
+</ul>
+<p>NIC Teaming ：网卡绑定</p>
 
         </div>
 
@@ -673,7 +630,9 @@ acl <span class="token number">3000</span>
               
               <a href="/tags/HCIP/" style="color: #716e77;">HCIP<em>·</em></a>
               
-              <a href="/tags/IPsec-%E9%85%8D%E7%BD%AE/" style="color: #716e77;">IPsec 配置<em>·</em></a>
+              <a href="/tags/%E9%98%B2%E7%81%AB%E5%A2%99/" style="color: #716e77;">防火墙<em>·</em></a>
+              
+              <a href="/tags/Eth-Trunk%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88/" style="color: #716e77;">Eth-Trunk链路聚合<em>·</em></a>
               
             </span>
             <span>
@@ -704,15 +663,15 @@ acl <span class="token number">3000</span>
         
         <div class="post-nepre half previous">
           
-            <a href="/post/ad7.html" rel="prev">
+            <a href="/post/cb56.html" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/15/4xct289M7ikeIAB.jpg"
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/17/yQdqu5UTm4gYE2H.jpg"
                   style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
-                  src="https://i.loli.net/2021/05/15/4xct289M7ikeIAB.jpg">
+                  src="https://i.loli.net/2021/05/17/yQdqu5UTm4gYE2H.jpg">
               </div>
               <span class="label">Previous Post</span>
               <div class="info">
-                <h3>HCNP学习笔记5</h3>
+                <h3>HCNP学习笔记6</h3>
                 <hr>
               </div>
             </a>
@@ -722,15 +681,15 @@ acl <span class="token number">3000</span>
           
           <div class="post-nepre half next">
             
-              <a href="/post/c896.html" rel="next">
+              <a href="/post/4455.html" rel="next">
                 <div class="background">
-                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/08/VZcxt1HEqW4J9jw.jpg"
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/12/fM1yFYZQXlK7NPd.jpg"
                     style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
-                    onerror="imgError(this,3)" src="https://i.loli.net/2021/05/08/VZcxt1HEqW4J9jw.jpg">
+                    onerror="imgError(this,3)" src="https://i.loli.net/2021/05/12/fM1yFYZQXlK7NPd.jpg">
                 </div>
                 <span class="label">Next Post</span>
                 <div class="info">
-                  <h3>HCNP学习笔记3</h3>
+                  <h3>HCNP学习笔记4</h3>
                   <hr>
                 </div>
               </a>
