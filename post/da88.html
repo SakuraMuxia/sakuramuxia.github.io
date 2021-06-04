@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">HCIA学习笔记13 | 慢一点，才更快 | 雨落</title>
+  <title itemprop="name">HCNP学习笔记11 | 慢一点，才更快 | 雨落</title>
   
     <link rel="shortcut icon" href="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tubiao.ico">
   
@@ -294,11 +294,11 @@
 
 <div class="pattern-center single-center">
   <!-- 有配图默认渲染第一张 -->
-  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/05/03/ghxLdMNbE6PjzIO.jpg);"
-    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/ghxLdMNbE6PjzIO.jpg">
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/06/04/D6hMWEnQRudgaU9.png);"
+    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/06/04/D6hMWEnQRudgaU9.png">
   </div>
   <header class="pattern-header single-header">
-    <h1 class="entry-title">HCIA学习笔记13</h1>
+    <h1 class="entry-title">HCNP学习笔记11</h1>
     <p class="entry-census">
       
       <span class="post-meta-item">
@@ -318,7 +318,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-calendar"></i>
         </span>
-        <span class="post-meta-item-text"> 2021-4-23 </span>
+        <span class="post-meta-item-text"> 2021-6-4 </span>
       </span>
       <span class="bull">
         ·</span>
@@ -345,7 +345,7 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               </span class="post-meta-item-text">
-                <span class="valine-comment-count" data-xid="/259a"> </span>
+                <span class="valine-comment-count" data-xid="/da88"> </span>
               </span>
           </span> -->
     </p>
@@ -362,264 +362,188 @@
         <!--套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=1491830634&amp;auto=0&amp;height=66"></iframe>
-
-<h1 id="DHCP"><a href="#DHCP" class="headerlink" title="DHCP"></a>DHCP</h1><p>动态主机配置协议DHCP（Dynamic Host Configuration Protocol）</p>
-<hr>
-<h2 id="DHCP-1"><a href="#DHCP-1" class="headerlink" title="DHCP"></a>DHCP</h2><p>Dynamic Host Configure Protocol ,动态主机配置协议</p>
-<ul>
-<li>从<strong>BOOTP</strong>（Bootstrap Protocol）协议发展而来的。</li>
-<li>UDP封装，服务器=67，客户端=68。</li>
-<li>动态分配TCP/IP信息（IP地址、子网掩码、默认网关、DNS服务器等）‘</li>
-<li>分配出去的信息是有<strong>租期</strong>的</li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210422162609019.png" alt="image-20210422162609019"></p>
-<h2 id="查看IP地址池"><a href="#查看IP地址池" class="headerlink" title="查看IP地址池"></a>查看IP地址池</h2><pre class=" language-java"><code class="language-java">dis ip pool <span class="token comment" spellcheck="true">//查看IP地址池</span>
-  
-<span class="token comment" spellcheck="true">// 抓包IPV4时需要把过滤协议设置成 bootp</span>
-</code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210422161620787.png" alt="image-20210422161620787"></p>
-<h2 id="查看当前VLAN-IP地址池"><a href="#查看当前VLAN-IP地址池" class="headerlink" title="查看当前VLAN IP地址池"></a>查看当前VLAN IP地址池</h2><pre class=" language-java"><code class="language-java">dis ip pool <span class="token keyword">interface</span> <span class="token class-name">vlanifxx</span> all <span class="token comment" spellcheck="true">//查看当前VLAN的IP地址</span>
-</code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210422162010404.png" alt="image-20210422162010404"></p>
-<h2 id="DHCP系统组成"><a href="#DHCP系统组成" class="headerlink" title="DHCP系统组成"></a>DHCP系统组成</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210422163718667.png" alt="image-20210422163718667"></p>
-<table>
-<thead>
-<tr>
-<th>DHCP CLient（客户端）</th>
-<th>需要动态获得IP地址的主机</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>DHCP Services（服务器）</td>
-<td>能提供DHCP功能的服务器或网络设备</td>
-</tr>
-<tr>
-<td>DHCP Relay （中继）</td>
-<td>一般为路由器或三层交换机等网络设备</td>
-</tr>
-</tbody></table>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210422164232096.png" alt="image-20210422164232096"></p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 汇聚交换机配置 三层</span>
-
-vlan batch <span class="token number">10</span> <span class="token number">20</span> <span class="token comment" spellcheck="true">//创建VLAN</span>
-<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> <span class="token comment" spellcheck="true">//进入接口g0/0/1</span>
-p l t <span class="token comment" spellcheck="true">//设置接口类型为trunk</span>
-p t a v all <span class="token comment" spellcheck="true">// 允许所有vlan通过</span>
-  
-<span class="token keyword">int</span> vlanif <span class="token number">10</span> <span class="token comment" spellcheck="true">//进入vlan10</span>
-IP add xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx <span class="token number">24</span> <span class="token comment" spellcheck="true">//配置网关  </span>
-d th <span class="token comment" spellcheck="true">//验证</span>
-
-<span class="token keyword">int</span> vlanif <span class="token number">20</span> <span class="token comment" spellcheck="true">//进入vlan10三层接口</span>
-IP add xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx <span class="token number">24</span> <span class="token comment" spellcheck="true">//配置网关  </span>
-d th <span class="token comment" spellcheck="true">//验证</span>
-  
-dis IP <span class="token keyword">int</span> b <span class="token comment" spellcheck="true">//查看接口IP信息</span>
-  
-<span class="token comment" spellcheck="true">// 开启DHCP</span>
-dhcp enable <span class="token comment" spellcheck="true">//先打开DHCP总开关</span>
-<span class="token keyword">int</span> vlanif <span class="token number">10</span> <span class="token comment" spellcheck="true">//进入三层接口</span>
-dhcp select <span class="token keyword">interface</span> <span class="token comment" spellcheck="true">//开启dhcp</span>
-
-  
-dis ip pool <span class="token keyword">interface</span> <span class="token class-name">vlanifxx</span> all <span class="token comment" spellcheck="true">//查看当前VLAN的IP地址</span>
-dis ip pool <span class="token keyword">interface</span> <span class="token class-name">vlanifxx</span> used <span class="token comment" spellcheck="true">// 查看vlanifxx用到的IP地址</span>
-  
-</code></pre>
-<h2 id="DHCP报文类型"><a href="#DHCP报文类型" class="headerlink" title="DHCP报文类型"></a>DHCP报文类型</h2><table>
-<thead>
-<tr>
-<th>报文类型</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>DHCP DISCOVER</td>
-<td>客户端用来寻找DHCP服务器（广播）</td>
-</tr>
-<tr>
-<td>DHCP OFFER</td>
-<td>DHCP服务器用来响应DHCP DISCOVER报文，此报文携带了各种配置信息</td>
-</tr>
-<tr>
-<td>DHCP REQUEST</td>
-<td>客户端请求配置确认，或者续借租期</td>
-</tr>
-<tr>
-<td>DHCP ACK</td>
-<td>服务器对REQUEST报文的确认响应</td>
-</tr>
-<tr>
-<td>DHCP NAK</td>
-<td>服务器对REQUEST报文的拒绝响应</td>
-</tr>
-<tr>
-<td>DHCP RELEASE</td>
-<td>客户端要释放地址时用来通知服务器</td>
-</tr>
-</tbody></table>
-<h2 id="DHCP工作流程"><a href="#DHCP工作流程" class="headerlink" title="DHCP工作流程"></a>DHCP工作流程</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210423140423530.png" alt="image-20210423140423530"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210423141621974.png" alt="image-20210423141621974"></p>
-<p>说明：DHCP的特殊性，当客户端没有IP地址时，服务端分配一个IP时，客户端就直接设置成自己的IP，数据链路层中有客户端的MAC地址， </p>
-<pre class=" language-java"><code class="language-java">ipconfig <span class="token operator">/</span>release <span class="token comment" spellcheck="true">//释放IP地址（客户端）</span>
- 
-dhcp server dns<span class="token operator">-</span>list <span class="token number">8.8</span><span class="token punctuation">.</span><span class="token number">8.8</span> <span class="token comment" spellcheck="true">//dhcp服务器开启dns服务（服务端）</span>
- 
-ipconfig <span class="token operator">/</span>renew <span class="token comment" spellcheck="true">//重新获取IP地址（客户端）</span>
- 
-dhcp server lease day <span class="token number">0</span> hour <span class="token number">12</span> minute <span class="token number">1</span> <span class="token comment" spellcheck="true">// 配置dhcp服务器的释放时间，当配置为0的时候代表永不超时（服务端）</span>
- 
-dhcp server lease unlimited <span class="token comment" spellcheck="true">//永不超时 2的32次方 近43亿（服务端）</span>
-</code></pre>
-<h2 id="DHCP租期更新"><a href="#DHCP租期更新" class="headerlink" title="DHCP租期更新"></a>DHCP租期更新</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210423151646820.png" alt="image-20210423151646820"></p>
-<ul>
-<li>IP租约期限到达50%时，DHCP客户端会请求更新IP地址租约</li>
-</ul>
-<h2 id="DHCP重绑定"><a href="#DHCP重绑定" class="headerlink" title="DHCP重绑定"></a>DHCP重绑定</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210423153620969.png" alt="image-20210423153620969"></p>
-<p><strong>说明</strong>：</p>
-<p><strong>租期在7/8时，DHCP客户端在租约期限到达87.5%时，还没有收到服务器响应，会申请冲绑定IP。</strong></p>
-<h2 id="自动保留IP"><a href="#自动保留IP" class="headerlink" title="自动保留IP"></a>自动保留IP</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210423154332125.png" alt="image-20210423154332125"></p>
-<h2 id="租期设置建议"><a href="#租期设置建议" class="headerlink" title="租期设置建议"></a>租期设置建议</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210423155319340.png" alt="image-20210423155319340"></p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// windows 系统中有保留之前IP地址的机制（客户端）数据包中</span>
-</code></pre>
-<h2 id="IP地址释放"><a href="#IP地址释放" class="headerlink" title="IP地址释放"></a>IP地址释放</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210423160017117.png" alt="image-20210423160017117"></p>
-<ul>
-<li>如果IP租约到期前都没有收到服务器响应，客户端停止使用此IP地址。</li>
-<li>如果DHCP客户端不再使用分配的IP地址，也可以主动向DHCP服务器发送DHCP Release报文，释放该IP地址。（使用命令）</li>
-</ul>
-<pre class=" language-java"><code class="language-java">dis ip pool <span class="token keyword">interface</span> <span class="token class-name">vlanifxxx</span> used <span class="token comment" spellcheck="true">//查看IP地址池中xxx网段使用的地址</span>
-  
-dis ip pool <span class="token keyword">interface</span> <span class="token class-name">vlanifxxx</span> expired <span class="token comment" spellcheck="true">//查看IP地址池收回的地址</span>
-  
-undo dhcp enable <span class="token comment" spellcheck="true">//关闭dhcp服务器</span>
-  
-dhcp enable <span class="token comment" spellcheck="true">//开启dhcp总开关</span>
-  
-<span class="token comment" spellcheck="true">//关闭dhcp服务器会清楚接口信息</span>
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>  
-<span class="token keyword">int</span> vlanif <span class="token number">108</span> <span class="token comment" spellcheck="true">//进入VLAN接口</span>
-d th <span class="token comment" spellcheck="true">//查看当前配置</span>
-dhcp select <span class="token keyword">interface</span> 开启dhcp接口开关
-dhcp server dns<span class="token operator">-</span>list xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx <span class="token comment" spellcheck="true">//配置dhcp服务端dns服务器</span>
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-  
-</code></pre>
-<h2 id="DHCP地址池（pool）"><a href="#DHCP地址池（pool）" class="headerlink" title="DHCP地址池（pool）"></a>DHCP地址池（pool）</h2><p>所分配地址的集合</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210423161900674.png" alt="image-20210423161900674"></p>
-<ul>
-<li>接口地址池的优先级比全局地址池高</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>dhcp enable</td>
-<td>开启DHCP功能</td>
-</tr>
-<tr>
-<td>dhcp select interface</td>
-<td>关联接口和接口地址池</td>
-</tr>
-<tr>
-<td>dhcp server dns-list 地址</td>
-<td>配置接口地址池的DNS服务器地址</td>
-</tr>
-<tr>
-<td>dhcp server lease 数字</td>
-<td>配置接口地址池的租期，默认1天</td>
-</tr>
-<tr>
-<td>dhcp server excluded-ip-address 地址</td>
-<td>配置接口地址池的排除地址范围</td>
-</tr>
-<tr>
-<td>dhcp server static-bind ip-address x.x.x.x mac-address xxxx-xxxx-xxxx</td>
-<td>配置静态绑定</td>
-</tr>
-<tr>
-<td>dhcp select global</td>
-<td>关联接口和全局地址池</td>
-</tr>
-<tr>
-<td>ip pool 名称</td>
-<td>创建全局地址池</td>
-</tr>
-<tr>
-<td>network 地址</td>
-<td>配置全局地址池的可分配的网段地址</td>
-</tr>
-<tr>
-<td>gateway-list 地址</td>
-<td>配置全局地址池的网关地址</td>
-</tr>
-<tr>
-<td>dns-list 地址</td>
-<td>配置全局地址池的DNS服务器地址</td>
-</tr>
-<tr>
-<td>lease 数字</td>
-<td>配置全局地址池下的租期，默认1天</td>
-</tr>
-<tr>
-<td>excluded-ip-address 地址</td>
-<td>配置全局地址池下·的排除地址范围</td>
-</tr>
-<tr>
-<td>display ip pool [interface 借口名 all]</td>
-<td>查看地址池的属性</td>
-</tr>
-<tr>
-<td>ipconfig /release</td>
-<td>释放租期</td>
-</tr>
-<tr>
-<td>ipconfig /renew</td>
-<td>重新获取</td>
-</tr>
-</tbody></table>
+          <h1 id="RSTP"><a href="#RSTP" class="headerlink" title="RSTP"></a>RSTP</h1><p><img src="https://i.loli.net/2021/05/31/at2v4XHVwYL8jKM.png" alt="image-20210531235154713"></p>
 <p><strong>说明：</strong></p>
-<p>接口地址池，在三层口进行配置，从这个三层口收到的dhcp请求都会以这个三层口的地址分配地址，以及这个三层口的地址作为网关，没有dns。</p>
-<h2 id="DHCP接口地址池配置"><a href="#DHCP接口地址池配置" class="headerlink" title="DHCP接口地址池配置"></a>DHCP接口地址池配置</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210423163131406.png" alt="image-20210423163131406"></p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//一个三层环境 一个VLAN 发送dhcp请求到dhcp服务器</span>
-
-<span class="token comment" spellcheck="true">//华为的分配地址方式是逆序</span>
-<span class="token comment" spellcheck="true">//思科的分配地址方式是顺序</span>
-
-dhcp server excluded<span class="token operator">-</span>ip<span class="token operator">-</span>address <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">0.100</span> <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">0.150</span> <span class="token comment" spellcheck="true">//排除IP地址段100到150</span>
-  
-<span class="token comment" spellcheck="true">//当地址被使用了，排除IP地址时也会报错，所以在排除IP地址的时候需要先释放IP地址</span>
-  
-<span class="token comment" spellcheck="true">//防止和重要的设备冲突</span>
+<ul>
+<li>stp 根桥故障，直连故障，非直连故障，至少得等30s的时间，</li>
+<li>listen→ forwarding delay →leaning 经过30秒的时间， 才能变成forwardind 转发状态</li>
+<li>IEEE ：I3E </li>
+<li>Rapid：迅速快捷</li>
+<li>Mstp继承了Rstp的优化然后解决了stp和rstp共同的一个问题。</li>
+<li></li>
+</ul>
+<p>java python </p>
+<h2 id="stp问题"><a href="#stp问题" class="headerlink" title="stp问题"></a>stp问题</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210601000713776.png" alt="image-20210601000713776"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210601000955333.png" alt="image-20210601000955333"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210601001124988.png" alt="image-20210601001124988"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210601001550407.png" alt="image-20210601001550407"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210601141721770.png" alt="image-20210601141721770"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210601141957197.png" alt="image-20210601141957197"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210601142122112.png" alt="image-20210601142122112"></p>
+<h1 id="RSTP-1"><a href="#RSTP-1" class="headerlink" title="RSTP"></a>RSTP</h1><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210601143424045.png" alt="image-20210601143424045"></p>
+<h2 id="RSTP的端口状态"><a href="#RSTP的端口状态" class="headerlink" title="RSTP的端口状态"></a>RSTP的端口状态</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210601143602047.png" alt="image-20210601143602047"></p>
+<h2 id="RSTP的端口角色"><a href="#RSTP的端口角色" class="headerlink" title="RSTP的端口角色"></a>RSTP的端口角色</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210601143813904.png" alt="image-20210601143813904"></p>
+<p><strong>注意：</strong></p>
+<p>backup端口是半双工问题。多用在集线器的附近，集线器是一个傻瓜的设备，是一个信号复制的设备，这些端口都在一个冲突域中，他的工作原理是从一个接口接收到一个数据他会从其他端口复制一份出去，SWC发往集线器的bpdu会从集线器重新传回来，先比较开销，然后比较BID，比较对端BID，比较接口PID。 </p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210601143949409.png" alt="image-20210601143949409"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210601152933953.png" alt="image-20210601152933953"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210601171827996.png" alt="image-20210601171827996"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210601172035165.png" alt="image-20210601172035165"></p>
+<h2 id="切换stp模式"><a href="#切换stp模式" class="headerlink" title="切换stp模式"></a>切换stp模式</h2><pre class=" language-java"><code class="language-java">stp mode mstp <span class="token comment" spellcheck="true">//切换stp模式为mstp</span>
+<span class="token comment" spellcheck="true">//角色发生变化，状态也立即发生了变化。</span>
 </code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210423164606223.png" alt="image-20210423164606223"></p>
-<h2 id="DHCP全局地址池配置"><a href="#DHCP全局地址池配置" class="headerlink" title="DHCP全局地址池配置"></a>DHCP全局地址池配置</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210423165613458.png" alt="image-20210423165613458"></p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 绑定地址池 </span>
-<span class="token operator">--</span><span class="token operator">-</span>
-dhcp enable <span class="token comment" spellcheck="true">//开启dhcp服务</span>
-ip pool Rooma <span class="token comment" spellcheck="true">//定义ip地址池为Rooma</span>
-network <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">10.0</span> mask <span class="token number">24</span> <span class="token comment" spellcheck="true">//宣告网络</span>
-d th <span class="token comment" spellcheck="true">//验证配置</span>
-gateway<span class="token operator">-</span>list <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">10.1</span> <span class="token comment" spellcheck="true">//设置网关地址 </span>
-lease day <span class="token number">19</span> <span class="token comment" spellcheck="true">//设置有效期为19</span>
-<span class="token operator">--</span><span class="token operator">-</span>
-<span class="token keyword">int</span> vlanif10 <span class="token comment" spellcheck="true">//进入三层接口vlan10</span>
-dhcp select global <span class="token comment" spellcheck="true">//配置dhcp全局关联</span>
-dis ip pool name rooma used<span class="token comment" spellcheck="true">//查看全局ip地址池</span>
-ip pool Rooma <span class="token comment" spellcheck="true">//进入地址池进行绑定</span>
-<span class="token keyword">static</span><span class="token operator">-</span>bind ip<span class="token operator">-</span>address x<span class="token punctuation">.</span>x<span class="token punctuation">.</span>x<span class="token punctuation">.</span>x mac<span class="token operator">-</span>address xxxx<span class="token operator">-</span>xxxx<span class="token operator">-</span>xxxx <span class="token comment" spellcheck="true">//端口绑定</span>
-<span class="token operator">--</span><span class="token operator">-</span>
-<span class="token comment" spellcheck="true">//客户端dns可能也会是同一个地址</span>
-<span class="token comment" spellcheck="true">//路由器中有dns服务器转发，会问运营商</span>
-<span class="token operator">--</span><span class="token operator">-</span>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210601172739279.png" alt="image-20210601172739279"></p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210601172959793.png" alt="image-20210601172959793"></p>
+<h2 id="RSTP的BPDU格式"><a href="#RSTP的BPDU格式" class="headerlink" title="RSTP的BPDU格式"></a>RSTP的BPDU格式</h2><h3 id="STP-BPDU的数据包结构"><a href="#STP-BPDU的数据包结构" class="headerlink" title="STP BPDU的数据包结构"></a>STP BPDU的数据包结构</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210601173208476.png" alt="image-20210601173208476"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210601173342060.png" alt="image-20210601173342060"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210601173417651.png" alt="image-20210601173417651"></p>
+<p>proposal：提议 </p>
+<h3 id="RSTP-数据包结构"><a href="#RSTP-数据包结构" class="headerlink" title="RSTP 数据包结构"></a>RSTP 数据包结构</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210601173728076.png" alt="image-20210601173728076"></p>
+<h3 id="针对问题一：P-A机制"><a href="#针对问题一：P-A机制" class="headerlink" title="针对问题一：P/A机制"></a>针对问题一：P/A机制</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210602080206607.png" alt="image-20210602080206607"></p>
+<p>边缘端口：指连接终端的端口。</p>
+<p>swa 发送一个P置位的BPDU过去，告诉swb我是指定端口，端口状态为阻塞状态，P置位代表我要给你进行协商，swb收到后，会进行一件事情SYN，这个syn会阻塞 边缘端口外的其他端口，连接端口的可以配制成边缘端口，swb会回一个aggrement同意，当swa收到A置位的BPDU报文后端口立即进入Forwarding。</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210602082938228.png" alt="image-20210602082938228"></p>
+<p>swb和swa的协商不是立即就完成的，swb如果发送一个P置位，swc回应一个A置位，swb和swa的协商就立即完成了，当这条链路不是全双工的状态时，就需要等待两个Forward。</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210602083311893.png" alt="image-20210602083311893"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210602083326297.png" alt="image-20210602083326297"></p>
+<p>集线器是半双工的状态，全双工</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210602091431960.png" alt="image-20210602091431960"></p>
+<pre class=" language-java"><code class="language-java">stp mode rstp <span class="token comment" spellcheck="true">//开启rstp模式</span>
+dis stp b <span class="token comment" spellcheck="true">//查看stp状态</span>
+dis stp <span class="token keyword">interface</span> <span class="token class-name">g1</span><span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> <span class="token comment" spellcheck="true">//查看全双工半双工模式</span>
+stp point<span class="token operator">-</span>to<span class="token operator">-</span>point force<span class="token operator">-</span><span class="token boolean">false</span> or <span class="token boolean">true</span><span class="token comment" spellcheck="true">//stp强制点到点</span>
+<span class="token comment" spellcheck="true">//配置接口速率</span>
+sys
+port<span class="token operator">-</span>group portgroup1 <span class="token comment" spellcheck="true">// 创建永久端口组portgroup1</span>
+group<span class="token operator">-</span>member g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> to g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">3</span> <span class="token comment" spellcheck="true">//将g0/0/1g0/0/2 g0/0/3加入portgroup组</span>
+<span class="token punctuation">[</span>port<span class="token operator">-</span>group portgroup1<span class="token punctuation">]</span> undo negotiation auto <span class="token comment" spellcheck="true">//批量关闭自动协商</span>
+<span class="token punctuation">[</span>port<span class="token operator">-</span>group portgroup1<span class="token punctuation">]</span> duplex full <span class="token comment" spellcheck="true">//批量配置全双工模式</span>
+<span class="token punctuation">[</span>port<span class="token operator">-</span>group portgroup1<span class="token punctuation">]</span> speed <span class="token number">100</span> <span class="token comment" spellcheck="true">//批量配置接口速率为100M</span>
+<span class="token comment" spellcheck="true">//同样也可以进入相关的接口进行单独的配置</span>
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//进入相关的接口</span>
+undo negotiation auto <span class="token comment" spellcheck="true">//关闭自动协商速率</span>
+duplex full <span class="token comment" spellcheck="true">//配置</span>
 </code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210423193554792.png" alt="image-20210423193554792"></p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//一般来说dns服务器都在汇聚层，也有可能在核心层，这个时候接入层要想使用DHCP服务就要使用中继，因为到核心层就要跨三层，主机的广播，核心层收不到，汇聚层收到后转给核心层，核心层再转给dns服务器，然后dns服务器再回数据，出口有缺省路由，内部有OSPF动态路由，出口有一个nat，acl。</span>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210603001651989.png" alt="image-20210603001651989"></p>
+<p><strong>P置位的数据包</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210603001856076.png" alt="image-20210603001856076"></p>
+<p><strong>A置位的数据包</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210603002811052.png" alt="image-20210603002811052"></p>
+<ul>
+<li><p>TC置位代表一个非边缘端口从阻塞变为了转发状态。</p>
+</li>
+<li><p>阶段1：各自都是根桥，相互发送P置位。</p>
+</li>
+<li><p>阶段2：收到P置位数据包后，比较BID，对端BID，PID最后确定根桥，立即把端口状态设置成转发，并且端口角色设置成RP，</p>
+</li>
+<li><p>阶段3：对端回复了一个数据包。</p>
+</li>
+<li><p>原来两个端口都是阻塞的状态，发送过来之后，swb立即把阻塞状态变为了转发状态，拓扑发生了变化，swa同样也是这样，立即把状态变成了转发，这个时候这两个包都有TC置位，</p>
+</li>
+</ul>
+<p><strong>P/A同步的过程</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210603003752977.png" alt="image-20210603003752977"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210603004441521.png" alt="image-20210603004441521"></p>
+<p>最上边的交换机为根桥，根桥发送一个P置位，然后中间的交换机收到后，先同步，同步的操作就是除了边缘端口，其他端口都先阻塞，所以3口就阻塞了，左边的因为配置了边缘端口所以就没有阻塞，然后中间的交换机再回复一个A置位，回复A置位的同时中间的交换机变成了转发状态，最上边的交换机状态也变成了转发状态，这段搞定了之后再往下走，继续走P/A机制。</p>
+<h3 id="针对问题二：跟端口快速切换机制"><a href="#针对问题二：跟端口快速切换机制" class="headerlink" title="针对问题二：跟端口快速切换机制"></a>针对问题二：跟端口快速切换机制</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210603004614176.png" alt="image-20210603004614176"></p>
+<h3 id="针对问题三：此等BPDU处理机制"><a href="#针对问题三：此等BPDU处理机制" class="headerlink" title="针对问题三：此等BPDU处理机制"></a>针对问题三：此等BPDU处理机制</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210603004725546.png" alt="image-20210603004725546"></p>
+<p>理解：</p>
+<p>当非直连链路挂了之后呢，swb发送一个P置位的BPDU，swb的下口为指定端口，先阻塞，发送一个P置位的，swc收到后发现swb发送的不是最好的，我把最好的也发给swa，同时我也发送A置位的，那么这时候你也转发了，我也转发了，我从AP变成了BP，你从DP变成了RP。</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//设置根桥</span>
+stp priority root <span class="token comment" spellcheck="true">//设置交换机为根桥</span>
+stp priority root <span class="token number">0</span> <span class="token comment" spellcheck="true">//设置交换机为根桥</span>
+dis stp b <span class="token comment" spellcheck="true">//查看stp状态</span>
+dis stp <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//查看stp接口状态</span>
 </code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210603093449963.png" alt="image-20210603093449963"></p>
+<p>1、当LSW1与LSW2之间的链路down了之后，lsw2认为自己是根桥，发送一个P置位。</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210603093943279.png" alt="image-20210603093943279"></p>
+<p>2、LSW4收到LSW2的P置位后，回复根桥不对，是50，同时发送一个P置位，协商根桥。我是指定端口，我现在是阻塞状态，</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210603093356669.png" alt="image-20210603093356669"></p>
+<p>3、bb立马就回复一个A置位，说同意，我就是根端口，我已经转发了，</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210603102018176.png" alt="image-20210603102018176"></p>
+<h3 id="针对问题四：边缘端口的引入"><a href="#针对问题四：边缘端口的引入" class="headerlink" title="针对问题四：边缘端口的引入"></a>针对问题四：边缘端口的引入</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210603102352889.png" alt="image-20210603102352889"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//配置边缘端口</span>
+stp edged<span class="token operator">-</span>port enable <span class="token comment" spellcheck="true">//配置边缘端口</span>
+undo stp edged<span class="token operator">-</span>port enable <span class="token comment" spellcheck="true">//删除stp边缘端口配置</span>
+stp edged<span class="token operator">-</span>port disable <span class="token comment" spellcheck="true">//禁用stp边缘端口</span>
+</code></pre>
+<h3 id="针对问题五：拓扑变更机制的优化"><a href="#针对问题五：拓扑变更机制的优化" class="headerlink" title="针对问题五：拓扑变更机制的优化"></a>针对问题五：拓扑变更机制的优化</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210603103102000.png" alt="image-20210603103102000"></p>
+<h3 id="RSTP拓扑改变处理机制"><a href="#RSTP拓扑改变处理机制" class="headerlink" title="RSTP拓扑改变处理机制"></a>RSTP拓扑改变处理机制</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210603104519865.png" alt="image-20210603104519865"></p>
+<p>在4秒内发送tc置位的BPDU报文，如果4s到了，他就不发了。这个时间叫做 TC while Time </p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210603104802664.png" alt="image-20210603104802664"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210603104911088.png" alt="image-20210603104911088"></p>
+<ul>
+<li>清空除了收到的口和边缘端口的mac地址</li>
+</ul>
+<h3 id="拓扑变化引发的问题"><a href="#拓扑变化引发的问题" class="headerlink" title="拓扑变化引发的问题"></a>拓扑变化引发的问题</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210603110822404.png" alt="image-20210603110822404"></p>
+<h3 id="RSTP和STP优化总结"><a href="#RSTP和STP优化总结" class="headerlink" title="RSTP和STP优化总结"></a>RSTP和STP优化总结</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210603111459413.png" alt="image-20210603111459413"></p>
+<p>maxage：默认是20s</p>
+<p>Timer Factor：默认是1s</p>
+<p><strong>保护功能：</strong></p>
+<p>不能说错了，不能说岔了，能答上来。</p>
+<h2 id="RSTP配置"><a href="#RSTP配置" class="headerlink" title="RSTP配置"></a>RSTP配置</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210603112002565.png" alt="image-20210603112002565"></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> range g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> to g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">24</span> <span class="token comment" spellcheck="true">//进入一个接口组进行批量配置</span>
+stp edge<span class="token operator">-</span>port enable <span class="token comment" spellcheck="true">//配置端口为边缘端口在端口下</span>
+stp edged<span class="token operator">-</span>port <span class="token keyword">default</span> <span class="token comment" spellcheck="true">//配置边缘端口在全局下</span>
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//进入接口</span>
+stp edged<span class="token operator">-</span>port disable <span class="token comment" spellcheck="true">//某一个端口禁用掉在端口下 </span>
+</code></pre>
+<h3 id="RSTP保护"><a href="#RSTP保护" class="headerlink" title="RSTP保护"></a>RSTP保护</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210603122659251.png" alt="image-20210603122659251"></p>
+<h3 id="BPDU保护"><a href="#BPDU保护" class="headerlink" title="BPDU保护"></a>BPDU保护</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210603131244788.png" alt="image-20210603131244788"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//配置完边缘端口之后，要进行验证</span>
+dis stp <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//配置BPDU</span>
+<span class="token comment" spellcheck="true">//验证是否是激活状态</span>
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210603131640284.png" alt="image-20210603131640284"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//当在端口配置了边缘端口，但是接入了交换机这个情况，边缘端口就会失效。</span>
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210603132012044.png" alt="image-20210603132012044"></p>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210603132223709.png" alt="image-20210603132223709"></p>
+<h3 id="相关配置"><a href="#相关配置" class="headerlink" title="相关配置"></a>相关配置</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210603133240580.png" alt="image-20210603133240580"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210603133322178.png" alt="image-20210603133322178"></p>
+<pre class=" language-java"><code class="language-java">stp bpdu<span class="token operator">-</span>protection <span class="token comment" spellcheck="true">//开启边缘端口保护的BPDU，在全局模式下配置</span>
+<span class="token comment" spellcheck="true">//当error down之后，再启用，就需要restart。</span>
+dis error<span class="token operator">-</span>down recovery <span class="token comment" spellcheck="true">//查看error down情况</span>
+</code></pre>
+<h3 id="根保护"><a href="#根保护" class="headerlink" title="根保护"></a>根保护</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210603135628348.png" alt="image-20210603135628348"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210603135737387.png" alt="image-20210603135737387"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//通过抓包,通过嗅探可以抓到数据流量。</span>
+<span class="token comment" spellcheck="true">//windows</span>
+tasklist <span class="token operator">/</span>svc
+netstat  <span class="token operator">-</span>ano
+<span class="token number">10.0</span><span class="token punctuation">.</span><span class="token number">200.10</span>
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210603223804341.png" alt="image-20210603223804341"></p>
+<h4 id="相关配置-1"><a href="#相关配置-1" class="headerlink" title="相关配置"></a>相关配置</h4><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210603223950155.png" alt="image-20210603223950155"></p>
+<pre class=" language-java"><code class="language-java">stp primary xxxx<span class="token comment" spellcheck="true">//更改stp根桥优先级</span>
+stp root primary <span class="token comment" spellcheck="true">//配置根端口</span>
+stp root secondary <span class="token comment" spellcheck="true">//更改优先级为第二</span>
+</code></pre>
+<p>BPDU保护：你别动，你一动，我就咬你。</p>
+<p>根保护：你别装逼，你一装逼，我就不叼你。</p>
+<h3 id="TC保护"><a href="#TC保护" class="headerlink" title="TC保护"></a>TC保护</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210604010005012.png" alt="image-20210604010005012"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210604010124009.png" alt="image-20210604010124009"></p>
+<h3 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210604010212599.png" alt="image-20210604010212599"></p>
+<h4 id="相关配置-2"><a href="#相关配置-2" class="headerlink" title="相关配置"></a>相关配置</h4><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210604010258479.png" alt="image-20210604010258479"></p>
+<pre class=" language-java"><code class="language-java">dis stp tc<span class="token operator">-</span>bpdu statistics <span class="token comment" spellcheck="true">//查看stp tc-bpdu 发送统计情况</span>
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210604110222232.png" alt="image-20210604110222232"></p>
+<h3 id="环路保护"><a href="#环路保护" class="headerlink" title="环路保护"></a>环路保护</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210604110307119.png" alt="image-20210604110307119"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210604111857490.png" alt="image-20210604111857490"></p>
+<p><strong>在全局配置，他会自动感知是不是根端口还是边缘端口</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210604112156198.png" alt="image-20210604112156198"></p>
+<h2 id="思科方案"><a href="#思科方案" class="headerlink" title="思科方案"></a>思科方案</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210604112404406.png" alt="image-20210604112404406"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//bpdu 过滤</span>
+stp bpdu<span class="token operator">-</span>filter <span class="token comment" spellcheck="true">//bpdu过滤</span>
+</code></pre>
+<p> <img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210604134751872.png" alt="image-20210604134751872"></p>
+<pre class=" language-java"><code class="language-java">portfast <span class="token comment" spellcheck="true">//端口链路快速</span>
+uplinkfast <span class="token comment" spellcheck="true">//上行链路快速</span>
+Backonefast <span class="token comment" spellcheck="true">//骨干网链路fast</span>
+bpdu filter <span class="token comment" spellcheck="true">//bpdu 过滤</span>
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210604135033184.png" alt="image-20210604135033184"></p>
 
         </div>
 
@@ -652,9 +576,9 @@ ip pool Rooma <span class="token comment" spellcheck="true">//进入地址池进
           <div class="post-tags" style="color: #a39391">
             <span><i class="fa fa-tags"></i>
               
-              <a href="/tags/HCIA/" style="color: #716e77;">HCIA<em>·</em></a>
+              <a href="/tags/RSTP/" style="color: #716e77;">RSTP<em>·</em></a>
               
-              <a href="/tags/DHCP/" style="color: #716e77;">DHCP<em>·</em></a>
+              <a href="/tags/BPDU/" style="color: #716e77;">BPDU<em>·</em></a>
               
             </span>
             <span>
@@ -682,36 +606,19 @@ ip pool Rooma <span class="token comment" spellcheck="true">//进入地址池进
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-        
-        <div class="post-nepre half previous">
-          
-            <a href="/post/e7db.html" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/9NnrV3TWMawJ4sA.jpg"
-                  style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
-                  src="https://i.loli.net/2021/05/03/9NnrV3TWMawJ4sA.jpg">
-              </div>
-              <span class="label">Previous Post</span>
-              <div class="info">
-                <h3>HCIA学习笔记14</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
           
           
-          
-          <div class="post-nepre half next">
-            
-              <a href="/post/e55b.html" rel="next">
+            <div class="post-nepre full next">
+              
+              <a href="/post/1a49.html" rel="next">
                 <div class="background">
-                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/WajiQREpBtbcx8C.jpg"
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/31/jDO893BZRpusY2T.jpg"
                     style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
-                    onerror="imgError(this,3)" src="https://i.loli.net/2021/05/03/WajiQREpBtbcx8C.jpg">
+                    onerror="imgError(this,3)" src="https://i.loli.net/2021/05/31/jDO893BZRpusY2T.jpg">
                 </div>
                 <span class="label">Next Post</span>
                 <div class="info">
-                  <h3>HCIA学习笔记12</h3>
+                  <h3>HCNP学习笔记10</h3>
                   <hr>
                 </div>
               </a>
