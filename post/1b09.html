@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">HCIA学习笔记12 | 慢一点，才更快 | 雨落</title>
+  <title itemprop="name">HCNP学习笔记13 | 慢一点，才更快 | 雨落</title>
   
     <link rel="shortcut icon" href="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tubiao.ico">
   
@@ -294,11 +294,11 @@
 
 <div class="pattern-center single-center">
   <!-- 有配图默认渲染第一张 -->
-  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/05/03/WajiQREpBtbcx8C.jpg);"
-    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/WajiQREpBtbcx8C.jpg">
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/06/09/av2Zu8AeogDJLWz.png);"
+    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/06/09/av2Zu8AeogDJLWz.png">
   </div>
   <header class="pattern-header single-header">
-    <h1 class="entry-title">HCIA学习笔记12</h1>
+    <h1 class="entry-title">HCNP学习笔记13</h1>
     <p class="entry-census">
       
       <span class="post-meta-item">
@@ -318,7 +318,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-calendar"></i>
         </span>
-        <span class="post-meta-item-text"> 2021-4-21 </span>
+        <span class="post-meta-item-text"> 2021-6-9 </span>
       </span>
       <span class="bull">
         ·</span>
@@ -345,7 +345,7 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               </span class="post-meta-item-text">
-                <span class="valine-comment-count" data-xid="/e55b"> </span>
+                <span class="valine-comment-count" data-xid="/1b09"> </span>
               </span>
           </span> -->
     </p>
@@ -362,195 +362,168 @@
         <!--套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h1 id="STP"><a href="#STP" class="headerlink" title="STP"></a>STP</h1><p>为了提高网络可靠性，交换网络中通常会使用冗余链路，然而，冗余链路会给交换网络带来环路风险，并导致<strong>广播风暴</strong>以及<strong>MAC地址表不稳定</strong>等问题，进而会影响用户的通信质量，生成树协议STP（Spanning Tree Protocol）可以在提高可靠性的同时又能避免环路带来的各种问题。</p>
-<h2 id="二层网络设计需求和问题"><a href="#二层网络设计需求和问题" class="headerlink" title="二层网络设计需求和问题"></a>二层网络设计需求和问题</h2><ul>
-<li>为了提高可靠性，交换机之间会通过多条链路相连，从而避免单点故障。</li>
-<li>但同时会带来一些灾难性的环路问题。</li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210416133208743.png" alt="image-20210416133208743"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210416133222748.png" alt="image-20210416133222748"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210416134347057.png" alt="image-20210416134347057"></p>
-<pre class=" language-java"><code class="language-java">dis <span class="token keyword">int</span> Ethernet <span class="token number">2</span> <span class="token comment" spellcheck="true">//进入Ethernet接口</span>
-  
+          <h1 id="组播"><a href="#组播" class="headerlink" title="组播"></a>组播</h1><h2 id="组播基础"><a href="#组播基础" class="headerlink" title="组播基础"></a>组播基础</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210606151840822.png" alt="image-20210606151840822"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//ospf 组播地址 224.0.0.5 224.0.0.6</span>
 </code></pre>
-<h2 id="广播风暴"><a href="#广播风暴" class="headerlink" title="广播风暴"></a>广播风暴</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419103401455.png" alt="image-20210419103401455"></p>
+<h2 id="技术背景"><a href="#技术背景" class="headerlink" title="技术背景"></a>技术背景</h2><p> <img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210606154707922.png" alt="image-20210606154707922"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210606155005591.png" alt="image-20210606155005591"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//CDN 内容分发网络 10几年前的技术</span>
+<span class="token comment" spellcheck="true">//合肥电信 就近的CND服务器 缓存 代理 服务器 </span>
+<span class="token comment" spellcheck="true">//BGP 全部都是单播</span>
+</code></pre>
+<h2 id="单播点到点问题"><a href="#单播点到点问题" class="headerlink" title="单播点到点问题"></a>单播点到点问题</h2><p>信息量和需求成正比</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210606175819704.png" alt="image-20210606175819704"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210606180440976.png" alt="image-20210606180440976"></p>
+<h2 id="广播点到多点问题"><a href="#广播点到多点问题" class="headerlink" title="广播点到多点问题"></a>广播点到多点问题</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210606180549295.png" alt="image-20210606180549295"></p>
+<h2 id="组播解决方案"><a href="#组播解决方案" class="headerlink" title="组播解决方案"></a>组播解决方案</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210606181427713.png" alt="image-20210606181427713"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210606182251348.png" alt="image-20210606182251348"></p>
+<h2 id="组播定义"><a href="#组播定义" class="headerlink" title="组播定义"></a>组播定义</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210606182431206.png" alt="image-20210606182431206"></p>
+<h2 id="组播基本概念"><a href="#组播基本概念" class="headerlink" title="组播基本概念"></a>组播基本概念</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210606183150835.png" alt="image-20210606183150835"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210606183527236.png" alt="image-20210606183527236"></p>
+<h2 id="路由协议分类"><a href="#路由协议分类" class="headerlink" title="路由协议分类"></a>路由协议分类</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210606184314514.png" alt="image-20210606184314514"></p>
+<h2 id="组播与电视节目对比"><a href="#组播与电视节目对比" class="headerlink" title="组播与电视节目对比"></a>组播与电视节目对比</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210606184525419.png" alt="image-20210606184525419"></p>
+<h2 id="组播的优劣势"><a href="#组播的优劣势" class="headerlink" title="组播的优劣势"></a>组播的优劣势</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210606184820972.png" alt="image-20210606184820972"></p>
+<h2 id="组播地址"><a href="#组播地址" class="headerlink" title="组播地址"></a>组播地址</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607084120388.png" alt="image-20210607084120388"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607084535017.png" alt="image-20210607084535017"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607084625978.png" alt="image-20210607084625978"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//选择组播源 IGMP协议(路由器)和PIM协议（主机）</span>
+</code></pre>
+<h3 id="组播地址定义"><a href="#组播地址定义" class="headerlink" title="组播地址定义"></a>组播地址定义</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607084941423.png" alt="image-20210607084941423"></p>
+<h3 id="组播IP地址定义"><a href="#组播IP地址定义" class="headerlink" title="组播IP地址定义"></a>组播IP地址定义</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607085357929.png" alt="image-20210607085357929"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607085559034.png" alt="image-20210607085559034"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607085637032.png" alt="image-20210607085637032"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607085728191.png" alt="image-20210607085728191"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 224.0.0.9 ripv2</span>
+<span class="token comment" spellcheck="true">//主机请求的是组播路由器地址，但是路由器回复的是所有主机和路由器。</span>
+</code></pre>
+<h2 id="组播MAC地址"><a href="#组播MAC地址" class="headerlink" title="组播MAC地址"></a>组播MAC地址</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607090636185.png" alt="image-20210607090636185"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607091728719.png" alt="image-20210607091728719"></p>
 <ul>
-<li>环路会引起广播风暴</li>
-<li>网络中的主机会收到重复数据帧</li>
+<li>丢失了5位的地址信息，直接结果是有32个IPv4组播地址映射到同一MAC地址上。</li>
 </ul>
-<h2 id="MAC地址表震荡"><a href="#MAC地址表震荡" class="headerlink" title="MAC地址表震荡"></a>MAC地址表震荡</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419103633582.png" alt="image-20210419103633582"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607132345958.png" alt="image-20210607132345958"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//MAC地址是16进制表示，IP地址是用10进制表示</span>
+<span class="token comment" spellcheck="true">//交换机是学不到组播地址的，也学不到广播地址，学的是源MAC。未知的单播也会泛洪。没有IGMP的监听功能，要不然就只能泛洪。</span>
+</code></pre>
+<p> <img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607132924843.png" alt="image-20210607132924843"></p>
+<h1 id="组播架构"><a href="#组播架构" class="headerlink" title="组播架构"></a>组播架构</h1><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607153557649.png" alt="image-20210607153557649"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607153733626.png" alt="image-20210607153733626"></p>
+<p><img src="C:\Users\Aqua\AppData\Roaming\Typora\typora-user-images\image-20210607154455362.png" alt="image-20210607154455362"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607154757545.png" alt="image-20210607154757545"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//主机接入 IGMP 组播路由 PIM</span>
+<span class="token comment" spellcheck="true">//windows service  流媒体服务器</span>
+<span class="token comment" spellcheck="true">//远程教学：红蜘蛛 极域 VNC</span>
+</code></pre>
+<h2 id="组播基本架构"><a href="#组播基本架构" class="headerlink" title="组播基本架构"></a>组播基本架构</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/20210607170705.png"></p>
+<pre class=" language-java"><code class="language-java">dis igmp group <span class="token comment" spellcheck="true">//查看IGMP群组</span>
+dis pim routing<span class="token operator">-</span>table <span class="token comment" spellcheck="true">//查看pim路由表</span>
+dis ip routing<span class="token operator">-</span>table <span class="token comment" spellcheck="true">//查看ip路由表</span>
+</code></pre>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607171540486.png" alt="image-20210607171540486"></p>
+<p><strong>说明：</strong></p>
 <ul>
-<li>环路会引起MAC地址表震荡</li>
+<li>PC1的IP地址为：1.0.0.1 255.0.0.0 1.0.0.254</li>
+<li>PC2的IP地址为：1.0.0.2 255.0.0.0 1.0.0.254</li>
+<li>PC3的IP地址为：1.0.0.3 255.0.0.0 1.0.0.254</li>
+<li>MCS1的IP地址为：2.0.0.100 255.0.0.0 2.0.0.254</li>
+<li>MCS1的组播地址为：226.1.1.1</li>
+<li>MCS1的源IP地址为：2.0.0.100</li>
 </ul>
-<p>STP：Spanning TRee Protocol，生成树协议，提供两大功能：</p>
-<table>
-<thead>
-<tr>
-<th>功能</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>消除环路</td>
-<td>通过阻断冗余链路来消除网络中可能存在的环路</td>
-</tr>
-<tr>
-<td>链路备份</td>
-<td>当活动路径发生故障时，激活备份链路，及时恢复网络连通性。</td>
-</tr>
-</tbody></table>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419104228223.png" alt="image-20210419104228223"></p>
-<h2 id="查看STP堵塞"><a href="#查看STP堵塞" class="headerlink" title="查看STP堵塞"></a>查看STP堵塞</h2><pre class=" language-java"><code class="language-java">dis stp b <span class="token comment" spellcheck="true">// 产看STP堵塞</span>
+<pre class=" language-java"><code class="language-java"><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+  sys
+  sys R1
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+  ip add <span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">0.254</span> <span class="token number">24</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+  ip add <span class="token number">2.0</span><span class="token punctuation">.</span><span class="token number">0.254</span> <span class="token number">24</span>
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+  multicast routing<span class="token operator">-</span>enable <span class="token comment" spellcheck="true">//开启全局组播路由功能</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+  pim dm
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+  pim dm
+  dis pim rou <span class="token comment" spellcheck="true">//查看pim路由</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//在成员的接口打开igmp</span>
+  igmp enable <span class="token comment" spellcheck="true">//在成员的接口打开igmp</span>
+  dis IGMP group<span class="token comment" spellcheck="true">//查看igmp group</span>
 </code></pre>
-<h2 id="STP操作"><a href="#STP操作" class="headerlink" title="STP操作"></a>STP操作</h2><p>通过构造一颗树来消除交换网络中的环路</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419110628666.png" alt="image-20210419110628666"></p>
-<ol>
-<li>选举一台根桥</li>
-<li>选举一个根端口</li>
-<li>选举指定端口</li>
-<li>阻塞剩余端口</li>
-</ol>
-<h2 id="BPDU："><a href="#BPDU：" class="headerlink" title="BPDU："></a>BPDU：</h2><p>Bridge Protocol Data Unit 桥协议数据单元</p>
-<p>使用组播 <strong>01-80-C2-00-00-00</strong></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419111747819.png" alt="image-20210419111747819"></p>
-<h3 id="STP版本（PVI）"><a href="#STP版本（PVI）" class="headerlink" title="STP版本（PVI）"></a>STP版本（PVI）</h3><ol>
-<li>STP</li>
-<li>MSTP</li>
-<li>RSTP</li>
-</ol>
-<pre class=" language-java"><code class="language-java">sys <span class="token comment" spellcheck="true">//系统配置模式</span>
-stp mode stp <span class="token comment" spellcheck="true">//更改STP模式</span>
-</code></pre>
-<h3 id="BPDU-Type"><a href="#BPDU-Type" class="headerlink" title="BPDU Type"></a>BPDU Type</h3><ul>
-<li>configuration （配置）</li>
-<li>Topology change Notification （拓扑改变通知）</li>
-</ul>
-<h3 id="BPDU类型"><a href="#BPDU类型" class="headerlink" title="BPDU类型"></a>BPDU类型</h3><p>配置BPDU：Configuration</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607180020454.png" alt="image-20210607180020454"></p>
 <ul>
-<li>选举根交换机以及确定每个交换机端口的角色和状态。</li>
-<li>在初始化过程中，每个桥都主动发送配置BPDU。</li>
-<li>在网络拓扑稳定以后，只有根桥主动发送配置BPDU，其他交换机在收到上游传来的配置BPDU，才会发送自己的配置BPDU</li>
-<li>发送周期为Hello Time</li>
-<li>老化时间为Max Age</li>
+<li>路由协议IGP EGP BGP</li>
+<li>IGP下边有rip，IGMP，isis，ospf等，IGP是在一个AS内定义的路由协议。</li>
 </ul>
-<p>拓扑变更通告BPDU TCN BPDU</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607180338232.png" alt="image-20210607180338232"></p>
+<h1 id="IGMP"><a href="#IGMP" class="headerlink" title="IGMP"></a>IGMP</h1><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607181345721.png" alt="image-20210607181345721"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607181442465.png" alt="image-20210607181442465"></p>
+<h2 id="组播组管理协议工作机制"><a href="#组播组管理协议工作机制" class="headerlink" title="组播组管理协议工作机制"></a>组播组管理协议工作机制</h2><ul>
+<li>主机加入或离开组播组</li>
+<li>路由器维护组播组</li>
+<li>查询器选举</li>
+<li>成员报告抑制</li>
+</ul>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607181757399.png" alt="image-20210607181757399"></p>
+<h2 id="IGMP-1"><a href="#IGMP-1" class="headerlink" title="IGMP"></a>IGMP</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607181919517.png" alt="image-20210607181919517"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607181939496.png" alt="image-20210607181939496"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607182026641.png" alt="image-20210607182026641"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607182141295.png" alt="image-20210607182141295"></p>
+<h2 id="IGMP-v1报文格式"><a href="#IGMP-v1报文格式" class="headerlink" title="IGMP v1报文格式"></a>IGMP v1报文格式</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210608154328613.png" alt="image-20210608154328613"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210608154732424.png" alt="image-20210608154732424"></p>
+<p><strong>主机报告report</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210608154612994.png" alt="image-20210608154612994"></p>
+<pre class=" language-java"><code class="language-java">igmp version 1or2or3 <span class="token comment" spellcheck="true">//可以选择IGMP的版本 </span>
+dis igmp g <span class="token comment" spellcheck="true">//查询igmp全局</span>
+</code></pre>
+<p><strong>路由器查询query</strong>，<strong>路由器每隔60秒查询一次。</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210608163000628.png" alt="image-20210608163000628"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210608163449355.png" alt="image-20210608163449355"></p>
+<h2 id="IGMPv1工作机制"><a href="#IGMPv1工作机制" class="headerlink" title="IGMPv1工作机制"></a>IGMPv1工作机制</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210608164041156.png" alt="image-20210608164041156"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210608164442365.png" alt="image-20210608164442365"></p>
+<h2 id="IGMPv1问题：组成员离开"><a href="#IGMPv1问题：组成员离开" class="headerlink" title="IGMPv1问题：组成员离开"></a>IGMPv1问题：组成员离开</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210608163736348.png" alt="image-20210608163736348"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210608164831178.png" alt="image-20210608164831178"></p>
+<pre class=" language-java"><code class="language-java">dis igmp group verbose<span class="token comment" spellcheck="true">//查询igmp组信息</span>
+dis igmp <span class="token keyword">interface</span> <span class="token class-name">g0</span><span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//查看IGMP接口信息</span>
+<span class="token comment" spellcheck="true">//IGMPV1查询器用的是pim查询，定一个DR作为查询器的角色</span>
+<span class="token comment" spellcheck="true">//IGMPV2查询器有单独的机制</span>
+</code></pre>
+<h2 id="IGMPv2报文格式"><a href="#IGMPv2报文格式" class="headerlink" title="IGMPv2报文格式"></a>IGMPv2报文格式</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609080034296.png" alt="image-20210609080034296"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609075807368.png" alt="image-20210609075807368"></p>
+<pre class=" language-java"><code class="language-java">igmp version <span class="token number">2</span> <span class="token comment" spellcheck="true">//开启IGMP版本二</span>
+igmp enable <span class="token comment" spellcheck="true">//全局开启igmp</span>
+dis igmp <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">// 查看某个接口的IGMP信息</span>
+dis IGMP group <span class="token comment" spellcheck="true">//查看igmp组成员信息</span>
+</code></pre>
+<h2 id="IGMPv2工作机制"><a href="#IGMPv2工作机制" class="headerlink" title="IGMPv2工作机制"></a>IGMPv2工作机制</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609080507052.png" alt="image-20210609080507052"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609081630678.png" alt="image-20210609081630678"></p>
+<p><strong>当有成员离开时，路由器会立即发送两个特定组查询包，查询228的组播</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609080845898.png" alt="image-20210609080845898"></p>
+<h2 id="IGMPv3概述"><a href="#IGMPv3概述" class="headerlink" title="IGMPv3概述"></a>IGMPv3概述</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609082558089.png" alt="image-20210609082558089"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609082629185.png" alt="image-20210609082629185"></p>
+<h2 id="IGMPv3工作机制及改进之处"><a href="#IGMPv3工作机制及改进之处" class="headerlink" title="IGMPv3工作机制及改进之处"></a>IGMPv3工作机制及改进之处</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609082757921.png" alt="image-20210609082757921"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 224.0.0.1 指包含所有节点,包含路由器，包含主机</span>
+dis igmp group <span class="token number">230.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> verbose <span class="token comment" spellcheck="true">//查看igmp详细组信息</span>
+</code></pre>
+<h2 id="IGMPv3数据包格式"><a href="#IGMPv3数据包格式" class="headerlink" title="IGMPv3数据包格式"></a>IGMPv3数据包格式</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609083251609.png" alt="image-20210609083251609"></p>
+<p><strong>igmpv3 PC配置</strong></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609084203891.png" alt="image-20210609084203891"></p>
+<p><strong>当不删除1.1.1.1的组播源地址时再次加入一个新的组播源2.2.2.2，原来的1.1.1.1仍然存在</strong>，<strong>这个时候就需要添加模式来改变</strong>，</p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609083926433.png" alt="image-20210609083926433"></p>
 <ul>
-<li>下游交换机感知到拓扑发生变化时向上游发送的拓扑变化通知</li>
+<li>include 包含只要1.1.1.1 ，加入新的就再次包含2.2.2.2</li>
+<li>exclude除了2.2.2.2 其他都要</li>
 </ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419113455320.png" alt="image-20210419113455320"></p>
-<h2 id="BPDU字段详解"><a href="#BPDU字段详解" class="headerlink" title="BPDU字段详解"></a>BPDU字段详解</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419113911925.png" alt="image-20210419113911925"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419114002863.png" alt="image-20210419114002863"></p>
-<p><strong>Bridge identifier：自身的ID</strong></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419114221530.png" alt="image-20210419114221530"></p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 查看stp信息</span>
-dis stp brief <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">01</span> <span class="token comment" spellcheck="true">//查看接口的STP信息</span>
-  
-</code></pre>
-<h2 id="桥ID"><a href="#桥ID" class="headerlink" title="桥ID"></a>桥ID</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419114333636.png" alt="image-20210419114333636"></p>
-<p>65535=2的16次方</p>
-<h2 id="端口ID"><a href="#端口ID" class="headerlink" title="端口ID"></a>端口ID</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419114519767.png" alt="image-20210419114519767"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419114535987.png" alt="image-20210419114535987"></p>
-<pre class=" language-java"><code class="language-java">dis stp <span class="token keyword">int</span> eth 
-  dis stp <span class="token keyword">int</span> Ethernet <span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> <span class="token comment" spellcheck="true">//查看对应接口的stp端口信息</span>
-</code></pre>
-<h2 id="路径开销"><a href="#路径开销" class="headerlink" title="路径开销"></a>路径开销</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419120105104.png" alt="image-20210419120105104"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419115914908.png" alt="image-20210419115914908"></p>
-<pre class=" language-java"><code class="language-java">dis stp <span class="token comment" spellcheck="true">// </span>
-</code></pre>
-<h2 id="根路径开销"><a href="#根路径开销" class="headerlink" title="根路径开销"></a>根路径开销</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419120148354.png" alt="image-20210419120148354"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419120930719.png" alt="image-20210419120930719"></p>
-<h2 id="链路开销标准"><a href="#链路开销标准" class="headerlink" title="链路开销标准"></a>链路开销标准</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419120245998.png" alt="image-20210419120245998"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419120340228.png" alt="image-20210419120340228"></p>
-<h3 id="查看设置开销"><a href="#查看设置开销" class="headerlink" title="查看设置开销"></a><strong>查看设置开销</strong></h3><pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> <span class="token comment" spellcheck="true">//进入相关接口</span>
-  stp cost <span class="token operator">?</span> <span class="token comment" spellcheck="true">//设置开销</span>
-  
-</code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419120546059.png" alt="image-20210419120546059"></p>
-<h3 id="设置-stp开销标准"><a href="#设置-stp开销标准" class="headerlink" title="设置 stp开销标准"></a><strong>设置 stp开销标准</strong></h3><pre class=" language-java"><code class="language-java">stp pathcost<span class="token operator">-</span>standard <span class="token comment" spellcheck="true">//设置开销标准</span>
-</code></pre>
-<h2 id="STP选举过程"><a href="#STP选举过程" class="headerlink" title="STP选举过程"></a>STP选举过程</h2><h3 id="根桥选举"><a href="#根桥选举" class="headerlink" title="根桥选举"></a>根桥选举</h3><p>BID最小的成为根桥（先比较优先级，再比较MAC）</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419121530092.png" alt="image-20210419121530092"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609084727307.png" alt="image-20210609084727307"></p>
+<h2 id="IGMPv3主机和路由器交互过程"><a href="#IGMPv3主机和路由器交互过程" class="headerlink" title="IGMPv3主机和路由器交互过程"></a>IGMPv3主机和路由器交互过程</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609084825349.png" alt="image-20210609084825349"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609085027556.png" alt="image-20210609085027556"></p>
+<p>当主机B不想要2.2.2.2的组播源发送的组播时，他会发送一个BLOCK数据包，告诉路由器，不想要2.2.2.2的组播源主播，然后路由器为了确保其他有没有成员，要2.2.2.2的数据的话，他会发送一个特定组查询，看有没有成员感兴趣，如果有一个成员对2.2.2.2感兴趣，就会回一个报告。本来我要两个服务器的，现在我要一个服务器的，但是其他成员说我还要2.2.2.2，这个时候路由器仍然需要记住2.2.2.2.</p>
+<p><strong>block：屏蔽</strong> </p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609090247651.png" alt="image-20210609090247651"></p>
 <ul>
-<li>每一台交换机启动STP后，都认为自己是根桥。</li>
+<li><strong>Change To Include （Null）改变为包含模式，包含为空，清空路由器的组播组信息。</strong></li>
+<li><strong>V3离开报文，发送地址数为0，即代表离开</strong></li>
 </ul>
-<h3 id="根端口选举（ROOT）"><a href="#根端口选举（ROOT）" class="headerlink" title="根端口选举（ROOT）"></a>根端口选举（ROOT）</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210419122002394.png" alt="image-20210419122002394"></p>
-<ul>
-<li>非根交换机在选举根端口时分别依据该端口的根路径开销，对端BID，对端PID和本端PID。</li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210420094118632.png" alt="image-20210420094118632"></p>
-<h3 id="指定端口选举（DESI）"><a href="#指定端口选举（DESI）" class="headerlink" title="指定端口选举（DESI）"></a>指定端口选举（DESI）</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210420094229928.png" alt="image-20210420094229928"></p>
-<ul>
-<li>非根交换机在选举指定端口时分别依据根路径开销（自己发送出去的），BID，PID</li>
-<li>未被选举为根端口或指定端口的端口为预备端口，将会被阻塞。</li>
-</ul>
-<h2 id="STP选举案例"><a href="#STP选举案例" class="headerlink" title="STP选举案例"></a>STP选举案例</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210420112803967.png" alt="image-20210420112803967"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210420113004486.png" alt="image-20210420113004486"></p>
-<h4 id="选根桥"><a href="#选根桥" class="headerlink" title="选根桥"></a>选根桥</h4><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210420113241239.png" alt="image-20210420113241239"></p>
-<h4 id="选根端口"><a href="#选根端口" class="headerlink" title="选根端口"></a>选根端口</h4><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210420113521001.png" alt="image-20210420113521001"></p>
-<h4 id="选指定端口"><a href="#选指定端口" class="headerlink" title="选指定端口"></a>选指定端口</h4><p><img src="C:\Users\Aqua\AppData\Roaming\Typora\typora-user-images\image-20210420113759942.png" alt="image-20210420113759942"></p>
-<h2 id="STP端口状态"><a href="#STP端口状态" class="headerlink" title="STP端口状态"></a>STP端口状态</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210421103018741.png" alt="image-20210421103018741"></p>
-<pre class=" language-java"><code class="language-java">dis stp bri <span class="token comment" spellcheck="true">//查看STP状态</span>
-  
-</code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210421103419989.png" alt="image-20210421103419989"></p>
-<h2 id="STP的计时器"><a href="#STP的计时器" class="headerlink" title="STP的计时器"></a>STP的计时器</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210421103608480.png" alt="image-20210421103608480"></p>
-<h2 id="计时器"><a href="#计时器" class="headerlink" title="计时器"></a>计时器</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210421103956850.png" alt="image-20210421103956850"></p>
-<ul>
-<li>配置BPDU报文每经过一个交换机，MessageAge都加1</li>
-<li>如果MessageAge大于MaxAge，非根桥会丢弃该配置BPDU</li>
-</ul>
-<h2 id="STP端口转换"><a href="#STP端口转换" class="headerlink" title="STP端口转换"></a>STP端口转换</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210421104331645.png" alt="image-20210421104331645"></p>
-<h2 id="STP拓扑变化"><a href="#STP拓扑变化" class="headerlink" title="STP拓扑变化"></a>STP拓扑变化</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210421104607149.png" alt="image-20210421104607149"></p>
-<ul>
-<li>非根桥会在BPDU老化之后开始根桥的重新选举</li>
-</ul>
-<h2 id="直连链路故障"><a href="#直连链路故障" class="headerlink" title="直连链路故障"></a>直连链路故障</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210421105045436.png" alt="image-20210421105045436"></p>
-<h2 id="非直连链路故障"><a href="#非直连链路故障" class="headerlink" title="非直连链路故障"></a>非直连链路故障</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210421105326931.png" alt="image-20210421105326931"></p>
-<h2 id="拓扑改变导致MAC地址表错误"><a href="#拓扑改变导致MAC地址表错误" class="headerlink" title="拓扑改变导致MAC地址表错误"></a>拓扑改变导致MAC地址表错误</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210421110305170.png" alt="image-20210421110305170"></p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 清空ARP缓存</span>
- 
-</code></pre>
-<h2 id="引入TCN"><a href="#引入TCN" class="headerlink" title="引入TCN"></a>引入TCN</h2><p>为了让MAC地址表的默认老化时间更改为15秒</p>
-<p><img src="C:\Users\Aqua\AppData\Roaming\Typora\typora-user-images\image-20210421111006999.png" alt="image-20210421111006999"></p>
-<h2 id="STP配置"><a href="#STP配置" class="headerlink" title="STP配置"></a>STP配置</h2><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>stp mode {mstp | stp | rstp }</td>
-<td>配置STP模式，缺省为MSTP</td>
-</tr>
-<tr>
-<td>stp priority 4096</td>
-<td>配置BID优先级值，0~61440，步长为4096</td>
-</tr>
-<tr>
-<td>stp pathcost-standard｛dot 1d-1998 |dot1t|legacy｝</td>
-<td>配置路径开销值的标准</td>
-</tr>
-<tr>
-<td>开销标准：</td>
-<td>legacy：cost=1<del>200000，华为的私有<br>802.1d标准：cost=1</del>65535</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<pre class=" language-java"><code class="language-java">sys
-sys S1
-stp mode stp <span class="token comment" spellcheck="true">//更改STP模式</span>
-stp priority <span class="token number">0</span> <span class="token comment" spellcheck="true">//更改开销值</span>
-stp root primary <span class="token operator">/</span> secondary <span class="token comment" spellcheck="true">//指定主备根桥</span>
-  
-stp cost <span class="token comment" spellcheck="true">//更改入口的stp开销值 </span>
-<span class="token comment" spellcheck="true">// 更改优先级  </span>
-stp port priority <span class="token comment" spellcheck="true">//更改对端PID的优先级</span>
-</code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210421114338908.png" alt="image-20210421114338908"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609090938380.png" alt="image-20210609090938380"></p>
+<h2 id="IGMP版本对比"><a href="#IGMP版本对比" class="headerlink" title="IGMP版本对比"></a>IGMP版本对比</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609090642306.png" alt="image-20210609090642306"></p>
+<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609091024786.png" alt="image-20210609091024786"></p>
 
         </div>
 
@@ -583,9 +556,9 @@ stp port priority <span class="token comment" spellcheck="true">//更改对端PI
           <div class="post-tags" style="color: #a39391">
             <span><i class="fa fa-tags"></i>
               
-              <a href="/tags/HCIA/" style="color: #716e77;">HCIA<em>·</em></a>
+              <a href="/tags/%E7%BB%84%E6%92%AD/" style="color: #716e77;">组播<em>·</em></a>
               
-              <a href="/tags/STP/" style="color: #716e77;">STP<em>·</em></a>
+              <a href="/tags/IGMP/" style="color: #716e77;">IGMP<em>·</em></a>
               
             </span>
             <span>
@@ -613,36 +586,19 @@ stp port priority <span class="token comment" spellcheck="true">//更改对端PI
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-        
-        <div class="post-nepre half previous">
-          
-            <a href="/post/259a.html" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/ghxLdMNbE6PjzIO.jpg"
-                  style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
-                  src="https://i.loli.net/2021/05/03/ghxLdMNbE6PjzIO.jpg">
-              </div>
-              <span class="label">Previous Post</span>
-              <div class="info">
-                <h3>HCIA学习笔记13</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
           
           
-          
-          <div class="post-nepre half next">
-            
-              <a href="/post/e41b.html" rel="next">
+            <div class="post-nepre full next">
+              
+              <a href="/post/dbc8.html" rel="next">
                 <div class="background">
-                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/1ZWURnKiquceAbv.jpg"
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/06/06/1robveLiAPTyNGQ.png"
                     style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
-                    onerror="imgError(this,3)" src="https://i.loli.net/2021/05/03/1ZWURnKiquceAbv.jpg">
+                    onerror="imgError(this,3)" src="https://i.loli.net/2021/06/06/1robveLiAPTyNGQ.png">
                 </div>
                 <span class="label">Next Post</span>
                 <div class="info">
-                  <h3>HCIA学习笔记11</h3>
+                  <h3>HCNP学习笔记12</h3>
                   <hr>
                 </div>
               </a>
