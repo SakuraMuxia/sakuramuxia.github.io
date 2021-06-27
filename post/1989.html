@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">HCNP学习笔记1 | 慢一点，才更快 | 雨落</title>
+  <title itemprop="name">HCNP学习笔记15 | 慢一点，才更快 | 雨落</title>
   
     <link rel="shortcut icon" href="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tubiao.ico">
   
@@ -294,11 +294,11 @@
 
 <div class="pattern-center single-center">
   <!-- 有配图默认渲染第一张 -->
-  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/05/03/8zvZ7F1sPex6LAy.jpg);"
-    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/8zvZ7F1sPex6LAy.jpg">
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/06/27/TXkiBt271acHSxG.png);"
+    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/06/27/TXkiBt271acHSxG.png">
   </div>
   <header class="pattern-header single-header">
-    <h1 class="entry-title">HCNP学习笔记1</h1>
+    <h1 class="entry-title">HCNP学习笔记15</h1>
     <p class="entry-census">
       
       <span class="post-meta-item">
@@ -318,7 +318,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-calendar"></i>
         </span>
-        <span class="post-meta-item-text"> 2021-4-28 </span>
+        <span class="post-meta-item-text"> 2021-6-27 </span>
       </span>
       <span class="bull">
         ·</span>
@@ -345,7 +345,7 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               </span class="post-meta-item-text">
-                <span class="valine-comment-count" data-xid="/917"> </span>
+                <span class="valine-comment-count" data-xid="/1989"> </span>
               </span>
           </span> -->
     </p>
@@ -362,355 +362,294 @@
         <!--套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h1 id="VPN基础"><a href="#VPN基础" class="headerlink" title="VPN基础"></a>VPN基础</h1><p>VPN产生背景：</p>
-<ul>
-<li>在Internet的传输中，绝大部分数据的内容都是明文传输的，存在很多安全隐患（如：窃听、篡改、冒充）</li>
-<li>总部、分公司、办事处、出差人员、合作单位需要访问总部网络资源的问题。</li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427091725950.png" alt="image-20210427091725950"></p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-CRM<span class="token operator">:</span>客户资源管理 钉钉
-ERP<span class="token operator">:</span>企业资源计划 金蝶
-OA<span class="token operator">:</span>互联网办公
-SAP<span class="token operator">:</span>
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-从外部访问企业内网资源
-<span class="token number">1</span>、NAT服务器、端口映射 方便 开口
-<span class="token number">2</span>、VPN 安全
-
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
-HTTP HTTPS
-FTP SFTP
-Telnet SSH
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
-社会工程学SE
-人 最大的弱点
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
-CISP CISSP
-CIA
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
-VPN没有之前 用的 专线
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
-深信服 启明星辰 绿盟 安全厂商 网络安全厂商 安全牛
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+          <h1 id="PIM-DM配置"><a href="#PIM-DM配置" class="headerlink" title="PIM-DM配置"></a>PIM-DM配置</h1><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210614170336581.png" alt="image-20210614170336581"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210614170632720.png" alt="image-20210614170632720"></p>
+<p>注意：应该先敲pim 再敲igmp </p>
+<h1 id="PIM-SM"><a href="#PIM-SM" class="headerlink" title="PIM-SM"></a>PIM-SM</h1><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210614170813743.png" alt="image-20210614170813743"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210614171018773.png" alt="image-20210614171018773"></p>
+<h2 id="实验拓扑"><a href="#实验拓扑" class="headerlink" title="实验拓扑"></a>实验拓扑</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210614171537381.png" alt="image-20210614171537381"></p>
+<pre class=" language-java"><code class="language-java">DR相当于IGMPv1中的查询器的功能，指定路由器
+  
+RP以某个路由器作为路由器的树根，这个跟常被称为RP（汇合点或核心）
+  
+RPT共享树
+  
+SPT最短路径树也称为“源树”
+  
 </code></pre>
-<h2 id="VPN"><a href="#VPN" class="headerlink" title="VPN"></a>VPN</h2><p>Virtual Private Network，虚拟专用网络</p>
-<table>
-<thead>
-<tr>
-<th>术语</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>VPN</td>
-<td>通过公共网络建立私有网络，并提供一定的安全性和服务质量保证。<br>IETF草案对基于IP的VPN的定义：<strong>使用IP机制仿真出一个私有的广域网</strong></td>
-</tr>
-<tr>
-<td>虚拟</td>
-<td>用户不再需要拥有实际的专线，而是利用Internet建立自己的私有网络。</td>
-</tr>
-<tr>
-<td>专用</td>
-<td>用户可以为自己制定一个最符合自己需求的网络。</td>
-</tr>
-</tbody></table>
-<h2 id="VPN核心技术"><a href="#VPN核心技术" class="headerlink" title="VPN核心技术"></a>VPN核心技术</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427101522167.png" alt="image-20210427101522167"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427101717708.png" alt="image-20210427101717708"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427102224355.png" alt="image-20210427102224355"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427102352936.png" alt="image-20210427102352936"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427102509505.png" alt="image-20210427102509505"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427102604733.png" alt="image-20210427102604733"></p>
-<p>说明：windows Services都可以</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427102952609.png" alt="image-20210427102952609"></p>
-<h2 id="VPN优点"><a href="#VPN优点" class="headerlink" title="VPN优点:"></a>VPN优点:</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427103459585.png" alt="image-20210427103459585"></p>
-<h2 id="VPN类型（根据建设单位划分）"><a href="#VPN类型（根据建设单位划分）" class="headerlink" title="VPN类型（根据建设单位划分）"></a>VPN类型（根据建设单位划分）</h2><table>
-<thead>
-<tr>
-<th>类型</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>租用运营商专线搭建VPN网络</td>
-<td>MPLS VPN（工作量很大）</td>
-</tr>
-<tr>
-<td>用户自建企业VPN网络</td>
-<td>GRE、PPTP、L2TP、IPSec、SSL VPN</td>
-</tr>
-</tbody></table>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427103820832.png" alt="image-20210427103820832"></p>
-<p>IGP→路由策略→BGP→MPLS→MPLS VPN</p>
-<p> <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427104334129.png" alt="image-20210427104334129"></p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Remote-Access VPN <br>远程访问VPN</td>
-<td>适合出差员工，移动办公等VPN拨号接入的场景。员工可以在任何能够接入公网的地方，通过远程拨号接入企业内网，从而访问内网资源。通常拨号方IP地址不固定。</td>
-</tr>
-<tr>
-<td>Site-to-Site VPN 站点到站点VPN</td>
-<td>适合各分支机构、合作伙伴、客户、供应商间的互联、双方都有固定的IP地址。</td>
-</tr>
-</tbody></table>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427104911118.png" alt="image-20210427104911118"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427104923962.png" alt="image-20210427104923962"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427105020135.png" alt="image-20210427105020135"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427105151090.png" alt="image-20210427105151090"></p>
-<p>IPsec VPN</p>
-<hr>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427105242285.png" alt="image-20210427105242285"></p>
-<ul>
-<li>SSL VPN</li>
-<li>Site to Site 站点到站点 L2L 局域网到局域网</li>
-</ul>
-<hr>
-<h2 id="VPN类型（根据实现层、协议划分）"><a href="#VPN类型（根据实现层、协议划分）" class="headerlink" title="VPN类型（根据实现层、协议划分）"></a>VPN类型（根据实现层、协议划分）</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427105511250.png" alt="image-20210427105511250"></p>
-<ul>
-<li>HTTPS → S代表的也是 SSL</li>
-<li>PPTP 微软； L2F 思科； L2TP IKE SSL；T：Tunnel隧道 P：protocol 协议</li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427110146587.png" alt="image-20210427110146587"></p>
-<ul>
-<li><p>IPV6跨越IPv4再到IPv6，这个时候会用到GRE，GRE最强的隧道技术</p>
-</li>
-<li><p>Easy Connect 深信服产品 拨号的形式 </p>
-</li>
-<li><p>SSL 端口443 HTTP端口443</p>
-</li>
-<li><p>LNS代表服务器，LAC代表客户端。</p>
-</li>
-<li><p>L2TP端口号：UDP 1701</p>
-</li>
-<li><p>PPTP端口号：TCP 1723</p>
-</li>
-<li><p>有的拨号不支持更改端口号</p>
-</li>
-</ul>
-<h2 id="GRE-VPN"><a href="#GRE-VPN" class="headerlink" title="GRE VPN"></a>GRE VPN</h2><p>Generic Routing Encapsulation 通用路由封装</p>
-<p>GRE提供了<strong>将一种协议的报文封装在另一种协议报文中的机制</strong>，是一种隧道封装技术，GRE可以封装组播数据，并可以和IPsec结合使用，从而保证语音、视频等组播业务的安全。</p>
-<ul>
-<li>一种三层VPN封装技术</li>
-<li>在任意一种网络协议上传送任意一种其他网络协议的封装方法</li>
-<li>解决了跨越异种网络的报文传输问题，异种报文传输的通道称为Tunnel（隧道）</li>
-<li></li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427123840972.png" alt="image-20210427123840972"></p>
-<h2 id="GRE核心功能：建立隧道，打通私网"><a href="#GRE核心功能：建立隧道，打通私网" class="headerlink" title="GRE核心功能：建立隧道，打通私网"></a>GRE核心功能：建立隧道，打通私网</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427124114993.png" alt="image-20210427124114993"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427124140357.png" alt="image-20210427124140357"></p>
-<ul>
-<li>动态路由 RIP 最多15跳</li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427124354118.png" alt="image-20210427124354118"></p>
-<ul>
-<li>IPsec 用来保护GRE</li>
-</ul>
-<hr>
-<h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427172642026.png" alt="image-20210427172642026"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427124704450.png" alt="image-20210427124704450"></p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">--</span><span class="token operator">-</span>
-R1 CFG
-<span class="token operator">--</span><span class="token operator">-</span>
-sys
+<pre class=" language-java"><code class="language-java">sys
 sys R1
-dhcp ena
-acl <span class="token number">2000</span>
-rule <span class="token number">1</span> permit so <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">10.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
-
 <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
-ip add <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">10.254</span> <span class="token number">24</span>
-dhcp sel <span class="token keyword">int</span>
-<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
 ip add <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">24</span>
-
-<span class="token keyword">interface</span> <span class="token class-name">Tunnel</span> <span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
-ip add <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">13.1</span> <span class="token number">24</span>
-tunnel<span class="token operator">-</span>protocol gre
-source <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.1</span>
-destination <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.1</span>
-ip route<span class="token operator">-</span>s <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">20.0</span> <span class="token number">255.255</span><span class="token punctuation">.</span><span class="token number">255.0</span> <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">13.2</span>
-IP route<span class="token operator">-</span>s <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0</span> <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.2</span>
-nat outbound <span class="token number">2000</span>
-OSPF <span class="token number">1</span> router<span class="token operator">-</span>id <span class="token number">1.1</span><span class="token punctuation">.</span><span class="token number">1.1</span>
-  area <span class="token number">0</span>
-  net <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">10.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
-  net <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">13.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
-  
-  
-<span class="token operator">--</span><span class="token operator">-</span>
-R3 CFG
-<span class="token operator">--</span><span class="token operator">-</span>
-sys
-sys R3
-dhcp ena
-  
-acl <span class="token number">2000</span>
-rule <span class="token number">1</span> permit so <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">20.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
-
+vrrp vrid <span class="token number">1</span> virtual<span class="token operator">-</span>ip <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.254</span>
+vrrp vrid <span class="token number">1</span> pri <span class="token number">200</span>
 <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
-ip add <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">20.254</span> <span class="token number">24</span>
-dhcp sel <span class="token keyword">int</span> 
-<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
-ip add <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">24</span>
-nat outbound <span class="token number">2000</span>
+ip add <span class="token number">15.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">24</span> 
 
-<span class="token keyword">interface</span> <span class="token class-name">Tunnel</span> <span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
-ip add <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">13.2</span> <span class="token number">24</span><span class="token comment" spellcheck="true">//这个IP配制成如何都无所谓</span>
-tunnel<span class="token operator">-</span>protocol gre
-source <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.1</span>
-destination <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.1</span>
-
-ip route<span class="token operator">-</span>s <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">10.0</span> <span class="token number">255.255</span><span class="token punctuation">.</span><span class="token number">255.0</span> <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">13.1</span><span class="token comment" spellcheck="true">//告诉路由器当查找路由表时走隧道口，不走缺省路由，进行重新封装。</span>
-IP route<span class="token operator">-</span>s <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0</span> <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.2</span>
+ospf <span class="token number">1</span> router<span class="token operator">-</span>id <span class="token number">1.1</span><span class="token punctuation">.</span><span class="token number">1.1</span>
+area <span class="token number">0</span>
+net <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
+net <span class="token number">15.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
+ <span class="token comment" spellcheck="true">//调整优先级，默认是100，让他成为master</span>
+</code></pre>
+<pre class=" language-java"><code class="language-java">sys
+  sys R2
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+  ip add <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> <span class="token number">24</span>
+  vrrp vrid <span class="token number">1</span> virtual<span class="token operator">-</span>ip <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.254</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+  ip add <span class="token number">26.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> <span class="token number">24</span>
   
-<span class="token comment" spellcheck="true">//配置动态路由</span>
-OSPF <span class="token number">1</span> router<span class="token operator">-</span>id <span class="token number">1.1</span><span class="token punctuation">.</span><span class="token number">1.1</span>
+  ospf <span class="token number">1</span> router<span class="token operator">-</span>id <span class="token number">2.2</span><span class="token punctuation">.</span><span class="token number">2.2</span>
   area <span class="token number">0</span>
-  net <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">20.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
-  net <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">13.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
+  net <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
+  net <span class="token number">26.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
   
-
-<span class="token operator">--</span><span class="token operator">-</span>
-R2 CFG
-<span class="token operator">--</span><span class="token operator">-</span>
-sys
-sys R2
-<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
-ip add <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> <span class="token number">24</span>
-<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
-ip add <span class="token number">23.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> <span class="token number">24</span>
-<span class="token keyword">int</span> lo <span class="token number">2</span> 
-ip add <span class="token number">2.2</span><span class="token punctuation">.</span><span class="token number">2.2</span> <span class="token number">32</span>
-<span class="token operator">--</span><span class="token operator">-</span>
-  
-  
-</code></pre>
-<p>网络拓扑下载：<a target="_blank" rel="noopener" href="https://liubei688.lanzoui.com/iYoHhokl44d">https://liubei688.lanzoui.com/iYoHhokl44d</a></p>
-<hr>
-<h2 id="GRE封装："><a href="#GRE封装：" class="headerlink" title="GRE封装："></a>GRE封装：</h2><p><strong>穿马甲</strong></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427153657084.png" alt="image-20210427153657084"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427153720149.png" alt="image-20210427153720149"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427153942169.png" alt="image-20210427153942169"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427153955082.png" alt="image-20210427153955082"></p>
-<ul>
-<li>47代表GRE；0X0800代表上层IPV4；</li>
-</ul>
-<h2 id="协议ID"><a href="#协议ID" class="headerlink" title="协议ID"></a>协议ID</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427154157607.png" alt="image-20210427154157607"></p>
-<h2 id="GRE-VPN转发过程详解"><a href="#GRE-VPN转发过程详解" class="headerlink" title="GRE VPN转发过程详解"></a>GRE VPN转发过程详解</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427165110589.png" alt="image-20210427165110589"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427170115707.png" alt="image-20210427170115707"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427170239733.png" alt="image-20210427170239733"></p>
-<ul>
-<li>让私网地址的数据包从隧道口出去，到下一跳的隧道口。</li>
-<li>隧道口（因为隧道是建立在三层上所以有IP地址）的IP地址都可以随意配，不一定在同一个网段，因为隧道是一个PPP的点到点的认证</li>
-<li></li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427170719664.png" alt="image-20210427170719664"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427170806162.png" alt="image-20210427170806162"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427170900463.png" alt="image-20210427170900463"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210427171201644.png" alt="image-20210427171201644"></p>
-<p><strong>本质是：隧道口只是为了让去往这个目的地的路由走这个口，这样才能发现我要去做一个重新的封装。</strong></p>
-<h2 id="GRE-VPN的配置"><a href="#GRE-VPN的配置" class="headerlink" title="GRE VPN的配置"></a>GRE VPN的配置</h2><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>interface tunnel 0/0/1</td>
-<td>创建隧道口</td>
-</tr>
-<tr>
-<td>tunnel-protocol GRE</td>
-<td>指定协议</td>
-</tr>
-<tr>
-<td>source 12.0.0.2</td>
-<td>指定隧道源（公网IP）</td>
-</tr>
-<tr>
-<td>destination 13.0.0.3</td>
-<td>指定隧道目标（公网IP）</td>
-</tr>
-<tr>
-<td>配置IP地址、路由</td>
-<td>注意下一跳、出站口、宣告口</td>
-</tr>
-<tr>
-<td>display interface tunnel 0/0/1</td>
-<td>查看隧道口状态</td>
-</tr>
-<tr>
-<td>keepalive period 5 retry-times 3</td>
-<td>开启Keeplive检测避免数据黑洞</td>
-</tr>
-</tbody></table>
-<ul>
-<li>说明：隧道口也是三层口</li>
-<li>思科的设备默认开启的协议是GRE</li>
-<li>配置路由时 下一跳出接口的时候一定注意，出接口是本地隧道口的出接口（IP），下一跳是对端隧道口的入接口（IP）。要让它走隧道口 而不是走缺省路由，NAT。</li>
-<li></li>
-</ul>
-<h3 id="配置路由"><a href="#配置路由" class="headerlink" title="配置路由"></a>配置路由</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 配置静态隧道路由</span>
-ip route<span class="token operator">-</span>s <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">20.0</span> <span class="token number">255.255</span><span class="token punctuation">.</span><span class="token number">255.0</span> Tunnel0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> <span class="token comment" spellcheck="true">//配置隧道的路由</span>
-ip route<span class="token operator">-</span>s <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">20.0</span> <span class="token number">255.255</span><span class="token punctuation">.</span><span class="token number">255.0</span> <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">13.2</span> <span class="token comment" spellcheck="true">//配置隧道的路由</span>
-
-<span class="token comment" spellcheck="true">//配置动态隧道路由</span>
-OSPF <span class="token number">1</span> router<span class="token operator">-</span>id <span class="token number">1.1</span><span class="token punctuation">.</span><span class="token number">1.1</span>
+  <span class="token keyword">int</span> lo <span class="token number">2</span> <span class="token comment" spellcheck="true">//新建一个回环口</span>
+  IP add <span class="token number">2.2</span><span class="token punctuation">.</span><span class="token number">2.2</span> <span class="token number">32</span>
+ospf <span class="token number">1</span>
   area <span class="token number">0</span>
-  net <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">10.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
-  net <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">13.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
-OSFP <span class="token number">1</span> router<span class="token operator">-</span>id <span class="token number">2.2</span><span class="token punctuation">.</span><span class="token number">2.2</span>
+  net <span class="token number">2.2</span><span class="token punctuation">.</span><span class="token number">2.2</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span>
+</code></pre>
+<pre class=" language-java"><code class="language-java">sys
+  sys R3
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+  ip add <span class="token number">35.0</span><span class="token punctuation">.</span><span class="token number">0.3</span> <span class="token number">24</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+  ip add <span class="token number">34.0</span><span class="token punctuation">.</span><span class="token number">0.3</span> <span class="token number">24</span>
+  vrrp vrid <span class="token number">1</span> pri <span class="token number">200</span> 
+    vrrp vrid <span class="token number">1</span> virtual<span class="token operator">-</span>ip <span class="token number">34.0</span><span class="token punctuation">.</span><span class="token number">0.254</span>
+  igmp en
+  ospf <span class="token number">1</span> router<span class="token operator">-</span>id <span class="token number">3.3</span><span class="token punctuation">.</span><span class="token number">3.3</span>
   area <span class="token number">0</span>
-  net <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">20.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
-  net <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">13.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
-<span class="token comment" spellcheck="true">//通过公网跑了一个OSPF路由</span>
+  net <span class="token number">34.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
+  net <span class="token number">35.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
   
 </code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210428091021307.png" alt="image-20210428091021307"></p>
-<h3 id="配置验证"><a href="#配置验证" class="headerlink" title="配置验证"></a>配置验证</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210428091051771.png" alt="image-20210428091051771"></p>
-<h3 id="GRE-VPN-路由宣告注意事项"><a href="#GRE-VPN-路由宣告注意事项" class="headerlink" title="GRE VPN 路由宣告注意事项"></a>GRE VPN 路由宣告注意事项</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210428091151210.png" alt="image-20210428091151210"></p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 当把公网接口也宣告进去的时候，在封装好私网地址时，查找路由表，发现去往目的路由在路由表中已经出现，并且下一跳仍然是隧道口，再次进行封装，一直递归下去。路由递归， recursive </span>
+<pre class=" language-java"><code class="language-java">sys
+  sys R4
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+  ip add <span class="token number">45.0</span><span class="token punctuation">.</span><span class="token number">0.4</span> <span class="token number">24</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+  ip add <span class="token number">34.0</span><span class="token punctuation">.</span><span class="token number">0.4</span> <span class="token number">24</span>
+    vrrp vrid <span class="token number">1</span> virtual<span class="token operator">-</span>ip <span class="token number">34.0</span><span class="token punctuation">.</span><span class="token number">0.254</span>
+  igmp en 
+  ospf <span class="token number">1</span> router<span class="token operator">-</span>id <span class="token number">4.4</span><span class="token punctuation">.</span><span class="token number">4.4</span>
+  area <span class="token number">0</span>
+  net <span class="token number">34.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
+  net <span class="token number">46.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
+  <span class="token comment" spellcheck="true">//静态指定RP地址</span>
+  pim
+  <span class="token keyword">static</span><span class="token operator">-</span>rp xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx <span class="token comment" spellcheck="true">//在每一个路由器上指定RP地址</span>
+  <span class="token comment" spellcheck="true">//在同一个组播组中的路由器都要查RP地址是否一样</span>
+  dis pim rp<span class="token operator">-</span>info <span class="token comment" spellcheck="true">//验证pim rp信息</span>
+  
+  
+  <span class="token keyword">int</span> lo <span class="token number">4</span> <span class="token comment" spellcheck="true">//新建一个回环口</span>
+  IP add <span class="token number">4.4</span><span class="token punctuation">.</span><span class="token number">4.4</span> <span class="token number">32</span>
+ospf <span class="token number">1</span>
+  area <span class="token number">0</span>
+  net <span class="token number">4.4</span><span class="token punctuation">.</span><span class="token number">4.4</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span>
+  <span class="token keyword">int</span> lo <span class="token number">4</span> <span class="token comment" spellcheck="true">//进入lo 6</span>
+  pim sm <span class="token comment" spellcheck="true">//开启pim 稀疏模式</span>
+  pim
+  c<span class="token operator">-</span>bsr lo <span class="token number">4</span> <span class="token comment" spellcheck="true">//后边接接口信息</span>
 </code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210428092626139.png" alt="image-20210428092626139"></p>
-<h3 id="GRE-VPN隧道口虚假状态问题："><a href="#GRE-VPN隧道口虚假状态问题：" class="headerlink" title="GRE VPN隧道口虚假状态问题："></a>GRE VPN隧道口虚假状态问题：</h3><ul>
-<li>只要有到达隧道目标的路由，隧道口即可激活。</li>
-<li>解决办法：开启GRE的Keeplive，用于检测隧道对端是否可达。</li>
-<li>Keeplive就如同OSPF里的Hello包，每隔多少秒发一次。可以两边都打开，也可以只开一边。</li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210428101720700.png" alt="image-20210428101720700"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210428094152560.png" alt="image-20210428094152560"></p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//查看到达目标地址的路由</span>
-dis ip rout xx<span class="token punctuation">.</span>xx<span class="token punctuation">.</span>xx<span class="token punctuation">.</span>xx 
-keeplive <span class="token number">5</span> retry<span class="token operator">-</span>time <span class="token number">3</span> <span class="token comment" spellcheck="true">//每5秒发一次 重传3次 </span>
+<pre class=" language-java"><code class="language-java">sys
+  sys R5
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+  ip add <span class="token number">15.0</span><span class="token punctuation">.</span><span class="token number">0.5</span> <span class="token number">24</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+  ip add <span class="token number">35.0</span><span class="token punctuation">.</span><span class="token number">0.5</span> <span class="token number">24</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">2</span>
+  ip add <span class="token number">56.0</span><span class="token punctuation">.</span><span class="token number">0.5</span> <span class="token number">24</span>
+  
+  ospf <span class="token number">1</span> router<span class="token operator">-</span>id <span class="token number">5.5</span><span class="token punctuation">.</span><span class="token number">5.5</span>
+  area <span class="token number">0</span>
+  net <span class="token number">15.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
+  net <span class="token number">35.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
+  net <span class="token number">56.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
+  <span class="token comment" spellcheck="true">//配置一个回环口的地址用作静态,指定RP的地址就是回环口的地址，这个是静态配置，动态配置要指定 。</span>
+  <span class="token keyword">int</span> lo <span class="token number">5</span>
+  ip add <span class="token number">5.5</span><span class="token punctuation">.</span><span class="token number">5.5</span> <span class="token number">32</span>
+  ospf <span class="token number">1</span>
+  a <span class="token number">0</span>
+  net <span class="token number">5.5</span><span class="token punctuation">.</span><span class="token number">5.5</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span>
+  
+  <span class="token keyword">int</span> lo <span class="token number">5</span> <span class="token comment" spellcheck="true">//进入lo 6</span>
+  pim sm <span class="token comment" spellcheck="true">//开启pim 稀疏模式</span>
+  pim
+  c<span class="token operator">-</span>bsr lo <span class="token number">5</span> <span class="token comment" spellcheck="true">//后边接接口信息</span>
 </code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210428094337703.png" alt="image-20210428094337703"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210428101741000.png" alt="image-20210428101741000"></p>
-<h2 id="GRE安全机制"><a href="#GRE安全机制" class="headerlink" title="GRE安全机制"></a>GRE安全机制</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210428111506698.png" alt="image-20210428111506698"></p>
-<h3 id="GRE安全机制配置"><a href="#GRE安全机制配置" class="headerlink" title="GRE安全机制配置"></a>GRE安全机制配置</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcnp/image-20210428111541218.png" alt="image-20210428111541218"></p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> tunnel <span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
-  d th 
-  gre checksum <span class="token comment" spellcheck="true">//开启GRE校验和</span>
-  gre key xxx <span class="token comment" spellcheck="true">//设置KEY</span>
+<pre class=" language-java"><code class="language-java">sys
+  sys R6 
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+  ip add <span class="token number">26.0</span><span class="token punctuation">.</span><span class="token number">0.6</span> <span class="token number">24</span>
+    <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+  ip add <span class="token number">46.0</span><span class="token punctuation">.</span><span class="token number">0.6</span> <span class="token number">24</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">2</span>
+  ip add <span class="token number">56.0</span><span class="token punctuation">.</span><span class="token number">0.6</span> <span class="token number">24</span>
+  
+  ospf <span class="token number">1</span> router<span class="token operator">-</span>id <span class="token number">6.6</span><span class="token punctuation">.</span><span class="token number">6.6</span>
+  area <span class="token number">0</span>
+  net <span class="token number">26.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
+  net <span class="token number">46.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
+  net <span class="token number">56.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
+  
+  <span class="token keyword">int</span> lo <span class="token number">6</span> <span class="token comment" spellcheck="true">//新建一个回环口</span>
+  IP add <span class="token number">6.6</span><span class="token punctuation">.</span><span class="token number">6.6</span> <span class="token number">32</span>
+ospf <span class="token number">1</span>
+  area <span class="token number">0</span>
+  net <span class="token number">6.6</span><span class="token punctuation">.</span><span class="token number">6.6</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span>
+  <span class="token comment" spellcheck="true">//动态配置c-bsr</span>
+  
+  <span class="token keyword">int</span> lo <span class="token number">6</span> <span class="token comment" spellcheck="true">//进入lo 6</span>
+  pim sm <span class="token comment" spellcheck="true">//开启pim 稀疏模式</span>
+  pim
+  c<span class="token operator">-</span>bsr lo <span class="token number">6</span> <span class="token comment" spellcheck="true">//后边接接口信息</span>
 </code></pre>
-<p><strong>说明：GRE中的机制在数据包中都能抓到KEY</strong></p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 隧道口的IP地址随意配置 只是在建立路由的时候填写对应的下一跳即可。因为双方通讯数据包里封装的是公网地址和私网地址跟隧道口的地址没有关系。</span>
-<span class="token comment" spellcheck="true">//隧道口是直连的</span>
-<span class="token comment" spellcheck="true">//当填写的隧道口的IP地址不在同一个网段的时候,添加静态路由</span>
-ip rout<span class="token operator">-</span>s <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">3</span><span class="token punctuation">.</span><span class="token function">3</span><span class="token punctuation">(</span>对端隧道地址<span class="token punctuation">)</span> Tunnel <span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token function">1</span><span class="token punctuation">(</span>本端隧道出口<span class="token punctuation">)</span>
-  两个不在同一个网段，能通但是没有ARP，原因是ICMP协议的数据包中，封装的MAC地址源MAC是公网出接口的MAC，目的MAC是对端运营商的出MAC，已经知道了MAC地址，就不需要ARP
-<span class="token comment" spellcheck="true">//添加动态路由</span>
-OSPF <span class="token number">1</span> 
-a <span class="token number">0</span>
-net <span class="token number">172.168</span><span class="token punctuation">.</span><span class="token number">1.1</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token comment" spellcheck="true">//宣告动态路由</span>
+<pre class=" language-java"><code class="language-java">右边PC配置
+  PC1 IP地址<span class="token operator">:</span><span class="token number">34.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">255.255</span><span class="token punctuation">.</span><span class="token number">255.0</span> <span class="token number">34.0</span><span class="token punctuation">.</span><span class="token number">0.254</span>
+  PC2 IP地址<span class="token operator">:</span><span class="token number">34.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> <span class="token number">255.255</span><span class="token punctuation">.</span><span class="token number">255.0</span> <span class="token number">34.0</span><span class="token punctuation">.</span><span class="token number">0.254</span>
+左边组播源配置
+  源 IP地址<span class="token operator">:</span><span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.100</span> <span class="token number">255.255</span><span class="token punctuation">.</span><span class="token number">255.0</span> <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.254</span>
 </code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//开启密集模式 6台路由器都刷一遍</span>
+dis pim nei <span class="token comment" spellcheck="true">//查看pim邻居</span>
+dis pim nei verbose <span class="token comment" spellcheck="true">//查看pim详细信息</span>
+
+multicast rooting<span class="token operator">-</span>enable
+    <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+  pim dm
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+  pim dm
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">2</span>
+  pim dm 
+  
+    <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+  pim sm
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+  pim sm
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">2</span>
+  pim sm  
+  
+</code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+DR的选举规则是先比较优先级，再比较IP地址
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+dis pim <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> verbose<span class="token comment" spellcheck="true">//验证DR</span>
+多路访问的接口都会有DR
+igmp en <span class="token comment" spellcheck="true">//开启igmp</span>
+dis igmp <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//验证igmp配置</span>
+igmp选择查询器的时候是IP地址越小越优先
+dis pim rp<span class="token operator">-</span>info <span class="token comment" spellcheck="true">//验证pim rp信息</span>
+<span class="token comment" spellcheck="true">//开启密集模式 6台路由器都刷一遍</span>
+dis pim nei <span class="token comment" spellcheck="true">//查看pim邻居</span>
+dis pim nei verbose <span class="token comment" spellcheck="true">//查看pim详细信息</span>
+dis pim routing<span class="token operator">-</span>table <span class="token comment" spellcheck="true">//验证pim路由表</span>
+</code></pre>
+<h1 id="PIM-SM工作流程"><a href="#PIM-SM工作流程" class="headerlink" title="PIM-SM工作流程"></a>PIM-SM工作流程</h1><h2 id="邻居发现"><a href="#邻居发现" class="headerlink" title="邻居发现"></a>邻居发现</h2><h2 id="DR竞选"><a href="#DR竞选" class="headerlink" title="DR竞选"></a>DR竞选</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210618172904199.png" alt="image-20210618172904199"></p>
+<p> <img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210624151129060.png" alt="image-20210624151129060"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210624151252078.png" alt="image-20210624151252078"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210624151401177.png" alt="image-20210624151401177"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210624151531239.png" alt="image-20210624151531239"></p>
+<p><strong>说明：</strong></p>
+<p><strong>组播源侧构建的是SPT（源树）左边的是（S，G），组播接收者构建的是RPT（共享树）右边的是（*，G）。</strong></p>
+<h3 id="密集模式的数据包结构"><a href="#密集模式的数据包结构" class="headerlink" title="密集模式的数据包结构"></a>密集模式的数据包结构</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210624150812292.png" alt="image-20210624150812292"></p>
+<h3 id="稀疏模式的数据包结构"><a href="#稀疏模式的数据包结构" class="headerlink" title="稀疏模式的数据包结构"></a>稀疏模式的数据包结构</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210624150914870.png" alt="image-20210624150914870"></p>
+<h2 id="RPT构建"><a href="#RPT构建" class="headerlink" title="RPT构建"></a>RPT构建</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210624152540537.png" alt="image-20210624152540537"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210624152645534.png" alt="image-20210624152645534"></p>
+<p> <img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210625113057615.png" alt="image-20210625113057615"></p>
+<h2 id="组播源注册"><a href="#组播源注册" class="headerlink" title="组播源注册"></a>组播源注册</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210625113237056.png" alt="image-20210625113237056"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210625124513902.png" alt="image-20210625124513902"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//从DR到RP建立的是SPT（源树），从RP到组成员是RPT（共享树）</span>
+  
+</code></pre>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210625113331930.png" alt="image-20210625113331930"></p>
+<h2 id="组播源注册过程"><a href="#组播源注册过程" class="headerlink" title="组播源注册过程"></a>组播源注册过程</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210625124945494.png" alt="image-20210625124945494"></p>
+<h2 id="组播源注册停止过程"><a href="#组播源注册停止过程" class="headerlink" title="组播源注册停止过程"></a>组播源注册停止过程</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210625125144551.png" alt="image-20210625125144551"></p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">/</span>R5，R6，R4路由器都关闭切换操作
+<span class="token keyword">static</span><span class="token operator">-</span>rp <span class="token number">5.5</span><span class="token punctuation">.</span><span class="token number">5.5</span>
+pim <span class="token comment" spellcheck="true">//进入pim模式</span>
+spt<span class="token operator">-</span><span class="token keyword">switch</span><span class="token operator">-</span>threshold infinity <span class="token comment" spellcheck="true">//停止切换</span>
+ 
+</code></pre>
+<p><strong>说明：</strong></p>
+<p> <strong>Join报文和register-Stop报文是通过G0/0/0 这一个接口发送给12.0.0.2这个接口的</strong>。<strong>register报文和组播报文是通过R2的右边接口发送出去的。</strong></p>
+<p><img src="C:\Users\KawaiiAqua\AppData\Roaming\Typora\typora-user-images\image-20210627093744910.png" alt="image-20210627093744910"></p>
+<h2 id="PIM-SM转发树"><a href="#PIM-SM转发树" class="headerlink" title="PIM-SM转发树"></a>PIM-SM转发树</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627095103978.png" alt="image-20210627095103978"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627095230131.png" alt="image-20210627095230131"></p>
+<h3 id="SPT切换"><a href="#SPT切换" class="headerlink" title="SPT切换"></a>SPT切换</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627095310368.png" alt="image-20210627095310368"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627095915511.png" alt="image-20210627095915511"></p>
+<pre class=" language-java"><code class="language-java">路由器B是RP，当我们收到了第一份组播数据的时候，本来第一份数据应该是从A到B再到D的路径，从组播源到A再到B是源树，从B到D是共享树，当组播成员端的DR，收到了第一份数据后，他就会沿着组播源的方向，发送join消息，join消息的目的是把D到B，B到A的流量剪掉，使得流量的走势是从A到D这个方向走，这个时候A路由器建立的是（S，G），对于源树来讲，他会查找路由器找到最优路径，所以接下来的流量就会从A到D这样转发，
+</code></pre>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627100046063.png" alt="image-20210627100046063"></p>
+<pre class=" language-java"><code class="language-java">组播报文到达成员端DR，成员端DR马上向源这个方向发送join消息，按照图示红色虚线方向发送，那么这些路由器就会建立（S，G），之前这些流量是从源端DR传到RP，再由RP通过RPT传下来的，所以这些流量要被修剪掉，这边有一个判断，接下来我会发送一个剪枝的消息，把流量剪掉如图绿色箭头方向，这个判断是，如果我们的组播报文没有经过RP，没有经过相关的路由器，我们根据单播路由查找，找到我们的源是通过红色虚线方向，中间的那个路由器发现流量的变化就会告诉上游路由器，进行剪枝操作，上游路由器再告诉上游路由器，进行剪枝。
+</code></pre>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627101243074.png" alt="image-20210627101243074"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627101644541.png" alt="image-20210627101644541"></p>
+<h2 id="SPT切换规则"><a href="#SPT切换规则" class="headerlink" title="SPT切换规则"></a>SPT切换规则</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627101804087.png" alt="image-20210627101804087"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627101822633.png" alt="image-20210627101822633"></p>
+<h3 id="PIM使用的是ASM模型"><a href="#PIM使用的是ASM模型" class="headerlink" title="PIM使用的是ASM模型"></a>PIM使用的是ASM模型</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627105132735.png" alt="image-20210627105132735"></p>
+<h2 id="RP发现"><a href="#RP发现" class="headerlink" title="RP发现"></a>RP发现</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627110313995.png" alt="image-20210627110313995"></p>
+<pre class=" language-java"><code class="language-java">dis pim rp<span class="token operator">-</span>info xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token comment" spellcheck="true">//验证pim-rp信息,xxx代表组播地址</span>
+
+</code></pre>
+<h2 id="RP配置"><a href="#RP配置" class="headerlink" title="RP配置"></a>RP配置</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627110630662.png" alt="image-20210627110630662"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627111230331.png" alt="image-20210627111230331"></p>
+<h3 id="BSR选举规则"><a href="#BSR选举规则" class="headerlink" title="BSR选举规则"></a>BSR选举规则</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627111418265.png" alt="image-20210627111418265"></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> lo <span class="token number">6</span> <span class="token comment" spellcheck="true">//新建一个回环口</span>
+  IP add <span class="token number">6.6</span><span class="token punctuation">.</span><span class="token number">6.6</span> <span class="token number">32</span>
+ospf <span class="token number">1</span>
+  area <span class="token number">0</span>
+  net <span class="token number">6.6</span><span class="token punctuation">.</span><span class="token number">6.6</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span>
+  
+<span class="token keyword">int</span> lo <span class="token number">4</span> <span class="token comment" spellcheck="true">//新建一个回环口</span>
+  IP add <span class="token number">4.4</span><span class="token punctuation">.</span><span class="token number">4.4</span> <span class="token number">32</span>
+ospf <span class="token number">1</span>
+  area <span class="token number">0</span>
+  net <span class="token number">4.4</span><span class="token punctuation">.</span><span class="token number">4.4</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span>
+  <span class="token keyword">int</span> lo <span class="token number">4</span> <span class="token comment" spellcheck="true">//进入lo 4</span>
+  pim sm <span class="token comment" spellcheck="true">//开启pim 稀疏模式</span>
+  pim
+  c<span class="token operator">-</span>bsr lo <span class="token number">4</span> <span class="token comment" spellcheck="true">//后边接接口信息</span>
+  
+</code></pre>
+<pre class=" language-java"><code class="language-java">dis pim bsr<span class="token operator">-</span>info <span class="token comment" spellcheck="true">//验证pim bsr信息</span>
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+pim
+c<span class="token operator">-</span>bsr priority xxx <span class="token comment" spellcheck="true">//更改BSR优先级为xxx</span>
+</code></pre>
+<p>说明：</p>
+<p><strong>先配置c-bsr，然后由c-bsr竞选出来bsr，然后配置c-rp，再由c-rp竞选出来rp。</strong></p>
+<h3 id="C-RP竞选过程"><a href="#C-RP竞选过程" class="headerlink" title="C-RP竞选过程"></a>C-RP竞选过程</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627113054736.png" alt="image-20210627113054736"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627113215050.png" alt="image-20210627113215050"></p>
+<h3 id="RP选举规则"><a href="#RP选举规则" class="headerlink" title="RP选举规则"></a>RP选举规则</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627113328441.png" alt="image-20210627113328441"></p>
+<h3 id="PIM-SM配置"><a href="#PIM-SM配置" class="headerlink" title="PIM-SM配置"></a>PIM-SM配置</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627113420940.png" alt="image-20210627113420940"></p>
+<p><strong>BSR发送给组播所有路由器的打包信息数据包</strong></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627113924898.png" alt="image-20210627113924898"></p>
+<p>里边包括所有C-RP的信息</p>
+<pre class=" language-java"><code class="language-java">dis pim rp<span class="token operator">-</span>info xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx <span class="token comment" spellcheck="true">//验证pim组播xxx.xxx.xxx.xxxRP竞选结果信息</span>
+   
+<span class="token keyword">static</span><span class="token operator">-</span>rp <span class="token number">5.5</span><span class="token punctuation">.</span><span class="token number">5.5</span> preferred <span class="token comment" spellcheck="true">//静态优先5.5.5.5 </span>
+  
+c<span class="token operator">-</span>rp loopback <span class="token number">5</span> group<span class="token operator">-</span>policy yyyy<span class="token comment" spellcheck="true">//配置回环口5组播组范围，yyyy为acl的ID</span>
+
+acl yyyy <span class="token comment" spellcheck="true">//建立acl yyyy</span>
+rule per source <span class="token number">236.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">3.255</span><span class="token punctuation">.</span><span class="token number">255.255</span> 
+</code></pre>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627124130828.png" alt="image-20210627124130828"></p>
+<p>R5始终使用RP作为组播源就代表R5不能切换。</p>
+<pre class=" language-java"><code class="language-java">igmp <span class="token operator">-</span>g <span class="token comment" spellcheck="true">//全局开启igmp</span>
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//进入相关接口</span>
+igmp <span class="token keyword">static</span><span class="token operator">-</span>group <span class="token number">239.9</span><span class="token punctuation">.</span><span class="token number">9.9</span> <span class="token comment" spellcheck="true">//静态添加igmp静态组成员 239.9.9.9</span>
+mld相当于ipv4中的igmp
+</code></pre>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627125734779.png" alt="image-20210627125734779"></p>
+<p>降低用户侧网络资源消耗，相当于在交换机上配置igmp snoping。</p>
+<p>要求在RTE和RP之间建立RPT，相当于在RTE上配置组成员DR，调高RTE的优先级。建立RPT。</p>
+<p> 马上收到组播数据，相当于要配置一个igmp的静态</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627130507912.png" alt="image-20210627130507912"></p>
 
         </div>
 
@@ -743,9 +682,9 @@ net <span class="token number">172.168</span><span class="token punctuation">.</
           <div class="post-tags" style="color: #a39391">
             <span><i class="fa fa-tags"></i>
               
-              <a href="/tags/HCIP/" style="color: #716e77;">HCIP<em>·</em></a>
+              <a href="/tags/PIM/" style="color: #716e77;">PIM<em>·</em></a>
               
-              <a href="/tags/GRE/" style="color: #716e77;">GRE<em>·</em></a>
+              <a href="/tags/PIM-SM/" style="color: #716e77;">PIM SM<em>·</em></a>
               
             </span>
             <span>
@@ -773,36 +712,19 @@ net <span class="token number">172.168</span><span class="token punctuation">.</
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-        
-        <div class="post-nepre half previous">
-          
-            <a href="/post/857.html" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/06/eVhz71rqN4EL5pi.jpg"
-                  style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
-                  src="https://i.loli.net/2021/05/06/eVhz71rqN4EL5pi.jpg">
-              </div>
-              <span class="label">Previous Post</span>
-              <div class="info">
-                <h3>HCNP学习笔记2</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
           
           
-          
-          <div class="post-nepre half next">
-            
-              <a href="/post/e69b.html" rel="next">
+            <div class="post-nepre full next">
+              
+              <a href="/post/d948.html" rel="next">
                 <div class="background">
-                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/yjcVp2SGkbht9MI.jpg"
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/06/14/vaRVA8Sf6D2HczY.png"
                     style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
-                    onerror="imgError(this,3)" src="https://i.loli.net/2021/05/03/yjcVp2SGkbht9MI.jpg">
+                    onerror="imgError(this,3)" src="https://i.loli.net/2021/06/14/vaRVA8Sf6D2HczY.png">
                 </div>
                 <span class="label">Next Post</span>
                 <div class="info">
-                  <h3>HCIA学习笔记17</h3>
+                  <h3>HCNP学习笔记14</h3>
                   <hr>
                 </div>
               </a>
