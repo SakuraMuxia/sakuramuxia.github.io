@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">慢一点，才更快 | 雨落</title>
+  <title itemprop="name">HCNP学习笔记16 | 慢一点，才更快 | 雨落</title>
   
     <link rel="shortcut icon" href="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tubiao.ico">
   
@@ -288,767 +288,368 @@
 
       
       <!-- body -->
-      <div class="blank" style="padding-top: 0px;"></div>
-<div id="content" class="site-content">
-  
-  <div class="notice" style="margin-top:60px">
-    <audio id="mymusic" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn@latest/music/lovingstrangers.mp3" loop="loop"></audio>
-    <i class="iconfont icon-notification" onClick="play()">
-    </i>
-    <div class="notice-content">喵帕斯！</div>
-    <script>
-      function play() {
-        var audio = document.getElementById('mymusic');
-        if (audio.paused) {
-            audio.play();
-        }else{
-            audio.pause();
-            audio.currentTime = 0;//音乐从头播放
-        }
-      }
-    </script>
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/cungudafa/cdn/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+<div class="pattern-center single-center">
+  <!-- 有配图默认渲染第一张 -->
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/07/01/o5YEkNMbdhwcKCg.png);"
+    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/07/01/o5YEkNMbdhwcKCg.png">
   </div>
-  
-  <div class="top-feature-row">
-  <h1 class="fes-title" style="font-family: 'Ubuntu', sans-serif;">
-  <i class="fa fa-anchor" aria-hidden="true">
-  </i>
-  兴趣</h1>
-  
-  <div class="top-feature-v2">
-    <div class="the-feature square from_left_and_right">
-      <a href="https://www.youtube.com/" target="_blank">
-        <div class="img">
-          <img src="https://i.loli.net/2021/05/03/35c7xzED4TBK9Vb.jpg">
-        </div>
-        <div class="info">
-          <h3>YouTube</h3>
-          <p></p>
-        </div>
-      </a>
-    </div>
-  </div>
-  
-  <div class="top-feature-v2">
-    <div class="the-feature square from_left_and_right">
-      <a href="https://www.bilibili.com/" target="_blank">
-        <div class="img">
-          <img src="https://i.loli.net/2021/05/03/TLq2gaFk7uWQKrc.jpg">
-        </div>
-        <div class="info">
-          <h3>Bilibili</h3>
-          <p></p>
-        </div>
-      </a>
-    </div>
-  </div>
-  
-  <div class="top-feature-v2">
-    <div class="the-feature square from_left_and_right">
-      <a href="http://yuluo7.ys168.com/" target="_blank">
-        <div class="img">
-          <img src="https://i.loli.net/2021/05/03/6xPWRcHyDfrSTls.jpg">
-        </div>
-        <div class="info">
-          <h3>NicoNico</h3>
-          <p></p>
-        </div>
-      </a>
-    </div>
-  </div>
-  
+  <header class="pattern-header single-header">
+    <h1 class="entry-title">HCNP学习笔记16</h1>
+    <p class="entry-census">
+      
+      <span class="post-meta-item">
+        <a href="">
+          <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tx.jpg">
+        </a>
+      </span>
+      
+      
+      <span class="post-meta-item">
+        <a href=""> SakuraMuxia </a>
+      </span>
+      <span class="bull">
+        ·</span>
+      
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-calendar"></i>
+        </span>
+        <span class="post-meta-item-text"> 2021-7-1 </span>
+      </span>
+      <span class="bull">
+        ·</span>
+      <!-- 浏览数显示 -->
+      <span class="post-meta-item" >
+        <span class="post-meta-item-icon">
+          <i class="iconfont icon-attention"></i>
+        </span>
+        <span class="post-meta-item-text">本文共<span id="busuanzi_value_page_pv"> </span>次阅读
+        </span>
+      </span>
+      <span class="bull">
+        ·</span>
+      <!-- 字数统计-->
+      <span class="post-meta-item" >
+
+        
+      </span>
+      <span class="bull">
+        ·</span>
+      <!-- 评论数显示 -->
+      <!-- <span class="post-meta-item" >
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              </span class="post-meta-item-text">
+                <span class="valine-comment-count" data-xid="/18c9"> </span>
+              </span>
+          </span> -->
+    </p>
+  </header>
 </div>
+
+<div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      <h1 class="main-title" style="font-family: 'Ubuntu', sans-serif;">
-      <i class="fa fa-envira" aria-hidden="true"></i>
-      发现</h1>
-      
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-  
-    
-      
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-thumb">
-    <a href="/post/18c9.html">
-      
-        <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/07/01/o5YEkNMbdhwcKCg.png">
-      
-      </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2021-7-1 10:07
-      </div>
-      <a href="/post/18c9.html" class="post-title">
-        <h3>HCNP学习笔记16</h3>
-      </a>
-      <div class="post-meta">
-        <span>
-          
-        </span>
-        <span><i class="fa fa-tags"></i>
+      <article id="post-1"
+        class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content">  -->
+        <!--套嵌目录使用（主要为了支援评论）-->
         
-            <a href="/tags/OSPF%E5%9F%BA%E7%A1%80/">OSPF基础<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
-          
-        </span>
-        <!-- <span><i class="iconfont icon-attention"></i>
-          本页共<span id="busuanzi_value_page_pv"> </span>次阅读
-        </span> -->
-      </div>
-      <div class="float-content">
-        <p style="color: #666;">
-        
-          
-            OSPF基础
-技术背景
+        <div class="entry-content">
+          <h1 id="OSPF基础"><a href="#OSPF基础" class="headerlink" title="OSPF基础"></a>OSPF基础</h1><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627152432707.png" alt="image-20210627152432707"></p>
+<h2 id="技术背景"><a href="#技术背景" class="headerlink" title="技术背景"></a>技术背景</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627152602231.png" alt="image-20210627152602231"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627153015569.png" alt="image-20210627153015569"></p>
+<p>RIP中有一个计时器，每30秒进行以此更新，</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627154024905.png" alt="image-20210627154024905"></p>
+<h2 id="OSPF工作流程"><a href="#OSPF工作流程" class="headerlink" title="OSPF工作流程"></a>OSPF工作流程</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627154450872.png" alt="image-20210627154450872"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627154531491.png" alt="image-20210627154531491"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627154729203.png" alt="image-20210627154729203"></p>
+<h2 id="OSPF基本工作原理"><a href="#OSPF基本工作原理" class="headerlink" title="OSPF基本工作原理"></a>OSPF基本工作原理</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627155042767.png" alt="image-20210627155042767"></p>
+<h3 id="建立邻居"><a href="#建立邻居" class="headerlink" title="建立邻居"></a>建立邻居</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627155456434.png" alt="image-20210627155456434"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627155755672.png" alt="image-20210627155755672"></p>
+<p>链路层封装PPP，帧中继FR</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627161410374.png" alt="image-20210627161410374"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627161507522.png" alt="image-20210627161507522"></p>
+<pre class=" language-java"><code class="language-java"> 邻居建立完成之后，两个路由器互相发送一个数据库描述的包DD，这时候的状态叫做Exstart，它这个状态的目的是为了选举出一个Master和Slave，主仆关系的选举靠seq这几个序列号进行选举，I代表是不是第一个数据包，M代表是不是后边还有，MS代表是Master还是Slave，互相发送之后比较RouteID 这个只比较RouteID，数字越高，地址越大越优先，路由器B通过比较DD发现，A的数据B都有了，于是早早的就进入了Full状态，但是A发现B的数据A却没有于是进入LSR请求状态，向B请求，B于是就给了A更新，⑥请求中包含了LSA的头部信息，⑦；更新里面包含了LSA的完整信息，③④⑤中包含了LSA的摘要信息，
+</code></pre>
+<h2 id="状态机"><a href="#状态机" class="headerlink" title="状态机"></a>状态机</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627170040410.png" alt="image-20210627170040410"></p>
+<p>七种状态机制：</p>
+<p><strong>Down，Init，2-way，Exstart，Exchange，Full，Loading，Attempt。</strong></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627171200596.png" alt="image-20210627171200596"></p>
+<p><strong>RTA到达回环口192.168.3.3的开销是G1+G3+回环口的开销（华为的默认为0，思科的默认为1，回环口的默认带宽为8Gbps）</strong></p>
+<h2 id="网络类型"><a href="#网络类型" class="headerlink" title="网络类型"></a>网络类型</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210627171638549.png" alt="image-20210627171638549"></p>
+<p>以太网口，PPP，帧中继，串口网络1.544M，2.048M带宽，</p>
+<pre class=" language-java"><code class="language-java">背板带宽：
+背板带宽也称为背板容量，名词解释为：交换机的处理接口器和接口卡与数据总线所能吞吐的最大数据量。它代表了交换机整体的数据交换能力，单位是Gbps，叫交换带宽，通常我们能接触到的背板带宽有几Gbps到几百Gbps不等。
 
-RIP中有一个计时器，每30秒进行以此更新，
+包转发率：
 
-OSPF工作流程
+交换机的包转发率，也称为端口吞吐量，是交换机在某个端口进行数据包转发的能力，单位通常为pps，叫包每秒，即每秒钟内所转发数据包的个数。
 
+这里补充一个网络小常识：网络数据传输通过数据包，数据包的构成是传输的数据<span class="token operator">+</span>帧头<span class="token operator">+</span>帧间隙。网络中规定一个数据包最小为<span class="token number">64</span>字节，这里的<span class="token number">64</span>字节就是单纯的数据，加上<span class="token number">8</span>字节帧头和<span class="token number">12</span>字节帧间隙，那么网络中最小的包就是<span class="token number">84</span>字节。
 
-OS
-          
-        
-        </p>
-        <div class="post-bottom">
-          <a href="/post/18c9.html" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
+那么一个全双工的千兆接口达到线速时包转发率就要<span class="token operator">=</span>1000Mbps<span class="token operator">/</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token operator">+</span><span class="token number">8</span><span class="token operator">+</span><span class="token number">12</span><span class="token punctuation">)</span><span class="token operator">*</span>8bit<span class="token punctuation">)</span>＝<span class="token number">1</span><span class="token punctuation">.</span>488Mpps。
+ 
+    对于万兆以太网，一个线速端口的包转发率为<span class="token number">14</span><span class="token punctuation">.</span>88Mpps。 
+  对于千兆以太网，一个线速端口的包转发率为<span class="token number">1</span><span class="token punctuation">.</span>488Mpps。 
+  对于百兆以太网，一个线速端口的包转发率为<span class="token number">0</span><span class="token punctuation">.</span>1488Mpps
+   
+  如：一台<span class="token number">24</span>个千兆端口的桌面交换机（连接电脑），其最大吞吐量应达到<span class="token number">24</span><span class="token operator">*</span><span class="token number">1</span><span class="token punctuation">.</span>488Mpps<span class="token operator">=</span><span class="token number">35</span><span class="token punctuation">.</span>712Mpps，才能保证所有端口线速工作时，提供无阻塞的包交换。
+</code></pre>
+<h3 id="链路层协议"><a href="#链路层协议" class="headerlink" title="链路层协议"></a>链路层协议</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210628094404066.png" alt="image-20210628094404066"></p>
+<pre class=" language-java"><code class="language-java">帧中继网络就是NBMA，DR、BDR就相当于是否需要多路访问
+P2MP点到多点访问，
+</code></pre>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210628181524105.png" alt="image-20210628181524105"></p>
+<h3 id="OSPF网络类型：基于接口"><a href="#OSPF网络类型：基于接口" class="headerlink" title="OSPF网络类型：基于接口"></a>OSPF网络类型：基于接口</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210630124644976.png" alt="image-20210630124644976"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210630124724379.png" alt="image-20210630124724379"></p>
+<h3 id="MA网络中的问题"><a href="#MA网络中的问题" class="headerlink" title="MA网络中的问题"></a>MA网络中的问题</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210630171506281.png" alt="image-20210630171506281"></p>
+<h3 id="DR与BDR"><a href="#DR与BDR" class="headerlink" title="DR与BDR"></a>DR与BDR</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210630171637380.png" alt="image-20210630171637380"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210630171749363.png" alt="image-20210630171749363"></p>
+<pre class=" language-java"><code class="language-java">DR BDR 都有一个终身制，虽然是后边进来的，但是不会抢占DR或BDR，除非DR BDR发生故障
+  
+DR BDR的选举规则，先看优先级再看route ID
+</code></pre>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210630172405618.png" alt="image-20210630172405618"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210630172616909.png" alt="image-20210630172616909"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210630173425465.png" alt="image-20210630173425465"></p>
+<h3 id="相关命令"><a href="#相关命令" class="headerlink" title="相关命令"></a>相关命令</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210630173451758.png" alt="image-20210630173451758"></p>
+<h3 id="思科设备配置"><a href="#思科设备配置" class="headerlink" title="思科设备配置"></a>思科设备配置</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210630173725786.png" alt="image-20210630173725786"></p>
+<h2 id="单区域配置"><a href="#单区域配置" class="headerlink" title="单区域配置"></a>单区域配置</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210701100104969.png" alt="image-20210701100104969"></p>
+<h2 id="查看OSPF邻居状态"><a href="#查看OSPF邻居状态" class="headerlink" title="查看OSPF邻居状态"></a>查看OSPF邻居状态</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210701101448111.png" alt="image-20210701101448111"></p>
+<h2 id="查看OSPF的LSDB"><a href="#查看OSPF的LSDB" class="headerlink" title="查看OSPF的LSDB"></a>查看OSPF的LSDB</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210701101508135.png" alt="image-20210701101508135"></p>
+<h2 id="查看OSPF路由表"><a href="#查看OSPF路由表" class="headerlink" title="查看OSPF路由表"></a>查看OSPF路由表</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210701101537956.png" alt="image-20210701101537956"></p>
+
         </div>
-      </div>
-    </div>
-  </div>
-</article>
-     
-  
-    
-      
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-thumb">
-    <a href="/post/1989.html">
-      
-        <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/06/27/TXkiBt271acHSxG.png">
-      
-      </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2021-6-27 13:06
-      </div>
-      <a href="/post/1989.html" class="post-title">
-        <h3>HCNP学习笔记15</h3>
-      </a>
-      <div class="post-meta">
-        <span>
-          
-        </span>
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/PIM/">PIM<em>·</em></a>
-          
-            <a href="/tags/PIM-SM/">PIM SM<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
-          
-        </span>
-        <!-- <span><i class="iconfont icon-attention"></i>
-          本页共<span id="busuanzi_value_page_pv"> </span>次阅读
-        </span> -->
-      </div>
-      <div class="float-content">
-        <p style="color: #666;">
-        
-          
-            PIM-DM配置
 
-注意：应该先敲pim 再敲igmp 
-PIM-SM
-
-实验拓扑
-DR相当于IGM
-          
-        
-        </p>
-        <div class="post-bottom">
-          <a href="/post/1989.html" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="null"></li>
+                <li class="wechat-code"><img src="null"></li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</article>
-     
-  
-    
-      
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-thumb">
-    <a href="/post/d948.html">
-      
-        <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/06/14/vaRVA8Sf6D2HczY.png">
-      
-      </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2021-6-14 15:06
-      </div>
-      <a href="/post/d948.html" class="post-title">
-        <h3>HCNP学习笔记14</h3>
-      </a>
-      <div class="post-meta">
-        <span>
-          
-        </span>
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/PIM/">PIM<em>·</em></a>
-          
-            <a href="/tags/PIM-DM/">PIM DM<em>·</em></a>
-          
-            <a href="/tags/IGMP-Snooping/">IGMP Snooping<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
-          
-        </span>
-        <!-- <span><i class="iconfont icon-attention"></i>
-          本页共<span id="busuanzi_value_page_pv"> </span>次阅读
-        </span> -->
-      </div>
-      <div class="float-content">
-        <p style="color: #666;">
-        
-          
-            IGMP Snooping技术背景对组播的数据进行优化，能够指定那些端口发送或不再发送组播数据。
-
-
-          
-        
-        </p>
-        <div class="post-bottom">
-          <a href="/post/d948.html" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent">
         </div>
-      </div>
-    </div>
-  </div>
-</article>
-     
-  
-    
-      
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-thumb">
-    <a href="/post/aaaaaaa.html">
-      
-        <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/06/14/w4b9CNfuA2Hc3S6.png">
-      
-      </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2021-6-14 15:06
-      </div>
-      <a href="/post/aaaaaaa.html" class="post-title">
-        <h3>常用教程</h3>
-      </a>
-      <div class="post-meta">
-        <span>
+        <!-- 评分 -->
+        <div class="single-reward">
           
-        </span>
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/DOS/">DOS<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
-          
-        </span>
-        <!-- <span><i class="iconfont icon-attention"></i>
-          本页共<span id="busuanzi_value_page_pv"> </span>次阅读
-        </span> -->
-      </div>
-      <div class="float-content">
-        <p style="color: #666;">
-        
-          
-            DOS命令用户操作命令net user / 显示当前账户信息
-net user xxx /显示用户x
-          
-        
-        </p>
-        <div class="post-bottom">
-          <a href="/post/aaaaaaa.html" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
         </div>
-      </div>
-    </div>
-  </div>
-</article>
-     
-  
-    
-      
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-thumb">
-    <a href="/post/1b09.html">
-      
-        <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/06/09/av2Zu8AeogDJLWz.png">
-      
-      </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2021-6-9 09:06
-      </div>
-      <a href="/post/1b09.html" class="post-title">
-        <h3>HCNP学习笔记13</h3>
-      </a>
-      <div class="post-meta">
-        <span>
+        <!-- 自定义署名方式 -->
+        <footer class="post-footer">
+          <div class="post-lincenses" style="color: #ff9966;">
+            欢迎转载，转载时请注明来源哦！
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" style="color: #ff9966;" target="_blank"
+              rel="nofollow">
+              <i class="fa fa-creative-commons" aria-hidden="true"></i>ncsa4.0</a>
+          </div>
           
-        </span>
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/%E7%BB%84%E6%92%AD/">组播<em>·</em></a>
+          <div class="post-tags" style="color: #a39391">
+            <span><i class="fa fa-tags"></i>
+              
+              <a href="/tags/OSPF%E5%9F%BA%E7%A1%80/" style="color: #716e77;">OSPF基础<em>·</em></a>
+              
+            </span>
+            <span>
+              <i class="iconfont icon-file"></i>
+              
+              <a href="/categories/%E6%8A%80%E6%9C%AF/" style="color: #716e77;">技术</a>
+              
+            </span>
+          </div>
           
-            <a href="/tags/IGMP/">IGMP<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
-          
-        </span>
-        <!-- <span><i class="iconfont icon-attention"></i>
-          本页共<span id="busuanzi_value_page_pv"> </span>次阅读
-        </span> -->
-      </div>
-      <div class="float-content">
-        <p style="color: #666;">
+          <div class="post-share" >
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+        <!-- <div class="tag-cloud">
+          <div class="tag-cloud-title">
+          </div>
+          <div class="tag-cloud-tags">
+            <a href="/tags/ACL/" style="font-size: 10px; color: #f06966">ACL</a> <a href="/tags/ARP/" style="font-size: 10px; color: #f06966">ARP</a> <a href="/tags/BFD/" style="font-size: 10px; color: #f06966">BFD</a> <a href="/tags/BPDU/" style="font-size: 12px; color: #cb7980">BPDU</a> <a href="/tags/DHCP/" style="font-size: 10px; color: #f06966">DHCP</a> <a href="/tags/DOS/" style="font-size: 10px; color: #f06966">DOS</a> <a href="/tags/Eth-Trunk%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88/" style="font-size: 10px; color: #f06966">Eth-Trunk链路聚合</a> <a href="/tags/GRE/" style="font-size: 10px; color: #f06966">GRE</a> <a href="/tags/GVRP/" style="font-size: 10px; color: #f06966">GVRP</a> <a href="/tags/HCIA/" style="font-size: 20px; color: #39bae8">HCIA</a> <a href="/tags/HCIP/" style="font-size: 16px; color: #829ab4">HCIP</a> <a href="/tags/IGMP/" style="font-size: 10px; color: #f06966">IGMP</a> <a href="/tags/IGMP-Snooping/" style="font-size: 10px; color: #f06966">IGMP Snooping</a> <a href="/tags/IPsec-VPN/" style="font-size: 10px; color: #f06966">IPsec VPN</a> <a href="/tags/IPsec-%E9%85%8D%E7%BD%AE/" style="font-size: 10px; color: #f06966">IPsec 配置</a> <a href="/tags/MQC%E6%B5%81%E7%AD%96%E7%95%A5/" style="font-size: 10px; color: #f06966">MQC流策略</a> <a href="/tags/MSTP/" style="font-size: 10px; color: #f06966">MSTP</a> <a href="/tags/MUX-VLAN/" style="font-size: 10px; color: #f06966">MUX VLAN</a> <a href="/tags/NAT/" style="font-size: 10px; color: #f06966">NAT</a> <a href="/tags/OSPF/" style="font-size: 12px; color: #cb7980">OSPF</a> <a href="/tags/OSPF%E5%9F%BA%E7%A1%80/" style="font-size: 10px; color: #f06966">OSPF基础</a> <a href="/tags/PIM/" style="font-size: 12px; color: #cb7980">PIM</a> <a href="/tags/PIM-DM/" style="font-size: 10px; color: #f06966">PIM DM</a> <a href="/tags/PIM-SM/" style="font-size: 10px; color: #f06966">PIM SM</a> <a href="/tags/PPP/" style="font-size: 10px; color: #f06966">PPP</a> <a href="/tags/RIP/" style="font-size: 12px; color: #cb7980">RIP</a> <a href="/tags/RSTP/" style="font-size: 10px; color: #f06966">RSTP</a> <a href="/tags/STP/" style="font-size: 10px; color: #f06966">STP</a> <a href="/tags/SUPER-VLAN/" style="font-size: 10px; color: #f06966">SUPER VLAN</a> <a href="/tags/VLAN/" style="font-size: 14px; color: #a7899a">VLAN</a> <a href="/tags/VRRP/" style="font-size: 10px; color: #f06966">VRRP</a> <a href="/tags/VRRP%E9%85%8D%E7%BD%AE/" style="font-size: 10px; color: #f06966">VRRP配置</a> <a href="/tags/java/" style="font-size: 10px; color: #f06966">java</a> <a href="/tags/%E4%BA%A4%E6%8D%A2/" style="font-size: 10px; color: #f06966">交换</a> <a href="/tags/%E4%BB%A3%E7%90%86ARP/" style="font-size: 10px; color: #f06966">代理ARP</a> <a href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/" style="font-size: 10px; color: #f06966">信息安全</a> <a href="/tags/%E5%AE%9E%E9%AA%8C/" style="font-size: 14px; color: #a7899a">实验</a> <a href="/tags/%E7%AB%AF%E5%8F%A3%E5%AE%89%E5%85%A8/" style="font-size: 10px; color: #f06966">端口安全</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 18px; color: #5eaace">笔记</a> <a href="/tags/%E7%BB%84%E6%92%AD/" style="font-size: 10px; color: #f06966">组播</a> <a href="/tags/%E9%98%B2%E7%81%AB%E5%A2%99/" style="font-size: 10px; color: #f06966">防火墙</a> <a href="/tags/%E9%9A%94%E7%A6%BB%E6%8A%80%E6%9C%AF/" style="font-size: 10px; color: #f06966">隔离技术</a>
+          </div>
+        </div> -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
         
           
-            组播组播基础
-//ospf 组播地址 224.0.0.5 224.0.0.6
-
-技术背景 
-
-//C
           
-        
-        </p>
-        <div class="post-bottom">
-          <a href="/post/1b09.html" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-     
-  
-    
-      
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-thumb">
-    <a href="/post/dbc8.html">
-      
-        <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/06/06/1robveLiAPTyNGQ.png">
-      
-      </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2021-6-6 15:06
-      </div>
-      <a href="/post/dbc8.html" class="post-title">
-        <h3>HCNP学习笔记12</h3>
-      </a>
-      <div class="post-meta">
-        <span>
-          
-        </span>
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/BPDU/">BPDU<em>·</em></a>
-          
-            <a href="/tags/MSTP/">MSTP<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
-          
-        </span>
-        <!-- <span><i class="iconfont icon-attention"></i>
-          本页共<span id="busuanzi_value_page_pv"> </span>次阅读
-        </span> -->
-      </div>
-      <div class="float-content">
-        <p style="color: #666;">
-        
-          
-            MSTP
-说明：
-
-华为的设备默认是mstp；
+            <div class="post-nepre full next">
+              
+              <a href="/post/1989.html" rel="next">
+                <div class="background">
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/06/27/TXkiBt271acHSxG.png"
+                    style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
+                    onerror="imgError(this,3)" src="https://i.loli.net/2021/06/27/TXkiBt271acHSxG.png">
+                </div>
+                <span class="label">Next Post</span>
+                <div class="info">
+                  <h3>HCNP学习笔记15</h3>
+                  <hr>
+                </div>
+              </a>
+            </div>
+            
+      </section>
+      <!-- 加密文章隐藏评论 -->
+      <section class="comment" >
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<div id="gitalk-container" class="comment"></div> 
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="/js/md5.min.js"></script>
+<script type="text/javascript">
+	var gitalk = new Gitalk({
+  	clientID: '9ae3a88cd97b7b9bd1fa',
+  	clientSecret: 'c12b84cd9d9609551630939716dc990cc7d5af00',
+  	repo: 'SakuraMuxia.github.io',
+  	owner: 'SakuraMuxia',
+	admin: ['SakuraMuxia'],
+	distractionFreeMode: 'true',
+    id: md5(location.pathname)
+})
+gitalk.render('gitalk-container') 
+</script>
 
 
-
-
-
-MSTP简介
-dis stp b //查看
-          
-        
-        </p>
-        <div class="post-bottom">
-          <a href="/post/dbc8.html" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-     
-  
-    
+      </section>
+      <!-- 加密文章隐藏作者信息 -->
       
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-thumb">
-    <a href="/post/da88.html">
-      
-        <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/06/04/D6hMWEnQRudgaU9.png">
-      
-      </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2021-6-4 13:06
-      </div>
-      <a href="/post/da88.html" class="post-title">
-        <h3>HCNP学习笔记11</h3>
-      </a>
-      <div class="post-meta">
-        <span>
-          
-        </span>
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/RSTP/">RSTP<em>·</em></a>
-          
-            <a href="/tags/BPDU/">BPDU<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
-          
-        </span>
-        <!-- <span><i class="iconfont icon-attention"></i>
-          本页共<span id="busuanzi_value_page_pv"> </span>次阅读
-        </span> -->
-      </div>
-      <div class="float-content">
-        <p style="color: #666;">
-        
-          
-            RSTP
-说明：
-
-stp 根桥故障，直连故障，非直连故障，至少得等30s的时间，
-listen→ 
-          
-        
-        </p>
-        <div class="post-bottom">
-          <a href="/post/da88.html" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-     
-  
-    
-      
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-thumb">
-    <a href="/post/1a49.html">
-      
-        <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/31/jDO893BZRpusY2T.jpg">
-      
-      </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2021-5-31 23:05
-      </div>
-      <a href="/post/1a49.html" class="post-title">
-        <h3>HCNP学习笔记10</h3>
-      </a>
-      <div class="post-meta">
-        <span>
-          
-        </span>
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/%E4%BB%A3%E7%90%86ARP/">代理ARP<em>·</em></a>
-          
-            <a href="/tags/MQC%E6%B5%81%E7%AD%96%E7%95%A5/">MQC流策略<em>·</em></a>
-          
-            <a href="/tags/SUPER-VLAN/">SUPER VLAN<em>·</em></a>
-          
-            <a href="/tags/%E7%AB%AF%E5%8F%A3%E5%AE%89%E5%85%A8/">端口安全<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
-          
-        </span>
-        <!-- <span><i class="iconfont icon-attention"></i>
-          本页共<span id="busuanzi_value_page_pv"> </span>次阅读
-        </span> -->
-      </div>
-      <div class="float-content">
-        <p style="color: #666;">
-        
-          
-            代理ARPProxy ARP：如果arp请求是从一个网络的主机发往同一网段却不在同一物理网络上的另一
-          
-        
-        </p>
-        <div class="post-bottom">
-          <a href="/post/1a49.html" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-     
-  
-    
-      
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-thumb">
-    <a href="/post/cf16.html">
-      
-        <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/28/XsU37P91nzjYt8M.png">
-      
-      </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2021-5-28 15:05
-      </div>
-      <a href="/post/cf16.html" class="post-title">
-        <h3>HCNP学习笔记9</h3>
-      </a>
-      <div class="post-meta">
-        <span>
-          
-        </span>
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/%E9%9A%94%E7%A6%BB%E6%8A%80%E6%9C%AF/">隔离技术<em>·</em></a>
-          
-            <a href="/tags/MUX-VLAN/">MUX VLAN<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
-          
-        </span>
-        <!-- <span><i class="iconfont icon-attention"></i>
-          本页共<span id="busuanzi_value_page_pv"> </span>次阅读
-        </span> -->
-      </div>
-      <div class="float-content">
-        <p style="color: #666;">
-        
-          
-            隔离技术
-实例：
-
-实例说明：
-pc1和pc2不能互访，pc2可以访问pc3，pc1可以单向访问到p
-          
-        
-        </p>
-        <div class="post-bottom">
-          <a href="/post/cf16.html" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-     
-  
-    
-      
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-thumb">
-    <a href="/post/fd7.html">
-      
-        <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/24/h24Ko7gdnO3J8za.jpg">
-      
-      </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2021-5-24 23:05
-      </div>
-      <a href="/post/fd7.html" class="post-title">
-        <h3>HCNP学习笔记8</h3>
-      </a>
-      <div class="post-meta">
-        <span>
-          
-        </span>
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/BFD/">BFD<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
-          
-        </span>
-        <!-- <span><i class="iconfont icon-attention"></i>
-          本页共<span id="busuanzi_value_page_pv"> </span>次阅读
-        </span> -->
-      </div>
-      <div class="float-content">
-        <p style="color: #666;">
-        
-          
-            BFD为了减少链路，设备故障对业务的影响，提高网络的可靠性，网络设备需要尽快检测与相邻设备间的通信故
-          
-        
-        </p>
-        <div class="post-bottom">
-          <a href="/post/fd7.html" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-     
-  
-
-
-    </main>
-  </div>
-  
-    <div id="pagination"><a href="/page/2/" class="">Previous</a></div>
-  
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
-<!-- js -->
+
+
+<!--评论配置-->
+
+
+    <div id="vcomments"></div>
+    <script src="https://unpkg.com/valine/dist/Valine.min.js"></script><!-- 最新版 -->
+    <style>
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("https://gitee.com/cungudafa/source/raw/master/img/gif/Sitich/Sitich2.gif") 100% 100% no-repeat;
+    }
+    </style>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            enableQQ: true,
+            boolean: true,
+            appId: 'pJf0nLlIFPsrFbqcB2InonHd-gzGzoHsz',
+            appKey: 'RoAvgTeWI8wX4B5wXo6jB2YV',
+            //notify: 'false' === 'true',
+            //verify: 'true' === 'true',
+            visitor: 'false' === 'true',
+            avatar: 'monsterid',
+            pageSize: '10',
+            lang: 'zh-cn',
+            placeholder: '大家文明留言哈~',
+            requiredFields: ['nick','mail'], //设置必填项
+            // 设置Bilibili表情包地址
+            emojiCDN: '//i0.hdslb.com/bfs/emote/', 
+            // 表情title和图片映射
+            emojiMaps: {
+            "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+            "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+            "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+            "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+            "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+            "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+            "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+            "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+            "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+            "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+            "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+            "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+            "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+            "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+            "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+            "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+            "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+            "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+            "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+            "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+            "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+            "tv_打脸": "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+            "tv_抓狂": "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+            "tv_抠鼻": "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+            "tv_斜眼笑": "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+            "tv_无奈": "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+            "tv_晕": "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+            "tv_流汗": "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+            "tv_流泪": "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+            "tv_流鼻血": "c32d39db2737f89b904ca32700d140a9241b0767.png",
+            "tv_点赞": "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+            "tv_生气": "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+            "tv_生病": "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+            "tv_疑问": "0793d949b18d7be716078349c202c15ff166f314.png",
+            "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+            "tv_皱眉": "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+            "tv_目瞪口呆": "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+            "tv_睡着": "8b196675b53af58264f383c50ad0945048290b33.png",
+            "tv_笑哭": "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+            "tv_腼腆": "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+            "tv_色": "61822c7e9aae5da76475e7892534545336b23a6f.png",
+            "tv_调侃": "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+            "tv_调皮": "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+            "tv_鄙视": "6e72339f346a692a495b123174b49e4e8e781303.png",
+            "tv_闭嘴": "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+            "tv_难过": "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+            "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+            "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+            "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+            "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+                // ... 更多表情
+            }
+        });
+    </script>
+
+    <!-- 
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        jinrishici.load(function(result) {
+            var jrsc_plac =  result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin.dynasty + " · " + result.data.origin.author;
+            document.getElementById("veditor").setAttribute("placeholder",jrsc_plac);
+        })
+    </script>
+     -->
 
 
 
 
 
-<script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/shehuizhuyi.js"></script>
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<div id="gitalk-container" class="comment"></div> 
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="/js/md5.min.js"></script>
+<script type="text/javascript">
+	var gitalk = new Gitalk({
+  	clientID: '9ae3a88cd97b7b9bd1fa',
+  	clientSecret: 'c12b84cd9d9609551630939716dc990cc7d5af00',
+  	repo: 'SakuraMuxia.github.io',
+  	owner: 'SakuraMuxia',
+	admin: ['SakuraMuxia'],
+	distractionFreeMode: 'true',
+    id: md5(location.pathname)
+})
+gitalk.render('gitalk-container') 
+</script>
 
 
-<script src="https://cdn.jsdelivr.net/gh/cungudafa/cdn@2.1.2/js/cursor.js"></script>
-
-
-  <script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/love.js"></script>
-
-
-
-
-  <script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
-
-
-<!-- daovoice聊天功能 -->
-
-
-<!-- weather -->
-  
 
       <!-- body.end -->
     </div>
