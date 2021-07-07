@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">HCNP学习笔记10 | 慢一点，才更快 | 雨落</title>
+  <title itemprop="name">VIM使用教程 | 慢一点，才更快 | 雨落</title>
   
     <link rel="shortcut icon" href="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tubiao.ico">
   
@@ -294,11 +294,11 @@
 
 <div class="pattern-center single-center">
   <!-- 有配图默认渲染第一张 -->
-  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/05/31/jDO893BZRpusY2T.jpg);"
-    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/31/jDO893BZRpusY2T.jpg">
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/07/07/gjLXYQ1uFSk8tRH.png);"
+    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/07/07/gjLXYQ1uFSk8tRH.png">
   </div>
   <header class="pattern-header single-header">
-    <h1 class="entry-title">HCNP学习笔记10</h1>
+    <h1 class="entry-title">VIM使用教程</h1>
     <p class="entry-census">
       
       <span class="post-meta-item">
@@ -318,7 +318,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-calendar"></i>
         </span>
-        <span class="post-meta-item-text"> 2021-5-31 </span>
+        <span class="post-meta-item-text"> 2021-7-6 </span>
       </span>
       <span class="bull">
         ·</span>
@@ -345,7 +345,7 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               </span class="post-meta-item-text">
-                <span class="valine-comment-count" data-xid="/1a49"> </span>
+                <span class="valine-comment-count" data-xid="/f42f"> </span>
               </span>
           </span> -->
     </p>
@@ -362,220 +362,76 @@
         <!--套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h1 id="代理ARP"><a href="#代理ARP" class="headerlink" title="代理ARP"></a>代理ARP</h1><p>Proxy ARP：如果arp请求是从一个网络的主机发往<strong>同一网段却不在同一物理网络上</strong>的另一台主机，那么连接他们的具有代理ARP功能的设备就可以回答该请求，这个过程称为<strong>代理ARP</strong>。</p>
-<p><strong>特点：</strong></p>
-<ul>
-<li>部署在网关上，网络中的主机不必做任何改动。</li>
-<li>可以隐藏物理网络细节，使两个物理网络可以使用同一个网络号。</li>
-<li>只影响主机的ARP表，对网关的ARP表和路由表没有影响。</li>
-</ul>
-<p><strong>类型：</strong></p>
-<h2 id="路由式Proxy-ARP"><a href="#路由式Proxy-ARP" class="headerlink" title="路由式Proxy ARP"></a>路由式Proxy ARP</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210528174702349.png" alt="image-20210528174702349"></p>
-<p>当主机不在同一个网段时，他们会通过查找路由过去，这时候PC2得到的MAC地址是路由器g0/0/1的网关的MAC地址。</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210528175415713.png" alt="image-20210528175415713"></p>
-<p>当掩码更改成/16时，Pc1和PC2会认为他们处于同一个网段，不需要走网关直接发送Arp请求。但是ARP请求过不去，就拿不到PC2的MAC地址。</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//路由式代理ARP配置</span>
-<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
-arp<span class="token operator">-</span>proxy enable <span class="token comment" spellcheck="true">//开启路由式代理arp</span>
-<span class="token comment" spellcheck="true">//当配置一边时,数据包到了g0/0/0,进行解封装，然后再查找路由，再从g0/0/1接口出去，然后PC2进行回包，但是另一边不配置就无法进行通信。</span>
-<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
-arp<span class="token operator">-</span>proxy enable
+          <h2 id="VIM使用教程"><a href="#VIM使用教程" class="headerlink" title="VIM使用教程"></a>VIM使用教程</h2><p>vi是“visual interface”的缩写，vim是vi IMproved(增强版的vi)。在一般的系统管理维护中vi就够用，如果想使用代码加亮的话可以使用vim。</p>
+<p>vi有3个模式：插入模式、命令模式、低行模式。</p>
+<p>插入模式：在此模式下可以输入字符，按ESC将回到命令模式。<br>命令模式：可以移动光标、删除字符等。<br>低行模式：可以保存文件、退出vi、设置vi、查找等功能(低行模式也可以看作是命令模式里的)。</p>
+<p><strong>一、打开文件、保存、关闭文件(vi命令模式下使用)</strong></p>
+<pre><code>vi filename    //打开filename文件
+:w    //保存文件
+:w vpser.net //保存至vpser.net文件
+:q     //退出编辑器，如果文件已修改请使用下面的命令
+:q!    //退出编辑器，且不保存
+:wq     //退出编辑器，且保存文件
 </code></pre>
-<h2 id="VLAN内proxy-ARP"><a href="#VLAN内proxy-ARP" class="headerlink" title="VLAN内proxy ARP"></a>VLAN内proxy ARP</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529081349455.png" alt="image-20210529081349455"></p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> vlan <span class="token number">1</span><span class="token comment" spellcheck="true">//配置一个VLANIF 接口</span>
-ip add <span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">0.10</span> <span class="token number">24</span>
-arp<span class="token operator">-</span>proxy inner<span class="token operator">-</span>sub<span class="token operator">-</span>vlan<span class="token operator">-</span>proxy enable <span class="token comment" spellcheck="true">//开启代理同一个VLAN内的代理arp</span>
+<p><strong>二、插入文本或行</strong>(vi命令模式下使用，执行下面命令后将进入插入模式，按ESC键可退出插入模式)</p>
+<pre><code>a   //在当前光标位置的右边添加文本
+i    //在当前光标位置的左边添加文本
+A   //在当前行的末尾位置添加文本
+I   //在当前行的开始处添加文本(非空字符的行首)
+O   //在当前行的上面新建一行
+o   //在当前行的下面新建一行
+R  //替换(覆盖)当前光标位置及后面的若干文本
+J  //合并光标所在行及下一行为一行(依然在命令模式)
 </code></pre>
-<h2 id="VLAN间的proxy-arp"><a href="#VLAN间的proxy-arp" class="headerlink" title="VLAN间的proxy arp"></a>VLAN间的proxy arp</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529081821171.png" alt="image-20210529081821171"></p>
-<p>VLAN间proxy arp的主要用途，用在聚合VLAN或者超级VLAN里用的，SUPER VLAN 叫做超级VLAN，</p>
-<h2 id="相关配置"><a href="#相关配置" class="headerlink" title="相关配置"></a>相关配置</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210625160401170.png" alt="image-20210625160401170"></p>
-<h1 id="MQC流策略"><a href="#MQC流策略" class="headerlink" title="MQC流策略"></a>MQC流策略</h1><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529082306498.png" alt="image-20210529082306498"></p>
-<h2 id="MQC三要素"><a href="#MQC三要素" class="headerlink" title="MQC三要素"></a>MQC三要素</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529082508586.png" alt="image-20210529082508586"></p>
-<pre class=" language-java"><code class="language-java">traffic <span class="token operator">?</span> <span class="token comment" spellcheck="true">//配置traffic模式</span>
-traffic classifier <span class="token number">1</span> <span class="token comment" spellcheck="true">//配置流分类</span>
-<span class="token keyword">if</span><span class="token operator">-</span>match <span class="token operator">?</span> <span class="token comment" spellcheck="true">//匹配的范围</span>
-<span class="token comment" spellcheck="true">//对数据包的理解，对流量的过滤</span>
-traffic behavior <span class="token number">1</span> <span class="token comment" spellcheck="true">//配置流行为</span>
+<p><strong>三、移动光标</strong>(vi命令模式下使用)</p>
+<p>1、使用上下左右方向键</p>
+<p>2、命令模式下：h 向左、j 向下 、k 向上、l 向右。<br>空格键 向右、Backspace 向左、Enter 移动到下一行首、- 移动到上一行首。</p>
+<p><strong>四、删除、恢复字符或行</strong>(vi命令模式下使用)</p>
+<pre><code>x     //删除当前字符
+nx     //删除从光标开始的n个字符
+dd   //删除当前行
+ndd  //向下删除当前行在内的n行
+u    //撤销上一步操作
+U   //撤销对当前行的所有操作
 </code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529083213450.png" alt="image-20210529083213450"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529083254770.png" alt="image-20210529083254770"></p>
-<p>说明：</p>
-<p>cir ：承诺信息速率，car：限速的命令</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529083545280.png" alt="image-20210529083545280"></p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//模块化的配置</span>
-traffic polixy <span class="token number">1</span> <span class="token comment" spellcheck="true">//配置流策略</span>
-classifier <span class="token number">1</span> behavier <span class="token number">1</span> <span class="token comment" spellcheck="true">//调用流分类，调用流行为</span>
+<p><strong>五、搜索</strong>(vi命令模式下使用)</p>
+<pre><code>/vpser   //向光标下搜索vpser字符串
+?vpser   //向光标上搜索vpser字符串
+n      //向下搜索前一个搜素动作
+N     //向上搜索前一个搜索动作
 </code></pre>
-<h2 id="流策略在VLAN中应用"><a href="#流策略在VLAN中应用" class="headerlink" title="流策略在VLAN中应用"></a>流策略在VLAN中应用</h2><p>VLAN内二层隔离：VLAN内用户能够自由隔离（即任意用户间的单、双向隔离）</p>
-<p>VLAN间三层隔离：禁止部分用户互访或者只允许用户单向访问</p>
-<h2 id="MQC配置流程"><a href="#MQC配置流程" class="headerlink" title="MQC配置流程"></a>MQC配置流程</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529084509956.png" alt="image-20210529084509956"></p>
-<h2 id="配置流策略"><a href="#配置流策略" class="headerlink" title="配置流策略"></a>配置流策略</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529084808266.png" alt="image-20210529084808266"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529084845881.png" alt="image-20210529084845881"></p>
-<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529084955715.png" alt="image-20210529084955715"></p>
-<p>默认配置：</p>
-<pre class=" language-java"><code class="language-java">PC1<span class="token operator">:</span><span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">0.1</span>
-PC2<span class="token operator">:</span><span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">0.2</span>
-PC3<span class="token operator">:</span><span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">0.3</span>
+<p><strong>六、跳至指定行</strong>(vi命令模式下使用)</p>
+<pre><code>n+    //向下跳n行
+n-     //向上跳n行
+nG    //跳到行号为n的行
+G      //跳至文件的底部
 </code></pre>
-<p>配置：</p>
-<pre class=" language-java"><code class="language-java">acl <span class="token number">3000</span>
-  rule permit ip so <span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">0</span> des <span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">0.3</span> <span class="token number">0</span> <span class="token comment" spellcheck="true">//acl匹配作为条件</span>
-sys
- <span class="token comment" spellcheck="true">//acl作为一个条件，然后让流分类进行过滤，流行为做出反应</span>
- <span class="token comment" spellcheck="true">//配置流分类</span>
-  traffic classifier pc1topc3 
-  <span class="token keyword">if</span><span class="token operator">-</span>match acl <span class="token number">3000</span>
- <span class="token comment" spellcheck="true">//配置流行为</span>
-  traffic be pc1topc3
-  deny 
- <span class="token comment" spellcheck="true">//配置流策略</span>
-  traffic policy wakin 
-  classifier pc1topc3 behavior pc1topc3
- <span class="token comment" spellcheck="true">//在接口进行调用</span>
- traffic<span class="token operator">-</span>polixy wakin inbound
-<span class="token comment" spellcheck="true">//如果出现经常更换端口的情况，在接口调用acl就十分的麻烦，于是可以在VLAN中调用。</span>
- vlan <span class="token number">1</span>
- traffic<span class="token operator">-</span>police wakin inbound <span class="token comment" spellcheck="true">//在VLAN的入接口进行调用</span>
-  
+<p><strong>七、设置行号</strong>(vi命令模式下使用)</p>
+<pre><code>:set nu   //显示行号
+:set nonu  //取消显示行号
 </code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529120849251.png" alt="image-20210529120849251"></p>
-<pre class=" language-java"><code class="language-java">vlan <span class="token number">100</span>
-<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
-p l a 
-p d v <span class="token number">100</span>
-<span class="token keyword">int</span> vlan <span class="token number">1</span>
-ip add <span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">0.254</span> <span class="token number">24</span>
-<span class="token keyword">int</span> vlanif <span class="token number">100</span>
-ip add <span class="token number">100.0</span><span class="token punctuation">.</span><span class="token number">0.254</span> <span class="token number">24</span>
-<span class="token comment" spellcheck="true">//需求：拒绝VLAN1内的所有主机访问server服务器</span>
-traffic classifier vlan1<span class="token comment" spellcheck="true">//新建一个流分类</span>
-<span class="token keyword">if</span><span class="token operator">-</span>match vlan<span class="token operator">-</span>id <span class="token number">1</span> <span class="token comment" spellcheck="true">//直接匹配VLAN1的流量，因为数据包有打标签可以知道VLAN1 的ID</span>
-traffic policy wakin <span class="token comment" spellcheck="true">//然后在策略中添加关联流分类和流行为</span>
-classifier VLAN1 behavior pc1topc3
-<span class="token comment" spellcheck="true">//在一个流分类中添加两个条件是有或和与的区分的</span>
-traffic classifier hcip
-  <span class="token keyword">if</span><span class="token operator">-</span>match acl <span class="token number">3000</span>
-  <span class="token keyword">if</span><span class="token operator">-</span>match vlan<span class="token operator">-</span>id <span class="token number">1</span>
-d th
-   and <span class="token comment" spellcheck="true">//同时满足，默认是与的关系</span>
-traffic classifier hcip operator <span class="token operator">?</span> <span class="token comment" spellcheck="true">//更改流分类条件是与还是或的关系</span>
-<span class="token comment" spellcheck="true">//acl只是匹配路由的工具</span>
-   
+<p><strong>八、复制、粘贴</strong>(vi命令模式下使用)</p>
+<pre><code>yy  //将当前行复制到缓存区，也可以用 "ayy 复制，"a 为缓冲区，a也可以替换为a到z的任意字母，可以完成多个复制任务。
+nyy  //将当前行向下n行复制到缓冲区，也可以用 "anyy 复制，"a 为缓冲区，a也可以替换为a到z的任意字母，可以完成多个复制任务。
+nyw  //复制从光标开始的n个单词。
+y^   //复制从光标到行首的内容。 
+y$   //复制从光标到行尾的内容。
+p    //粘贴剪切板里的内容在光标后，如果使用了前面的自定义缓冲区，建议使用"ap 进行粘贴。
+P    //粘贴剪切板里的内容在光标前，如果使用了前面的自定义缓冲区，建议使用"aP 进行粘贴
 </code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529130753405.png" alt="image-20210529130753405"></p>
-<h1 id="Super-vlan"><a href="#Super-vlan" class="headerlink" title="Super vlan"></a>Super vlan</h1><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529131134653.png" alt="image-20210529131134653"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529131301277.png" alt="image-20210529131301277"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529132614478.png" alt="image-20210529132614478"></p>
-<p> <img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529132740523.png" alt="image-20210529132740523"></p>
-<p><strong>像模像样的东西，体现出正式，体现出专业性</strong></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529132949661.png" alt="image-20210529132949661"></p>
-<h2 id="SUPER-VLAN"><a href="#SUPER-VLAN" class="headerlink" title="SUPER VLAN"></a>SUPER VLAN</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529133249904.png" alt="image-20210529133249904"></p>
-<ul>
-<li> subvlan：是二层的物理接口，配置VLAN id的，不建立三层VLANIF接口，隔离广播域</li>
-<li>SUPER VLAN：是配置IP地址的逻辑3层接口，</li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529133634943.png" alt="image-20210529133634943"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529133750459.png" alt="image-20210529133750459"></p>
-<h2 id="SUPER-VLAN通信规则"><a href="#SUPER-VLAN通信规则" class="headerlink" title="SUPER VLAN通信规则"></a>SUPER VLAN通信规则</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529133919025.png" alt="image-20210529133919025"></p>
-<h2 id="subVLAN与其他网络的三层通信"><a href="#subVLAN与其他网络的三层通信" class="headerlink" title="subVLAN与其他网络的三层通信"></a>subVLAN与其他网络的三层通信</h2><p>Super-VLAN只负责网关的功能</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529134222951.png" alt="image-20210529134222951"></p>
-<p>重点：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">super</span> vlan 只负责网关的功能，主机<span class="token number">1</span>发送一个数据帧，交换机收到后打上标签<span class="token number">2</span>，主机<span class="token number">2</span>发送的数据帧打上标签<span class="token number">3</span>，不管是<span class="token number">2</span>还是<span class="token number">3</span>，因为之前我们从<span class="token number">10.1</span><span class="token punctuation">.</span><span class="token number">1.2</span> 去往<span class="token number">10.1</span><span class="token punctuation">.</span><span class="token number">2.2</span>，首先不是同一个网段，因为<span class="token number">3</span>层通讯，所以我们先找到的是网关的接口，咱们发送arp问的是网关，到了VLAN4的网关，进行二层解封装，到三层，三层一看目标ip，查路由，查完路由以后发现出接口是VLANIF10 接口，这个时候封装二层的时候，封装的标签是<span class="token number">10</span>，永远不会封装<span class="token number">4</span>的标签，VLANIF4只是负责网关的功能呢进行路由查找，查找出来真正出来的接口是VLANIF10的接口，如果是access则没有标签，如果是trunk，pvid一样也没有标签，pvid不一样就有标签，VLAN4的三层只是作为网关的作用，收到数据帧进行路由查找，找到出接口就可以了，VLANIF4作为SUPER VLAN 是不能跟物理口进行关联的，VLANIF作为一个网关他是一个虚拟口，不能和物理口进行关联。 就算收到一个VLAN4的数据包过来也会丢弃，因为VLANIF4没有对应的物理口进行转发。
+<p><strong>九、替换</strong>(vi命令模式下使用)</p>
+<pre><code>:s/old/new   //用new替换行中首次出现的old
+:s/old/new/g     //用new替换行中所有的old
+:n,m s/old/new/g  //用new替换从n到m行里所有的old
+:%s/old/new/g   //用new替换当前文件里所有的old
 </code></pre>
-<h2 id="sub-VLAN与其他设备的二层通信"><a href="#sub-VLAN与其他设备的二层通信" class="headerlink" title="sub -VLAN与其他设备的二层通信"></a>sub -VLAN与其他设备的二层通信</h2><p>不会涉及到SUPER-VLAN，与正常的二层通信流程一样</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529135825698.png" alt="image-20210529135825698"></p>
-<h2 id="Super-VLAN配置"><a href="#Super-VLAN配置" class="headerlink" title="Super VLAN配置"></a>Super VLAN配置</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529140138919.png" alt="image-20210529140138919"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529140206183.png" alt="image-20210529140206183"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529140308181.png" alt="image-20210529140308181"></p>
-<h1 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h1><p> <img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529140636696.png" alt="image-20210529140636696"></p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//配置超级VLAN</span>
-VLAN <span class="token number">10</span>
-  aggregate<span class="token operator">-</span>vlan 
-  access<span class="token operator">-</span>vlan <span class="token number">2</span> <span class="token number">3</span> 
-  dis <span class="token keyword">super</span><span class="token operator">-</span>vlan <span class="token comment" spellcheck="true">//验证超级vlan</span>
-  dis sub<span class="token operator">-</span>vlan <span class="token comment" spellcheck="true">//验证subVLAN</span>
-  <span class="token keyword">int</span> v <span class="token number">10</span>
-  ip add <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">0.254</span> <span class="token number">24</span>
-  q
-dhcp enable
-  <span class="token keyword">int</span> vlanif <span class="token number">10</span>
-  dhcp select <span class="token keyword">interface</span> 
-  <span class="token class-name">d</span> th
-这样的配置结果就是感觉上是在同一个网段但是她默认是不通的
-  arp<span class="token operator">-</span>proxy inter<span class="token operator">-</span>sub<span class="token operator">-</span>vlan<span class="token operator">-</span>proxy <span class="token comment" spellcheck="true">//开启vlan间的代理arp，让两个隔离的sub-VLAN进行通信。</span>
-  
+<p><strong>十、编辑其他文件</strong></p>
+<pre><code>:e otherfilename  //编辑文件名为otherfilename的文件
 </code></pre>
-<h1 id="端口安全"><a href="#端口安全" class="headerlink" title="端口安全"></a>端口安全</h1><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529142800936.png" alt="image-20210529142800936"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529143057257.png" alt="image-20210529143057257"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210530102404212.png" alt="image-20210530102404212"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210530102632389.png" alt="image-20210530102632389"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210530102934529.png" alt="image-20210530102934529"></p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//dynamic mac 可以同时设置动态mac数量和mac内容,数量默认为1个。先到先得。</span>
-<span class="token comment" spellcheck="true">//sticky 就相当于两者的特性各有一点，当动态学习到server2的MAC地址后就把它转化成静态的MAC，同时具有静态和动态的特性。</span>
-
+<p><strong>十一、修改文件格式</strong></p>
+<pre><code>:set fileformat=unix  //将文件修改为unix格式，如win下面的文本文件在linux下会出现^M。
 </code></pre>
-<h2 id="保护动作"><a href="#保护动作" class="headerlink" title="保护动作"></a>保护动作</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210530113729322.png" alt="image-20210530113729322"></p>
-<pre class=" language-java"><code class="language-java">
-<span class="token comment" spellcheck="true">//在接口模式下    restart 相当于 shutdown 再undo shutdown //思科默认交换机为shutdown</span>
-
-<span class="token comment" spellcheck="true">//在系统界面下</span>
-error<span class="token operator">-</span>down auto<span class="token operator">-</span>recovery cause port<span class="token operator">-</span>security <span class="token comment" spellcheck="true">//接口关闭后会自动恢复</span>
-error<span class="token operator">-</span>down auto<span class="token operator">-</span>recovery cause mac<span class="token operator">-</span>address<span class="token operator">-</span>flapping interval <span class="token number">30</span> <span class="token comment" spellcheck="true">//配置自动恢复的间隔</span>
-
-dis error<span class="token operator">-</span>down recovery <span class="token comment" spellcheck="true">//验证接口关闭后恢复情况</span>
-
-dis mac<span class="token operator">-</span>address <span class="token comment" spellcheck="true">//查看mac地址</span>
-
-dis trapbuffer <span class="token comment" spellcheck="true">//查看自动告警的trap缓存信息</span>
-dis log <span class="token comment" spellcheck="true">//查看系统日志</span>
-
-在汇聚层看到所有mac，然后看在哪个接口，然后在在接入层查看。
-</code></pre>
-<h2 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529143653774.png" alt="image-20210529143653774"></p>
-<p>ARP欺骗：告诉主机1，我是2我的MAC地址是C。欺骗主机的ARP缓存</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529143918488.png" alt="image-20210529143918488"></p>
-<p>MAC欺骗：欺骗交换机的MAC记录</p>
-<p>攻击者频繁发送2的MAC地址为B。</p>
-<pre class=" language-java"><code class="language-java">dis mac<span class="token operator">-</span>ad su <span class="token comment" spellcheck="true">//查看交换机MAC地址总数</span>
-</code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529144930655.png" alt="image-20210529144930655"></p>
-<p>MAC泛洪：制造大量的伪造MAC来频繁更新交换机的MAC地址表</p>
-<pre class=" language-java"><code class="language-java">dis mac<span class="token operator">-</span>ad <span class="token comment" spellcheck="true">//查看MAC地址表</span>
-</code></pre>
-<p>发送数据包工具：IPOP V6.1 可以根据改装的数据包发送，欺骗网络设备</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210529145916296.png" alt="image-20210529145916296"></p>
-<p>Kali系统</p>
-<p>桥接回环网卡</p>
-<pre class=" language-java"><code class="language-java">yersimia <span class="token operator">-</span>G <span class="token comment" spellcheck="true">//yersimia工具</span>
-macof <span class="token comment" spellcheck="true">//f代表float泛洪 在kali的cli状态下。</span>
-流量性攻击<span class="token comment" spellcheck="true">//</span>
-</code></pre>
-<p>Dos攻击，拒绝服务攻击，你提供一个DHCP服务，我指派很多人过去把资源消耗完，让正常的主机得不到地址。泛洪类攻击最有效也最可怕。</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//清空mac地址缓存</span>
-clear mac <span class="token comment" spellcheck="true">//思科</span>
-reset mac <span class="token comment" spellcheck="true">//华为</span>
-undo mac address <span class="token comment" spellcheck="true">//清楚MAC地址表</span>
-每个mac表刷新的时间为300s
-</code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210530102216141.png" alt="image-20210530102216141"></p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//大量非法的接入</span>
-<span class="token comment" spellcheck="true">//限制数量</span>
-<span class="token comment" spellcheck="true">//限制地址</span>
-  
-</code></pre>
-<h2 id="应用案例"><a href="#应用案例" class="headerlink" title="应用案例"></a>应用案例</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210530114203762.png" alt="image-20210530114203762"></p>
-<h2 id="配置命令："><a href="#配置命令：" class="headerlink" title="配置命令："></a>配置命令：</h2><pre class=" language-java"><code class="language-java">port<span class="token operator">-</span>security enable <span class="token comment" spellcheck="true">//开启端口安全</span>
-<span class="token comment" spellcheck="true">//默认配置是只允许一个安全mac，而且类型是安全动态mac，而且动作是restrict。</span>
-dis mac<span class="token operator">-</span>address security <span class="token operator">?</span><span class="token comment" spellcheck="true">//验证查看安全mac配置</span>
-<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">3</span> 
-
-port<span class="token operator">-</span>security max<span class="token operator">-</span>mac<span class="token operator">-</span>num x <span class="token comment" spellcheck="true">//配置端口安全最大的数量</span>
-port<span class="token operator">-</span>security mac<span class="token operator">-</span>address stick <span class="token comment" spellcheck="true">//启用mac stick</span>
-port<span class="token operator">-</span>security mac<span class="token operator">-</span>address stick xxxx<span class="token operator">-</span>xxxx<span class="token operator">-</span>xxxx vlan1 <span class="token comment" spellcheck="true">//在安全端口启动stick</span>
-</code></pre>
-<h2 id="相关命令："><a href="#相关命令：" class="headerlink" title="相关命令："></a>相关命令：</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210531225531355.png" alt="image-20210531225531355"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210531225600856.png" alt="image-20210531225600856"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210531231210645.png" alt="image-20210531231210645"></p>
+<p>总结：vi(vim)教程虽然有比较多的命令，但是只要勤加练习，相信你会很快的熟练掌握，同时也会给你的工作或学习带来更高的效率。当如果不知道自己处在什么模式时可以按2次Esc键即可回到命令模式，会有最后提醒一点：注意大小写！！！</p>
 
         </div>
 
@@ -608,13 +464,7 @@ port<span class="token operator">-</span>security mac<span class="token operator
           <div class="post-tags" style="color: #a39391">
             <span><i class="fa fa-tags"></i>
               
-              <a href="/tags/%E4%BB%A3%E7%90%86ARP/" style="color: #716e77;">代理ARP<em>·</em></a>
-              
-              <a href="/tags/MQC%E6%B5%81%E7%AD%96%E7%95%A5/" style="color: #716e77;">MQC流策略<em>·</em></a>
-              
-              <a href="/tags/SUPER-VLAN/" style="color: #716e77;">SUPER VLAN<em>·</em></a>
-              
-              <a href="/tags/%E7%AB%AF%E5%8F%A3%E5%AE%89%E5%85%A8/" style="color: #716e77;">端口安全<em>·</em></a>
+              <a href="/tags/VIM%E4%BD%BF%E7%94%A8/" style="color: #716e77;">VIM使用<em>·</em></a>
               
             </span>
             <span>
@@ -645,15 +495,15 @@ port<span class="token operator">-</span>security mac<span class="token operator
         
         <div class="post-nepre half previous">
           
-            <a href="/post/da88.html" rel="prev">
+            <a href="/post/a31c.html" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/06/04/D6hMWEnQRudgaU9.png"
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/07/06/hqQs92rNjobKyOM.png"
                   style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
-                  src="https://i.loli.net/2021/06/04/D6hMWEnQRudgaU9.png">
+                  src="https://i.loli.net/2021/07/06/hqQs92rNjobKyOM.png">
               </div>
               <span class="label">Previous Post</span>
               <div class="info">
-                <h3>HCNP学习笔记11</h3>
+                <h3>HCNP学习笔记18-补充</h3>
                 <hr>
               </div>
             </a>
@@ -663,15 +513,15 @@ port<span class="token operator">-</span>security mac<span class="token operator
           
           <div class="post-nepre half next">
             
-              <a href="/post/cf16.html" rel="next">
+              <a href="/post/dc48.html" rel="next">
                 <div class="background">
-                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/28/XsU37P91nzjYt8M.png"
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/07/06/byoVjvhkqwiPM8U.png"
                     style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
-                    onerror="imgError(this,3)" src="https://i.loli.net/2021/05/28/XsU37P91nzjYt8M.png">
+                    onerror="imgError(this,3)" src="https://i.loli.net/2021/07/06/byoVjvhkqwiPM8U.png">
                 </div>
                 <span class="label">Next Post</span>
                 <div class="info">
-                  <h3>HCNP学习笔记9</h3>
+                  <h3>HCNP学习笔记18</h3>
                   <hr>
                 </div>
               </a>
