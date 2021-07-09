@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">VIM使用教程 | 慢一点，才更快 | 雨落</title>
+  <title itemprop="name">HCNP学习笔记19 | 慢一点，才更快 | 雨落</title>
   
     <link rel="shortcut icon" href="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tubiao.ico">
   
@@ -294,11 +294,11 @@
 
 <div class="pattern-center single-center">
   <!-- 有配图默认渲染第一张 -->
-  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/07/07/gjLXYQ1uFSk8tRH.png);"
-    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/07/07/gjLXYQ1uFSk8tRH.png">
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/07/09/nuMb7tQEGFBVJky.png);"
+    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/07/09/nuMb7tQEGFBVJky.png">
   </div>
   <header class="pattern-header single-header">
-    <h1 class="entry-title">VIM使用教程</h1>
+    <h1 class="entry-title">HCNP学习笔记19</h1>
     <p class="entry-census">
       
       <span class="post-meta-item">
@@ -318,7 +318,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-calendar"></i>
         </span>
-        <span class="post-meta-item-text"> 2021-7-6 </span>
+        <span class="post-meta-item-text"> 2021-7-9 </span>
       </span>
       <span class="bull">
         ·</span>
@@ -345,7 +345,7 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               </span class="post-meta-item-text">
-                <span class="valine-comment-count" data-xid="/f42f"> </span>
+                <span class="valine-comment-count" data-xid="/1c89"> </span>
               </span>
           </span> -->
     </p>
@@ -362,251 +362,133 @@
         <!--套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h1 id="VIM使用教程"><a href="#VIM使用教程" class="headerlink" title="VIM使用教程"></a>VIM使用教程</h1><p>vi是“visual interface”的缩写，vim是vi IMproved(增强版的vi)。在一般的系统管理维护中vi就够用，如果想使用代码加亮的话可以使用vim。</p>
-<p>vi有3个模式：插入模式、命令模式、低行模式。</p>
-<p>插入模式：在此模式下可以输入字符，按ESC将回到命令模式。<br>命令模式：可以移动光标、删除字符等。<br>低行模式：可以保存文件、退出vi、设置vi、查找等功能(低行模式也可以看作是命令模式里的)。</p>
-<p><strong>一、打开文件、保存、关闭文件(vi命令模式下使用)</strong></p>
-<pre><code>vi filename    //打开filename文件
-:w    //保存文件
-:w vpser.net //保存至vpser.net文件
-:q     //退出编辑器，如果文件已修改请使用下面的命令
-:q!    //退出编辑器，且不保存
-:wq     //退出编辑器，且保存文件
-</code></pre>
-<p><strong>二、插入文本或行</strong>(vi命令模式下使用，执行下面命令后将进入插入模式，按ESC键可退出插入模式)</p>
-<pre><code>a   //在当前光标位置的右边添加文本
-i    //在当前光标位置的左边添加文本
-A   //在当前行的末尾位置添加文本（大写）
-I   //在当前行的开始处添加文本(非空字符的行首)
-O   //在当前行的上面新建一行
-o   //在当前行的下面新建一行
-R  //替换(覆盖)当前光标位置及后面的若干文本
-J  //合并光标所在行及下一行为一行(依然在命令模式)
-</code></pre>
-<p><strong>三、移动光标</strong>(vi命令模式下使用)</p>
-<p>1、使用上下左右方向键</p>
-<p>2、命令模式下：h 向左、j 向下 、k 向上、l 向右。<br>空格键 向右、Backspace 向左、Enter 移动到下一行首、- 移动到上一行首。</p>
-<p><strong>四、删除、恢复字符或行</strong>(vi命令模式下使用)</p>
-<pre><code>x     //删除当前字符
-nx     //删除从光标开始的n个字符
-dd   //删除当前行
-ndd  //向下删除当前行在内的n行
-u    //撤销上一步操作
-U   //撤销对当前行的所有操作
-</code></pre>
-<p><strong>五、搜索</strong>(vi命令模式下使用)</p>
-<pre><code>/vpser   //向光标下搜索vpser字符串
-?vpser   //向光标上搜索vpser字符串
-n      //向下搜索前一个搜素动作
-N     //向上搜索前一个搜索动作
-</code></pre>
-<p><strong>六、跳至指定行</strong>(vi命令模式下使用)</p>
-<pre><code>n+    //向下跳n行
-n-     //向上跳n行
-nG    //跳到行号为n的行
-G      //跳至文件的底部
-</code></pre>
-<p><strong>七、设置行号</strong>(vi命令模式下使用)</p>
-<pre><code>:set nu   //显示行号
-:set nonu  //取消显示行号
-</code></pre>
-<p><strong>八、复制、粘贴</strong>(vi命令模式下使用)</p>
-<pre><code>yy  //将当前行复制到缓存区，也可以用 "ayy 复制，"a 为缓冲区，a也可以替换为a到z的任意字母，可以完成多个复制任务。
-nyy  //将当前行向下n行复制到缓冲区，也可以用 "anyy 复制，"a 为缓冲区，a也可以替换为a到z的任意字母，可以完成多个复制任务。
-nyw  //复制从光标开始的n个单词。
-y^   //复制从光标到行首的内容。 
-y$   //复制从光标到行尾的内容。
-p    //粘贴剪切板里的内容在光标后，如果使用了前面的自定义缓冲区，建议使用"ap 进行粘贴。
-P    //粘贴剪切板里的内容在光标前，如果使用了前面的自定义缓冲区，建议使用"aP 进行粘贴
-</code></pre>
-<p><strong>九、替换</strong>(vi命令模式下使用)</p>
-<pre><code>:s/old/new   //用new替换行中首次出现的old
-:s/old/new/g     //用new替换行中所有的old
-:n,m s/old/new/g  //用new替换从n到m行里所有的old
-:%s/old/new/g   //用new替换当前文件里所有的old
-</code></pre>
-<p><strong>十、编辑其他文件</strong></p>
-<pre><code>:e otherfilename  //编辑文件名为otherfilename的文件
-</code></pre>
-<p><strong>十一、修改文件格式</strong></p>
-<pre><code>:set fileformat=unix  //将文件修改为unix格式，如win下面的文本文件在linux下会出现^M。
-</code></pre>
-<p>总结：vi(vim)教程虽然有比较多的命令，但是只要勤加练习，相信你会很快的熟练掌握，同时也会给你的工作或学习带来更高的效率。当如果不知道自己处在什么模式时可以按2次Esc键即可回到命令模式，会有最后提醒一点：注意大小写！！！</p>
-<h2 id="三种模式"><a href="#三种模式" class="headerlink" title="三种模式"></a>三种模式</h2><ul>
-<li>普通模式</li>
-<li>写入模式</li>
-<li>命令模式</li>
-</ul>
-<pre class=" language-java"><code class="language-java">i <span class="token comment" spellcheck="true">//进入写入模式</span>
-esc <span class="token comment" spellcheck="true">//退出写入模式，进入普通模式，可以开始执行指令</span>
-<span class="token operator">:</span> <span class="token comment" spellcheck="true">//进入命令模式</span>
-<span class="token operator">:</span>w <span class="token comment" spellcheck="true">//保存</span>
-<span class="token operator">:</span>wq <span class="token comment" spellcheck="true">//保存退出</span>
-cat xxx<span class="token punctuation">.</span>xxx <span class="token comment" spellcheck="true">//查看文件 </span>
-vim xxx<span class="token punctuation">.</span>xxx <span class="token comment" spellcheck="true">//vim 写入xxx文件</span>
-
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>  
-<span class="token comment" spellcheck="true">//修改vim键位，创建一个vim配置文件</span>
-cd <span class="token comment" spellcheck="true">//进入家目录</span>
-mkdir <span class="token punctuation">.</span>vim <span class="token comment" spellcheck="true">//新建一个.vim文件夹</span>
-cd <span class="token punctuation">.</span>vim <span class="token comment" spellcheck="true">//进入.vim文件夹</span>
-vim vimrc <span class="token comment" spellcheck="true">//新建一个文件vimrc</span>
-i <span class="token comment" spellcheck="true">//进入写入模式</span>
-noremap a b <span class="token comment" spellcheck="true">//认为按的a键但是响应的是b键</span>
-<span class="token operator">&lt;</span>CR<span class="token operator">></span> <span class="token comment" spellcheck="true">//代表回车   </span>
-syntax on <span class="token comment" spellcheck="true">//代码高亮</span>
-set number <span class="token comment" spellcheck="true">//显示行号</span>
-set wrap <span class="token comment" spellcheck="true">//自动换行</span>
-set wildmenu <span class="token comment" spellcheck="true">//自动补全</span>
-set hlserrch <span class="token comment" spellcheck="true">//搜索高亮</span>
-set incsearch <span class="token comment" spellcheck="true">//边搜索边高亮</span>
-set ignorecase <span class="token comment" spellcheck="true">//忽略大小写    </span>
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
-x <span class="token comment" spellcheck="true">//删除光标处信息</span>
-d <span class="token number">3</span> 右 <span class="token comment" spellcheck="true">//删除光标处右边3个字符</span>
-d <span class="token number">3</span> 左 <span class="token comment" spellcheck="true">//删除光标处左边3个字符</span>
-dd <span class="token comment" spellcheck="true">// 剪切这一行内容</span>
-p <span class="token comment" spellcheck="true">//粘贴</span>
-y <span class="token number">3</span> 右 <span class="token comment" spellcheck="true">//复制右边三个字符</span>
-c <span class="token number">6</span> 右 <span class="token comment" spellcheck="true">//删除右边6个字符并进入写入模式更改</span>
-w <span class="token comment" spellcheck="true">//一个词一个词进行跳转</span>
-b <span class="token comment" spellcheck="true">//回到上一个</span>
-c i x <span class="token comment" spellcheck="true">//把x之间的词全部删除并且进入写入模式</span>
-f xxx<span class="token comment" spellcheck="true">//寻找病跳转到xxx</span>
-<span class="token number">0</span> <span class="token comment" spellcheck="true">//跳转到最开头</span>
-u <span class="token comment" spellcheck="true">//撤回</span>
-<span class="token operator">/</span> <span class="token comment" spellcheck="true">//搜索按下回车就可以移动光标</span>
-
-</code></pre>
-<h1 id="树莓派"><a href="#树莓派" class="headerlink" title="树莓派"></a>树莓派</h1><pre class=" language-java"><code class="language-java">nano <span class="token operator">/</span>etc<span class="token operator">/</span>wpa_supplicant<span class="token operator">/</span>wpa_supplicant<span class="token punctuation">.</span>conf <span class="token comment" spellcheck="true">//管理员权限编辑无线配置</span>
-
-#<span class="token keyword">interface</span> <span class="token class-name">wlan0</span>
-#<span class="token keyword">static</span> ip_address<span class="token operator">=</span><span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">43.133</span><span class="token operator">/</span><span class="token number">24</span>
-#<span class="token keyword">static</span> routers<span class="token operator">=</span><span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">43.1</span>
-#<span class="token keyword">static</span> domain_name_servers<span class="token operator">=</span><span class="token number">223.5</span><span class="token punctuation">.</span><span class="token number">5.5</span>
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-sudo ifconfig <span class="token comment" spellcheck="true">//查看网络配置</span>
-ssh登陆
-$ssh xxx<span class="token annotation punctuation">@192</span><span class="token punctuation">.</span><span class="token number">168.1</span><span class="token punctuation">.</span><span class="token number">5</span> <span class="token comment" spellcheck="true">//前边为用户名，后边为IP地址</span>
-$passwd <span class="token comment" spellcheck="true">//更改密码</span>
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-
-<span class="token comment" spellcheck="true">//静态配置IP地址电口</span>
-
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
- sudo iwlist scan <span class="token operator">|</span> grep ESSID  <span class="token comment" spellcheck="true">//查看附近wifi</span>
- 
+          <h1 id="OSPF外部路由"><a href="#OSPF外部路由" class="headerlink" title="OSPF外部路由"></a>OSPF外部路由</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706131917417.png" alt="image-20210706131917417"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706132055186.png" alt="image-20210706132055186"></p>
+<h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706132456796.png" alt="image-20210706132456796"></p>
+<pre class=" language-java"><code class="language-java">dis ip routeing<span class="token operator">-</span>table <span class="token number">6.6</span><span class="token punctuation">.</span><span class="token number">6.6</span> <span class="token comment" spellcheck="true">//查看IP路由表去往6.6.6.6的路由信息</span>
   
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-ifconfig wlan0  <span class="token comment" spellcheck="true">//查看wlan0 的网卡配置</span>
-iwconfig wlan0  <span class="token comment" spellcheck="true">//查看wlan0 的网卡状态</span>
+<span class="token keyword">default</span><span class="token operator">-</span>route<span class="token operator">-</span>advertise always <span class="token comment" spellcheck="true">//通过ospf发布缺省路由信息（当默认没有配置缺省路由时加always）</span>
   
+dis ospf lsdb <span class="token comment" spellcheck="true">//查看ospf数据库</span>
   
-
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-sudo vim <span class="token operator">/</span>etc<span class="token operator">/</span>wpa_supplicant<span class="token operator">/</span>wpa_supplicant<span class="token punctuation">.</span>conf <span class="token comment" spellcheck="true">//通过vim编辑无线网配置</span>
-
-network<span class="token operator">=</span><span class="token punctuation">{</span>
-<span class="token punctuation">[</span>Tab<span class="token punctuation">]</span> ssid<span class="token operator">=</span><span class="token string">"你的wifi名称"</span>
-<span class="token punctuation">[</span>Tab<span class="token punctuation">]</span> key_mgmt<span class="token operator">=</span>WPA<span class="token operator">-</span>PSK
-<span class="token punctuation">[</span>Tab<span class="token punctuation">]</span> psk<span class="token operator">=</span><span class="token string">"你的wifi密码"</span>
-<span class="token punctuation">}</span>
-
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-sudo nano <span class="token operator">/</span>etc<span class="token operator">/</span>dhcpcd<span class="token punctuation">.</span>conf <span class="token comment" spellcheck="true">//更改dhcp配置文件配置静态ip</span>
- 
-<span class="token keyword">interface</span> <span class="token class-name">eth0</span>
- <span class="token keyword">static</span> ip_address<span class="token operator">=</span><span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">2.20</span><span class="token operator">/</span><span class="token number">24</span>
- <span class="token keyword">static</span> routers<span class="token operator">=</span><span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">2.1</span>
- <span class="token keyword">static</span> domain_name_servers<span class="token operator">=</span><span class="token number">114.114</span><span class="token punctuation">.</span><span class="token number">114.114</span>
-  
-<span class="token keyword">interface</span> <span class="token class-name">wlan0</span>
- <span class="token keyword">static</span> ip_address<span class="token operator">=</span><span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">2.21</span><span class="token operator">/</span><span class="token number">24</span>
- <span class="token keyword">static</span> routers<span class="token operator">=</span><span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">2.1</span>
- <span class="token keyword">static</span> domain_name_servers<span class="token operator">=</span><span class="token number">114.114</span><span class="token punctuation">.</span><span class="token number">114.114</span>
-  
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-sudo nano <span class="token operator">/</span>etc<span class="token operator">/</span>network<span class="token operator">/</span>interfaces <span class="token comment" spellcheck="true">//进入接口进行静态配置IP地址</span>
-  
-auto eth0 
-iface eth0 inet <span class="token keyword">static</span>
-address <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">2.20</span>
-netmask <span class="token number">255.255</span><span class="token punctuation">.</span><span class="token number">255.0</span>
-gateway <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">2.1</span>
-  
-allow<span class="token operator">-</span>hotplug wlan0
-iface wlan0 inet <span class="token keyword">static</span>
-address <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">2.21</span>
-netmask <span class="token number">255.255</span><span class="token punctuation">.</span><span class="token number">255.0</span>
-gateway <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">2.1</span>
-wpa<span class="token operator">-</span>conf <span class="token operator">/</span>etc<span class="token operator">/</span>wpa_supplicant<span class="token operator">/</span>wpa_supplicant<span class="token punctuation">.</span>conf
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span> 
-sudo raspi<span class="token operator">-</span>config <span class="token comment" spellcheck="true">//raspberry系统配置工具</span>
-Network→Options→Wireless LAN→输入你的wifi名称→输入你的WiFi密码→Finished→Reboot→重启
-
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
-pwd <span class="token comment" spellcheck="true">// </span>
+R3就是ASBR 
 </code></pre>
-<h1 id="su和sudo的区别"><a href="#su和sudo的区别" class="headerlink" title="su和sudo的区别"></a>su和sudo的区别</h1><pre class=" language-java"><code class="language-java"><span class="token number">1</span>、定义上：
-
-su为<span class="token keyword">switch</span> user，即切换用户的简写。su是最简单的身份切换名，用su我们能够进行不论什么用户的切换，一般都是su <span class="token operator">-</span> username，然后输入password就ok了，可是root用su切换到其它身份的时候是不须要输入password的。
-
-sudo是一种权限管理机制，依赖于<span class="token operator">/</span>etc<span class="token operator">/</span>sudoers，其定义了授权给哪个用户可以以管理员的身份能够执行什么样的管理命令。
-
-<span class="token number">2</span>、格式上：
-
-su格式为两种：su <span class="token operator">-</span>l USERNAME（<span class="token operator">-</span>l为login，即登陆的简写）、su USERNAME。
-
-sudo格式：sudo <span class="token operator">-</span>u USERNAME COMMAND。
-
-
-
-<span class="token number">3</span>、默认情况下：
-
-su默认情况下如果不指定USERNAME（用户名），默认即为root，所以切换到root的身份的命令即为：su <span class="token operator">-</span>root或su <span class="token operator">-</span>，su root 或su。
-
-sudo默认情况下，系统只有root用户可以执行sudo命令。需要root用户通过使用visudo命令编辑sudo的配置文件<span class="token operator">/</span>etc<span class="token operator">/</span>sudoers，才可以授权其他普通用户执行sudo命令。
-
-<span class="token number">4</span>、密码上：
-
-两个命令的最大区别是：sudo 命令需要输入当前用户的密码，su 命令需要输入 root 用户的密码。
-
-<span class="token number">5</span>、日志记录上：
-
-尽管 sudo 命令是以目标用户（默认情况下是 root 用户）的身份执行命令，但是它们会使用 sudoer所配置的用户名来记录是谁执行命令。而 su 命令是无法直接跟踪记录用户切换到 root 用户之后执行了什么操作。
-
-<span class="token number">6</span>、灵活性
-
-sudo 命令比 su 命令灵活很多，因为甚至可以限制 sudo 用户可以访问哪些命令。换句话说，用户通过 sudo 命令只能访问他们工作需要的命令。而 su 命令让用户有权限做任何事情。
+<h2 id="外部路由的引入"><a href="#外部路由的引入" class="headerlink" title="外部路由的引入"></a>外部路由的引入</h2><p>import 导入 引入 华为 华三</p>
+<p>redistribute 重发布/重分发 思科</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706135859361.png" alt="image-20210706135859361"></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">import</span><span class="token operator">-</span>route <span class="token keyword">static</span> <span class="token comment" spellcheck="true">//引入静态路由，从主路由器引入</span>
+  
 </code></pre>
-<pre class=" language-java"><code class="language-java">shutdown <span class="token operator">-</span>h now  <span class="token comment" spellcheck="true">//关机</span>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706140545246.png" alt="image-20210706140545246"></p>
+<h3 id="第五类LSA数据包结构"><a href="#第五类LSA数据包结构" class="headerlink" title="第五类LSA数据包结构"></a>第五类LSA数据包结构</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706140705874.png" alt="image-20210706140705874"></p>
+<p><strong>5类是通过ASBR产生的，他是在整个OSPF进程域中传播的，而且这个宣告者是不会变的，这就是一个问题，大家都知道这个外部路由是由3.3.3.3 通告的，但是R1和R5不知道3.3.3.3是怎么走的，3.3.3.3只有在区域0里的人才知道怎么走，这就是4类存在的价值，4类存在的价值就是告诉3.3.3.3BR该怎么走</strong></p>
+<hr>
+<p><strong>三类LSA会由ABR重新产生，四类LSA也会由ABR重新产生。</strong></p>
+<hr>
+<pre class=" language-java"><code class="language-java">dis ospf lsdb asbr  <span class="token comment" spellcheck="true">//验证ospf 四类lsa的路由信息</span>
 </code></pre>
-<pre class=" language-java"><code class="language-java">nano <span class="token operator">/</span>etc<span class="token operator">/</span>wpa_supplicant<span class="token operator">/</span>wpa_supplicant<span class="token punctuation">.</span>conf
-
-<span class="token keyword">interface</span> <span class="token class-name">wlan0</span>
-
-<span class="token keyword">static</span> ip_address<span class="token operator">=</span><span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">43.133</span><span class="token operator">/</span><span class="token number">24</span>
-<span class="token keyword">static</span> routers<span class="token operator">=</span><span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">43.1</span>
-<span class="token keyword">static</span> domain_name_servers<span class="token operator">=</span><span class="token number">223.5</span><span class="token punctuation">.</span><span class="token number">5.5</span>
-
-lsusb
-
-ls <span class="token operator">/</span>dev<span class="token operator">/</span>tty<span class="token operator">*</span>
-
-<span class="token operator">/</span>dev<span class="token operator">/</span>ttyUSB0
-
-sudo apt<span class="token operator">-</span>get install vim
-
-sudo vim <span class="token operator">/</span>etc<span class="token operator">/</span>vim<span class="token operator">/</span>vimrc
-
-syntax on
-ssh <span class="token operator">-</span>oHostKeyAlgorithms<span class="token operator">=</span><span class="token operator">+</span>ssh<span class="token operator">-</span>dss netmanage<span class="token annotation punctuation">@172</span><span class="token punctuation">.</span><span class="token number">30.0</span><span class="token punctuation">.</span><span class="token number">200</span>
-ssh <span class="token operator">-</span>o HostKeyAlgorithms<span class="token operator">=</span><span class="token operator">+</span>ssh<span class="token operator">-</span>dss netmanage<span class="token annotation punctuation">@172</span><span class="token punctuation">.</span><span class="token number">30.0</span><span class="token punctuation">.</span><span class="token number">200</span>
-
- 
-Host <span class="token number">172.30</span><span class="token punctuation">.</span><span class="token number">0.200</span>
-Ciphers 3des<span class="token operator">-</span>cbc 
-KexAlgorithms <span class="token operator">+</span>diffie<span class="token operator">-</span>hellman<span class="token operator">-</span>group1<span class="token operator">-</span>sha1
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706142529211.png" alt="image-20210706142529211"></p>
+<h3 id="第四类LSA数据包结构"><a href="#第四类LSA数据包结构" class="headerlink" title="第四类LSA数据包结构"></a>第四类LSA数据包结构</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706142934320.png" alt="image-20210706142934320"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706142959768.png" alt="image-20210706142959768"></p>
+<p> 如上图，ASBR产生五类的LSA信息，五类的在所有的区域内泛洪，而且是不更改宣告着ID，永远是ADBR的ID，所以在其他区域，除了在ASBR所在的区域外，其他区域找不到这个route ID ， 因此连接这个区域的ABR就有必要，有义务，产生四类的LSA。</p>
+<h4 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h4><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706143324447.png" alt="image-20210706143324447"></p>
+<pre class=" language-java"><code class="language-java">ASBR的出现是随意的，到后边的优化才会出现。
+</code></pre>
+<pre class=" language-java"><code class="language-java">R1配置
+  
+sys
+  sys R1
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> 
+  ip add <span class="token number">18.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">24</span>
+  q
+  ip route<span class="token operator">-</span>s <span class="token number">8.8</span><span class="token punctuation">.</span><span class="token number">8.8</span> <span class="token number">32</span> <span class="token number">18.0</span><span class="token punctuation">.</span><span class="token number">0.8</span>
+  ospf <span class="token number">1</span>
+  <span class="token keyword">import</span><span class="token operator">-</span>route <span class="token keyword">static</span> <span class="token comment" spellcheck="true">//注入静态路由</span>
+  
+  acl <span class="token number">2000</span> <span class="token comment" spellcheck="true">//新建一个策略</span>
+  rule permit so <span class="token number">18.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span> <span class="token comment" spellcheck="true">//只允许18网段</span>
+  route<span class="token operator">-</span>policy wakin permit node <span class="token number">10</span> <span class="token comment" spellcheck="true">//新建一个路由策略允许wakin这个路由策略节点编号为10</span>
+  <span class="token keyword">if</span> match acl <span class="token number">2000</span> <span class="token comment" spellcheck="true">// </span>
+  <span class="token keyword">import</span><span class="token operator">-</span>route direct route<span class="token operator">-</span>policy wakin <span class="token comment" spellcheck="true">//挂载直连路由附加路由策略</span>
+     
+    
+<span class="token comment" spellcheck="true">//宣告18网段地址</span>
+sys
+    
+</code></pre>
+<pre class=" language-java"><code class="language-java">R8配置
+  
+sys
+  sys R8
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> 
+  ip add <span class="token number">18.0</span><span class="token punctuation">.</span><span class="token number">0.8</span> <span class="token number">24</span>
+  <span class="token keyword">int</span> lo <span class="token number">8</span>
+  ip add <span class="token number">8.8</span><span class="token punctuation">.</span><span class="token number">8.8</span> <span class="token number">32</span> 
+  ip route<span class="token operator">-</span>s <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0</span> <span class="token number">18.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token comment" spellcheck="true">//添加静态路由</span>
+</code></pre>
+<pre class=" language-java"><code class="language-java">R7配置
+  
+sys
+  sys R7
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> 
+  ip add <span class="token number">57.0</span><span class="token punctuation">.</span><span class="token number">0.7</span> <span class="token number">24</span>
+  <span class="token keyword">int</span> lo <span class="token number">8</span>
+  ip add <span class="token number">7.7</span><span class="token punctuation">.</span><span class="token number">7.7</span> <span class="token number">32</span> 
+  ip route<span class="token operator">-</span>s <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0</span> <span class="token number">57.0</span><span class="token punctuation">.</span><span class="token number">0.5</span> <span class="token comment" spellcheck="true">//添加静态路由，吓一跳为对端IP地址。</span>
+  
+</code></pre>
+<pre class=" language-java"><code class="language-java">R5配置
+  
+sys
+  sys R5
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+  ip add <span class="token number">57.0</span><span class="token punctuation">.</span><span class="token number">0.5</span> <span class="token number">24</span>
+  ip route<span class="token operator">-</span>s <span class="token number">7.7</span><span class="token punctuation">.</span><span class="token number">7.7</span> <span class="token number">32</span> <span class="token number">57.0</span><span class="token punctuation">.</span><span class="token number">0.7</span> <span class="token comment" spellcheck="true">//添加静态路由，吓一跳为对端IP地址。</span>
+  <span class="token keyword">import</span><span class="token operator">-</span>route <span class="token keyword">static</span> <span class="token comment" spellcheck="true">//导入静态路由</span>
+  
+</code></pre>
+<p><strong>其中7.7.7.7 8.8.8.8 6.6.6.6 都是外部路由</strong></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706145630185.png" alt="image-20210706145630185"></p>
+<p>区域1中的五类LSA有四条，即有几个外部路由就有几条五类LSA，所有的区域中五类LSA都是一样的。</p>
+<p>区域1中的四类LSA有两条，分别是R2发的3.3.3.3 和5.5.5.5 </p>
+<p>区域0中的四类LSA有两条，分别是R2的1.1.1.1 和 R4 的5.5.5.5 </p>
+<p>区域2中的四类LSA有两条，分别是R4发的3.3.3.3 和 1.1.1.1</p>
+<pre class=" language-java"><code class="language-java">dis ospf routing <span class="token comment" spellcheck="true">//查看ospf路由表</span>
+  
+</code></pre>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706151025575.png" alt="image-20210706151025575"></p>
+<h3 id="五类的数据包类型"><a href="#五类的数据包类型" class="headerlink" title="五类的数据包类型"></a>五类的数据包类型</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706151150677.png" alt="image-20210706151150677"></p>
+<h2 id="外部路由类型"><a href="#外部路由类型" class="headerlink" title="外部路由类型"></a>外部路由类型</h2><p> <img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706151702339.png" alt="image-20210706151702339"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/AGY8ctZ3wMWjBKg.png"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706163021378.png" alt="image-20210706163021378"></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">import</span><span class="token operator">-</span>route <span class="token keyword">static</span> type <span class="token number">2</span> <span class="token comment" spellcheck="true">//导入外部静态路由类型2 不计算内部开销</span>
+<span class="token keyword">import</span><span class="token operator">-</span>route <span class="token keyword">static</span> type <span class="token number">1</span> <span class="token comment" spellcheck="true">//导入外部静态路由类型1 计算内部开销</span>
+<span class="token keyword">import</span><span class="token operator">-</span>route <span class="token keyword">static</span> type <span class="token number">1</span> cost xxx<span class="token comment" spellcheck="true">//导入外部静态路由类型1 计算内部开销配置开销为xxx</span>
+  
+</code></pre>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706165113430.png" alt="image-20210706165113430"></p>
+<p>PS：E1优先于E2，计算内部开销比不计算内部开销更优先。</p>
+<p>如果两个都是类型2，这个时候再比较开销，</p>
+<h2 id="外部路由引入配置案例"><a href="#外部路由引入配置案例" class="headerlink" title="外部路由引入配置案例"></a>外部路由引入配置案例</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/tsPDvRC37wNIiOf.png" alt="image-20210708164515942"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//直连有时候也需要注入，会把所有直连的都注入，但是我们需求的是只需要某些路由。而不是全部的，这个时候就需要引入路由策略。</span>
+</code></pre>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210709092401774.png" alt="image-20210709092401774"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210709092453440.png" alt="image-20210709092453440"></p>
+<h1 id="次优外部路由的产生原因"><a href="#次优外部路由的产生原因" class="headerlink" title="次优外部路由的产生原因"></a>次优外部路由的产生原因</h1><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210709102722152.png" alt="image-20210709102722152"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210709103153860.png" alt="image-20210709103153860"></p>
+<pre class=" language-java"><code class="language-java">sys R1
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+  ospf <span class="token number">1</span> 
+  a <span class="token number">1</span>
+  net <span class="token number">18.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span>
+   
+</code></pre>
+<pre class=" language-java"><code class="language-java">dis ospf lsdb ase <span class="token number">8.8</span><span class="token punctuation">.</span><span class="token number">8.8</span> <span class="token comment" spellcheck="true">//查看ospf lsdb 详细信息 8.8.8.8</span>
+</code></pre>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210709105606510.png" alt="image-20210709105606510"></p>
+<p> <img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210709111824723.png" alt="image-20210709111824723"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210709105754021.png" alt="image-20210709105754021"></p>
+<pre class=" language-java"><code class="language-java">次优外部路由的作用就是如果在引入OSPF中的外部路由的下一跳在一个ospf区域内，例如上图中R9的回环口地址，在R1的右侧接口宣告过，那么在R1注入到R9的静态路由后，区域内的其他路由器访问R9的回环口，下一跳地址就直接是R9的接口地址。
 </code></pre>
 
         </div>
@@ -640,7 +522,7 @@ KexAlgorithms <span class="token operator">+</span>diffie<span class="token oper
           <div class="post-tags" style="color: #a39391">
             <span><i class="fa fa-tags"></i>
               
-              <a href="/tags/VIM%E4%BD%BF%E7%94%A8/" style="color: #716e77;">VIM使用<em>·</em></a>
+              <a href="/tags/OSPF%E5%A4%96%E9%83%A8%E8%B7%AF%E7%94%B1/" style="color: #716e77;">OSPF外部路由<em>·</em></a>
               
             </span>
             <span>
@@ -668,36 +550,19 @@ KexAlgorithms <span class="token operator">+</span>diffie<span class="token oper
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-        
-        <div class="post-nepre half previous">
-          
-            <a href="/post/a31c.html" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/07/06/hqQs92rNjobKyOM.png"
-                  style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
-                  src="https://i.loli.net/2021/07/06/hqQs92rNjobKyOM.png">
-              </div>
-              <span class="label">Previous Post</span>
-              <div class="info">
-                <h3>HCNP学习笔记18-补充</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
           
           
-          
-          <div class="post-nepre half next">
-            
-              <a href="/post/dc48.html" rel="next">
+            <div class="post-nepre full next">
+              
+              <a href="/post/a31c.html" rel="next">
                 <div class="background">
-                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/07/06/byoVjvhkqwiPM8U.png"
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/07/06/hqQs92rNjobKyOM.png"
                     style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
-                    onerror="imgError(this,3)" src="https://i.loli.net/2021/07/06/byoVjvhkqwiPM8U.png">
+                    onerror="imgError(this,3)" src="https://i.loli.net/2021/07/06/hqQs92rNjobKyOM.png">
                 </div>
                 <span class="label">Next Post</span>
                 <div class="info">
-                  <h3>HCNP学习笔记18</h3>
+                  <h3>HCNP学习笔记18-补充</h3>
                   <hr>
                 </div>
               </a>
