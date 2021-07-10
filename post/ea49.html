@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">常用教程 | 慢一点，才更快 | 雨落</title>
+  <title itemprop="name">HCNP学习笔记20 | 慢一点，才更快 | 雨落</title>
   
     <link rel="shortcut icon" href="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tubiao.ico">
   
@@ -294,11 +294,11 @@
 
 <div class="pattern-center single-center">
   <!-- 有配图默认渲染第一张 -->
-  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/06/14/w4b9CNfuA2Hc3S6.png);"
-    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/06/14/w4b9CNfuA2Hc3S6.png">
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/07/10/4wULW89Gq7RETaD.png);"
+    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/07/10/4wULW89Gq7RETaD.png">
   </div>
   <header class="pattern-header single-header">
-    <h1 class="entry-title">常用教程</h1>
+    <h1 class="entry-title">HCNP学习笔记20</h1>
     <p class="entry-census">
       
       <span class="post-meta-item">
@@ -318,7 +318,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-calendar"></i>
         </span>
-        <span class="post-meta-item-text"> 2021-6-14 </span>
+        <span class="post-meta-item-text"> 2021-7-10 </span>
       </span>
       <span class="bull">
         ·</span>
@@ -345,7 +345,7 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               </span class="post-meta-item-text">
-                <span class="valine-comment-count" data-xid="/aaaaaaa"> </span>
+                <span class="valine-comment-count" data-xid="/ea49"> </span>
               </span>
           </span> -->
     </p>
@@ -362,18 +362,158 @@
         <!--套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h1 id="DOS命令"><a href="#DOS命令" class="headerlink" title="DOS命令"></a>DOS命令</h1><h2 id="用户操作命令"><a href="#用户操作命令" class="headerlink" title="用户操作命令"></a>用户操作命令</h2><pre class=" language-java"><code class="language-java">net user <span class="token operator">/</span> 显示当前账户信息
-net user xxx <span class="token operator">/</span>显示用户xxx的详细信息
-net user <span class="token operator">/</span>help net user 命令帮助
-net user username password <span class="token operator">/</span>add <span class="token comment" spellcheck="true">//添加用户账户</span>
-net user username password <span class="token operator">/</span>delete <span class="token comment" spellcheck="true">//删除用户账户</span>
-cls <span class="token comment" spellcheck="true">//清屏</span>
-  
-net localgroup <span class="token comment" spellcheck="true">//用户组操作，提升用户的权限</span>
-net localgroup administrator xxx <span class="token operator">/</span>add <span class="token comment" spellcheck="true">//添加xxx到administrator用户组下</span>
-
+          <h2 id="OSPF特殊区域和汇总"><a href="#OSPF特殊区域和汇总" class="headerlink" title="OSPF特殊区域和汇总"></a>OSPF特殊区域和汇总</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210709134431500.png" alt="image-20210709134431500"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210709142411116.png" alt="image-20210709142411116"></p>
+<p>传输区域：他会承载其他区域的流量，比如说Area0，区域1到区域2需要靠他传输。</p>
+<p>末端区域：没有其他区域的流量会经过他。</p>
+<h2 id="七类LSA"><a href="#七类LSA" class="headerlink" title="七类LSA"></a>七类LSA</h2><h3 id="Stub和Totally-Stub区域"><a href="#Stub和Totally-Stub区域" class="headerlink" title="Stub和Totally Stub区域"></a>Stub和Totally Stub区域</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210709142956809.png" alt="image-20210709142956809"></p>
+<p> <strong>Hello数据包中，Option中的信息</strong></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210709144908918.png" alt="image-20210709144908918"></p>
+<p>在所有的路由器中打上，原因是在于建立邻居需要Option中的参数都得一致。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210709155839515.png" alt="image-20210709155839515"></p>
+<pre class=" language-java"><code class="language-java">stub <span class="token comment" spellcheck="true">//配置为末节区域 在R5路由器上配置的</span>
+stub no<span class="token operator">-</span>summary <span class="token comment" spellcheck="true">//末节区域屏蔽三类LSA，除了一条缺省的路由,邻居需要重新建立，在R4路由器上配置的。</span>
+</code></pre>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210709160138840.png" alt="image-20210709160138840"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210709160204895.png" alt="image-20210709160204895"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210709160218258.png" alt="image-20210709160218258"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210709160238456.png" alt="image-20210709160238456"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210709160326510.png" alt="image-20210709160326510"></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210709161024204.png" alt="image-20210709161024204"></p>
+<h3 id="NSSA和Totally-NSSA区域"><a href="#NSSA和Totally-NSSA区域" class="headerlink" title="NSSA和Totally NSSA区域"></a>NSSA和Totally NSSA区域</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210709161227233.png" alt="image-20210709161227233"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710084037614.png" alt="image-20210710084037614"></p>
+<p>外部路由从RTA到RTB到RTD这一条路的路由不会存在，原因是因为Area1中没有四类和五类的LSA了，但是这个Area1区域中又有自己的ASBR，这个ASBR要注入外部路由，这个路由默认是五类的，那么我们末节网络是不允许五类的，所以这个LSA是七类，RTD在这个注入的路由是七类的，这个外部路由要转到其他区域，其他区域是正常区域，所以在RTB这边ABR就需要七转五，既然RTB转了就是RTB的身份了，Area2中多了一个四类，Area0中没有四类LSA的原因是在于RTB自己会自动的宣告身份，宣告这个五类路由，所以在Area0中知道这个存在。</p>
+<pre class=" language-java"><code class="language-java">sys
+  ospf
+  a <span class="token number">2</span>
+  nssa <span class="token comment" spellcheck="true">//配置为nssa区域</span>
+  acl <span class="token number">2000</span> <span class="token comment" spellcheck="true">//新建acl进行过滤</span>
+  rule per so <span class="token number">5.5</span><span class="token punctuation">.</span><span class="token number">5.5</span> <span class="token number">0</span> <span class="token comment" spellcheck="true">//新建规则允许源5.5.5.5</span>
+  q
+  route<span class="token operator">-</span>p wakin p n <span class="token number">10</span> 
+  <span class="token keyword">if</span> acl <span class="token number">2000</span>
+  ospf <span class="token number">1</span>
+  <span class="token keyword">import</span><span class="token operator">-</span>route direct route<span class="token operator">-</span>policy wakin 
+  q
+  dis ospf lsdb 
+</code></pre>
+<p><strong>在所有路由器上配置stub nssa只有在ABR上配置stub no-summary或NSSA no-summary</strong></p>
+<p>外部的区域访问包含七类的区域，就需要RTB的ABR发布一个缺省的路由，这个缺省路由就是七类的。如果再屏蔽三类的，就需要RTB的ABR再发布一个三类的缺省路由。NSSA在区域1中既有自己的外部路由，七类的从RTB传出去，又在其他地方进来的外部路由屏蔽掉了，七类只有在NSSA区域中。</p>
+<p><strong>如果有多个ABR转化路由器是NSSA区域中Route-ID最大的转</strong></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710084202212.png" alt="image-20210710084202212"></p>
+<p>其中图左边2.2.2.2为这个区域的ABR，他发进来的这缺省是为了方便访问其他的外部路由，4.4.4.4是这个区域的ASBR，只能以七类LSA存在，而如果配置Totally NSSA就相当于前边的三类也没有了，但是会多一条三类的缺省。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710084711434.png" alt="image-20210710084711434"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710084728067.png" alt="image-20210710084728067"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710093416434.png" alt="image-20210710093416434"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710085917305.png" alt="image-20210710085917305"></p>
+<p>现在对于Area0来讲，三类应该有四个，区域间路由</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710090007577.png" alt="image-20210710090007577"></p>
+<p>四类没有，上边注入的外部路由就不需要。然后是R1注入的但是被R2进行7转5了，所以在Area0中就没有4类的LSA，</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710090317773.png" alt="image-20210710090317773"></p>
+<p>而五类有三条，6.6.6.6 9.9.9.9 99.99.99.99</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710090516996.png" alt="image-20210710090516996"></p>
+<p> 对于Area2而言</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710092431765.png" alt="image-20210710092431765"></p>
+<p>对于Area1而言，7类的有两个，一个是99.99.99.99 是R1产生的，一个是R2产生的缺省的7类的。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710092853870.png" alt="image-20210710092853870"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710093256917.png" alt="image-20210710093256917"></p>
+<p>这边配置了Stub，这边的4 5 类LSA就进不来了，多一条三类的缺省路由，</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710093446356.png" alt="image-20210710093446356"></p>
+<p>配置了Totally 3类也没有了，依然保留三类的缺省。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710093609395.png" alt="image-20210710093609395"></p>
+<p>如果配置了NSSA，4 5 类都进不来了，有一条7类的默认，如果配置了Totally NSSA，也要配置3类的默认路由。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710093642451.png" alt="image-20210710093642451"></p>
+<h2 id="综合案例"><a href="#综合案例" class="headerlink" title="综合案例"></a>综合案例</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710094000961.png" alt="image-20210710094000961"></p>
+<h2 id="相关配置"><a href="#相关配置" class="headerlink" title="相关配置"></a>相关配置</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710094607397.png" alt="image-20210710094607397"></p>
+<p>在NSSA中只有配置有缺省的路由，然后再配置一个default-route-advertise ASBR才能产生缺省路由。</p>
+<h2 id="LSA总结"><a href="#LSA总结" class="headerlink" title="LSA总结"></a>LSA总结</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710095732795.png" alt="image-20210710095732795"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710095810933.png" alt="image-20210710095810933"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710095831220.png" alt="image-20210710095831220"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710095953451.png" alt="image-20210710095953451"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710100023403.png" alt="image-20210710100023403"></p>
+<h2 id="LSA更新规则"><a href="#LSA更新规则" class="headerlink" title="LSA更新规则"></a>LSA更新规则</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710102733064.png" alt="image-20210710102733064"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710103443781.png" alt="image-20210710103443781"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710104040533.png" alt="image-20210710104040533"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710104140498.png" alt="image-20210710104140498"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710105339822.png" alt="image-20210710105339822"></p>
+<p>当删除一个末节网络时，他会产生一个LSA类型3的Age为3600s的数据包，这个更新是在R3和R4之间抓到的数据包，R4 R5也有更新，但是R4和R5的更新里面，他是重新发送了一个类型1，这个类型1里就是告诉你，我现在这个类型1是R5发送的，就是1s,因为一开始类型1是包含两条链路信息，现在我这个类型1是包含1条链路信息，他不是删除这条LSA而是，删除这个LSA里面的一条链路信息， 区域2中包含的类型1的LSA的序列号+1，表示更新，这里面的LSA发现没有了5.5.5.5了，那么我（Area2）发送的三类LSA要怎么告诉其他外部的路由器呢，于是就是发送Age信息为3600s的，让所有路由器知道，然后把它删除，</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710104801112.png" alt="image-20210710104801112"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710105108680.png" alt="image-20210710105108680"></p>
+<h2 id="路由汇总"><a href="#路由汇总" class="headerlink" title="路由汇总"></a>路由汇总</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710110333600.png" alt="image-20210710110333600"></p>
+<p> OSPF内的路由信息是无法汇总的，只有在区域间才可以汇总。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710111401368.png" alt="image-20210710111401368"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710111711550.png" alt="image-20210710111711550"></p>
+<pre class=" language-java"><code class="language-java">sys
+  sys R6
+  <span class="token keyword">int</span> lo <span class="token number">0</span>
+  ip add <span class="token number">172.16</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">24</span>
+  <span class="token keyword">int</span> lo <span class="token number">1</span>
+  ip add <span class="token number">172.16</span><span class="token punctuation">.</span><span class="token number">1.1</span> <span class="token number">24</span>
+  <span class="token keyword">int</span> lo <span class="token number">2</span>
+  ip add <span class="token number">172.16</span><span class="token punctuation">.</span><span class="token number">2.1</span> <span class="token number">24</span>
+  <span class="token keyword">int</span> lo <span class="token number">3</span>
+  ip add <span class="token number">172.16</span><span class="token punctuation">.</span><span class="token number">3.1</span> <span class="token number">24</span>
+</code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//在R3上引用</span>
+sys
+  sys R3
+ip route<span class="token operator">-</span>s <span class="token number">172.16</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">24</span> <span class="token number">36.0</span><span class="token punctuation">.</span><span class="token number">0.6</span> 
+ip route<span class="token operator">-</span>s <span class="token number">172.16</span><span class="token punctuation">.</span><span class="token number">1.0</span> <span class="token number">24</span> <span class="token number">36.0</span><span class="token punctuation">.</span><span class="token number">0.6</span>
+ip route<span class="token operator">-</span>s <span class="token number">172.16</span><span class="token punctuation">.</span><span class="token number">2.0</span> <span class="token number">24</span> <span class="token number">36.0</span><span class="token punctuation">.</span><span class="token number">0.6</span>
+ip route<span class="token operator">-</span>s <span class="token number">172.16</span><span class="token punctuation">.</span><span class="token number">3.0</span> <span class="token number">24</span> <span class="token number">36.0</span><span class="token punctuation">.</span><span class="token number">0.6</span>
+<span class="token keyword">import</span><span class="token operator">-</span>route direct route<span class="token operator">-</span>policy wakin <span class="token comment" spellcheck="true">//注入静态路由</span>
+dis ospf lsdb <span class="token comment" spellcheck="true">//查看数据库</span>
+ospf
+  asbr<span class="token operator">-</span>summary <span class="token number">172.16</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">255.255</span><span class="token punctuation">.</span><span class="token number">252.0</span>
   
 </code></pre>
+<pre class=" language-java"><code class="language-java">sys
+  sys R5
+  <span class="token keyword">int</span> lo <span class="token number">0</span>
+  ip add <span class="token number">172.16</span><span class="token punctuation">.</span><span class="token number">4.1</span> <span class="token number">24</span>
+  <span class="token keyword">int</span> lo <span class="token number">1</span>
+  ip add <span class="token number">172.16</span><span class="token punctuation">.</span><span class="token number">5.1</span> <span class="token number">24</span>
+  <span class="token keyword">int</span> lo <span class="token number">2</span>
+  ip add <span class="token number">172.16</span><span class="token punctuation">.</span><span class="token number">6.1</span> <span class="token number">24</span>
+  <span class="token keyword">int</span> lo <span class="token number">3</span>
+  ip add <span class="token number">172.16</span><span class="token punctuation">.</span><span class="token number">7.1</span> <span class="token number">24</span>
+  
+  ospf <span class="token number">1</span>
+  a <span class="token number">2</span>
+  net <span class="token number">172.16</span><span class="token punctuation">.</span><span class="token number">4.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
+  net <span class="token number">172.16</span><span class="token punctuation">.</span><span class="token number">5.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
+  net <span class="token number">172.16</span><span class="token punctuation">.</span><span class="token number">6.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
+  net <span class="token number">172.16</span><span class="token punctuation">.</span><span class="token number">7.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span>
+</code></pre>
+<p>R3 R4需要配置 路由汇总，</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710112743014.png" alt="image-20210710112743014"></p>
+<pre class=" language-java"><code class="language-java">sys
+  sys R4
+  
+</code></pre>
+<p><strong>注意</strong></p>
+<p>汇总5类或者7类的时候，5类和7类不属于任何区域，所以在进程下边敲命令，R4是要汇总区域2中的路由，所以要先进入区域2，再配置abr-summary ，这两条命令是有区别的，一个是在区域内，一个是在区域间， </p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710124630798.png" alt="image-20210710124630798"></p>
+<h2 id="区域间路由汇总"><a href="#区域间路由汇总" class="headerlink" title="区域间路由汇总"></a>区域间路由汇总</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710124707943.png" alt="image-20210710124707943"></p>
+<h2 id="外部路由汇总"><a href="#外部路由汇总" class="headerlink" title="外部路由汇总"></a>外部路由汇总</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710124752842.png" alt="image-20210710124752842"></p>
+<p>回到上边的问题：汇总路由的开销，以及汇总路由什么时候消失。</p>
+<p>默认汇总路由的明细路由是1，这个Metric是怎么计算的呢，</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> lo <span class="token number">2</span> <span class="token comment" spellcheck="true">//进入相关的接口</span>
+ospf cost <span class="token number">10</span> <span class="token comment" spellcheck="true">//更改ospf开销为10 </span>
+</code></pre>
+<p> <img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710125654307.png" alt="image-20210710125654307"></p>
+<p>汇总包含的明细中，如果明细中的开销不一致，那么默认R4 发送出去的是最大的开销值。 R4</p>
+<p>到达汇总的是11，所以到达R3的开销值就是12，过了一个路由就加1，开销不一样我们看最大的那一个。</p>
+<p>汇总什么时候消失呢，汇总的好处就是，明细路由的up或者down，不会通告给被汇总外的设备，也就是说他怎么提高稳定性呢，假如说有一条明细路由挂了之后，修改了，只要不影响大局，或者这条明细挂掉了， 不是 通告汇总外的其他路由器，汇总内的路由器会发送1类和2类的更新，但是不会发送3类信息。但是更改了开销值就会发生3类信息的更新。当明细全部挂了之后，汇总就会消失，汇总要精确。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710130632451.png" alt="image-20210710130632451"></p>
+<h2 id="OSPF综合应用场景"><a href="#OSPF综合应用场景" class="headerlink" title="OSPF综合应用场景"></a>OSPF综合应用场景</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710135906152.png" alt="image-20210710135906152"></p>
+<p> 问题1：需要建立虚连接，没有直接相连就需要建立虚连接。</p>
+<p>问题2：Area1需要配置NSSA。</p>
+<p>问题3：配置路由认证。</p>
+<p>问题4：type1。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710141156065.png" alt="image-20210710141156065"></p>
+<p>Area24 配置totally-stub，area16配置totally-nssa，area35配置totally-stub，内部路由的汇总节点要选择清除，最左边汇总的地方在R2上汇总，中间的在R6上汇总，最右边在R3上汇总，R3和R1要建立虚连接，要不然就会产生隔离。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710142536663.png" alt="image-20210710142536663"></p>
 
         </div>
 
@@ -406,7 +546,15 @@ net localgroup administrator xxx <span class="token operator">/</span>add <span 
           <div class="post-tags" style="color: #a39391">
             <span><i class="fa fa-tags"></i>
               
-              <a href="/tags/DOS/" style="color: #716e77;">DOS<em>·</em></a>
+              <a href="/tags/OSPF%E5%A4%96%E9%83%A8%E8%B7%AF%E7%94%B1/" style="color: #716e77;">OSPF外部路由<em>·</em></a>
+              
+              <a href="/tags/OSPF-Stub/" style="color: #716e77;">OSPF Stub<em>·</em></a>
+              
+              <a href="/tags/OSPF-Totally-Stub/" style="color: #716e77;">OSPF Totally-Stub<em>·</em></a>
+              
+              <a href="/tags/OSPF-NSSA/" style="color: #716e77;">OSPF NSSA<em>·</em></a>
+              
+              <a href="/tags/OSPF-Totally-NSSA/" style="color: #716e77;">OSPF Totally-NSSA<em>·</em></a>
               
             </span>
             <span>
@@ -434,36 +582,19 @@ net localgroup administrator xxx <span class="token operator">/</span>add <span 
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-        
-        <div class="post-nepre half previous">
-          
-            <a href="/post/d948.html" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/06/14/vaRVA8Sf6D2HczY.png"
-                  style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
-                  src="https://i.loli.net/2021/06/14/vaRVA8Sf6D2HczY.png">
-              </div>
-              <span class="label">Previous Post</span>
-              <div class="info">
-                <h3>HCNP学习笔记14</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
           
           
-          
-          <div class="post-nepre half next">
-            
-              <a href="/post/1b09.html" rel="next">
+            <div class="post-nepre full next">
+              
+              <a href="/post/1c89.html" rel="next">
                 <div class="background">
-                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/06/09/av2Zu8AeogDJLWz.png"
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/07/09/nuMb7tQEGFBVJky.png"
                     style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
-                    onerror="imgError(this,3)" src="https://i.loli.net/2021/06/09/av2Zu8AeogDJLWz.png">
+                    onerror="imgError(this,3)" src="https://i.loli.net/2021/07/09/nuMb7tQEGFBVJky.png">
                 </div>
                 <span class="label">Next Post</span>
                 <div class="info">
-                  <h3>HCNP学习笔记13</h3>
+                  <h3>HCNP学习笔记19</h3>
                   <hr>
                 </div>
               </a>
