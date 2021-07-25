@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">HCIA学习笔记8 | 慢一点，才更快 | 雨落</title>
+  <title itemprop="name">Tag: MCU | 慢一点，才更快 | 雨落</title>
   
     <link rel="shortcut icon" href="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tubiao.ico">
   
@@ -288,441 +288,79 @@
 
       
       <!-- body -->
-      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/cungudafa/cdn/css/sharejs.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+      
 <div class="pattern-center-blank"></div>
-
-<div class="pattern-center single-center">
-  <!-- 有配图默认渲染第一张 -->
-  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/05/03/h2SoOwiBqLIsPca.jpg);"
-    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/h2SoOwiBqLIsPca.jpg">
+<div class="pattern-center ">
+  <div class="pattern-attachment-img">
+    <img src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="MCU.img" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
   </div>
-  <header class="pattern-header single-header">
-    <h1 class="entry-title">HCIA学习笔记8</h1>
-    <p class="entry-census">
-      
-      <span class="post-meta-item">
-        <a href="">
-          <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tx.jpg">
-        </a>
-      </span>
-      
-      
-      <span class="post-meta-item">
-        <a href=""> SakuraMuxia </a>
-      </span>
-      <span class="bull">
-        ·</span>
-      
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="fa fa-calendar"></i>
-        </span>
-        <span class="post-meta-item-text"> 2021-4-11 </span>
-      </span>
-      <span class="bull">
-        ·</span>
-      <!-- 浏览数显示 -->
-      <span class="post-meta-item" >
-        <span class="post-meta-item-icon">
-          <i class="iconfont icon-attention"></i>
-        </span>
-        <span class="post-meta-item-text">本文共<span id="busuanzi_value_page_pv"> </span>次阅读
-        </span>
-      </span>
-      <span class="bull">
-        ·</span>
-      <!-- 字数统计-->
-      <span class="post-meta-item" >
-
-        
-      </span>
-      <span class="bull">
-        ·</span>
-      <!-- 评论数显示 -->
-      <!-- <span class="post-meta-item" >
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              </span class="post-meta-item-text">
-                <span class="valine-comment-count" data-xid="/1c81"> </span>
-              </span>
-          </span> -->
-    </p>
+  <header class="pattern-header ">
+    <h1 class="cat-title">MCU</h1>
+    <br>
+    <span class="post-meta-item-icon">
+      <i class="iconfont icon-attention"></i>
+    </span>
+    <span class="post-meta-item-text"><span id="busuanzi_value_page_pv"> </span>
+    </span>
   </header>
 </div>
-
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      <article id="post-1"
-        class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
-        <div class="toc"></div>
-        <!--<div class="toc-entry-content">  -->
-        <!--套嵌目录使用（主要为了支援评论）-->
-        
-        <div class="entry-content">
-          <h2 id="交换基础"><a href="#交换基础" class="headerlink" title="交换基础"></a>交换基础</h2><pre class=" language-java"><code class="language-java">dis mac<span class="token operator">-</span>ad <span class="token comment" spellcheck="true">//显示mac地址</span>
-  
-dis mac<span class="token operator">-</span>ad aging<span class="token operator">-</span>time <span class="token comment" spellcheck="true">//查看衰老时间</span>
-  
-dis ip routing<span class="token operator">-</span>table <span class="token comment" spellcheck="true">//查看路由表</span>
-  
-arp <span class="token operator">-</span>d <span class="token comment" spellcheck="true">//清空arp缓存  </span>
-</code></pre>
-<p><strong>交换机工作在数据链路层，对数据帧进行操作，在收到数据帧后，交换机会根据数据帧的头部信息对数据帧进行转发。</strong></p>
-<ul>
-<li>说明：</li>
-</ul>
-<p>RIP是封装在UDP上</p>
-<h2 id="网络分层设计"><a href="#网络分层设计" class="headerlink" title="网络分层设计"></a>网络分层设计</h2><p>通过使用<strong>分层网络</strong>设计原则和条理化设计方法，设计人员可以创建易于管理和易于支持的网络</p>
-<h3 id="园区网"><a href="#园区网" class="headerlink" title="园区网"></a>园区网</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hica/image-20210410192049056.png" alt="image-20210410192049056"></p>
-<h2 id="交换机主要功能"><a href="#交换机主要功能" class="headerlink" title="交换机主要功能"></a>交换机主要功能</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hica/image-20210410194225851.png" alt="image-20210410194225851"></p>
-<h2 id="小型交换网络"><a href="#小型交换网络" class="headerlink" title="小型交换网络"></a>小型交换网络</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hica/image-20210410194352114.png" alt="image-20210410194352114"></p>
-<ul>
-<li><p>交换机工作在数据链路层，转发数据帧；</p>
-</li>
-<li><p>纯二层交换机只要要求在同一个网段即可互通，只要保证这些设备在同一个广播域；</p>
-</li>
-<li><p>纯二层交换机不看IP地址，只看MAC地址；</p>
-</li>
-</ul>
-<h2 id="交换机的工作原理"><a href="#交换机的工作原理" class="headerlink" title="交换机的工作原理"></a>交换机的工作原理</h2><p>根据MAC地址表中的MAC地址记录，做出智能转发</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hica/image-20210410200008888.png" alt="image-20210410200008888"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hica/image-20210411104844036.png" alt="image-20210411104844036"></p>
-<table>
-<thead>
-<tr>
-<th>原理</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>学习Learn</td>
-<td>当从一个接口收到帧时，把帧内的<strong>源MAC</strong>与该接口进行绑定，存入MAC地址表</td>
-</tr>
-<tr>
-<td>泛洪Flood</td>
-<td>当从一个接口收到<strong>广播帧</strong>，<strong>组播帧</strong>，<strong>未知单播帧</strong>（目标MAC不存在于MAC地址表中）把该帧从所有其他接口转发出去，除了接收口</td>
-</tr>
-<tr>
-<td>转发Forward</td>
-<td>当从一个接口收到<strong>已知单播帧</strong>，立即从相应的接口转发出去</td>
-</tr>
-<tr>
-<td>更新Update</td>
-<td>默认每条记录<strong>保存300秒</strong>；交换机<strong>重启后</strong>清空所有接口学习到的记录；<strong>接口关闭后</strong>会清空该接口学习到的记录；一个源MAC出现在另外个接口上，会删除老的记录，添加新的记录</td>
-</tr>
-<tr>
-<td>PS</td>
-<td>对于一台交换机来说：一个MAC只能关联在一个接口上；一个接口上可以学习到多个MAC；</td>
-</tr>
-</tbody></table>
-<ul>
-<li>说明：目标MAC全F则代表广播帧；</li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hica/image-20210411111622503.png" alt="image-20210411111622503"></p>
-<h2 id="学习MAC地址"><a href="#学习MAC地址" class="headerlink" title="学习MAC地址"></a>学习MAC地址</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hica/image-20210411111733133.png" alt="image-20210411111733133"></p>
-<ul>
-<li>交换机将收到的数据帧的源MAC地址和对应接口记录到MAC地址表中。</li>
-</ul>
-<h2 id="转发数据帧"><a href="#转发数据帧" class="headerlink" title="转发数据帧"></a>转发数据帧</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hica/image-20210411111904661.png" alt="image-20210411111904661"></p>
-<ul>
-<li>当数据帧的目的MAC地址不在MAC表中，或者目的MAC地址为广播地址时，交换机会泛洪该帧。</li>
-</ul>
-<h2 id="目标主机回复"><a href="#目标主机回复" class="headerlink" title="目标主机回复"></a>目标主机回复</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hica/image-20210411112358596.png" alt="image-20210411112358596"></p>
-<ul>
-<li>交换机根据MAC地址表将目标主机的回复信息单播转发给源主机</li>
-</ul>
-<h2 id="以太网接口工作模式"><a href="#以太网接口工作模式" class="headerlink" title="以太网接口工作模式"></a>以太网接口工作模式</h2><table>
-<thead>
-<tr>
-<th>术语</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>半双工</td>
-<td>half-duplex通讯双方都能发送和接收数据，但不能同时进行</td>
-</tr>
-<tr>
-<td>全双工</td>
-<td>full-duplex通信双方都能同时接收和发送数据</td>
-</tr>
-<tr>
-<td>速率</td>
-<td>speed接口连接时两端进行协商，协商失败则无法正常通信</td>
-</tr>
-</tbody></table>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//验证网口的参数</span>
-dis <span class="token keyword">interface</span> <span class="token class-name">g0</span><span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//查看接口的信息</span>
-dis mac<span class="token operator">-</span>address <span class="token comment" spellcheck="true">//查看mac地址信息</span>
-<span class="token comment" spellcheck="true">//双工模式 </span>
-<span class="token comment" spellcheck="true">//半双工：你发送的时候不能收，你收的时候不能发。</span>
-<span class="token comment" spellcheck="true">//全双工：发送的同时也可以发送。</span>
-</code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hica/image-20210411161627553.png" alt="image-20210411161627553"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hica/image-20210411161641316.png" alt="image-20210411161641316"></p>
-<h3 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h3><pre class=" language-java"><code class="language-java">undo negotiation auto <span class="token comment" spellcheck="true">//关闭自动协商</span>
-speed <span class="token number">100</span> <span class="token comment" spellcheck="true">//设置速率</span>
-duplex full <span class="token comment" spellcheck="true">//全双工</span>
-  
-<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">2</span> <span class="token comment" spellcheck="true">//进入接口</span>
-speed <span class="token operator">?</span> <span class="token comment" spellcheck="true">//设置速率</span>
-duplex <span class="token operator">?</span> <span class="token comment" spellcheck="true">//设置全半双工</span>
-  
-</code></pre>
-<h3 id="验证命令"><a href="#验证命令" class="headerlink" title="验证命令"></a>验证命令</h3><pre class=" language-java"><code class="language-java">dis <span class="token keyword">interface</span> <span class="token class-name">g0</span><span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//查看接口信息</span>
-<span class="token comment" spellcheck="true">//如果网络出现卡顿或者其他问题可以查看交换机接口的错误信息；</span>
-dis mac<span class="token operator">-</span>address summary <span class="token comment" spellcheck="true">//查看交换机存储的mac地址总数；</span>
-</code></pre>
-
-        </div>
-
-        <!-- .entry-content -->
-        <div class="single-reward">
-          <div class="reward-open">赏
-            <div class="reward-main">
-              <ul class="reward-row">
-                <li class="alipay-code"><img src="null"></li>
-                <li class="wechat-code"><img src="null"></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent">
-        </div>
-        <!-- 评分 -->
-        <div class="single-reward">
-          
-        </div>
-        <!-- 自定义署名方式 -->
-        <footer class="post-footer">
-          <div class="post-lincenses" style="color: #ff9966;">
-            欢迎转载，转载时请注明来源哦！
-            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" style="color: #ff9966;" target="_blank"
-              rel="nofollow">
-              <i class="fa fa-creative-commons" aria-hidden="true"></i>ncsa4.0</a>
-          </div>
-          
-          <div class="post-tags" style="color: #a39391">
-            <span><i class="fa fa-tags"></i>
-              
-              <a href="/tags/HCIA/" style="color: #716e77;">HCIA<em>·</em></a>
-              
-              <a href="/tags/%E7%AC%94%E8%AE%B0/" style="color: #716e77;">笔记<em>·</em></a>
-              
-              <a href="/tags/%E4%BA%A4%E6%8D%A2/" style="color: #716e77;">交换<em>·</em></a>
-              
-            </span>
-            <span>
-              <i class="iconfont icon-file"></i>
-              
-              <a href="/categories/%E6%8A%80%E6%9C%AF/" style="color: #716e77;">技术</a>
-              
-            </span>
-          </div>
-          
-          <div class="post-share" >
-            <div class="social-share sharehidden share-component"></div>
-            <i class="iconfont show-share icon-forward"></i>
-          </div>
-        </footer><!-- .entry-footer -->
-        <!-- <div class="tag-cloud">
-          <div class="tag-cloud-title">
-          </div>
-          <div class="tag-cloud-tags">
-            <a href="/tags/2019%E6%BF%80%E6%B4%BB%E5%AF%86%E9%92%A5/" style="font-size: 10px; color: #f06966">2019激活密钥</a> <a href="/tags/ACL/" style="font-size: 10px; color: #f06966">ACL</a> <a href="/tags/ARP/" style="font-size: 10px; color: #f06966">ARP</a> <a href="/tags/BFD/" style="font-size: 10px; color: #f06966">BFD</a> <a href="/tags/BPDU/" style="font-size: 12px; color: #cb7980">BPDU</a> <a href="/tags/DHCP/" style="font-size: 10px; color: #f06966">DHCP</a> <a href="/tags/DOS/" style="font-size: 10px; color: #f06966">DOS</a> <a href="/tags/Eth-Trunk%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88/" style="font-size: 10px; color: #f06966">Eth-Trunk链路聚合</a> <a href="/tags/GRE/" style="font-size: 10px; color: #f06966">GRE</a> <a href="/tags/GVRP/" style="font-size: 10px; color: #f06966">GVRP</a> <a href="/tags/H-323/" style="font-size: 10px; color: #f06966">H.323</a> <a href="/tags/HCIA/" style="font-size: 20px; color: #39bae8">HCIA</a> <a href="/tags/HCIP/" style="font-size: 16px; color: #829ab4">HCIP</a> <a href="/tags/IGMP/" style="font-size: 10px; color: #f06966">IGMP</a> <a href="/tags/IGMP-Snooping/" style="font-size: 10px; color: #f06966">IGMP Snooping</a> <a href="/tags/IPsec-VPN/" style="font-size: 10px; color: #f06966">IPsec VPN</a> <a href="/tags/IPsec-%E9%85%8D%E7%BD%AE/" style="font-size: 10px; color: #f06966">IPsec 配置</a> <a href="/tags/MCU/" style="font-size: 10px; color: #f06966">MCU</a> <a href="/tags/MQC%E6%B5%81%E7%AD%96%E7%95%A5/" style="font-size: 10px; color: #f06966">MQC流策略</a> <a href="/tags/MSTP/" style="font-size: 10px; color: #f06966">MSTP</a> <a href="/tags/MUX-VLAN/" style="font-size: 10px; color: #f06966">MUX VLAN</a> <a href="/tags/NAT/" style="font-size: 10px; color: #f06966">NAT</a> <a href="/tags/OSPF/" style="font-size: 12px; color: #cb7980">OSPF</a> <a href="/tags/OSPF-NSSA/" style="font-size: 10px; color: #f06966">OSPF NSSA</a> <a href="/tags/OSPF-Stub/" style="font-size: 10px; color: #f06966">OSPF Stub</a> <a href="/tags/OSPF-Totally-NSSA/" style="font-size: 10px; color: #f06966">OSPF Totally-NSSA</a> <a href="/tags/OSPF-Totally-Stub/" style="font-size: 10px; color: #f06966">OSPF Totally-Stub</a> <a href="/tags/OSPF%E5%86%85%E9%83%A8%E8%B7%AF%E7%94%B1/" style="font-size: 10px; color: #f06966">OSPF内部路由</a> <a href="/tags/OSPF%E5%9F%BA%E7%A1%80/" style="font-size: 10px; color: #f06966">OSPF基础</a> <a href="/tags/OSPF%E5%A4%96%E9%83%A8%E8%B7%AF%E7%94%B1/" style="font-size: 12px; color: #cb7980">OSPF外部路由</a> <a href="/tags/OSPF%E5%A4%9A%E5%8C%BA%E5%9F%9F/" style="font-size: 10px; color: #f06966">OSPF多区域</a> <a href="/tags/Office%E6%BF%80%E6%B4%BB/" style="font-size: 10px; color: #f06966">Office激活</a> <a href="/tags/PIM/" style="font-size: 12px; color: #cb7980">PIM</a> <a href="/tags/PIM-DM/" style="font-size: 10px; color: #f06966">PIM DM</a> <a href="/tags/PIM-SM/" style="font-size: 10px; color: #f06966">PIM SM</a> <a href="/tags/PPP/" style="font-size: 10px; color: #f06966">PPP</a> <a href="/tags/RIP/" style="font-size: 12px; color: #cb7980">RIP</a> <a href="/tags/RSTP/" style="font-size: 10px; color: #f06966">RSTP</a> <a href="/tags/SIP/" style="font-size: 10px; color: #f06966">SIP</a> <a href="/tags/SMC/" style="font-size: 10px; color: #f06966">SMC</a> <a href="/tags/STP/" style="font-size: 10px; color: #f06966">STP</a> <a href="/tags/SUPER-VLAN/" style="font-size: 10px; color: #f06966">SUPER VLAN</a> <a href="/tags/VIM%E4%BD%BF%E7%94%A8/" style="font-size: 10px; color: #f06966">VIM使用</a> <a href="/tags/VLAN/" style="font-size: 14px; color: #a7899a">VLAN</a> <a href="/tags/VRRP/" style="font-size: 10px; color: #f06966">VRRP</a> <a href="/tags/VRRP%E9%85%8D%E7%BD%AE/" style="font-size: 10px; color: #f06966">VRRP配置</a> <a href="/tags/java/" style="font-size: 10px; color: #f06966">java</a> <a href="/tags/win10KMS%E6%BF%80%E6%B4%BB/" style="font-size: 10px; color: #f06966">win10KMS激活</a> <a href="/tags/%E4%BA%A4%E6%8D%A2/" style="font-size: 10px; color: #f06966">交换</a> <a href="/tags/%E4%BA%A4%E6%8D%A2%E6%9C%BA%E9%80%9A%E8%BF%87FTP%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/" style="font-size: 10px; color: #f06966">交换机通过FTP上传下载文件</a> <a href="/tags/%E4%BB%A3%E7%90%86ARP/" style="font-size: 10px; color: #f06966">代理ARP</a> <a href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/" style="font-size: 10px; color: #f06966">信息安全</a> <a href="/tags/%E5%AE%9E%E9%AA%8C/" style="font-size: 14px; color: #a7899a">实验</a> <a href="/tags/%E6%89%B9%E9%87%8F%E5%8A%A0%E5%85%A5Vlan/" style="font-size: 10px; color: #f06966">批量加入Vlan</a> <a href="/tags/%E7%AB%AF%E5%8F%A3%E5%AE%89%E5%85%A8/" style="font-size: 10px; color: #f06966">端口安全</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 18px; color: #5eaace">笔记</a> <a href="/tags/%E7%BB%84%E6%92%AD/" style="font-size: 10px; color: #f06966">组播</a> <a href="/tags/%E9%98%B2%E7%81%AB%E5%A2%99/" style="font-size: 10px; color: #f06966">防火墙</a> <a href="/tags/%E9%9A%94%E7%A6%BB%E6%8A%80%E6%9C%AF/" style="font-size: 10px; color: #f06966">隔离技术</a>
-          </div>
-        </div> -->
-      </article>
-      <!-- #post-## -->
-      <div class="toc" style="background: none;"></div>
-      <section class="post-squares nextprev">
-        
-        
-        <div class="post-nepre half previous">
-          
-            <a href="/post/dc40.html" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/hfx6mv9Gyo8UFw1.jpg"
-                  style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
-                  src="https://i.loli.net/2021/05/03/hfx6mv9Gyo8UFw1.jpg">
-              </div>
-              <span class="label">Previous Post</span>
-              <div class="info">
-                <h3>HCIA学习笔记9</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-          
-          
-          
-          <div class="post-nepre half next">
-            
-              <a href="/post/d801.html" rel="next">
-                <div class="background">
-                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/i6fNdDPUampZLG9.jpg"
-                    style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
-                    onerror="imgError(this,3)" src="https://i.loli.net/2021/05/03/i6fNdDPUampZLG9.jpg">
-                </div>
-                <span class="label">Next Post</span>
-                <div class="info">
-                  <h3>HCIA学习笔记7</h3>
-                  <hr>
-                </div>
-              </a>
-            </div>
-            
-      </section>
-      <!-- 加密文章隐藏评论 -->
-      <section class="comment" >
-        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<div id="gitalk-container" class="comment"></div> 
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-<script src="/js/md5.min.js"></script>
-<script type="text/javascript">
-	var gitalk = new Gitalk({
-  	clientID: '9ae3a88cd97b7b9bd1fa',
-  	clientSecret: 'c12b84cd9d9609551630939716dc990cc7d5af00',
-  	repo: 'SakuraMuxia.github.io',
-  	owner: 'SakuraMuxia',
-	admin: ['SakuraMuxia'],
-	distractionFreeMode: 'true',
-    id: md5(location.pathname)
-})
-gitalk.render('gitalk-container') 
-</script>
-
-
-      </section>
-      <!-- 加密文章隐藏作者信息 -->
       
-    </main><!-- #main -->
-  </div><!-- #primary -->
+    <!-- 置顶文章 -->
+    
+      
+    
+    <!-- 首页默认取最最新文章集 -->
+    
+      <!-- 其余文章 -->
+      
+        <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <div class="post-entry">
+    <div class="feature">
+      <a href="/post/a548.html">
+        <div class="overlay">
+          <i class="iconfont icon-text">
+          </i>
+        </div>
+        <img width="150" height="150" src="https://i.loli.net/2021/07/25/rHqCOl8AFvIL2JP.png"
+          class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="">
+      </a>
+    </div>
+    <h1 class="entry-title">
+      <a href="/post/a548.html">
+        HCIA-Video-Conference</a>
+    </h1>
+    <div class="p-time">
+      <i class="iconfont icon-time">
+      </i>
+      2021-7-25</div>
+    <p>
+      </p>
+    <footer class="entry-footer">
+      <div class="post-more">
+        <a href="/post/a548.html">
+          <i class="iconfont icon-caidan">
+          </i>
+        </a>
+      </div>
+    </footer>
+  </div>
+  <hr>
+</article>
+       
+    
+
+
+
+      <div class="clearer">
+      </div>
+    </main>
+    <!--  -->
+    
+  </div>
 </div>
-
-
-<!--评论配置-->
-
-
-    <div id="vcomments"></div>
-    <script src="https://unpkg.com/valine/dist/Valine.min.js"></script><!-- 最新版 -->
-    <style>
-    #vcomments textarea {
-        box-sizing: border-box;
-        background: url("https://gitee.com/cungudafa/source/raw/master/img/gif/Sitich/Sitich2.gif") 100% 100% no-repeat;
-    }
-    </style>
-    <script>
-        new Valine({
-            el: '#vcomments',
-            enableQQ: true,
-            boolean: true,
-            appId: 'pJf0nLlIFPsrFbqcB2InonHd-gzGzoHsz',
-            appKey: 'RoAvgTeWI8wX4B5wXo6jB2YV',
-            //notify: 'false' === 'true',
-            //verify: 'true' === 'true',
-            visitor: 'false' === 'true',
-            avatar: 'monsterid',
-            pageSize: '10',
-            lang: 'zh-cn',
-            placeholder: '大家文明留言哈~',
-            requiredFields: ['nick','mail'], //设置必填项
-            // 设置Bilibili表情包地址
-            emojiCDN: '//i0.hdslb.com/bfs/emote/', 
-            // 表情title和图片映射
-            emojiMaps: {
-            "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
-            "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
-            "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
-            "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
-            "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
-            "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
-            "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
-            "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
-            "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
-            "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
-            "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
-            "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
-            "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
-            "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
-            "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
-            "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
-            "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
-            "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
-            "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
-            "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
-            "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
-            "tv_打脸": "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
-            "tv_抓狂": "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
-            "tv_抠鼻": "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
-            "tv_斜眼笑": "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
-            "tv_无奈": "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
-            "tv_晕": "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
-            "tv_流汗": "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
-            "tv_流泪": "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
-            "tv_流鼻血": "c32d39db2737f89b904ca32700d140a9241b0767.png",
-            "tv_点赞": "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
-            "tv_生气": "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
-            "tv_生病": "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
-            "tv_疑问": "0793d949b18d7be716078349c202c15ff166f314.png",
-            "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
-            "tv_皱眉": "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
-            "tv_目瞪口呆": "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
-            "tv_睡着": "8b196675b53af58264f383c50ad0945048290b33.png",
-            "tv_笑哭": "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
-            "tv_腼腆": "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
-            "tv_色": "61822c7e9aae5da76475e7892534545336b23a6f.png",
-            "tv_调侃": "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
-            "tv_调皮": "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
-            "tv_鄙视": "6e72339f346a692a495b123174b49e4e8e781303.png",
-            "tv_闭嘴": "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
-            "tv_难过": "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
-            "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
-            "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
-            "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
-            "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
-                // ... 更多表情
-            }
-        });
-    </script>
-
-    <!-- 
-    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-    <script type="text/javascript">
-        jinrishici.load(function(result) {
-            var jrsc_plac =  result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin.dynasty + " · " + result.data.origin.author;
-            document.getElementById("veditor").setAttribute("placeholder",jrsc_plac);
-        })
-    </script>
-     -->
-
-
-
-
-
-
-  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<div id="gitalk-container" class="comment"></div> 
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-<script src="/js/md5.min.js"></script>
-<script type="text/javascript">
-	var gitalk = new Gitalk({
-  	clientID: '9ae3a88cd97b7b9bd1fa',
-  	clientSecret: 'c12b84cd9d9609551630939716dc990cc7d5af00',
-  	repo: 'SakuraMuxia.github.io',
-  	owner: 'SakuraMuxia',
-	admin: ['SakuraMuxia'],
-	distractionFreeMode: 'true',
-    id: md5(location.pathname)
-})
-gitalk.render('gitalk-container') 
-</script>
-
-
-
       <!-- body.end -->
     </div>
     <!-- search -->    

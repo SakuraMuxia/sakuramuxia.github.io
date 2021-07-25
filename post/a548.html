@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <!-- cungudafa百度收录验证编号 -->
+  <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+  <title itemprop="name">HCIA-Video-Conference | 慢一点，才更快 | 雨落</title>
+  
+    <link rel="shortcut icon" href="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tubiao.ico">
+  
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/cungudafa/cdn/css/style.css" type="text/css" media="all" id="saukra_css-css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/cungudafa/cdn/css/jquery.fancybox.min.css" media="all">  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/cungudafa/cdn/css/lib.min.css" media="all">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/cungudafa/cdn/css/font.css" media="all">
+  <link rel="stylesheet" href="/css/insight.css" media="all">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/cungudafa/cdn/css/tags.css" media="all">
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+
+  <!-- 分析 -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <!-- Baidu Analytics -->
+
+  
+  <!--   <link rel="stylesheet" id="saukra_css-css" href="https://2heng.xin/wp-content/cache/autoptimize/css/autoptimize_ad42a61f4c7d4bdd9f91afcff6b5dda5.css
+  " type="text/css" media="all"> -->
+  <script>
+    /*Initial Variables*/
+    var mashiro_option = new Object();
+    var mashiro_global = new Object();
+    mashiro_option.NProgressON = true;
+    /* 
+    * 邮箱信息之类的东西可以填在这里，这些js变量基本都作用于sakura-app.js
+    * 这样的设置仅是为了方便在基于PHP开发的主题中设置js变量，既然移植到了Node上，我想或许可以精简这一逻辑吧
+    */
+    mashiro_option.email_domain = "";
+    mashiro_option.email_name = "";
+    mashiro_option.cookie_version_control = "";
+    mashiro_option.qzone_autocomplete = false;
+    mashiro_option.site_name = "SakuraMuxia雨落辰潇";
+    mashiro_option.author_name = "雨落辰潇";
+    mashiro_option.site_url = "";
+    mashiro_option.v_appId = "pJf0nLlIFPsrFbqcB2InonHd-gzGzoHsz";//
+    mashiro_option.v_appKey = "RoAvgTeWI8wX4B5wXo6jB2YV";//
+    mashiro_option.mathjax = "1";
+    mashiro_option.copyright_enable = "true" ;
+    mashiro_option.copyright_minCharNumber = parseInt("120") ;
+    mashiro_option.copyright_description = "本文章著作权归作者所有，任何形式的转载都请注明出处。" ;
+    mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/"; 
+    mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
+
+    // mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.4.5/css/lib.min.css";
+    // mashiro_option.float_player_on = true;
+
+    /*End of Initial Variables*/
+  </script>
+  <script type="text/javascript">
+    var bg = "https://i.loli.net/2021/05/02/qBuo7CzMLK1DTbc.jpg,https://i.loli.net/2021/05/03/CjRY4MpdyQJ5uwv.jpg,https://i.loli.net/2021/05/03/8zvZ7F1sPex6LAy.jpg,https://i.loli.net/2021/05/03/GH93Q4XZxtIFMrw.jpg,https://i.loli.net/2021/05/03/1kc4VMaPHxuXSBb.jpg,https://i.loli.net/2021/05/03/ghxLdMNbE6PjzIO.jpg,https://i.loli.net/2021/05/03/9NnrV3TWMawJ4sA.jpg,https://i.loli.net/2021/05/03/xJZfiRaXNBHDny9.jpg".split(",");
+    var bgindex = Math.floor(Math.random()*bg.length);
+    if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+      alert('朋友，IE浏览器未适配哦~');
+    }
+  </script>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head> 
+  <!-- 自定义logo -->
+  <link rel="stylesheet" type="text/css" href="/css/logo.css">
+  <link rel="stylesheet" type="text/css" href="/fonts/LOGO/logo.css">
+  <!--自定义看板娘-->
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <script src="/live2d-widget/autoload.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
+  
+
+<body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
+  <!-- Dynamic sliders -->
+  <div class="scrollbar" id="bar">
+  </div>
+  <a href="#" class="cd-top faa-float animated"></a>
+  <!-- Main content -->
+  <section id="main-container">
+    <!-- Top menu -->
+    <div class="headertop filter-dot">
+  <div id="banner_wave_1"></div>
+  <div id="banner_wave_2"></div>
+  <figure id="centerbg" class="centerbg">
+    <div class="focusinfo no-select">
+      <div class="header-tou">
+        <a href="">
+          <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tx.jpg">
+        </a>
+      </div>
+      <div class="header-info">
+        <p>世事变幻无常，而近乎永恒不变者，唯你我头上的同一片星空。</p>
+        <div class="top-social_v2">
+          <li id="bg-pre">
+            <img class="flipx" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+          
+            
+              
+                <li>
+                  <a href="https://wpa.qq.com/msgrd?v=3&amp;uin=2216847528&amp;site=qq&amp;menu=yes" target="_blank" class="social-github" title="QQ">
+                    <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/QQ.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li class="wechat">
+                  <a href="/#">
+                    <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/wechat.png">
+                  </a>
+                  <div class="wechatInner">
+                    <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/wechat35.png">
+                  </div>
+                </li>
+              
+            
+          
+          <li id="bg-next">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+        </div>
+      </div>
+    </div>
+  </figure>
+  
+  <div id="video-container">
+    <video style="object-fit: fill" id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto">
+    </video>
+    <div id="video-btn" class="loadvideo videolive">
+    </div>
+    <div id="video-add">
+    </div>
+    <div class="video-stu">
+    </div>
+  </div>
+  <div class="headertop-down faa-float animated" onclick="headertop_down()">
+    <span>
+      <i class="fa fa-chevron-down" aria-hidden="true">
+      </i>
+    </span>
+  </div>
+</div>
+    <div id="page" class="site wrapper">
+      <!-- banner -->
+      <header class="site-header no-select gizle sabit" role="banner">
+  <div class="site-top">
+    <div class="site-branding">
+        		<span class="site-title">
+            <span class="logolink logo">
+                <a href="/">
+                    <ruby>
+                    <span class="sakuraso">雨</span>
+                    <span class="no">落</span>
+                    <span class="shironeko">辰潇</span>
+                    <rp></rp>
+                    <rt class="logo">SakuraMuxia</rt>
+                    <rp></rp>
+                    </ruby>
+                  </a>
+            </span>
+          </span>
+    </div>
+    <div class="searchbox search-form-submit">
+      <i class="iconfont js-toggle-search iconsearch icon-search">
+      </i>
+    </div>
+    <div id="show-nav" class="showNav mobile-fit">
+      <div class="line line1">
+      </div>
+      <div class="line line2">
+      </div>
+      <div class="line line3">
+      </div>
+    </div>
+    <div class="lower-cantiner">
+      <div class="lower">
+        <nav class="mobile-fit-control hide">
+          <ul id="menu-new" class="menu">
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+                    首页
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+                    归档
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/tags">
+                          <i class="fa fa-tags" aria-hidden="true"></i>
+                          标签
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/%E6%8A%80%E6%9C%AF/">
+                          <i class="fa fa-code" aria-hidden="true"></i>
+                          技术
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="javascript:;">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+                    清单
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/music/">
+                          <i class="fa fa-music" aria-hidden="true"></i>
+                          歌单
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/comment/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+                    留言板
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+                    关于
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/about/">
+                          <i class="fa fa-meetup" aria-hidden="true"></i>
+                          我？
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+      
+      <!-- body -->
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/cungudafa/cdn/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+<div class="pattern-center single-center">
+  <!-- 有配图默认渲染第一张 -->
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/07/25/rHqCOl8AFvIL2JP.png);"
+    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/07/25/rHqCOl8AFvIL2JP.png">
+  </div>
+  <header class="pattern-header single-header">
+    <h1 class="entry-title">HCIA-Video-Conference</h1>
+    <p class="entry-census">
+      
+      <span class="post-meta-item">
+        <a href="">
+          <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tx.jpg">
+        </a>
+      </span>
+      
+      
+      <span class="post-meta-item">
+        <a href=""> SakuraMuxia </a>
+      </span>
+      <span class="bull">
+        ·</span>
+      
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-calendar"></i>
+        </span>
+        <span class="post-meta-item-text"> 2021-7-25 </span>
+      </span>
+      <span class="bull">
+        ·</span>
+      <!-- 浏览数显示 -->
+      <span class="post-meta-item" >
+        <span class="post-meta-item-icon">
+          <i class="iconfont icon-attention"></i>
+        </span>
+        <span class="post-meta-item-text">本文共<span id="busuanzi_value_page_pv"> </span>次阅读
+        </span>
+      </span>
+      <span class="bull">
+        ·</span>
+      <!-- 字数统计-->
+      <span class="post-meta-item" >
+
+        
+      </span>
+      <span class="bull">
+        ·</span>
+      <!-- 评论数显示 -->
+      <!-- <span class="post-meta-item" >
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              </span class="post-meta-item-text">
+                <span class="valine-comment-count" data-xid="/a548"> </span>
+              </span>
+          </span> -->
+    </p>
+  </header>
+</div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1"
+        class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content">  -->
+        <!--套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h1 id="HCIA-Video-Conference"><a href="#HCIA-Video-Conference" class="headerlink" title="HCIA-Video-Conference"></a>HCIA-Video-Conference</h1><p>视频通信相关的基础知识</p>
+<p>视频会议体系架构</p>
+<p>视频会议产品及技术</p>
+<p>视频会议解决方案应用组网</p>
+<h2 id="视频会议技术及产品"><a href="#视频会议技术及产品" class="headerlink" title="视频会议技术及产品"></a>视频会议技术及产品</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717151128188.png" alt="image-20210717151128188"></p>
+<p>H.239双流和VGA传送最大的区别在于H.239辅流可以共用一路带宽</p>
+<h2 id="视频会议体系"><a href="#视频会议体系" class="headerlink" title="视频会议体系"></a>视频会议体系</h2><h3 id="视频会议应用模型"><a href="#视频会议应用模型" class="headerlink" title="视频会议应用模型"></a>视频会议应用模型</h3><p> <img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717151152556.png" alt="image-20210717151152556"></p>
+<ul>
+<li><p> 终端的主要作用是用来声音，图像采集，编码等处理，然后将视频的码流通过网络发送给MCU。</p>
+</li>
+<li><p>MCU作为多点控制单元 ，主要为视频会议中的音视频处理和转发，提供媒体资源，比如说广播会场，多画面显示等。</p>
+</li>
+<li><p>GK也叫做网守，在多点视频会议中主要提供呼叫控制服务，比如说终端注册，呼叫，准许接入等。</p>
+</li>
+<li><p>通信网络是为终端，MCU，GK 这些网元设备之间相互通信提供传输通道。</p>
+</li>
+</ul>
+<h4 id="点对点会议模式"><a href="#点对点会议模式" class="headerlink" title="点对点会议模式"></a>点对点会议模式</h4><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717151211539.png" alt="image-20210717151211539"></p>
+<h4 id="小容量会议模式"><a href="#小容量会议模式" class="headerlink" title="小容量会议模式"></a>小容量会议模式</h4><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717151226234.png" alt="image-20210717151226234"></p>
+<h4 id="大容量会议模式"><a href="#大容量会议模式" class="headerlink" title="大容量会议模式"></a>大容量会议模式</h4><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717151237899.png" alt="image-20210717151237899"></p>
+<h3 id="华为视频体系架构"><a href="#华为视频体系架构" class="headerlink" title="华为视频体系架构"></a>华为视频体系架构</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717151718982.png" alt="image-20210717151718982"></p>
+<p>华为视频会议体系架构整体分为4层，分别为终端接入层，媒体处理层，回话控制层，和应用层。</p>
+<p>终端接入层主要包含：各类型的视频会议终端，智真系列的终端，TE系列终端等。</p>
+<p>当需要召开多点会议的时候就需要MCU为多点会议提供媒体资源及处理，比如说视频的转发及适配，多画面合成，辅流的转发适配等。终端接入层的上边就是媒体处理层，如VP96系列MCU，VP98系列MCU，视频会议录制及点播回放等功能，基于泰山服务器的部署的录播服务器CloudRSE。CloudRSE只能配套SMC3.0配套使用，无法配套SMC2.0组网。</p>
+<p>在视频会议中会涉及到终端的注册，呼叫控制等，都是由回话控制层的SC（switch center）提供的。还提供带宽管理，穿越等，这些也都是由SC提供的。在外网接入时，SC还同时作为接入网关，提供外网接入的功能，</p>
+<p>VP96系列MCU指的是V6R6及以后软件版本的硬件机框式MCU，比如VP9660，VP9650，不同于之前V5R2的老版本，VP98系列MCU是基于华为泰山服务器定制的软件MCU，如Vp9860，VP9850，而Cloud MCU可以基于通用服务器部署的软件MCU，比如说RH系列服务器，泰山系列服务器。</p>
+<p>终端，MCU，SC这些设备都是由应用层的SMC（Services Management Center）进行管理。业务管理中心，它不仅仅提供设备管理的功能还提供用户管理，会议预约，会议控制等，同时应用层还包含一个重要的网元设备也就是EUA（统一地址本），主要提供企业通信录的功能。</p>
+<h3 id="华为视频会议产品"><a href="#华为视频会议产品" class="headerlink" title="华为视频会议产品"></a>华为视频会议产品</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717154114348.png" alt="image-20210717154114348"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717154220064.png" alt="image-20210717154220064"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717155533938.png" alt="image-20210717155533938"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717155801938.png" alt="image-20210717155801938"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717155901019.png" alt="image-20210717155901019"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717160054274.png" alt="image-20210717160054274"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717160225118.png" alt="image-20210717160225118"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717160309187.png" alt="image-20210717160309187"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717160338759.png" alt="image-20210717160338759"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717160434221.png" alt="image-20210717160434221"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717160457337.png" alt="image-20210717160457337"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717160548092.png" alt="image-20210717160548092"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717160625685.png" alt="image-20210717160625685"></p>
+<p>CloudMCU支持1080P30全编全解。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717160812586.png" alt="image-20210717160812586"></p>
+<p>SMC主要提供网元管理，会议预约，会议控制，以及提供第三方接口等。SMC3.0是华为的欧拉操作系统和高斯数据库进行部署。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717161024905.png" alt="image-20210717161024905"></p>
+<p>基于统一标准的LDAP协议的，统一地址薄，企业通过部署EUA，可以实现SMC与企业通讯录以及第三方AD服务器与企业通讯录之间的信息同步，这样可以SMC上召开会议时，可以直接从企业通讯录中选择相应的会场。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717161410530.png" alt="image-20210717161410530"></p>
+<p>在视频会议中所用的视频会议终端，注册，呼叫的控制，等都是由SC来完成的。除此之外SC还提供区域管理。网络安全管理，支持H.460穿越等功能。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717161637319.png" alt="image-20210717161637319"></p>
+<p>支持单流或者双流录制模式。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717161711422.png" alt="image-20210717161711422"></p>
+<h3 id="视频会议技术特点"><a href="#视频会议技术特点" class="headerlink" title="视频会议技术特点"></a>视频会议技术特点</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717161929794.png" alt="image-20210717161929794"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717162027546.png" alt="image-20210717162027546"></p>
+<h4 id="公私网穿越方案"><a href="#公私网穿越方案" class="headerlink" title="公私网穿越方案"></a>公私网穿越方案</h4><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717162223726.png" alt="image-20210717162223726"></p>
+<p>目前视频会议中主推的是基于SC的穿越方案，主要有两种，一种是单SC的方案，另外一种是双SC的方案，其中单SC的穿越方案一般适用于企业对安全性的要求不高，需要开放比较多的防火墙端口，通过单网卡公私网穿越策略，这样在无需改造现有网络的情况下实现公私网穿越，而双SC的穿越方案在单SC的穿越方案的投入较多，但是要求防火墙开放的端口比较少，</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717162802860.png" alt="image-20210717162802860"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717163109708.png" alt="image-20210717163109708"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717163353026.png" alt="image-20210717163353026"></p>
+<p>MCU根据不同会场的能力，对于演示进行智能辅流适配，对于H.323 SIP等协议进行只能适配，可以将支持不同协议的终端加入会议，第二种是即使是不支持演示的会场，依然可以通过适配处理，将演示图像适配为该会场的主流，演示内容的显示。第三种是通过演示适配处理，可以实现演示加入多画面，演示带宽动态管理等功能，让会议中所有的终端，都可以看到演示信息，最大限度保证演示的效果。<img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717163929656.png" alt="image-20210717163929656"></p>
+<p>在保证带宽，线路资源的情况下，级联MCU之间支持建立多条级联通道，使得级联MCU之间可以同时传送多路媒体码流，实现上下级会场都可以观看画面，从而提升视频会议的体验。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717164423803.png" alt="image-20210717164423803"></p>
+<h3 id="视频会议应用"><a href="#视频会议应用" class="headerlink" title="视频会议应用"></a>视频会议应用</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717164601127.png" alt="image-20210717164601127"></p>
+<p>支持扩展独立MCU，录播服务器，和支持扩展DMZ场景的独立SC。最大支持500方并发呼叫，支持1000方用户注册。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717164843693.png" alt="image-20210717164843693"></p>
+<p>超过1000用户的场景，不超过1W用户的场景，可以将SMC，SC，EUA，部署于同一台服务器上，节省服务器资源，最大支持1000路并发呼叫，和1W用户注册。</p>
+<h2 id="H-323协议"><a href="#H-323协议" class="headerlink" title="H.323协议"></a>H.323协议</h2><ul>
+<li>H.323协议与SIP协议的基础知识</li>
+<li>视频会议调度信令流程</li>
+</ul>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717172022652.png" alt="image-20210717172022652"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717172116986.png" alt="image-20210717172116986"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717172146967.png" alt="image-20210717172146967"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717172209932.png" alt="image-20210717172209932"></p>
+<p>会议中的会控功能是由MC提供的，会议中的多画面功能是由MP提供的。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210717172419108.png" alt="image-20210717172419108"></p>
+<p>网关可以对运行不同网络或者不同协议的设备他们传输的数据进行转换。</p>
+<p><strong>两种呼叫方式：一种是通过IP地址进行呼叫，另一种是通过呼叫他的号码来进行呼叫。</strong></p>
+<p>通过IP地址进行呼叫，就直接可以呼叫，而通过呼叫号码来进行呼叫的话就需要将号码先转化为IP地址，然后再进行呼叫。</p>
+<p>GK的角色就是把号码转换为IP地址进行呼叫。对于GK而言他有一张表，把IP地址和号码进行对应。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210718103813847.png" alt="image-20210718103813847"></p>
+<h2 id="H-323协议栈"><a href="#H-323协议栈" class="headerlink" title="H.323协议栈"></a>H.323协议栈</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210718103937440.png" alt="image-20210718103937440"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210718105353848.png" alt="image-20210718105353848"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//现在有两个终端，T1和T2，T1的地址为10.1.1.1 ,T2的地址为10.1.1.2,T1的号码为021101，T2的号码为021102，对于T1和T2如果想使用分配的号码来进行通讯就需要向Gk注册,注册的过程用到的协议就是H.225.0RAS</span>
+
+<span class="token comment" spellcheck="true">//在完成注册后，GK会生成一个注册表，这个注册列表会记录T1和T2的注册信息。T1和T2注册成功后，T1就可以通过号码呼叫T2，T1在呼叫T2的时候会首先发送一个请求到GK，询问是否可以呼叫T2，GK通过查找注册信息，找到T2，回复T2并且把IP地址回复给T1.T1发送请求到GK，GK回复信息的过程是第二个过程，呼叫的发起，用到的协议为H.225.0RAS</span>
+  
+<span class="token comment" spellcheck="true">//第三步通过IP地址呼叫T2，用到的协议为H.225.0CS</span>
+
+<span class="token comment" spellcheck="true">//第四步 协商音视频的编解码，用到的协议为H.245,</span>
+
+<span class="token comment" spellcheck="true">//第五步 音视频传送的问题，用到的协议为RTP和RTCP</span>
+
+</code></pre>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210718110951178.png" alt="image-20210718110951178"></p>
+<h2 id="会议的调度"><a href="#会议的调度" class="headerlink" title="会议的调度"></a>会议的调度</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210718111211876.png" alt="image-20210718111211876"></p>
+<p>用到的协议为H.225.0 CS</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210718111327018.png" alt="image-20210718111327018"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210718111505432.png" alt="image-20210718111505432"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210718111710891.png" alt="image-20210718111710891"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210718111735434.png" alt="image-20210718111735434"></p>
+<p>SMC的作用会议的管理，设备的管理。</p>
+<p>DB指的是数据库</p>
+<p>视频会议系统中如何完成多点会议的召集：</p>
+<p>SMC到自己的数据库找到需要召集的终端信息T1T2T3，然后SMC会把需要召集的信息，发给MCU，此时召集会议的终端入会，MCU会通过6步的终端交互，通过点对点号码呼叫的方式，实现会议终端的召集，MCU收到SMC给他的会议召集信息，此时MCU回向GK发送ARQ信息呼叫请求消息。GK接收到MCU发送的ARQ请求消息后，会在自己的数据库中查找号码对应IP地址是否存在。查到之后会回复ACF确认信息。MCU在获得GK反馈的IP信息后，会向终端发送Setup的请求信息。终端在接受到MCU的请求信息后，三个终端会发送ARQ呼叫请求信息到GK，询问是否可以和MCU建立连接，终端在接受到GK的确认信息后，终端才会给MCU回复ACF信息。完成呼叫的建立。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210718113124570.png" alt="image-20210718113124570"></p>
+<p>MCU在系统中除了会议的召集，还拥有会控的功能。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210718173340744.png" alt="image-20210718173340744"></p>
+<p>SMC会控通过广播一个会场，SMC通过下发一个广播会场的指令到MCU，MCU会把T1和T2的图像广播到MCU，从而去实现，T2和T3去观看T1会场的画面。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210718173621650.png" alt="image-20210718173621650"></p>
+<p>多个MCU的级联，每个终端只能与一个MCU完成呼叫。如果T1想和T3完成通讯就需要MCu1和MCU2产生某种联系才可以。</p>
+<p>MCU1和MCU2产生的某种联系是点对点的某种联系类似于号码呼叫的关系。MCU回向GK发送一个ARQ的请求，GK再回复一个ACk的确认信息，然后MCU1向MCU2发送一个setup的请求，然后MCU2再向GK发送一个ARQ的请求消息，询问是否和MCU1建立联系。当GK向MCU2回复确认信息后，MCU2再回复MCU1确认建立联系。这个时候T1和T3就可以建立联系了。</p>
+<h2 id="SIP协议"><a href="#SIP协议" class="headerlink" title="SIP协议"></a>SIP协议</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719090450353.png" alt="image-20210719090450353"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719090538718.png" alt="image-20210719090538718"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719090624064.png" alt="image-20210719090624064"></p>
+<p>TLS协议是一种安全传输帧协议。</p>
+<h3 id="协议消息"><a href="#协议消息" class="headerlink" title="协议消息"></a>协议消息</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719090740419.png" alt="image-20210719090740419"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719091416063.png" alt="image-20210719091416063"></p>
+<p>注册服务器是指终端向sip服务器注册信息，类似于H.323协议下的GK的作用。</p>
+<p>代理服务器是指终端注册完之后，终端1和终端2也不是直接发送消息的，而是终端1把数据先发送给sip服务器，sip服务器再转发给终端2。</p>
+<p>重定向服务器是指将请求的地址信息，转换成另一个IP地址。</p>
+<p>这三个服务器可以部署到同一个设备上。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719091910558.png" alt="image-20210719091910558"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719091929892.png" alt="image-20210719091929892"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719092046154.png" alt="image-20210719092046154"></p>
+<h3 id="呼叫流程"><a href="#呼叫流程" class="headerlink" title="呼叫流程"></a>呼叫流程</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719092515890.png" alt="image-20210719092515890"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719092645124.png" alt="image-20210719092645124"></p>
+<p>如果注册服务器没有密码则只需要两步验证。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719092900284.png" alt="image-20210719092900284"></p>
+<p>invite消息：邀请信息</p>
+<p>100Trying：告知USA接收到消息，正在处理</p>
+<p>180Ringing：告知处理完成，正在振铃</p>
+<p>200ok：若有人接听了呼叫，则发送200ok确认消息。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719093241977.png" alt="image-20210719093241977"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719094229130.png" alt="image-20210719094229130"></p>
+<p>SDP协商指的是，呼叫双方对两端终端传输音视频编解码的协商达成一致。在SIP协议中负责媒体回话协商的就是SDP协议。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719094616687.png" alt="image-20210719094616687"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719094939817.png" alt="image-20210719094939817"></p>
+<h2 id="视频会议终端概述"><a href="#视频会议终端概述" class="headerlink" title="视频会议终端概述"></a>视频会议终端概述</h2><h3 id="TE系列"><a href="#TE系列" class="headerlink" title="TE系列"></a>TE系列</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719095308157.png" alt="image-20210719095308157"></p>
+<p>搭配调音台，矩阵，中控系统。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719095728215.png" alt="image-20210719095728215"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719095845534.png" alt="image-20210719095845534"></p>
+<p>USB：配置文件的导入的功能</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719100010664.png" alt="image-20210719100010664"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719100105666.png" alt="image-20210719100105666"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719100513512.png" alt="image-20210719100513512"></p>
+<p>嵌入式的操作系统，拥有自己的视频会议系统。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719100656594.png" alt="image-20210719100656594"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719100804042.png" alt="image-20210719100804042"></p>
+<p>多视能力：是指可以同时接入两个摄像机，把两个摄像机的画面组合成一路。</p>
+<p>PSTN：</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719101021670.png" alt="image-20210719101021670"></p>
+<p>卡侬头：卡侬头是一种音频的标准接口，为一些电容麦克风和高端的话筒设计的。</p>
+<p><strong>黑色底纹的一般都是输入，而蓝色底纹的一般都是输出。</strong></p>
+<p>第一组输出一般是接会场的外放，第二组的输出一般是会场的录音。这两个是不能接反的，接反会导致一些回音和啸叫。在旁边是一个HD-AI的接口。</p>
+<p>默认的话我们会把图形界面显示在1路口上。</p>
+<p>（蓝色VGA旁边的输入接口）HD-Vi华为的专用的接口。被一个圈圈框起来代表同时只能接一个不能接两个。</p>
+<p>一种是摄像机的COM口用来接摄像机的控制线（不是华为的摄像机，需要将摄像机的com口接到终端上进行遥控器控制），一种是LAN口一般接的是网线。</p>
+<p>PSTN传统的一些电话线路。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719110142764.png" alt="image-20210719110142764"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719110208808.png" alt="image-20210719110208808"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719110437831.png" alt="image-20210719110437831"></p>
+<p>3G-SDi指的是可以传输3G/s的速率，传输数字高清信号。</p>
+<p>CVBS传输标清的模拟信号。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719110807039.png" alt="image-20210719110807039"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719110845156.png" alt="image-20210719110845156"></p>
+<p>兼容常用的矩阵和调音台。</p>
+<p>两个莲花头对应调音台的输入，</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719111849147.png" alt="image-20210719111849147"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719111904610.png" alt="image-20210719111904610"></p>
+<p>H.265对比H.264协议的对比是在同样的分辨率下可以节省带宽。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719112031730.png" alt="image-20210719112031730"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719112046463.png" alt="image-20210719112046463"></p>
+<h3 id="CloudLink系列高清终端"><a href="#CloudLink系列高清终端" class="headerlink" title="CloudLink系列高清终端"></a>CloudLink系列高清终端</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719112232477.png" alt="image-20210719112232477"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719120319501.png" alt="image-20210719120319501"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719120335829.png" alt="image-20210719120335829"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719120350021.png" alt="image-20210719120350021"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719120418804.png" alt="image-20210719120418804"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719120446411.png" alt="image-20210719120446411"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719120457121.png" alt="image-20210719120457121"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719120815086.png" alt="image-20210719120815086"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210719124726317.png" alt="image-20210719124726317"></p>
+<pre class=" language-java"><code class="language-java"><span class="token number">1</span><span class="token operator">:</span>安全锁扣
+<span class="token number">2</span>：复位键
+<span class="token number">3</span>：电源接口
+<span class="token number">4</span>：网口
+<span class="token number">5</span>：Touch接口，接Touch控制
+<span class="token number">6</span>：USB接口
+<span class="token number">7</span>：传统视频输出接口HDMI
+<span class="token number">8</span>：传统视频输出接口HDMI
+<span class="token number">9</span>：视频接入口，接笔记本电脑当一些辅屏，投屏使用
+<span class="token number">10</span>：音频的输入，HD<span class="token operator">-</span>AI 口接华为三角麦克风
+<span class="token number">11</span>：音频的输入，<span class="token number">3</span><span class="token punctuation">.</span>5mm耳机
+<span class="token number">12</span>：音频的输出
+根据不同的License进行控制，
+  智能导播，智慧眼
+</code></pre>
+<h2 id="视频会议终端配套外设"><a href="#视频会议终端配套外设" class="headerlink" title="视频会议终端配套外设"></a>视频会议终端配套外设</h2><h3 id="摄像机"><a href="#摄像机" class="headerlink" title="摄像机"></a>摄像机</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721105217223.png" alt="image-20210721105217223"></p>
+<p>自动白平衡，画面偏黄，偏白可以通过调节自动白平衡来设置。</p>
+<p>长距离3G-SDI线缆。</p>
+<p>YPbPr分量线路 视频加音频<br><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721105619180.png" alt="image-20210721105619180"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721105702533.png" alt="image-20210721105702533"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721105751115.png" alt="image-20210721105751115"></p>
+<p>小于50米的会议室，镜头自动跟踪。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721105917762.png" alt="image-20210721105917762"></p>
+<p>6米拾音，360°</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721110034697.png" alt="image-20210721110034697"></p>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721110344488.png" alt="image-20210721110344488"></p>
+<h4 id="公共特性"><a href="#公共特性" class="headerlink" title="公共特性"></a>公共特性</h4><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721110609425.png" alt="image-20210721110609425"></p>
+<p>通过用终端的的热点wifi或者HDMI线进行屏幕共享，通过发送辅流来进行控制，根据需要进行抢占。</p>
+<p>通过电脑或者手机设备上下载IdeaShare APP</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721111018249.png" alt="image-20210721111018249"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721111058938.png" alt="image-20210721111058938"></p>
+<p><strong>辅助投屏工具</strong>，<strong>即插即用，不需要安装驱动APP等</strong></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721111217648.png" alt="image-20210721111217648"></p>
+<p>前提的条件是所有的终端都需要在一个GK上，并且使用短号才能入会。大家都是通过IP地址呼叫的就无法实现。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721111439084.png" alt="image-20210721111439084"></p>
+<pre class=" language-java"><code class="language-java">当会议室的数量越来越多时，我们会很难记住各个会议时的IP地址，获得他们的号码，这个时候我们就需要借助地址本的功能，终端的地址本可以自由的编辑，添加号码的信息，也可以从服务器上进行同步，同步服务器的方式有两种，一种是可以搭建一套FTP服务器，通过和FTP服务器进行对接，进行统一管理地址本的号码，另外一种是华为推荐的EUA服务器，如果购买了SMC硬件的话，EUA就会集成在里面，终端会通过LDAP的协议，同步获取EUA上电话本的信息。只要所有终端都注册到GK或者SIP服务器上时都可以获得EUA上的号码。
+</code></pre>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721112442303.png" alt="image-20210721112442303"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721112519269.png" alt="image-20210721112519269"></p>
+<p>H.264HP硬件算法芯片</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721112632568.png" alt="image-20210721112632568"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721112703194.png" alt="image-20210721112703194"></p>
+<p>SVC：视频编码，是指将一种视频流分割成多个分辨率的质量和帧率的技术，属于H.264编码的一种，H.264 AVC 强编强解的一种技术。SVC相对于AVC而言的话更节省网络的带宽，更低的延迟。</p>
+<p>SEC：是一种基于QoS网络技术至上的一种纠错技术，这个技术主要是针对于IP网络的，IP网络中他会自动调整带宽，调整音视频的策略，从而保证音视频在各种恶劣的网络条件下，达到最优的效果。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721121914827.png" alt="image-20210721121914827"></p>
+<p>启用了SEC之后会占用一定的带宽。当带宽良好，丢包比较多的情况下开启SEC功能。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721122213134.png" alt="image-20210721122213134"></p>
+<p>当网络带宽不足时，会自动降低分辨率，也会自动降低自己的码率。</p>
+<h4 id="独有特性"><a href="#独有特性" class="headerlink" title="独有特性"></a>独有特性</h4><h5 id="TE系列特性"><a href="#TE系列特性" class="headerlink" title="TE系列特性"></a>TE系列特性</h5><p>多视功能-多视角画面</p>
+<p>多个摄像头，输入合并成一路。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721122715868.png" alt="image-20210721122715868"></p>
+<p>终端其实是一个编解码器，每一台只有一路的编解码能力，那这个时候我们想传输多个摄像机画面，那么我们终端可以吧多个摄像机合成一路多画面，把它发送给MCU，或者发送给对方的终端。这样就能实现一个会场所有的摄像机的画面都能传输，多视画面是可以自定义的，在开会的过程中，可以在终端中调整。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721123203567.png" alt="image-20210721123203567"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721123245775.png" alt="image-20210721123245775"></p>
+<p>在关机的情况下，VGA线缆环回，从VGA的输入，还能从VGA的输出输出，就相当于终端就是一个转接头的作用。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721123613911.png" alt="image-20210721123613911"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721123734825.png" alt="image-20210721123734825"></p>
+<p>全适配：一对一的编码和解码。</p>
+<h5 id="CloudLink系列特性"><a href="#CloudLink系列特性" class="headerlink" title="CloudLink系列特性"></a>CloudLink系列特性</h5><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721124029826.png" alt="image-20210721124029826"></p>
+<p>VME：去噪及增强处理技术</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721124258727.png" alt="image-20210721124258727"></p>
+<p>需要部署一套人脸识别服务器。再输入人脸姓名和信息</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721124448621.png" alt="image-20210721124448621"></p>
+<p>需要部署一套人脸识别服务器。再输入人脸姓名和信息</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721124551188.png" alt="image-20210721124551188"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721124637531.png" alt="image-20210721124637531"></p>
+<p>H.264的一种扩展协议，称之为分层的编码，他是在AVC的强编强解的基础上进行一个扩展，利用AVC编解码的各种高效算法工具，从而产生不同的帧率，不同的速率，不同的质量的多个视频，举个例子，当我们召集一个SVC会议时，我们终端会给MCU发送一个4路的码流，其中包含主流一路辅流三路，分辨路会在90P和720P之间变化。传统的AVC只会有一路主流，一路辅流，而SVC会有4路的码流。4路码流发送过去之后，对方的MCU或者终端会根据自己的终端的特性选择适合自己的码流。这样的话可以节省MCU资源。本质上将SVC的多流会议是由终端来完成编码功能。在终端侧就把编解码的功能和多画面的合成完成了。MCU只需要一个转发就可以了。不需要一个编解码，从而减轻MCU的负担，降低会议的时延，实现更多的终端来接入，SVC会议的时候， CloudMCU转发各个视频的码流最多16路分辨率由实际的带宽决定。最高分辨率只能达到720P，如果是AVC的多流会议就能达到1080P 4K的分辨率。这样会议的资源占用的就会多一点。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721130615417.png" alt="image-20210721130615417"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721130819244.png" alt="image-20210721130819244"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721130857616.png" alt="image-20210721130857616"></p>
+<p>H.265 SCC 编码技术 主要针对的是屏幕内容的编码。传统的H.264 H.265里面编码主要是对主流画面（摄像机画面）的编码，而SCC是对辅流进行编码协议。屏幕共享会有一些特性，比如说PPT和图像。静态的重复的画面。跟摄像机立体的画面还是有些区别的，从而保证更好的压缩和解码，让PPT和辅流的画面显示的更加流畅。</p>
+<h2 id="IdeaHub"><a href="#IdeaHub" class="headerlink" title="IdeaHub"></a>IdeaHub</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721131818729.png" alt="image-20210721131818729"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721131851181.png" alt="image-20210721131851181"></p>
+<p>华为企业智慧屏支持华为云和传统的企业自建两种部署方案，</p>
+<p>华为云部署下的方案：</p>
+<p>有无线投屏器IdeaShare（成对存在插在智慧屏和PC上），IdeaShare APP（同属于一个网段），有线投屏三种方式。</p>
+<p>白板协作，</p>
+<p>可以使用OPS（MINI PC）运行windows应用。</p>
+<p>在入驻式组网情况下，支持H.265编解码协议，带宽共享，专有IRC技术，48K采样率覆盖所有音频信号，电子签到，电子名牌，</p>
+<p>H.235 TLS StarTTL SRTP 安全加密技术。</p>
+<h1 id="MCU"><a href="#MCU" class="headerlink" title="MCU"></a>MCU</h1><h2 id="MCU的定义"><a href="#MCU的定义" class="headerlink" title="MCU的定义"></a>MCU的定义</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721134556413.png" alt="image-20210721134556413"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721134613146.png" alt="image-20210721134613146"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721134949526.png" alt="image-20210721134949526"></p>
+<p>对画面的处理也是由MP进行处理的。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721135043643.png" alt="image-20210721135043643"></p>
+<p>SMC的主要作用是设备管理和会议管理，SMC下发指令。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721135304987.png" alt="image-20210721135304987"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721135349393.png" alt="image-20210721135349393"></p>
+<p>SMC下发广播T1的指令，MCU会把T1的视频流转发给T2和T3，这样就都能看到T1的画面了。</p>
+<p><strong>MCU除了由会控的功能还有对音视频处理的功能。</strong></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210721135729409.png" alt="image-20210721135729409"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722083407984.png" alt="image-20210722083407984"></p>
+<h2 id="MCU的型号"><a href="#MCU的型号" class="headerlink" title="MCU的型号"></a>MCU的型号</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722083728711.png" alt="image-20210722083728711"></p>
+<p>SC的作用是设备的注册，呼叫控制，外网接入等作用。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722084029278.png" alt="image-20210722084029278"></p>
+<p>最高支持32个1080P 30fps 的会场</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722084337981.png" alt="image-20210722084337981"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722084409315.png" alt="image-20210722084409315"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722084438206.png" alt="image-20210722084438206"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722084506694.png" alt="image-20210722084506694"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722084534545.png" alt="image-20210722084534545"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722084639638.png" alt="image-20210722084639638"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722084915210.png" alt="image-20210722084915210"></p>
+<p>一个MCU最高支持多少个会场都是由媒体板控制的。</p>
+<p>对于一个VP9630最高支持32个会场入会，这样说是不准确的，因为召开的不一定1080P30的会议，不同分辨率之间有相互转化的关系，SD端口：标清端口。</p>
+<p>一个1080P60的端口资源可以召开2个1080P30的会场入会，对于一台VP96的MCU，如果他最多支持32路会场入会，就必须要说最高支持1080P30的会场入会，如果是召开的是1080P60的会议，最高支持16路会场入会。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722090047125.png" alt="image-20210722090047125"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722090124418.png" alt="image-20210722090124418"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722090239002.png" alt="image-20210722090239002"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722090359514.png" alt="image-20210722090359514"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722090359514.png"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722090430937.png" alt="image-20210722090430937"></p>
+<h2 id="MCU特性"><a href="#MCU特性" class="headerlink" title="MCU特性"></a>MCU特性</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722090607379.png" alt="image-20210722090607379"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722090927025.png" alt="image-20210722090927025"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722091752663.png" alt="image-20210722091752663"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722092020563.png" alt="image-20210722092020563"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722092146731.png" alt="image-20210722092146731"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722092301201.png" alt="image-20210722092301201"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722092504927.png" alt="image-20210722092504927"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722092734647.png" alt="image-20210722092734647"></p>
+<p>全适配：为每个会场提供编解码资源。</p>
+<p>全交换：按需分配编解码资源一致就会直接转发，如果不一致就会重新编解码适配。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722093048788.png" alt="image-20210722093048788"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722093330456.png" alt="image-20210722093330456"></p>
+<p>对MCU端口资源的管控，当终端申请入会的时候会向SMC发送入会请求，SMC同意后才能入会，同时SMC还可以控制端口资源，按照实际需求分配端口资源。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722093759711.png" alt="image-20210722093759711"></p>
+<p>SVC会议，主要的特点就是MCU只需要帮助终端转发音视频，而不需要实际的编解码资源实际去处理，会场图像的编解码以及会场布局上的操作都在终端侧自身完成。这样就能实现大量SVC视频的接入。具体的就是终端会发送4路不同分辨率的视频资源90P~720P之间，一个1080P的端口资源可以转换为12个SVC终端的接入。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722094258326.png" alt="image-20210722094258326"></p>
+<p>VP96系列MCU不支持</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722094427081.png" alt="image-20210722094427081"></p>
+<h2 id="MCU典型应用组网"><a href="#MCU典型应用组网" class="headerlink" title="MCU典型应用组网"></a>MCU典型应用组网</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722094549325.png" alt="image-20210722094549325"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722094620257.png" alt="image-20210722094620257"></p>
+<h2 id="SMC产品"><a href="#SMC产品" class="headerlink" title="SMC产品"></a>SMC产品</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722095020846.png" alt="image-20210722095020846"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722095107508.png" alt="image-20210722095107508"></p>
+<p>SMC统一部署在服务器上边的。</p>
+<p>SC集成了两个服务器一个是GK服务器一个是SIP服务器。</p>
+<p>60M穿越是指在华为视频会议系统在通过SC在实现公私网穿越的时候，为内外网视频会议提供的信息交互带宽，例如内外网传输的媒体流，这些都需要SC提供带宽。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722095914448.png" alt="image-20210722095914448"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722095925714.png" alt="image-20210722095925714"></p>
+<p><strong>并发端口数1000方。</strong></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722100359458.png" alt="image-20210722100359458"></p>
+<p>SMC：视频会议业务的对外实现。</p>
+<p>SC：设备注册，呼叫控制，外网接入。</p>
+<p>CloudRes只能用在SMC2.0。</p>
+<h3 id="SMC系统结构"><a href="#SMC系统结构" class="headerlink" title="SMC系统结构"></a>SMC系统结构</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722100741058.png" alt="image-20210722100741058"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722100753578.png" alt="image-20210722100753578"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722100902365.png" alt="image-20210722100902365"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722101140846.png" alt="image-20210722101140846"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722101233588.png" alt="image-20210722101233588"></p>
+<p>SMC：负责整网的设备管理，管理终端，MCU，录播服务器等。</p>
+<p>SC：负责全网设备的注册，呼叫控制等。</p>
+<p>MCU：为全网提供会议资源。</p>
+<p>录播：为全网提供录播或者直播资源的。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722105415199.png" alt="image-20210722105415199"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722105638888.png" alt="image-20210722105638888"></p>
+<p>SMC3.0</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722110356909.png" alt="image-20210722110356909"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722110435025.png" alt="image-20210722110435025"></p>
+<h3 id="SMC功能特性"><a href="#SMC功能特性" class="headerlink" title="SMC功能特性"></a>SMC功能特性</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722111520259.png" alt="image-20210722111520259"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722111710947.png" alt="image-20210722111710947"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722111849732.png" alt="image-20210722111849732"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722111959115.png" alt="image-20210722111959115"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722112046752.png" alt="image-20210722112046752"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722112142163.png" alt="image-20210722112142163"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722112227762.png" alt="image-20210722112227762"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722112347813.png" alt="image-20210722112347813"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722112420012.png" alt="image-20210722112420012"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722112512931.png" alt="image-20210722112512931"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722112539078.png" alt="image-20210722112539078"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722112611489.png" alt="image-20210722112611489"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210722112709590.png" alt="image-20210722112709590"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723100131544.png" alt="image-20210723100131544"></p>
+<p>哪个会场的声音比较大，就会切换到哪个</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723100229449.png" alt="image-20210723100229449"></p>
+<h4 id="业务控制"><a href="#业务控制" class="headerlink" title="业务控制"></a>业务控制</h4><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723100319947.png" alt="image-20210723100319947"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723100547452.png" alt="image-20210723100547452"></p>
+<p>SMC管理资源池资源</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723100745026.png" alt="image-20210723100745026"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723100902339.png" alt="image-20210723100902339"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723101005767.png" alt="image-20210723101005767"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723101103775.png" alt="image-20210723101103775"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723101223773.png" alt="image-20210723101223773"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723101238279.png" alt="image-20210723101238279"></p>
+<h1 id="录播产品特性"><a href="#录播产品特性" class="headerlink" title="录播产品特性"></a>录播产品特性</h1><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723101742930.png" alt="image-20210723101742930"></p>
+<p>双流是指同时观看图像和会议共享材料。无法现场入会的用户可以在任意地点观看直播视频。在任意时间观看点播视频，使会议内容在更大范围内得到分享，有效提高沟通和办公效率，</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723102215215.png" alt="image-20210723102215215"></p>
+<p>cloudRSE处于媒体处理层</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723102254247.png" alt="image-20210723102254247"></p>
+<p>Cloudrse功能特性</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723102352931.png" alt="image-20210723102352931"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723102520864.png" alt="image-20210723102520864"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723102543896.png" alt="image-20210723102543896"></p>
+<p>直播视频：以全屏或者画中画的形式，播放</p>
+<p>点播：支持视频和会议材料的布局一键切换。</p>
+<p>支持双码率直播，点播，其中一路标清另外一部高清。播放页面中用户可以选择高清或者标清的视频格式。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723102947219.png" alt="image-20210723102947219"></p>
+<p>默认自动发布，也可以手动配置为待发布。</p>
+<p>用户可以通过视频编辑，实现封面图面，视频名称，主讲人等信息。和设置视频权限等操作。支持下载TS格式和MP4格式的视频。</p>
+<h1 id="视频会议常用配置"><a href="#视频会议常用配置" class="headerlink" title="视频会议常用配置"></a>视频会议常用配置</h1><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723105851994.png" alt="image-20210723105851994"></p>
+<h2 id="添加SC"><a href="#添加SC" class="headerlink" title="添加SC"></a>添加SC</h2><p>单击“设备”，选择“SC”。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723110040205.png" alt="image-20210723110040205"></p>
+<p>输入SC的IP地址，因为是内置的SC所以，SC的地址是127.0.0.1，如果是外置的SC我们则需要输入SC的管理地址，用户名和密码保持默认，点击“下一步”，</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723110151344.png" alt="image-20210723110151344"></p>
+<p>进入SC的配置界面，输入SC的名称，单击“添加”即可，状态指示灯变为绿色代表SC添加成功。点击SC的名称进行本地管理域的配置。</p>
+<p><img src="C:\Users\KawaiiAqua\AppData\Roaming\Typora\typora-user-images\image-20210723110354972.png" alt="image-20210723110354972"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723110621720.png" alt="image-20210723110621720"></p>
+<p>单击SC的名称后，我们得到SC的管理界面。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723110705388.png" alt="image-20210723110705388"></p>
+<p>点击本地管理域，我们得到本地管理域界面。本地管理域的作用是用来管理各个不同的终端和MCU，用来分配一个前缀号码。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723110802290.png" alt="image-20210723110802290"></p>
+<p>点击“添加”，输入名称，类型选择前缀号，匹配内容可以选择自定义比如说杭州的区号：0571，点击“保存”。然后我们看到hangzhou的本地管理域，匹配内容为0571，接下来要添加 终端和MCU，他们的短号必须以0571为开头。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723111019720.png" alt="image-20210723111019720"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723111153788.png" alt="image-20210723111153788"></p>
+<p>接下来创建SMC2.0 的服务区，配置服务区的目的是为了更好的管理MCU，首先在SMC的管理界面上单击“系统”，选择“配置”，在里面选择“服务区”的配置，</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723111517448.png" alt="image-20210723111517448"></p>
+<p>添加服务区的名称hangzhou，点击“添加”，</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723111705649.png" alt="image-20210723111705649"></p>
+<p>再点击添加前缀。配置前缀名称和服务区的前缀号，前缀名称可以和服务区相同，也可以不同，服务区的前缀可以保持和SC的本地管理域的号码相同，点击“添加”</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723111745228.png" alt="image-20210723111745228"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723111951505.png" alt="image-20210723111951505"></p>
+<h2 id="SMC2-0添加MCU"><a href="#SMC2-0添加MCU" class="headerlink" title="SMC2.0添加MCU"></a>SMC2.0添加MCU</h2><p>首先需要在浏览器的输入MCU的IP地址，进入MCU的web管理界面，</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723112145600.png" alt="image-20210723112145600"></p>
+<p>首先我们需要确定一下MCU的系统状态，单击“设备管理”，选择“系统配置”，单击“管理配置”，看到连接状态为SMC2.0,如果是web状态，或者是第三方状态，我们需要选择SMC2.0，然后重启MCU，其余参数可以保持不变，连接密码建议修改，单击“保存”。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723112259396.png" alt="image-20210723112259396"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723112329442.png" alt="image-20210723112329442"></p>
+<p>接下来我们需要修改“SNMP”的配置，我们需要填写“Trap服务器地址”，此地址为SMC2.0的地址，接下来配置SNMPV3的Trap设置，为了安全考虑需要修改此设置，首先配置用户名，修改Trap认证密码，修改Trap加密密码，点击“保存”。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723112810339.png" alt="image-20210723112810339"></p>
+<p>接下来，我们来进行H.323和SIP配置，点击“设备管理”，选择H.323 SIP 配置。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723113045153.png" alt="image-20210723113045153"></p>
+<p>首先我们需要勾选“GK配置”，修改GK地址，GK的IP地址就是SC的IP地址。在这里的话SC的地址和SMC2.0的IP地址是同一个，修改“GK的ID” 前缀号必须和SC的本地管理域的前缀号保持一致，再加一个尾号001即0571001，修改认证密码，点击保存。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723113229320.png" alt="image-20210723113229320"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723113609680.png" alt="image-20210723113609680"></p>
+<p>接下来我们进行SIP配置，单击“SIP配置”，勾选注册SIP服务器，填写SIP服务器的地址，SIP服务器的地址就是SC的地址，SC的地址和SMC的地址为同一个，修改后我们再修改sip认证密码，</p>
+<p><img src="C:\Users\KawaiiAqua\AppData\Roaming\Typora\typora-user-images\image-20210723113644185.png" alt="image-20210723113644185"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210723113815727.png" alt="image-20210723113815727"></p>
+<h2 id="添加MCU"><a href="#添加MCU" class="headerlink" title="添加MCU"></a>添加MCU</h2><p>首先点击“设备管理” 设备中找到“MCU”，在MCU的界面我们选择添加MCU，</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725090620537.png" alt="image-20210725090620537"></p>
+<p>输入MCU的IP地址，勾选SNMPV3协议，填写我们刚刚填写的用户名和密码，修改认证密码，修改加密密码，修改完成之后点击“下一步”，得到MCU的配置界面，输入MCU的名称，输入MCU的前缀号，这里的前缀号是我们配置服务区的前缀号0571，</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725090724284.png" alt="image-20210725090724284"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725090902869.png" alt="image-20210725090902869"></p>
+<p>输入连接密码，连接密码是和MCU的连接密码是同一个，再配置HTTP连接密码，</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725091100141.png" alt="image-20210725091100141"></p>
+<p>检查H.323的配置信息是否正确，修改认证密码，在检查SIP的配置信息是否正确，再修改认证密码，选择添加，添加完成之后稍等一会就会添加成功。</p>
+<h2 id="SMC2-0添加终端"><a href="#SMC2-0添加终端" class="headerlink" title="SMC2.0添加终端"></a>SMC2.0添加终端</h2><p>首先在地址栏输入终端的IP地址，</p>
+<p>首先选择系统配置，选择服务器配置。云平台类型选择手动，H.323 GK 注册选择启用，注册方式选择手动，</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725091506859.png" alt="image-20210725091506859"></p>
+<p>接下来修改GK的地址，再修改H.164的ID也就是短号，修改H.323ID前缀号加尾号，修改认证用户名，修改认证密码，同样修改SIP配置。</p>
+<p>接下来单击SNMP设置。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725091908402.png" alt="image-20210725091908402"></p>
+<p>填写Trap服务器的地址，此地址为SMC2.0的地址，修改SNMP的用户名和密码，也可以保持默认不变，为了安全还是可以修改。终端侧配置完成，接下来去SMC2.0上进行配置。</p>
+<p>单击“设备”，选择“会场”，点击“添加会场”，输入终端的IP地址，认证信息保持默认，勾选SNMP V3协议，如果我们修改后修改认证密码，认证密码和加密密码必须和终端侧保持一致，点击下一步。</p>
+<p>进入终端的配置界面</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725092735314.png" alt="image-20210725092735314"></p>
+<p>输入终端的名称，修改认证密码，查看SIP注册是否注册成功，修改认证密码，加密密码。和终端保持一致。</p>
+<h1 id="会议召集"><a href="#会议召集" class="headerlink" title="会议召集"></a>会议召集</h1><p>登陆SMC web界面</p>
+<p>在菜单栏点击“会议”，选择“新建会议”，配置“会议名称”，填写开始时间，选择会场时长，选择“添加会场”，选中会场，选择会场高级参数，选择</p>
+<p>拖动某一个终端到这里就代表这个就是主会场。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725093720823.png" alt="image-20210725093720823"></p>
+<p>我们也可以选择MCU，如果我们选择自动，终端就会自动添加到MCU之中。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725093841877.png" alt="image-20210725093841877"></p>
+<p>点击预约会议即可。</p>
+<p>SMC 2.0 召集Ad hoc会议。</p>
+<p>点击会议，选择会议模版，选择添加新的会议模版，修改会议名称，设置好名称之后，选择会议时长，然后点击高级参数，</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725094353391.png" alt="image-20210725094353391"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725094446058.png" alt="image-20210725094446058"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725094504324.png" alt="image-20210725094504324"></p>
+<p>然后再“添加会场”。把我们所需要的会场添加进去。添加完之后，保存为模版，现在我们点击会议，选择会议列表，发现会议列表为空，</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725094524602.png" alt="image-20210725094524602"></p>
+<p>然后我们进入终端的web界面。</p>
+<p>单击“呼叫”，填写我们刚刚填写的接入号。点击“呼叫”。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725094916266.png" alt="image-20210725094916266"></p>
+<p>在终端侧点击“二次拨号”，输入激活密码（上边SMC中配置的，）以#号键结尾。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725095059482.png" alt="image-20210725095059482"></p>
+<p>当我们想入会时，就只需要在终端侧呼叫时，输入接入号，和会议密码就可以。</p>
+<h1 id="会控操作"><a href="#会控操作" class="headerlink" title="会控操作"></a>会控操作</h1><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725095344642.png" alt="image-20210725095344642"></p>
+<p>添加会场之后，SMC2.0会自动呼叫会场。会场的状态有两种，一种是入会，一种是离会，</p>
+<p>添加会场：</p>
+<p>移除会场：</p>
+<p>可以选择呼叫和挂断某一个终端</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725100827656.png" alt="image-20210725100827656"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725100901024.png" alt="image-20210725100901024"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725100923918.png" alt="image-20210725100923918"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725101003935.png" alt="image-20210725101003935"></p>
+<p>讨论模式：会场的所有麦克风都会被打开。</p>
+<p>观看模式：可以自由的选择观看的会场。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725101049453.png" alt="image-20210725101049453"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725101127529.png" alt="image-20210725101127529"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725101140509.png" alt="image-20210725101140509"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725101150871.png" alt="image-20210725101150871"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725101209045.png" alt="image-20210725101209045"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725101233257.png" alt="image-20210725101233257"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725101242580.png" alt="image-20210725101242580"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725101254507.png" alt="image-20210725101254507"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725101313520.png" alt="image-20210725101313520"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725101324898.png" alt="image-20210725101324898"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725101339416.png" alt="image-20210725101339416"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725101350434.png" alt="image-20210725101350434"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725101423605.png" alt="image-20210725101423605"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725101514714.png" alt="image-20210725101514714"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725101530657.png" alt="image-20210725101530657"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725101603719.png" alt="image-20210725101603719"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725101654241.png" alt="image-20210725101654241"></p>
+
+        </div>
+
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="null"></li>
+                <li class="wechat-code"><img src="null"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent">
+        </div>
+        <!-- 评分 -->
+        <div class="single-reward">
+          
+        </div>
+        <!-- 自定义署名方式 -->
+        <footer class="post-footer">
+          <div class="post-lincenses" style="color: #ff9966;">
+            欢迎转载，转载时请注明来源哦！
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" style="color: #ff9966;" target="_blank"
+              rel="nofollow">
+              <i class="fa fa-creative-commons" aria-hidden="true"></i>ncsa4.0</a>
+          </div>
+          
+          <div class="post-tags" style="color: #a39391">
+            <span><i class="fa fa-tags"></i>
+              
+              <a href="/tags/H-323/" style="color: #716e77;">H.323<em>·</em></a>
+              
+              <a href="/tags/SIP/" style="color: #716e77;">SIP<em>·</em></a>
+              
+              <a href="/tags/SMC/" style="color: #716e77;">SMC<em>·</em></a>
+              
+              <a href="/tags/MCU/" style="color: #716e77;">MCU<em>·</em></a>
+              
+            </span>
+            <span>
+              <i class="iconfont icon-file"></i>
+              
+              <a href="/categories/%E6%8A%80%E6%9C%AF/" style="color: #716e77;">技术</a>
+              
+            </span>
+          </div>
+          
+          <div class="post-share" >
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+        <!-- <div class="tag-cloud">
+          <div class="tag-cloud-title">
+          </div>
+          <div class="tag-cloud-tags">
+            <a href="/tags/2019%E6%BF%80%E6%B4%BB%E5%AF%86%E9%92%A5/" style="font-size: 10px; color: #f06966">2019激活密钥</a> <a href="/tags/ACL/" style="font-size: 10px; color: #f06966">ACL</a> <a href="/tags/ARP/" style="font-size: 10px; color: #f06966">ARP</a> <a href="/tags/BFD/" style="font-size: 10px; color: #f06966">BFD</a> <a href="/tags/BPDU/" style="font-size: 12px; color: #cb7980">BPDU</a> <a href="/tags/DHCP/" style="font-size: 10px; color: #f06966">DHCP</a> <a href="/tags/DOS/" style="font-size: 10px; color: #f06966">DOS</a> <a href="/tags/Eth-Trunk%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88/" style="font-size: 10px; color: #f06966">Eth-Trunk链路聚合</a> <a href="/tags/GRE/" style="font-size: 10px; color: #f06966">GRE</a> <a href="/tags/GVRP/" style="font-size: 10px; color: #f06966">GVRP</a> <a href="/tags/H-323/" style="font-size: 10px; color: #f06966">H.323</a> <a href="/tags/HCIA/" style="font-size: 20px; color: #39bae8">HCIA</a> <a href="/tags/HCIP/" style="font-size: 16px; color: #829ab4">HCIP</a> <a href="/tags/IGMP/" style="font-size: 10px; color: #f06966">IGMP</a> <a href="/tags/IGMP-Snooping/" style="font-size: 10px; color: #f06966">IGMP Snooping</a> <a href="/tags/IPsec-VPN/" style="font-size: 10px; color: #f06966">IPsec VPN</a> <a href="/tags/IPsec-%E9%85%8D%E7%BD%AE/" style="font-size: 10px; color: #f06966">IPsec 配置</a> <a href="/tags/MCU/" style="font-size: 10px; color: #f06966">MCU</a> <a href="/tags/MQC%E6%B5%81%E7%AD%96%E7%95%A5/" style="font-size: 10px; color: #f06966">MQC流策略</a> <a href="/tags/MSTP/" style="font-size: 10px; color: #f06966">MSTP</a> <a href="/tags/MUX-VLAN/" style="font-size: 10px; color: #f06966">MUX VLAN</a> <a href="/tags/NAT/" style="font-size: 10px; color: #f06966">NAT</a> <a href="/tags/OSPF/" style="font-size: 12px; color: #cb7980">OSPF</a> <a href="/tags/OSPF-NSSA/" style="font-size: 10px; color: #f06966">OSPF NSSA</a> <a href="/tags/OSPF-Stub/" style="font-size: 10px; color: #f06966">OSPF Stub</a> <a href="/tags/OSPF-Totally-NSSA/" style="font-size: 10px; color: #f06966">OSPF Totally-NSSA</a> <a href="/tags/OSPF-Totally-Stub/" style="font-size: 10px; color: #f06966">OSPF Totally-Stub</a> <a href="/tags/OSPF%E5%86%85%E9%83%A8%E8%B7%AF%E7%94%B1/" style="font-size: 10px; color: #f06966">OSPF内部路由</a> <a href="/tags/OSPF%E5%9F%BA%E7%A1%80/" style="font-size: 10px; color: #f06966">OSPF基础</a> <a href="/tags/OSPF%E5%A4%96%E9%83%A8%E8%B7%AF%E7%94%B1/" style="font-size: 12px; color: #cb7980">OSPF外部路由</a> <a href="/tags/OSPF%E5%A4%9A%E5%8C%BA%E5%9F%9F/" style="font-size: 10px; color: #f06966">OSPF多区域</a> <a href="/tags/Office%E6%BF%80%E6%B4%BB/" style="font-size: 10px; color: #f06966">Office激活</a> <a href="/tags/PIM/" style="font-size: 12px; color: #cb7980">PIM</a> <a href="/tags/PIM-DM/" style="font-size: 10px; color: #f06966">PIM DM</a> <a href="/tags/PIM-SM/" style="font-size: 10px; color: #f06966">PIM SM</a> <a href="/tags/PPP/" style="font-size: 10px; color: #f06966">PPP</a> <a href="/tags/RIP/" style="font-size: 12px; color: #cb7980">RIP</a> <a href="/tags/RSTP/" style="font-size: 10px; color: #f06966">RSTP</a> <a href="/tags/SIP/" style="font-size: 10px; color: #f06966">SIP</a> <a href="/tags/SMC/" style="font-size: 10px; color: #f06966">SMC</a> <a href="/tags/STP/" style="font-size: 10px; color: #f06966">STP</a> <a href="/tags/SUPER-VLAN/" style="font-size: 10px; color: #f06966">SUPER VLAN</a> <a href="/tags/VIM%E4%BD%BF%E7%94%A8/" style="font-size: 10px; color: #f06966">VIM使用</a> <a href="/tags/VLAN/" style="font-size: 14px; color: #a7899a">VLAN</a> <a href="/tags/VRRP/" style="font-size: 10px; color: #f06966">VRRP</a> <a href="/tags/VRRP%E9%85%8D%E7%BD%AE/" style="font-size: 10px; color: #f06966">VRRP配置</a> <a href="/tags/java/" style="font-size: 10px; color: #f06966">java</a> <a href="/tags/win10KMS%E6%BF%80%E6%B4%BB/" style="font-size: 10px; color: #f06966">win10KMS激活</a> <a href="/tags/%E4%BA%A4%E6%8D%A2/" style="font-size: 10px; color: #f06966">交换</a> <a href="/tags/%E4%BA%A4%E6%8D%A2%E6%9C%BA%E9%80%9A%E8%BF%87FTP%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/" style="font-size: 10px; color: #f06966">交换机通过FTP上传下载文件</a> <a href="/tags/%E4%BB%A3%E7%90%86ARP/" style="font-size: 10px; color: #f06966">代理ARP</a> <a href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/" style="font-size: 10px; color: #f06966">信息安全</a> <a href="/tags/%E5%AE%9E%E9%AA%8C/" style="font-size: 14px; color: #a7899a">实验</a> <a href="/tags/%E6%89%B9%E9%87%8F%E5%8A%A0%E5%85%A5Vlan/" style="font-size: 10px; color: #f06966">批量加入Vlan</a> <a href="/tags/%E7%AB%AF%E5%8F%A3%E5%AE%89%E5%85%A8/" style="font-size: 10px; color: #f06966">端口安全</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 18px; color: #5eaace">笔记</a> <a href="/tags/%E7%BB%84%E6%92%AD/" style="font-size: 10px; color: #f06966">组播</a> <a href="/tags/%E9%98%B2%E7%81%AB%E5%A2%99/" style="font-size: 10px; color: #f06966">防火墙</a> <a href="/tags/%E9%9A%94%E7%A6%BB%E6%8A%80%E6%9C%AF/" style="font-size: 10px; color: #f06966">隔离技术</a>
+          </div>
+        </div> -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+          
+            <div class="post-nepre full next">
+              
+              <a href="/post/ea49.html" rel="next">
+                <div class="background">
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/07/10/4wULW89Gq7RETaD.png"
+                    style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
+                    onerror="imgError(this,3)" src="https://i.loli.net/2021/07/10/4wULW89Gq7RETaD.png">
+                </div>
+                <span class="label">Next Post</span>
+                <div class="info">
+                  <h3>HCNP学习笔记20</h3>
+                  <hr>
+                </div>
+              </a>
+            </div>
+            
+      </section>
+      <!-- 加密文章隐藏评论 -->
+      <section class="comment" >
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<div id="gitalk-container" class="comment"></div> 
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="/js/md5.min.js"></script>
+<script type="text/javascript">
+	var gitalk = new Gitalk({
+  	clientID: '9ae3a88cd97b7b9bd1fa',
+  	clientSecret: 'c12b84cd9d9609551630939716dc990cc7d5af00',
+  	repo: 'SakuraMuxia.github.io',
+  	owner: 'SakuraMuxia',
+	admin: ['SakuraMuxia'],
+	distractionFreeMode: 'true',
+    id: md5(location.pathname)
+})
+gitalk.render('gitalk-container') 
+</script>
+
+
+      </section>
+      <!-- 加密文章隐藏作者信息 -->
+      
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div>
+
+
+<!--评论配置-->
+
+
+    <div id="vcomments"></div>
+    <script src="https://unpkg.com/valine/dist/Valine.min.js"></script><!-- 最新版 -->
+    <style>
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("https://gitee.com/cungudafa/source/raw/master/img/gif/Sitich/Sitich2.gif") 100% 100% no-repeat;
+    }
+    </style>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            enableQQ: true,
+            boolean: true,
+            appId: 'pJf0nLlIFPsrFbqcB2InonHd-gzGzoHsz',
+            appKey: 'RoAvgTeWI8wX4B5wXo6jB2YV',
+            //notify: 'false' === 'true',
+            //verify: 'true' === 'true',
+            visitor: 'false' === 'true',
+            avatar: 'monsterid',
+            pageSize: '10',
+            lang: 'zh-cn',
+            placeholder: '大家文明留言哈~',
+            requiredFields: ['nick','mail'], //设置必填项
+            // 设置Bilibili表情包地址
+            emojiCDN: '//i0.hdslb.com/bfs/emote/', 
+            // 表情title和图片映射
+            emojiMaps: {
+            "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+            "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+            "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+            "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+            "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+            "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+            "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+            "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+            "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+            "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+            "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+            "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+            "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+            "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+            "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+            "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+            "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+            "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+            "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+            "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+            "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+            "tv_打脸": "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+            "tv_抓狂": "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+            "tv_抠鼻": "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+            "tv_斜眼笑": "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+            "tv_无奈": "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+            "tv_晕": "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+            "tv_流汗": "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+            "tv_流泪": "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+            "tv_流鼻血": "c32d39db2737f89b904ca32700d140a9241b0767.png",
+            "tv_点赞": "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+            "tv_生气": "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+            "tv_生病": "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+            "tv_疑问": "0793d949b18d7be716078349c202c15ff166f314.png",
+            "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+            "tv_皱眉": "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+            "tv_目瞪口呆": "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+            "tv_睡着": "8b196675b53af58264f383c50ad0945048290b33.png",
+            "tv_笑哭": "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+            "tv_腼腆": "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+            "tv_色": "61822c7e9aae5da76475e7892534545336b23a6f.png",
+            "tv_调侃": "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+            "tv_调皮": "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+            "tv_鄙视": "6e72339f346a692a495b123174b49e4e8e781303.png",
+            "tv_闭嘴": "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+            "tv_难过": "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+            "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+            "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+            "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+            "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+                // ... 更多表情
+            }
+        });
+    </script>
+
+    <!-- 
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        jinrishici.load(function(result) {
+            var jrsc_plac =  result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin.dynasty + " · " + result.data.origin.author;
+            document.getElementById("veditor").setAttribute("placeholder",jrsc_plac);
+        })
+    </script>
+     -->
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<div id="gitalk-container" class="comment"></div> 
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="/js/md5.min.js"></script>
+<script type="text/javascript">
+	var gitalk = new Gitalk({
+  	clientID: '9ae3a88cd97b7b9bd1fa',
+  	clientSecret: 'c12b84cd9d9609551630939716dc990cc7d5af00',
+  	repo: 'SakuraMuxia.github.io',
+  	owner: 'SakuraMuxia',
+	admin: ['SakuraMuxia'],
+	distractionFreeMode: 'true',
+    id: md5(location.pathname)
+})
+gitalk.render('gitalk-container') 
+</script>
+
+
+
+      <!-- body.end -->
+    </div>
+    <!-- search -->    
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            // PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+    <!-- footer-->    
+    
+    <footer id="colophon" class="site-footer" role="contentinfo">
+    <div class="site-info">
+        <div class="footertext">
+          <div class="img-preload">
+              <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
+              <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
+          </div>
+        </div>
+        <!-- 网站数据统计 -->
+        <div class="footer-device">
+          <p style="font-family: 'Ubuntu', sans-serif;">
+            <span style="color: #ff9999;padding-left: 20px;">
+                <!-- 网站运行时间统计 -->
+                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                <span id="time" align="center">载入时间中...</span>
+                <script>
+                var now = new Date(); 
+                function createtime() { 
+                      var grt= new Date("Fri Feb 12 2021 01:20:00 GMT+0800 (中国标准时间)");//在此处修改你的建站时间
+                      now.setTime(now.getTime()+250); 
+                      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+                      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+                      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+                      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+                      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+                      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+                      document.getElementById("time").innerHTML = "小破站在各种灾难中苟活了 "+ dnum +" 天 "+hnum + " 小时 " + mnum + " 分 " + snum + " 秒";      
+                  } 
+                  setInterval("createtime()",250);
+                </script>
+            </span> 
+          </p>
+        </div>
+        <div class="footer-device">
+          <p style="font-family: 'Ubuntu', sans-serif;">
+            <span style="color: #b9b9b9;padding-left: 20px;">
+              <!-- 全网站字数统计wordcount -->
+              
+              <!-- 不蒜子网页计数器 -->
+              
+              <span style="padding-left: 20px;"><i class="fa fa-fire" aria-hidden="true" style="color: #ff9999;display:inline-block"></i><span id="busuanzi_container_site_pv">总访问量： <span id="busuanzi_value_site_pv" style="color:#ff9999;"></span>次</span>
+              </span>
+              
+              
+              <span style="padding-left: 20px;"><i class="fa fa-user" aria-hidden="true" style="color: #ff9999;display:inline-block"></i><span id="busuanzi_container_site_uv">总访问人数： <span id="busuanzi_value_site_uv" style="color:#ff9999;"></span>人</span>
+              </span>
+              
+            </span>
+          </p>
+        </div>
+        <!-- 作者注明 -->
+        <div class="footer-device">
+          <p style="font-family: 'Ubuntu', sans-serif;">
+              <span style="color: #b9b9b9;">
+                Copyright &copy; 2021
+                &nbsp;<a style="color: #ff9999;display:inline-block"> 慢一点，才更快 | 雨落 </a>
+                &nbsp;<i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> 
+                &nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank" style="color: #ff9999;display:inline-block">Hexo</a>
+                |&nbsp;Theme&nbsp;<a href="https://gitee.com/cungudafa/hexo-theme-sakuraplus" target="_blank" style="color: #ff9999;display:inline-block">SakuraPlus</a>
+              </span>
+          </p>
+        </div>
+         <!-- 网站作者版权注明 -->
+         
+    </div><!-- .site-info -->
+</footer>
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/js/lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/js/InsightSearch.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/js/sakura-app.js"></script>
+
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- fancybox大图查看 需jq -->
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/js/jquery.fancybox.min.js"></script>
+  <script>
+    $('[data-fancybox="images"]').fancybox({
+      thumbs : {
+        autoStart : true //缩略图
+      }
+    });
+    $('[data-fancybox]').fancybox({
+      protect: true,//图片右键不能下载
+      youtube : {
+          controls : 0,
+          showinfo : 0
+      },
+      vimeo : {
+          color : 'f00'
+      }
+    });
+  </script>
+
+
+<!-- 自适应浏览器 -->
+<script type="text/javascript">
+  /* <![CDATA[ */
+  if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    var Poi = {"pjax":"0","movies":{"url": "https://cdn.jsdelivr.net/gh/SakuraMuxia/cdn@2.1.1/","name":"2.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+  } else {
+    var Poi = {"pjax":"0","movies":{"url": "https://cdn.jsdelivr.net/gh/SakuraMuxia/cdn@2.1.1/","name":"2.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+  }
+  /* ]]> */
+  
+  </script>
+  <script>
+  $(document).ready(function() {
+    if ($(".toc").length > 0 && document.body.clientWidth > 1200) {
+      if ($(".pattern-center").length > 0) { //有图的情况
+        tocbot.init({
+            // Where to render the table of contents.
+            tocSelector: '.toc', // 放置目录的容器
+            // Where to grab the headings to build the table of contents.
+            contentSelector: '.entry-content', // 正文内容所在
+            // Which headings to grab inside of the contentSelector element.
+            scrollSmooth: true,
+            headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+            headingsOffset: -400,
+            scrollSmoothOffset: -85
+        });
+      } else {
+        tocbot.init({
+            // Where to render the table of contents.
+            tocSelector: '.toc', // 放置目录的容器
+            // Where to grab the headings to build the table of contents.
+            contentSelector: '.entry-content', // 正文内容所在
+            // Which headings to grab inside of the contentSelector element.
+            scrollSmooth: true,
+            headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+            headingsOffset: -85,
+            scrollSmoothOffset: -85
+        });
+      }
+      var offsetTop = $('.toc').offset().top - 95;
+      window.onscroll = function() {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+        if (scrollTop >= offsetTop) {
+          $('.toc').addClass('toc-fixed');
+        } else {
+          $('.toc').removeClass('toc-fixed');
+        }
+      }
+    }
+  });
+  </script>
+  <script src="https://cdn.jsdelivr.net/gh/wallleap/cdn@latest/js/sakura.js"></script>
+  
+<link href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+<link href="https://cdn.bootcss.com/dplayer/1.22.2/DPlayer.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/dplayer/1.22.2/DPlayer.min.js"></script>
+
+    <!-- Side menu -->
+    <div class="openNav no-select" style="height: 50px;">
+      <div class="iconflat no-select" style="width: 50px; height: 50px;">
+        <div class="icon"></div>
+      </div>
+      <div class="site-branding search-form-submit">
+        <i class="iconfont js-toggle-search iconsearch icon-search"></i>
+      </div>
+    </div>
+  </section>
+  <!-- Floating window -->
+  <div id="mo-nav" class="">
+  <div class="m-avatar">
+    <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tx.jpg">
+  </div>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">SakuraMuxia雨落辰潇</p>
+  <p style="text-align: center; word-spacing: 20px;">
+    
+  </p>
+  <ul id="menu-new-1" class="menu">
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+            首页
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/archives">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+            归档
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/tags">
+                  <i class="fa fa-tags" aria-hidden="true"></i>
+                  标签
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/%E6%8A%80%E6%9C%AF/">
+                  <i class="fa fa-code" aria-hidden="true"></i>
+                  技术
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="javascript:;">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+            清单
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/music/">
+                  <i class="fa fa-music" aria-hidden="true"></i>
+                  歌单
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/comment/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+            留言板
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+            关于
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/about/">
+                  <i class="fa fa-meetup" aria-hidden="true"></i>
+                  我？
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+  <p style="text-align: center; font-size: 13px; color: #b9b9b9;">&copy 2020 hexo-sakuraplus</p>
+</div>
+<button onclick="topFunction()" class="mobile-cd-top" id="moblieGoTop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<style>
+  .aplayer .aplayer-lrc {
+    height: 35px;
+  }
+  .aplayer .aplayer-lrc p{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px !important;
+  }
+  .aplayer .aplayer-lrc p.aplayer-lrc-current{
+    color: #FF1493;
+  }
+  .aplayer.aplayer-narrow .aplayer-body{
+    left: -66px !important;
+  }
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    display: none;
+  }
+  .aplayer .aplayer-lrc.aplayer-lrc-hide {
+      display:none !important;
+  }
+  .aplayer.aplayer-fixed .lrc-show {
+    display: block;
+    background: rgba(255, 255, 255, 0.8);
+  }
+</style>
+<meting-js
+
+    enable="true"
+
+    id="376685368"
+
+    server="netease"
+
+    type="playlist"
+
+    fixed="true"
+
+    autoplay="false"
+
+    loop="all"
+
+    order="random"
+
+    preload="auto"
+
+    volume="0.7"
+
+    mutex="true"
+
+    meting="true"
+
+    asset_inject="false"
+
+>
+</meting-js>
+<script>
+  $(function(){
+    $('body').on('click', '.aplayer', function(){
+      if($('.aplayer-button').hasClass('aplayer-play')) {
+        $('.aplayer-lrc').removeClass('lrc-show');
+      } else {
+        $('.aplayer-lrc').addClass('lrc-show');
+      }
+    })
+  });
+</script>
+
+   <!-- pages壁纸切换 -->
+ 
+    <div class="skin-menu no-select" id="mainskin"  style="position: fixed">
+        <div class="theme-controls row-container">
+            <ul class="menu-list">
+                <li id="white-bg"> <i class="fa fa-television" aria-hidden="true"></i></li>
+                <li id="sakura-bg"> <i class="iconfont icon-sakura"></i></li>
+                <li id="gribs-bg"> <i class="fa fa-slack" aria-hidden="true"></i></li>
+                <li id="KAdots-bg"> <i class="iconfont icon-dots"></i></li>
+                <li id="totem-bg"> <i class="fa fa-optin-monster" aria-hidden="true"></i></li>
+                <li id="pixiv-bg"> <i class="iconfont icon-pixiv"></i></li>
+                <li id="bing-bg"> <i class="iconfont icon-bing"></i></li>
+                <li id="dark-bg"> <i class="fa fa-moon-o" aria-hidden="true"></i></li>
+            </ul>
+        </div>
+        <div class="font-family-controls row-container">
+            <button type="button" class="control-btn-serif selected" data-mode="serif" onclick="mashiro_global.font_control.change_font()">Serif</button>
+            <button type="button" class="control-btn-sans-serif" data-mode="sans-serif" onclick="mashiro_global.font_control.change_font()">Sans Serif</button>
+        </div>
+    </div>   
+    <canvas id="night-mode-cover"></canvas> 
+        <div class="changeSkin-gear no-select">
+        <div class="keys" id="setbtn"> <span id="open-skinMenu"> 切换壁纸 | SCHEME TOOL 
+            &nbsp;<i class="iconfont icon-gear inline-block rotating"></i> </span></div>
+    </div><!-- skin.end -->
+
+  <!-- left side bar -->
+
+ </body>
+</html>
