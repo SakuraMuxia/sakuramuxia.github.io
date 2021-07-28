@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">HCNP学习笔记13 | 慢一点，才更快 | 雨落</title>
+  <title itemprop="name">常用教程 | 慢一点，才更快 | 雨落</title>
   
     <link rel="shortcut icon" href="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tubiao.ico">
   
@@ -294,11 +294,11 @@
 
 <div class="pattern-center single-center">
   <!-- 有配图默认渲染第一张 -->
-  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/06/09/av2Zu8AeogDJLWz.png);"
-    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/06/09/av2Zu8AeogDJLWz.png">
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/07/27/W1s4aOTtSd9XIkw.png);"
+    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/07/27/W1s4aOTtSd9XIkw.png">
   </div>
   <header class="pattern-header single-header">
-    <h1 class="entry-title">HCNP学习笔记13</h1>
+    <h1 class="entry-title">常用教程</h1>
     <p class="entry-census">
       
       <span class="post-meta-item">
@@ -318,7 +318,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-calendar"></i>
         </span>
-        <span class="post-meta-item-text"> 2021-6-9 </span>
+        <span class="post-meta-item-text"> 2021-7-27 </span>
       </span>
       <span class="bull">
         ·</span>
@@ -345,7 +345,7 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               </span class="post-meta-item-text">
-                <span class="valine-comment-count" data-xid="/1b09"> </span>
+                <span class="valine-comment-count" data-xid="/aaacac"> </span>
               </span>
           </span> -->
     </p>
@@ -362,169 +362,211 @@
         <!--套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h1 id="组播"><a href="#组播" class="headerlink" title="组播"></a>组播</h1><h2 id="组播基础"><a href="#组播基础" class="headerlink" title="组播基础"></a>组播基础</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210606151840822.png" alt="image-20210606151840822"></p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//ospf 组播地址 224.0.0.5 224.0.0.6</span>
-</code></pre>
-<h2 id="技术背景"><a href="#技术背景" class="headerlink" title="技术背景"></a>技术背景</h2><p> <img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210606154707922.png" alt="image-20210606154707922"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210606155005591.png" alt="image-20210606155005591"></p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//CDN 内容分发网络 10几年前的技术</span>
-<span class="token comment" spellcheck="true">//合肥电信 就近的CND服务器 缓存 代理 服务器 </span>
-<span class="token comment" spellcheck="true">//BGP 全部都是单播</span>
-</code></pre>
-<h2 id="单播点到点问题"><a href="#单播点到点问题" class="headerlink" title="单播点到点问题"></a>单播点到点问题</h2><p>信息量和需求成正比</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210606175819704.png" alt="image-20210606175819704"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210606180440976.png" alt="image-20210606180440976"></p>
-<h2 id="广播点到多点问题"><a href="#广播点到多点问题" class="headerlink" title="广播点到多点问题"></a>广播点到多点问题</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210606180549295.png" alt="image-20210606180549295"></p>
-<h2 id="组播解决方案"><a href="#组播解决方案" class="headerlink" title="组播解决方案"></a>组播解决方案</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210606181427713.png" alt="image-20210606181427713"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210606182251348.png" alt="image-20210606182251348"></p>
-<h2 id="组播定义"><a href="#组播定义" class="headerlink" title="组播定义"></a>组播定义</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210606182431206.png" alt="image-20210606182431206"></p>
-<h2 id="组播基本概念"><a href="#组播基本概念" class="headerlink" title="组播基本概念"></a>组播基本概念</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210606183150835.png" alt="image-20210606183150835"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210606183527236.png" alt="image-20210606183527236"></p>
-<h2 id="路由协议分类"><a href="#路由协议分类" class="headerlink" title="路由协议分类"></a>路由协议分类</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210606184314514.png" alt="image-20210606184314514"></p>
-<h2 id="组播与电视节目对比"><a href="#组播与电视节目对比" class="headerlink" title="组播与电视节目对比"></a>组播与电视节目对比</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210606184525419.png" alt="image-20210606184525419"></p>
-<h2 id="组播的优劣势"><a href="#组播的优劣势" class="headerlink" title="组播的优劣势"></a>组播的优劣势</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210606184820972.png" alt="image-20210606184820972"></p>
-<h2 id="组播地址"><a href="#组播地址" class="headerlink" title="组播地址"></a>组播地址</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607084120388.png" alt="image-20210607084120388"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607084535017.png" alt="image-20210607084535017"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607084625978.png" alt="image-20210607084625978"></p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//选择组播源 IGMP协议(路由器)和PIM协议（主机）</span>
-</code></pre>
-<h3 id="组播地址定义"><a href="#组播地址定义" class="headerlink" title="组播地址定义"></a>组播地址定义</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607084941423.png" alt="image-20210607084941423"></p>
-<h3 id="组播IP地址定义"><a href="#组播IP地址定义" class="headerlink" title="组播IP地址定义"></a>组播IP地址定义</h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607085357929.png" alt="image-20210607085357929"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607085559034.png" alt="image-20210607085559034"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607085637032.png" alt="image-20210607085637032"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607085728191.png" alt="image-20210607085728191"></p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 224.0.0.9 ripv2</span>
-<span class="token comment" spellcheck="true">//主机请求的是组播路由器地址，但是路由器回复的是所有主机和路由器。</span>
-</code></pre>
-<h2 id="组播MAC地址"><a href="#组播MAC地址" class="headerlink" title="组播MAC地址"></a>组播MAC地址</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607090636185.png" alt="image-20210607090636185"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607091728719.png" alt="image-20210607091728719"></p>
-<ul>
-<li>丢失了5位的地址信息，直接结果是有32个IPv4组播地址映射到同一MAC地址上。</li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607132345958.png" alt="image-20210607132345958"></p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//MAC地址是16进制表示，IP地址是用10进制表示</span>
-<span class="token comment" spellcheck="true">//交换机是学不到组播地址的，也学不到广播地址，学的是源MAC。未知的单播也会泛洪。没有IGMP的监听功能，要不然就只能泛洪。</span>
-</code></pre>
-<p> <img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607132924843.png" alt="image-20210607132924843"></p>
-<h1 id="组播架构"><a href="#组播架构" class="headerlink" title="组播架构"></a>组播架构</h1><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607153557649.png" alt="image-20210607153557649"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607153733626.png" alt="image-20210607153733626"></p>
-<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210614180127136.png" alt="image-20210614180127136"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607154757545.png" alt="image-20210607154757545"></p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//主机接入 IGMP 组播路由 PIM</span>
-<span class="token comment" spellcheck="true">//windows service  流媒体服务器</span>
-<span class="token comment" spellcheck="true">//远程教学：红蜘蛛 极域 VNC</span>
-</code></pre>
-<h2 id="组播基本架构"><a href="#组播基本架构" class="headerlink" title="组播基本架构"></a>组播基本架构</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/20210607170705.png"></p>
-<pre class=" language-java"><code class="language-java">dis igmp group <span class="token comment" spellcheck="true">//查看IGMP群组</span>
-dis pim routing<span class="token operator">-</span>table <span class="token comment" spellcheck="true">//查看pim路由表</span>
-dis ip routing<span class="token operator">-</span>table <span class="token comment" spellcheck="true">//查看ip路由表</span>
-</code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607171540486.png" alt="image-20210607171540486"></p>
-<p><strong>说明：</strong></p>
-<ul>
-<li>PC1的IP地址为：1.0.0.1 255.0.0.0 1.0.0.254</li>
-<li>PC2的IP地址为：1.0.0.2 255.0.0.0 1.0.0.254</li>
-<li>PC3的IP地址为：1.0.0.3 255.0.0.0 1.0.0.254</li>
-<li>MCS1的IP地址为：2.0.0.100 255.0.0.0 2.0.0.254</li>
-<li>MCS1的组播地址为：226.1.1.1</li>
-<li>MCS1的源IP地址为：2.0.0.100</li>
-</ul>
-<pre class=" language-java"><code class="language-java"><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
-  sys
-  sys R1
-  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
-  ip add <span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">0.254</span> <span class="token number">24</span>
-  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
-  ip add <span class="token number">2.0</span><span class="token punctuation">.</span><span class="token number">0.254</span> <span class="token number">24</span>
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-  multicast routing<span class="token operator">-</span>enable <span class="token comment" spellcheck="true">//开启全局组播路由功能</span>
-  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
-  pim dm
-  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
-  pim dm
-  dis pim rou <span class="token comment" spellcheck="true">//查看pim路由</span>
-  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//在成员的接口打开igmp</span>
-  igmp enable <span class="token comment" spellcheck="true">//在成员的接口打开igmp</span>
-  dis IGMP group<span class="token comment" spellcheck="true">//查看igmp group</span>
-</code></pre>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607180020454.png" alt="image-20210607180020454"></p>
-<ul>
-<li>路由协议IGP EGP BGP</li>
-<li>IGP下边有rip，IGMP，isis，ospf等，IGP是在一个AS内定义的路由协议。</li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607180338232.png" alt="image-20210607180338232"></p>
-<h1 id="IGMP"><a href="#IGMP" class="headerlink" title="IGMP"></a>IGMP</h1><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607181345721.png" alt="image-20210607181345721"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607181442465.png" alt="image-20210607181442465"></p>
-<h2 id="组播组管理协议工作机制"><a href="#组播组管理协议工作机制" class="headerlink" title="组播组管理协议工作机制"></a>组播组管理协议工作机制</h2><ul>
-<li>主机加入或离开组播组</li>
-<li>路由器维护组播组</li>
-<li>查询器选举</li>
-<li>成员报告抑制</li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607181757399.png" alt="image-20210607181757399"></p>
-<h2 id="IGMP-1"><a href="#IGMP-1" class="headerlink" title="IGMP"></a>IGMP</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607181919517.png" alt="image-20210607181919517"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607181939496.png" alt="image-20210607181939496"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607182026641.png" alt="image-20210607182026641"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210607182141295.png" alt="image-20210607182141295"></p>
-<h2 id="IGMP-v1报文格式"><a href="#IGMP-v1报文格式" class="headerlink" title="IGMP v1报文格式"></a>IGMP v1报文格式</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210608154328613.png" alt="image-20210608154328613"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210608154732424.png" alt="image-20210608154732424"></p>
-<p><strong>主机报告report</strong></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210608154612994.png" alt="image-20210608154612994"></p>
-<pre class=" language-java"><code class="language-java">igmp version 1or2or3 <span class="token comment" spellcheck="true">//可以选择IGMP的版本 </span>
-dis igmp g <span class="token comment" spellcheck="true">//查询igmp全局</span>
-</code></pre>
-<p><strong>路由器查询query</strong>，<strong>路由器每隔60秒查询一次。</strong></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210608163000628.png" alt="image-20210608163000628"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210608163449355.png" alt="image-20210608163449355"></p>
-<h2 id="IGMPv1工作机制"><a href="#IGMPv1工作机制" class="headerlink" title="IGMPv1工作机制"></a>IGMPv1工作机制</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210608164041156.png" alt="image-20210608164041156"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210608164442365.png" alt="image-20210608164442365"></p>
-<h2 id="IGMPv1问题：组成员离开"><a href="#IGMPv1问题：组成员离开" class="headerlink" title="IGMPv1问题：组成员离开"></a>IGMPv1问题：组成员离开</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210608163736348.png" alt="image-20210608163736348"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210608164831178.png" alt="image-20210608164831178"></p>
-<pre class=" language-java"><code class="language-java">dis igmp group verbose<span class="token comment" spellcheck="true">//查询igmp组信息</span>
-dis igmp <span class="token keyword">interface</span> <span class="token class-name">g0</span><span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//查看IGMP接口信息</span>
-<span class="token comment" spellcheck="true">//IGMPV1查询器用的是pim查询，定一个DR作为查询器的角色</span>
-<span class="token comment" spellcheck="true">//IGMPV2查询器有单独的机制</span>
-</code></pre>
-<h2 id="IGMPv2报文格式"><a href="#IGMPv2报文格式" class="headerlink" title="IGMPv2报文格式"></a>IGMPv2报文格式</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609080034296.png" alt="image-20210609080034296"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609075807368.png" alt="image-20210609075807368"></p>
-<pre class=" language-java"><code class="language-java">igmp version <span class="token number">2</span> <span class="token comment" spellcheck="true">//开启IGMP版本二</span>
-igmp enable <span class="token comment" spellcheck="true">//全局开启igmp</span>
-dis igmp <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">// 查看某个接口的IGMP信息</span>
-dis IGMP group <span class="token comment" spellcheck="true">//查看igmp组成员信息</span>
-</code></pre>
-<h2 id="IGMPv2工作机制"><a href="#IGMPv2工作机制" class="headerlink" title="IGMPv2工作机制"></a>IGMPv2工作机制</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609080507052.png" alt="image-20210609080507052"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609081630678.png" alt="image-20210609081630678"></p>
-<p><strong>当有成员离开时，路由器会立即发送两个特定组查询包，查询228的组播</strong></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609080845898.png" alt="image-20210609080845898"></p>
-<h2 id="IGMPv3概述"><a href="#IGMPv3概述" class="headerlink" title="IGMPv3概述"></a>IGMPv3概述</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609082558089.png" alt="image-20210609082558089"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609082629185.png" alt="image-20210609082629185"></p>
-<h2 id="IGMPv3工作机制及改进之处"><a href="#IGMPv3工作机制及改进之处" class="headerlink" title="IGMPv3工作机制及改进之处"></a>IGMPv3工作机制及改进之处</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609082757921.png" alt="image-20210609082757921"></p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 224.0.0.1 指包含所有节点,包含路由器，包含主机</span>
-dis igmp group <span class="token number">230.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> verbose <span class="token comment" spellcheck="true">//查看igmp详细组信息</span>
-</code></pre>
-<h2 id="IGMPv3数据包格式"><a href="#IGMPv3数据包格式" class="headerlink" title="IGMPv3数据包格式"></a>IGMPv3数据包格式</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609083251609.png" alt="image-20210609083251609"></p>
-<p><strong>igmpv3 PC配置</strong></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609084203891.png" alt="image-20210609084203891"></p>
-<p><strong>当不删除1.1.1.1的组播源地址时再次加入一个新的组播源2.2.2.2，原来的1.1.1.1仍然存在</strong>，<strong>这个时候就需要添加模式来改变</strong>，</p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609083926433.png" alt="image-20210609083926433"></p>
-<ul>
-<li>include 包含只要1.1.1.1 ，加入新的就再次包含2.2.2.2</li>
-<li>exclude除了2.2.2.2 其他都要</li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609084727307.png" alt="image-20210609084727307"></p>
-<h2 id="IGMPv3主机和路由器交互过程"><a href="#IGMPv3主机和路由器交互过程" class="headerlink" title="IGMPv3主机和路由器交互过程"></a>IGMPv3主机和路由器交互过程</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609084825349.png" alt="image-20210609084825349"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609085027556.png" alt="image-20210609085027556"></p>
-<p>当主机B不想要2.2.2.2的组播源发送的组播时，他会发送一个BLOCK数据包，告诉路由器，不想要2.2.2.2的组播源主播，然后路由器为了确保其他有没有成员，要2.2.2.2的数据的话，他会发送一个特定组查询，看有没有成员感兴趣，如果有一个成员对2.2.2.2感兴趣，就会回一个报告。本来我要两个服务器的，现在我要一个服务器的，但是其他成员说我还要2.2.2.2，这个时候路由器仍然需要记住2.2.2.2.</p>
-<p><strong>block：屏蔽</strong> </p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609090247651.png" alt="image-20210609090247651"></p>
-<ul>
-<li><strong>Change To Include （Null）改变为包含模式，包含为空，清空路由器的组播组信息。</strong></li>
-<li><strong>V3离开报文，发送地址数为0，即代表离开</strong></li>
-</ul>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609090938380.png" alt="image-20210609090938380"></p>
-<h2 id="IGMP版本对比"><a href="#IGMP版本对比" class="headerlink" title="IGMP版本对比"></a>IGMP版本对比</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609090642306.png" alt="image-20210609090642306"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/image/blog-hcnp/1/image-20210609091024786.png" alt="image-20210609091024786"></p>
-
+          <h1 id="调音台"><a href="#调音台" class="headerlink" title="调音台"></a>调音台</h1><p>模拟调音台</p>
+<p>数字调音台</p>
+<hr>
+<p>声音波段</p>
+<p>长波波段（低音）20Hz～160Hz（3个倍波段）20-40 40-80 80-160</p>
+<p>中波波段（中音）160Hz～2500Hz（4个倍波段）160-320 320-640 640-1280 1280-2500</p>
+<p>短波波段（高音）2500Hz～20000Hz（3个倍波段）2500-5000 5000-10000 10000-20000</p>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>低电平的话筒或者是不带放大器的话筒，无论是电容话筒还是动圈话筒，不带功率放大部分的，建议接MIC的口，就是卡农式的这种口。</p>
+<p>如果是高电平比如说DVD输出的话，电子乐器其他的无线话筒，要接大三芯的接口，大三芯是平衡的接法，建议都接平衡式的接法。可以避免一些软问题。</p>
+<p>PK灯亮代表信号过载的提示。</p>
+<p>增益GAIN（配合PK灯，当PK灯亮的时候，衰减6个dB）一般在中间包括负值（获得足够的信道比和不失真度）</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726183008056.png" alt="image-20210726183008056"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726183235107.png" alt="image-20210726183235107"></p>
+<p>幻想供电</p>
+<p>反相器</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726182801027.png" alt="image-20210726182801027"></p>
+<p>低切开关 </p>
+<p>过滤掉100HZ以下频率的声音，男生的低频最低在80HZ-100HZ。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725104856236.png" alt="image-20210725104856236"> </p>
+<p>均衡器</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725105616569.png" alt="image-20210725105616569"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725105654335.png" alt="image-20210725105654335"></p>
+<p>高频部分</p>
+<p>第1个均衡器对应的是高频的 10K以上的频率，对他进行提升和衰减。一般在中间0，3到6个db已经很高，衰减的多了就会发闷。10K以上对人的泛音*  或者磁性部分，乐器的高频谐波部分。打击乐的踩鑔，非常好。</p>
+<p>中频部分</p>
+<p>可以扫频，可以选择频率的均衡器，标准的参量均衡器，只不过不带带宽调整，带宽是固定的，</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210725112139758.png" alt="image-20210725112139758"></p>
+<p><strong>注解：</strong></p>
+<p><em>泛音</em>，英文称为Harmonics，泛音意思是讲一种声音，在弦乐的演奏技巧上最常用到的人工泛音为Touch fourth。一跃两个八度音程，如笛声。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726184240218.png" alt="image-20210726184240218"></p>
+<p>AUX Auxiliary(辅助)</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726184510995.png" alt="image-20210726184510995"></p>
+<p>前四个AUX是固定的，作为Pre（前置）AUX，</p>
+<p>AUX作为调音台的辅助母线，他的用处也非常的多，用作录音的，用作转播的，有做监听的，或者用作乐队返送的，用的最多的就是对效果器进行效果发送的。</p>
+<p>前置Pre指的是他的效果不受推子的控制，推子的推上去或者打下来，不会影响他发送的效果，对乐队监听的比较多，防止对主声场的控制，影响乐队情绪。</p>
+<p>效果器</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726185002117.png" alt="image-20210726185002117"></p>
+<p>后边几种AUX，可以定义为和前边的几种一样，作为前置，也可以定义为推子之后，推子之后用的比较多，推子之后，用的比较多的是对主会演出的效果器，推子不推上去，话筒是没有效果的。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726185352494.png" alt="image-20210726185352494"></p>
+<p>混响效果，演出说话的时候。</p>
+<p>在总线中，AUX8 切换成Pre</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726185910067.png" alt="image-20210726185910067"></p>
+<p>输出AUX路的效果</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726190238690.png" alt="image-20210726190238690"></p>
+<p>效果器一般就是通过AUX发送出去，通过混响器效果混合之后，然后我们所得得到的效果，然后我们再返回到其中一路来，用了25 26 两个通道，进来之后，均衡器不做进行处理，可以直接打到直通，都是在正中间，效果器返回来的这一路，一定要注意，效果器返回来的这一路的AUX一定要关闭，特别是 7 8 这两路， 7 8 这两路已经作为话筒发送出去了，7 8 这两个都是效果发送，已经发送出去了。就要关闭。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726190537009.png" alt="image-20210726190537009"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726191108072.png" alt="image-20210726191108072"></p>
+<p>双引擎的就是两个通道相互独立，7 和 8 出来之后都是立体声的效果，就是两种不同的立体声的效果混加在一起。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726191311541.png" alt="image-20210726191311541"></p>
+<p>声线按钮</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726191350624.png" alt="image-20210726191350624"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726191533463.png" alt="image-20210726191533463"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726191648148.png" alt="image-20210726191648148"></p>
+<p>通道编组</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726191717361.png" alt="image-20210726191717361"></p>
+<p>第一个是中央C</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726191743545.png" alt="image-20210726191743545"></p>
+<p>中央C编组</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726191859822.png" alt="image-20210726191859822"></p>
+<p>哑音编组</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726192312856.png" alt="image-20210726192312856"></p>
+<p>中央控制组</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726192652981.png" alt="image-20210726192652981"></p>
+<p>7*4矩阵</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726192811367.png" alt="image-20210726192811367"></p>
+<p>7*4的矩阵 </p>
+<p>7条总线，</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726193020319.png" alt="image-20210726193020319"></p>
+<p>矩阵的输出是在编组之后，再进行编组，</p>
+<p>AFL是监听，</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726193906543.png" alt="image-20210726193906543"></p>
+<h1 id="鲁班调音"><a href="#鲁班调音" class="headerlink" title="鲁班调音"></a>鲁班调音</h1><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726194919357.png" alt="image-20210726194919357"></p>
+<h2 id="设备连接图"><a href="#设备连接图" class="headerlink" title="设备连接图"></a>设备连接图</h2><p><img src="C:\Users\KawaiiAqua\AppData\Roaming\Typora\typora-user-images\image-20210726194957919.png" alt="image-20210726194957919"></p>
+<p>调音台：混音的作用，把电脑的信号，话筒的信号混合在一起。</p>
+<p>反馈抑制器：防止啸叫</p>
+<p>混音器：提供混音功能，会议的话筒需要48V供电，当8个话筒都接入调音台上同时打开的话，啸叫会非常严重，即便是用了反馈抑制器，也压不住啸叫，所以会用到混音器，混音器是如果你说话的时候， 他就会自动开启声音，如果你不说话的时候就会自动禁音，</p>
+<p> 功放：放大的功能</p>
+<p>电源时序器：是管理所有设备的电源，按照顺序开机，按照顺序关机。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726195647502.png" alt="image-20210726195647502"></p>
+<p> 接线</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726195733818.png" alt="image-20210726195733818"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726195829992.png" alt="image-20210726195829992"></p>
+<p>调音台的总输出</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726195941936.png" alt="image-20210726195941936"></p>
+<p>电源时序器的接法</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726200150604.png" alt="image-20210726200150604"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726200222990.png" alt="image-20210726200222990"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726200311866.png" alt="image-20210726200311866"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726200506643.png" alt="image-20210726200506643"></p>
+<p>混音器上的调试</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726200715882.png" alt="image-20210726200715882"></p>
+<p>反馈抑制器</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726201857507.png" alt="image-20210726201857507"></p>
+<p>调音台</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726202003608.png" alt="image-20210726202003608"></p>
+<p>打开监听，推输出。</p>
+<p>调试反馈抑制器</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726202200484.png" alt="image-20210726202200484"></p>
+<p>静态陷波器个数就是出现啸叫的那个点，把声音调到最大就会出现啸叫。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726202444088.png" alt="image-20210726202444088"></p>
+<p>旋转选择，按下去代表确定</p>
+<h1 id="调音台2"><a href="#调音台2" class="headerlink" title="调音台2"></a>调音台2</h1><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726202851700.png" alt="image-20210726202851700"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726202915207.png" alt="image-20210726202915207"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726202959603.png" alt="image-20210726202959603"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726203039428.png" alt="image-20210726203039428"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726203050889.png" alt="image-20210726203050889"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726203104643.png" alt="image-20210726203104643"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726203120610.png" alt="image-20210726203120610"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726203150541.png" alt="image-20210726203150541"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726203217191.png" alt="image-20210726203217191"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726203317499.png" alt="image-20210726203317499"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726203342473.png" alt="image-20210726203342473"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726203417436.png" alt="image-20210726203417436"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726203435026.png" alt="image-20210726203435026"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726203514239.png" alt="image-20210726203514239"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726203535497.png" alt="image-20210726203535497"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726203552961.png" alt="image-20210726203552961"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726203633644.png" alt="image-20210726203633644"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726203701058.png" alt="image-20210726203701058"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726203723842.png" alt="image-20210726203723842"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726203742178.png" alt="image-20210726203742178"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726203758441.png" alt="image-20210726203758441"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726203826802.png" alt="image-20210726203826802"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726203904511.png" alt="image-20210726203904511"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726203922869.png" alt="image-20210726203922869"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726203943155.png" alt="image-20210726203943155"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204007379.png" alt="image-20210726204007379"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204023450.png" alt="image-20210726204023450"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204041082.png" alt="image-20210726204041082"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204105588.png" alt="image-20210726204105588"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204127776.png" alt="image-20210726204127776"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204159315.png" alt="image-20210726204159315"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204237178.png" alt="image-20210726204237178"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204256157.png" alt="image-20210726204256157"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204313020.png" alt="image-20210726204313020"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204332713.png" alt="image-20210726204332713"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204352872.png" alt="image-20210726204352872"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204404843.png" alt="image-20210726204404843"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204421386.png" alt="image-20210726204421386"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204433381.png" alt="image-20210726204433381"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204448457.png" alt="image-20210726204448457"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204500937.png" alt="image-20210726204500937"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204522822.png" alt="image-20210726204522822"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204542215.png" alt="image-20210726204542215"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204559410.png" alt="image-20210726204559410"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204625595.png" alt="image-20210726204625595"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204644632.png" alt="image-20210726204644632"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204701920.png" alt="image-20210726204701920"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204720480.png" alt="image-20210726204720480"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204738840.png" alt="image-20210726204738840"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204758915.png" alt="image-20210726204758915"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204812733.png" alt="image-20210726204812733"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204829146.png" alt="image-20210726204829146"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204844257.png" alt="image-20210726204844257"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204858586.png" alt="image-20210726204858586"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204912778.png" alt="image-20210726204912778"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204929169.png" alt="image-20210726204929169"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204941898.png" alt="image-20210726204941898"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726204957421.png" alt="image-20210726204957421"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726205017515.png" alt="image-20210726205017515"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726205041826.png" alt="image-20210726205041826"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726205058159.png" alt="image-20210726205058159"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726205115151.png" alt="image-20210726205115151"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726205151106.png" alt="image-20210726205151106"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726205204737.png" alt="image-20210726205204737"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726205220979.png" alt="image-20210726205220979"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726205239268.png" alt="image-20210726205239268"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726205256979.png" alt="image-20210726205256979"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726205310566.png" alt="image-20210726205310566"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726205340389.png" alt="image-20210726205340389"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726205400360.png" alt="image-20210726205400360"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726205419784.png" alt="image-20210726205419784"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726205441761.png" alt="image-20210726205441761"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726205507571.png" alt="image-20210726205507571"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726205525619.png" alt="image-20210726205525619"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726205544644.png" alt="image-20210726205544644"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726205603067.png" alt="image-20210726205603067"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726205619243.png" alt="image-20210726205619243"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726205635657.png" alt="image-20210726205635657"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726205656081.png" alt="image-20210726205656081"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726205704385.png" alt="image-20210726205704385"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726205721828.png" alt="image-20210726205721828"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726205740388.png" alt="image-20210726205740388"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726205757951.png" alt="image-20210726205757951"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726205808370.png" alt="image-20210726205808370"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726210118581.png" alt="image-20210726210118581"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726210133042.png" alt="image-20210726210133042"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726210151891.png" alt="image-20210726210151891"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726210218954.png" alt="image-20210726210218954"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726210241788.png" alt="image-20210726210241788"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726210304228.png" alt="image-20210726210304228"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726210329988.png" alt="image-20210726210329988"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726210512299.png" alt="image-20210726210512299"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726210553535.png" alt="image-20210726210553535"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726210652203.png" alt="image-20210726210652203"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726210709645.png" alt="image-20210726210709645"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726210724797.png" alt="image-20210726210724797"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726210753947.png" alt="image-20210726210753947"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726210808285.png" alt="image-20210726210808285"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726210820783.png" alt="image-20210726210820783"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726210844202.png" alt="image-20210726210844202"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210726211811709.png" alt="image-20210726211811709"></p>
+<p> 清晰明亮 高频</p>
+<p>低频 增加分贝 声音厚重 但是也模糊不请了 减少分贝了没有那种沙哑的声音</p>
+<h1 id="数字调音台"><a href="#数字调音台" class="headerlink" title="数字调音台"></a>数字调音台</h1>
         </div>
 
         <!-- .entry-content -->
@@ -556,9 +598,7 @@ dis igmp group <span class="token number">230.0</span><span class="token punctua
           <div class="post-tags" style="color: #a39391">
             <span><i class="fa fa-tags"></i>
               
-              <a href="/tags/%E7%BB%84%E6%92%AD/" style="color: #716e77;">组播<em>·</em></a>
-              
-              <a href="/tags/IGMP/" style="color: #716e77;">IGMP<em>·</em></a>
+              <a href="/tags/%E8%B0%83%E9%9F%B3%E5%8F%B0/" style="color: #716e77;">-调音台<em>·</em></a>
               
             </span>
             <span>
@@ -589,15 +629,15 @@ dis igmp group <span class="token number">230.0</span><span class="token punctua
         
         <div class="post-nepre half previous">
           
-            <a href="/post/aaaaaaa.html" rel="prev">
+            <a href="/post/212c.html" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/06/14/w4b9CNfuA2Hc3S6.png"
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/07/27/C9yhk2uDrFfIKXc.png"
                   style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
-                  src="https://i.loli.net/2021/06/14/w4b9CNfuA2Hc3S6.png">
+                  src="https://i.loli.net/2021/07/27/C9yhk2uDrFfIKXc.png">
               </div>
               <span class="label">Previous Post</span>
               <div class="info">
-                <h3>常用教程</h3>
+                <h3>树莓派</h3>
                 <hr>
               </div>
             </a>
@@ -607,15 +647,15 @@ dis igmp group <span class="token number">230.0</span><span class="token punctua
           
           <div class="post-nepre half next">
             
-              <a href="/post/dbc8.html" rel="next">
+              <a href="/post/a548.html" rel="next">
                 <div class="background">
-                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/06/06/1robveLiAPTyNGQ.png"
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/07/25/rHqCOl8AFvIL2JP.png"
                     style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
-                    onerror="imgError(this,3)" src="https://i.loli.net/2021/06/06/1robveLiAPTyNGQ.png">
+                    onerror="imgError(this,3)" src="https://i.loli.net/2021/07/25/rHqCOl8AFvIL2JP.png">
                 </div>
                 <span class="label">Next Post</span>
                 <div class="info">
-                  <h3>HCNP学习笔记12</h3>
+                  <h3>HCIA-Video-Conference</h3>
                   <hr>
                 </div>
               </a>
