@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">HCNP学习笔记19 | 慢一点，才更快 | 雨落</title>
+  <title itemprop="name">HCNP学习笔记21 | 慢一点，才更快 | 雨落</title>
   
     <link rel="shortcut icon" href="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tubiao.ico">
   
@@ -294,11 +294,11 @@
 
 <div class="pattern-center single-center">
   <!-- 有配图默认渲染第一张 -->
-  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/07/09/nuMb7tQEGFBVJky.png);"
-    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/07/09/nuMb7tQEGFBVJky.png">
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/08/03/qOftKN6Q4352Dz7.png);"
+    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/08/03/qOftKN6Q4352Dz7.png">
   </div>
   <header class="pattern-header single-header">
-    <h1 class="entry-title">HCNP学习笔记19</h1>
+    <h1 class="entry-title">HCNP学习笔记21</h1>
     <p class="entry-census">
       
       <span class="post-meta-item">
@@ -318,7 +318,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-calendar"></i>
         </span>
-        <span class="post-meta-item-text"> 2021-7-9 </span>
+        <span class="post-meta-item-text"> 2021-8-3 </span>
       </span>
       <span class="bull">
         ·</span>
@@ -345,7 +345,7 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               </span class="post-meta-item-text">
-                <span class="valine-comment-count" data-xid="/1c89"> </span>
+                <span class="valine-comment-count" data-xid="/2a88"> </span>
               </span>
           </span> -->
     </p>
@@ -362,134 +362,293 @@
         <!--套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h1 id="OSPF外部路由"><a href="#OSPF外部路由" class="headerlink" title="OSPF外部路由"></a>OSPF外部路由</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706131917417.png" alt="image-20210706131917417"></p>
-<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706132055186.png" alt="image-20210706132055186"></p>
-<h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706132456796.png" alt="image-20210706132456796"></p>
-<pre class=" language-java"><code class="language-java">dis ip routeing<span class="token operator">-</span>table <span class="token number">6.6</span><span class="token punctuation">.</span><span class="token number">6.6</span> <span class="token comment" spellcheck="true">//查看IP路由表去往6.6.6.6的路由信息</span>
-  
-<span class="token keyword">default</span><span class="token operator">-</span>route<span class="token operator">-</span>advertise always <span class="token comment" spellcheck="true">//通过ospf发布缺省路由信息（当默认没有配置缺省路由时加always）</span>
-  
-dis ospf lsdb <span class="token comment" spellcheck="true">//查看ospf数据库</span>
-  
-R3就是ASBR 
+          <h1 id="IS-IS"><a href="#IS-IS" class="headerlink" title="IS-IS"></a>IS-IS</h1><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710153341295.png" alt="image-20210710153341295"></p>
+<p><strong>IS-IS怎么防环</strong></p>
+<p>ISIS都是基于SPF算法，本身无环。</p>
+<p>扩展性：TLV</p>
+<p>​                       <img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710160138698.png" alt="image-20210710160138698"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710160223653.png" alt="image-20210710160223653"></p>
+<p>思科的 EIGRP是一种链路状态，是思科私有的。</p>
+<h2 id="ISIS拓扑结构"><a href="#ISIS拓扑结构" class="headerlink" title="ISIS拓扑结构"></a>ISIS拓扑结构</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710161215219.png" alt="image-20210710161215219"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710161304466.png" alt="image-20210710161304466"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710161453673.png" alt="image-20210710161453673"></p>
+<p> 骨干区域并不是通过RouteId来划分的，而是通过路由器的类型来控制的，</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710161658779.png" alt="image-20210710161658779"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710162047017.png" alt="image-20210710162047017"></p>
+<h2 id="路由器分类"><a href="#路由器分类" class="headerlink" title="路由器分类"></a>路由器分类</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710162249968.png" alt="image-20210710162249968"></p>
+<p> Level2类型的路由器是可以跨区域建立邻居的。Level1只能在相同的区域内建立邻居。</p>
+<p><strong>L1和L2、L1/2的作用。</strong></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710162452529.png" alt="image-20210710162452529"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710162635290.png" alt="image-20210710162635290"></p>
+<p>​            <img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710162913845.png" alt="image-20210710162913845"></p>
+<p>DR：指定路由器</p>
+<p>DIS：指定中间系统</p>
+<h2 id="ISIS网络类型"><a href="#ISIS网络类型" class="headerlink" title="ISIS网络类型"></a>ISIS网络类型</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710163010932.png" alt="image-20210710163010932"></p>
+<p>LSP：链路状态更新</p>
+<p>IIH：hello包</p>
+<p>IIH类型：L1 IIH等同于L1的Hello包，L2 IIH等同于L2的Hello包，</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710163437779.png" alt="image-20210710163437779"></p>
+<h2 id="点到点邻接关系"><a href="#点到点邻接关系" class="headerlink" title="点到点邻接关系"></a>点到点邻接关系</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710163509835.png" alt="image-20210710163509835"></p>
+<h2 id="广播网络上邻接关系"><a href="#广播网络上邻接关系" class="headerlink" title="广播网络上邻接关系"></a>广播网络上邻接关系</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710163605717.png" alt="image-20210710163605717"></p>
+<p>ISIS起来了就是UP状态。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710163902141.png" alt="image-20210710163902141"></p>
+<p>伪节点：就是在MA网络（多路网络）中，会选举出一个DIS，DIS的作用就是创建一个伪节点，伪节点就是会和周围所有节点建立一个邻接关系， 然后默认情况下，伪节点到所有邻居的开销都是0， </p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710164516211.png" alt="image-20210710164516211"></p>
+<h2 id="ISIS地址结构"><a href="#ISIS地址结构" class="headerlink" title="ISIS地址结构"></a>ISIS地址结构</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710164825388.png" alt="image-20210710164825388"></p>
+<pre class=" language-java"><code class="language-java">isis
+  network<span class="token operator">-</span>entity <span class="token number">49.0000</span><span class="token punctuation">.</span><span class="token number">0000.0001</span><span class="token punctuation">.</span><span class="token number">00</span> <span class="token comment" spellcheck="true">//</span>
 </code></pre>
-<h2 id="外部路由的引入"><a href="#外部路由的引入" class="headerlink" title="外部路由的引入"></a>外部路由的引入</h2><p>import 导入 引入 华为 华三</p>
-<p>redistribute 重发布/重分发 思科</p>
-<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706135859361.png" alt="image-20210706135859361"></p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">import</span><span class="token operator">-</span>route <span class="token keyword">static</span> <span class="token comment" spellcheck="true">//引入静态路由，从主路由器引入</span>
-  
-</code></pre>
-<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706140545246.png" alt="image-20210706140545246"></p>
-<h3 id="第五类LSA数据包结构"><a href="#第五类LSA数据包结构" class="headerlink" title="第五类LSA数据包结构"></a>第五类LSA数据包结构</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706140705874.png" alt="image-20210706140705874"></p>
-<p><strong>5类是通过ASBR产生的，他是在整个OSPF进程域中传播的，而且这个宣告者是不会变的，这就是一个问题，大家都知道这个外部路由是由3.3.3.3 通告的，但是R1和R5不知道3.3.3.3是怎么走的，3.3.3.3只有在区域0里的人才知道怎么走，这就是4类存在的价值，4类存在的价值就是告诉3.3.3.3BR该怎么走</strong></p>
-<hr>
-<p><strong>三类LSA会由ABR重新产生，四类LSA也会由ABR重新产生。</strong></p>
-<hr>
-<pre class=" language-java"><code class="language-java">dis ospf lsdb asbr  <span class="token comment" spellcheck="true">//验证ospf 四类lsa的路由信息</span>
-</code></pre>
-<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706142529211.png" alt="image-20210706142529211"></p>
-<h3 id="第四类LSA数据包结构"><a href="#第四类LSA数据包结构" class="headerlink" title="第四类LSA数据包结构"></a>第四类LSA数据包结构</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706142934320.png" alt="image-20210706142934320"></p>
-<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706142959768.png" alt="image-20210706142959768"></p>
-<p> 如上图，ASBR产生五类的LSA信息，五类的在所有的区域内泛洪，而且是不更改宣告着ID，永远是ADBR的ID，所以在其他区域，除了在ASBR所在的区域外，其他区域找不到这个route ID ， 因此连接这个区域的ABR就有必要，有义务，产生四类的LSA。</p>
-<h4 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h4><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706143324447.png" alt="image-20210706143324447"></p>
-<pre class=" language-java"><code class="language-java">ASBR的出现是随意的，到后边的优化才会出现。
-</code></pre>
-<pre class=" language-java"><code class="language-java">R1配置
-  
-sys
+<p>IDP：初始域部分</p>
+<p>DSP：域特定部分</p>
+<p>​                         <img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710165248797.png" alt="image-20210710165248797"></p>
+<p>N-SEL 00代表IP</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710165539612.png" alt="image-20210710165539612"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710165526422.png" alt="image-20210710165526422"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710165721123.png" alt="image-20210710165721123"></p>
+<p>system id 6 个字节 用MAC地址的形式</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710165811554.png" alt="image-20210710165811554"></p>
+<p> L1的路由器建立邻居的时候就需要看前面这些部分（AFI+IDI+HODSP）。</p>
+<p>相同的system ID最多只能配置3个Area Address区域地址。</p>
+<p> 可以配置多个区域但是System ID必须一致。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710171834333.png" alt="image-20210710171834333"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710171948402.png" alt="image-20210710171948402"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710172007716.png" alt="image-20210710172007716"></p>
+<p>Area1中区域ID要保持一样，System ID要保持唯一，</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710172135115.png" alt="image-20210710172135115"></p>
+<h2 id="ISIS报文结构"><a href="#ISIS报文结构" class="headerlink" title="ISIS报文结构"></a>ISIS报文结构</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710172307891.png" alt="image-20210710172307891"></p>
+<p>PDU Type ：</p>
+<p>Maxnum Area Address 最大地址</p>
+<h3 id="ISIS报文类型"><a href="#ISIS报文类型" class="headerlink" title="ISIS报文类型"></a>ISIS报文类型</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710172550570.png" alt="image-20210710172550570"></p>
+<h3 id="PDU类型"><a href="#PDU类型" class="headerlink" title="PDU类型"></a>PDU类型</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710190854039.png" alt="image-20210710190854039"></p>
+<h3 id="Hello报文类型"><a href="#Hello报文类型" class="headerlink" title="Hello报文类型"></a>Hello报文类型</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710192230518.png" alt="image-20210710192230518"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210710192250734.png" alt="image-20210710192250734"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711095623953.png" alt="image-20210711095623953"></p>
+<pre class=" language-java"><code class="language-java">sys
   sys R1
-  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span> 
-  ip add <span class="token number">18.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">24</span>
-  q
-  ip route<span class="token operator">-</span>s <span class="token number">8.8</span><span class="token punctuation">.</span><span class="token number">8.8</span> <span class="token number">32</span> <span class="token number">18.0</span><span class="token punctuation">.</span><span class="token number">0.8</span>
-  ospf <span class="token number">1</span>
-  <span class="token keyword">import</span><span class="token operator">-</span>route <span class="token keyword">static</span> <span class="token comment" spellcheck="true">//注入静态路由</span>
+  isis <span class="token number">1</span>
+  net <span class="token number">49.0000</span><span class="token punctuation">.</span><span class="token number">0000.0001</span><span class="token punctuation">.</span><span class="token number">00</span>
+  <span class="token keyword">int</span> P6<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+  ip add <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">24</span>
+  isis enable <span class="token number">1</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+  ip add <span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">24</span>
+  isis enable <span class="token number">1</span>
   
-  acl <span class="token number">2000</span> <span class="token comment" spellcheck="true">//新建一个策略</span>
-  rule permit so <span class="token number">18.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.255</span> <span class="token comment" spellcheck="true">//只允许18网段</span>
-  route<span class="token operator">-</span>policy wakin permit node <span class="token number">10</span> <span class="token comment" spellcheck="true">//新建一个路由策略允许wakin这个路由策略节点编号为10</span>
-  <span class="token keyword">if</span> match acl <span class="token number">2000</span> <span class="token comment" spellcheck="true">// </span>
-  <span class="token keyword">import</span><span class="token operator">-</span>route direct route<span class="token operator">-</span>policy wakin <span class="token comment" spellcheck="true">//挂载直连路由附加路由策略</span>
-     
-    
-<span class="token comment" spellcheck="true">//宣告18网段地址</span>
 sys
-    
+  sys R2
+  isis <span class="token number">1</span>
+  net <span class="token number">49.0000</span><span class="token punctuation">.</span><span class="token number">0000.0002</span><span class="token punctuation">.</span><span class="token number">00</span>
+  <span class="token keyword">int</span> P6<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+  ip add <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> <span class="token number">24</span>
+  isis enable <span class="token number">1</span>
 </code></pre>
-<pre class=" language-java"><code class="language-java">R8配置
+<h3 id="LSP报文"><a href="#LSP报文" class="headerlink" title="LSP报文"></a>LSP报文</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711101242725.png" alt="image-20210711101242725"></p>
+<h3 id="数据包结构"><a href="#数据包结构" class="headerlink" title="数据包结构"></a>数据包结构</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711101334675.png" alt="image-20210711101334675"></p>
+<p><strong>这个就相当于LSA</strong></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711101600473.png" alt="image-20210711101600473"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711101913121.png" alt="image-20210711101913121"></p>
+<h3 id="SNP报文类型"><a href="#SNP报文类型" class="headerlink" title="SNP报文类型"></a>SNP报文类型</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711102354354.png" alt="image-20210711102354354"></p>
+<p><strong>数据包结构</strong></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711102057544.png" alt="image-20210711102057544"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711102429994.png" alt="image-20210711102429994"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711102503730.png" alt="image-20210711102503730"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711102647081.png" alt="image-20210711102647081"></p>
+<h2 id="ISIS邻居建立"><a href="#ISIS邻居建立" class="headerlink" title="ISIS邻居建立"></a>ISIS邻居建立</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711102820419.png" alt="image-20210711102820419"></p>
+<p>点到点之间是单播的形式</p>
+<p>​                          <img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711103523335.png" alt="image-20210711103523335"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711144204416.png" alt="image-20210711144204416"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711144246711.png" alt="image-20210711144246711"></p>
+<p>MA网络是必须通过三次握手，相当于ospf的2way状态。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> p6<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//进入相关接口</span>
+  isis peer<span class="token operator">-</span>ip<span class="token operator">-</span>ignore <span class="token comment" spellcheck="true">//忽略IP地址检查</span>
+  isis ppp<span class="token operator">-</span>negotiation <span class="token number">3</span> way <span class="token comment" spellcheck="true">//默认P2P三次握手</span>
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//进入以太网口</span>
+  isis circuit<span class="token operator">-</span>type p2p <span class="token comment" spellcheck="true">//在以太网接口更改isis接口类型</span>
+dis isis peer <span class="token comment" spellcheck="true">//查看isis的邻居</span>
   
-sys
-  sys R8
-  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> 
-  ip add <span class="token number">18.0</span><span class="token punctuation">.</span><span class="token number">0.8</span> <span class="token number">24</span>
-  <span class="token keyword">int</span> lo <span class="token number">8</span>
-  ip add <span class="token number">8.8</span><span class="token punctuation">.</span><span class="token number">8.8</span> <span class="token number">32</span> 
-  ip route<span class="token operator">-</span>s <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0</span> <span class="token number">18.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token comment" spellcheck="true">//添加静态路由</span>
+<span class="token comment" spellcheck="true">//DIS发送数据包大概3秒一次</span>
 </code></pre>
-<pre class=" language-java"><code class="language-java">R7配置
-  
-sys
-  sys R7
-  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> 
-  ip add <span class="token number">57.0</span><span class="token punctuation">.</span><span class="token number">0.7</span> <span class="token number">24</span>
-  <span class="token keyword">int</span> lo <span class="token number">8</span>
-  ip add <span class="token number">7.7</span><span class="token punctuation">.</span><span class="token number">7.7</span> <span class="token number">32</span> 
-  ip route<span class="token operator">-</span>s <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span> <span class="token number">0</span> <span class="token number">57.0</span><span class="token punctuation">.</span><span class="token number">0.5</span> <span class="token comment" spellcheck="true">//添加静态路由，吓一跳为对端IP地址。</span>
+<p>POS技术支持光纤介质，它是一种高速、先进的广域网连接技术。在路由器上插入一块POS模块，路由器就可以提供POS接口，POS(Packet Over SONET/SDH)是一种应用城域网及广域网中的技术，能够用于传输分组数据。</p>
+<h2 id="LSDB同步"><a href="#LSDB同步" class="headerlink" title="LSDB同步"></a>LSDB同步</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711145243127.png" alt="image-20210711145243127"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711145527618.png" alt="image-20210711145527618"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711145903425.png" alt="image-20210711145903425"></p>
+<p>MA 网络中 会有 DIS周期性的发送CSNP这个数据包，区分L1和L2，MA中的MAC地址都是一样的，而点到点是咩有地址的。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711145738425.png" alt="image-20210711145738425"></p>
+<h2 id="链路状态信息的交互"><a href="#链路状态信息的交互" class="headerlink" title="链路状态信息的交互"></a>链路状态信息的交互</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711145938293.png" alt="image-20210711145938293"></p>
+<p>在P2P 网络中，只在第一次发送CSNP，现在由这里面由A的完整的数据库信息，链路状态信息，B收到之后 ，B就会去比对，如果B没有，B就会发送PSNP，作为请求，这个P是请求的功能，然后A回应一个LSP，然后B在回应一个PSNP这个PSNP就是确认，如果B一直没有回应，A就会重传，这个跟OSPF基本一样，需要确认信息，确认具有直接和间接，直接就是回应一个LSACK，间接就是在更新中包含LSA，直到B回应确认信息为止。</p>
+<p>在MA网络中，他会周期性的发送CSNP，假如路由器A和B已经存在了，然后路由器C后加入，C上线之后，他会发送链路状态信息LSP，A收到后，会比较数据库，A会把他缺少的数据库信息添加进去，添加进入后，他会发送一个完整的数据库摘要，然后B收到后发现自己也缺少数据库信息，于是也会发送PSNP请求信息，然后A再回应一个LSP作为相应，然后MA网络CSNP报文由DIS组播发送，每隔10秒发送以此。</p>
+<h3 id="LSP比较规则"><a href="#LSP比较规则" class="headerlink" title="LSP比较规则"></a>LSP比较规则</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711161937085.png" alt="image-20210711161937085"></p>
+<h3 id="拓扑计算与路由的形成"><a href="#拓扑计算与路由的形成" class="headerlink" title="拓扑计算与路由的形成"></a>拓扑计算与路由的形成</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711162223660.png" alt="image-20210711162223660"></p>
+<h3 id="区域间路由"><a href="#区域间路由" class="headerlink" title="区域间路由"></a>区域间路由</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711162803058.png" alt="image-20210711162803058"></p>
+<pre class=" language-java"><code class="language-java">sys
+  isis <span class="token number">1</span> <span class="token comment" spellcheck="true">//进入isis 1进程</span>
+    is<span class="token operator">-</span>level <span class="token number">1</span> <span class="token comment" spellcheck="true">//更改isis level等级为1</span>
+  dis isis lsdb <span class="token comment" spellcheck="true">//验证isis lsdb的数据库</span>
   
 </code></pre>
-<pre class=" language-java"><code class="language-java">R5配置
-  
-sys
-  sys R5
+<h3 id="ISIS-路由拓扑"><a href="#ISIS-路由拓扑" class="headerlink" title="ISIS 路由拓扑"></a>ISIS 路由拓扑</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711164059707.png" alt="image-20210711164059707"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711164552666.png" alt="image-20210711164552666"></p>
+<pre class=" language-java"><code class="language-java">R1中会产生一个置位为<span class="token number">1</span>的，这个置位为<span class="token number">1</span>的就是发送给R2的，目的是为了让R2产生一个缺省路由，
+  dis isis lsdb  <span class="token comment" spellcheck="true">//查看isis数据库</span>
+  dis isis route <span class="token comment" spellcheck="true">//查看isis路由表</span>
+这条路由就是L1<span class="token operator">/</span><span class="token number">2</span>产生的，可以理解成L1<span class="token operator">/</span><span class="token number">2</span>注入的，
+</code></pre>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711164824598.png" alt="image-20210711164824598"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711165206948.png" alt="image-20210711165206948"></p>
+<h3 id="路由逻辑"><a href="#路由逻辑" class="headerlink" title="路由逻辑"></a>路由逻辑</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711165420412.png" alt="image-20210711165420412"></p>
+<p> 对于区域07的这台L1路由器来说，如果他要去的目标网络是在不同的目标区域，那么他就会把数据包发送给他最近的L1/2的路由器，  而如果05区域内的L1路由器发现目标区域，目标网段是相同的，areaID的话，他就会找他的L1数据库中查看系统ID 找到他就可以，对于L1/2的路由器来说，如果他发现目标地址是不同的区域ID，他就会使用L2的数据库来做路由寻找。相同区域的就直接找区域内的SPF，L1不同他就找L1/2 的路由，L2不同他就找L2的数据库，因为L2的数据库会寻找区域间的路由。</p>
+<h3 id="ISIS路由渗透"><a href="#ISIS路由渗透" class="headerlink" title="ISIS路由渗透"></a>ISIS路由渗透</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711171646494.png" alt="image-20210711171646494"></p>
+<p> 默认情况下，L1/L2默认只会向L1通告一条缺省的路由，而不会通告其他区域的路由信息。L1只能通过默认路由找到L1/2路由器，去往其他区域。 L1/2通过一些其他方式将其他区域的路由的重要信息发送给你，如果不发送，假如05区域内有一个目标网段，有可能区域07中的L1有两条路径可以到达，走左边还是走右边， 对于L1而言他只找最近的L1/2，对其他区域的路是未知的，因此我们就需要渗透。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711171747738.png" alt="image-20210711171747738"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711172544479.png" alt="image-20210711172544479"></p>
+<p>问题1：</p>
+<p>路由不同步和自由路径</p>
+<p>比如说R1要去往10.10.11.1 这个目标网段，R1是L1路由器，然后有两个出口，走的时候从左边走，但是回包的时候确实从右边回来的。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210712084020617.png" alt="image-20210712084020617"></p>
+<p>解决办法：</p>
+<p>让R2的路由器，把到10.10.11.1这条路由挑选出来，通过渗透的方法，给他发布下去，其实就是注入，就是单独的把它注入到区域里面，以L1的LSP方式，发布给Area2区域中的路由器，不单单是默认路由还有一个单独的明细路由。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210712084413270.png" alt="image-20210712084413270"></p>
+<p>在这里面，L1 LSP里面都有一个一位置位叫做Updown bit ，是为了避免，R2的路由器发送的LSP被R1收到后又重新注入到骨干网中，形成的环路。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210712085102390.png" alt="image-20210712085102390"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210712085137398.png" alt="image-20210712085137398"></p>
+<p>路由渗透：</p>
+<p>原因在于L1/2的路由信息不会把L2的路由信息注入到L1，但是他会把L1的路由信息注入到L2，陆游渗透指的是两个方向，一个是L1到L2，一个是L2到L1，只不过默认情况下，L2中会有L1中的路由，但是我们也可以对这个方向做一个限制，L1的路由器只能通过缺省的路由出去。</p>
+<h3 id="路由渗透实验："><a href="#路由渗透实验：" class="headerlink" title="路由渗透实验："></a>路由渗透实验：</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210712085757510.png" alt="image-20210712085757510"></p>
+<pre class=" language-java"><code class="language-java">sys
+  sys R1
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+  ip add <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">24</span>
   <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
-  ip add <span class="token number">57.0</span><span class="token punctuation">.</span><span class="token number">0.5</span> <span class="token number">24</span>
-  ip route<span class="token operator">-</span>s <span class="token number">7.7</span><span class="token punctuation">.</span><span class="token number">7.7</span> <span class="token number">32</span> <span class="token number">57.0</span><span class="token punctuation">.</span><span class="token number">0.7</span> <span class="token comment" spellcheck="true">//添加静态路由，吓一跳为对端IP地址。</span>
-  <span class="token keyword">import</span><span class="token operator">-</span>route <span class="token keyword">static</span> <span class="token comment" spellcheck="true">//导入静态路由</span>
-  
-</code></pre>
-<p><strong>其中7.7.7.7 8.8.8.8 6.6.6.6 都是外部路由</strong></p>
-<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706145630185.png" alt="image-20210706145630185"></p>
-<p>区域1中的五类LSA有四条，即有几个外部路由就有几条五类LSA，所有的区域中五类LSA都是一样的。</p>
-<p>区域1中的四类LSA有两条，分别是R2发的3.3.3.3 和5.5.5.5 </p>
-<p>区域0中的四类LSA有两条，分别是R2的1.1.1.1 和 R4 的5.5.5.5 </p>
-<p>区域2中的四类LSA有两条，分别是R4发的3.3.3.3 和 1.1.1.1</p>
-<pre class=" language-java"><code class="language-java">dis ospf routing <span class="token comment" spellcheck="true">//查看ospf路由表</span>
-  
-</code></pre>
-<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706151025575.png" alt="image-20210706151025575"></p>
-<h3 id="五类的数据包类型"><a href="#五类的数据包类型" class="headerlink" title="五类的数据包类型"></a>五类的数据包类型</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706151150677.png" alt="image-20210706151150677"></p>
-<h2 id="外部路由类型"><a href="#外部路由类型" class="headerlink" title="外部路由类型"></a>外部路由类型</h2><p> <img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706151702339.png" alt="image-20210706151702339"></p>
-<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/AGY8ctZ3wMWjBKg.png"></p>
-<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706163021378.png" alt="image-20210706163021378"></p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">import</span><span class="token operator">-</span>route <span class="token keyword">static</span> type <span class="token number">2</span> <span class="token comment" spellcheck="true">//导入外部静态路由类型2 不计算内部开销</span>
-<span class="token keyword">import</span><span class="token operator">-</span>route <span class="token keyword">static</span> type <span class="token number">1</span> <span class="token comment" spellcheck="true">//导入外部静态路由类型1 计算内部开销</span>
-<span class="token keyword">import</span><span class="token operator">-</span>route <span class="token keyword">static</span> type <span class="token number">1</span> cost xxx<span class="token comment" spellcheck="true">//导入外部静态路由类型1 计算内部开销配置开销为xxx</span>
-  
-</code></pre>
-<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210706165113430.png" alt="image-20210706165113430"></p>
-<p>PS：E1优先于E2，计算内部开销比不计算内部开销更优先。</p>
-<p>如果两个都是类型2，这个时候再比较开销，</p>
-<h2 id="外部路由引入配置案例"><a href="#外部路由引入配置案例" class="headerlink" title="外部路由引入配置案例"></a>外部路由引入配置案例</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/tsPDvRC37wNIiOf.png" alt="image-20210708164515942"></p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//直连有时候也需要注入，会把所有直连的都注入，但是我们需求的是只需要某些路由。而不是全部的，这个时候就需要引入路由策略。</span>
-</code></pre>
-<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210709092401774.png" alt="image-20210709092401774"></p>
-<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210709092453440.png" alt="image-20210709092453440"></p>
-<h1 id="次优外部路由的产生原因"><a href="#次优外部路由的产生原因" class="headerlink" title="次优外部路由的产生原因"></a>次优外部路由的产生原因</h1><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210709102722152.png" alt="image-20210709102722152"></p>
-<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210709103153860.png" alt="image-20210709103153860"></p>
-<pre class=" language-java"><code class="language-java">sys R1
+  ip add <span class="token number">13.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">24</span>
+  isis <span class="token number">1</span>
+  net <span class="token number">10.0000</span><span class="token punctuation">.</span><span class="token number">0000.0001</span><span class="token punctuation">.</span><span class="token number">00</span> <span class="token comment" spellcheck="true">//10是区域ID，0000.0000.0001是系统ID，00是SEL</span>
+  is<span class="token operator">-</span>level level<span class="token operator">-</span><span class="token number">1</span> <span class="token comment" spellcheck="true">//更改级别为1，默认情况下为L1/2</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> 
+  isis enable <span class="token number">1</span> <span class="token comment" spellcheck="true">//进入接口启用isis</span>
   <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
-  ospf <span class="token number">1</span> 
-  a <span class="token number">1</span>
-  net <span class="token number">18.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span>
+  isis enable <span class="token number">1</span> <span class="token comment" spellcheck="true">//进入接口启用isis</span>
+  dis isis brief <span class="token comment" spellcheck="true">//验证isis路由信息</span>
+  
+  
+  
+</code></pre>
+<pre class=" language-java"><code class="language-java">sys
+  sys R2
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+  ip add <span class="token number">12.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> <span class="token number">24</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+  ip add <span class="token number">24.0</span><span class="token punctuation">.</span><span class="token number">0.2</span> <span class="token number">24</span> 
+    isis <span class="token number">1</span>
+  net <span class="token number">10.0000</span><span class="token punctuation">.</span><span class="token number">0000.0002</span><span class="token punctuation">.</span><span class="token number">00</span> <span class="token comment" spellcheck="true">//10是区域ID，0000.0000.0001是系统ID，00是SEL</span>
+
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> 
+  isis enable <span class="token number">1</span> <span class="token comment" spellcheck="true">//进入接口启用isis</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+  isis enable <span class="token number">1</span> <span class="token comment" spellcheck="true">//进入接口启用isis</span>
+  dis isis brief <span class="token comment" spellcheck="true">//验证isis路由信息</span>
+  <span class="token keyword">import</span><span class="token operator">-</span>route isis <span class="token number">1</span> level<span class="token operator">-</span><span class="token number">2</span> into level<span class="token operator">-</span><span class="token number">1</span> filter<span class="token operator">-</span>policy <span class="token comment" spellcheck="true">//将L2的路由引入到L1中并且跟上过滤 </span>
    
 </code></pre>
-<pre class=" language-java"><code class="language-java">dis ospf lsdb ase <span class="token number">8.8</span><span class="token punctuation">.</span><span class="token number">8.8</span> <span class="token comment" spellcheck="true">//查看ospf lsdb 详细信息 8.8.8.8</span>
+<pre class=" language-java"><code class="language-java">sys
+  sys R3
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+  ip add <span class="token number">13.0</span><span class="token punctuation">.</span><span class="token number">0.3</span> <span class="token number">24</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+  ip add <span class="token number">34.0</span><span class="token punctuation">.</span><span class="token number">0.3</span> <span class="token number">24</span> 
+  isis <span class="token number">1</span>
+  net <span class="token number">10.0000</span><span class="token punctuation">.</span><span class="token number">0000.0003</span><span class="token punctuation">.</span><span class="token number">00</span> <span class="token comment" spellcheck="true">//10是区域ID，0000.0000.0001是系统ID，00是SEL</span>
+
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> 
+  isis enable <span class="token number">1</span> <span class="token comment" spellcheck="true">//进入接口启用isis</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+  isis enable <span class="token number">1</span> <span class="token comment" spellcheck="true">//进入接口启用isis</span>
+  dis isis brief <span class="token comment" spellcheck="true">//验证isis路由信息</span>
 </code></pre>
-<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210709105606510.png" alt="image-20210709105606510"></p>
-<p> <img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210709111824723.png" alt="image-20210709111824723"></p>
-<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210709105754021.png" alt="image-20210709105754021"></p>
-<pre class=" language-java"><code class="language-java">次优外部路由的作用就是如果在引入OSPF中的外部路由的下一跳在一个ospf区域内，例如上图中R9的回环口地址，在R1的右侧接口宣告过，那么在R1注入到R9的静态路由后，区域内的其他路由器访问R9的回环口，下一跳地址就直接是R9的接口地址。
+<pre class=" language-java"><code class="language-java">sys
+  sys R4
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+  ip add <span class="token number">24.0</span><span class="token punctuation">.</span><span class="token number">0.4</span> <span class="token number">24</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+  ip add <span class="token number">34.0</span><span class="token punctuation">.</span><span class="token number">0.4</span> <span class="token number">24</span>
+  isis <span class="token number">1</span>
+  net <span class="token number">20.0000</span><span class="token punctuation">.</span><span class="token number">0000.0004</span><span class="token punctuation">.</span><span class="token number">00</span> <span class="token comment" spellcheck="true">//20是区域ID，0000.0000.0004是系统ID，00是SEL</span>
+  is<span class="token operator">-</span>level level<span class="token operator">-</span><span class="token number">2</span> <span class="token comment" spellcheck="true">//更改级别为2，默认情况下为L1/2</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> 
+  isis enable <span class="token number">1</span> <span class="token comment" spellcheck="true">//进入接口启用isis</span>
+  <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+  isis enable <span class="token number">1</span> <span class="token comment" spellcheck="true">//进入接口启用isis</span>
+  dis isis brief <span class="token comment" spellcheck="true">//验证isis路由信息</span>
+  dis isis peer <span class="token comment" spellcheck="true">//验证isis邻居 </span>
+  dis isis route <span class="token comment" spellcheck="true">//验证isis路由</span>
+  dis ip route <span class="token comment" spellcheck="true">//验证路由信息</span>
+  <span class="token keyword">int</span> lo <span class="token number">4</span>
+  IP add <span class="token number">4.4</span><span class="token punctuation">.</span><span class="token number">4.4</span> <span class="token number">32</span> <span class="token comment" spellcheck="true">//添加地址</span>
+  
 </code></pre>
+<p>​                                 <img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210712092541746.png" alt="image-20210712092541746"></p>
+<p>R4的isis邻居信息</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210712092840665.png" alt="image-20210712092840665"></p>
+<p>R1的isis路由信息</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210712092950214.png" alt="image-20210712092950214"></p>
+<p>四条L1的链路信息</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210712093225242.png" alt="image-20210712093225242"></p>
+<pre class=" language-java"><code class="language-java">dis isis lsdb <span class="token comment" spellcheck="true">//验证isis 数据库</span>
+</code></pre>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210712093949160.png" alt="image-20210712093949160"></p>
+<p>R2的数据库信息，带星号的是代表自己产生的的链路信息，LSPID是由三个部分组成，如果链路上没有伪节点，那么系统ID为00，假如两条线路的开销不一样，那么他可能通过上边的那条线路走线路，但是开销很大。</p>
+<p>需要将L2的路由信息引入到L1中去，让L1学习到L2的路由信息。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">import</span><span class="token operator">-</span>route isis level<span class="token operator">-</span><span class="token number">2</span> into level<span class="token operator">-</span><span class="token number">1</span> filter<span class="token operator">-</span>policy <span class="token comment" spellcheck="true">//将level2 引入到Level1  //并且过滤</span>
+dis isis lsdb level<span class="token operator">-</span><span class="token number">1</span> <span class="token comment" spellcheck="true">//查看isis LSDB L1</span>
+dis isis lsdb level<span class="token operator">-</span><span class="token number">1</span> <span class="token number">0000.0000</span><span class="token punctuation">.</span><span class="token number">0002.00</span><span class="token operator">-</span><span class="token number">00</span> verbose <span class="token comment" spellcheck="true">//验证isis lsdb L1 R2 详细信息 </span>
+reset isis all <span class="token comment" spellcheck="true">//重置isis</span>
+</code></pre>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210712105428292.png" alt="image-20210712105428292"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210712105510468.png" alt="image-20210712105510468"></p>
+<h2 id="ISIS接口开销"><a href="#ISIS接口开销" class="headerlink" title="ISIS接口开销"></a>ISIS接口开销</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210712110223829.png" alt="image-20210712110223829"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210712111153951.png" alt="image-20210712111153951"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//回环口的默认开销是0，其他接口默认是10</span>
+isis cost xx <span class="token comment" spellcheck="true">//配置isis接口开销为xx</span>
+<span class="token comment" spellcheck="true">//配置全局开销</span>
+  isis <span class="token number">1</span> <span class="token comment" spellcheck="true">//配置全局开销需要在isis进程下配置的</span>
+  cost xxx <span class="token comment" spellcheck="true">//默认开销占用的开销为6位，最小是0，最大是63.</span>
+  cost<span class="token operator">-</span>style wide <span class="token comment" spellcheck="true">//更改cost类型为wide，默认都是narrow，</span>
+<span class="token comment" spellcheck="true">//isis引入内部路由，开销不计算</span>
+  
+</code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//路由开销最大为1023，当开销为1024时，代表路由不可达。</span>
+<span class="token comment" spellcheck="true">//wide 最大开销值的计算方法 2的32次方 减去2的25次方</span>
+    
+</code></pre>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210712112425017.png" alt="image-20210712112425017"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//4字节正好是IP地址的长度</span>
+如果Narrow<span class="token operator">-</span>compatible，narrow在前那么我发送的是narrow，接收的话是两个都可以接收。
+</code></pre>
+<h2 id="ISIS与OSPF对比"><a href="#ISIS与OSPF对比" class="headerlink" title="ISIS与OSPF对比"></a>ISIS与OSPF对比</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210714102236104.png" alt="image-20210714102236104"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210714104146012.png" alt="image-20210714104146012"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210714104222754.png" alt="image-20210714104222754"></p>
+<h2 id="ISIS基础配置"><a href="#ISIS基础配置" class="headerlink" title="ISIS基础配置"></a>ISIS基础配置</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210714104919385.png" alt="image-20210714104919385"></p>
+<h2 id="ISIS度量值配置"><a href="#ISIS度量值配置" class="headerlink" title="ISIS度量值配置"></a>ISIS度量值配置</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210714110652221.png" alt="image-20210714110652221"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210802100025120.png" alt="image-20210802100025120"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210802100529840.png" alt="image-20210802100529840"></p>
+<pre class=" language-java"><code class="language-java">dis isis <span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> ver <span class="token comment" spellcheck="true">//验证isis 接口g0/0/0 的 详细配置</span>
+<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span>
+isis cost <span class="token number">20</span> <span class="token comment" spellcheck="true">//配置接口链路开销</span>
+ isis
+  circuit<span class="token operator">-</span>cost <span class="token number">30</span> <span class="token comment" spellcheck="true">//链路开销，这样就对所有的接口有效</span>
+isis <span class="token number">1</span>
+  auto<span class="token operator">-</span>cost enable <span class="token comment" spellcheck="true">//开启自动开销 10^8 /100 * 10</span>
+  
+isis 
+  bandwidth<span class="token operator">-</span>reference <span class="token number">1000</span> <span class="token comment" spellcheck="true">//配置参考值</span>
+</code></pre>
+<h2 id="ISIS-调整和优化配置"><a href="#ISIS-调整和优化配置" class="headerlink" title="ISIS 调整和优化配置"></a>ISIS 调整和优化配置</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210802100700848.png" alt="image-20210802100700848"></p>
+<p>DIS是每隔3.3秒发送一次</p>
+<p>csnp 完全序列号</p>
+<h2 id="ISIS显示和维护"><a href="#ISIS显示和维护" class="headerlink" title="ISIS显示和维护"></a>ISIS显示和维护</h2><p> <img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210802101934096.png" alt="image-20210802101934096"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210803102554159.png" alt="image-20210803102554159"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210803102644585.png" alt="image-20210803102644585"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210803102704230.png" alt="image-20210803102704230"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210803102724545.png" alt="image-20210803102724545"></p>
 
         </div>
 
@@ -522,7 +681,9 @@ sys
           <div class="post-tags" style="color: #a39391">
             <span><i class="fa fa-tags"></i>
               
-              <a href="/tags/OSPF%E5%A4%96%E9%83%A8%E8%B7%AF%E7%94%B1/" style="color: #716e77;">OSPF外部路由<em>·</em></a>
+              <a href="/tags/ISIS/" style="color: #716e77;">ISIS<em>·</em></a>
+              
+              <a href="/tags/LSDB/" style="color: #716e77;">LSDB<em>·</em></a>
               
             </span>
             <span>
@@ -550,36 +711,19 @@ sys
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-        
-        <div class="post-nepre half previous">
-          
-            <a href="/post/ea49.html" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/07/10/4wULW89Gq7RETaD.png"
-                  style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
-                  src="https://i.loli.net/2021/07/10/4wULW89Gq7RETaD.png">
-              </div>
-              <span class="label">Previous Post</span>
-              <div class="info">
-                <h3>HCNP学习笔记20</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
           
           
-          
-          <div class="post-nepre half next">
-            
-              <a href="/post/a31c.html" rel="next">
+            <div class="post-nepre full next">
+              
+              <a href="/post/aaacac.html" rel="next">
                 <div class="background">
-                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/07/06/hqQs92rNjobKyOM.png"
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/07/27/W1s4aOTtSd9XIkw.png"
                     style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
-                    onerror="imgError(this,3)" src="https://i.loli.net/2021/07/06/hqQs92rNjobKyOM.png">
+                    onerror="imgError(this,3)" src="https://i.loli.net/2021/07/27/W1s4aOTtSd9XIkw.png">
                 </div>
                 <span class="label">Next Post</span>
                 <div class="info">
-                  <h3>HCNP学习笔记18-补充</h3>
+                  <h3>调音</h3>
                   <hr>
                 </div>
               </a>

@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">常用教程 | 慢一点，才更快 | 雨落</title>
+  <title itemprop="name">其他教程 | 慢一点，才更快 | 雨落</title>
   
     <link rel="shortcut icon" href="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tubiao.ico">
   
@@ -298,7 +298,7 @@
     src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/06/14/w4b9CNfuA2Hc3S6.png">
   </div>
   <header class="pattern-header single-header">
-    <h1 class="entry-title">常用教程</h1>
+    <h1 class="entry-title">其他教程</h1>
     <p class="entry-census">
       
       <span class="post-meta-item">
@@ -362,7 +362,7 @@
         <!--套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h1 id="DOS命令"><a href="#DOS命令" class="headerlink" title="DOS命令"></a>DOS命令</h1><h2 id="用户操作命令"><a href="#用户操作命令" class="headerlink" title="用户操作命令"></a>用户操作命令</h2><pre class=" language-java"><code class="language-java">net user <span class="token operator">/</span> 显示当前账户信息
+          <h1 id="DOS命令"><a href="#DOS命令" class="headerlink" title="DOS命令"></a>DOS命令</h1><pre class=" language-java"><code class="language-java">net user <span class="token operator">/</span> 显示当前账户信息
 net user xxx <span class="token operator">/</span>显示用户xxx的详细信息
 net user <span class="token operator">/</span>help net user 命令帮助
 net user username password <span class="token operator">/</span>add <span class="token comment" spellcheck="true">//添加用户账户</span>
@@ -481,6 +481,260 @@ sudo motion
 打开后便可以通过在浏览器内访问地址http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>树莓派IP<span class="token operator">:</span><span class="token number">8081</span><span class="token punctuation">,</span>看到相应的监控画面了。
 
 </code></pre>
+<h1 id="配置FFMPEG，M4S转MP4"><a href="#配置FFMPEG，M4S转MP4" class="headerlink" title="配置FFMPEG，M4S转MP4"></a>配置FFMPEG，M4S转MP4</h1><p>1、安装或解压FFMgep,配置环境变量</p>
+<p>目录地址</p>
+<p>D:\Program\ffmpeg-N-101694-g322be6107a-win64-gpl-shared-vulkan\bin</p>
+<p>环境变量</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210711112725083.png" alt="image-20210711112725083"></p>
+<p>2、验证</p>
+<h1 id="Kali"><a href="#Kali" class="headerlink" title="Kali"></a>Kali</h1><p>0、安装aireplay</p>
+<h2 id="安装aircrack-ng"><a href="#安装aircrack-ng" class="headerlink" title="安装aircrack-ng"></a>安装aircrack-ng</h2><pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true"># 安装依赖</span>
+<span class="token number">1</span><span class="token punctuation">.</span> apt<span class="token operator">-</span>get <span class="token operator">-</span>y install libssl<span class="token operator">-</span>dev libnl<span class="token number">-3</span><span class="token operator">-</span>dev libnl<span class="token operator">-</span>genl<span class="token number">-3</span><span class="token operator">-</span>dev ethtool
+<span class="token comment" spellcheck="true"># 安装</span>
+<span class="token number">2</span><span class="token punctuation">.</span> apt<span class="token operator">-</span>get install aircrack<span class="token operator">-</span>ng
+</code></pre>
+<p>1、加载无线网卡，shell验证</p>
+<pre class=" language-java"><code class="language-java">ifconfig <span class="token operator">-</span>a
+</code></pre>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210712120207348.png" alt="image-20210712120207348"></p>
+<p>2、开启网卡监听模式</p>
+<pre class=" language-java"><code class="language-java">airmon<span class="token operator">-</span>ng start wlan0 <span class="token comment" spellcheck="true">//开启网卡监听模式</span>
+</code></pre>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210712122346840.png" alt="image-20210712122346840"></p>
+<p>3、查看网卡信息</p>
+<pre class=" language-java"><code class="language-java">iwconfig <span class="token comment" spellcheck="true">//查看网卡信息,wlan0mon网卡名加了mon则表示成功</span>
+</code></pre>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210712122437070.png" alt="image-20210712122437070"></p>
+<p>4、扫描周边WiFi</p>
+<pre class=" language-java"><code class="language-java">airodump<span class="token operator">-</span>ng wlan0mon <span class="token comment" spellcheck="true">//扫描周边WiFi,按ctrl+c结束任务</span>
+</code></pre>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210712122639160.png" alt="image-20210712122639160"></p>
+<p>BSSID为wifi的MAC地址，PWR为信号强弱程度，数值越小信号越强；#DATA为数据量，越大使用的人就越多，CH为信道频率（频道），ESSID为wifi的名称，中文可能会有乱码</p>
+<p>5、抓取数据包</p>
+<pre class=" language-java"><code class="language-java">airodump<span class="token operator">-</span>ng <span class="token operator">--</span>bssid BSSID <span class="token operator">-</span>c 信道频率 <span class="token operator">-</span>w 抓包存储的路径 wlan0mon
+  
+如：airodump<span class="token operator">-</span>ng <span class="token operator">--</span>bssid CC<span class="token operator">:</span><span class="token number">34</span><span class="token operator">:</span><span class="token number">29</span><span class="token operator">:</span><span class="token number">95</span><span class="token operator">:</span><span class="token number">97</span><span class="token operator">:</span>FA <span class="token operator">-</span>c <span class="token number">1</span> <span class="token operator">-</span>w <span class="token operator">/</span>home wlan0mon
+  
+airodump<span class="token operator">-</span>ng <span class="token operator">--</span>bssid CC<span class="token operator">:</span><span class="token number">34</span><span class="token operator">:</span><span class="token number">29</span><span class="token operator">:</span><span class="token number">95</span><span class="token operator">:</span><span class="token number">97</span><span class="token operator">:</span>FA <span class="token operator">-</span>c <span class="token number">1</span> <span class="token operator">-</span>w <span class="token operator">/</span>home<span class="token operator">/</span>zd<span class="token operator">/</span>shujubao<span class="token operator">/</span>shujubao wlan0mon
+  
+抓不到换命令，把路由器下挂的设备踢下线，然后重新抓包<span class="token operator">-</span>a 后边跟的是路由器，<span class="token operator">-</span>c后边跟的是设备<span class="token operator">-</span>e 表示隐藏ssid
+  
+aireplay<span class="token operator">-</span>ng <span class="token operator">-</span><span class="token number">0</span> <span class="token number">0</span> <span class="token operator">-</span>c B8<span class="token operator">:</span><span class="token number">37</span><span class="token operator">:</span><span class="token number">65</span><span class="token operator">:</span><span class="token number">94</span><span class="token operator">:</span><span class="token number">5D</span><span class="token operator">:</span><span class="token number">13</span> <span class="token operator">-</span>a BC<span class="token operator">:</span><span class="token number">5F</span><span class="token operator">:</span><span class="token number">6F</span><span class="token operator">:</span><span class="token number">3D</span><span class="token operator">:</span><span class="token number">03</span><span class="token operator">:</span><span class="token number">74</span> <span class="token operator">-</span>D wlan0mon
+# 强行断线命令
+# 新开一个Terminal窗口：<span class="token punctuation">[</span>参数：攻击<span class="token number">2</span>次，路由ssid和设备Mac地址<span class="token punctuation">]</span>  
+aireplay<span class="token operator">-</span>ng <span class="token operator">-</span><span class="token number">0</span> <span class="token number">2</span> <span class="token operator">-</span>a CC<span class="token operator">:</span><span class="token number">34</span><span class="token operator">:</span><span class="token number">29</span><span class="token operator">:</span><span class="token number">95</span><span class="token operator">:</span><span class="token number">97</span><span class="token operator">:</span>FA <span class="token operator">-</span>c <span class="token number">44</span><span class="token operator">:</span><span class="token number">59</span><span class="token operator">:</span>E3<span class="token operator">:</span><span class="token number">67</span><span class="token operator">:</span>CE<span class="token operator">:</span><span class="token number">85</span> wlan0mon
+
+airodump<span class="token operator">-</span>ng wlan1mon <span class="token operator">--</span>bssid <span class="token number">88</span><span class="token operator">:</span>BF<span class="token operator">:</span>E4<span class="token operator">:</span>B0<span class="token operator">:</span>C0<span class="token operator">:</span>B7 <span class="token operator">-</span>c <span class="token number">5</span> <span class="token operator">-</span>w wificrack
+
+<span class="token operator">--</span>bssid 为wifi SSID
+<span class="token operator">-</span>c 为通道
+<span class="token operator">-</span>w 为保存的文件名<span class="token punctuation">,</span>最后为文件名称
+  
+# 爆破命令
+aircrack<span class="token operator">-</span>ng <span class="token operator">-</span>w <span class="token operator">/</span>home<span class="token operator">/</span>zd<span class="token operator">/</span>zidian<span class="token operator">/</span>JDXZD<span class="token punctuation">.</span>txt <span class="token operator">/</span>home<span class="token operator">/</span>zd<span class="token operator">/</span>shujubao<span class="token operator">/</span>shujubao<span class="token operator">-</span>
+</code></pre>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210712122958801.png" alt="image-20210712122958801"></p>
+<p>6、抓取数据包</p>
+<pre class=" language-java"><code class="language-java">如果抓取不到数据，新建一个终端：键入
+  airepaly<span class="token operator">-</span>ng <span class="token operator">-</span><span class="token number">0</span> <span class="token number">0</span> <span class="token operator">-</span>c 连接到WiFi的手机mac地址 <span class="token operator">-</span>a bssid 网卡名（一般为wlan0mon）
+  airepaly<span class="token operator">-</span>ng <span class="token operator">-</span><span class="token number">0</span> <span class="token number">10</span> <span class="token operator">-</span>a bssid <span class="token number">10</span><span class="token operator">:</span>0C<span class="token operator">:</span>6B<span class="token operator">:</span><span class="token number">29</span><span class="token operator">:</span>8E<span class="token operator">:</span><span class="token number">87</span> wlan0mon
+</code></pre>
+<p>(0 WiFi设备无限次数,-0 8则攻击8次。攻击原理是：先让设备掉线，设备会再自动连接，并发这个自动连接过程会进行三次握手，会发送tcp包（里面包含加密的密码数据），我方伪装成WiFi热点去窃取该数据包。我方窃取后即可用字典穷举法暴力破解加密的WiFi密码,数据包里面的密码是哈希加密的，哈希加密只能正向)</p>
+<p>7、出现WPA handshake时，表示抓包成功</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210712123422505.png" alt="image-20210712123422505"></p>
+<p>两个终端都按Ctrl+c停止，不然那边会一直断网的，cd打开抓包的目录，ls列出来，就看到我们抓到的数据包。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210712123504200.png" alt="image-20210712123504200"></p>
+<p>8、破解</p>
+<pre class=" language-java"><code class="language-java">解压kali自带的字典文件
+  
+路径：<span class="token operator">/</span>usr<span class="token operator">/</span>share<span class="token operator">/</span>wordlists<span class="token operator">/</span>rockyou<span class="token punctuation">.</span>txt<span class="token punctuation">.</span>gz
+如 ：gzip <span class="token operator">-</span>d<span class="token operator">/</span>usr<span class="token operator">/</span>share<span class="token operator">/</span>wordlists<span class="token operator">/</span>rockyou<span class="token punctuation">.</span>txt<span class="token punctuation">.</span>gz
+  
+键入 
+  aircrack<span class="token operator">-</span>ng <span class="token operator">-</span>w 字典路径 握手包路径，回车后开始爆破
+  
+如：aircrack<span class="token operator">-</span>ng <span class="token operator">-</span>w <span class="token operator">/</span>usr<span class="token operator">/</span>share<span class="token operator">/</span>wordlists<span class="token operator">/</span>rockyou<span class="token punctuation">.</span>txt <span class="token operator">/</span>home<span class="token operator">/</span>wifi<span class="token operator">-</span><span class="token number">0.1</span><span class="token punctuation">.</span>cap
+aircrack<span class="token operator">-</span>ng <span class="token operator">-</span>w <span class="token operator">~</span><span class="token operator">/</span>Documents<span class="token operator">/</span>wifi<span class="token punctuation">.</span>txt <span class="token operator">/</span>home<span class="token operator">-</span><span class="token number">01</span><span class="token punctuation">.</span>cap
+aircrack<span class="token operator">-</span>ng <span class="token operator">-</span>w
+</code></pre>
+<p>9、等待完成</p>
+<hr>
+<pre class=" language-java"><code class="language-java">airodump<span class="token operator">-</span>ng <span class="token operator">-</span>c <span class="token number">7</span> <span class="token operator">--</span>bssid xxxxxxxxxxxx wlan0mon
+</code></pre>
+<h1 id="linux-删除"><a href="#linux-删除" class="headerlink" title="linux 删除"></a>linux 删除</h1><p>1、Linux删除文件夹命令</p>
+<p>rm -rf /var/log/httpd/access</p>
+<p>将会删除/var/log/httpd/access目录以及其下所有文件、文件夹</p>
+<p>2、Linux删除文件命令</p>
+<p>rm -f /var/log/httpd/access.log</p>
+<p>将会强制删除/var/log/httpd/access.log这个文件</p>
+<p>3、Linux批量删除文件命令</p>
+<p>Linux中批量删除文件，可以直接执行删除命令：rm -rf 文件1 文件2 ……</p>
+<p>其中参数 r 和 f ：r是递归删除，比如你要删除某个目录，而目录里面还有子目录或者文件的话就要加r这个参数，f参数是强制删除的意思，另外，如果文件很多，可以通过通配符<em>来批量删除，例如：rm -rf 1</em> 就是删除所有以1开头的文件或目录，* 直接通配了任意数量的任意字符。</p>
+<p>4、Linux删除隐藏文件命令</p>
+<p>我们知道在linux下隐藏文件是以“.”开头的，单纯的使用ls命令是看不到的，需要加上“-a”参数才可以。Linux删除隐藏文件可以使用命令：rm -fr .*(删除当前目录下的所有隐藏文件)， rm -f .tmp(删除tmp文件)，rm -fr .tmp(删除tmp目录或者文件)</p>
+<pre class=" language-java"><code class="language-java">ls <span class="token operator">-</span>l <span class="token comment" spellcheck="true">//显示文件或目录的详细信息</span>
+  
+  
+chmod命令是非常重要的，用于改变文件或目录的访问权限。用户用它控制文件或目录的访问权限。
+
+以主文件夹下的一个名为“cc”的文件夹为例。下面一步一步介绍如何修改权限：
+
+<span class="token number">1</span><span class="token punctuation">.</span>
+  打开终端。输入”su”<span class="token punctuation">(</span>没有引号<span class="token punctuation">)</span>
+
+<span class="token number">2</span><span class="token punctuation">.</span>
+  接下来会要你输入密码，输入你的root密码。
+
+<span class="token number">3</span><span class="token punctuation">.</span>
+  假设我的文件夹在主目录里，地址为  <span class="token operator">/</span>var<span class="token operator">/</span>home<span class="token operator">/</span>dengchao<span class="token operator">/</span>cc  。假设我要修改文件权限为<span class="token number">777</span>，则在终端输入  chmod  <span class="token number">777</span> <span class="token operator">/</span>var<span class="token operator">/</span>home<span class="token operator">/</span>userid<span class="token operator">/</span>cc 文件夹的权限就变为了<span class="token number">777</span>。
+
+如果是修改文件夹及子文件夹权限可以用  chmod <span class="token operator">-</span>R <span class="token number">777</span> <span class="token operator">/</span>var<span class="token operator">/</span>home<span class="token operator">/</span>userid<span class="token operator">/</span>cc
+  
+  
+<span class="token number">1</span><span class="token punctuation">.</span>
+  <span class="token number">777</span>有<span class="token number">3</span>位，最高位<span class="token number">7</span>是设置文件所有者访问权限，第二位是设置群组访问权限，最低位是设置其他人访问权限。
+其中每一位的权限用数字来表示。具体有这些权限：
+<span class="token function">r</span><span class="token punctuation">(</span>Read，读取，权限值为<span class="token number">4</span><span class="token punctuation">)</span>：对文件而言，具有读取文件内容的权限；对目录来说，具有浏览目 录的权限。
+<span class="token function">w</span><span class="token punctuation">(</span>Write<span class="token punctuation">,</span>写入，权限值为<span class="token number">2</span><span class="token punctuation">)</span>：对文件而言，具有新增、修改文件内容的权限；对目录来说，具有删除、移动目录内文件的权限。
+<span class="token function">x</span><span class="token punctuation">(</span>eXecute，执行，权限值为<span class="token number">1</span><span class="token punctuation">)</span>：对文件而言，具有执行文件的权限；对目录了来说该用户具有进入目录的权限。
+<span class="token number">2</span><span class="token punctuation">.</span> 
+  首先我们来看如何确定单独一位上的权限数值，例如最高位表示文件所有者权限数值，当数字为<span class="token number">7</span>时，<span class="token number">7</span>用“rwx”表示 –<span class="token punctuation">{</span><span class="token function">4</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">2</span><span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">1</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">7</span><span class="token punctuation">}</span>–又如果数值为<span class="token number">6</span>，则用“rw<span class="token operator">-</span>”表示–<span class="token punctuation">{</span><span class="token function">4</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">2</span><span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">0</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">6</span><span class="token punctuation">}</span>–，”<span class="token operator">-</span>”表示不具备权限，这里表 示不具备“执行”权限。
+假如我们设定其他用户的访问权限为 “r–”，则数值为<span class="token number">4</span><span class="token operator">+</span><span class="token number">0</span><span class="token operator">+</span><span class="token number">0</span><span class="token operator">=</span><span class="token number">4</span>
+一开始许多初学者会被搞糊涂，其实很简单，我们将rwx看成二进制数，如果有则用<span class="token number">1</span>表示，没有则有<span class="token number">0</span>表示，那么rwx则可以表示成为：<span class="token number">111</span>而二进制的<span class="token number">111</span>就是<span class="token number">7</span>。
+<span class="token number">3</span><span class="token punctuation">.</span>
+  我们再来看下怎么确定<span class="token number">3</span>个数位上的权限。假如我们要给一个文件设置权限，具体权限如下：
+文件所有者有“读”、“写”、“执行”权限，群组用户有“读”权限，其他用户有“读”权限，则对应的字母表示为”rwx r– r–“，对应的数字为<span class="token number">744</span>
+一般都是最高位表示文件所有者权限值，第二位表示群组用户权限，最低位表示其他用户权限。
+  
+数字设定法
+我们必须首先了解用数字表示的属性的含义：<span class="token number">0</span>表示没有权限，<span class="token number">1</span>表示可执行权限，<span class="token number">2</span>表示可写权限，<span class="token number">4</span>表示可读权限，然后将其相加。所以数字属性的格式应为<span class="token number">3</span>个从<span class="token number">0</span>到<span class="token number">7</span>的八进制数，其顺序是（u）（g）（o）。
+例如，如果想让某个文件的属主有“读<span class="token operator">/</span>写”二种权限，需要把<span class="token number">4</span>（可读）<span class="token operator">+</span><span class="token number">2</span>（可写）＝<span class="token number">6</span>（读<span class="token operator">/</span>写）。
+数字设定法的一般形式为：chmod ［mode］ 文件名
+
+例<span class="token number">1</span>：
+
+$ chmod <span class="token number">644</span> mm<span class="token punctuation">.</span>txt
+$ ls –l
+即设定文件mm<span class="token punctuation">.</span>txt的属性为：
+<span class="token operator">-</span>rw<span class="token operator">-</span>r<span class="token operator">--</span>r<span class="token operator">--</span> <span class="token number">1</span> inin users <span class="token number">1155</span> Nov <span class="token number">5</span> <span class="token number">11</span><span class="token operator">:</span><span class="token number">22</span> mm<span class="token punctuation">.</span>txt
+文件属主（u）inin 拥有读、写权限
+与文件属主同组人用户（g） 拥有读权限
+其他人（o） 拥有读权限
+
+例<span class="token number">2</span>：
+
+$ chmod <span class="token number">750</span> wch<span class="token punctuation">.</span>txt
+$ ls –l
+<span class="token operator">-</span>rwxr<span class="token operator">-</span>x<span class="token operator">--</span><span class="token operator">-</span> <span class="token number">1</span> inin users <span class="token number">44137</span> Nov <span class="token number">12</span> <span class="token number">9</span><span class="token operator">:</span><span class="token number">22</span> wchtxt
+即设定wchtxt这个文件的属性为：
+文件主本人（u）inin 可读<span class="token operator">/</span>可写<span class="token operator">/</span>可执行权
+与文件主同组人（g） 可读<span class="token operator">/</span>可执行权
+其他人（o） 没有任何权限
+  
+chown 命令
+功能：更改某个文件或目录的属主和属组。这个命令也很常用。例如root用户把自己的一个文件拷贝给用户yusi，为了让用户yusi能够存取这个文件，root用户应该把这个文件的属主设为yusi，否则，用户yusi无法存取这个文件。
+
+语法：chown ［选项］ 用户或组 文件
+
+说明：chown将指定文件的拥有者改为指定的用户或组。用户可以是用户名或用户ID。组可以是组名或组ID。文件是以空格分开的要改变权限的文件列表，支持通配符。
+
+参数说明：
+
+user <span class="token operator">:</span> 新的档案拥有者的使用者 ID
+group <span class="token operator">:</span> 新的档案拥有者的使用者群体<span class="token punctuation">(</span>group<span class="token punctuation">)</span>
+<span class="token operator">-</span>c <span class="token operator">:</span> 若该档案拥有者确实已经更改，才显示其更改动作
+<span class="token operator">-</span>f <span class="token operator">:</span> 若该档案拥有者无法被更改也不要显示错误讯息
+<span class="token operator">-</span>h <span class="token operator">:</span> 只对于连结<span class="token punctuation">(</span>link<span class="token punctuation">)</span>进行变更，而非该 link 真正指向的档案
+<span class="token operator">-</span>v <span class="token operator">:</span> 显示拥有者变更的详细资料
+<span class="token operator">-</span>R <span class="token operator">:</span> 对目前目录下的所有档案与子目录进行相同的拥有者变更<span class="token punctuation">(</span>即以递回的方式逐个变更<span class="token punctuation">)</span>
+–help <span class="token operator">:</span> 显示辅助说明
+–version <span class="token operator">:</span> 显示版本
+例<span class="token number">1</span>：把文件yusi123<span class="token punctuation">.</span>com的所有者改为yusi。
+$ chown yusi yusi123<span class="token punctuation">.</span>com
+  
+例<span class="token number">2</span>：把目录<span class="token operator">/</span>demo及其下的所有文件和子目录的属主改成yusi，属组改成users。
+$ chown <span class="token operator">-</span> R yusi<span class="token punctuation">.</span>users <span class="token operator">/</span>demo
+  
+例如：chown qq <span class="token operator">/</span>home<span class="token operator">/</span><span class="token function">qq</span>  <span class="token punctuation">(</span>把home目录下的qq目录的拥有者改为qq用户<span class="token punctuation">)</span>
+例如：chown <span class="token operator">-</span>R qq <span class="token operator">/</span>home<span class="token operator">/</span><span class="token function">qq</span>  <span class="token punctuation">(</span>把home目录下的qq目录下的所有子文件的拥有者改为qq用户<span class="token punctuation">)</span>
+</code></pre>
+<h1 id="Telnet到交换机"><a href="#Telnet到交换机" class="headerlink" title="Telnet到交换机"></a>Telnet到交换机</h1><pre class=" language-java"><code class="language-java">用户模式下
+telnet xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xx<span class="token punctuation">.</span>xx
+</code></pre>
+<h1 id="修复网络命令"><a href="#修复网络命令" class="headerlink" title="修复网络命令"></a>修复网络命令</h1><pre class=" language-java"><code class="language-java">netsh winsock reset catalog   
+该命令将 Winsock 目录重置为默认配置。如果安装了可导致网络连接丢失的不正确的 LSP，该命令会很有用。尽管使用该命令可以还原网络连接，但应该慎重使用，因为以前安装的 LSP 都将需要重新安装。
+  
+netsh winsock show catalog   该命令会显示安装在计算机上的 Winsock LSP 列表。
+
+结果：如果确实是LSP被劫持了，经过修复，就可以正常上网了！
+附：用ping命令检查网络故障
+<span class="token number">1</span><span class="token punctuation">.</span>  ping <span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0</span><span class="token punctuation">.</span><span class="token function">1</span><span class="token punctuation">(</span>判断本地tcp<span class="token operator">/</span>ip协议是否正常<span class="token punctuation">)</span>
+<span class="token number">2</span>   ping 本地<span class="token function">ip</span> <span class="token punctuation">(</span>判断网卡是否正常<span class="token punctuation">)</span>
+<span class="token number">3</span><span class="token punctuation">.</span>  ping  网关（判断路由器是否正常）
+<span class="token number">4</span><span class="token punctuation">.</span>  ping  外网ip （判断网络连接是否正常）
+<span class="token number">5</span><span class="token punctuation">.</span>  ping  外网域名（判断DNS是否正常）
+  
+  
+route add <span class="token number">172.16</span><span class="token punctuation">.</span><span class="token number">27.0</span> mask <span class="token number">255.255</span><span class="token punctuation">.</span><span class="token number">255.0</span> <span class="token number">10.0</span><span class="token punctuation">.</span><span class="token number">200.252</span>
+</code></pre>
+<h1 id="网络IP配置"><a href="#网络IP配置" class="headerlink" title="网络IP配置"></a>网络IP配置</h1><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@echo</span> off
+chcp <span class="token number">65001</span>
+<span class="token operator">:</span>start
+echo 内网<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span><span class="token number">1</span>
+echo 中心<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span><span class="token number">2</span>
+echo 评卷<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span><span class="token number">3</span>
+echo 办公<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span><span class="token number">4</span>
+echo 自动<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span><span class="token number">5</span>
+set <span class="token operator">/</span>P var<span class="token operator">=</span><span class="token string">""</span>
+<span class="token keyword">if</span> <span class="token operator">%</span>var<span class="token operator">%=</span><span class="token operator">=</span><span class="token number">1</span> <span class="token keyword">goto</span> ip1
+<span class="token keyword">if</span> <span class="token operator">%</span>var<span class="token operator">%=</span><span class="token operator">=</span><span class="token number">2</span> <span class="token keyword">goto</span> ip2
+<span class="token keyword">if</span> <span class="token operator">%</span>var<span class="token operator">%=</span><span class="token operator">=</span><span class="token number">3</span> <span class="token keyword">goto</span> ip3
+<span class="token keyword">if</span> <span class="token operator">%</span>var<span class="token operator">%=</span><span class="token operator">=</span><span class="token number">4</span> <span class="token keyword">goto</span> ip4
+<span class="token keyword">if</span> <span class="token operator">%</span>var<span class="token operator">%=</span><span class="token operator">=</span><span class="token number">5</span> <span class="token keyword">goto</span> ip5
+<span class="token operator">:</span>ip1
+cls
+netsh <span class="token keyword">interface</span> <span class="token class-name">ip</span> set address <span class="token string">"以太网"</span> <span class="token keyword">static</span> <span class="token number">172.30</span><span class="token punctuation">.</span><span class="token number">0.195</span> <span class="token number">255.255</span><span class="token punctuation">.</span><span class="token number">255.0</span> <span class="token number">172.30</span><span class="token punctuation">.</span><span class="token number">0.200</span>
+netsh <span class="token keyword">interface</span> <span class="token class-name">ip</span> set dnsservers <span class="token string">"以太网"</span> <span class="token keyword">static</span> <span class="token number">223.5</span><span class="token punctuation">.</span><span class="token number">5.5</span> primary no 
+netsh <span class="token keyword">interface</span> <span class="token class-name">ip</span> add dns <span class="token string">"以太网"</span> <span class="token number">202.102</span><span class="token punctuation">.</span><span class="token number">224.68</span> validate<span class="token operator">=</span>no
+
+pause
+exit
+<span class="token keyword">goto</span> start
+<span class="token operator">:</span>ip2
+cls
+netsh <span class="token keyword">interface</span> <span class="token class-name">ip</span> set address <span class="token string">"以太网"</span> <span class="token keyword">static</span> <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">100.195</span> <span class="token number">255.255</span><span class="token punctuation">.</span><span class="token number">255.0</span> <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">100.1</span>
+netsh <span class="token keyword">interface</span> <span class="token class-name">ip</span> set dnsservers <span class="token string">"以太网"</span> <span class="token keyword">static</span> <span class="token number">223.5</span><span class="token punctuation">.</span><span class="token number">5.5</span> primary no 
+netsh <span class="token keyword">interface</span> <span class="token class-name">ip</span> add dns <span class="token string">"以太网"</span> <span class="token number">202.102</span><span class="token punctuation">.</span><span class="token number">224.68</span> validate<span class="token operator">=</span>no
+
+pause
+exit
+<span class="token keyword">goto</span> start
+<span class="token operator">:</span>ip3
+cls
+netsh <span class="token keyword">interface</span> <span class="token class-name">ip</span> set address <span class="token string">"以太网 2"</span> <span class="token keyword">static</span> <span class="token number">10.0</span><span class="token punctuation">.</span><span class="token number">200.226</span> <span class="token number">255.255</span><span class="token punctuation">.</span><span class="token number">255.0</span> <span class="token number">10.0</span><span class="token punctuation">.</span><span class="token number">200.254</span>
+netsh <span class="token keyword">interface</span> <span class="token class-name">ip</span> set dnsservers <span class="token string">"以太网 2"</span> <span class="token keyword">static</span> <span class="token number">223.5</span><span class="token punctuation">.</span><span class="token number">5.5</span> primary no 
+netsh <span class="token keyword">interface</span> <span class="token class-name">ip</span> add dns <span class="token string">"以太网 2"</span> <span class="token number">202.102</span><span class="token punctuation">.</span><span class="token number">224.68</span> validate<span class="token operator">=</span>no
+
+pause
+exit
+<span class="token keyword">goto</span> start
+<span class="token operator">:</span>ip4
+cls
+netsh <span class="token keyword">interface</span> <span class="token class-name">ip</span> set address <span class="token string">"以太网 4"</span> <span class="token keyword">static</span> <span class="token number">10.2</span><span class="token punctuation">.</span><span class="token number">18.195</span> <span class="token number">255.255</span><span class="token punctuation">.</span><span class="token number">255.0</span> <span class="token number">10.2</span><span class="token punctuation">.</span><span class="token number">18.254</span>
+netsh <span class="token keyword">interface</span> <span class="token class-name">ip</span> set dnsservers <span class="token string">"以太网 4"</span> <span class="token keyword">static</span> <span class="token number">223.5</span><span class="token punctuation">.</span><span class="token number">5.5</span> primary no 
+netsh <span class="token keyword">interface</span> <span class="token class-name">ip</span> add dns <span class="token string">"以太网 4"</span> <span class="token number">202.102</span><span class="token punctuation">.</span><span class="token number">224.68</span> validate<span class="token operator">=</span>no
+
+pause
+exit
+<span class="token keyword">goto</span> start
+<span class="token operator">:</span>ip5
+cls
+netsh <span class="token keyword">interface</span> <span class="token class-name">ip</span> set address <span class="token string">"以太网"</span> dhcp
+netsh <span class="token keyword">interface</span> <span class="token class-name">ip</span> set dns <span class="token string">"以太网"</span> dhcp
+
+pause
+exit
+</code></pre>
 
         </div>
 
@@ -535,7 +789,7 @@ sudo motion
           <div class="tag-cloud-title">
           </div>
           <div class="tag-cloud-tags">
-            <a href="/tags/%E8%B0%83%E9%9F%B3%E5%8F%B0/" style="font-size: 10px; color: #f06966">-调音台</a> <a href="/tags/2019%E6%BF%80%E6%B4%BB%E5%AF%86%E9%92%A5/" style="font-size: 10px; color: #f06966">2019激活密钥</a> <a href="/tags/ACL/" style="font-size: 10px; color: #f06966">ACL</a> <a href="/tags/ARP/" style="font-size: 10px; color: #f06966">ARP</a> <a href="/tags/BFD/" style="font-size: 10px; color: #f06966">BFD</a> <a href="/tags/BPDU/" style="font-size: 12px; color: #cb7980">BPDU</a> <a href="/tags/DHCP/" style="font-size: 10px; color: #f06966">DHCP</a> <a href="/tags/DOS/" style="font-size: 10px; color: #f06966">DOS</a> <a href="/tags/Eth-Trunk%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88/" style="font-size: 10px; color: #f06966">Eth-Trunk链路聚合</a> <a href="/tags/GRE/" style="font-size: 10px; color: #f06966">GRE</a> <a href="/tags/GVRP/" style="font-size: 10px; color: #f06966">GVRP</a> <a href="/tags/H-323/" style="font-size: 10px; color: #f06966">H.323</a> <a href="/tags/HCIA/" style="font-size: 20px; color: #39bae8">HCIA</a> <a href="/tags/HCIP/" style="font-size: 16px; color: #829ab4">HCIP</a> <a href="/tags/IGMP/" style="font-size: 10px; color: #f06966">IGMP</a> <a href="/tags/IGMP-Snooping/" style="font-size: 10px; color: #f06966">IGMP Snooping</a> <a href="/tags/IPsec-VPN/" style="font-size: 10px; color: #f06966">IPsec VPN</a> <a href="/tags/IPsec-%E9%85%8D%E7%BD%AE/" style="font-size: 10px; color: #f06966">IPsec 配置</a> <a href="/tags/Kali/" style="font-size: 10px; color: #f06966">Kali</a> <a href="/tags/MCU/" style="font-size: 10px; color: #f06966">MCU</a> <a href="/tags/MQC%E6%B5%81%E7%AD%96%E7%95%A5/" style="font-size: 10px; color: #f06966">MQC流策略</a> <a href="/tags/MSTP/" style="font-size: 10px; color: #f06966">MSTP</a> <a href="/tags/MUX-VLAN/" style="font-size: 10px; color: #f06966">MUX VLAN</a> <a href="/tags/NAT/" style="font-size: 10px; color: #f06966">NAT</a> <a href="/tags/OSPF/" style="font-size: 12px; color: #cb7980">OSPF</a> <a href="/tags/OSPF-NSSA/" style="font-size: 10px; color: #f06966">OSPF NSSA</a> <a href="/tags/OSPF-Stub/" style="font-size: 10px; color: #f06966">OSPF Stub</a> <a href="/tags/OSPF-Totally-NSSA/" style="font-size: 10px; color: #f06966">OSPF Totally-NSSA</a> <a href="/tags/OSPF-Totally-Stub/" style="font-size: 10px; color: #f06966">OSPF Totally-Stub</a> <a href="/tags/OSPF%E5%86%85%E9%83%A8%E8%B7%AF%E7%94%B1/" style="font-size: 10px; color: #f06966">OSPF内部路由</a> <a href="/tags/OSPF%E5%9F%BA%E7%A1%80/" style="font-size: 10px; color: #f06966">OSPF基础</a> <a href="/tags/OSPF%E5%A4%96%E9%83%A8%E8%B7%AF%E7%94%B1/" style="font-size: 12px; color: #cb7980">OSPF外部路由</a> <a href="/tags/OSPF%E5%A4%9A%E5%8C%BA%E5%9F%9F/" style="font-size: 10px; color: #f06966">OSPF多区域</a> <a href="/tags/Office%E6%BF%80%E6%B4%BB/" style="font-size: 10px; color: #f06966">Office激活</a> <a href="/tags/PIM/" style="font-size: 12px; color: #cb7980">PIM</a> <a href="/tags/PIM-DM/" style="font-size: 10px; color: #f06966">PIM DM</a> <a href="/tags/PIM-SM/" style="font-size: 10px; color: #f06966">PIM SM</a> <a href="/tags/PPP/" style="font-size: 10px; color: #f06966">PPP</a> <a href="/tags/RIP/" style="font-size: 12px; color: #cb7980">RIP</a> <a href="/tags/RSTP/" style="font-size: 10px; color: #f06966">RSTP</a> <a href="/tags/SIP/" style="font-size: 10px; color: #f06966">SIP</a> <a href="/tags/SMC/" style="font-size: 10px; color: #f06966">SMC</a> <a href="/tags/STP/" style="font-size: 10px; color: #f06966">STP</a> <a href="/tags/SUPER-VLAN/" style="font-size: 10px; color: #f06966">SUPER VLAN</a> <a href="/tags/VIM%E4%BD%BF%E7%94%A8/" style="font-size: 10px; color: #f06966">VIM使用</a> <a href="/tags/VLAN/" style="font-size: 14px; color: #a7899a">VLAN</a> <a href="/tags/VRRP/" style="font-size: 10px; color: #f06966">VRRP</a> <a href="/tags/VRRP%E9%85%8D%E7%BD%AE/" style="font-size: 10px; color: #f06966">VRRP配置</a> <a href="/tags/java/" style="font-size: 10px; color: #f06966">java</a> <a href="/tags/win10KMS%E6%BF%80%E6%B4%BB/" style="font-size: 10px; color: #f06966">win10KMS激活</a> <a href="/tags/%E4%BA%A4%E6%8D%A2/" style="font-size: 10px; color: #f06966">交换</a> <a href="/tags/%E4%BA%A4%E6%8D%A2%E6%9C%BA%E9%80%9A%E8%BF%87FTP%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/" style="font-size: 10px; color: #f06966">交换机通过FTP上传下载文件</a> <a href="/tags/%E4%BB%A3%E7%90%86ARP/" style="font-size: 10px; color: #f06966">代理ARP</a> <a href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/" style="font-size: 10px; color: #f06966">信息安全</a> <a href="/tags/%E5%AE%9E%E9%AA%8C/" style="font-size: 14px; color: #a7899a">实验</a> <a href="/tags/%E6%89%B9%E9%87%8F%E5%8A%A0%E5%85%A5Vlan/" style="font-size: 10px; color: #f06966">批量加入Vlan</a> <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" style="font-size: 10px; color: #f06966">树莓派</a> <a href="/tags/%E7%AB%AF%E5%8F%A3%E5%AE%89%E5%85%A8/" style="font-size: 10px; color: #f06966">端口安全</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 18px; color: #5eaace">笔记</a> <a href="/tags/%E7%BB%84%E6%92%AD/" style="font-size: 10px; color: #f06966">组播</a> <a href="/tags/%E9%98%B2%E7%81%AB%E5%A2%99/" style="font-size: 10px; color: #f06966">防火墙</a> <a href="/tags/%E9%9A%94%E7%A6%BB%E6%8A%80%E6%9C%AF/" style="font-size: 10px; color: #f06966">隔离技术</a>
+            <a href="/tags/%E8%B0%83%E9%9F%B3%E5%8F%B0/" style="font-size: 10px; color: #f06966">-调音台</a> <a href="/tags/2019%E6%BF%80%E6%B4%BB%E5%AF%86%E9%92%A5/" style="font-size: 10px; color: #f06966">2019激活密钥</a> <a href="/tags/ACL/" style="font-size: 10px; color: #f06966">ACL</a> <a href="/tags/ARP/" style="font-size: 10px; color: #f06966">ARP</a> <a href="/tags/BFD/" style="font-size: 10px; color: #f06966">BFD</a> <a href="/tags/BPDU/" style="font-size: 12px; color: #cb7980">BPDU</a> <a href="/tags/DHCP/" style="font-size: 10px; color: #f06966">DHCP</a> <a href="/tags/DOS/" style="font-size: 10px; color: #f06966">DOS</a> <a href="/tags/Eth-Trunk%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88/" style="font-size: 10px; color: #f06966">Eth-Trunk链路聚合</a> <a href="/tags/GRE/" style="font-size: 10px; color: #f06966">GRE</a> <a href="/tags/GVRP/" style="font-size: 10px; color: #f06966">GVRP</a> <a href="/tags/H-323/" style="font-size: 10px; color: #f06966">H.323</a> <a href="/tags/HCIA/" style="font-size: 20px; color: #39bae8">HCIA</a> <a href="/tags/HCIP/" style="font-size: 16px; color: #829ab4">HCIP</a> <a href="/tags/IGMP/" style="font-size: 10px; color: #f06966">IGMP</a> <a href="/tags/IGMP-Snooping/" style="font-size: 10px; color: #f06966">IGMP Snooping</a> <a href="/tags/IPsec-VPN/" style="font-size: 10px; color: #f06966">IPsec VPN</a> <a href="/tags/IPsec-%E9%85%8D%E7%BD%AE/" style="font-size: 10px; color: #f06966">IPsec 配置</a> <a href="/tags/ISIS/" style="font-size: 10px; color: #f06966">ISIS</a> <a href="/tags/LSDB/" style="font-size: 10px; color: #f06966">LSDB</a> <a href="/tags/MCU/" style="font-size: 10px; color: #f06966">MCU</a> <a href="/tags/MQC%E6%B5%81%E7%AD%96%E7%95%A5/" style="font-size: 10px; color: #f06966">MQC流策略</a> <a href="/tags/MSTP/" style="font-size: 10px; color: #f06966">MSTP</a> <a href="/tags/MUX-VLAN/" style="font-size: 10px; color: #f06966">MUX VLAN</a> <a href="/tags/NAT/" style="font-size: 10px; color: #f06966">NAT</a> <a href="/tags/OSPF/" style="font-size: 12px; color: #cb7980">OSPF</a> <a href="/tags/OSPF-NSSA/" style="font-size: 10px; color: #f06966">OSPF NSSA</a> <a href="/tags/OSPF-Stub/" style="font-size: 10px; color: #f06966">OSPF Stub</a> <a href="/tags/OSPF-Totally-NSSA/" style="font-size: 10px; color: #f06966">OSPF Totally-NSSA</a> <a href="/tags/OSPF-Totally-Stub/" style="font-size: 10px; color: #f06966">OSPF Totally-Stub</a> <a href="/tags/OSPF%E5%86%85%E9%83%A8%E8%B7%AF%E7%94%B1/" style="font-size: 10px; color: #f06966">OSPF内部路由</a> <a href="/tags/OSPF%E5%9F%BA%E7%A1%80/" style="font-size: 10px; color: #f06966">OSPF基础</a> <a href="/tags/OSPF%E5%A4%96%E9%83%A8%E8%B7%AF%E7%94%B1/" style="font-size: 12px; color: #cb7980">OSPF外部路由</a> <a href="/tags/OSPF%E5%A4%9A%E5%8C%BA%E5%9F%9F/" style="font-size: 10px; color: #f06966">OSPF多区域</a> <a href="/tags/Office%E6%BF%80%E6%B4%BB/" style="font-size: 10px; color: #f06966">Office激活</a> <a href="/tags/PIM/" style="font-size: 12px; color: #cb7980">PIM</a> <a href="/tags/PIM-DM/" style="font-size: 10px; color: #f06966">PIM DM</a> <a href="/tags/PIM-SM/" style="font-size: 10px; color: #f06966">PIM SM</a> <a href="/tags/PPP/" style="font-size: 10px; color: #f06966">PPP</a> <a href="/tags/RIP/" style="font-size: 12px; color: #cb7980">RIP</a> <a href="/tags/RSTP/" style="font-size: 10px; color: #f06966">RSTP</a> <a href="/tags/SIP/" style="font-size: 10px; color: #f06966">SIP</a> <a href="/tags/SMC/" style="font-size: 10px; color: #f06966">SMC</a> <a href="/tags/STP/" style="font-size: 10px; color: #f06966">STP</a> <a href="/tags/SUPER-VLAN/" style="font-size: 10px; color: #f06966">SUPER VLAN</a> <a href="/tags/VIM%E4%BD%BF%E7%94%A8/" style="font-size: 10px; color: #f06966">VIM使用</a> <a href="/tags/VLAN/" style="font-size: 14px; color: #a7899a">VLAN</a> <a href="/tags/VRRP/" style="font-size: 10px; color: #f06966">VRRP</a> <a href="/tags/VRRP%E9%85%8D%E7%BD%AE/" style="font-size: 10px; color: #f06966">VRRP配置</a> <a href="/tags/java/" style="font-size: 10px; color: #f06966">java</a> <a href="/tags/win10KMS%E6%BF%80%E6%B4%BB/" style="font-size: 10px; color: #f06966">win10KMS激活</a> <a href="/tags/%E4%BA%A4%E6%8D%A2/" style="font-size: 10px; color: #f06966">交换</a> <a href="/tags/%E4%BA%A4%E6%8D%A2%E6%9C%BA%E9%80%9A%E8%BF%87FTP%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/" style="font-size: 10px; color: #f06966">交换机通过FTP上传下载文件</a> <a href="/tags/%E4%BB%A3%E7%90%86ARP/" style="font-size: 10px; color: #f06966">代理ARP</a> <a href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/" style="font-size: 10px; color: #f06966">信息安全</a> <a href="/tags/%E5%AE%9E%E9%AA%8C/" style="font-size: 14px; color: #a7899a">实验</a> <a href="/tags/%E6%89%B9%E9%87%8F%E5%8A%A0%E5%85%A5Vlan/" style="font-size: 10px; color: #f06966">批量加入Vlan</a> <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" style="font-size: 10px; color: #f06966">树莓派</a> <a href="/tags/%E7%AB%AF%E5%8F%A3%E5%AE%89%E5%85%A8/" style="font-size: 10px; color: #f06966">端口安全</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 18px; color: #5eaace">笔记</a> <a href="/tags/%E7%BB%84%E6%92%AD/" style="font-size: 10px; color: #f06966">组播</a> <a href="/tags/%E9%98%B2%E7%81%AB%E5%A2%99/" style="font-size: 10px; color: #f06966">防火墙</a> <a href="/tags/%E9%9A%94%E7%A6%BB%E6%8A%80%E6%9C%AF/" style="font-size: 10px; color: #f06966">隔离技术</a>
           </div>
         </div> -->
       </article>
@@ -546,15 +800,15 @@ sudo motion
         
         <div class="post-nepre half previous">
           
-            <a href="/post/d948.html" rel="prev">
+            <a href="/post/1989.html" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/06/14/vaRVA8Sf6D2HczY.png"
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/06/27/TXkiBt271acHSxG.png"
                   style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
-                  src="https://i.loli.net/2021/06/14/vaRVA8Sf6D2HczY.png">
+                  src="https://i.loli.net/2021/06/27/TXkiBt271acHSxG.png">
               </div>
               <span class="label">Previous Post</span>
               <div class="info">
-                <h3>HCNP学习笔记14</h3>
+                <h3>HCNP学习笔记15</h3>
                 <hr>
               </div>
             </a>
@@ -564,15 +818,15 @@ sudo motion
           
           <div class="post-nepre half next">
             
-              <a href="/post/1b09.html" rel="next">
+              <a href="/post/d948.html" rel="next">
                 <div class="background">
-                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/06/09/av2Zu8AeogDJLWz.png"
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/06/14/vaRVA8Sf6D2HczY.png"
                     style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
-                    onerror="imgError(this,3)" src="https://i.loli.net/2021/06/09/av2Zu8AeogDJLWz.png">
+                    onerror="imgError(this,3)" src="https://i.loli.net/2021/06/14/vaRVA8Sf6D2HczY.png">
                 </div>
                 <span class="label">Next Post</span>
                 <div class="info">
-                  <h3>HCNP学习笔记13</h3>
+                  <h3>HCNP学习笔记14</h3>
                   <hr>
                 </div>
               </a>
@@ -733,7 +987,7 @@ gitalk.render('gitalk-container')
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -745,10 +999,10 @@ gitalk.render('gitalk-container')
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Posts',
-            // PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
