@@ -377,6 +377,110 @@ ipconfig <span class="token operator">/</span>flushdns <span class="token commen
 ipconfig <span class="token operator">/</span>displaydns <span class="token comment" spellcheck="true">//查看dns</span>
 net share <span class="token comment" spellcheck="true">//查看共享文件夹</span>
 </code></pre>
+<h1 id="树莓派创建热点"><a href="#树莓派创建热点" class="headerlink" title="树莓派创建热点"></a>树莓派创建热点</h1><pre class=" language-java"><code class="language-java">
+#创建WiFi热点使用的GitHub上一个开源项目： 
+https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>oblique<span class="token operator">/</span>create_ap
+
+#将代码copy到本地，安装
+sudo git clone https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>oblique<span class="token operator">/</span>create_ap
+cd create_ap
+sudo make install
+  
+#安装依赖的库
+sudo apt<span class="token operator">-</span>get install util<span class="token operator">-</span>linux procps hostapd iproute2 iw haveged dnsmasq
+sudo apt<span class="token operator">-</span>get install util<span class="token operator">-</span>linux procps hostapd iproute2 iw haveged dnsmasq <span class="token operator">-</span>y
+  
+#开启热点： 
+sudo create_ap <span class="token operator">--</span>no<span class="token operator">-</span>virt wlan0 eth0 raspi <span class="token number">12345678</span>
+
+#注意：  
+开启热点前不能连接其他热点，可以编辑
+sudo vim <span class="token operator">/</span>etc<span class="token operator">/</span>wpa_supplicant<span class="token operator">/</span>wpa_supplicant<span class="token punctuation">.</span>conf
+network<span class="token operator">=</span><span class="token punctuation">{</span>
+    ssid<span class="token operator">=</span><span class="token string">"Aqua"</span>
+    psk<span class="token operator">=</span><span class="token string">"12345678a"</span>
+<span class="token punctuation">}</span>
+#开机自启方法<span class="token number">1</span>：
+sudo nano <span class="token operator">/</span>usr<span class="token operator">/</span>lib<span class="token operator">/</span>systemd<span class="token operator">/</span>system<span class="token operator">/</span>create_ap<span class="token punctuation">.</span>service
+然后在最下方加上下面语句：
+ExecStart<span class="token operator">=</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>create_ap <span class="token operator">-</span>n wlan0 热点名 密码
+保存退出，然后执行一下语句：
+systemctl daemon<span class="token operator">-</span>reload
+systemctl enable create_ap<span class="token punctuation">.</span>service
+systemctl start create_ap<span class="token punctuation">.</span>service
+reboot
+#开机自启方法<span class="token number">2</span>： 
+  
+sudo mkdir <span class="token operator">/</span>home<span class="token operator">/</span>pi<span class="token operator">/</span><span class="token punctuation">.</span>config<span class="token operator">/</span>autostart
+cd <span class="token operator">/</span>home<span class="token operator">/</span>pi<span class="token operator">/</span><span class="token punctuation">.</span>config<span class="token operator">/</span>autostart
+sudo vim testboot<span class="token punctuation">.</span>desktop
+  
+    编辑以下内容
+<span class="token punctuation">[</span>Desktop Entry<span class="token punctuation">]</span>
+Type<span class="token operator">=</span>Application
+Name<span class="token operator">=</span>testboot
+NoDisplay<span class="token operator">=</span><span class="token boolean">true</span>
+Exec<span class="token operator">=</span><span class="token operator">/</span>home<span class="token operator">/</span>pi<span class="token operator">/</span>ap<span class="token punctuation">.</span>sh
+  
+    创建开启热点脚本
+sudo vim <span class="token operator">/</span>home<span class="token operator">/</span>pi<span class="token operator">/</span>ap<span class="token punctuation">.</span>sh
+  
+    编辑以下内容
+sudo create_ap <span class="token operator">--</span>no<span class="token operator">-</span>virt wlan0 eth0 raspi <span class="token number">12345678</span>
+  
+    重启树莓派
+sudo reboot
+  
+</code></pre>
+<h1 id="树莓派摄像头拍照录制监控"><a href="#树莓派摄像头拍照录制监控" class="headerlink" title="树莓派摄像头拍照录制监控"></a>树莓派摄像头拍照录制监控</h1><pre class=" language-java"><code class="language-java">对树莓派进行更新
+sudo apt<span class="token operator">-</span>get update
+sudo apt<span class="token operator">-</span>get upgrade
+  
+打开树莓派的配置界面
+sudo raspi<span class="token operator">-</span>config
+打开Camera功能
+ 
+想使用树莓派摄像头拍照很简单，在终端输入命令即可。这里使用的是树莓派系统中的raspistill命令
+
+raspistill <span class="token operator">-</span>o a<span class="token punctuation">.</span>jpg <span class="token operator">-</span>t <span class="token number">1000</span>
+  
+这行命令的作用是在一秒钟的延迟之后，拍下一张名为a<span class="token punctuation">.</span>jpg的照片，保存在树莓派的主目录下。<span class="token operator">-</span>t的延迟选项后的参数是以毫秒为单位，<span class="token number">1000</span>便表示<span class="token number">1</span>秒。延时选项在输入命令时可以不加，但<span class="token operator">-</span>o后的名称是一定要有的。
+  
+录像功能
+同样是使用输入命令的方式实现。命令如下
+raspivid <span class="token operator">-</span>o b<span class="token punctuation">.</span>h264 <span class="token operator">-</span>t <span class="token number">10000</span> <span class="token operator">-</span>w <span class="token number">1280</span> <span class="token operator">-</span>h <span class="token number">720</span>
+该命令的意思是录制一段十秒钟的名为b<span class="token punctuation">.</span>h264的视频，且分辨率为1280x720。同样，如果不带名称后的参数的话，系统会默认录制时间为<span class="token number">5</span>秒，分辨率为1920x1080。
+  
+此时录制的视频虽然能够在树莓派上播放，但并非是能够在一般播放器上运行的常规视频文件，且录制的视频是没有声音的。要想将<span class="token punctuation">.</span>h264格式的视频转换为mp4格式的视频，需要使用一个叫做gpac的工具。sudo apt<span class="token operator">-</span>get install <span class="token operator">-</span>y gpac
+安装后输入以下命令对刚才的视频进行格式转换，转换后的视频为每秒<span class="token number">30</span>帧。
+MP4Box <span class="token operator">-</span>fps <span class="token number">30</span> <span class="token operator">-</span>add b<span class="token punctuation">.</span>h264 b<span class="token punctuation">.</span>mp4
+  
+监控功能：
+  
+使用Linux下一款开源监控软件：motion
+输入命令进行安装：
+sudo apt<span class="token operator">-</span>get install motion
+首先将motion软件的后台进程改为开启，让它能够一直在后台运行。输入以下命令，将文件中 “start_motion_daemon<span class="token operator">=</span>no” 的no改为yes。
+sudo nano <span class="token operator">/</span>etc<span class="token operator">/</span>motion<span class="token operator">/</span>motion<span class="token punctuation">.</span>conf
+这个文件中保存了许多motion的基本设置，文件内容很多，感兴趣的话可以慢慢研究。因为选项比较多，下面只写出一些比较重要的选项的值，其他可以用默认值，或者参考motion官网上的documents，那里面写得很详尽，每个参数的解释都有。motion<span class="token punctuation">.</span>conf里自带的注释也很完整。
+需要更改的参数有以下几行，在nano编辑器环境下可以使用快捷键ctrl<span class="token operator">+</span>w对关键字进行查找。
+  
+daemon on  #off改成on
+width <span class="token number">640</span>  
+height <span class="token number">480</span> #根据摄像头像素自行更改
+framerate <span class="token number">50</span> #帧率
+stream_maxrate <span class="token number">200</span>
+stream_localhost off    #设为off
+当然要想获得最佳的效果，文档中的参数需要多次根据自己的设备进行相应的调整。
+修改完成后保存并退出。
+
+若你之前打开过motion，那么在每次更改完配置后，需要先关闭motion进程，并再次打开，相当于对motion进行一次重启。关闭motion服务的命令如下：
+sudo killall <span class="token operator">-</span>TERM motion
+接着输入命令重新打开motion
+sudo motion
+打开后便可以通过在浏览器内访问地址http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>树莓派IP<span class="token operator">:</span><span class="token number">8081</span><span class="token punctuation">,</span>看到相应的监控画面了。
+
+</code></pre>
 
         </div>
 
@@ -410,6 +514,8 @@ net share <span class="token comment" spellcheck="true">//查看共享文件夹<
             <span><i class="fa fa-tags"></i>
               
               <a href="/tags/DOS/" style="color: #716e77;">DOS<em>·</em></a>
+              
+              <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" style="color: #716e77;">树莓派<em>·</em></a>
               
             </span>
             <span>
