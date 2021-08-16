@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">HCIA学习笔记4 | 慢一点，才更快 | 雨落</title>
+  <title itemprop="name">日本语学习 | 慢一点，才更快 | 雨落</title>
   
     <link rel="shortcut icon" href="https://gitee.com/sakuramiko35/image/raw/master/blog-home/tubiao.ico">
   
@@ -294,11 +294,11 @@
 
 <div class="pattern-center single-center">
   <!-- 有配图默认渲染第一张 -->
-  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/05/03/bQDYTx6MECP3moF.jpg);"
-    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/bQDYTx6MECP3moF.jpg">
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/08/16/63It7v5jWa9HCke.png);"
+    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/08/16/63It7v5jWa9HCke.png">
   </div>
   <header class="pattern-header single-header">
-    <h1 class="entry-title">HCIA学习笔记4</h1>
+    <h1 class="entry-title">日本语学习</h1>
     <p class="entry-census">
       
       <span class="post-meta-item">
@@ -318,7 +318,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-calendar"></i>
         </span>
-        <span class="post-meta-item-text"> 2021-4-2 </span>
+        <span class="post-meta-item-text"> 2021-8-16 </span>
       </span>
       <span class="bull">
         ·</span>
@@ -345,7 +345,7 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               </span class="post-meta-item-text">
-                <span class="valine-comment-count" data-xid="/1981"> </span>
+                <span class="valine-comment-count" data-xid="/ecc0"> </span>
               </span>
           </span> -->
     </p>
@@ -362,276 +362,842 @@
         <!--套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h2 id="路由备份-浮动静态路由"><a href="#路由备份-浮动静态路由" class="headerlink" title="路由备份-浮动静态路由"></a>路由备份-浮动静态路由</h2><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210402091048297.png" alt="image-20210402091048297"></p>
-<ul>
-<li>利用优先级的特性，配置浮动路由；</li>
-<li>在主路由失效的情况下，浮动路由会加入到路由表并承担数据转发业务；</li>
-<li>在主链路正常情况下，只有主路由会出现在路由表中；</li>
-</ul>
-<h2 id="配置验证"><a href="#配置验证" class="headerlink" title="配置验证"></a>配置验证</h2><pre class=" language-java"><code class="language-java">dis ip routing<span class="token operator">-</span>table <span class="token comment" spellcheck="true">//查看路由表</span>
-  
-<span class="token keyword">int</span> g0<span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span> <span class="token comment" spellcheck="true">//进入对应接口模式</span>
-  
-shutdown <span class="token comment" spellcheck="true">//关闭接口</span>
-  
-d th <span class="token comment" spellcheck="true">// 查看当前配置</span>
-
-dis ip routing<span class="token operator">-</span>table pro <span class="token keyword">static</span> <span class="token comment" spellcheck="true">//查看路由表详细信息</span>
-  
-
-tracert <span class="token number">1.0</span><span class="token punctuation">.</span><span class="token number">0.10</span> <span class="token comment" spellcheck="true">// 跟踪路由</span>
-  
-<span class="token comment" spellcheck="true">// 写错的路由一定要删除</span>
-
-</code></pre>
-<h2 id="缺省路由"><a href="#缺省路由" class="headerlink" title="缺省路由"></a>缺省路由</h2><p><strong>一种特殊的路由，能匹配所有目标网络。</strong></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210402100442073.png" alt="image-20210402100442073"></p>
-<ul>
-<li>可以通过静态路由配置，也可以通过动态路由协议发布。</li>
-<li>在路由表中，以到网络0.0.0.0（掩码为0.0.0.0）的形式出现、</li>
-<li>通常用于末梢网络（如：家庭上网、企业出口）</li>
-</ul>
+          <h1 id="日本语"><a href="#日本语" class="headerlink" title="日本语"></a>日本语</h1><h2 id="五十音"><a href="#五十音" class="headerlink" title="五十音"></a>五十音</h2><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210816113633827.png" alt="image-20210816113633827"></p>
+<h3 id="清音"><a href="#清音" class="headerlink" title="清音"></a>清音</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210816113754904.png" alt="image-20210816113754904"></p>
+<h4 id="あ行"><a href="#あ行" class="headerlink" title="あ行"></a>あ行</h4><table>
+<thead>
+<tr>
+<th>a</th>
+<th>i</th>
+<th>u</th>
+<th>e</th>
+<th>o</th>
+<th>罗马音</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>あ</td>
+<td>い</td>
+<td>う</td>
+<td>え</td>
+<td>お</td>
+<td>平假名</td>
+</tr>
+<tr>
+<td>ア</td>
+<td>イ</td>
+<td>ウ</td>
+<td>エ</td>
+<td>オ</td>
+<td>片假名</td>
+</tr>
+</tbody></table>
+<p>元音 两个音在一起才可能是长音，一个字就是短音，u 读音嘴唇收一半。</p>
+<p>联想记忆</p>
 <table>
 <thead>
 <tr>
-<th>命令</th>
-<th>备注</th>
+<th>あ</th>
+<th>い</th>
+<th>う</th>
+<th>え</th>
+<th>お</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>ip route-static 0.0.0.0 0.0.0.0/0 下一跳地址/出接口</td>
-<td>配置缺省路由</td>
+<td>安</td>
+<td>以</td>
+<td>乌</td>
+<td>诶</td>
+<td>哦</td>
 </tr>
 </tbody></table>
-<h3 id="缺省路由配置"><a href="#缺省路由配置" class="headerlink" title="缺省路由配置"></a><strong>缺省路由配置</strong></h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210402102900197.png" alt="image-20210402102900197"></p>
-<ul>
-<li>缺省路由是目标网络和掩码都为0的特殊路由；</li>
-<li>如果报文的目标地址无法匹配路由表中的任何一项，路由器将选择依照缺省路由来转发报文</li>
-</ul>
-<h2 id="Loopback接口"><a href="#Loopback接口" class="headerlink" title="Loopback接口"></a>Loopback接口</h2><p><strong>回环口，逻辑的、虚拟的接口；</strong></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210402103422820.png" alt="image-20210402103422820"></p>
+<p>练习</p>
+<p>赤　あか　青　あお　上　うえ　</p>
+<p>柱　はし    橋　はし</p>
+<h4 id="か行"><a href="#か行" class="headerlink" title="か行"></a>か行</h4><table>
+<thead>
+<tr>
+<th>ka</th>
+<th>ki</th>
+<th>ku</th>
+<th>ke</th>
+<th>ko</th>
+<th>罗马音</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>か</td>
+<td>き</td>
+<td>く</td>
+<td>け</td>
+<td>こ</td>
+<td>平假音</td>
+</tr>
+<tr>
+<td>カ</td>
+<td>キ</td>
+<td>ク</td>
+<td>ケ</td>
+<td>コ</td>
+<td>片假音</td>
+</tr>
+</tbody></table>
+<p>联想记忆</p>
 <table>
 <thead>
 <tr>
-<th>命令</th>
-<th>备注</th>
+<th>か</th>
+<th>き</th>
+<th>く</th>
+<th>け</th>
+<th>こ</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>interface loopback 编号</td>
-<td>创建或配置一个回环口，创建后，默认up</td>
-</tr>
-<tr>
-<td>作用</td>
-<td>==模拟直连网段==，可用于测试；设备管理（稳定）；供其他协议使用（ospf、bgp、mpls等）SNMP Traps消息的源地址；其他用途（用途十分广泛）</td>
+<td>咖</td>
+<td>起</td>
+<td>哭</td>
+<td>计</td>
+<td>口</td>
 </tr>
 </tbody></table>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> lo <span class="token number">2</span> <span class="token comment" spellcheck="true">// 进入回环口2</span>
-
-ip add xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx aa <span class="token comment" spellcheck="true">// 配置IP地址</span>
-  
-dis ip routing<span class="token operator">-</span>table  <span class="token comment" spellcheck="true">// 查看路由表</span>
-  
-dis ip <span class="token keyword">int</span> b <span class="token comment" spellcheck="true">// 查看接口 ip地址</span>
-  
-<span class="token comment" spellcheck="true">//网关就是一条缺省路由</span>
-<span class="token comment" spellcheck="true">//本地网络不需要网关</span>
-  
-<span class="token comment" spellcheck="true">//windows添加静态路由</span>
-rpute print  
-route add xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx aa yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy 
-  
-ipconfig <span class="token operator">/</span>release <span class="token comment" spellcheck="true">// 去除网卡(适配器1)的动态IP地址</span>
-  
-ipconfig <span class="token operator">/</span>renew <span class="token comment" spellcheck="true">//为网卡重新动态分配IP地址</span>
-  
-ipconfig <span class="token operator">/</span>all <span class="token comment" spellcheck="true">//显示所有网络适配器（网卡）TCP/IP配置</span>
-  
-netsh winsock set <span class="token comment" spellcheck="true">//重置 Winsock 目录,重置网络编程接口</span>
-  
-netsh winhttp  reset  proxy <span class="token comment" spellcheck="true">// 解除代理设置</span>
-  
-netsh <span class="token keyword">int</span> ip  reset  c<span class="token operator">:</span><span class="token operator">/</span>catalog<span class="token punctuation">.</span>txt <span class="token comment" spellcheck="true">// 重置IP 设置，恢复到默认自动获取IP 和DNS 服务器地址。</span>
-  
-nslookup 域名 <span class="token comment" spellcheck="true">//查询一台机器的IP地址和其对应的域名,通常它能监测网络中DNS服务器是否能正确实现域名解析它。</span>
-  
-ping <span class="token operator">-</span>a yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx  <span class="token comment" spellcheck="true">//y为源IP，x为目的IP</span>
-
-
-</code></pre>
-<p>小工具：IPOP配置路由的工具；</p>
-<h2 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h2><p><strong>路由协议概述：</strong></p>
-<ul>
-<li>路由器之间交互信息的一种语言；</li>
-<li>共享路由信息；</li>
-<li>维护路由表、提供最佳转发路径；</li>
-</ul>
-<p><strong>路由协议总览</strong></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210402121748882.png" alt="image-20210402121748882"></p>
-<h3 id="动态路由的分类："><a href="#动态路由的分类：" class="headerlink" title="动态路由的分类："></a>动态路由的分类：</h3><p> <img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210402141714721.png" alt="image-20210402141714721"></p>
-<pre class=" language-java"><code class="language-java">show ip bgp sum <span class="token comment" spellcheck="true">//查看bgp的总和 </span>
-  
-CNNIC <span class="token comment" spellcheck="true">// 中国互联网信息中心</span>
-  
- 
-</code></pre>
+<p>练习</p>
+<p>買う　かう　聞く　きく　書く　かく　顔　かう</p>
+<p>書け喜久子　　かけきくこ</p>
+<p>かきくけこ</p>
+<h4 id="さ行"><a href="#さ行" class="headerlink" title="さ行"></a>さ行</h4><table>
+<thead>
+<tr>
+<th>sa</th>
+<th>shi</th>
+<th>su</th>
+<th>se</th>
+<th>so</th>
+<th>罗马音</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>さ</td>
+<td>し</td>
+<td>す</td>
+<td>せ</td>
+<td>そ</td>
+<td>平假音</td>
+</tr>
+<tr>
+<td>サ</td>
+<td>シ</td>
+<td>ス</td>
+<td>セ</td>
+<td>ソ</td>
+<td>片假音</td>
+</tr>
+</tbody></table>
+<p>し（xi）　す（si）　的发音要注意</p>
+<p>联想记忆</p>
 <table>
 <thead>
 <tr>
-<th>类型</th>
-<th>备注</th>
+<th>さ</th>
+<th>し</th>
+<th>す</th>
+<th>せ</th>
+<th>そ</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>IGP（Interior Gateway Protocol）内部网关协议</td>
-<td>用于一个AS内部交换路由信息RIP、OSPF、IS-IS</td>
-</tr>
-<tr>
-<td>EGP（Exterior Gateway Protocol）外部网关协议</td>
-<td>用于多个AS之间交换路由信息BGP</td>
-</tr>
-<tr>
-<td>AS（Autonomous System）自制系统</td>
-<td>处于单个管理机制下的网络（如：企业、电信、移动、联通）</td>
+<td>杀</td>
+<td>洗</td>
+<td>司</td>
+<td>世</td>
+<td>缩</td>
 </tr>
 </tbody></table>
-<pre class=" language-java"><code class="language-java">rip <span class="token operator">?</span> <span class="token comment" spellcheck="true">// 进程号</span>
-ospf <span class="token operator">?</span> <span class="token comment" spellcheck="true">// 进程号</span>
-isis <span class="token operator">?</span> <span class="token comment" spellcheck="true">// 进程号</span>
-<span class="token comment" spellcheck="true">//中国电信骨干网 AS 4134</span>
-bgp <span class="token operator">?</span> <span class="token comment" spellcheck="true">// AS号</span>
-</code></pre>
-<h3 id="路由协议分类：根据协议分类"><a href="#路由协议分类：根据协议分类" class="headerlink" title="路由协议分类：根据协议分类"></a>路由协议分类：根据协议分类</h3><table>
+<p>练习</p>
+<p>好き　すき　　　　　　お酒　おさけ</p>
+<p>お菓子　おかし　</p>
+<p>きしすせそ</p>
+<h4 id="た行"><a href="#た行" class="headerlink" title="た行"></a>た行</h4><table>
 <thead>
 <tr>
-<th>类型</th>
-<th>备注</th>
+<th>ta</th>
+<th>chi</th>
+<th>tsu</th>
+<th>te</th>
+<th>to</th>
+<th>罗马音</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>DV（Distance-Vector）距离矢量</td>
-<td>基于距离矢量算法，路由器并不了解网络拓扑结构类似路牌，道听途说如：RIP、EIGRP</td>
+<td>た</td>
+<td>ち</td>
+<td>つ</td>
+<td>て</td>
+<td>と</td>
+<td>平假音</td>
 </tr>
 <tr>
-<td>LS（Link-State）链路状态</td>
-<td>基于SPF（Shortest Path First，最短路径优先）算法，路由器了解完整的网络拓扑结构，类似地图如OSPF、IS-IS</td>
+<td>タ</td>
+<td>チ</td>
+<td>ツ</td>
+<td>テ</td>
+<td>ト</td>
+<td>片假音</td>
 </tr>
 </tbody></table>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210402150035241.png" alt="image-20210402150035241"></p>
-<p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210402150119547.png" alt="image-20210402150119547"></p>
-<hr>
-<ul>
-<li>RIP：只看眼前</li>
-<li>LSA：链路状态宣告</li>
-<li>OSPF：看带宽</li>
-<li>有类：不携带掩码；</li>
-<li>无类：携带掩码；</li>
-</ul>
-<h3 id="根据业务应用："><a href="#根据业务应用：" class="headerlink" title="根据业务应用："></a>根据业务应用：</h3><table>
-<thead>
-<tr>
-<th>类型</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Unicast Routing Protocol 单播路由协议</td>
-<td>如：RIP、EIGRP、OSPF、BGP、IS-IS</td>
-</tr>
-<tr>
-<td>Multicast Routing Protocol 组播路由协议</td>
-<td>如：DVMRP、PIM-SM、PIM-DM</td>
-</tr>
-</tbody></table>
-<h2 id="路由协议的操作规则"><a href="#路由协议的操作规则" class="headerlink" title="路由协议的操作规则"></a>路由协议的操作规则</h2><ul>
-<li>协议是在接口上运行的；</li>
-<li>只能学习和发布相同协议已知的路由信息；</li>
-<li>如果不同的路由协议间需要交换路由信息，就需要进行==注入（import）；==</li>
-</ul>
-<pre class=" language-java"><code class="language-java">rip <span class="token number">1</span> <span class="token comment" spellcheck="true">//创建进程</span>
-<span class="token comment" spellcheck="true">// 宣告方式一  </span>
-network xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx <span class="token comment" spellcheck="true">//宣告网络</span>
-<span class="token comment" spellcheck="true">// 注入方式二  </span>
-<span class="token comment" spellcheck="true">//在RIP 1接口环境下注入</span>
-  <span class="token keyword">import</span> route OSPF <span class="token number">1</span> 
-<span class="token comment" spellcheck="true">// ver 1 RIP v1 版本</span>
-<span class="token comment" spellcheck="true">// ver 2 RIP v2 版本</span>
- 
-</code></pre>
-<h2 id="路由器收敛"><a href="#路由器收敛" class="headerlink" title="路由器收敛"></a>路由器收敛</h2><ul>
-<li>当所有路由表包含相同网络可达性信息</li>
-<li>网络（路由）进入一个稳定状态</li>
-<li>网络在达到收敛前无法完全正常工作</li>
-</ul>
+<p>ち（qi）　つ（ci）　的发音注意</p>
+<p>联想记忆</p>
 <table>
 <thead>
 <tr>
-<th>指标</th>
-<th>备注</th>
+<th>た</th>
+<th>ち</th>
+<th>つ</th>
+<th>て</th>
+<th>と</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>正确性</td>
-<td>能够正确找到最优的路由，且无闭环</td>
-</tr>
-<tr>
-<td>快收敛</td>
-<td>当拓扑结构发生变化之后，能够迅速作出相应的路由改变</td>
-</tr>
-<tr>
-<td>低开销</td>
-<td>协议自身的开销（内存、CPU、网络带宽）最小</td>
-</tr>
-<tr>
-<td>安全性</td>
-<td>协议自身不易受攻击，有安全机制</td>
-</tr>
-<tr>
-<td>普适性</td>
-<td>适应各种拓扑结构和各种规模的网络</td>
+<td>太</td>
+<td>奇</td>
+<td>词</td>
+<td>天</td>
+<td>托</td>
 </tr>
 </tbody></table>
-<h2 id="RIP"><a href="#RIP" class="headerlink" title="RIP"></a>RIP</h2><p>路由信息协议（Routing Information Protocol）的简称，它是一种基于距离矢量（Distance Vector）算法的协议，使用跳数作为度量来衡量到达目的网络的距离。RIP主要应用于规模较小的网络中。</p>
-<h3 id="特点："><a href="#特点：" class="headerlink" title="特点："></a><strong>特点：</strong></h3><ul>
-<li>距离矢量路由协议，属于IGP协议；</li>
-<li>适用于中小型网络，有RIPV1和RIPv2两个版本；</li>
-<li>基于UDP，目标端口号520；</li>
-<li>周期性更新约30s一次；</li>
-<li>支持水平分割。毒性逆转和触发更新等防环特性；</li>
+<p>练习</p>
+<p>竹　たけ　　　外　そと　　　大切　たいせつ　　　近い　ちかい</p>
+<h4 id="な行"><a href="#な行" class="headerlink" title="な行"></a>な行</h4><table>
+<thead>
+<tr>
+<th>na</th>
+<th>ni</th>
+<th>nu</th>
+<th>ne</th>
+<th>no</th>
+<th>罗马音</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>な</td>
+<td>に</td>
+<td>ぬ</td>
+<td>ね</td>
+<td>の</td>
+<td>平假音</td>
+</tr>
+<tr>
+<td>ナ</td>
+<td>ニ</td>
+<td>ヌ</td>
+<td>ネ</td>
+<td>ノ</td>
+<td>片假音</td>
+</tr>
+</tbody></table>
+<p>片假音多用于 外来词，动物，拟声词。</p>
+<p>联想记忆</p>
+<table>
+<thead>
+<tr>
+<th>な</th>
+<th>に</th>
+<th>ぬ</th>
+<th>ね</th>
+<th>の</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>奈</td>
+<td>妮或仁</td>
+<td>奴</td>
+<td>捏</td>
+<td>no</td>
+</tr>
+</tbody></table>
+<p>练习</p>
+<p>何　なに　　　　犬　いぬ　　　背中　せなか　　　世界　せかい</p>
+<p>なにぬねの</p>
+<h4 id="は行"><a href="#は行" class="headerlink" title="は行"></a>は行</h4><table>
+<thead>
+<tr>
+<th>ha</th>
+<th>hi</th>
+<th>hu</th>
+<th>he</th>
+<th>ho</th>
+<th>罗马音</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>は</td>
+<td>ひ</td>
+<td>ふ</td>
+<td>へ</td>
+<td>ほ</td>
+<td>平假音</td>
+</tr>
+<tr>
+<td>ハ</td>
+<td>ヒ</td>
+<td>フ</td>
+<td>ヘ</td>
+<td>ホ</td>
+<td>片假音</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>は</th>
+<th>ひ</th>
+<th>ふ</th>
+<th>へ</th>
+<th>ほ</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>波</td>
+<td>表情</td>
+<td>不</td>
+<td>黑</td>
+<td>活</td>
+</tr>
+</tbody></table>
+<p>ふ（fu）的发音要注意</p>
+<p>は（ha）（wa）在做单词的情况下读ha，在助词的情况下读wa。</p>
+<p>练习</p>
+<p>母　はは　　　　服　ふく　　　　財布　さいふ　　下手　へた</p>
+<p>はひふへほ</p>
+<h4 id="ま行"><a href="#ま行" class="headerlink" title="ま行"></a>ま行</h4><table>
+<thead>
+<tr>
+<th>ma</th>
+<th>mi</th>
+<th>mu</th>
+<th>me</th>
+<th>mo</th>
+<th>罗马音</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ま</td>
+<td>み</td>
+<td>む</td>
+<td>め</td>
+<td>も</td>
+<td>平假音</td>
+</tr>
+<tr>
+<td>マ</td>
+<td>ミ</td>
+<td>ム</td>
+<td>メ</td>
+<td>モ</td>
+<td>片假音</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>ま</th>
+<th>み</th>
+<th>む</th>
+<th>め</th>
+<th>も</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>末</td>
+<td>美</td>
+<td>武</td>
+<td>妹</td>
+<td>毛</td>
+</tr>
+</tbody></table>
+<p>练习</p>
+<p>桃　もも　　　　腿　もも</p>
+<p>名前　なまえ　　頭　あたま</p>
+<p>ま　み　む　め　も</p>
+<h4 id="や行"><a href="#や行" class="headerlink" title="や行"></a>や行</h4><table>
+<thead>
+<tr>
+<th>ya</th>
+<th>yi</th>
+<th>yu</th>
+<th>ye</th>
+<th>yo</th>
+<th>罗马音</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>や</td>
+<td>い</td>
+<td>ゆ</td>
+<td>え</td>
+<td>よ</td>
+<td>平假音</td>
+</tr>
+<tr>
+<td>ヤ</td>
+<td>イ</td>
+<td>ユ</td>
+<td>エ</td>
+<td>ヨ</td>
+<td>片假音</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>や</th>
+<th>い</th>
+<th>ゆ</th>
+<th>え</th>
+<th>よ</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>也</td>
+<td>以</td>
+<td>由</td>
+<td>诶</td>
+<td>与</td>
+</tr>
+</tbody></table>
+<p>练习</p>
+<p>冬　ふゆ　　　　読む　よむ</p>
+<p>屋根　やね　　　速い　はやい</p>
+<p>日语中没有卷舌音</p>
+<h4 id="ら行"><a href="#ら行" class="headerlink" title="ら行"></a>ら行</h4><table>
+<thead>
+<tr>
+<th>ra</th>
+<th>ri</th>
+<th>ru</th>
+<th>re</th>
+<th>ro</th>
+<th>罗马音</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ら</td>
+<td>り</td>
+<td>る</td>
+<td>れ</td>
+<td>ろ</td>
+<td>平假音</td>
+</tr>
+<tr>
+<td>ラ</td>
+<td>リ</td>
+<td>ル</td>
+<td>レ</td>
+<td>ロ</td>
+<td>片假音</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>ら</th>
+<th>り</th>
+<th>る</th>
+<th>れ</th>
+<th>ろ</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>落</td>
+<td>利</td>
+<td>路</td>
+<td>礼</td>
+<td>咯</td>
+</tr>
+</tbody></table>
+<p>ら（la）的发音要注意</p>
+<p>练习</p>
+<p>桜　さくら（０型代表花）    桜　さくら（１型代表人名）</p>
+<p>歴史　れきし　　　理解　りかい</p>
+<p>わ行</p>
+<table>
+<thead>
+<tr>
+<th>wa</th>
+<th>i</th>
+<th>u</th>
+<th>e</th>
+<th>wo</th>
+<th>罗马音</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>わ</td>
+<td>い</td>
+<td>う</td>
+<td>え</td>
+<td>を</td>
+<td>平假音</td>
+</tr>
+<tr>
+<td>ワ</td>
+<td>イ</td>
+<td>ウ</td>
+<td>エ</td>
+<td>ヲ</td>
+<td>片假音</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>わ</th>
+<th>い</th>
+<th>う</th>
+<th>え</th>
+<th>を</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>挖</td>
+<td>以</td>
+<td>乌</td>
+<td>诶</td>
+<td>我</td>
+</tr>
+</tbody></table>
+<p>を　助词在单词中不经常出现</p>
+<p>练习</p>
+<p>私　わたし　　　悪い　わるい</p>
+<p>若者　わかもの　　幸せ　しあわせ</p>
+<p>ん行</p>
+<table>
+<thead>
+<tr>
+<th>en</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th>罗马音</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ん</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>平假音</td>
+</tr>
+<tr>
+<td>ン</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>片假音</td>
+</tr>
+</tbody></table>
+<h3 id="浊音"><a href="#浊音" class="headerlink" title="浊音"></a>浊音</h3><p>四行通过浊化，浊化的标志是右上角加两个点</p>
+<p>ka </p>
+<p>sa</p>
+<p>ta</p>
+<p>ha</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210816142457554.png" alt="image-20210816142457554"></p>
+<h4 id="が行"><a href="#が行" class="headerlink" title="が行"></a>が行</h4><p> K——G</p>
+<table>
+<thead>
+<tr>
+<th>ga</th>
+<th>gi</th>
+<th>gu</th>
+<th>ge</th>
+<th>go</th>
+<th>罗马音</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>が</td>
+<td>ぎ</td>
+<td>ぐ</td>
+<td>げ</td>
+<td>ご</td>
+<td>平假音</td>
+</tr>
+<tr>
+<td>ガ</td>
+<td>ギ</td>
+<td>グ</td>
+<td>ゲ</td>
+<td>ゴ</td>
+<td>片假音</td>
+</tr>
+</tbody></table>
+<h4 id="ざ行"><a href="#ざ行" class="headerlink" title="ざ行"></a>ざ行</h4><p>S——Z</p>
+<table>
+<thead>
+<tr>
+<th>za</th>
+<th>ji</th>
+<th>zu</th>
+<th>ze</th>
+<th>zo</th>
+<th>罗马音</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ざ</td>
+<td>じ</td>
+<td>ず</td>
+<td>ぜ</td>
+<td>ぞ</td>
+<td>平假音</td>
+</tr>
+<tr>
+<td>ザ</td>
+<td>ジ</td>
+<td>ズ</td>
+<td>ゼ</td>
+<td>ゾ</td>
+<td>片假音</td>
+</tr>
+</tbody></table>
+<h4 id="だ行"><a href="#だ行" class="headerlink" title="だ行"></a>だ行</h4><p>T——D</p>
+<table>
+<thead>
+<tr>
+<th>da</th>
+<th>ji</th>
+<th>zu</th>
+<th>de</th>
+<th>do</th>
+<th>罗马音</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>だ</td>
+<td>ぢ</td>
+<td>づ</td>
+<td>で</td>
+<td>ど</td>
+<td>平假音</td>
+</tr>
+<tr>
+<td>ダ</td>
+<td>ヂ</td>
+<td>ヅ</td>
+<td>デ</td>
+<td>ド</td>
+<td>片假音</td>
+</tr>
+</tbody></table>
+<h4 id="ば行"><a href="#ば行" class="headerlink" title="ば行"></a>ば行</h4><p>H——B</p>
+<table>
+<thead>
+<tr>
+<th>ba</th>
+<th>bi</th>
+<th>bu</th>
+<th>be</th>
+<th>bo</th>
+<th>罗马音</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ば</td>
+<td>び</td>
+<td>ぶ</td>
+<td>べ</td>
+<td>ぼ</td>
+<td>平假音</td>
+</tr>
+<tr>
+<td>バ</td>
+<td>ビ</td>
+<td>ブ</td>
+<td>ベ</td>
+<td>ボ</td>
+<td>片假音</td>
+</tr>
+</tbody></table>
+<h4 id="ぱ行"><a href="#ぱ行" class="headerlink" title="ぱ行"></a>ぱ行</h4><p>H——P</p>
+<table>
+<thead>
+<tr>
+<th>pa</th>
+<th>pi</th>
+<th>pu</th>
+<th>pe</th>
+<th>po</th>
+<th>罗马音</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ぱ</td>
+<td>ぴ</td>
+<td>ぷ</td>
+<td>ペ</td>
+<td>ぽ</td>
+<td>平假音</td>
+</tr>
+<tr>
+<td>パ</td>
+<td>ピ</td>
+<td>プ</td>
+<td>ぺ</td>
+<td>ポ</td>
+<td>片假音</td>
+</tr>
+</tbody></table>
+<h3 id="长音"><a href="#长音" class="headerlink" title="长音"></a>长音</h3><p>两个字在一起时，才会有长音</p>
+<h4 id="あ段假名-あ"><a href="#あ段假名-あ" class="headerlink" title="あ段假名+あ"></a>あ段假名+あ</h4><p>あ段竖着的一列</p>
+<p>例如</p>
+<p>お母さん　おばあさん</p>
+<h4 id="い段假名-い"><a href="#い段假名-い" class="headerlink" title="い段假名+い"></a>い段假名+い</h4><p>浊音也算进去</p>
+<p>おにいさん　　　　おじいさん</p>
+<p>ちいさい　　　　おじさん</p>
+<h4 id="う段假名-う"><a href="#う段假名-う" class="headerlink" title="う段假名+う"></a>う段假名+う</h4><p>つつやく　　　数学　すうがく　</p>
+<p>ゆうけ                ゆうじん</p>
+<p>”ci u”里面的u的音不用管，后面只要符合长音规则，只需要把音拉长即可</p>
+<h4 id="え段假名-え-い"><a href="#え段假名-え-い" class="headerlink" title="え段假名+え/い"></a>え段假名+え/い</h4><p>おねえさん　　せんせい　</p>
+<p>へいわ　　ねえねえ</p>
+<h4 id="お段假名-お-う"><a href="#お段假名-お-う" class="headerlink" title="お段假名+お/う"></a>お段假名+お/う</h4><p>注意：</p>
+<p>片假名的长音是由长音符号标记出来的，平假名需要根据读音判别的</p>
+<h3 id="促音"><a href="#促音" class="headerlink" title="促音"></a>促音</h3><p>促音，不发音，停顿一个单词的空隙，占一个音。</p>
+<h4 id="促音-っ"><a href="#促音-っ" class="headerlink" title="促音 っ"></a>促音 っ</h4><p>小写的 つ</p>
+<p>输入的方式</p>
+<p>① 双重输入后一发音的第一个字母后，会出现促音。比如：切符，きっぷ kippu；学校 がっこう gakkou</p>
+<p>② 单独输入促音的时候可以使用直接输入ltu或者xtu</p>
+<p>例如</p>
+<p>こっき　　こっか</p>
+<p>あさって　　きって</p>
+<p>ぶっか　　　ぶか</p>
+<p>おっと　　おと</p>
+<h3 id="拗音"><a href="#拗音" class="headerlink" title="拗音"></a>拗音</h3><p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210816150517902.png" alt="image-20210816150517902"></p>
+<p>两个单词放在一块，读作一个音。KYA和っ的音的长度是一样的，都是占一个拍，拗音是两个字占一个拍。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>や</th>
+<th>ゆ</th>
+<th>よ</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>き</td>
+<td>kya　きゃ</td>
+<td>kyu　きゅ</td>
+<td>kyo　きょ</td>
+</tr>
+<tr>
+<td>し</td>
+<td>sha　しゃ</td>
+<td>shu　しゅ</td>
+<td>sho　しょ</td>
+</tr>
+<tr>
+<td>ち</td>
+<td>cha　ちゃ</td>
+<td>chu　ちゅ</td>
+<td>cho　ちょ</td>
+</tr>
+<tr>
+<td>に</td>
+<td>nya　にゃ</td>
+<td>nyu　にゅ</td>
+<td>nyo　にょ</td>
+</tr>
+<tr>
+<td>ひ</td>
+<td>hya　ひゃ</td>
+<td>hyu　ひゅ</td>
+<td>hyo　ひょ</td>
+</tr>
+<tr>
+<td>み</td>
+<td>mya　みゃ</td>
+<td>myu　みゅ</td>
+<td>myo　みょ</td>
+</tr>
+<tr>
+<td>り</td>
+<td>rya　りゃ</td>
+<td>ryu　りゅ</td>
+<td>ryo　りょ</td>
+</tr>
+<tr>
+<td>ぎ</td>
+<td>gya　ぎゃ</td>
+<td>gyu　ぎゅ</td>
+<td>gyo　ぎょ</td>
+</tr>
+<tr>
+<td>じ</td>
+<td>ja　じゃ</td>
+<td>ju　じゅ</td>
+<td>jo　じょ</td>
+</tr>
+<tr>
+<td>び</td>
+<td>bya　びゃ</td>
+<td>byu　びゅ</td>
+<td>byo　びょ</td>
+</tr>
+<tr>
+<td>ぴ</td>
+<td>pya　ぴゃ</td>
+<td>pyu　ぴゅ</td>
+<td>pyo　ぴょ</td>
+</tr>
+</tbody></table>
+<h3 id="声调"><a href="#声调" class="headerlink" title="声调"></a>声调</h3><ul>
+<li>0型     低高    类似于 我哥 的发音   うえ　</li>
+<li>1型     高低　类似于 哥哥 的发音    あか </li>
+<li>2型　低高低  类似于 我哥哥 的发音 あおい</li>
+<li>3型　低高高低 类似于 美滋滋的 的发音 なつやすみ</li>
+<li>4型　低高高高低 </li>
 </ul>
-<h3 id="工作原理："><a href="#工作原理：" class="headerlink" title="工作原理："></a><strong>工作原理：</strong></h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210402155816266.png" alt="image-20210402155816266"></p>
+<p>注意：</p>
 <ul>
-<li>路由器运行RIP后，会首先发送路由器更新请求，受到请求的路由器会发送自己的RIP路由进行响应。</li>
-<li>网络稳定后，路由器会周期性发送路由更新信息。</li>
+<li>低到高 的低和 高到低的低不是同一个音</li>
+<li>日语中的发音第一个音和第二个音永远不能是同音</li>
+<li>日语中没有高到低再到高的单词</li>
+<li>日语中第一个字和第二个字不同音</li>
+<li>日语中没有卷舌音</li>
 </ul>
-<h3 id="RIP-度量"><a href="#RIP-度量" class="headerlink" title="RIP-度量"></a><strong>RIP-度量</strong></h3><p><img src="https://gitee.com/sakuramiko35/image/raw/master/blog-hcia/image-20210402160205421.png" alt="image-20210402160205421"></p>
-<ul>
-<li><p>RIP使用跳数作为度量值来衡量到达目的网络的距离；</p>
-</li>
-<li><p>缺省情况下，直连网络的路由跳数为0，当路由器发送路由更新时，会把度量值加1；</p>
-</li>
-<li><p>RIP规定超过15跳为网络不可达；</p>
-</li>
-<li><p>组播地址：224~239</p>
-</li>
-<li><p>RIP V1广播，V2组播</p>
-</li>
-</ul>
-<h3 id="RIPv1和RIP-v2的区别"><a href="#RIPv1和RIP-v2的区别" class="headerlink" title="RIPv1和RIP v2的区别"></a><strong>RIPv1和RIP v2的区别</strong></h3><hr>
-<p>RIPv1是有类路由协议，不支持VLSM和CIDR；</p>
-<p>以广播的形式发送报文；</p>
-<p>不支持认证；</p>
-<hr>
-<p>RIPv2是无类路由协议，支持VLSM支持路由聚合与CIDR；</p>
-<p>支持以广播或者组播（224.0.0.9）方式发送报文；</p>
-<p>支持明文认证和MD5密文认证；</p>
-<hr>
-<h3 id="RIP环路"><a href="#RIP环路" class="headerlink" title="RIP环路"></a>RIP环路</h3><p>当网络发生故障时，RIP网络有可能产生路由环路；</p>
-<h3 id="配置RIP"><a href="#配置RIP" class="headerlink" title="配置RIP"></a>配置RIP</h3><pre class=" language-java"><code class="language-java">rip <span class="token number">1</span>
-ver <span class="token number">2</span>
-net xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx <span class="token comment" spellcheck="true">// 宣告这个路由器的路由信息</span>
-net yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy<span class="token punctuation">.</span>yyy <span class="token comment" spellcheck="true">// 等等</span>
-</code></pre>
+<p>声调带入 模型</p>
+<p>0型 うえ</p>
+<p>1型 あか</p>
+<p>3型　なつやすみ　</p>
+<p>总结：</p>
+<p>0型没有高到低的音，0型直往上升</p>
+<p>1型高到低转折出现在第一个音之后</p>
+<p>2型高到低转折出现在第二个音之后</p>
+<p>3型高到低转折出现在第三个音之后</p>
+<p>4型高到低转折出现在第四个音之后</p>
+<p>以此类推</p>
+<p>0型</p>
+<p>牛　うし　　　　　花　はな　　　　桜　さくら　</p>
+<p>机　つくえ　　　　幸せ　しあわせ　　　市に神　しにかみ</p>
+<p>1型</p>
+<p>海　うみ　　　声　こえ　　　　テレヒ　</p>
+<p>今季　こんき　　毎日　まいにち　　　韓国　かんこく</p>
+<p>2型</p>
+<p>山　やま　　　　下　した　　　　休み　やすみ　　赤い　あかい</p>
+<p>3型</p>
+<p>物語　ものがたり　　　大丈夫　だいじょうぶ</p>
+<p>4型</p>
+<p>素晴らしい　すばらしい　　</p>
+<p>问题</p>
+<p>0型和2型的区别在哪？</p>
+<p>区别在于0型和2型后面加了助词之后，0型的声调不会变化依然是高声调。而2型的声调会改变，会由高音变成低音。</p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210816153509482.png" alt="image-20210816153509482"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210816153533932.png" alt="image-20210816153533932"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210816153549434.png" alt="image-20210816153549434"></p>
+<p><img src="https://aqua-1303231448.cos.ap-nanjing.myqcloud.com/HCNP/image-20210816153609917.png" alt="image-20210816153609917"></p>
 
         </div>
 
@@ -664,11 +1230,7 @@ net yyy<span class="token punctuation">.</span>yyy<span class="token punctuation
           <div class="post-tags" style="color: #a39391">
             <span><i class="fa fa-tags"></i>
               
-              <a href="/tags/HCIA/" style="color: #716e77;">HCIA<em>·</em></a>
-              
-              <a href="/tags/%E7%AC%94%E8%AE%B0/" style="color: #716e77;">笔记<em>·</em></a>
-              
-              <a href="/tags/RIP/" style="color: #716e77;">RIP<em>·</em></a>
+              <a href="/tags/%E4%BA%94%E5%8D%81%E9%9F%B3/" style="color: #716e77;">五十音<em>·</em></a>
               
             </span>
             <span>
@@ -696,36 +1258,19 @@ net yyy<span class="token punctuation">.</span>yyy<span class="token punctuation
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-        
-        <div class="post-nepre half previous">
-          
-            <a href="/post/d940.html" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/R9bYJFmBAaC2trV.jpg"
-                  style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
-                  src="https://i.loli.net/2021/05/03/R9bYJFmBAaC2trV.jpg">
-              </div>
-              <span class="label">Previous Post</span>
-              <div class="info">
-                <h3>HCIA学习笔记5</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
           
           
-          
-          <div class="post-nepre half next">
-            
-              <a href="/post/dbc0.html" rel="next">
+            <div class="post-nepre full next">
+              
+              <a href="/post/2a88.html" rel="next">
                 <div class="background">
-                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/05/03/35c7xzED4TBK9Vb.jpg"
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/08/03/qOftKN6Q4352Dz7.png"
                     style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
-                    onerror="imgError(this,3)" src="https://i.loli.net/2021/05/03/35c7xzED4TBK9Vb.jpg">
+                    onerror="imgError(this,3)" src="https://i.loli.net/2021/08/03/qOftKN6Q4352Dz7.png">
                 </div>
                 <span class="label">Next Post</span>
                 <div class="info">
-                  <h3>HCIA学习笔记3</h3>
+                  <h3>HCNP学习笔记21</h3>
                   <hr>
                 </div>
               </a>
